@@ -4,7 +4,7 @@ Changelog
 2.0 (in development)
 --------------------
 * Updated UI
-* Ice Cream Sandwich support 
+* Ice Cream Sandwich support
 
 1.1
 ---

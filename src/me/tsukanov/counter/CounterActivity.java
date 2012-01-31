@@ -1,5 +1,9 @@
 package me.tsukanov.counter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -13,39 +17,44 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
 public class CounterActivity extends FragmentActivity implements
-	ActionBar.OnNavigationListener {
+		ActionBar.OnNavigationListener {
 
 	private static final int HELP_DIALOG = 101;
 
-	CounterApplication application;
+	CounterApplication app;
 	CounterFragment currentFragment;
 	ActionBar actionBar;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		application = (CounterApplication) getApplication();
-		
+		app = (CounterApplication) getApplication();
+
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
+
+		List<String> list = new ArrayList<String>();
+		for (String key : app.counters.keySet()) {
+			list.add(key);
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, list);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-		ArrayAdapter<CharSequence> list = ArrayAdapter.createFromResource(this,
-				R.array.action_list,
-				android.R.layout.simple_dropdown_item_1line);
-		list.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		actionBar.setListNavigationCallbacks(list, this);
+		actionBar.setListNavigationCallbacks(adapter, this);
 	}
 
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-		if (!application.isRotated) {
-			application.activePosition = itemPosition;
+		if (!app.isRotated) {
+			app.activePosition = itemPosition;
 			currentFragment = CounterFragment.newInstance(itemPosition);
 			getSupportFragmentManager().beginTransaction()
 					.replace(android.R.id.content, currentFragment).commit();
 		} else {
-			application.isRotated = false;
-			actionBar.setSelectedNavigationItem(application.activePosition);
+			app.isRotated = false;
+			actionBar.setSelectedNavigationItem(app.activePosition);
 		}
 		return true;
 	}
@@ -53,30 +62,24 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	protected void onStop() {
 		super.onStop();
-		application.isRotated = true;
+		app.isRotated = true;
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getSupportMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
+		inflater.inflate(R.menu.main_menu, menu);
 		return true;
 	}
-
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_refresh:
-			currentFragment.refresh();
-			return true;
 		case R.id.menu_help:
 			showDialog(HELP_DIALOG);
 			return true;
 		case R.id.menu_settings:
-			openSettings();
-			return true;
-		case android.R.id.home:
-			goHome();
+			// TODO Open settings
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -107,7 +110,7 @@ public class CounterActivity extends FragmentActivity implements
 
 	private void goHome() {
 		// actionBar.setHomeButtonEnabled(false);
-		actionBar.setDisplayHomeAsUpEnabled(false);		
+		actionBar.setDisplayHomeAsUpEnabled(false);
 		// TODO Open counter fragment
 	}
 
@@ -121,4 +124,3 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 }
-
