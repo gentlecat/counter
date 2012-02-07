@@ -1,5 +1,7 @@
 package me.tsukanov.counter;
-
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,12 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
-
 public class CounterFragment extends Fragment {
 
+	private static final int MAX_VALUE = 1000; // Space limit
+	private static final int MIN_VALUE = 0;
+	private static final int DEFALUT_VALUE = 0;
 	int counterValue;
 	TextView counterLabel;
 	Button incrementButton, decrementButton;
@@ -60,6 +61,9 @@ public class CounterFragment extends Fragment {
 		counterLabel = (TextView) view.findViewById(R.id.counterLabel);
 		incrementButton = (Button) view.findViewById(R.id.incrementButton);
 		decrementButton = (Button) view.findViewById(R.id.decrementButton);
+		
+		// TODO Load saved value
+		updateButtons();
 
 		(counterLabel).setText(Integer.toString(counterValue));
 		(incrementButton).setOnClickListener(new OnClickListener() {
@@ -76,19 +80,30 @@ public class CounterFragment extends Fragment {
 	}
 
 	public void increment() {
-		// TODO Disable button when limit reached
-		if (counterValue < 1000) // Space limit
+		if (counterValue < MAX_VALUE)
 			counterLabel.setText(Integer.toString(++counterValue));
+		updateButtons();
 	}
 
 	public void decrement() {
-		// TODO Disable button when limit reached
-		if (counterValue > 0)
+		if (counterValue > MIN_VALUE)
 			counterLabel.setText(Integer.toString(--counterValue));
+		updateButtons();
 	}
 
 	public void refresh() {
-		counterValue = 0;
+		counterValue = DEFALUT_VALUE;
 		counterLabel.setText(Integer.toString(counterValue));
+		updateButtons(); // TODO Check if needed later
 	}
+	
+	private void updateButtons() {
+		if (counterValue >= MAX_VALUE)
+			incrementButton.setEnabled(false);
+		else incrementButton.setEnabled(true);
+		if (counterValue <= MIN_VALUE)
+			decrementButton.setEnabled(false);
+		else decrementButton.setEnabled(true);
+	}
+	
 }

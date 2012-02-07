@@ -3,10 +3,12 @@ package me.tsukanov.counter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.prefs.Preferences;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ArrayAdapter;
@@ -79,7 +81,8 @@ public class CounterActivity extends FragmentActivity implements
 			showDialog(HELP_DIALOG);
 			return true;
 		case R.id.menu_settings:
-			// TODO Open settings
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -106,21 +109,6 @@ public class CounterActivity extends FragmentActivity implements
 			dialog = null;
 		}
 		return dialog;
-	}
-
-	private void goHome() {
-		// actionBar.setHomeButtonEnabled(false);
-		actionBar.setDisplayHomeAsUpEnabled(false);
-		// TODO Open counter fragment
-	}
-
-	private void openSettings() {
-		actionBar.setDisplayShowTitleEnabled(true);
-		actionBar.setTitle("Simple Counter settings");
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		// actionBar.setHomeButtonEnabled(true);
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		// TODO Open settings fragment
 	}
 
 }

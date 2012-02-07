@@ -2,9 +2,12 @@
 <resources>
 
     <string name="app_name">Simple Counter</string>
+    
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="value_placeholder">0</string>
+    
+    <string name="settings_title">Settings</string>
 
     <string-array name="action_list">
         <item>Counter 1</item>
