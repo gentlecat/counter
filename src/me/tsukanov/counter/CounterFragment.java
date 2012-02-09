@@ -1,8 +1,10 @@
 package me.tsukanov.counter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,8 @@ public class CounterFragment extends Fragment {
 	TextView counterLabel;
 	Button incrementButton, decrementButton;
 	Vibrator vibrator;
+
+	SharedPreferences prefs;
 
 	static CounterFragment newInstance(int id) {
 		CounterFragment fragment = new CounterFragment();
@@ -86,13 +90,15 @@ public class CounterFragment extends Fragment {
 
 		vibrator = (Vibrator) getActivity().getSystemService(
 				Context.VIBRATOR_SERVICE);
+		prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
 		return view;
 	}
 
 	public void increment() {
 		if (counterValue < MAX_VALUE) {
-			vibrator.vibrate(DEFAULT_VIBRATION_DURATION);
+			if (prefs.getBoolean("vibrationOn", true))
+				vibrator.vibrate(DEFAULT_VIBRATION_DURATION);
 			counterLabel.setText(Integer.toString(++counterValue));
 		}
 		updateButtons();
@@ -100,14 +106,16 @@ public class CounterFragment extends Fragment {
 
 	public void decrement() {
 		if (counterValue > MIN_VALUE) {
-			vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 20);
+			if (prefs.getBoolean("vibrationOn", true))
+				vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 20);
 			counterLabel.setText(Integer.toString(--counterValue));
 		}
 		updateButtons();
 	}
 
 	public void refresh() {
-		vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 40);
+		if (prefs.getBoolean("vibrationOn", true))
+			vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 40);
 		counterValue = DEFALUT_VALUE;
 		counterLabel.setText(Integer.toString(counterValue));
 		updateButtons(); // TODO Check if needed later
