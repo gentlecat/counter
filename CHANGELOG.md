@@ -4,8 +4,9 @@ Changelog
 2.0 (in development)
 --------------------
 * Updated UI
-* Simplified settings
 * Added Ice Cream Sandwich support
+* Simplified settings
+* Removed unnecessary permissions
 
 1.1
 ---
