@@ -1,16 +1,17 @@
 package me.tsukanov.counter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.prefs.Preferences;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -29,6 +30,7 @@ public class CounterActivity extends FragmentActivity implements
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		setTheme(app.theme);
 		super.onCreate(savedInstanceState);
 		app = (CounterApplication) getApplication();
 
@@ -45,26 +47,48 @@ public class CounterActivity extends FragmentActivity implements
 
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setListNavigationCallbacks(adapter, this);
+		// Restore previously selected element
+		actionBar.setSelectedNavigationItem(app.activePosition);
 	}
 
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-		if (!app.isRotated) {
-			app.activePosition = itemPosition;
-			currentFragment = CounterFragment.newInstance(itemPosition);
-			getSupportFragmentManager().beginTransaction()
-					.replace(android.R.id.content, currentFragment).commit();
-		} else {
-			app.isRotated = false;
-			actionBar.setSelectedNavigationItem(app.activePosition);
-		}
+		app.activePosition = itemPosition;
+		currentFragment = CounterFragment.newInstance(itemPosition);
+		getSupportFragmentManager().beginTransaction()
+				.replace(android.R.id.content, currentFragment).commit();
 		return true;
 	}
 
 	@Override
-	protected void onStop() {
-		super.onStop();
-		app.isRotated = true;
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_VOLUME_UP:
+			if (prefs.getBoolean("hardControlOn", true)) {
+				currentFragment.increment();
+				return true;
+			}
+			return false;
+		case KeyEvent.KEYCODE_VOLUME_DOWN:
+			if (prefs.getBoolean("hardControlOn", true)) {
+				currentFragment.decrement();
+				return true;
+			}
+			return false;
+		case KeyEvent.KEYCODE_CAMERA:
+			if (prefs.getBoolean("hardControlOn", true)) {
+				currentFragment.refresh();
+				return true;
+			}
+			return false;
+		case KeyEvent.KEYCODE_BACK:
+			finish();
+			return true;
+		default:
+			return false;
+		}
 	}
 
 	@Override
@@ -73,7 +97,7 @@ public class CounterActivity extends FragmentActivity implements
 		inflater.inflate(R.menu.main_menu, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

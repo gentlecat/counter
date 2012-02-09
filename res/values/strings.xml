@@ -2,12 +2,10 @@
 <resources>
 
     <string name="app_name">Simple Counter</string>
-    
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="value_placeholder">0</string>
     
-    <string name="settings_title">Settings</string>
 
     <string-array name="action_list">
         <item>Counter 1</item>
@@ -22,5 +20,19 @@
     <string name="menu_help">Help</string>
     <string name="menu_settings">Settings</string>
     <string name="info_content">There should be some useful information</string>
+    
+    
+    <string name="settings_title">Settings</string>
+    <string name="settings_theme_title">Theme</string>
+    <string name="settings_theme_desc">Style of this application</string>
+
+    <string-array name="settings_themes_entries">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="settings_themes_entry_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
 
 </resources>
