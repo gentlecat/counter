@@ -25,15 +25,15 @@ public class CounterActivity extends FragmentActivity implements
 	private static final int HELP_DIALOG = 101;
 
 	CounterApplication app;
-	CounterFragment currentFragment;
 	ActionBar actionBar;
+	CounterFragment currentFragment;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		setTheme(app.theme);
+		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
-		app = (CounterApplication) getApplication();
 
+		app = (CounterApplication) getApplication();
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
 
@@ -49,6 +49,17 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setListNavigationCallbacks(adapter, this);
 		// Restore previously selected element
 		actionBar.setSelectedNavigationItem(app.activePosition);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (app.themeChanged) {
+			app.themeChanged = false;
+			Intent intent = getIntent();
+			finish();
+			startActivity(intent);
+		}
 	}
 
 	@Override
