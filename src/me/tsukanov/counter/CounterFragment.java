@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,34 +34,18 @@ public class CounterFragment extends Fragment {
 
 	static CounterFragment newInstance(int id) {
 		CounterFragment fragment = new CounterFragment();
-		/*
-		 * Bundle args = new Bundle(); args.putInt("index", id);
-		 * fragment.setArguments(args);
-		 */
+		Bundle args = new Bundle();
+		args.putInt("index", id);
+		fragment.setArguments(args);
 		return fragment;
-	}
-
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.counter_menu, menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.menu_refresh:
-			refresh();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
-		// int mNum = getArguments() != null ? getArguments().getInt("num") : 1;
+		// TODO Implement
+		int id = getArguments() != null ? getArguments().getInt("num") : 1;
 	}
 
 	@Override
@@ -95,13 +80,40 @@ public class CounterFragment extends Fragment {
 		return view;
 	}
 
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.counter_menu, menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menu_refresh:
+			refresh();
+			return true;
+		case R.id.menu_add:
+			// TODO Implement add dialog
+			return true;
+		case R.id.menu_edit:
+			// TODO Implement editor dialog
+			return true;
+		case R.id.menu_delete:
+			// TODO Implement delete dialog
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
 	public void increment() {
 		if (counterValue < MAX_VALUE) {
 			if (prefs.getBoolean("vibrationOn", true))
 				vibrator.vibrate(DEFAULT_VIBRATION_DURATION);
 			counterLabel.setText(Integer.toString(++counterValue));
+			// TODO Increment in app.counters
 		}
 		updateButtons();
+		Log.v("Counter", "Incremented");
 	}
 
 	public void decrement() {
@@ -109,8 +121,10 @@ public class CounterFragment extends Fragment {
 			if (prefs.getBoolean("vibrationOn", true))
 				vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 20);
 			counterLabel.setText(Integer.toString(--counterValue));
+			// TODO Decrement in app.counters
 		}
 		updateButtons();
+		Log.v("Counter", "Decremented");
 	}
 
 	public void refresh() {
@@ -118,7 +132,9 @@ public class CounterFragment extends Fragment {
 			vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 40);
 		counterValue = DEFALUT_VALUE;
 		counterLabel.setText(Integer.toString(counterValue));
+		// TODO Refresh in app.counters
 		updateButtons(); // TODO Check if needed later
+		Log.v("Counter", "Refreshed");
 	}
 
 	private void updateButtons() {

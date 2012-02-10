@@ -1,16 +1,17 @@
 package me.tsukanov.counter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
 
@@ -22,11 +23,13 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final int HELP_DIALOG = 101;
+	private static final String FILENAME = "data_test_11";
 
 	CounterApplication app;
 	ActionBar actionBar;
 	CounterFragment currentFragment;
+
+	SharedPreferences sharedPreferences;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,21 @@ public class CounterActivity extends FragmentActivity implements
 		app = (CounterApplication) getApplication();
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
+
+		app.counters = new HashMap<String, Integer>();
+
+		sharedPreferences = getBaseContext().getSharedPreferences(FILENAME,
+				Context.MODE_PRIVATE);
+		Map<String, ?> prefsMap = sharedPreferences.getAll();
+		if (prefsMap.isEmpty()) {
+			Log.v("SharedPreferences", "Map is empty");
+			app.counters.put("First counter", 0);
+		} else {
+			for (Map.Entry<String, ?> entry : prefsMap.entrySet()) {
+				app.counters.put(entry.getKey(), (Integer) entry.getValue());
+				Log.v("SharedPreferences", "Loading!");
+			}
+		}
 
 		List<String> list = new ArrayList<String>();
 		for (String key : app.counters.keySet()) {
@@ -48,7 +66,8 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setListNavigationCallbacks(adapter, this);
 		// Restore previously selected element
-		actionBar.setSelectedNavigationItem(app.activePosition);
+		actionBar.setSelectedNavigationItem(actionBar
+				.getSelectedNavigationIndex());
 	}
 
 	@Override
@@ -59,6 +78,19 @@ public class CounterActivity extends FragmentActivity implements
 			Intent intent = getIntent();
 			finish();
 			startActivity(intent);
+		}
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		sharedPreferences = getBaseContext().getSharedPreferences(FILENAME,
+				Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		for (String name : app.counters.keySet()) {
+			Log.v("SharedPreferences", "Saving!");
+			editor.putInt(name, app.counters.get(name));
+			editor.commit();
 		}
 	}
 
@@ -112,9 +144,6 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_help:
-			showDialog(HELP_DIALOG);
-			return true;
 		case R.id.menu_settings:
 			Intent intent = new Intent(this, SettingsActivity.class);
 			startActivity(intent);
@@ -122,28 +151,6 @@ public class CounterActivity extends FragmentActivity implements
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-	}
-
-	@Override
-	protected Dialog onCreateDialog(int id) {
-		Dialog dialog;
-		switch (id) {
-		case HELP_DIALOG:
-			dialog = new AlertDialog.Builder(this)
-					.setView(getLayoutInflater().inflate(R.layout.help, null))
-					.setTitle(R.string.menu_help)
-					.setCancelable(true)
-					.setNeutralButton("OK",
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int which) {
-									dialog.cancel();
-								}
-							}).create();
-		default:
-			dialog = null;
-		}
-		return dialog;
 	}
 
 }
