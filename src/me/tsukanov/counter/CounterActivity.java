@@ -5,7 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +18,7 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -23,12 +28,14 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String FILENAME = "data_test_11";
+	private static final String DATA_FILE = "data_test_11";
+	private static final int DIALOG_ADD = 100;
+	private static final int DIALOG_EDIT = 101;
+	private static final int DIALOG_DELETE = 102;
 
 	CounterApplication app;
 	ActionBar actionBar;
 	CounterFragment currentFragment;
-
 	SharedPreferences sharedPreferences;
 
 	@Override
@@ -41,8 +48,7 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setDisplayShowTitleEnabled(false);
 
 		app.counters = new HashMap<String, Integer>();
-
-		sharedPreferences = getBaseContext().getSharedPreferences(FILENAME,
+		sharedPreferences = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
 		Map<String, ?> prefsMap = sharedPreferences.getAll();
 		if (prefsMap.isEmpty()) {
@@ -84,7 +90,7 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	protected void onPause() {
 		super.onPause();
-		sharedPreferences = getBaseContext().getSharedPreferences(FILENAME,
+		sharedPreferences = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		for (String name : app.counters.keySet()) {
@@ -144,6 +150,15 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case R.id.menu_add:
+			showDialog(DIALOG_ADD);
+			return true;
+		case R.id.menu_edit:
+			showDialog(DIALOG_EDIT);
+			return true;
+		case R.id.menu_delete:
+			showDialog(DIALOG_DELETE);
+			return true;
 		case R.id.menu_settings:
 			Intent intent = new Intent(this, SettingsActivity.class);
 			startActivity(intent);
@@ -151,6 +166,69 @@ public class CounterActivity extends FragmentActivity implements
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	protected Dialog onCreateDialog(int id) {
+		Dialog dialog = null;
+		switch (id) {
+		case DIALOG_ADD:
+			LinearLayout addDialogLayout = (LinearLayout) findViewById(R.layout.edit_dialog);
+			AlertDialog.Builder addDialogBuilder = new AlertDialog.Builder(
+					this);
+			addDialogBuilder
+					.setTitle(getResources().getText(R.string.dialog_title_add))
+					.setView(addDialogLayout)
+					.setPositiveButton(getResources().getText(R.string.dialog_button_add),
+							new OnClickListener() {
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Add counter
+								}
+							})
+					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
+			dialog = addDialogBuilder.create();
+			break;
+		case DIALOG_EDIT:
+			LinearLayout editDialogLayout = (LinearLayout) findViewById(R.layout.edit_dialog);
+			AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(
+					this);
+			editDialogBuilder
+					.setTitle(getResources().getText(R.string.dialog_title_edit))
+					.setView(editDialogLayout)
+					.setPositiveButton(getResources().getText(R.string.dialog_button_apply),
+							new OnClickListener() {
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Save data
+								}
+							})
+					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
+			dialog = editDialogBuilder.create();
+			break;
+		case DIALOG_DELETE:
+			AlertDialog.Builder deleteDialogBuilder = new AlertDialog.Builder(
+					this);
+			deleteDialogBuilder
+					.setMessage(getResources().getText(R.string.dialog_title_delete))
+					.setCancelable(false)
+					.setPositiveButton(getResources().getText(R.string.dialog_button_delete),
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									// TODO Delete counter
+								}
+							})
+					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel),
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									dialog.cancel();
+								}
+							});
+			dialog = deleteDialogBuilder.create();
+			break;
+		default:
+			dialog = null;
+		}
+		return dialog;
 	}
 
 }

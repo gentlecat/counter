@@ -22,7 +22,7 @@ public class CounterFragment extends Fragment {
 
 	private static final int MAX_VALUE = 1000; // Space limit
 	private static final int MIN_VALUE = 0;
-	private static final int DEFALUT_VALUE = 0;
+	private static final int DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
 
 	int counterValue;
@@ -45,7 +45,7 @@ public class CounterFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
 		// TODO Implement
-		int id = getArguments() != null ? getArguments().getInt("num") : 1;
+		// int id = getArguments() != null ? getArguments().getInt("num") : 1;
 	}
 
 	@Override
@@ -90,15 +90,6 @@ public class CounterFragment extends Fragment {
 		switch (item.getItemId()) {
 		case R.id.menu_refresh:
 			refresh();
-			return true;
-		case R.id.menu_add:
-			// TODO Implement add dialog
-			return true;
-		case R.id.menu_edit:
-			// TODO Implement editor dialog
-			return true;
-		case R.id.menu_delete:
-			// TODO Implement delete dialog
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

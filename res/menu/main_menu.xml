@@ -7,6 +7,11 @@
         android:showAsAction="always"
         android:title="@string/menu_add"/>
     <item
+        android:id="@+id/menu_edit"
+        android:icon="@drawable/ic_menu_edit"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_edit"/>
+    <item
         android:id="@+id/menu_delete"
         android:icon="@drawable/ic_menu_delete"
         android:showAsAction="ifRoom"
@@ -15,4 +20,5 @@
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_menu_settings"
         android:title="@string/menu_settings"/>
-</menu>
+
+</menu>

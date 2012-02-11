@@ -21,24 +21,24 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 	Intent starterintent;
 	ActionBar actionBar;
 
-	ListPreference themePreference;	
-	
+	ListPreference themePreference;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings);
-		
+
 		app = (CounterApplication) getApplication();
 		starterintent = getIntent();
-		
+
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		PreferenceScreen prefScreen = getPreferenceScreen();
 		themePreference = (ListPreference) prefScreen.findPreference("theme");
 		themePreference.setOnPreferenceChangeListener(this);
 
-		String app_version = "Unknown";
+		String app_version = (String) getResources().getText(R.string.unknown);
 		try {
 			app_version = this.getPackageManager().getPackageInfo(
 					this.getPackageName(), 0).versionName;
@@ -55,8 +55,8 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 						app.counters.clear();
 						app.isUpdateNeeded = true;
 						Toast.makeText(getBaseContext(),
-								"NOTHING LEFT! MWAHAHHAHA!", Toast.LENGTH_SHORT)
-								.show();
+								getResources().getText(R.string.toast_wipe_success),
+								Toast.LENGTH_SHORT).show();
 						return true;
 					}
 				});
@@ -72,11 +72,9 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 			} else if (value.equals("light")) {
 				CounterApplication.theme = R.style.Theme_Sherlock_Light_DarkActionBar;
 			}
-			// TODO Delete toast
-			Toast.makeText(getBaseContext(), (String) newValue,
-					Toast.LENGTH_SHORT).show();
+			// Restarting activity to activate selected theme in it
 			finish();
-            startActivity(starterintent);
+			startActivity(starterintent);
 			return true;
 		}
 
