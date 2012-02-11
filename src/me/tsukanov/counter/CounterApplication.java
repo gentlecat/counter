@@ -6,10 +6,11 @@ import android.app.Application;
 
 public class CounterApplication extends Application {
 
-	public int activePosition;
-	public static int theme;
-	public boolean isUpdateNeeded;
 	public HashMap<String, Integer> counters;
+	public int activePosition;
+	public String activeKey;
+	public static int theme;
+	public boolean isUpdateNeeded;	
 
 	@Override
 	public void onCreate() {

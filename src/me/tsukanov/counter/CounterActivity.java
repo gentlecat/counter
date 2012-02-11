@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,11 +16,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -29,7 +34,7 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_test_11";
+	private static final String DATA_FILE = "data_dev_11";
 	private static final int DIALOG_ADD = 100;
 	private static final int DIALOG_EDIT = 101;
 	private static final int DIALOG_DELETE = 102;
@@ -38,6 +43,7 @@ public class CounterActivity extends FragmentActivity implements
 	ActionBar actionBar;
 	CounterFragment currentFragment;
 	SharedPreferences data, settings;
+	List<String> keys;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -60,21 +66,22 @@ public class CounterActivity extends FragmentActivity implements
 				Context.MODE_PRIVATE);
 		Map<String, ?> prefsMap = data.getAll();
 		if (prefsMap.isEmpty()) {
-			Log.v("SharedPreferences", "Map is empty");
-			app.counters.put("First counter", 0);
+			app.counters.put(
+					(String) getResources().getText(
+							R.string.default_counter_name),
+					CounterFragment.DEFALUT_VALUE);
 		} else {
 			for (Map.Entry<String, ?> entry : prefsMap.entrySet()) {
 				app.counters.put(entry.getKey(), (Integer) entry.getValue());
-				Log.v("SharedPreferences", "Loading!");
 			}
 		}
 
-		List<String> list = new ArrayList<String>();
+		keys = new ArrayList<String>();
 		for (String key : app.counters.keySet()) {
-			list.add(key);
+			keys.add(key);
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, list);
+				android.R.layout.simple_spinner_item, keys);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
@@ -89,10 +96,9 @@ public class CounterActivity extends FragmentActivity implements
 		super.onResume();
 		if (app.isUpdateNeeded) {
 			app.isUpdateNeeded = false;
-			Intent intent = getIntent();
-			finish();
-			startActivity(intent);
+			refreshActivity();
 		}
+		actionBar.setSelectedNavigationItem(app.activePosition);
 	}
 
 	@Override
@@ -110,11 +116,192 @@ public class CounterActivity extends FragmentActivity implements
 
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+		app.activeKey = keys.get(itemPosition);
 		app.activePosition = itemPosition;
-		currentFragment = CounterFragment.newInstance(itemPosition);
+		currentFragment = new CounterFragment();
 		getSupportFragmentManager().beginTransaction()
 				.replace(android.R.id.content, currentFragment).commit();
 		return true;
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getSupportMenuInflater();
+		inflater.inflate(R.menu.main_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menu_add:
+			showDialog(DIALOG_ADD);
+			return true;
+		case R.id.menu_edit:
+			showDialog(DIALOG_EDIT);
+			return true;
+		case R.id.menu_delete:
+			showDialog(DIALOG_DELETE);
+			return true;
+		case R.id.menu_settings:
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	protected Dialog onCreateDialog(int id) {
+		Dialog dialog;
+		switch (id) {
+		case DIALOG_ADD:
+			dialog = getAddDialog().create();
+			break;
+		case DIALOG_EDIT:
+			dialog = getEditDialog().create();
+			break;
+		case DIALOG_DELETE:
+			dialog = getDeleteDialog().create();
+			break;
+		default:
+			dialog = null;
+		}
+		return dialog;
+	}
+
+	private Builder getAddDialog() {
+		AlertDialog.Builder addDialogBuilder = new AlertDialog.Builder(this);
+		addDialogBuilder.setTitle(getResources().getText(
+				R.string.dialog_add_title));
+
+		LinearLayout addDialogLayout = (LinearLayout) getLayoutInflater()
+				.inflate(R.layout.editor_layout, null);
+
+		// Name input label
+		TextView nameInputLabel = new TextView(this);
+		nameInputLabel.setText(getResources()
+				.getText(R.string.dialog_edit_name));
+		addDialogLayout.addView(nameInputLabel);
+
+		// Name input
+		final EditText nameInput = new EditText(this);
+		nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
+		addDialogLayout.addView(nameInput);
+
+		// Value input label
+		TextView valueInputLabel = new TextView(this);
+		valueInputLabel.setText(getResources().getText(
+				R.string.dialog_edit_value));
+		addDialogLayout.addView(valueInputLabel);
+
+		// Value input
+		final EditText valueInput = new EditText(this);
+		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
+		InputFilter[] valueFilter = new InputFilter[1];
+		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
+		valueInput.setFilters(valueFilter);
+		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
+		addDialogLayout.addView(valueInput);
+
+		addDialogBuilder.setView(addDialogLayout);
+		addDialogBuilder.setPositiveButton(
+				getResources().getText(R.string.dialog_button_add),
+				new OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						app.counters.put(nameInput.getText().toString(),
+								Integer.parseInt(valueInput.getText()
+										.toString()));
+						refreshActivity(); // TODO Rewrite
+					}
+				});
+		addDialogBuilder.setNegativeButton(
+				getResources().getText(R.string.dialog_button_cancel), null);
+		return addDialogBuilder;
+	}
+
+	private Builder getEditDialog() {
+		AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(this);
+		editDialogBuilder.setTitle(getResources().getText(
+				R.string.dialog_edit_title));
+
+		LinearLayout editDialogLayout = (LinearLayout) getLayoutInflater()
+				.inflate(R.layout.editor_layout, null);
+
+		// Name input label
+		TextView nameInputLabel = new TextView(this);
+		nameInputLabel.setText(getResources()
+				.getText(R.string.dialog_edit_name));
+		editDialogLayout.addView(nameInputLabel);
+
+		// Name input
+		final EditText nameInput = new EditText(this);
+		nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
+		editDialogLayout.addView(nameInput);
+
+		// Value input label
+		TextView valueInputLabel = new TextView(this);
+		valueInputLabel.setText(getResources().getText(
+				R.string.dialog_edit_value));
+		editDialogLayout.addView(valueInputLabel);
+
+		// Value input
+		final EditText valueInput = new EditText(this);
+		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
+		InputFilter[] valueFilter = new InputFilter[1];
+		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
+		valueInput.setFilters(valueFilter);
+		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
+		editDialogLayout.addView(valueInput);
+
+		editDialogBuilder.setView(editDialogLayout);
+		editDialogBuilder.setPositiveButton(
+				getResources().getText(R.string.dialog_button_apply),
+				new OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Delete current counter, add modified
+						refreshActivity(); // TODO Rewrite
+					}
+				});
+		editDialogBuilder.setNegativeButton(
+				getResources().getText(R.string.dialog_button_cancel), null);
+		return editDialogBuilder;
+	}
+
+	private Builder getDeleteDialog() {
+		AlertDialog.Builder deleteDialogBuilder = new AlertDialog.Builder(this);
+		deleteDialogBuilder
+				.setMessage(
+						getResources().getText(R.string.dialog_delete_title))
+				.setCancelable(false)
+				.setPositiveButton(
+						getResources().getText(R.string.dialog_button_delete),
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// TODO Delete counter
+								app.counters.remove(app.activeKey);
+								Toast.makeText(
+										getBaseContext(),
+										getResources().getText(
+												R.string.toast_remove_sucess_1)
+												+ " \""
+												+ app.activeKey
+												+ "\" "
+												+ getResources()
+														.getText(
+																R.string.toast_remove_sucess_2),
+										Toast.LENGTH_SHORT).show();
+								refreshActivity();
+							}
+						})
+				.setNegativeButton(
+						getResources().getText(R.string.dialog_button_cancel),
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+		return deleteDialogBuilder;
 	}
 
 	@Override
@@ -148,96 +335,14 @@ public class CounterActivity extends FragmentActivity implements
 		}
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getSupportMenuInflater();
-		inflater.inflate(R.menu.main_menu, menu);
-		return true;
+	private int getCharLimit() {
+		return String.valueOf(CounterFragment.MAX_VALUE).length() - 1;
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.menu_add:
-			showDialog(DIALOG_ADD);
-			return true;
-		case R.id.menu_edit:
-			showDialog(DIALOG_EDIT);
-			return true;
-		case R.id.menu_delete:
-			showDialog(DIALOG_DELETE);
-			return true;
-		case R.id.menu_settings:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
-
-	protected Dialog onCreateDialog(int id) {
-		Dialog dialog = null;
-		LayoutInflater inflater = getLayoutInflater();	
-		switch (id) {
-		case DIALOG_ADD:				
-            LinearLayout addDialogLayout = new LinearLayout(this);
-			addDialogLayout.addView(inflater.inflate(R.layout.edit_dialog, addDialogLayout, false));
-			AlertDialog.Builder addDialogBuilder = new AlertDialog.Builder(this);
-			addDialogBuilder
-					.setTitle(getResources().getText(R.string.dialog_title_add))
-					.setView(addDialogLayout)
-					.setPositiveButton(getResources().getText(R.string.dialog_button_add),
-							new OnClickListener() {
-								public void onClick(DialogInterface dialog, int which) {
-									// TODO Add counter
-								}
-							})
-					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-			dialog = addDialogBuilder.create();
-			break;
-		case DIALOG_EDIT:	
-            LinearLayout editDialogLayout = new LinearLayout(this);
-			editDialogLayout.addView(inflater.inflate(R.layout.edit_dialog, editDialogLayout, false));
-			AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(this);
-			editDialogBuilder
-					.setTitle(getResources().getText(R.string.dialog_title_edit))
-					.setView(editDialogLayout)
-					.setPositiveButton(getResources().getText(R.string.dialog_button_apply),
-							new OnClickListener() {
-								public void onClick(DialogInterface dialog, int which) {
-									// TODO Save counter
-								}
-							})
-					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-			dialog = editDialogBuilder.create();
-			break;
-		case DIALOG_DELETE:
-			AlertDialog.Builder deleteDialogBuilder = new AlertDialog.Builder(
-					this);
-			deleteDialogBuilder
-					.setMessage(getResources().getText(R.string.dialog_title_delete))
-					.setCancelable(false)
-					.setPositiveButton(getResources().getText(R.string.dialog_button_delete),
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									// TODO Delete counter
-								}
-							})
-					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel),
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int id) {
-									dialog.cancel();
-								}
-							});
-			dialog = deleteDialogBuilder.create();
-			break;
-		default:
-			dialog = null;
-		}
-		return dialog;
+	private void refreshActivity() {
+		Intent intent = getIntent();
+		finish();
+		startActivity(intent);
 	}
 
 }

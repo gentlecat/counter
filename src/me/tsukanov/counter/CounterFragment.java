@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,15 +23,17 @@ import com.actionbarsherlock.view.MenuItem;
 
 public class CounterFragment extends Fragment {
 
-	private static final int MAX_VALUE = 1000; // Space limit
-	private static final int MIN_VALUE = 0;
-	private static final int DEFALUT_VALUE = MIN_VALUE;
+	public static final int MAX_VALUE = 1000; // Space limit
+	public static final int MIN_VALUE = 0;
+	public static final int DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
 	private static final Integer INCREMENT_SOUND = 200;
 	private static final Integer DECREMENT_SOUND = 201;
 	private static final Integer REFRESH_SOUND = 202;
 
 	int counterValue;
+
+	CounterApplication app;
 	TextView counterLabel;
 	Button incrementButton, decrementButton;
 	Vibrator vibrator;
@@ -41,20 +42,13 @@ public class CounterFragment extends Fragment {
 	SoundPool soundPool;
 	HashMap<Integer, Integer> soundsMap;
 
-	static CounterFragment newInstance(int id) {
-		CounterFragment fragment = new CounterFragment();
-		Bundle args = new Bundle();
-		args.putInt("index", id);
-		fragment.setArguments(args);
-		return fragment;
-	}
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
-		// TODO Implement
-		// int id = getArguments() != null ? getArguments().getInt("num") : 1;
+
+		app = (CounterApplication) getActivity().getApplication();
+
 	}
 
 	@Override
@@ -66,11 +60,12 @@ public class CounterFragment extends Fragment {
 		counterLabel = (TextView) view.findViewById(R.id.counterLabel);
 		incrementButton = (Button) view.findViewById(R.id.incrementButton);
 		decrementButton = (Button) view.findViewById(R.id.decrementButton);
+		vibrator = (Vibrator) getActivity().getSystemService(
+				Context.VIBRATOR_SERVICE);
+		settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-		// TODO Load saved value
-		updateButtons();
+		setValue(app.counters.get(app.activeKey));
 
-		(counterLabel).setText(Integer.toString(counterValue));
 		(incrementButton).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				increment();
@@ -81,22 +76,17 @@ public class CounterFragment extends Fragment {
 				decrement();
 			}
 		});
-		
-		settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-		vibrator = (Vibrator) getActivity().getSystemService(
-				Context.VIBRATOR_SERVICE);
-		
 		getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
-        soundsMap = new HashMap<Integer, Integer>();
-        soundsMap.put(INCREMENT_SOUND,
-                        soundPool.load(getActivity(), R.raw.increment_sound, 1));
-        soundsMap.put(DECREMENT_SOUND,
-                        soundPool.load(getActivity(), R.raw.decrement_sound, 1));
-        soundsMap.put(REFRESH_SOUND,
-        				soundPool.load(getActivity(), R.raw.refresh_sound, 1));
- 
+		soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
+		soundsMap = new HashMap<Integer, Integer>();
+		soundsMap.put(INCREMENT_SOUND,
+				soundPool.load(getActivity(), R.raw.increment_sound, 1));
+		soundsMap.put(DECREMENT_SOUND,
+				soundPool.load(getActivity(), R.raw.decrement_sound, 1));
+		soundsMap.put(REFRESH_SOUND,
+				soundPool.load(getActivity(), R.raw.refresh_sound, 1));
+
 		return view;
 	}
 
@@ -122,10 +112,14 @@ public class CounterFragment extends Fragment {
 				vibrator.vibrate(DEFAULT_VIBRATION_DURATION);
 			playSound(INCREMENT_SOUND);
 			counterLabel.setText(Integer.toString(++counterValue));
-			// TODO Increment in app.counters
+			saveCounter();
+			updateButtons();
 		}
-		updateButtons();
-		Log.v("Counter", "Incremented");
+	}
+
+	private void saveCounter() {
+		app.counters.remove(app.activeKey);
+		app.counters.put(app.activeKey, counterValue);
 	}
 
 	public void decrement() {
@@ -134,10 +128,9 @@ public class CounterFragment extends Fragment {
 				vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 20);
 			playSound(DECREMENT_SOUND);
 			counterLabel.setText(Integer.toString(--counterValue));
-			// TODO Decrement in app.counters
+			saveCounter();
+			updateButtons();
 		}
-		updateButtons();
-		Log.v("Counter", "Decremented");
 	}
 
 	public void refresh() {
@@ -146,9 +139,14 @@ public class CounterFragment extends Fragment {
 		playSound(REFRESH_SOUND);
 		counterValue = DEFALUT_VALUE;
 		counterLabel.setText(Integer.toString(counterValue));
-		// TODO Refresh in app.counters
+		saveCounter();
 		updateButtons(); // TODO Check if needed later
-		Log.v("Counter", "Refreshed");
+	}
+
+	public void setValue(int value) {
+		counterValue = value;
+		counterLabel.setText(Integer.toString(counterValue));
+		updateButtons();
 	}
 
 	private void updateButtons() {
@@ -162,14 +160,15 @@ public class CounterFragment extends Fragment {
 		else
 			decrementButton.setEnabled(true);
 	}
-	
-    private void playSound(int soundID) {
-        if (settings.getBoolean("soundsOn", false)) {
-                AudioManager audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
-                float volume = (float) audioManager
-                                .getStreamVolume(AudioManager.STREAM_MUSIC);
-                soundPool.play(soundsMap.get(soundID), volume, volume, 1, 0, 1f);
-        }
-    }
+
+	private void playSound(int soundID) {
+		if (settings.getBoolean("soundsOn", false)) {
+			AudioManager audioManager = (AudioManager) getActivity()
+					.getSystemService(Context.AUDIO_SERVICE);
+			float volume = (float) audioManager
+					.getStreamVolume(AudioManager.STREAM_MUSIC);
+			soundPool.play(soundsMap.get(soundID), volume, volume, 1, 0, 1f);
+		}
+	}
 
 }
