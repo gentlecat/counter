@@ -8,7 +8,7 @@ public class CounterApplication extends Application {
 
 	public int activePosition;
 	public static int theme;
-	public boolean themeChanged;
+	public boolean isUpdateNeeded;
 	public HashMap<String, Integer> counters;
 
 	@Override
@@ -16,6 +16,6 @@ public class CounterApplication extends Application {
 		super.onCreate();
 		theme = R.style.Theme_Sherlock_Light_DarkActionBar;
 		activePosition = 0;
-		themeChanged = false;	
+		isUpdateNeeded = false;	
 	}
 }

@@ -52,7 +52,8 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					@Override
 					public boolean onPreferenceClick(Preference preference) {
-						// TODO Wipe
+						app.counters.clear();
+						app.isUpdateNeeded = true;
 						Toast.makeText(getBaseContext(),
 								"NOTHING LEFT! MWAHAHHAHA!", Toast.LENGTH_SHORT)
 								.show();
@@ -64,7 +65,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 		if (preference == themePreference) {
-			app.themeChanged = true;
+			app.isUpdateNeeded = true;
 			String value = (String) newValue;
 			if (value.equals("dark")) {
 				CounterApplication.theme = R.style.Theme_Sherlock;

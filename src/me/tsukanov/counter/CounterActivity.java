@@ -73,8 +73,8 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (app.themeChanged) {
-			app.themeChanged = false;
+		if (app.isUpdateNeeded) {
+			app.isUpdateNeeded = false;
 			Intent intent = getIntent();
 			finish();
 			startActivity(intent);
