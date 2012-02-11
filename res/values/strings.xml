@@ -19,14 +19,13 @@
     <string name="dialog_title_add">Add counter</string>
     <string name="dialog_title_edit">Edit counter</string>
     <string name="dialog_title_delete">Are you sure you want to delete that counter?</string>
-    <string name="dialog_edit_name">Name of the counter:</string>
+    <string name="dialog_edit_name">Title:</string>
 	<string name="dialog_edit_value">Value:</string>
 	<string name="dialog_button_add">Add</string>
     <string name="dialog_button_apply">Apply</string>
     <string name="dialog_button_delete">Delete</string>
     <string name="dialog_button_cancel">Cancel</string>
 	
-    
     <!-- Settings -->
     <string name="settings_title">Settings</string>
     <string name="settings_theme_title">Theme</string>

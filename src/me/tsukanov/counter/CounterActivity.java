@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,7 +18,10 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -170,11 +174,12 @@ public class CounterActivity extends FragmentActivity implements
 
 	protected Dialog onCreateDialog(int id) {
 		Dialog dialog = null;
+		LayoutInflater inflater = getLayoutInflater();	
 		switch (id) {
-		case DIALOG_ADD:
-			LinearLayout addDialogLayout = (LinearLayout) findViewById(R.layout.edit_dialog);
-			AlertDialog.Builder addDialogBuilder = new AlertDialog.Builder(
-					this);
+		case DIALOG_ADD:				
+            LinearLayout addDialogLayout = new LinearLayout(this);
+			addDialogLayout.addView(inflater.inflate(R.layout.edit_dialog, addDialogLayout, false));
+			AlertDialog.Builder addDialogBuilder = new AlertDialog.Builder(this);
 			addDialogBuilder
 					.setTitle(getResources().getText(R.string.dialog_title_add))
 					.setView(addDialogLayout)
@@ -187,17 +192,17 @@ public class CounterActivity extends FragmentActivity implements
 					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
 			dialog = addDialogBuilder.create();
 			break;
-		case DIALOG_EDIT:
-			LinearLayout editDialogLayout = (LinearLayout) findViewById(R.layout.edit_dialog);
-			AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(
-					this);
+		case DIALOG_EDIT:	
+            LinearLayout editDialogLayout = new LinearLayout(this);
+			editDialogLayout.addView(inflater.inflate(R.layout.edit_dialog, editDialogLayout, false));
+			AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(this);
 			editDialogBuilder
-					.setTitle(getResources().getText(R.string.dialog_title_edit))
+					.setTitle(getResources().getText(R.string.dialog_title_add))
 					.setView(editDialogLayout)
 					.setPositiveButton(getResources().getText(R.string.dialog_button_apply),
 							new OnClickListener() {
 								public void onClick(DialogInterface dialog, int which) {
-									// TODO Save data
+									// TODO Add counter
 								}
 							})
 					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
