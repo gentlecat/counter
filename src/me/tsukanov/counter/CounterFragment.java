@@ -22,8 +22,9 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
 public class CounterFragment extends Fragment {
-
-	public static final int MAX_VALUE = 1000; // Space limit
+	
+	// TODO Dynamically change counter text size and remove up limit
+	public static final int MAX_VALUE = 999; // Space limit
 	public static final int MIN_VALUE = 0;
 	public static final int DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds

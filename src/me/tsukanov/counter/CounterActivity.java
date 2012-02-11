@@ -1,7 +1,7 @@
 package me.tsukanov.counter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +34,7 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_11";
+	private static final String DATA_FILE = "data_dev_12";
 	private static final int DIALOG_ADD = 100;
 	private static final int DIALOG_EDIT = 101;
 	private static final int DIALOG_DELETE = 102;
@@ -61,7 +61,7 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
 
-		app.counters = new HashMap<String, Integer>();
+		app.counters = new LinkedHashMap<String, Integer>();
 		data = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
 		Map<String, ?> prefsMap = data.getAll();
@@ -87,8 +87,7 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setListNavigationCallbacks(adapter, this);
 		// Restore previously selected element
-		actionBar.setSelectedNavigationItem(actionBar
-				.getSelectedNavigationIndex());
+		actionBar.setSelectedNavigationItem(app.activePosition);
 	}
 
 	@Override
@@ -98,7 +97,6 @@ public class CounterActivity extends FragmentActivity implements
 			app.isUpdateNeeded = false;
 			refreshActivity();
 		}
-		actionBar.setSelectedNavigationItem(app.activePosition);
 	}
 
 	@Override
@@ -212,7 +210,7 @@ public class CounterActivity extends FragmentActivity implements
 						app.counters.put(nameInput.getText().toString(),
 								Integer.parseInt(valueInput.getText()
 										.toString()));
-						refreshActivity(); // TODO Rewrite
+						refreshActivity();
 					}
 				});
 		addDialogBuilder.setNegativeButton(
@@ -336,7 +334,7 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 	private int getCharLimit() {
-		return String.valueOf(CounterFragment.MAX_VALUE).length() - 1;
+		return String.valueOf(CounterFragment.MAX_VALUE).length();
 	}
 
 	private void refreshActivity() {
