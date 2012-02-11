@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,9 +18,7 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -40,10 +37,17 @@ public class CounterActivity extends FragmentActivity implements
 	CounterApplication app;
 	ActionBar actionBar;
 	CounterFragment currentFragment;
-	SharedPreferences sharedPreferences;
+	SharedPreferences data, settings;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		settings = PreferenceManager.getDefaultSharedPreferences(this);
+		String savedTheme = settings.getString("theme", "light");
+		if (savedTheme.equals("dark")) {
+			CounterApplication.theme = R.style.Theme_Sherlock;
+		} else if (savedTheme.equals("light")) {
+			CounterApplication.theme = R.style.Theme_Sherlock_Light_DarkActionBar;
+		}
 		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
 
@@ -52,9 +56,9 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setDisplayShowTitleEnabled(false);
 
 		app.counters = new HashMap<String, Integer>();
-		sharedPreferences = getBaseContext().getSharedPreferences(DATA_FILE,
+		data = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
-		Map<String, ?> prefsMap = sharedPreferences.getAll();
+		Map<String, ?> prefsMap = data.getAll();
 		if (prefsMap.isEmpty()) {
 			Log.v("SharedPreferences", "Map is empty");
 			app.counters.put("First counter", 0);
@@ -94,9 +98,9 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	protected void onPause() {
 		super.onPause();
-		sharedPreferences = getBaseContext().getSharedPreferences(DATA_FILE,
+		data = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPreferences.edit();
+		SharedPreferences.Editor editor = data.edit();
 		for (String name : app.counters.keySet()) {
 			Log.v("SharedPreferences", "Saving!");
 			editor.putInt(name, app.counters.get(name));
@@ -197,12 +201,12 @@ public class CounterActivity extends FragmentActivity implements
 			editDialogLayout.addView(inflater.inflate(R.layout.edit_dialog, editDialogLayout, false));
 			AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(this);
 			editDialogBuilder
-					.setTitle(getResources().getText(R.string.dialog_title_add))
+					.setTitle(getResources().getText(R.string.dialog_title_edit))
 					.setView(editDialogLayout)
 					.setPositiveButton(getResources().getText(R.string.dialog_button_apply),
 							new OnClickListener() {
 								public void onClick(DialogInterface dialog, int which) {
-									// TODO Add counter
+									// TODO Save counter
 								}
 							})
 					.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);

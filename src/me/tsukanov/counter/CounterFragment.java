@@ -30,7 +30,7 @@ public class CounterFragment extends Fragment {
 	Button incrementButton, decrementButton;
 	Vibrator vibrator;
 
-	SharedPreferences prefs;
+	SharedPreferences settings;
 
 	static CounterFragment newInstance(int id) {
 		CounterFragment fragment = new CounterFragment();
@@ -75,7 +75,7 @@ public class CounterFragment extends Fragment {
 
 		vibrator = (Vibrator) getActivity().getSystemService(
 				Context.VIBRATOR_SERVICE);
-		prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+		settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
 		return view;
 	}
@@ -98,7 +98,7 @@ public class CounterFragment extends Fragment {
 
 	public void increment() {
 		if (counterValue < MAX_VALUE) {
-			if (prefs.getBoolean("vibrationOn", true))
+			if (settings.getBoolean("vibrationOn", true))
 				vibrator.vibrate(DEFAULT_VIBRATION_DURATION);
 			counterLabel.setText(Integer.toString(++counterValue));
 			// TODO Increment in app.counters
@@ -109,7 +109,7 @@ public class CounterFragment extends Fragment {
 
 	public void decrement() {
 		if (counterValue > MIN_VALUE) {
-			if (prefs.getBoolean("vibrationOn", true))
+			if (settings.getBoolean("vibrationOn", true))
 				vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 20);
 			counterLabel.setText(Integer.toString(--counterValue));
 			// TODO Decrement in app.counters
@@ -119,7 +119,7 @@ public class CounterFragment extends Fragment {
 	}
 
 	public void refresh() {
-		if (prefs.getBoolean("vibrationOn", true))
+		if (settings.getBoolean("vibrationOn", true))
 			vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 40);
 		counterValue = DEFALUT_VALUE;
 		counterLabel.setText(Integer.toString(counterValue));
