@@ -87,7 +87,8 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setListNavigationCallbacks(adapter, this);
 		// Restore previously selected element
-		actionBar.setSelectedNavigationItem(app.activePosition);
+		actionBar.setSelectedNavigationItem(settings.getInt("activePosition", 0));
+
 	}
 
 	@Override
@@ -104,12 +105,15 @@ public class CounterActivity extends FragmentActivity implements
 		super.onPause();
 		data = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = data.edit();
+		SharedPreferences.Editor dataEditor = data.edit();
 		for (String name : app.counters.keySet()) {
 			Log.v("SharedPreferences", "Saving!");
-			editor.putInt(name, app.counters.get(name));
-			editor.commit();
+			dataEditor.putInt(name, app.counters.get(name));
+			dataEditor.commit();
 		}
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt("activePosition", app.activePosition);
+		editor.commit();
 	}
 
 	@Override
