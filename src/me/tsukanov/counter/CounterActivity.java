@@ -33,7 +33,7 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_05";
+	private static final String DATA_FILE = "data_dev_22";
 	private static final int DIALOG_ADD = 100;
 	private static final int DIALOG_EDIT = 101;
 	private static final int DIALOG_DELETE = 102;
@@ -44,6 +44,7 @@ public class CounterActivity extends FragmentActivity implements
 	SharedPreferences data, settings;
 	List<String> keys;
 	Map<String, ?> dataMap;
+	ArrayAdapter<String> navigationAdapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,7 @@ public class CounterActivity extends FragmentActivity implements
 		}
 		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
-		
+
 		data = getBaseContext().getSharedPreferences(DATA_FILE,
 				Context.MODE_PRIVATE);
 
@@ -179,11 +180,12 @@ public class CounterActivity extends FragmentActivity implements
 				getResources().getText(R.string.dialog_button_add),
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						app.counters.put(nameInput.getText().toString(),
-								Integer.parseInt(valueInput.getText()
-										.toString()));
+						String name = nameInput.getText().toString();
+						int value = Integer.parseInt(valueInput.getText()
+								.toString());
+						app.counters.put(name, value);
 						recreateNavigation();
-						// TODO Activate that counter
+						actionBar.setSelectedNavigationItem(findPosition(name));
 					}
 				});
 		addDialogBuilder.setNegativeButton(
@@ -208,6 +210,7 @@ public class CounterActivity extends FragmentActivity implements
 		// Name input
 		final EditText nameInput = new EditText(this);
 		nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
+		nameInput.setText(app.activeKey);
 		editDialogLayout.addView(nameInput);
 
 		// Value input label
@@ -222,7 +225,7 @@ public class CounterActivity extends FragmentActivity implements
 		InputFilter[] valueFilter = new InputFilter[1];
 		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
 		valueInput.setFilters(valueFilter);
-		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
+		valueInput.setText(String.valueOf(app.counters.get(app.activeKey)));
 		editDialogLayout.addView(valueInput);
 
 		editDialogBuilder.setView(editDialogLayout);
@@ -230,13 +233,13 @@ public class CounterActivity extends FragmentActivity implements
 				getResources().getText(R.string.dialog_button_apply),
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
+						String name = nameInput.getText().toString();
+						int value = Integer.parseInt(valueInput.getText()
+								.toString());
 						app.counters.remove(app.activeKey);
-						app.counters.put(nameInput.getText().toString(),
-								Integer.parseInt(valueInput.getText()
-										.toString()));
-						app.activeKey = null;
-						saveActivePosition(0);
+						app.counters.put(name, value);
 						recreateNavigation();
+						actionBar.setSelectedNavigationItem(findPosition(name));
 					}
 				});
 		editDialogBuilder.setNegativeButton(
@@ -343,11 +346,12 @@ public class CounterActivity extends FragmentActivity implements
 		for (String key : app.counters.keySet()) {
 			keys.add(key);
 		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		navigationAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, keys);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		navigationAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-		actionBar.setListNavigationCallbacks(adapter, this);
+		actionBar.setListNavigationCallbacks(navigationAdapter, this);
 		// Restore previously selected element
 		actionBar.setSelectedNavigationItem(settings
 				.getInt("activePosition", 0));
@@ -360,6 +364,13 @@ public class CounterActivity extends FragmentActivity implements
 		else
 			sharedEditor.putInt("activePosition", 0);
 		sharedEditor.commit();
+	}
+
+	private int findPosition(String key) {
+		for (int i = 0; i < navigationAdapter.getCount(); i++)
+			if (key.equals(navigationAdapter.getItem(i)))
+				return i;
+		return 0;
 	}
 
 	private int getCharLimit() {

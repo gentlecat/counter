@@ -15,7 +15,7 @@
         android:summary="@string/settings_sounds_summary"
         android:title="@string/settings_sounds_title" />
     <CheckBoxPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="vibrationOn"
         android:summary="@string/settings_vibration_summary"
         android:title="@string/settings_vibration_title" />
