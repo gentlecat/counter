@@ -18,7 +18,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -34,7 +33,7 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_12";
+	private static final String DATA_FILE = "data_dev_05";
 	private static final int DIALOG_ADD = 100;
 	private static final int DIALOG_EDIT = 101;
 	private static final int DIALOG_DELETE = 102;
@@ -44,6 +43,7 @@ public class CounterActivity extends FragmentActivity implements
 	CounterFragment currentFragment;
 	SharedPreferences data, settings;
 	List<String> keys;
+	Map<String, ?> dataMap;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,39 +56,16 @@ public class CounterActivity extends FragmentActivity implements
 		}
 		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
+		
+		data = getBaseContext().getSharedPreferences(DATA_FILE,
+				Context.MODE_PRIVATE);
 
 		app = (CounterApplication) getApplication();
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
 
-		app.counters = new LinkedHashMap<String, Integer>();
-		data = getBaseContext().getSharedPreferences(DATA_FILE,
-				Context.MODE_PRIVATE);
-		Map<String, ?> prefsMap = data.getAll();
-		if (prefsMap.isEmpty()) {
-			app.counters.put(
-					(String) getResources().getText(
-							R.string.default_counter_name),
-					CounterFragment.DEFALUT_VALUE);
-		} else {
-			for (Map.Entry<String, ?> entry : prefsMap.entrySet()) {
-				app.counters.put(entry.getKey(), (Integer) entry.getValue());
-			}
-		}
-
-		keys = new ArrayList<String>();
-		for (String key : app.counters.keySet()) {
-			keys.add(key);
-		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, keys);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-		actionBar.setListNavigationCallbacks(adapter, this);
-		// Restore previously selected element
-		actionBar.setSelectedNavigationItem(settings.getInt("activePosition", 0));
-
+		createNavigation();
 	}
 
 	@Override
@@ -103,17 +80,8 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	protected void onPause() {
 		super.onPause();
-		data = getBaseContext().getSharedPreferences(DATA_FILE,
-				Context.MODE_PRIVATE);
-		SharedPreferences.Editor dataEditor = data.edit();
-		for (String name : app.counters.keySet()) {
-			Log.v("SharedPreferences", "Saving!");
-			dataEditor.putInt(name, app.counters.get(name));
-			dataEditor.commit();
-		}
-		SharedPreferences.Editor editor = settings.edit();
-		editor.putInt("activePosition", app.activePosition);
-		editor.commit();
+		saveData();
+		saveActivePosition(app.activePosition);
 	}
 
 	@Override
@@ -214,7 +182,8 @@ public class CounterActivity extends FragmentActivity implements
 						app.counters.put(nameInput.getText().toString(),
 								Integer.parseInt(valueInput.getText()
 										.toString()));
-						refreshActivity();
+						recreateNavigation();
+						// TODO Activate that counter
 					}
 				});
 		addDialogBuilder.setNegativeButton(
@@ -261,8 +230,13 @@ public class CounterActivity extends FragmentActivity implements
 				getResources().getText(R.string.dialog_button_apply),
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Delete current counter, add modified
-						refreshActivity(); // TODO Rewrite
+						app.counters.remove(app.activeKey);
+						app.counters.put(nameInput.getText().toString(),
+								Integer.parseInt(valueInput.getText()
+										.toString()));
+						app.activeKey = null;
+						saveActivePosition(0);
+						recreateNavigation();
 					}
 				});
 		editDialogBuilder.setNegativeButton(
@@ -280,7 +254,6 @@ public class CounterActivity extends FragmentActivity implements
 						getResources().getText(R.string.dialog_button_delete),
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
-								// TODO Delete counter
 								app.counters.remove(app.activeKey);
 								Toast.makeText(
 										getBaseContext(),
@@ -293,7 +266,8 @@ public class CounterActivity extends FragmentActivity implements
 														.getText(
 																R.string.toast_remove_sucess_2),
 										Toast.LENGTH_SHORT).show();
-								refreshActivity();
+								saveActivePosition(0);
+								recreateNavigation();
 							}
 						})
 				.setNegativeButton(
@@ -335,6 +309,57 @@ public class CounterActivity extends FragmentActivity implements
 		default:
 			return false;
 		}
+	}
+
+	private void recreateNavigation() {
+		saveData();
+		createNavigation();
+	}
+
+	private void saveData() {
+		SharedPreferences.Editor dataEditor = data.edit();
+		dataEditor.clear();
+		for (String name : app.counters.keySet()) {
+			dataEditor.putInt(name, app.counters.get(name));
+		}
+		dataEditor.commit();
+	}
+
+	private void createNavigation() {
+		// Loading counters
+		app.counters = new LinkedHashMap<String, Integer>();
+		dataMap = data.getAll();
+		if (dataMap.isEmpty()) {
+			app.counters.put(
+					(String) getResources().getText(
+							R.string.default_counter_name),
+					CounterFragment.DEFALUT_VALUE);
+		} else {
+			for (Map.Entry<String, ?> entry : dataMap.entrySet())
+				app.counters.put(entry.getKey(), (Integer) entry.getValue());
+		}
+
+		keys = new ArrayList<String>();
+		for (String key : app.counters.keySet()) {
+			keys.add(key);
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, keys);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		actionBar.setListNavigationCallbacks(adapter, this);
+		// Restore previously selected element
+		actionBar.setSelectedNavigationItem(settings
+				.getInt("activePosition", 0));
+	}
+
+	private void saveActivePosition(int position) {
+		SharedPreferences.Editor sharedEditor = settings.edit();
+		if (position < app.counters.size())
+			sharedEditor.putInt("activePosition", position);
+		else
+			sharedEditor.putInt("activePosition", 0);
+		sharedEditor.commit();
 	}
 
 	private int getCharLimit() {

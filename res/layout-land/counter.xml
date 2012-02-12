@@ -16,14 +16,15 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:orientation="vertical" >
-
+
             <TextView
                 android:id="@+id/counterLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:text="@string/value_placeholder"
                 android:textAppearance="@style/counter_value" />
+
         </LinearLayout>
 
         <LinearLayout
