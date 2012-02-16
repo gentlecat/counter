@@ -23,14 +23,14 @@ import com.actionbarsherlock.view.MenuItem;
 
 public class CounterFragment extends Fragment {
 	
-	// TODO Dynamically change counter text size and remove up limit
-	public static final int MAX_VALUE = 999; // Space limit
-	public static final int MIN_VALUE = 0;
-	public static final int DEFALUT_VALUE = MIN_VALUE;
+	// TODO Dynamically change counter text size and remove limit
+	private static final int MAX_VALUE = 999, // Space limit
+							MIN_VALUE = 0,
+							DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
-	private static final Integer INCREMENT_SOUND = 200;
-	private static final Integer DECREMENT_SOUND = 201;
-	private static final Integer REFRESH_SOUND = 202;
+	private static final int INCREMENT_SOUND = 200,
+							 DECREMENT_SOUND = 201,
+							 REFRESH_SOUND = 202;
 
 	int counterValue;
 
@@ -42,14 +42,16 @@ public class CounterFragment extends Fragment {
 	SharedPreferences settings;
 	SoundPool soundPool;
 	HashMap<Integer, Integer> soundsMap;
+	
+	public int getMaxValue() { return MAX_VALUE; }
+	public int getMinValue() { return MIN_VALUE; }
+	public int getDefaultValue() { return DEFALUT_VALUE; }
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
-
 		app = (CounterApplication) getActivity().getApplication();
-
 	}
 
 	@Override
@@ -68,14 +70,10 @@ public class CounterFragment extends Fragment {
 		setValue(app.counters.get(app.activeKey));
 
 		(incrementButton).setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				increment();
-			}
+			public void onClick(View v) { increment(); }
 		});
 		(decrementButton).setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				decrement();
-			}
+			public void onClick(View v) { decrement(); }
 		});
 
 		getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
@@ -90,7 +88,7 @@ public class CounterFragment extends Fragment {
 
 		return view;
 	}
-
+	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.counter_menu, menu);
@@ -106,51 +104,42 @@ public class CounterFragment extends Fragment {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-
+	
 	public void increment() {
 		if (counterValue < MAX_VALUE) {
-			if (settings.getBoolean("vibrationOn", true))
-				vibrator.vibrate(DEFAULT_VIBRATION_DURATION);
+			vibrate(DEFAULT_VIBRATION_DURATION);
 			playSound(INCREMENT_SOUND);
-			counterLabel.setText(Integer.toString(++counterValue));
-			saveCounter();
-			updateButtons();
+			setValue(++counterValue);
 		}
-	}
-
-	private void saveCounter() {
-		app.counters.remove(app.activeKey);
-		app.counters.put(app.activeKey, counterValue);
 	}
 
 	public void decrement() {
 		if (counterValue > MIN_VALUE) {
-			if (settings.getBoolean("vibrationOn", true))
-				vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 20);
+			vibrate(DEFAULT_VIBRATION_DURATION + 20);
 			playSound(DECREMENT_SOUND);
-			counterLabel.setText(Integer.toString(--counterValue));
-			saveCounter();
-			updateButtons();
+			setValue(--counterValue);
 		}
 	}
 
 	public void refresh() {
-		if (settings.getBoolean("vibrationOn", true))
-			vibrator.vibrate(DEFAULT_VIBRATION_DURATION + 40);
+		vibrate(DEFAULT_VIBRATION_DURATION + 40);
 		playSound(REFRESH_SOUND);
-		counterValue = DEFALUT_VALUE;
-		counterLabel.setText(Integer.toString(counterValue));
-		saveCounter();
-		updateButtons(); // TODO Check if needed later
+		setValue(DEFALUT_VALUE);
 	}
-
+	
 	public void setValue(int value) {
 		counterValue = value;
-		counterLabel.setText(Integer.toString(counterValue));
-		updateButtons();
+		counterLabel.setText(Integer.toString(value));		
+		checkButtons();
+		saveValue();
+	}
+		
+	private void saveValue() {
+		app.counters.remove(app.activeKey);
+		app.counters.put(app.activeKey, counterValue);		
 	}
 
-	private void updateButtons() {
+	private void checkButtons() {
 		if (counterValue >= MAX_VALUE)
 			incrementButton.setEnabled(false);
 		else
@@ -160,6 +149,11 @@ public class CounterFragment extends Fragment {
 			decrementButton.setEnabled(false);
 		else
 			decrementButton.setEnabled(true);
+	}
+	
+	private void vibrate(long duration) {
+		if (settings.getBoolean("vibrationOn", true))
+			vibrator.vibrate(duration);		
 	}
 
 	private void playSound(int soundID) {

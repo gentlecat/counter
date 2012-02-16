@@ -33,10 +33,10 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_22";
-	private static final int DIALOG_ADD = 100;
-	private static final int DIALOG_EDIT = 101;
-	private static final int DIALOG_DELETE = 102;
+	private static final String DATA_FILE = "data_dev_30";
+	private static final int DIALOG_ADD = 100,
+							 DIALOG_EDIT = 101,
+							 DIALOG_DELETE = 102;
 
 	CounterApplication app;
 	ActionBar actionBar;
@@ -57,14 +57,10 @@ public class CounterActivity extends FragmentActivity implements
 		}
 		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
-
-		data = getBaseContext().getSharedPreferences(DATA_FILE,
-				Context.MODE_PRIVATE);
-
+		data = getBaseContext().getSharedPreferences(DATA_FILE,	Context.MODE_PRIVATE);
 		app = (CounterApplication) getApplication();
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
-
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		createNavigation();
 	}
@@ -90,8 +86,7 @@ public class CounterActivity extends FragmentActivity implements
 		app.activeKey = keys.get(itemPosition);
 		app.activePosition = itemPosition;
 		currentFragment = new CounterFragment();
-		getSupportFragmentManager().beginTransaction()
-				.replace(android.R.id.content, currentFragment).commit();
+		getSupportFragmentManager().beginTransaction().replace(android.R.id.content, currentFragment).commit();
 		return true;
 	}
 
@@ -172,7 +167,7 @@ public class CounterActivity extends FragmentActivity implements
 		InputFilter[] valueFilter = new InputFilter[1];
 		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
 		valueInput.setFilters(valueFilter);
-		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
+		valueInput.setText(String.valueOf(currentFragment.getDefaultValue()));
 		addDialogLayout.addView(valueInput);
 
 		addDialogBuilder.setView(addDialogLayout);
@@ -333,10 +328,7 @@ public class CounterActivity extends FragmentActivity implements
 		app.counters = new LinkedHashMap<String, Integer>();
 		dataMap = data.getAll();
 		if (dataMap.isEmpty()) {
-			app.counters.put(
-					(String) getResources().getText(
-							R.string.default_counter_name),
-					CounterFragment.DEFALUT_VALUE);
+			app.counters.put((String) getResources().getText(R.string.default_counter_name), currentFragment.getDefaultValue());
 		} else {
 			for (Map.Entry<String, ?> entry : dataMap.entrySet())
 				app.counters.put(entry.getKey(), (Integer) entry.getValue());
@@ -374,7 +366,7 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 	private int getCharLimit() {
-		return String.valueOf(CounterFragment.MAX_VALUE).length();
+		return String.valueOf(currentFragment.getMaxValue()).length();
 	}
 
 	private void refreshActivity() {
