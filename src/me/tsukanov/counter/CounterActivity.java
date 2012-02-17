@@ -33,18 +33,19 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_30";
-	private static final int DIALOG_ADD = 100,
-							 DIALOG_EDIT = 101,
-							 DIALOG_DELETE = 102;
+	private static final String DATA_FILE = "data_dev_20";
+	private static final int DIALOG_ADD = 100;
+	private static final int DIALOG_EDIT = 101;
+	private static final int DIALOG_DELETE = 102;
 
-	CounterApplication app;
-	ActionBar actionBar;
-	CounterFragment currentFragment;
-	SharedPreferences data, settings;
-	List<String> keys;
-	Map<String, ?> dataMap;
-	ArrayAdapter<String> navigationAdapter;
+	CounterApplication app = null;
+	ActionBar actionBar = null;
+	CounterFragment currentFragment = null;
+	SharedPreferences data = null;
+	SharedPreferences settings = null;
+	List<String> keys = null;
+	Map<String, ?> dataMap = null;
+	ArrayAdapter<String> navigationAdapter = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

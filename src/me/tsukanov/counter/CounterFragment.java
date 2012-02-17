@@ -24,24 +24,25 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterFragment extends Fragment {
 	
 	// TODO Dynamically change counter text size and remove limit
-	private static final int MAX_VALUE = 999, // Space limit
-							MIN_VALUE = 0,
-							DEFALUT_VALUE = MIN_VALUE;
+	private static final int MAX_VALUE = 999; // Space limit
+	private static final int MIN_VALUE = 0;
+	private static final int DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
-	private static final int INCREMENT_SOUND = 200,
-							 DECREMENT_SOUND = 201,
-							 REFRESH_SOUND = 202;
+	private static final int INCREMENT_SOUND = 200;
+	private static final int DECREMENT_SOUND = 201;
+	private static final int REFRESH_SOUND = 202;
 
-	int counterValue;
+	int counterValue = DEFALUT_VALUE;
 
-	CounterApplication app;
-	TextView counterLabel;
-	Button incrementButton, decrementButton;
-	Vibrator vibrator;
+	CounterApplication app = null;
+	TextView counterLabel = null;
+	Button incrementButton = null;
+	Button decrementButton = null;
+	Vibrator vibrator = null;
 
-	SharedPreferences settings;
-	SoundPool soundPool;
-	HashMap<Integer, Integer> soundsMap;
+	SharedPreferences settings = null;
+	SoundPool soundPool = null;
+	HashMap<Integer, Integer> soundsMap = null;
 	
 	public int getMaxValue() { return MAX_VALUE; }
 	public int getMinValue() { return MIN_VALUE; }
@@ -131,10 +132,14 @@ public class CounterFragment extends Fragment {
 		counterValue = value;
 		counterLabel.setText(Integer.toString(value));		
 		checkButtons();
-		saveValue();
+		saveValue(); // That's probably not effective
 	}
 		
 	private void saveValue() {
+		/*
+		 *  TODO Investigate
+		 *  Saving value onPause() is not working properly
+		 */
 		app.counters.remove(app.activeKey);
 		app.counters.put(app.activeKey, counterValue);		
 	}
