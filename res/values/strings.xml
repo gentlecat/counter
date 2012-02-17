@@ -12,7 +12,6 @@
     <string name="menu_add">Add</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
-    <string name="menu_help">Help</string>
     <string name="menu_settings">Settings</string>
     
     <!-- Dialogs -->
@@ -51,8 +50,7 @@
     <string name="settings_version_title">Version</string>
     
     <!-- Something else -->
-    <string name="info_content">There should be some useful information</string>
-    <string name="toast_wipe_success">Data has been removed.</string>
+    <string name="toast_wipe_success">All data has been removed.</string>
     <string name="toast_remove_sucess_1">Counter</string>
     <string name="toast_remove_sucess_2">has been removed.</string>
     <string name="default_counter_name">First</string>
