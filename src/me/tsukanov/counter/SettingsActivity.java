@@ -38,15 +38,15 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 		themePreference = (ListPreference) prefScreen.findPreference("theme");
 		themePreference.setOnPreferenceChangeListener(this);
 
-		String app_version = (String) getResources().getText(R.string.unknown);
+		String version = (String) getResources().getText(R.string.unknown);
 		try {
-			app_version = this.getPackageManager().getPackageInfo(
+			version = this.getPackageManager().getPackageInfo(
 					this.getPackageName(), 0).versionName;
 		} catch (NameNotFoundException e) {
 			e.printStackTrace();
 		}
-		Preference version = findPreference("version");
-		version.setSummary(app_version);
+		Preference versionPref = findPreference("version");
+		versionPref.setSummary(version);
 
 		getPreferenceManager().findPreference("clearData")
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {

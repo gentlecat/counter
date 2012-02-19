@@ -33,7 +33,7 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_20";
+	private static final String DATA_FILE = "data_dev_750";
 	private static final int DIALOG_ADD = 100;
 	private static final int DIALOG_EDIT = 101;
 	private static final int DIALOG_DELETE = 102;
@@ -168,7 +168,7 @@ public class CounterActivity extends FragmentActivity implements
 		InputFilter[] valueFilter = new InputFilter[1];
 		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
 		valueInput.setFilters(valueFilter);
-		valueInput.setText(String.valueOf(currentFragment.getDefaultValue()));
+		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
 		addDialogLayout.addView(valueInput);
 
 		addDialogBuilder.setView(addDialogLayout);
@@ -191,8 +191,7 @@ public class CounterActivity extends FragmentActivity implements
 
 	private Builder getEditDialog() {
 		AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(this);
-		editDialogBuilder.setTitle(getResources().getText(
-				R.string.dialog_edit_title));
+		editDialogBuilder.setTitle(getResources().getText(R.string.dialog_edit_title));
 
 		LinearLayout editDialogLayout = (LinearLayout) getLayoutInflater()
 				.inflate(R.layout.editor_layout, null);
@@ -226,56 +225,44 @@ public class CounterActivity extends FragmentActivity implements
 
 		editDialogBuilder.setView(editDialogLayout);
 		editDialogBuilder.setPositiveButton(
-				getResources().getText(R.string.dialog_button_apply),
+			getResources().getText(R.string.dialog_button_apply),
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						String name = nameInput.getText().toString();
-						int value = Integer.parseInt(valueInput.getText()
-								.toString());
+						int value = Integer.parseInt(valueInput.getText().toString());
 						app.counters.remove(app.activeKey);
 						app.counters.put(name, value);
 						recreateNavigation();
 						actionBar.setSelectedNavigationItem(findPosition(name));
-					}
-				});
-		editDialogBuilder.setNegativeButton(
-				getResources().getText(R.string.dialog_button_cancel), null);
+				}
+			});
+		editDialogBuilder.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
 		return editDialogBuilder;
 	}
 
 	private Builder getDeleteDialog() {
 		AlertDialog.Builder deleteDialogBuilder = new AlertDialog.Builder(this);
-		deleteDialogBuilder
-				.setMessage(
-						getResources().getText(R.string.dialog_delete_title))
-				.setCancelable(false)
-				.setPositiveButton(
-						getResources().getText(R.string.dialog_button_delete),
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								app.counters.remove(app.activeKey);
-								Toast.makeText(
-										getBaseContext(),
-										getResources().getText(
-												R.string.toast_remove_sucess_1)
-												+ " \""
-												+ app.activeKey
-												+ "\" "
-												+ getResources()
-														.getText(
-																R.string.toast_remove_sucess_2),
-										Toast.LENGTH_SHORT).show();
-								saveActivePosition(0);
-								recreateNavigation();
-							}
-						})
-				.setNegativeButton(
-						getResources().getText(R.string.dialog_button_cancel),
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
+		deleteDialogBuilder.setMessage(getResources().getText(R.string.dialog_delete_title))
+			.setCancelable(false)
+			.setPositiveButton(getResources().getText(R.string.dialog_button_delete),
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						app.counters.remove(app.activeKey);
+						Toast.makeText(getBaseContext(),
+							getResources().getText(R.string.toast_remove_sucess_1)
+								+ " \"" + app.activeKey + "\" "
+								+ getResources().getText(R.string.toast_remove_sucess_2),
+							Toast.LENGTH_SHORT).show();
+						saveActivePosition(0);
+						recreateNavigation();
+					}
+				})
+			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel),
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
 		return deleteDialogBuilder;
 	}
 
@@ -329,7 +316,7 @@ public class CounterActivity extends FragmentActivity implements
 		app.counters = new LinkedHashMap<String, Integer>();
 		dataMap = data.getAll();
 		if (dataMap.isEmpty()) {
-			app.counters.put((String) getResources().getText(R.string.default_counter_name), currentFragment.getDefaultValue());
+			app.counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFALUT_VALUE);
 		} else {
 			for (Map.Entry<String, ?> entry : dataMap.entrySet())
 				app.counters.put(entry.getKey(), (Integer) entry.getValue());
@@ -339,10 +326,10 @@ public class CounterActivity extends FragmentActivity implements
 		for (String key : app.counters.keySet()) {
 			keys.add(key);
 		}
-		navigationAdapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, keys);
-		navigationAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		int layoutRes = R.layout.sherlock_spinner_item;
+		int dropRes = android.R.layout.simple_spinner_dropdown_item;
+		navigationAdapter = new ArrayAdapter<String>(this, layoutRes, keys);
+		navigationAdapter.setDropDownViewResource(dropRes);
 
 		actionBar.setListNavigationCallbacks(navigationAdapter, this);
 		// Restore previously selected element
@@ -367,7 +354,7 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 	private int getCharLimit() {
-		return String.valueOf(currentFragment.getMaxValue()).length();
+		return String.valueOf(CounterFragment.MAX_VALUE).length();
 	}
 
 	private void refreshActivity() {

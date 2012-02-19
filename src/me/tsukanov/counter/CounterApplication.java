@@ -1,6 +1,7 @@
 package me.tsukanov.counter;
 
 import java.util.LinkedHashMap;
+
 import android.app.Application;
 
 public class CounterApplication extends Application {

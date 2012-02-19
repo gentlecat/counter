@@ -24,9 +24,9 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterFragment extends Fragment {
 	
 	// TODO Dynamically change counter text size and remove limit
-	private static final int MAX_VALUE = 999; // Space limit
-	private static final int MIN_VALUE = 0;
-	private static final int DEFALUT_VALUE = MIN_VALUE;
+	public static final int MAX_VALUE = 999; // Space limit
+	public static final int MIN_VALUE = 0;
+	public static final int DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
 	private static final int INCREMENT_SOUND = 200;
 	private static final int DECREMENT_SOUND = 201;
@@ -43,10 +43,6 @@ public class CounterFragment extends Fragment {
 	SharedPreferences settings = null;
 	SoundPool soundPool = null;
 	HashMap<Integer, Integer> soundsMap = null;
-	
-	public int getMaxValue() { return MAX_VALUE; }
-	public int getMinValue() { return MIN_VALUE; }
-	public int getDefaultValue() { return DEFALUT_VALUE; }
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -145,15 +141,12 @@ public class CounterFragment extends Fragment {
 	}
 
 	private void checkButtons() {
-		if (counterValue >= MAX_VALUE)
-			incrementButton.setEnabled(false);
-		else
-			incrementButton.setEnabled(true);
-
-		if (counterValue <= MIN_VALUE)
-			decrementButton.setEnabled(false);
-		else
-			decrementButton.setEnabled(true);
+		// Increment button
+		if (counterValue >= MAX_VALUE) incrementButton.setEnabled(false);
+		else incrementButton.setEnabled(true);
+		// Decrement button
+		if (counterValue <= MIN_VALUE) decrementButton.setEnabled(false);
+		else decrementButton.setEnabled(true);
 	}
 	
 	private void vibrate(long duration) {
