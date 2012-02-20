@@ -257,12 +257,7 @@ public class CounterActivity extends FragmentActivity implements
 						recreateNavigation();
 					}
 				})
-			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel),
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-						dialog.cancel();
-					}
-				});
+			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
 		return deleteDialogBuilder;
 	}
 
