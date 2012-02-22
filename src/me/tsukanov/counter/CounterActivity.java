@@ -16,8 +16,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
-import android.text.InputFilter;
 import android.text.InputType;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -33,10 +33,10 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data_dev_750";
-	private static final int DIALOG_ADD = 100;
-	private static final int DIALOG_EDIT = 101;
-	private static final int DIALOG_DELETE = 102;
+	static final String DATA_FILE = "data";
+	static final int DIALOG_ADD = 100;
+	static final int DIALOG_EDIT = 101;
+	static final int DIALOG_DELETE = 102;
 
 	CounterApplication app = null;
 	ActionBar actionBar = null;
@@ -64,6 +64,8 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setDisplayShowTitleEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		createNavigation();
+		
+		Log.v("Activities", "Counter activity created");
 	}
 
 	@Override
@@ -73,6 +75,7 @@ public class CounterActivity extends FragmentActivity implements
 			app.isUpdateNeeded = false;
 			refreshActivity();
 		}
+		Log.v("Activities", "Counter activity resumed");
 	}
 
 	@Override
@@ -80,6 +83,37 @@ public class CounterActivity extends FragmentActivity implements
 		super.onPause();
 		saveData();
 		saveActivePosition(app.activePosition);
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_VOLUME_UP:
+			if (prefs.getBoolean("hardControlOn", true)) {
+				currentFragment.increment();
+				return true;
+			}
+			return false;
+		case KeyEvent.KEYCODE_VOLUME_DOWN:
+			if (prefs.getBoolean("hardControlOn", true)) {
+				currentFragment.decrement();
+				return true;
+			}
+			return false;
+		case KeyEvent.KEYCODE_CAMERA:
+			if (prefs.getBoolean("hardControlOn", true)) {
+				currentFragment.refresh();
+				return true;
+			}
+			return false;
+		case KeyEvent.KEYCODE_BACK:
+			finish();
+			return true;
+		default:
+			return false;
+		}
 	}
 
 	@Override
@@ -165,15 +199,12 @@ public class CounterActivity extends FragmentActivity implements
 		// Value input
 		final EditText valueInput = new EditText(this);
 		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-		InputFilter[] valueFilter = new InputFilter[1];
-		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
-		valueInput.setFilters(valueFilter);
 		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
 		addDialogLayout.addView(valueInput);
 
-		addDialogBuilder.setView(addDialogLayout);
-		addDialogBuilder.setPositiveButton(
-				getResources().getText(R.string.dialog_button_add),
+		addDialogBuilder
+			.setView(addDialogLayout)
+			.setPositiveButton(getResources().getText(R.string.dialog_button_add),
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						String name = nameInput.getText().toString();
@@ -183,9 +214,8 @@ public class CounterActivity extends FragmentActivity implements
 						recreateNavigation();
 						actionBar.setSelectedNavigationItem(findPosition(name));
 					}
-				});
-		addDialogBuilder.setNegativeButton(
-				getResources().getText(R.string.dialog_button_cancel), null);
+				})
+			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
 		return addDialogBuilder;
 	}
 
@@ -217,15 +247,12 @@ public class CounterActivity extends FragmentActivity implements
 		// Value input
 		final EditText valueInput = new EditText(this);
 		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-		InputFilter[] valueFilter = new InputFilter[1];
-		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
-		valueInput.setFilters(valueFilter);
 		valueInput.setText(String.valueOf(app.counters.get(app.activeKey)));
 		editDialogLayout.addView(valueInput);
 
-		editDialogBuilder.setView(editDialogLayout);
-		editDialogBuilder.setPositiveButton(
-			getResources().getText(R.string.dialog_button_apply),
+		editDialogBuilder
+			.setView(editDialogLayout)
+			.setPositiveButton(getResources().getText(R.string.dialog_button_apply),
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						String name = nameInput.getText().toString();
@@ -234,15 +261,16 @@ public class CounterActivity extends FragmentActivity implements
 						app.counters.put(name, value);
 						recreateNavigation();
 						actionBar.setSelectedNavigationItem(findPosition(name));
-				}
-			});
-		editDialogBuilder.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
+					}
+				})
+			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
 		return editDialogBuilder;
 	}
 
 	private Builder getDeleteDialog() {
 		AlertDialog.Builder deleteDialogBuilder = new AlertDialog.Builder(this);
-		deleteDialogBuilder.setMessage(getResources().getText(R.string.dialog_delete_title))
+		deleteDialogBuilder
+			.setMessage(getResources().getText(R.string.dialog_delete_title))
 			.setCancelable(false)
 			.setPositiveButton(getResources().getText(R.string.dialog_button_delete),
 				new DialogInterface.OnClickListener() {
@@ -261,37 +289,6 @@ public class CounterActivity extends FragmentActivity implements
 		return deleteDialogBuilder;
 	}
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		SharedPreferences prefs = PreferenceManager
-				.getDefaultSharedPreferences(this);
-		switch (keyCode) {
-		case KeyEvent.KEYCODE_VOLUME_UP:
-			if (prefs.getBoolean("hardControlOn", true)) {
-				currentFragment.increment();
-				return true;
-			}
-			return false;
-		case KeyEvent.KEYCODE_VOLUME_DOWN:
-			if (prefs.getBoolean("hardControlOn", true)) {
-				currentFragment.decrement();
-				return true;
-			}
-			return false;
-		case KeyEvent.KEYCODE_CAMERA:
-			if (prefs.getBoolean("hardControlOn", true)) {
-				currentFragment.refresh();
-				return true;
-			}
-			return false;
-		case KeyEvent.KEYCODE_BACK:
-			finish();
-			return true;
-		default:
-			return false;
-		}
-	}
-
 	private void recreateNavigation() {
 		saveData();
 		createNavigation();
@@ -304,6 +301,7 @@ public class CounterActivity extends FragmentActivity implements
 			dataEditor.putInt(name, app.counters.get(name));
 		}
 		dataEditor.commit();
+		Log.v("Data", "Data saved");
 	}
 
 	private void createNavigation() {
@@ -311,7 +309,8 @@ public class CounterActivity extends FragmentActivity implements
 		app.counters = new LinkedHashMap<String, Integer>();
 		dataMap = data.getAll();
 		if (dataMap.isEmpty()) {
-			app.counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFALUT_VALUE);
+			app.counters.put((String) getResources().getText(R.string.default_counter_name),
+					CounterFragment.DEFALUT_VALUE);
 		} else {
 			for (Map.Entry<String, ?> entry : dataMap.entrySet())
 				app.counters.put(entry.getKey(), (Integer) entry.getValue());
@@ -330,6 +329,8 @@ public class CounterActivity extends FragmentActivity implements
 		// Restore previously selected element
 		actionBar.setSelectedNavigationItem(settings
 				.getInt("activePosition", 0));
+		
+		Log.v("Action Bar", "Navigation created");
 	}
 
 	private void saveActivePosition(int position) {
@@ -339,6 +340,8 @@ public class CounterActivity extends FragmentActivity implements
 		else
 			sharedEditor.putInt("activePosition", 0);
 		sharedEditor.commit();
+		
+		Log.v("Action Bar", "Active position set to " + position);
 	}
 
 	private int findPosition(String key) {
@@ -348,14 +351,11 @@ public class CounterActivity extends FragmentActivity implements
 		return 0;
 	}
 
-	private int getCharLimit() {
-		return String.valueOf(CounterFragment.MAX_VALUE).length();
-	}
-
 	private void refreshActivity() {
 		Intent intent = getIntent();
 		finish();
 		startActivity(intent);
+		Log.v("Activities", "Activity refreshed");
 	}
 
 }

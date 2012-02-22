@@ -8,6 +8,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -18,7 +19,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 		OnPreferenceChangeListener {
 
 	CounterApplication app = null;
-	Intent starterintent = null;
+	Intent starterIntent = null;
 	ActionBar actionBar = null;
 
 	ListPreference themePreference = null;
@@ -30,7 +31,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 		addPreferencesFromResource(R.xml.settings);
 
 		app = (CounterApplication) getApplication();
-		starterintent = getIntent();
+		starterIntent = getIntent();
 
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
@@ -60,6 +61,8 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 						return true;
 					}
 				});
+		
+		Log.v("Activities", "Settings activity created");
 	}
 
 	@Override
@@ -74,7 +77,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 			}
 			// Restarting activity to activate selected theme in it
 			finish();
-			startActivity(starterintent);
+			startActivity(starterIntent);
 			return true;
 		}
 		return false;

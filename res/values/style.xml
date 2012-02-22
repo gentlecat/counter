@@ -10,7 +10,7 @@
     </style>
 
     <style name="decrement_button">
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">20dp</item>
     </style>
 
     <style name="editor_style">
