@@ -5,6 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import me.tsukanov.counter.ui.CounterApplication;
+import me.tsukanov.counter.ui.CounterFragment;
+import me.tsukanov.counter.ui.SettingsActivity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -16,6 +19,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -199,7 +203,10 @@ public class CounterActivity extends FragmentActivity implements
 		// Value input
 		final EditText valueInput = new EditText(this);
 		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-		valueInput.setText(String.valueOf(CounterFragment.DEFALUT_VALUE));
+		valueInput.setText(String.valueOf(CounterFragment.getDefaultValue()));
+		InputFilter[] valueFilter = new InputFilter[1];
+		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
+		valueInput.setFilters(valueFilter);
 		addDialogLayout.addView(valueInput);
 
 		addDialogBuilder
@@ -248,6 +255,9 @@ public class CounterActivity extends FragmentActivity implements
 		final EditText valueInput = new EditText(this);
 		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
 		valueInput.setText(String.valueOf(app.counters.get(app.activeKey)));
+		InputFilter[] valueFilter = new InputFilter[1];
+		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
+		valueInput.setFilters(valueFilter);
 		editDialogLayout.addView(valueInput);
 
 		editDialogBuilder
@@ -288,6 +298,10 @@ public class CounterActivity extends FragmentActivity implements
 			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
 		return deleteDialogBuilder;
 	}
+	
+	private int getCharLimit() {
+		return String.valueOf(CounterFragment.getMaxValue()).length();
+	}
 
 	private void recreateNavigation() {
 		saveData();
@@ -310,7 +324,7 @@ public class CounterActivity extends FragmentActivity implements
 		dataMap = data.getAll();
 		if (dataMap.isEmpty()) {
 			app.counters.put((String) getResources().getText(R.string.default_counter_name),
-					CounterFragment.DEFALUT_VALUE);
+					CounterFragment.getDefaultValue());
 		} else {
 			for (Map.Entry<String, ?> entry : dataMap.entrySet())
 				app.counters.put(entry.getKey(), (Integer) entry.getValue());
