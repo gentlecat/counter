@@ -7,10 +7,12 @@ Simple Counter is an Android application that can help you count anything. You c
 What was used
 -------------
 * [ActionBarSherlock][2] by [Jake Wharton][3]
-* Sounds from [adobeflash.com][4]
+* 'AutoResizeTextView' created by [Chase Colburn][4]
+* Sounds from [adobeflash.com][5]
 
 
   [1]: http://tsukanov.me/stuff/simple-counter/art.png
   [2]: http://actionbarsherlock.com/
   [3]: http://jakewharton.com/
-  [4]: http://www.adobeflash.com/download/sounds/clicks/
+  [4]: http://stackoverflow.com/a/5535672/272770
+  [5]: http://www.adobeflash.com/download/sounds/clicks/

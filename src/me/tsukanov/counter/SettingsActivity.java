@@ -18,11 +18,11 @@ import com.actionbarsherlock.view.MenuItem;
 public class SettingsActivity extends SherlockPreferenceActivity implements
 		OnPreferenceChangeListener {
 
-	CounterApplication app = null;
-	Intent starterIntent = null;
-	ActionBar actionBar = null;
+	CounterApplication app;
+	Intent starterIntent;
+	ActionBar actionBar;
 
-	ListPreference themePreference = null;
+	ListPreference themePreference;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

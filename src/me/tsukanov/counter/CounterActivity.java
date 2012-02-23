@@ -38,14 +38,14 @@ public class CounterActivity extends FragmentActivity implements
 	static final int DIALOG_EDIT = 101;
 	static final int DIALOG_DELETE = 102;
 
-	CounterApplication app = null;
-	ActionBar actionBar = null;
-	CounterFragment currentFragment = null;
-	SharedPreferences data = null;
-	SharedPreferences settings = null;
-	List<String> keys = null;
-	Map<String, ?> dataMap = null;
-	ArrayAdapter<String> navigationAdapter = null;
+	CounterApplication app;
+	ActionBar actionBar;
+	CounterFragment currentFragment;
+	SharedPreferences data;
+	SharedPreferences settings;
+	List<String> keys;
+	Map<String, ?> dataMap;
+	ArrayAdapter<String> navigationAdapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

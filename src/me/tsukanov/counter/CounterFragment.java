@@ -16,8 +16,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
@@ -33,15 +31,16 @@ public class CounterFragment extends Fragment {
 	static final int REFRESH_SOUND = 202;
 
 	int counterValue = DEFALUT_VALUE;
-	CounterApplication app = null;
-	SharedPreferences settings = null;
-	Vibrator vibrator = null;
-	SoundPool soundPool = null;	
-	HashMap<Integer, Integer> soundsMap = null;
+	CounterApplication app;
+	SharedPreferences settings;
+	Vibrator vibrator;
+	SoundPool soundPool;	
+	HashMap<Integer, Integer> soundsMap;
 	
-	TextView counterLabel = null;
-	Button incrementButton = null;
-	Button decrementButton = null;
+	AutoResizeTextView counterLabel;
+	Button incrementButton;
+	Button decrementButton;
+	float defaultTextSize;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +66,7 @@ public class CounterFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 
 		View view = inflater.inflate(R.layout.counter, container, false);
-		counterLabel = (TextView) view.findViewById(R.id.counterLabel);
+		counterLabel = (AutoResizeTextView) view.findViewById(R.id.counterLabel);
 		incrementButton = (Button) view.findViewById(R.id.incrementButton);
 		incrementButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) { increment(); }
@@ -77,7 +76,8 @@ public class CounterFragment extends Fragment {
 			public void onClick(View v) { decrement(); }
 		});		
 		
-		setValue(app.counters.get(app.activeKey));		
+		defaultTextSize = counterLabel.getTextSize();
+		setValue(app.counters.get(app.activeKey));	
 		return view;
 	}
 	
@@ -119,9 +119,8 @@ public class CounterFragment extends Fragment {
 	
 	public void setValue(int value) {
 		counterValue = value;
-		counterLabel.setText(Integer.toString(value));		
+		counterLabel.setText(Integer.toString(value));
 		checkButtons();
-		checkTextSize();
 		saveValue(); // That's probably not effective
 		Log.v("Counters", "Set value " + counterValue + " to \"" + app.activeKey + "\"");
 	}
@@ -140,21 +139,6 @@ public class CounterFragment extends Fragment {
 		// Decrement button
 		if (counterValue <= MIN_VALUE) decrementButton.setEnabled(false);
 		else decrementButton.setEnabled(true);
-	}
-	
-	private void checkTextSize() {
-		int valueLength = String.valueOf(counterValue).length();
-		if (valueLength > 3) {
-			// TODO Implement text size updater
-		}		
-		
-		// TEST CODE
-		int counterTextWidth = counterLabel.getWidth();
-		int counterTextHeight = counterLabel.getHeight();
-		counterTextWidth = counterLabel.getWidth();
-		Toast.makeText(getActivity(),
-				counterTextWidth+", "+counterTextHeight,
-				Toast.LENGTH_SHORT).show();
 	}
 	
 	private void vibrate(long duration) {
