@@ -6,16 +6,31 @@ import me.tsukanov.counter.R;
 import android.app.Application;
 
 public class CounterApplication extends Application {
-
+	
+	/*
+	 * Counters
+	 * 	String = Name
+	 * 	Integer = Value
+	 */
 	public LinkedHashMap<String, Integer> counters = null;
+	
+	// Active theme
 	public static int theme = 0;
+	
+	// Active counter's ID based on LinkedHashMap order
 	public int activePosition = 0;
-	public String activeKey = null;	
+	
+	// Active counter's name (key string in LinkedHashMap)
+	public String activeKey = null;
+	
+	// True if theme was changed or/and data removed.
 	public boolean isUpdateNeeded = false;
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		theme = R.style.Theme_Sherlock_Light_DarkActionBar;
+		
+		// Set default theme
+		theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark
 	}
 }

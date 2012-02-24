@@ -37,10 +37,10 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	static final String DATA_FILE = "data";
-	static final int DIALOG_ADD = 100;
-	static final int DIALOG_EDIT = 101;
-	static final int DIALOG_DELETE = 102;
+	private static final String DATA_FILE = "data";
+	private static final int DIALOG_ADD = 100;
+	private static final int DIALOG_EDIT = 101;
+	private static final int DIALOG_DELETE = 102;
 
 	CounterApplication app;
 	ActionBar actionBar;
@@ -341,8 +341,7 @@ public class CounterActivity extends FragmentActivity implements
 
 		actionBar.setListNavigationCallbacks(navigationAdapter, this);
 		// Restore previously selected element
-		actionBar.setSelectedNavigationItem(settings
-				.getInt("activePosition", 0));
+		actionBar.setSelectedNavigationItem(settings.getInt("activePosition", 0));
 		
 		Log.v("Action Bar", "Navigation created");
 	}
