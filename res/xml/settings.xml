@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ListPreference
-        android:defaultValue="light"
+        android:defaultValue="dark"
         android:entries="@array/settings_themes_entries"
         android:entryValues="@array/settings_themes_entry_values"
         android:key="theme"
