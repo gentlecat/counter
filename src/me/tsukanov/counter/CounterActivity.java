@@ -1,9 +1,7 @@
 package me.tsukanov.counter;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import me.tsukanov.counter.ui.CounterApplication;
 import me.tsukanov.counter.ui.CounterFragment;
@@ -48,7 +46,6 @@ public class CounterActivity extends FragmentActivity implements
 	SharedPreferences data;
 	SharedPreferences settings;
 	List<String> keys;
-	Map<String, ?> dataMap;
 	ArrayAdapter<String> navigationAdapter;
 
 	@Override
@@ -315,17 +312,6 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 	private void createNavigation() {
-		// Loading counters
-		app.counters = new LinkedHashMap<String, Integer>();
-		dataMap = data.getAll();
-		if (dataMap.isEmpty()) {
-			app.counters.put((String) getResources().getText(R.string.default_counter_name),
-					CounterFragment.getDefaultValue());
-		} else {
-			for (Map.Entry<String, ?> entry : dataMap.entrySet())
-				app.counters.put(entry.getKey(), (Integer) entry.getValue());
-		}
-
 		keys = new ArrayList<String>();
 		for (String key : app.counters.keySet()) {
 			keys.add(key);
