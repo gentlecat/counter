@@ -31,11 +31,11 @@ public class CounterApplication extends Application {
 	}
 	
 	public void changeTheme(String name) {
-		if (name.equals("dark")) {
-			theme = R.style.Theme_Sherlock;
-		} else if (name.equals("light")) {
+		if (name.equals("light")) { 
+			// Light theme
 			theme = R.style.Theme_Sherlock_Light_DarkActionBar;
-		} else {
+		} else { 
+			// Default theme
 			theme = R.style.Theme_Sherlock;
 		}
 	}
