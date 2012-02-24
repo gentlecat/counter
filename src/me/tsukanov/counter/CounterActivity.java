@@ -54,16 +54,12 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		settings = PreferenceManager.getDefaultSharedPreferences(this);
+		app = (CounterApplication) getApplication();
 		String savedTheme = settings.getString("theme", "dark");
-		if (savedTheme.equals("dark")) {
-			CounterApplication.theme = R.style.Theme_Sherlock;
-		} else if (savedTheme.equals("light")) {
-			CounterApplication.theme = R.style.Theme_Sherlock_Light_DarkActionBar;
-		}
+		app.changeTheme(savedTheme);
 		setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
 		data = getBaseContext().getSharedPreferences(DATA_FILE,	Context.MODE_PRIVATE);
-		app = (CounterApplication) getApplication();
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);

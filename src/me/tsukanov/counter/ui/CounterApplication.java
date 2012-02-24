@@ -29,5 +29,15 @@ public class CounterApplication extends Application {
 		// Set default theme
 		theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark
 	}
+	
+	public void changeTheme(String name) {
+		if (name.equals("dark")) {
+			theme = R.style.Theme_Sherlock;
+		} else if (name.equals("light")) {
+			theme = R.style.Theme_Sherlock_Light_DarkActionBar;
+		} else {
+			theme = R.style.Theme_Sherlock;
+		}
+	}
 
 }

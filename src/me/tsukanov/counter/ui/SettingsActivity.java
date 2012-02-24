@@ -70,13 +70,8 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
 		if (preference == themePreference) {
 			app.isUpdateNeeded = true;
-			String value = (String) newValue;
-			if (value.equals("dark")) {
-				CounterApplication.theme = R.style.Theme_Sherlock;
-			} else if (value.equals("light")) {
-				CounterApplication.theme = R.style.Theme_Sherlock_Light_DarkActionBar;
-			}
-			// Restarting activity to activate selected theme in it
+			app.changeTheme((String) newValue);
+			// Restarting activity to activate selected theme
 			finish();
 			startActivity(starterIntent);
 			return true;
