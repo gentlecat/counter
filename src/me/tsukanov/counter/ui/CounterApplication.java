@@ -7,23 +7,19 @@ import android.app.Application;
 
 public class CounterApplication extends Application {
 	
-	/*
-	 * Counters
-	 * 	String = Name
-	 * 	Integer = Value
-	 */
-	public LinkedHashMap<String, Integer> counters = null;
+	// Counters	(String = Name, Integer = Value)
+	public LinkedHashMap<String, Integer> counters;
 	
 	// Active theme
-	public static int theme = 0;
-	
-	// Active counter's ID based on LinkedHashMap order
-	public int activePosition = 0;
+	public static int theme;
 	
 	// Active counter's name (key string in LinkedHashMap)
-	public String activeKey = null;
-	
-	// True if theme was changed or/and data removed.
+	public String activeKey;
+
+	// Active counter's ID based on LinkedHashMap order
+	public int activePosition = 0;
+
+	// True if theme was changed or/and data removed
 	public boolean isUpdateNeeded = false;
 	
 	@Override
@@ -33,4 +29,5 @@ public class CounterApplication extends Application {
 		// Set default theme
 		theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark
 	}
+
 }
