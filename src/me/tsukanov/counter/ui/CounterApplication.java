@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 public class CounterApplication extends Application {
 	
 	private static final String DATA_FILE_NAME = "data";
+	SharedPreferences data;
 	
 	// Counters	(String = Name, Integer = Value)
 	public LinkedHashMap<String, Integer> counters;
@@ -32,11 +33,15 @@ public class CounterApplication extends Application {
 		super.onCreate();
 		
 		// Setting default theme
-		theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark
+		theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark	
 		
-		// Loading counters
 		counters = new LinkedHashMap<String, Integer>();
-		SharedPreferences data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
+		data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
+		
+		loadData();
+	}
+	
+	public void loadData() {
 		Map<String, ?> dataMap = data.getAll();
 		if (dataMap.isEmpty()) {
 			counters.put((String) getResources().getText(R.string.default_counter_name),
@@ -45,6 +50,15 @@ public class CounterApplication extends Application {
 			for (Map.Entry<String, ?> entry : dataMap.entrySet())
 				counters.put(entry.getKey(), (Integer) entry.getValue());
 		}
+	}
+	
+	public void saveData() {
+		SharedPreferences.Editor dataEditor = data.edit();
+		dataEditor.clear();
+		for (String name : counters.keySet()) {
+			dataEditor.putInt(name, counters.get(name));
+		}
+		dataEditor.commit();
 	}
 	
 	public void changeTheme(String name) {

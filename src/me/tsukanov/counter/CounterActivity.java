@@ -55,6 +55,7 @@ public class CounterActivity extends FragmentActivity implements
 		String savedTheme = settings.getString("theme", "dark");
 		app.changeTheme(savedTheme);
 		setTheme(CounterApplication.theme);
+		
 		super.onCreate(savedInstanceState);
 		data = getBaseContext().getSharedPreferences(DATA_FILE,	Context.MODE_PRIVATE);
 		actionBar = getSupportActionBar();
@@ -68,17 +69,19 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		super.onResume();
+		
 		if (app.isUpdateNeeded) {
 			app.isUpdateNeeded = false;
 			refreshActivity();
 		}
+		
 		Log.v("Activities", "Counter activity resumed");
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		saveData();
+		app.saveData();
 		saveActivePosition(app.activePosition);
 	}
 	
@@ -297,18 +300,8 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 	private void recreateNavigation() {
-		saveData();
+		app.saveData();
 		createNavigation();
-	}
-
-	private void saveData() {
-		SharedPreferences.Editor dataEditor = data.edit();
-		dataEditor.clear();
-		for (String name : app.counters.keySet()) {
-			dataEditor.putInt(name, app.counters.get(name));
-		}
-		dataEditor.commit();
-		Log.v("Data", "Data saved");
 	}
 
 	private void createNavigation() {
