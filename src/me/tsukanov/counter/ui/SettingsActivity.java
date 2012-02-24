@@ -54,8 +54,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					@Override
 					public boolean onPreferenceClick(Preference preference) {
-						app.counters.clear();
-						app.isUpdateNeeded = true;
+						app.clearData();
 						Toast.makeText(getBaseContext(),
 								getResources().getText(R.string.toast_wipe_success),
 								Toast.LENGTH_SHORT).show();

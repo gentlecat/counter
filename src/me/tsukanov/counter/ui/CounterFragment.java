@@ -72,11 +72,14 @@ public class CounterFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 
 		View view = inflater.inflate(R.layout.counter, container, false);
+		
 		counterLabel = (AutoResizableTextView) view.findViewById(R.id.counterLabel);
+		
 		incrementButton = (Button) view.findViewById(R.id.incrementButton);
 		incrementButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) { increment(); }
 		});
+		
 		decrementButton = (Button) view.findViewById(R.id.decrementButton);
 		decrementButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) { decrement(); }
