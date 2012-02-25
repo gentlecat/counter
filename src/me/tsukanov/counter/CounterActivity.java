@@ -34,7 +34,6 @@ import com.actionbarsherlock.view.MenuItem;
 public class CounterActivity extends FragmentActivity implements
 		ActionBar.OnNavigationListener {
 
-	private static final String DATA_FILE = "data";
 	private static final int DIALOG_ADD = 100;
 	private static final int DIALOG_EDIT = 101;
 	private static final int DIALOG_DELETE = 102;
@@ -42,7 +41,6 @@ public class CounterActivity extends FragmentActivity implements
 	CounterApplication app;
 	ActionBar actionBar;
 	CounterFragment currentFragment;
-	SharedPreferences data;
 	SharedPreferences settings;
 	List<String> keys;
 	ArrayAdapter<String> navigationAdapter;
@@ -56,7 +54,6 @@ public class CounterActivity extends FragmentActivity implements
 		setTheme(CounterApplication.theme);
 		
 		super.onCreate(savedInstanceState);
-		data = getBaseContext().getSharedPreferences(DATA_FILE,	Context.MODE_PRIVATE);
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
