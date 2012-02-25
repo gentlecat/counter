@@ -19,7 +19,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -62,27 +61,24 @@ public class CounterActivity extends FragmentActivity implements
 		actionBar.setDisplayShowTitleEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		createNavigation();
-		
-		Log.v("Activities", "Counter activity created");
 	}
 
 	@Override
 	protected void onResume() {
-		super.onResume();
-		
+		super.onResume();		
 		if (app.isUpdateNeeded) {
 			app.isUpdateNeeded = false;
 			refreshActivity();
 		}
-		
-		Log.v("Activities", "Counter activity resumed");
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
 		app.saveData();
-		saveActivePosition(app.activePosition);
+		SharedPreferences.Editor settingsEditor = settings.edit();
+		settingsEditor.putString("activeKey", app.activeKey);
+		settingsEditor.commit();
 	}
 	
 	@Override
@@ -119,7 +115,7 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 		app.activeKey = keys.get(itemPosition);
-		app.activePosition = itemPosition;
+		//app.activePosition = itemPosition;
 		currentFragment = new CounterFragment();
 		getSupportFragmentManager().beginTransaction().replace(android.R.id.content, currentFragment).commit();
 		return true;
@@ -287,7 +283,6 @@ public class CounterActivity extends FragmentActivity implements
 								+ " \"" + app.activeKey + "\" "
 								+ getResources().getText(R.string.toast_remove_sucess_2),
 							Toast.LENGTH_SHORT).show();
-						saveActivePosition(0);
 						recreateNavigation();
 					}
 				})
@@ -316,22 +311,9 @@ public class CounterActivity extends FragmentActivity implements
 
 		actionBar.setListNavigationCallbacks(navigationAdapter, this);
 		// Restore previously selected element
-		actionBar.setSelectedNavigationItem(settings.getInt("activePosition", 0));
-		
-		Log.v("Action Bar", "Navigation created");
+		actionBar.setSelectedNavigationItem(findPosition(app.activeKey));
 	}
-
-	private void saveActivePosition(int position) {
-		SharedPreferences.Editor sharedEditor = settings.edit();
-		if (position < app.counters.size())
-			sharedEditor.putInt("activePosition", position);
-		else
-			sharedEditor.putInt("activePosition", 0);
-		sharedEditor.commit();
-		
-		Log.v("Action Bar", "Active position set to " + position);
-	}
-
+	
 	private int findPosition(String key) {
 		for (int i = 0; i < navigationAdapter.getCount(); i++)
 			if (key.equals(navigationAdapter.getItem(i)))
@@ -343,7 +325,6 @@ public class CounterActivity extends FragmentActivity implements
 		Intent intent = getIntent();
 		finish();
 		startActivity(intent);
-		Log.v("Activities", "Activity refreshed");
 	}
 
 }

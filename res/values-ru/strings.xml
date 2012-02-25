@@ -5,7 +5,7 @@
     <string name="app_name">Simple Counter</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="value_placeholder">0</string><!-- Do not translate -->
+    <string name="value_placeholder">null</string><!-- Do not translate -->
 
     <!-- Menu -->
     <string name="menu_refresh">Обновить</string>

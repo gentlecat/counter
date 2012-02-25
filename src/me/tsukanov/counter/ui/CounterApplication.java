@@ -7,6 +7,7 @@ import me.tsukanov.counter.R;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class CounterApplication extends Application {
 	
@@ -22,9 +23,6 @@ public class CounterApplication extends Application {
 	// Active counter's name (key string in LinkedHashMap)
 	public String activeKey;
 
-	// Active counter's ID based on LinkedHashMap order
-	public int activePosition = 0;
-
 	// True if theme was changed or/and data removed
 	public boolean isUpdateNeeded = false;
 	
@@ -37,6 +35,9 @@ public class CounterApplication extends Application {
 		
 		counters = new LinkedHashMap<String, Integer>();
 		data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
+		
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		activeKey = settings.getString("activeKey", "");
 		
 		loadData();
 	}
