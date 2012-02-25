@@ -53,6 +53,7 @@
     <string name="toast_wipe_success">Все данные были удалены.</string>
     <string name="toast_remove_sucess_1">Счетчик</string>
     <string name="toast_remove_sucess_2">был удален.</string>
+    <string name="toast_no_name_message">Введите имя.</string>
     <string name="default_counter_name">Первый счетчик</string>
     <string name="unknown">Неизвестно</string>
     

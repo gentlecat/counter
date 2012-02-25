@@ -53,6 +53,7 @@
     <string name="toast_wipe_success">All data has been removed.</string>
     <string name="toast_remove_sucess_1">Counter</string>
     <string name="toast_remove_sucess_2">has been removed.</string>
+    <string name="toast_no_name_message">Please, input the name.</string>
     <string name="default_counter_name">First</string>
     <string name="unknown">Unknown</string>
     

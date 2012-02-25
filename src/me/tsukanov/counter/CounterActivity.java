@@ -115,9 +115,9 @@ public class CounterActivity extends FragmentActivity implements
 	@Override
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 		app.activeKey = keys.get(itemPosition);
-		//app.activePosition = itemPosition;
 		currentFragment = new CounterFragment();
-		getSupportFragmentManager().beginTransaction().replace(android.R.id.content, currentFragment).commit();
+		getSupportFragmentManager().beginTransaction()
+			.replace(android.R.id.content, currentFragment).commit();
 		return true;
 	}
 
@@ -184,18 +184,20 @@ public class CounterActivity extends FragmentActivity implements
 		// Name input
 		final EditText nameInput = new EditText(this);
 		nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
+		nameInput.setText("");
 		addDialogLayout.addView(nameInput);
 
 		// Value input label
 		TextView valueInputLabel = new TextView(this);
 		valueInputLabel.setText(getResources().getText(
 				R.string.dialog_edit_value));
+		valueInputLabel.setPadding(0, 10, 0, 0);
 		addDialogLayout.addView(valueInputLabel);
 
 		// Value input
 		final EditText valueInput = new EditText(this);
 		valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-		valueInput.setText(String.valueOf(CounterFragment.getDefaultValue()));
+		valueInput.setText("");
 		InputFilter[] valueFilter = new InputFilter[1];
 		valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
 		valueInput.setFilters(valueFilter);
@@ -207,11 +209,20 @@ public class CounterActivity extends FragmentActivity implements
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						String name = nameInput.getText().toString();
-						int value = Integer.parseInt(valueInput.getText()
-								.toString());
-						app.counters.put(name, value);
-						recreateNavigation();
-						actionBar.setSelectedNavigationItem(findPosition(name));
+						if (name.equals("")) {
+							Toast.makeText(getBaseContext(),
+									getResources().getText(R.string.toast_no_name_message),
+									Toast.LENGTH_SHORT).show();
+						} else {
+							int value = 0;
+							String valueInputContents = valueInput.getText().toString();
+							if (!valueInputContents.equals("")) {
+								value = Integer.parseInt(valueInputContents);
+							}
+							app.counters.put(name, value);
+							recreateNavigation();
+							actionBar.setSelectedNavigationItem(findPosition(name));
+						}
 					}
 				})
 			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
@@ -241,6 +252,7 @@ public class CounterActivity extends FragmentActivity implements
 		TextView valueInputLabel = new TextView(this);
 		valueInputLabel.setText(getResources().getText(
 				R.string.dialog_edit_value));
+		valueInputLabel.setPadding(0, 10, 0, 0);
 		editDialogLayout.addView(valueInputLabel);
 
 		// Value input
@@ -258,11 +270,21 @@ public class CounterActivity extends FragmentActivity implements
 				new OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						String name = nameInput.getText().toString();
-						int value = Integer.parseInt(valueInput.getText().toString());
-						app.counters.remove(app.activeKey);
-						app.counters.put(name, value);
-						recreateNavigation();
-						actionBar.setSelectedNavigationItem(findPosition(name));
+						if (name.equals("")) {
+							Toast.makeText(getBaseContext(),
+									getResources().getText(R.string.toast_no_name_message),
+									Toast.LENGTH_SHORT).show();
+						} else {
+							int value = 0;
+							String valueInputContents = valueInput.getText().toString();
+							if (!valueInputContents.equals("")) {
+								value = Integer.parseInt(valueInputContents);
+							}
+							app.counters.remove(app.activeKey);
+							app.counters.put(name, value);
+							recreateNavigation();
+							actionBar.setSelectedNavigationItem(findPosition(name));
+						}
 					}
 				})
 			.setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
