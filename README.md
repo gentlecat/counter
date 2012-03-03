@@ -11,7 +11,7 @@ What was used
 * Sounds from [adobeflash.com][5]
 
 
-  [1]: https://github.com/Tsukanov/Simple-Counter/stuff/art.png
+  [1]: https://github.com/Tsukanov/Simple-Counter/raw/master/stuff/art.png
   [2]: http://actionbarsherlock.com/
   [3]: http://jakewharton.com/
   [4]: http://stackoverflow.com/a/5535672/272770
