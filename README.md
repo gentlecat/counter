@@ -7,7 +7,7 @@ Simple Counter is an Android application that can help you count anything. You c
 What was used
 -------------
 * [ActionBarSherlock][2] by [Jake Wharton][3]
-* 'AutoResizeTextView' created by [Chase Colburn][4]
+* `AutoResizeTextView` class created by [Chase Colburn][4]
 * Sounds from [adobeflash.com][5]
 
 

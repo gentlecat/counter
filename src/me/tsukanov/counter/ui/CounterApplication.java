@@ -25,7 +25,7 @@ public class CounterApplication extends Application {
 
 	// True if theme was changed or/and data removed
 	public boolean isUpdateNeeded = false;
-	
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
