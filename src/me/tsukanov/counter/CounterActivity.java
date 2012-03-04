@@ -48,9 +48,11 @@ public class CounterActivity extends FragmentActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		settings = PreferenceManager.getDefaultSharedPreferences(this);
 		app = (CounterApplication) getApplication();
+		/*
 		String savedTheme = settings.getString("theme", "dark");
 		app.changeTheme(savedTheme);
 		setTheme(CounterApplication.theme);
+		*/
 		
 		super.onCreate(savedInstanceState);
 		actionBar = getSupportActionBar();

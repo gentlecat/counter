@@ -29,14 +29,14 @@
     <string name="settings_title">Настройки</string>
     <string name="settings_theme_title">Стиль</string>
     <string name="settings_theme_summary">Цветовая схема приложения</string>
-    <string-array name="settings_themes_entries">
-		<item>Темная</item>
-		<item>Светлая</item>
+    <!-- <string-array name="settings_themes_entries">
+		<item>Dark</item>
+		<item>Light</item>
     </string-array>
     <string-array name="settings_themes_entry_values">
-   		<item>dark</item><!-- Do not translate -->
-		<item>light</item><!-- Do not translate -->
-    </string-array>
+   		<item>dark</item> --><!-- Do not translate -->
+		<!-- <item>light</item> --><!-- Do not translate -->
+    <!-- </string-array> -->
     <string name="settings_sounds_title">Включить звуки</string>
     <string name="settings_sounds_summary">Звуки при изменениях счетчика</string>
     <string name="settings_vibration_title">Включить вибрацию</string>

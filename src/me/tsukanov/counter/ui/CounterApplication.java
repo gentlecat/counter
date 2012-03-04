@@ -18,7 +18,7 @@ public class CounterApplication extends Application {
 	public LinkedHashMap<String, Integer> counters;
 	
 	// Active theme
-	public static int theme;
+	//public static int theme;
 	
 	// Active counter's name (key string in LinkedHashMap)
 	public String activeKey;
@@ -31,7 +31,7 @@ public class CounterApplication extends Application {
 		super.onCreate();
 		
 		// Setting default theme
-		theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark	
+		//theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark	
 		
 		counters = new LinkedHashMap<String, Integer>();
 		data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
@@ -70,6 +70,7 @@ public class CounterApplication extends Application {
 		isUpdateNeeded = true;
 	}
 	
+	/*
 	public void changeTheme(String name) {
 		if (name.equals("light")) { 
 			// Light theme
@@ -79,5 +80,6 @@ public class CounterApplication extends Application {
 			theme = R.style.Theme_Sherlock;
 		}
 	}
+	*/
 
 }

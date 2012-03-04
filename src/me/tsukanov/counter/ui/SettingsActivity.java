@@ -27,7 +27,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setTheme(CounterApplication.theme);
+		//setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings);
 
@@ -37,8 +37,10 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		PreferenceScreen prefScreen = getPreferenceScreen();
+		/*
 		themePreference = (ListPreference) prefScreen.findPreference("theme");
 		themePreference.setOnPreferenceChangeListener(this);
+		*/
 
 		String version = (String) getResources().getText(R.string.unknown);
 		try {
@@ -67,14 +69,14 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
-		if (preference == themePreference) {
+		/* if (preference == themePreference) {
 			app.isUpdateNeeded = true;
 			app.changeTheme((String) newValue);
 			// Restarting activity to activate selected theme
 			finish();
 			startActivity(starterIntent);
 			return true;
-		}
+		} */
 		return false;
 	}
 
