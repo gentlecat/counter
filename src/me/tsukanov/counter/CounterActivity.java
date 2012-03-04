@@ -318,6 +318,7 @@ public class CounterActivity extends FragmentActivity implements
 	}
 
 	private void createNavigation() {
+		app.loadData();
 		keys = new ArrayList<String>();
 		for (String key : app.counters.keySet()) {
 			keys.add(key);
