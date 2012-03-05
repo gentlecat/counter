@@ -7,11 +7,11 @@
     </style>
 
     <style name="increment_button">
-        <item name="android:textSize">90dp</item>
+        <item name="android:textSize">120dp</item>
     </style>
 
     <style name="decrement_button">
-        <item name="android:textSize">45dp</item>
+        <item name="android:textSize">120dp</item>
     </style>
 
     <style name="editor_style">

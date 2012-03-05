@@ -8,7 +8,6 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceScreen;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -36,8 +35,8 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
-		PreferenceScreen prefScreen = getPreferenceScreen();
 		/*
+		PreferenceScreen prefScreen = getPreferenceScreen();
 		themePreference = (ListPreference) prefScreen.findPreference("theme");
 		themePreference.setOnPreferenceChangeListener(this);
 		*/
