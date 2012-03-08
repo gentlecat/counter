@@ -22,7 +22,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="@string/minus" />
-    <me.tsukanov.counter.view.AutoResizableTextView
+    <TextView
         android:id="@+id/counterLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

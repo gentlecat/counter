@@ -2,7 +2,7 @@
 <resources>
 
     <style name="counter_value">
-        <item name="android:textSize">150dp</item>
+        <item name="android:textSize">120dp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
 

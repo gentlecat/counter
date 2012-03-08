@@ -15,7 +15,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentActivity;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.view.KeyEvent;
@@ -26,11 +25,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-public class CounterActivity extends FragmentActivity implements
+public class CounterActivity extends SherlockFragmentActivity implements
 		ActionBar.OnNavigationListener {
 
 	private static final int DIALOG_ADD = 100;

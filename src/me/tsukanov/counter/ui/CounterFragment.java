@@ -3,7 +3,6 @@ package me.tsukanov.counter.ui;
 import java.util.HashMap;
 
 import me.tsukanov.counter.R;
-import me.tsukanov.counter.view.AutoResizableTextView;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
@@ -11,21 +10,22 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-public class CounterFragment extends Fragment {
+public class CounterFragment extends SherlockFragment {
 	
-	private static final int MAX_VALUE = 999999999;
+	private static final int MAX_VALUE = 9999;
 	private static final int MIN_VALUE = 0;
 	private static final int DEFALUT_VALUE = MIN_VALUE;
 	private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
@@ -40,7 +40,7 @@ public class CounterFragment extends Fragment {
 	SoundPool soundPool;	
 	HashMap<Integer, Integer> soundsMap;
 	
-	AutoResizableTextView counterLabel;
+	TextView counterLabel;
 	Button incrementButton;
 	Button decrementButton;
 	
@@ -73,7 +73,7 @@ public class CounterFragment extends Fragment {
 
 		View view = inflater.inflate(R.layout.counter, container, false);
 		
-		counterLabel = (AutoResizableTextView) view.findViewById(R.id.counterLabel);
+		counterLabel = (TextView) view.findViewById(R.id.counterLabel);
 		
 		incrementButton = (Button) view.findViewById(R.id.incrementButton);
 		incrementButton.setOnClickListener(new OnClickListener() {
