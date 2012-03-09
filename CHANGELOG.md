@@ -1,13 +1,13 @@
 Changelog
 =========
 
-2.0 (in development)
---------------------
+2.0
+---
 * Updated UI
 * Added Ice Cream Sandwich support
 * Simplified settings
 * Removed unnecessary permissions
-* App is now movable to SD card
+* Made app movable to SD card
 
 1.1
 ---

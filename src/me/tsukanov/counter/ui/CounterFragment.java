@@ -2,6 +2,7 @@ package me.tsukanov.counter.ui;
 
 import java.util.HashMap;
 
+import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,7 +11,6 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -62,8 +62,6 @@ public class CounterFragment extends SherlockFragment {
 		soundsMap.put(INCREMENT_SOUND, soundPool.load(getActivity(), R.raw.increment_sound, 1));
 		soundsMap.put(DECREMENT_SOUND, soundPool.load(getActivity(), R.raw.decrement_sound, 1));
 		soundsMap.put(REFRESH_SOUND,   soundPool.load(getActivity(), R.raw.refresh_sound, 1));
-	
-		Log.v("Fragments", "Fragment for counter \"" + app.activeKey + "\" created");
 	}
 
 	@Override
@@ -131,18 +129,12 @@ public class CounterFragment extends SherlockFragment {
 		counterValue = value;
 		counterLabel.setText(Integer.toString(value));
 		checkButtons();
-		saveValue(); // That's probably not effective
-		Log.v("Counters", "Set value " + counterValue + " to \"" + app.activeKey + "\"");
+		saveValue();
 	}
 		
 	private void saveValue() {
-		/*
-		 *  TODO Investigate
-		 *  Saving value onPause() is not working properly
-		 */
 		app.counters.remove(app.activeKey);
-		app.counters.put(app.activeKey, counterValue);		
-		Log.v("Counters", "Saved value of \"" + app.activeKey + "\"");
+		app.counters.put(app.activeKey, counterValue);
 	}
 
 	private void checkButtons() {

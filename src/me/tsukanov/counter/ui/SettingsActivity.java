@@ -1,5 +1,6 @@
 package me.tsukanov.counter.ui;
 
+import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -26,7 +27,6 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		//setTheme(CounterApplication.theme);
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings);
 
@@ -35,11 +35,6 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 
 		actionBar = getSupportActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
-		/*
-		PreferenceScreen prefScreen = getPreferenceScreen();
-		themePreference = (ListPreference) prefScreen.findPreference("theme");
-		themePreference.setOnPreferenceChangeListener(this);
-		*/
 
 		String version = (String) getResources().getText(R.string.unknown);
 		try {
@@ -67,19 +62,6 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 	}
 
 	@Override
-	public boolean onPreferenceChange(Preference preference, Object newValue) {
-		/* if (preference == themePreference) {
-			app.isUpdateNeeded = true;
-			app.changeTheme((String) newValue);
-			// Restarting activity to activate selected theme
-			finish();
-			startActivity(starterIntent);
-			return true;
-		} */
-		return false;
-	}
-
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -88,6 +70,11 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	@Override
+	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		return false;
 	}
 
 }

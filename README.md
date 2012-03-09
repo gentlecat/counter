@@ -1,9 +1,9 @@
 Simple Counter
 ==============
-Simple Counter is an Android application that can help you count anything. You can have multiple
+Simple Counter is an Android application which can help in counting. You can have multiple
 counters with their own names and values that can be easily changed. It's available on [Play Store][1].
 
-![Screenshot][2]
+![Art][2]
 
 What was used
 -------------

@@ -2,10 +2,10 @@
 <resources>
 	
     <!-- General -->
-    <string name="app_name">Simple Counter</string>
+    <string name="app_name">Счетчик</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="value_placeholder">null</string><!-- Do not translate -->
+    <string name="value_placeholder">null</string>
 
     <!-- Menu -->
     <string name="menu_refresh">Обновить</string>
@@ -29,20 +29,12 @@
     <string name="settings_title">Настройки</string>
     <string name="settings_theme_title">Стиль</string>
     <string name="settings_theme_summary">Цветовая схема приложения</string>
-    <!-- <string-array name="settings_themes_entries">
-		<item>Dark</item>
-		<item>Light</item>
-    </string-array>
-    <string-array name="settings_themes_entry_values">
-   		<item>dark</item> --><!-- Do not translate -->
-		<!-- <item>light</item> --><!-- Do not translate -->
-    <!-- </string-array> -->
     <string name="settings_sounds_title">Включить звуки</string>
     <string name="settings_sounds_summary">Звуки при изменениях счетчика</string>
     <string name="settings_vibration_title">Включить вибрацию</string>
     <string name="settings_vibration_summary">Вибрация при изменениях счетчика</string>
-    <string name="settings_hard_title">Use hardware buttons</string>
-    <string name="settings_hard_summary">Change counter value using hardware buttons</string>
+    <string name="settings_hard_title">Использовать аппаратные кнопки</string>
+    <string name="settings_hard_summary">Менять значение счетчика при нажатии на кнопки изменения громкости и др.</string>
     <string name="settings_data">Данные</string>
     <string name="settings_clear_title">Удалить все данные</string>
     <string name="settings_clear_summary">Удалить все счетчики</string>

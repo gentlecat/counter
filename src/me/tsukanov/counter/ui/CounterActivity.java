@@ -1,11 +1,10 @@
-package me.tsukanov.counter;
+package me.tsukanov.counter.ui;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.tsukanov.counter.ui.CounterApplication;
-import me.tsukanov.counter.ui.CounterFragment;
-import me.tsukanov.counter.ui.SettingsActivity;
+import me.tsukanov.counter.CounterApplication;
+import me.tsukanov.counter.R;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -48,11 +47,6 @@ public class CounterActivity extends SherlockFragmentActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		settings = PreferenceManager.getDefaultSharedPreferences(this);
 		app = (CounterApplication) getApplication();
-		/*
-		String savedTheme = settings.getString("theme", "dark");
-		app.changeTheme(savedTheme);
-		setTheme(CounterApplication.theme);
-		*/
 		
 		super.onCreate(savedInstanceState);
 		actionBar = getSupportActionBar();

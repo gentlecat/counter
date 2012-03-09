@@ -1,9 +1,9 @@
-package me.tsukanov.counter.ui;
+package me.tsukanov.counter;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import me.tsukanov.counter.R;
+import me.tsukanov.counter.ui.CounterFragment;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,10 +16,7 @@ public class CounterApplication extends Application {
 	
 	// Counters	(String = Name, Integer = Value)
 	public LinkedHashMap<String, Integer> counters;
-	
-	// Active theme
-	//public static int theme;
-	
+		
 	// Active counter's name (key string in LinkedHashMap)
 	public String activeKey;
 
@@ -29,9 +26,6 @@ public class CounterApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
-		// Setting default theme
-		//theme = R.style.Theme_Sherlock; // Theme_Sherlock = Dark	
 		
 		counters = new LinkedHashMap<String, Integer>();
 		data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
@@ -69,17 +63,5 @@ public class CounterApplication extends Application {
 				CounterFragment.getDefaultValue());
 		isUpdateNeeded = true;
 	}
-	
-	/*
-	public void changeTheme(String name) {
-		if (name.equals("light")) { 
-			// Light theme
-			theme = R.style.Theme_Sherlock_Light_DarkActionBar;
-		} else { 
-			// Default theme
-			theme = R.style.Theme_Sherlock;
-		}
-	}
-	*/
 
 }

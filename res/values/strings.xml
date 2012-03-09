@@ -5,7 +5,7 @@
     <string name="app_name">Simple Counter</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="value_placeholder">null</string><!-- Do not translate -->
+    <string name="value_placeholder">null</string>
 
     <!-- Menu -->
     <string name="menu_refresh">Refresh</string>
@@ -29,14 +29,6 @@
     <string name="settings_title">Settings</string>
     <string name="settings_theme_title">Theme</string>
     <string name="settings_theme_summary">Style of this application</string>
-    <!-- <string-array name="settings_themes_entries">
-		<item>Dark</item>
-		<item>Light</item>
-    </string-array>
-    <string-array name="settings_themes_entry_values">
-   		<item>dark</item> --><!-- Do not translate -->
-		<!-- <item>light</item> --><!-- Do not translate -->
-    <!-- </string-array> -->
     <string name="settings_sounds_title">Turn on sounds</string>
     <string name="settings_sounds_summary">Play sounds</string>
     <string name="settings_vibration_title">Turn on vibration</string>
