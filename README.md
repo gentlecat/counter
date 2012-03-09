@@ -1,7 +1,6 @@
 Simple Counter
 ==============
-Simple Counter is an Android application which can help in counting. You can have multiple
-counters with their own names and values that can be easily changed. It's available on [Play Store][1].
+Simple Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android. You can have multiple counters with their own names and values. It's available on [Play Store][1].
 
 ![Art][2]
 
