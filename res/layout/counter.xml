@@ -26,17 +26,23 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/plus" />
-
-    <TextView
-        android:id="@+id/counterLabel"
+
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/value_placeholder"
-        android:textAppearance="@style/counter_value" />
+        android:layout_above="@+id/incrementButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/counterLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/value_placeholder"
+            android:textAppearance="@style/counter_value" />
+        
+    </FrameLayout>
 
 </RelativeLayout>
