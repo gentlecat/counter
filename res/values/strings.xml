@@ -2,7 +2,7 @@
 <resources>
 	
     <!-- General -->
-    <string name="app_name">Simple Counter</string>
+    <string name="app_name">Counter</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="value_placeholder">null</string>
