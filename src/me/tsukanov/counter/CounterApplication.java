@@ -11,7 +11,7 @@ import android.preference.PreferenceManager;
 
 public class CounterApplication extends Application {
 	
-	private static final String DATA_FILE_NAME = "data";
+	private static final String DATA_FILE_NAME = "counters";
 	SharedPreferences data; // Where counters are stored
 	
 	// Counters	(String = Name, Integer = Value)

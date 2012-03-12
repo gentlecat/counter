@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.1
+---
+* Fixed force close after update
+
 2.0
 ---
 * Updated UI
