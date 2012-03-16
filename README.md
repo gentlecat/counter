@@ -1,6 +1,10 @@
 Simple Counter
 ==============
-Simple Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android. You can have multiple counters with their own names and values. It's available on [Play Store][1].
+It's a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android
+that can have multiple counters with their own names and values. That’s my first
+Android application. The goal was to make something useful (at least for myself)
+and easy to build.
+It's available on [Play Store][1].
 
 ![Art][2]
 
