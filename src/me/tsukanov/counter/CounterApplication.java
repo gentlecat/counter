@@ -36,6 +36,7 @@ public class CounterApplication extends Application {
 		loadData();
 	}
 	
+	// Load counters from SharedPreferences to dataMap
 	public void loadData() {
 		Map<String, ?> dataMap = data.getAll();
 		if (dataMap.isEmpty()) {
@@ -47,6 +48,7 @@ public class CounterApplication extends Application {
 		}
 	}
 	
+	// Save counters to SharedPreferences
 	public void saveData() {
 		SharedPreferences.Editor dataEditor = data.edit();
 		dataEditor.clear();
@@ -57,6 +59,7 @@ public class CounterApplication extends Application {
 	}
 	
 
+	// Delete all counters
 	public void clearData() {
 		counters.clear();
 		counters.put((String) getResources().getText(R.string.default_counter_name),

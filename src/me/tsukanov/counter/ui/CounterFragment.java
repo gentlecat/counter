@@ -61,7 +61,7 @@ public class CounterFragment extends SherlockFragment {
 		soundsMap = new HashMap<Integer, Integer>();
 		soundsMap.put(INCREMENT_SOUND, soundPool.load(getActivity(), R.raw.increment_sound, 1));
 		soundsMap.put(DECREMENT_SOUND, soundPool.load(getActivity(), R.raw.decrement_sound, 1));
-		soundsMap.put(REFRESH_SOUND,   soundPool.load(getActivity(), R.raw.refresh_sound, 1));
+		soundsMap.put(REFRESH_SOUND,   soundPool.load(getActivity(), R.raw.refresh_sound,   1));
 	}
 
 	@Override
