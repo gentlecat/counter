@@ -8,6 +8,7 @@ import me.tsukanov.counter.R;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -319,10 +320,9 @@ public class CounterActivity extends SherlockFragmentActivity implements
 		for (String key : app.counters.keySet()) {
 			keys.add(key);
 		}
-		int layoutRes = R.layout.sherlock_spinner_item;
-		int dropRes = android.R.layout.simple_spinner_dropdown_item;
-		navigationAdapter = new ArrayAdapter<String>(this, layoutRes, keys);
-		navigationAdapter.setDropDownViewResource(dropRes);
+		Context context = getSupportActionBar().getThemedContext();
+		navigationAdapter = new ArrayAdapter<String>(context, R.layout.sherlock_spinner_item, keys);
+		navigationAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
 
 		actionBar.setListNavigationCallbacks(navigationAdapter, this);
 		// Restore previously selected element
