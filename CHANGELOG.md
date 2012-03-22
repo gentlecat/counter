@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.2 (in development)
+--------------------
+* Improved navigation style
+
 2.1
 ---
 * Fixed force close after update

@@ -1,7 +1,5 @@
 package me.tsukanov.counter.ui;
 
-import java.util.HashMap;
-
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import android.content.Context;
@@ -11,6 +9,7 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -38,7 +37,7 @@ public class CounterFragment extends SherlockFragment {
 	SharedPreferences settings;
 	Vibrator vibrator;
 	SoundPool soundPool;	
-	HashMap<Integer, Integer> soundsMap;
+	SparseIntArray soundsMap;
 	
 	TextView counterLabel;
 	Button incrementButton;
@@ -58,7 +57,7 @@ public class CounterFragment extends SherlockFragment {
 		
 		getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
-		soundsMap = new HashMap<Integer, Integer>();
+		soundsMap = new SparseIntArray(3);
 		soundsMap.put(INCREMENT_SOUND, soundPool.load(getActivity(), R.raw.increment_sound, 1));
 		soundsMap.put(DECREMENT_SOUND, soundPool.load(getActivity(), R.raw.decrement_sound, 1));
 		soundsMap.put(REFRESH_SOUND,   soundPool.load(getActivity(), R.raw.refresh_sound,   1));
