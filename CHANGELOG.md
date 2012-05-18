@@ -1,9 +1,9 @@
 Changelog
 =========
 
-2.2 (in development)
---------------------
-* Improved navigation style
+2.2 
+---
+* Improved navigation style on 2.x devices
 
 2.1
 ---
