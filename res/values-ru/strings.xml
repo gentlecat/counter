@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
+
     <!-- General -->
     <string name="app_name">Счетчик</string>
     <string name="plus">+</string>
@@ -13,18 +13,18 @@
     <string name="menu_edit">Изменить</string>
     <string name="menu_delete">Удалить</string>
     <string name="menu_settings">Настройки</string>
-    
+
     <!-- Dialogs -->
     <string name="dialog_add_title">Добавить счетчик</string>
     <string name="dialog_edit_title">Редактировать счетчик</string>
     <string name="dialog_delete_title">Вы действительно хотите удалить этот счетчик?</string>
     <string name="dialog_edit_name">Имя:</string>
-	<string name="dialog_edit_value">Значение:</string>
-	<string name="dialog_button_add">Добавить</string>
+    <string name="dialog_edit_value">Значение:</string>
+    <string name="dialog_button_add">Добавить</string>
     <string name="dialog_button_apply">Применить</string>
     <string name="dialog_button_delete">Удалить</string>
     <string name="dialog_button_cancel">Отмена</string>
-	
+
     <!-- Settings -->
     <string name="settings_title">Настройки</string>
     <string name="settings_theme_title">Стиль</string>
@@ -40,7 +40,7 @@
     <string name="settings_clear_summary">Удалить все счетчики</string>
     <string name="settings_about">Прочее</string>
     <string name="settings_version_title">Версия</string>
-    
+
     <!-- Something else -->
     <string name="toast_wipe_success">Все данные были удалены.</string>
     <string name="toast_remove_sucess_1">Счетчик</string>
@@ -48,5 +48,5 @@
     <string name="toast_no_name_message">Введите имя.</string>
     <string name="default_counter_name">Первый счетчик</string>
     <string name="unknown">Неизвестно</string>
-    
+
 </resources>

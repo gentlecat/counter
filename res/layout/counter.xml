@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
-    <Button
+    <Button
         android:id="@+id/decrementButton"
         style="@style/decrement_button"
         android:layout_width="match_parent"
@@ -42,7 +41,6 @@
             android:layout_gravity="center"
             android:text="@string/value_placeholder"
             android:textAppearance="@style/counter_value" />
-        
     </FrameLayout>
 
 </RelativeLayout>

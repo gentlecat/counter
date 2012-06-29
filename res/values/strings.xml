@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
+
     <!-- General -->
     <string name="app_name">Counter</string>
     <string name="plus">+</string>
@@ -13,18 +13,18 @@
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
     <string name="menu_settings">Settings</string>
-    
+
     <!-- Dialogs -->
     <string name="dialog_add_title">Add counter</string>
     <string name="dialog_edit_title">Edit counter</string>
     <string name="dialog_delete_title">Are you sure you want to delete that counter?</string>
     <string name="dialog_edit_name">Title:</string>
-	<string name="dialog_edit_value">Value:</string>
-	<string name="dialog_button_add">Add</string>
+    <string name="dialog_edit_value">Value:</string>
+    <string name="dialog_button_add">Add</string>
     <string name="dialog_button_apply">Apply</string>
     <string name="dialog_button_delete">Delete</string>
     <string name="dialog_button_cancel">Cancel</string>
-	
+
     <!-- Settings -->
     <string name="settings_title">Settings</string>
     <string name="settings_theme_title">Theme</string>
@@ -40,7 +40,7 @@
     <string name="settings_clear_summary">Delete all counters</string>
     <string name="settings_about">About</string>
     <string name="settings_version_title">Version</string>
-    
+
     <!-- Something else -->
     <string name="toast_wipe_success">All data has been removed.</string>
     <string name="toast_remove_sucess_1">Counter</string>
@@ -48,5 +48,5 @@
     <string name="toast_no_name_message">Please, input the name.</string>
     <string name="default_counter_name">First</string>
     <string name="unknown">Unknown</string>
-    
+
 </resources>
