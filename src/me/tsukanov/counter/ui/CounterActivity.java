@@ -58,10 +58,17 @@ public class CounterActivity extends SherlockFragmentActivity implements
 
 	@Override
 	protected void onResume() {
-		super.onResume();		
+		super.onResume();
 		if (app.isUpdateNeeded) {
 			app.isUpdateNeeded = false;
 			refreshActivity();
+		}
+		
+		// Check if screen must be always-on
+		if (settings.getBoolean("keepScreenOn", false)) {
+			getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		} else {
+			getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		}
 	}
 

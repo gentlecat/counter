@@ -26,7 +26,11 @@
     <string name="dialog_button_cancel">Отмена</string>
 
     <!-- Settings -->
-    <string name="settings_title">Настройки</string>
+    <string name="settings_title">Настройки</string>    
+    <string name="settings_screen">Экран</string>
+    <string name="settings_keep_on_title">Не выключать экран</string>
+    <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
+    <string name="settings_controls">Управление</string>
     <string name="settings_theme_title">Стиль</string>
     <string name="settings_theme_summary">Цветовая схема приложения</string>
     <string name="settings_sounds_title">Включить звуки</string>

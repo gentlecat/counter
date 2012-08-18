@@ -1,7 +1,11 @@
 Changelog
 =========
 
-2.2 
+2.3
+---
+* Added option to keep screen always on
+
+2.2
 ---
 * Improved navigation style on 2.x devices
 

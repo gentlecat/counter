@@ -27,6 +27,10 @@
 
     <!-- Settings -->
     <string name="settings_title">Settings</string>
+    <string name="settings_screen">Screen</string>
+    <string name="settings_keep_on_title">Keep screen on</string>
+    <string name="settings_keep_on_summary">Keep screen on while app is active</string>
+    <string name="settings_controls">Controls</string>
     <string name="settings_theme_title">Theme</string>
     <string name="settings_theme_summary">Style of this application</string>
     <string name="settings_sounds_title">Turn on sounds</string>

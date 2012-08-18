@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="soundsOn"
-        android:summary="@string/settings_sounds_summary"
-        android:title="@string/settings_sounds_title" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="vibrationOn"
-        android:summary="@string/settings_vibration_summary"
-        android:title="@string/settings_vibration_title" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="hardControlOn"
-        android:summary="@string/settings_hard_summary"
-        android:title="@string/settings_hard_title" />
-
+    <PreferenceCategory android:title="@string/settings_screen" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="keepScreenOn"
+            android:summary="@string/settings_keep_on_summary"
+            android:title="@string/settings_keep_on_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_controls" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="soundsOn"
+            android:summary="@string/settings_sounds_summary"
+            android:title="@string/settings_sounds_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="vibrationOn"
+            android:summary="@string/settings_vibration_summary"
+            android:title="@string/settings_vibration_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="hardControlOn"
+            android:summary="@string/settings_hard_summary"
+            android:title="@string/settings_hard_title" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/settings_data" >
         <Preference
             android:key="clearData"
