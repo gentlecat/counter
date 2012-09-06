@@ -10,7 +10,7 @@ I hope you'll find this app useful. ;)
 
 Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter).
 
-![](https://github.com/Tsukanov/Simple-Counter/raw/master/stuff/art.png)
+![](http://i.imgur.com/6pUY9.png)
 
 What was used
 -------------
