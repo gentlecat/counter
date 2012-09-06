@@ -14,8 +14,8 @@ Simple Counter is available on [Play Store](https://play.google.com/store/apps/d
 
 What was used
 -------------
-* [ActionBarSherlock](http://actionbarsherlock.com/)
-* Sounds from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
+* [ActionBarSherlock](http://actionbarsherlock.com/) for compatibility with older versions of Android
+* Sounds are from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
 
 License
 -------

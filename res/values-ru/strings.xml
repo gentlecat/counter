@@ -26,7 +26,7 @@
     <string name="dialog_button_cancel">Отмена</string>
 
     <!-- Settings -->
-    <string name="settings_title">Настройки</string>    
+    <string name="settings_title">Настройки</string>
     <string name="settings_screen">Экран</string>
     <string name="settings_keep_on_title">Не выключать экран</string>
     <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
@@ -38,7 +38,8 @@
     <string name="settings_vibration_title">Включить вибрацию</string>
     <string name="settings_vibration_summary">Вибрация при изменениях счетчика</string>
     <string name="settings_hard_title">Использовать аппаратные кнопки</string>
-    <string name="settings_hard_summary">Менять значение счетчика при нажатии на кнопки изменения громкости и др.</string>
+    <string name="settings_hard_summary">Менять значение счетчика при нажатии на кнопки изменения громкости и др.
+    </string>
     <string name="settings_data">Данные</string>
     <string name="settings_clear_title">Удалить все данные</string>
     <string name="settings_clear_summary">Удалить все счетчики</string>
