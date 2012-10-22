@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <string name="app_name">Counter</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="value_placeholder">null</string>
+
+    <!-- Menu -->
+    <string name="menu_refresh">Aggiorna</string>
+    <string name="menu_add">Aggiungi</string>
+    <string name="menu_edit">Modifica</string>
+    <string name="menu_delete">Elimina</string>
+    <string name="menu_settings">Impostazioni</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_add_title">Aggiungi contatore</string>
+    <string name="dialog_edit_title">Modifica contatore</string>
+    <string name="dialog_delete_title">Sei sicuro di voler eliminare questo contatore?</string>
+    <string name="dialog_edit_name">Titolo:</string>
+    <string name="dialog_edit_value">Valore:</string>
+    <string name="dialog_button_add">Aggiungi</string>
+    <string name="dialog_button_apply">Applica</string>
+    <string name="dialog_button_delete">Elimina</string>
+    <string name="dialog_button_cancel">Cancella</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Impostazioni</string>
+    <string name="settings_screen">Schermo</string>
+    <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
+    <string name="settings_keep_on_summary">Mantieni lo schermo acceso mentre l\'applicazione è attiva</string>
+    <string name="settings_controls">Controlli</string>
+    <string name="settings_theme_title">Tema</string>
+    <string name="settings_theme_summary">Stile di questa applicazione</string>
+    <string name="settings_sounds_title">Attiva suoni</string>
+    <string name="settings_sounds_summary">Riproduci suoni</string>
+    <string name="settings_vibration_title">Attiva vibrazione</string>
+    <string name="settings_vibration_summary">Vibrazione ai cambiamenti</string>
+    <string name="settings_hard_title">Utilizza i pulsanti hardware</string>
+    <string name="settings_hard_summary">Cambia valore dei contatori usando i pulsanti hardware</string>
+    <string name="settings_data">Dati</string>
+    <string name="settings_clear_title">Pulisci tutti i dati</string>
+    <string name="settings_clear_summary">Elimina tutti i contatori</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version_title">Versione</string>
+
+    <!-- Something else -->
+    <string name="toast_wipe_success">Tutti i dati sono stati rimossi.</string>
+    <string name="toast_remove_sucess_1">Il contatore</string>
+    <string name="toast_remove_sucess_2">è stato rimosso.</string>
+    <string name="toast_no_name_message">Per favore, inserisci il nome.</string>
+    <string name="default_counter_name">Primo</string>
+    <string name="unknown">Sconosciuto</string>
+
+</resources>
