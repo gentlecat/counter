@@ -5,12 +5,16 @@ It makes counting easier because you can have multiple counters with their own n
 You can change values using volume buttons, turn on sounds, and vibration.
 
 It's my first Android application. The goal was to make something useful (at least for myself)
-and easy to build. Feel free to suggest a new feature or submit bug report [here](https://github.com/Tsukanov/Simple-Counter/issues) at GitHub.
-I hope you'll find this app useful. ;)
+and easy to build. Feel free to suggest a new feature or submit bug report [here](https://github.com/Tsukanov/Simple-Counter/issues)
+at GitHub. I hope you'll find this app useful. ;)
 
 Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter).
 
 ![](http://i.imgur.com/6pUY9.png)
+
+Thanks to
+---------
+* [Vincenzo Petronio](https://plus.google.com/116467112276686980985/) for making Italian localization
 
 What was used
 -------------

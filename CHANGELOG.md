@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.3.1
+-----
+* Added Italian localization (made by Vincenzo Petronio)
+
 2.3
 ---
 * Added option to keep screen always on
