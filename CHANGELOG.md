@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.3.2
+-----
+* Updated app icon
+
 2.3.1
 -----
 * Added Italian localization (made by Vincenzo Petronio)
