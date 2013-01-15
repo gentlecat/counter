@@ -31,7 +31,6 @@ public class CounterActivity extends SherlockFragmentActivity implements
     private static final int DIALOG_ADD = 100;
     private static final int DIALOG_EDIT = 101;
     private static final int DIALOG_DELETE = 102;
-
     CounterApplication app;
     ActionBar actionBar;
     CounterFragment currentFragment;
@@ -59,7 +58,6 @@ public class CounterActivity extends SherlockFragmentActivity implements
             refreshActivity();
         }
 
-        // Check if screen must be always-on
         if (settings.getBoolean("keepScreenOn", false)) {
             getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         } else {
@@ -70,7 +68,7 @@ public class CounterActivity extends SherlockFragmentActivity implements
     @Override
     protected void onPause() {
         super.onPause();
-        app.saveData();
+        app.saveCounters();
         SharedPreferences.Editor settingsEditor = settings.edit();
         settingsEditor.putString("activeKey", app.activeKey);
         settingsEditor.commit();
@@ -194,7 +192,7 @@ public class CounterActivity extends SherlockFragmentActivity implements
         valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
         valueInput.setText("");
         InputFilter[] valueFilter = new InputFilter[1];
-        valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
+        valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
         valueInput.setFilters(valueFilter);
         addDialogLayout.addView(valueInput);
 
@@ -255,7 +253,7 @@ public class CounterActivity extends SherlockFragmentActivity implements
         valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
         valueInput.setText(String.valueOf(app.counters.get(app.activeKey)));
         InputFilter[] valueFilter = new InputFilter[1];
-        valueFilter[0] = new InputFilter.LengthFilter(getCharLimit());
+        valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
         valueInput.setFilters(valueFilter);
         editDialogLayout.addView(valueInput);
 
@@ -307,17 +305,17 @@ public class CounterActivity extends SherlockFragmentActivity implements
         return deleteDialogBuilder;
     }
 
-    private int getCharLimit() {
+    private int getValueCharLimit() {
         return String.valueOf(CounterFragment.getMaxValue()).length();
     }
 
     private void recreateNavigation() {
-        app.saveData();
+        app.saveCounters();
         createNavigation();
     }
 
     private void createNavigation() {
-        app.loadData();
+        app.loadCounters();
         keys = new ArrayList<String>();
         for (String key : app.counters.keySet()) {
             keys.add(key);
@@ -327,7 +325,6 @@ public class CounterActivity extends SherlockFragmentActivity implements
         navigationAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
 
         actionBar.setListNavigationCallbacks(navigationAdapter, this);
-        // Restore previously selected element
         actionBar.setSelectedNavigationItem(findPosition(app.activeKey));
     }
 

@@ -30,14 +30,12 @@ public class CounterFragment extends SherlockFragment {
     private static final int INCREMENT_SOUND = 200;
     private static final int DECREMENT_SOUND = 201;
     private static final int REFRESH_SOUND = 202;
-
     int counterValue = DEFAULT_VALUE;
     CounterApplication app;
     SharedPreferences settings;
     Vibrator vibrator;
     SoundPool soundPool;
     SparseIntArray soundsMap;
-
     TextView counterLabel;
     Button incrementButton;
     Button decrementButton;
@@ -138,7 +136,7 @@ public class CounterFragment extends SherlockFragment {
     public void setValue(int value) {
         counterValue = value;
         counterLabel.setText(Integer.toString(value));
-        checkButtons();
+        checkStateOfButtons();
         saveValue();
     }
 
@@ -147,25 +145,24 @@ public class CounterFragment extends SherlockFragment {
         app.counters.put(app.activeKey, counterValue);
     }
 
-    private void checkButtons() {
-        // Increment button
+    private void checkStateOfButtons() {
         if (counterValue >= MAX_VALUE) incrementButton.setEnabled(false);
         else incrementButton.setEnabled(true);
-        // Decrement button
         if (counterValue <= MIN_VALUE) decrementButton.setEnabled(false);
         else decrementButton.setEnabled(true);
     }
 
     private void vibrate(long duration) {
-        if (settings.getBoolean("vibrationOn", true))
+        if (settings.getBoolean("vibrationOn", true)) {
             vibrator.vibrate(duration);
+        }
     }
 
-    private void playSound(int soundID) {
+    private void playSound(int key) {
         if (settings.getBoolean("soundsOn", false)) {
             AudioManager audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
             float volume = (float) audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-            soundPool.play(soundsMap.get(soundID), volume, volume, 1, 0, 1f);
+            soundPool.play(soundsMap.get(key), volume, volume, 1, 0, 1f);
         }
     }
 
