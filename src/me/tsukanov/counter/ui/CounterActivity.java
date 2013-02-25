@@ -294,9 +294,9 @@ public class CounterActivity extends SherlockFragmentActivity implements
                             public void onClick(DialogInterface dialog, int id) {
                                 app.counters.remove(app.activeKey);
                                 Toast.makeText(getBaseContext(),
-                                        getResources().getText(R.string.toast_remove_sucess_1)
+                                        getResources().getText(R.string.toast_remove_success_1)
                                                 + " \"" + app.activeKey + "\" "
-                                                + getResources().getText(R.string.toast_remove_sucess_2),
+                                                + getResources().getText(R.string.toast_remove_success_2),
                                         Toast.LENGTH_SHORT).show();
                                 recreateNavigation();
                             }

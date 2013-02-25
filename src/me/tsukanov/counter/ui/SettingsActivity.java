@@ -41,7 +41,7 @@ public class SettingsActivity extends SherlockPreferenceActivity implements
         Preference versionPref = findPreference("version");
         versionPref.setSummary(version);
 
-        getPreferenceManager().findPreference("clearCounters")
+        getPreferenceManager().findPreference("removeCounters")
                 .setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {

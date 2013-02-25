@@ -5,10 +5,9 @@
     <string name="app_name">Counter</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="value_placeholder">null</string>
 
     <!-- Menu -->
-    <string name="menu_refresh">Refresh</string>
+    <string name="menu_reset">Reset</string>
     <string name="menu_add">Add</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
@@ -17,7 +16,7 @@
     <!-- Dialogs -->
     <string name="dialog_add_title">Add counter</string>
     <string name="dialog_edit_title">Edit counter</string>
-    <string name="dialog_delete_title">Are you sure you want to delete that counter?</string>
+    <string name="dialog_delete_title">Do you really want to delete this counter?</string>
     <string name="dialog_edit_name">Title:</string>
     <string name="dialog_edit_value">Value:</string>
     <string name="dialog_button_add">Add</string>
@@ -31,24 +30,20 @@
     <string name="settings_keep_on_title">Keep screen on</string>
     <string name="settings_keep_on_summary">Keep screen on while app is active</string>
     <string name="settings_controls">Controls</string>
-    <string name="settings_theme_title">Theme</string>
-    <string name="settings_theme_summary">Style of this application</string>
     <string name="settings_sounds_title">Turn on sounds</string>
     <string name="settings_sounds_summary">Play sounds</string>
     <string name="settings_vibration_title">Turn on vibration</string>
     <string name="settings_vibration_summary">Vibrate on changes</string>
     <string name="settings_hard_title">Use hardware buttons</string>
     <string name="settings_hard_summary">Change counter value using hardware buttons</string>
-    <string name="settings_data">Data</string>
-    <string name="settings_clear_title">Clear all data</string>
-    <string name="settings_clear_summary">Delete all counters</string>
-    <string name="settings_about">About</string>
+    <string name="settings_other">Other</string>
+    <string name="settings_wipe_title">Remove all counters</string>
     <string name="settings_version_title">Version</string>
 
     <!-- Something else -->
-    <string name="toast_wipe_success">All data has been removed.</string>
-    <string name="toast_remove_sucess_1">Counter</string>
-    <string name="toast_remove_sucess_2">has been removed.</string>
+    <string name="toast_wipe_success">All counters have been removed.</string>
+    <string name="toast_remove_success_1">Counter</string>
+    <string name="toast_remove_success_2">has been removed.</string>
     <string name="toast_no_name_message">Please, input the name.</string>
     <string name="default_counter_name">First</string>
     <string name="unknown">Unknown</string>

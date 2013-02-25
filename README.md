@@ -1,28 +1,33 @@
-Simple Counter
-==============
+# Simple Counter
+
 Simple Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android.
-It makes counting easier because you can have multiple counters with their own names and values.
-You can change values using volume buttons, turn on sounds, and vibration.
+It makes counting easier. You can have multiple counters with their own names and values.
+Values can be changed using volume buttons.
 
 It's my first Android application. The goal was to make something useful (at least for myself)
-and easy to build. Feel free to suggest a new feature or submit bug report [here](https://github.com/Tsukanov/Simple-Counter/issues)
-at GitHub. I hope you'll find this app useful. ;)
+and easy to build. Feel free to suggest a new feature on [UserVoice](https://counter.uservoice.com/),
+or submit bug report [here](https://github.com/Tsukanov/Simple-Counter/issues) at GitHub.
+
+I hope you'll find this app useful. ;)
 
 Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter).
 
 ![](http://i.imgur.com/6pUY9.png)
 
-Thanks to
----------
+## Contributing
+Feel free to make improvements and create pull requests. If you want to help with translation go to project's
+[page on Crowdin](http://crowdin.net/project/simple-counter) (please, don't translate resources directly).
+You can suggest new feature by creating [new issue](https://github.com/Tsukanov/Simple-Counter/issues/new) here on GitHub,
+or making new request on [UserVoice](https://counter.uservoice.com/).
+
+## Thanks to
 * [Vincenzo Petronio](https://plus.google.com/116467112276686980985/) for making Italian localization
 
-What was used
--------------
+## What was used
 * [ActionBarSherlock](http://actionbarsherlock.com/) for compatibility with older versions of Android
-* Sounds are from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
+* Sounds from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
 
-License
--------
+## License
     Copyright 2012 Roman Tsukanov
 
     Licensed under the Apache License, Version 2.0 (the "License");
