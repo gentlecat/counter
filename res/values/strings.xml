@@ -39,6 +39,9 @@
     <string name="settings_other">Other</string>
     <string name="settings_wipe_title">Remove all counters</string>
     <string name="settings_version_title">Version</string>
+    <string name="settings_interface">Interface</string>
+    <string name="settings_theme_title">Light Theme</string>
+    <string name="settings_theme_summary">Use A Light theme with Dark ActionBar - NEEDS APPLICATION RESTART</string>    
 
     <!-- Something else -->
     <string name="toast_wipe_success">All counters have been removed.</string>
