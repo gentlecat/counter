@@ -42,7 +42,10 @@ public class CounterActivity extends SherlockFragmentActivity implements
     public void onCreate(Bundle savedInstanceState) {
         settings = PreferenceManager.getDefaultSharedPreferences(this);
         app = (CounterApplication) getApplication();
-
+        if (settings.getBoolean("themeOn", false))        	
+    	{
+        	setTheme(R.style.Theme_Sherlock_Light_DarkActionBar);
+    	}
         super.onCreate(savedInstanceState);
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
