@@ -1,4 +1,4 @@
-# Simple Counter
+# Simple Counter [![Build Status](https://travis-ci.org/Tsukanov/Simple-Counter.png)](https://travis-ci.org/Tsukanov/Simple-Counter)
 
 Simple Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android.
 It makes counting easier. You can have multiple counters with their own names and values.
