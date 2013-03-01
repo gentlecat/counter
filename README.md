@@ -8,14 +8,13 @@ It's my first Android application. The goal was to make something useful (at lea
 and easy to build. Feel free to suggest a new feature on [UserVoice](https://counter.uservoice.com/),
 or submit bug report [here](https://github.com/Tsukanov/Simple-Counter/issues) on GitHub.
 
-I hope you'll find this app useful. ;)
-
 Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter).
-
-![](http://i.imgur.com/RyI0DlT.png)
+I hope you'll find this app useful. ;)
 
 Huge thanks to all the people, who help with [translation](http://crowdin.net/project/simple-counter)
 and [contributing](https://github.com/Tsukanov/Simple-Counter/contributors).
+
+![](http://i.imgur.com/RyI0DlT.png)
 
 ## Contributing
 Feel free to make improvements and create pull requests. If you want to help with translation go to project's

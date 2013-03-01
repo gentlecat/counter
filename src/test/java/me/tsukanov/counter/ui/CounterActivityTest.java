@@ -14,6 +14,6 @@ public class CounterActivityTest {
     @Test
     public void shouldHaveProperAppName() throws Exception {
         String appName = new CounterActivity().getResources().getString(R.string.app_name);
-        assertThat(appName, equalTo("Counter"));
+        assertThat(appName, equalTo("Simple Counter"));
     }
 }
