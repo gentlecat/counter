@@ -10,9 +10,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Html;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -34,16 +39,22 @@ public class CounterActivity extends SherlockFragmentActivity implements
     CounterApplication app;
     ActionBar actionBar;
     CounterFragment currentFragment;
-    SharedPreferences settings;
+    SharedPreferences sharedPref;
     List<String> keys;
     ArrayAdapter<String> navigationAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        settings = PreferenceManager.getDefaultSharedPreferences(this);
+        super.onCreate(savedInstanceState);
+
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        if (sharedPref.getBoolean("isFirstLaunch", true)) {
+            sharedPref.edit().putBoolean("isFirstLaunch", false).commit();
+            showInfoDialog();
+        }
+
         app = (CounterApplication) getApplication();
 
-        super.onCreate(savedInstanceState);
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
@@ -58,7 +69,7 @@ public class CounterActivity extends SherlockFragmentActivity implements
             refreshActivity();
         }
 
-        if (settings.getBoolean("keepScreenOn", false)) {
+        if (sharedPref.getBoolean("keepScreenOn", false)) {
             getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         } else {
             getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -69,7 +80,7 @@ public class CounterActivity extends SherlockFragmentActivity implements
     protected void onPause() {
         super.onPause();
         app.saveCounters();
-        SharedPreferences.Editor settingsEditor = settings.edit();
+        SharedPreferences.Editor settingsEditor = sharedPref.edit();
         settingsEditor.putString("activeKey", app.activeKey);
         settingsEditor.commit();
     }
@@ -136,6 +147,9 @@ public class CounterActivity extends SherlockFragmentActivity implements
             case R.id.menu_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
+                return true;
+            case R.id.menu_info:
+                showInfoDialog();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -303,6 +317,24 @@ public class CounterActivity extends SherlockFragmentActivity implements
                         })
                 .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
         return deleteDialogBuilder;
+    }
+
+    private void showInfoDialog() {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.info, (ViewGroup) findViewById(R.layout.info));
+        TextView content = (TextView) layout.findViewById(R.id.info_content);
+        content.setText(Html.fromHtml(getResources().getString(R.string.info)));
+        content.setMovementMethod(LinkMovementMethod.getInstance());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle(getResources().getString(R.string.app_name))
+                .setView(layout).setNeutralButton(
+                        getString(R.string.dialog_button_close),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        builder.create().show();
     }
 
     private int getValueCharLimit() {
