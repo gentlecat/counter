@@ -2,6 +2,7 @@
 
 ## Version 9
 * Added "About" window
+* Interface improvements for devices with small screens.
 * Updated localization (added German, Spanish, and French)
 
 ## Version 8
