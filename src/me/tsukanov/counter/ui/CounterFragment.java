@@ -27,18 +27,15 @@ public class CounterFragment extends SherlockFragment {
     private static final int MIN_VALUE = 0;
     private static final int DEFAULT_VALUE = MIN_VALUE;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
-    private static final int INCREMENT_SOUND = 200;
-    private static final int DECREMENT_SOUND = 201;
-    private static final int REFRESH_SOUND = 202;
-    int counterValue = DEFAULT_VALUE;
-    CounterApplication app;
-    SharedPreferences settings;
-    Vibrator vibrator;
-    SoundPool soundPool;
-    SparseIntArray soundsMap;
-    TextView counterLabel;
-    Button incrementButton;
-    Button decrementButton;
+    private int counterValue = DEFAULT_VALUE;
+    private CounterApplication app;
+    private SharedPreferences settings;
+    private Vibrator vibrator;
+    private SoundPool soundPool;
+    private SparseIntArray soundsMap;
+    private TextView counterLabel;
+    private Button incrementButton;
+    private Button decrementButton;
 
     public static int getMaxValue() {
         return MAX_VALUE;
@@ -55,6 +52,7 @@ public class CounterFragment extends SherlockFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setHasOptionsMenu(true);
         app = (CounterApplication) getActivity().getApplication();
         vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
@@ -63,9 +61,9 @@ public class CounterFragment extends SherlockFragment {
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
         soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
         soundsMap = new SparseIntArray(3);
-        soundsMap.put(INCREMENT_SOUND, soundPool.load(getActivity(), R.raw.increment_sound, 1));
-        soundsMap.put(DECREMENT_SOUND, soundPool.load(getActivity(), R.raw.decrement_sound, 1));
-        soundsMap.put(REFRESH_SOUND, soundPool.load(getActivity(), R.raw.refresh_sound, 1));
+        soundsMap.put(Sound.INCREMENT_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.increment_sound, 1));
+        soundsMap.put(Sound.DECREMENT_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.decrement_sound, 1));
+        soundsMap.put(Sound.REFRESH_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.refresh_sound, 1));
     }
 
     @Override
@@ -115,7 +113,7 @@ public class CounterFragment extends SherlockFragment {
         if (counterValue < MAX_VALUE) {
             setValue(++counterValue);
             vibrate(DEFAULT_VIBRATION_DURATION);
-            playSound(INCREMENT_SOUND);
+            playSound(Sound.INCREMENT_SOUND);
         }
     }
 
@@ -123,14 +121,14 @@ public class CounterFragment extends SherlockFragment {
         if (counterValue > MIN_VALUE) {
             setValue(--counterValue);
             vibrate(DEFAULT_VIBRATION_DURATION + 20);
-            playSound(DECREMENT_SOUND);
+            playSound(Sound.DECREMENT_SOUND);
         }
     }
 
     public void refresh() {
         setValue(DEFAULT_VALUE);
         vibrate(DEFAULT_VIBRATION_DURATION + 40);
-        playSound(REFRESH_SOUND);
+        playSound(Sound.REFRESH_SOUND);
     }
 
     public void setValue(int value) {
@@ -158,12 +156,14 @@ public class CounterFragment extends SherlockFragment {
         }
     }
 
-    private void playSound(int key) {
+    private void playSound(Sound sound) {
         if (settings.getBoolean("soundsOn", false)) {
             AudioManager audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
             float volume = (float) audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-            soundPool.play(soundsMap.get(key), volume, volume, 1, 0, 1f);
+            soundPool.play(soundsMap.get(sound.ordinal()), volume, volume, 1, 0, 1f);
         }
     }
+
+    enum Sound {INCREMENT_SOUND, DECREMENT_SOUND, REFRESH_SOUND}
 
 }
