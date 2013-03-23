@@ -1,51 +1,41 @@
 package me.tsukanov.counter.ui;
 
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
-import android.text.InputFilter;
-import android.text.InputType;
 import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import android.widget.TextView;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+import com.slidingmenu.lib.SlidingMenu;
+import com.slidingmenu.lib.app.SlidingFragmentActivity;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class CounterActivity extends SherlockFragmentActivity implements
-        ActionBar.OnNavigationListener {
-
-    private static final int DIALOG_ADD = 100;
-    private static final int DIALOG_EDIT = 101;
-    private static final int DIALOG_DELETE = 102;
-    CounterApplication app;
-    ActionBar actionBar;
-    CounterFragment currentFragment;
-    SharedPreferences sharedPref;
-    List<String> keys;
-    ArrayAdapter<String> navigationAdapter;
+public class CounterActivity extends SlidingFragmentActivity {
+    public CountersListFragment countersListFragment;
+    public CounterFragment currentCounterFragment;
+    private CounterApplication app;
+    private SharedPreferences sharedPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.content_frame);
+
+        app = (CounterApplication) getApplication();
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         if (sharedPref.getBoolean("isFirstLaunch", true)) {
@@ -53,12 +43,21 @@ public class CounterActivity extends SherlockFragmentActivity implements
             showInfoDialog();
         }
 
-        app = (CounterApplication) getApplication();
+        setBehindContentView(R.layout.menu_frame);
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        countersListFragment = new CountersListFragment();
+        transaction.replace(R.id.menu_frame, countersListFragment);
+        transaction.commit();
 
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-        createNavigation();
+        SlidingMenu sm = getSlidingMenu();
+        sm.setShadowWidthRes(R.dimen.shadow_width);
+        sm.setShadowDrawable(R.drawable.shadow);
+        sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        sm.setBehindWidthRes(R.dimen.behind_width);
+        sm.setFadeDegree(0.1f);
+        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -68,6 +67,9 @@ public class CounterActivity extends SherlockFragmentActivity implements
             app.isUpdateNeeded = false;
             refreshActivity();
         }
+
+        String previousCounter = sharedPref.getString("activeKey", getString(R.string.default_counter_name));
+        switchCounter(new CounterFragment(previousCounter));
 
         if (sharedPref.getBoolean("keepScreenOn", false)) {
             getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -81,7 +83,7 @@ public class CounterActivity extends SherlockFragmentActivity implements
         super.onPause();
         app.saveCounters();
         SharedPreferences.Editor settingsEditor = sharedPref.edit();
-        settingsEditor.putString("activeKey", app.activeKey);
+        settingsEditor.putString("activeKey", currentCounterFragment.getName());
         settingsEditor.commit();
     }
 
@@ -92,19 +94,19 @@ public class CounterActivity extends SherlockFragmentActivity implements
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (prefs.getBoolean("hardControlOn", true)) {
-                    currentFragment.increment();
+                    currentCounterFragment.increment();
                     return true;
                 }
                 return false;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 if (prefs.getBoolean("hardControlOn", true)) {
-                    currentFragment.decrement();
+                    currentCounterFragment.decrement();
                     return true;
                 }
                 return false;
             case KeyEvent.KEYCODE_CAMERA:
                 if (prefs.getBoolean("hardControlOn", true)) {
-                    currentFragment.refresh();
+                    currentCounterFragment.refresh();
                     return true;
                 }
                 return false;
@@ -117,15 +119,6 @@ public class CounterActivity extends SherlockFragmentActivity implements
     }
 
     @Override
-    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-        app.activeKey = keys.get(itemPosition);
-        currentFragment = new CounterFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(android.R.id.content, currentFragment).commit();
-        return true;
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getSupportMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
@@ -135,14 +128,8 @@ public class CounterActivity extends SherlockFragmentActivity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_add:
-                showDialog(DIALOG_ADD);
-                return true;
-            case R.id.menu_edit:
-                showDialog(DIALOG_EDIT);
-                return true;
-            case R.id.menu_delete:
-                showDialog(DIALOG_DELETE);
+            case android.R.id.home:
+                toggle();
                 return true;
             case R.id.menu_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
@@ -156,167 +143,15 @@ public class CounterActivity extends SherlockFragmentActivity implements
         }
     }
 
-    protected Dialog onCreateDialog(int id) {
-        Dialog dialog;
-        switch (id) {
-            case DIALOG_ADD:
-                dialog = getAddDialog().create();
-                break;
-            case DIALOG_EDIT:
-                dialog = getEditDialog().create();
-                break;
-            case DIALOG_DELETE:
-                dialog = getDeleteDialog().create();
-                break;
-            default:
-                dialog = null;
-        }
-        return dialog;
-    }
-
-    private Builder getAddDialog() {
-        AlertDialog.Builder addDialogBuilder = new AlertDialog.Builder(this);
-        addDialogBuilder.setTitle(getResources().getText(
-                R.string.dialog_add_title));
-
-        LinearLayout addDialogLayout = (LinearLayout) getLayoutInflater()
-                .inflate(R.layout.editor_layout, null);
-
-        // Name input label
-        TextView nameInputLabel = new TextView(this);
-        nameInputLabel.setText(getResources()
-                .getText(R.string.dialog_edit_name));
-        addDialogLayout.addView(nameInputLabel);
-
-        // Name input
-        final EditText nameInput = new EditText(this);
-        nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
-        nameInput.setText("");
-        addDialogLayout.addView(nameInput);
-
-        // Value input label
-        TextView valueInputLabel = new TextView(this);
-        valueInputLabel.setText(getResources().getText(
-                R.string.dialog_edit_value));
-        valueInputLabel.setPadding(0, 10, 0, 0);
-        addDialogLayout.addView(valueInputLabel);
-
-        // Value input
-        final EditText valueInput = new EditText(this);
-        valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-        valueInput.setText("");
-        InputFilter[] valueFilter = new InputFilter[1];
-        valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
-        valueInput.setFilters(valueFilter);
-        addDialogLayout.addView(valueInput);
-
-        addDialogBuilder
-                .setView(addDialogLayout)
-                .setPositiveButton(getResources().getText(R.string.dialog_button_add),
-                        new OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                String name = nameInput.getText().toString();
-                                if (name.equals("")) {
-                                    Toast.makeText(getBaseContext(),
-                                            getResources().getText(R.string.toast_no_name_message),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    int value = 0;
-                                    String valueInputContents = valueInput.getText().toString();
-                                    if (!valueInputContents.equals("")) {
-                                        value = Integer.parseInt(valueInputContents);
-                                    }
-                                    app.counters.put(name, value);
-                                    recreateNavigation();
-                                    actionBar.setSelectedNavigationItem(findPosition(name));
-                                }
-                            }
-                        })
-                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-        return addDialogBuilder;
-    }
-
-    private Builder getEditDialog() {
-        AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(this);
-        editDialogBuilder.setTitle(getResources().getText(R.string.dialog_edit_title));
-
-        LinearLayout editDialogLayout = (LinearLayout) getLayoutInflater()
-                .inflate(R.layout.editor_layout, null);
-
-        // Name input label
-        TextView nameInputLabel = new TextView(this);
-        nameInputLabel.setText(getResources()
-                .getText(R.string.dialog_edit_name));
-        editDialogLayout.addView(nameInputLabel);
-
-        // Name input
-        final EditText nameInput = new EditText(this);
-        nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
-        nameInput.setText(app.activeKey);
-        editDialogLayout.addView(nameInput);
-
-        // Value input label
-        TextView valueInputLabel = new TextView(this);
-        valueInputLabel.setText(getResources().getText(
-                R.string.dialog_edit_value));
-        valueInputLabel.setPadding(0, 10, 0, 0);
-        editDialogLayout.addView(valueInputLabel);
-
-        // Value input
-        final EditText valueInput = new EditText(this);
-        valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-        valueInput.setText(String.valueOf(app.counters.get(app.activeKey)));
-        InputFilter[] valueFilter = new InputFilter[1];
-        valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
-        valueInput.setFilters(valueFilter);
-        editDialogLayout.addView(valueInput);
-
-        editDialogBuilder
-                .setView(editDialogLayout)
-                .setPositiveButton(getResources().getText(R.string.dialog_button_apply),
-                        new OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                String name = nameInput.getText().toString();
-                                if (name.equals("")) {
-                                    Toast.makeText(getBaseContext(),
-                                            getResources().getText(R.string.toast_no_name_message),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    int value = 0;
-                                    String valueInputContents = valueInput.getText().toString();
-                                    if (!valueInputContents.equals("")) {
-                                        value = Integer.parseInt(valueInputContents);
-                                    }
-                                    app.counters.remove(app.activeKey);
-                                    app.counters.put(name, value);
-                                    recreateNavigation();
-                                    actionBar.setSelectedNavigationItem(findPosition(name));
-                                }
-                            }
-                        })
-                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-        return editDialogBuilder;
-    }
-
-    private Builder getDeleteDialog() {
-        AlertDialog.Builder deleteDialogBuilder = new AlertDialog.Builder(this);
-        deleteDialogBuilder
-                .setMessage(getResources().getText(R.string.dialog_delete_title))
-                .setCancelable(false)
-                .setPositiveButton(getResources().getText(R.string.dialog_button_delete),
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                app.counters.remove(app.activeKey);
-                                Toast.makeText(getBaseContext(),
-                                        getResources().getText(R.string.toast_remove_success_1)
-                                                + " \"" + app.activeKey + "\" "
-                                                + getResources().getText(R.string.toast_remove_success_2),
-                                        Toast.LENGTH_SHORT).show();
-                                recreateNavigation();
-                            }
-                        })
-                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-        return deleteDialogBuilder;
+    public void switchCounter(final CounterFragment fragment) {
+        currentCounterFragment = fragment;
+        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, currentCounterFragment).commit();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                getSlidingMenu().showContent();
+            }
+        }, 50);
     }
 
     private void showInfoDialog() {
@@ -335,36 +170,6 @@ public class CounterActivity extends SherlockFragmentActivity implements
                             }
                         });
         builder.create().show();
-    }
-
-    private int getValueCharLimit() {
-        return String.valueOf(CounterFragment.getMaxValue()).length();
-    }
-
-    private void recreateNavigation() {
-        app.saveCounters();
-        createNavigation();
-    }
-
-    private void createNavigation() {
-        app.loadCounters();
-        keys = new ArrayList<String>();
-        for (String key : app.counters.keySet()) {
-            keys.add(key);
-        }
-        Context context = getSupportActionBar().getThemedContext();
-        navigationAdapter = new ArrayAdapter<String>(context, R.layout.sherlock_spinner_item, keys);
-        navigationAdapter.setDropDownViewResource(R.layout.sherlock_spinner_dropdown_item);
-
-        actionBar.setListNavigationCallbacks(navigationAdapter, this);
-        actionBar.setSelectedNavigationItem(findPosition(app.activeKey));
-    }
-
-    private int findPosition(String key) {
-        for (int i = 0; i < navigationAdapter.getCount(); i++)
-            if (key.equals(navigationAdapter.getItem(i)))
-                return i;
-        return 0;
     }
 
     private void refreshActivity() {

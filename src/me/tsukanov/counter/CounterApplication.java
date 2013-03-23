@@ -13,7 +13,6 @@ public class CounterApplication extends Application {
 
     private static final String DATA_FILE_NAME = "counters";
     public LinkedHashMap<String, Integer> counters;
-    public String activeKey;
     public boolean isUpdateNeeded = false;
     SharedPreferences data;
 
@@ -23,8 +22,6 @@ public class CounterApplication extends Application {
         counters = new LinkedHashMap<String, Integer>();
         data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        activeKey = settings.getString("activeKey", "");
-
         loadCounters();
     }
 
