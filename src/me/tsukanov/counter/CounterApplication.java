@@ -3,7 +3,6 @@ package me.tsukanov.counter;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import me.tsukanov.counter.ui.CounterFragment;
 
 import java.util.LinkedHashMap;
@@ -13,7 +12,6 @@ public class CounterApplication extends Application {
 
     private static final String DATA_FILE_NAME = "counters";
     public LinkedHashMap<String, Integer> counters;
-    public boolean isUpdateNeeded = false;
     SharedPreferences data;
 
     @Override
@@ -21,7 +19,6 @@ public class CounterApplication extends Application {
         super.onCreate();
         counters = new LinkedHashMap<String, Integer>();
         data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         loadCounters();
     }
 
@@ -49,7 +46,6 @@ public class CounterApplication extends Application {
         counters.clear();
         counters.put((String) getResources().getText(R.string.default_counter_name),
                 CounterFragment.getDefaultValue());
-        isUpdateNeeded = true;
     }
 
 }

@@ -44,10 +44,6 @@ public class CounterActivity extends SlidingFragmentActivity {
         }
 
         setBehindContentView(R.layout.menu_frame);
-        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-        countersListFragment = new CountersListFragment();
-        transaction.replace(R.id.menu_frame, countersListFragment);
-        transaction.commit();
 
         SlidingMenu sm = getSlidingMenu();
         sm.setShadowWidthRes(R.dimen.shadow_width);
@@ -63,10 +59,11 @@ public class CounterActivity extends SlidingFragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (app.isUpdateNeeded) {
-            app.isUpdateNeeded = false;
-            refreshActivity();
-        }
+
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+        countersListFragment = new CountersListFragment();
+        transaction.replace(R.id.menu_frame, countersListFragment);
+        transaction.commit();
 
         String previousCounter = sharedPref.getString("activeKey", getString(R.string.default_counter_name));
         switchCounter(new CounterFragment(previousCounter));
