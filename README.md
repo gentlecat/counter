@@ -10,7 +10,7 @@ on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counte
 
 I hope you'll find this app useful. ;)
 
-![](http://i.imgur.com/F6gCaHy.jpg)
+![](http://i.imgur.com/iSaRtvp.png)
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests. If you want to help with translation go
