@@ -144,10 +144,4 @@ public class MainActivity extends SlidingFragmentActivity {
         }, 50);
     }
 
-    private void refreshActivity() {
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
-    }
-
 }
