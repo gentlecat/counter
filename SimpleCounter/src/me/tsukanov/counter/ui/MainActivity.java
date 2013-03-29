@@ -78,8 +78,7 @@ public class MainActivity extends SlidingFragmentActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        SharedPreferences prefs = PreferenceManager
-                .getDefaultSharedPreferences(this);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (prefs.getBoolean("hardControlOn", true)) {
@@ -99,11 +98,8 @@ public class MainActivity extends SlidingFragmentActivity {
                     return true;
                 }
                 return false;
-            case KeyEvent.KEYCODE_BACK:
-                finish();
-                return true;
             default:
-                return false;
+                return super.onKeyDown(keyCode, event);
         }
     }
 
@@ -132,7 +128,7 @@ public class MainActivity extends SlidingFragmentActivity {
         }
     }
 
-    private void showAboutDialog(){
+    private void showAboutDialog() {
         AboutDialog dialog = new AboutDialog();
         dialog.show(getSupportFragmentManager(), AboutDialog.TAG);
     }
