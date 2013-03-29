@@ -44,6 +44,7 @@ public class DeleteDialog extends DialogFragment {
                                                 + getResources().getText(R.string.toast_remove_success_2),
                                         Toast.LENGTH_SHORT).show();
                                 if (app.counters.isEmpty()) {
+                                    app.counters.put(getString(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
                                     activity.switchCounter(new CounterFragment(getString(R.string.default_counter_name)));
                                 } else {
                                     activity.switchCounter(new CounterFragment(app.counters.keySet().iterator().next()));
