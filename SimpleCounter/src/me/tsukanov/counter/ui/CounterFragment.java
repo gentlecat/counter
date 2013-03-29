@@ -23,11 +23,13 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
+import me.tsukanov.counter.ui.dialogs.DeleteDialog;
+import me.tsukanov.counter.ui.dialogs.EditDialog;
 
 public class CounterFragment extends SherlockFragment {
-    private static final int MAX_VALUE = 9999;
-    private static final int MIN_VALUE = 0;
-    private static final int DEFAULT_VALUE = MIN_VALUE;
+    public static final int MAX_VALUE = 9999;
+    public static final int MIN_VALUE = 0;
+    public static final int DEFAULT_VALUE = MIN_VALUE;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
     private String name = null;
     private int value = DEFAULT_VALUE;
@@ -52,19 +54,7 @@ public class CounterFragment extends SherlockFragment {
         this.value = value;
     }
 
-    public static int getMaxValue() {
-        return MAX_VALUE;
-    }
-
-    public static int getMinValue() {
-        return MIN_VALUE;
-    }
-
-    public static int getDefaultValue() {
-        return DEFAULT_VALUE;
-    }
-
-    public String getName() {
+    public String getCounterName() {
         return name;
     }
 
@@ -143,102 +133,19 @@ public class CounterFragment extends SherlockFragment {
     }
 
     private void showEditDialog() {
-        Context context = getSherlockActivity();
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(getResources().getText(R.string.dialog_edit_title));
-
-        LinearLayout editDialogLayout = (LinearLayout) getSherlockActivity().getLayoutInflater()
-                .inflate(R.layout.editor_layout, null);
-
-        // Name input label
-        TextView nameInputLabel = new TextView(getSherlockActivity().getApplicationContext());
-        nameInputLabel.setText(getResources()
-                .getText(R.string.dialog_edit_name));
-        editDialogLayout.addView(nameInputLabel);
-
-        // Name input
-        final EditText nameInput = new EditText(context);
-        nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
-        nameInput.setText(name);
-        editDialogLayout.addView(nameInput);
-
-        // Value input label
-        TextView valueInputLabel = new TextView(context);
-        valueInputLabel.setText(getResources().getText(
-                R.string.dialog_edit_value));
-        valueInputLabel.setPadding(0, 10, 0, 0);
-        editDialogLayout.addView(valueInputLabel);
-
-        // Value input
-        final EditText valueInput = new EditText(context);
-        valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-        valueInput.setText(String.valueOf(value));
-        InputFilter[] valueFilter = new InputFilter[1];
-        valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
-        valueInput.setFilters(valueFilter);
-        editDialogLayout.addView(valueInput);
-
-        builder.setView(editDialogLayout)
-                .setPositiveButton(getResources().getText(R.string.dialog_button_apply),
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                String newName = nameInput.getText().toString();
-                                if (newName.equals("")) {
-                                    Toast.makeText(getSherlockActivity().getApplicationContext(),
-                                            getResources().getText(R.string.toast_no_name_message),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    app.counters.remove(name);
-                                    int newValue;
-                                    String valueInputContents = valueInput.getText().toString();
-                                    if (!valueInputContents.equals("")) {
-                                        newValue = Integer.parseInt(valueInputContents);
-                                    } else {
-                                        newValue = DEFAULT_VALUE;
-                                    }
-                                    CounterActivity activity = (CounterActivity) getActivity();
-                                    activity.countersListFragment.updateList();
-                                    switchFragment(new CounterFragment(newName, newValue));
-                                }
-                            }
-                        })
-                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-        builder.create().show();
+        EditDialog dialog = EditDialog.newInstance(name, value);
+        dialog.show(getFragmentManager(), EditDialog.TAG);
     }
 
     private void showDeleteDialog() {
-        Context context = getSherlockActivity();
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(getResources().getText(R.string.dialog_delete_title))
-                .setCancelable(false)
-                .setPositiveButton(getResources().getText(R.string.dialog_button_delete),
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                app.counters.remove(name);
-                                CounterActivity activity = (CounterActivity) getActivity();
-                                activity.countersListFragment.updateList();
-                                Toast.makeText(
-                                        getSherlockActivity().getApplicationContext(),
-                                        getResources().getText(R.string.toast_remove_success_1) + " \"" + name + "\" "
-                                                + getResources().getText(R.string.toast_remove_success_2),
-                                        Toast.LENGTH_SHORT).show();
-                                if (app.counters.isEmpty()) {
-                                    switchFragment(new CounterFragment(getSherlockActivity().getString(R.string.default_counter_name)));
-                                } else {
-                                    switchFragment(new CounterFragment(app.counters.keySet().iterator().next()));
-                                }
-                            }
-                        })
-                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-        builder.create().show();
+        DeleteDialog dialog = DeleteDialog.newInstance(name);
+        dialog.show(getFragmentManager(), DeleteDialog.TAG);
     }
 
     private void switchFragment(CounterFragment fragment) {
         if (getActivity() == null) return;
-        if (getActivity() instanceof CounterActivity) {
-            CounterActivity activity = (CounterActivity) getActivity();
+        if (getActivity() instanceof MainActivity) {
+            MainActivity activity = (MainActivity) getActivity();
             activity.switchCounter(fragment);
         }
     }
@@ -300,12 +207,6 @@ public class CounterFragment extends SherlockFragment {
         }
     }
 
-    private int getValueCharLimit() {
-        return String.valueOf(CounterFragment.getMaxValue()).length();
-    }
-
     private enum Sound {INCREMENT_SOUND, DECREMENT_SOUND, REFRESH_SOUND}
-
-    private enum DialogType {EDIT, DELETE}
 
 }

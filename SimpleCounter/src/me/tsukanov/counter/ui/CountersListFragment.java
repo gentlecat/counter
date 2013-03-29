@@ -1,18 +1,18 @@
 package me.tsukanov.counter.ui;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.text.InputFilter;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
+import me.tsukanov.counter.ui.dialogs.AddDialog;
 
 public class CountersListFragment extends ListFragment {
     CounterApplication app;
@@ -45,8 +45,8 @@ public class CountersListFragment extends ListFragment {
 
     private void switchCounterFragment(CounterFragment fragment) {
         if (getActivity() == null) return;
-        if (getActivity() instanceof CounterActivity) {
-            CounterActivity ra = (CounterActivity) getActivity();
+        if (getActivity() instanceof MainActivity) {
+            MainActivity ra = (MainActivity) getActivity();
             ra.switchCounter(fragment);
         }
     }
@@ -60,70 +60,8 @@ public class CountersListFragment extends ListFragment {
     }
 
     private void showAddDialog() {
-        Context context = getActivity();
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(getResources().getText(
-                R.string.dialog_add_title));
-
-        LinearLayout addDialogLayout = (LinearLayout) getActivity().getLayoutInflater()
-                .inflate(R.layout.editor_layout, null);
-
-        // Name input label
-        TextView nameInputLabel = new TextView(context);
-        nameInputLabel.setText(getResources()
-                .getText(R.string.dialog_edit_name));
-        addDialogLayout.addView(nameInputLabel);
-
-        // Name input
-        final EditText nameInput = new EditText(context);
-        nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
-        nameInput.setText("");
-        addDialogLayout.addView(nameInput);
-
-        // Value input label
-        TextView valueInputLabel = new TextView(context);
-        valueInputLabel.setText(getResources().getText(
-                R.string.dialog_edit_value));
-        valueInputLabel.setPadding(0, 10, 0, 0);
-        addDialogLayout.addView(valueInputLabel);
-
-        // Value input
-        final EditText valueInput = new EditText(context);
-        valueInput.setInputType(InputType.TYPE_CLASS_NUMBER);
-        valueInput.setText("");
-        InputFilter[] valueFilter = new InputFilter[1];
-        valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
-        valueInput.setFilters(valueFilter);
-        addDialogLayout.addView(valueInput);
-
-        builder.setView(addDialogLayout)
-                .setPositiveButton(getResources().getText(R.string.dialog_button_add),
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                String name = nameInput.getText().toString();
-                                if (name.equals("")) {
-                                    Toast.makeText(getActivity().getApplicationContext(),
-                                            getResources().getText(R.string.toast_no_name_message),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    int value = 0;
-                                    String valueInputContents = valueInput.getText().toString();
-                                    if (!valueInputContents.equals("")) {
-                                        value = Integer.parseInt(valueInputContents);
-                                    }
-                                    app.counters.put(name, value);
-                                    updateList();
-                                    switchCounterFragment(new CounterFragment(name));
-                                }
-                            }
-                        })
-                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null);
-        builder.create().show();
-    }
-
-    private int getValueCharLimit() {
-        return String.valueOf(CounterFragment.getMaxValue()).length();
+        AddDialog dialog = new AddDialog();
+        dialog.show(getFragmentManager(), AddDialog.TAG);
     }
 
     private class Counter {

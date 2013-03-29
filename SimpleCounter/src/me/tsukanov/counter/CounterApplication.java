@@ -25,8 +25,7 @@ public class CounterApplication extends Application {
     public void loadCounters() {
         Map<String, ?> dataMap = data.getAll();
         if (dataMap.isEmpty()) {
-            counters.put((String) getResources().getText(R.string.default_counter_name),
-                    CounterFragment.getDefaultValue());
+            counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
         } else {
             for (Map.Entry<String, ?> entry : dataMap.entrySet())
                 counters.put(entry.getKey(), (Integer) entry.getValue());
@@ -44,8 +43,7 @@ public class CounterApplication extends Application {
 
     public void removeCounters() {
         counters.clear();
-        counters.put((String) getResources().getText(R.string.default_counter_name),
-                CounterFragment.getDefaultValue());
+        counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
     }
 
 }

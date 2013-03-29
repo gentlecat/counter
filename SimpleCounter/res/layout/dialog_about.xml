@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/info_content"
+            android:id="@+id/about_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>

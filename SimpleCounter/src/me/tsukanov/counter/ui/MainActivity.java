@@ -1,21 +1,12 @@
 package me.tsukanov.counter.ui;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
@@ -23,8 +14,9 @@ import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
+import me.tsukanov.counter.ui.dialogs.AboutDialog;
 
-public class CounterActivity extends SlidingFragmentActivity {
+public class MainActivity extends SlidingFragmentActivity {
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounterFragment;
     private CounterApplication app;
@@ -40,7 +32,7 @@ public class CounterActivity extends SlidingFragmentActivity {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         if (sharedPref.getBoolean("isFirstLaunch", true)) {
             sharedPref.edit().putBoolean("isFirstLaunch", false).commit();
-            showInfoDialog();
+            showAboutDialog();
         }
 
         setBehindContentView(R.layout.menu_frame);
@@ -80,7 +72,7 @@ public class CounterActivity extends SlidingFragmentActivity {
         super.onPause();
         app.saveCounters();
         SharedPreferences.Editor settingsEditor = sharedPref.edit();
-        settingsEditor.putString("activeKey", currentCounterFragment.getName());
+        settingsEditor.putString("activeKey", currentCounterFragment.getCounterName());
         settingsEditor.commit();
     }
 
@@ -133,11 +125,16 @@ public class CounterActivity extends SlidingFragmentActivity {
                 startActivity(intent);
                 return true;
             case R.id.menu_info:
-                showInfoDialog();
+                showAboutDialog();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showAboutDialog(){
+        AboutDialog dialog = new AboutDialog();
+        dialog.show(getSupportFragmentManager(), AboutDialog.TAG);
     }
 
     public void switchCounter(final CounterFragment fragment) {
@@ -149,24 +146,6 @@ public class CounterActivity extends SlidingFragmentActivity {
                 getSlidingMenu().showContent();
             }
         }, 50);
-    }
-
-    private void showInfoDialog() {
-        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.info, (ViewGroup) findViewById(R.layout.info));
-        TextView content = (TextView) layout.findViewById(R.id.info_content);
-        content.setText(Html.fromHtml(getResources().getString(R.string.info)));
-        content.setMovementMethod(LinkMovementMethod.getInstance());
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle(getResources().getString(R.string.app_name))
-                .setView(layout).setNeutralButton(
-                        getString(R.string.dialog_button_close),
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-        builder.create().show();
     }
 
     private void refreshActivity() {

@@ -2,13 +2,13 @@ package me.tsukanov.counter.test;
 
 import android.test.ActivityInstrumentationTestCase2;
 import com.jayway.android.robotium.solo.Solo;
-import me.tsukanov.counter.ui.CounterActivity;
+import me.tsukanov.counter.ui.MainActivity;
 
-public class CounterActivityTest extends ActivityInstrumentationTestCase2<CounterActivity> {
+public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     private Solo solo;
 
-    public CounterActivityTest() {
-        super(CounterActivity.class);
+    public MainActivityTest() {
+        super(MainActivity.class);
     }
 
     @Override
