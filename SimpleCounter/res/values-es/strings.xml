@@ -3,12 +3,12 @@
 <resources>
   <string name="app_name_short">Counter</string>
   <string name="menu_reset">Reestablecer</string>
-  <string name="menu_add">Agregar</string>
+  <string name="menu_add">Agregar contador</string>
   <string name="menu_edit">Editar</string>
   <string name="menu_delete">Borrar</string>
   <string name="menu_settings">Configuración</string>
   <string name="menu_info">About</string>
-  <string name="dialog_add_title">Agregar contador</string>
+  <string name="dialog_add_title">Agregar nuevo contador</string>
   <string name="dialog_edit_title">Editar contador</string>
   <string name="dialog_delete_title">¿Está seguro de que quiere borrar contador?</string>
   <string name="dialog_edit_name">Título:</string>
@@ -17,32 +17,7 @@
   <string name="dialog_button_apply">Aplicar</string>
   <string name="dialog_button_delete">Borrar</string>
   <string name="dialog_button_cancel">Cancelar</string>
-  <string name="dialog_button_close">Close</string>
-  <string name="info"><![CDATA[
-        <h1>About</h1>
-        <p>Simple Counter is a <a href="http://en.wikipedia.org/wiki/Tally_counter">tally counter</a> for Android.
-        It makes counting easier. You can have multiple counters with their own names and values.
-        Values can be changed using volume buttons.</p>
-        <p>This is an open-source application. Source code is hosted on GitHub at
-        <a href="https://github.com/Tsukanov/Simple-Counter/">https://github.com/Tsukanov/Simple-Counter/</a>.</p>
-        <p>It is my first Android application. The goal was to make something useful (at least for myself)
-        and easy to build. Feel free to suggest a new feature on <a href="https://counter.uservoice.com/">UserVoice</a>,
-        or submit bug report <a href="https://github.com/Tsukanov/Simple-Counter/issues">on GitHub</a>.</p>
-        <p>I hope you\'ll find this app useful. If you have some free time, please, rate this app in
-        <a href="https://play.google.com/store/apps/details?id=me.tsukanov.counter">Play Store</a>.</p>
-
-        <h2>Contributing</h2>
-        <p>Feel free to make improvements and create pull requests. If you want to help with translation go to project\'s
-        <a href="http://crowdin.net/project/simple-counter">page on Crowdin</a>.
-        You can suggest new feature <a href="https://counter.uservoice.com/">on UserVoice</a>.</p>
-
-        <h2>Legal</h2>
-        <p>Created by <a href="http://tsukanov.me/">Roman Tsukanov</a>.
-        Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
-        <br />Unless required by applicable law or agreed to in writing, software distributed under the License is
-        distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        See the License for the specific language governing permissions andlimitations under the License.</p>
-    ]]></string>
+  <string name="dialog_button_close">Cerrar</string>
   <string name="settings_title">Configuración</string>
   <string name="settings_screen">Pantalla</string>
   <string name="settings_keep_on_title">Mantener la pantalla encendida</string>
@@ -61,6 +36,6 @@
   <string name="toast_remove_success_1">Counter</string>
   <string name="toast_remove_success_2">Se han removido.</string>
   <string name="toast_no_name_message">Ingrese el nombre.</string>
-  <string name="default_counter_name">Primero</string>
+  <string name="default_counter_name">Primer contador</string>
   <string name="unknown">Desconocido</string>
 </resources>

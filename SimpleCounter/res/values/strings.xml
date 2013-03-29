@@ -57,18 +57,18 @@
         <p>Simple Counter is a <a href="http://en.wikipedia.org/wiki/Tally_counter">tally counter</a> for Android.
         It makes counting easier. You can have multiple counters with their own names and values.
         Values can be changed using volume buttons.</p>
-        <p>This is an open-source application. Source code is hosted on GitHub at
+        <p>This is an open source application. Source code is hosted on GitHub at
         <a href="https://github.com/Tsukanov/Simple-Counter/">https://github.com/Tsukanov/Simple-Counter/</a>.</p>
         <p>It is my first Android application. The goal was to make something useful (at least for myself)
-        and easy to build. Feel free to suggest a new feature on <a href="https://counter.uservoice.com/">UserVoice</a>,
-        or submit bug report <a href="https://github.com/Tsukanov/Simple-Counter/issues">on GitHub</a>.</p>
+        and easy to build. Feel free to submit bug reports
+        <a href="https://github.com/Tsukanov/Simple-Counter/issues">on GitHub</a>.</p>
         <p>I hope you\'ll find this app useful. If you have some free time, please, rate this app in
-        <a href="https://play.google.com/store/apps/details?id=me.tsukanov.counter">Play Store</a>.</p>
+        <a href="https://play.google.com/store/apps/details?id=me.tsukanov.counter">Play Store</a>. Thanks!</p>
 
         <h2>Contributing</h2>
         <p>Feel free to make improvements and create pull requests. If you want to help with translation go to project\'s
-        <a href="http://crowdin.net/project/simple-counter">page on Crowdin</a>.
-        You can suggest new feature <a href="https://counter.uservoice.com/">on UserVoice</a>.</p>
+        <a href="http://crowdin.net/project/simple-counter">page on Crowdin</a>.</p>
+        <p>Thanks to all contributors who help me work on this small and interesting project.</p>
 
         <h2>Legal</h2>
         <p>Created by <a href="http://tsukanov.me/">Roman Tsukanov</a>.
@@ -76,6 +76,8 @@
         <br />Unless required by applicable law or agreed to in writing, software distributed under the License is
         distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
         See the License for the specific language governing permissions andlimitations under the License.</p>
+        <p>List of all used open source projects used in development can be found
+        <a href="https://github.com/Tsukanov/Simple-Counter/issues">on GitHub</a>.</p>
     ]]></string>
 
 </resources>
