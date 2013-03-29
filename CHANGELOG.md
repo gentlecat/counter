@@ -2,7 +2,7 @@
 
 ## Version 10
 * Improved user interface. Now using slide out navigation to show list of counters.
-* Changed theme to light with dark action aar.
+* Changed theme to light with dark action bar.
 * Updated localization (added Czech and updated other languages).
 
 ## Version 9
