@@ -17,10 +17,13 @@ import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.AboutDialog;
 
 public class MainActivity extends SlidingFragmentActivity {
+    private static final long HARD_DEALY = 700; // Milliseconds
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounterFragment;
     private CounterApplication app;
     private SharedPreferences sharedPref;
+    private long lastHardIncrementationTime = System.currentTimeMillis();
+    private long lastHardDecrementationTime = System.currentTimeMillis();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,13 +85,19 @@ public class MainActivity extends SlidingFragmentActivity {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (prefs.getBoolean("hardControlOn", true)) {
-                    currentCounterFragment.increment();
+                    if ((System.currentTimeMillis() - lastHardIncrementationTime) > HARD_DEALY) {
+                        currentCounterFragment.increment();
+                        lastHardIncrementationTime = System.currentTimeMillis();
+                    }
                     return true;
                 }
                 return false;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 if (prefs.getBoolean("hardControlOn", true)) {
-                    currentCounterFragment.decrement();
+                    if ((System.currentTimeMillis() - lastHardDecrementationTime) > HARD_DEALY) {
+                        currentCounterFragment.decrement();
+                        lastHardDecrementationTime = System.currentTimeMillis();
+                    }
                     return true;
                 }
                 return false;
