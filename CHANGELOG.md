@@ -1,8 +1,8 @@
 # Changelog
 
 ## Version 11
-Added 700ms delay for hardware buttons.
-Fixed text color on *xlarge* devices.
+* Added 700ms delay for hardware buttons.
+* Fixed text color on *xlarge* devices.
 
 ## Version 10
 * Improved user interface. Now using slide out navigation to show list of counters.
