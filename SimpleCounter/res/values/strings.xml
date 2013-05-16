@@ -8,6 +8,8 @@
     <string name="minus" translatable="false">-</string>
 
     <!-- Menu -->
+    <string name="drawer_open">Open navigation</string>
+    <string name="drawer_close">Close navigation</string>
     <string name="menu_reset">Reset</string>
     <string name="menu_add">Add counter</string>
     <string name="menu_edit">Edit</string>

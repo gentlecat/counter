@@ -2,21 +2,25 @@ package me.tsukanov.counter.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.slidingmenu.lib.SlidingMenu;
-import com.slidingmenu.lib.app.SlidingFragmentActivity;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.AboutDialog;
 
-public class MainActivity extends SlidingFragmentActivity {
+public class MainActivity extends SherlockFragmentActivity {
     private static final long HARD_DEALY = 700; // Milliseconds
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounterFragment;
@@ -24,31 +28,47 @@ public class MainActivity extends SlidingFragmentActivity {
     private SharedPreferences sharedPref;
     private long lastHardIncrementationTime = System.currentTimeMillis();
     private long lastHardDecrementationTime = System.currentTimeMillis();
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
+    private FrameLayout menuFrame;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_frame);
+        setContentView(R.layout.drawer_layout);
 
         app = (CounterApplication) getApplication();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+
+        menuFrame = (FrameLayout) findViewById(R.id.menu_frame);
+
+        drawerToggle = new ActionBarDrawerToggle(
+                this,
+                drawerLayout,
+                R.drawable.ic_drawer,
+                R.string.drawer_open,
+                R.string.drawer_close
+        ) {
+            public void onDrawerClosed(View view) {
+                invalidateOptionsMenu();
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                invalidateOptionsMenu();
+            }
+        };
+        drawerLayout.setDrawerListener(drawerToggle);
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         if (sharedPref.getBoolean("isFirstLaunch", true)) {
             sharedPref.edit().putBoolean("isFirstLaunch", false).commit();
             showAboutDialog();
         }
-
-        setBehindContentView(R.layout.menu_frame);
-
-        SlidingMenu sm = getSlidingMenu();
-        sm.setShadowWidthRes(R.dimen.shadow_width);
-        sm.setShadowDrawable(R.drawable.shadow);
-        sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        sm.setBehindWidthRes(R.dimen.behind_width);
-        sm.setFadeDegree(0.1f);
-        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -120,11 +140,20 @@ public class MainActivity extends SlidingFragmentActivity {
     }
 
     @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:
-                toggle();
-                return true;
             case R.id.menu_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
@@ -145,12 +174,7 @@ public class MainActivity extends SlidingFragmentActivity {
     public void switchCounter(final CounterFragment fragment) {
         currentCounterFragment = fragment;
         getSupportFragmentManager().beginTransaction().replace(android.R.id.content, currentCounterFragment).commit();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                getSlidingMenu().showContent();
-            }
-        }, 50);
+        drawerLayout.closeDrawer(menuFrame);
     }
 
 }
