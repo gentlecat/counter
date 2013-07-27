@@ -17,7 +17,8 @@ import me.tsukanov.counter.ui.CounterFragment;
 import me.tsukanov.counter.ui.MainActivity;
 
 public class EditDialog extends DialogFragment {
-    public static final String TAG = "edit";
+
+    public static final String TAG = "EditDialog";
     private static final String BUNDLE_ARGUMENT_NAME = "name";
     private static final String BUNDLE_ARGUMENT_VALUE = "value";
 

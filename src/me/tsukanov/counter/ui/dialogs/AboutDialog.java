@@ -14,7 +14,8 @@ import android.widget.TextView;
 import me.tsukanov.counter.R;
 
 public class AboutDialog extends DialogFragment {
-    public static final String TAG = "about";
+
+    public static final String TAG = "AboutDialog";
 
     public AboutDialog() {
     }

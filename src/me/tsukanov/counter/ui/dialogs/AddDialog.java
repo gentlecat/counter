@@ -17,7 +17,8 @@ import me.tsukanov.counter.ui.CounterFragment;
 import me.tsukanov.counter.ui.MainActivity;
 
 public class AddDialog extends DialogFragment {
-    public static final String TAG = "add";
+
+    public static final String TAG = "AddDialog";
 
     public AddDialog() {
     }

@@ -13,7 +13,8 @@ import me.tsukanov.counter.ui.CounterFragment;
 import me.tsukanov.counter.ui.MainActivity;
 
 public class DeleteDialog extends DialogFragment {
-    public static final String TAG = "delete";
+
+    public static final String TAG = "DeleteDialog";
     private static final String BUNDLE_ARGUMENT_NAME = "selected_position";
 
     public static DeleteDialog newInstance(String counterName) {

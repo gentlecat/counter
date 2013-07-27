@@ -6,21 +6,19 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
-import com.actionbarsherlock.view.MenuItem;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 
-public class SettingsActivity extends SherlockPreferenceActivity implements OnPreferenceChangeListener {
+public class SettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener {
     SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -56,17 +54,6 @@ public class SettingsActivity extends SherlockPreferenceActivity implements OnPr
                         return true;
                     }
                 });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @Override

@@ -7,23 +7,19 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.util.SparseIntArray;
-import android.view.LayoutInflater;
-import android.view.View;
+import android.view.*;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.DeleteDialog;
 import me.tsukanov.counter.ui.dialogs.EditDialog;
 
-public class CounterFragment extends SherlockFragment {
+public class CounterFragment extends Fragment {
     public static final int MAX_VALUE = 9999;
     public static final int MIN_VALUE = 0;
     public static final int DEFAULT_VALUE = MIN_VALUE;
@@ -102,7 +98,7 @@ public class CounterFragment extends SherlockFragment {
             app.counters.put(name, value);
         }
 
-        getSherlockActivity().getSupportActionBar().setTitle(name);
+        ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(name);
 
         return view;
     }

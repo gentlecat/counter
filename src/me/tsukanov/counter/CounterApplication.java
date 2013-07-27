@@ -12,7 +12,7 @@ public class CounterApplication extends Application {
 
     private static final String DATA_FILE_NAME = "counters";
     public LinkedHashMap<String, Integer> counters;
-    SharedPreferences data;
+    private SharedPreferences data;
 
     @Override
     public void onCreate() {

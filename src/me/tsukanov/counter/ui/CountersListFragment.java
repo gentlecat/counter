@@ -15,8 +15,9 @@ import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.AddDialog;
 
 public class CountersListFragment extends ListFragment {
-    CounterApplication app;
-    CountersListAdapter adapter;
+
+    private CounterApplication app;
+    private CountersListAdapter adapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
