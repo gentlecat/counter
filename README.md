@@ -22,9 +22,6 @@ and [translators](http://crowdin.net/project/simple-counter).
 You can track project stats [on Ohloh](https://www.ohloh.net/p/Simple-Counter).
 
 ## What was used
-* [ActionBarSherlock](http://actionbarsherlock.com/) for compatibility with older versions of Android
-* [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/)
-* [Robotium](http://www.robotium.org/) for testing
 * Sounds from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
 
 ## License

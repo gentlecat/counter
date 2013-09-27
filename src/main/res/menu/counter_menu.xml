@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:counter="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_edit"
+        android:icon="@drawable/ic_menu_edit"
+        android:title="@string/menu_edit"
+        counter:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_delete"
+        android:icon="@drawable/ic_menu_delete"
+        android:title="@string/menu_delete"
+        counter:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_menu_reset"
+        android:title="@string/menu_reset"
+        counter:showAsAction="always" />
+</menu>
