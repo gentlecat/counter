@@ -10,10 +10,17 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.SparseIntArray;
-import android.view.*;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.DeleteDialog;
@@ -24,6 +31,7 @@ public class CounterFragment extends Fragment {
     public static final int MIN_VALUE = 0;
     public static final int DEFAULT_VALUE = MIN_VALUE;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
+    private static final long HARD_DEALY = 700; // Milliseconds
     private String name = null;
     private int value = DEFAULT_VALUE;
     private CounterApplication app;
@@ -34,6 +42,8 @@ public class CounterFragment extends Fragment {
     private TextView counterLabel;
     private Button incrementButton;
     private Button decrementButton;
+    private long lastHardIncrementationTime = System.currentTimeMillis();
+    private long lastHardDecrementationTime = System.currentTimeMillis();
 
     public CounterFragment() {
     }
@@ -106,6 +116,37 @@ public class CounterFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.counter_menu, menu);
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                if (settings.getBoolean("hardControlOn", true)) {
+                    if ((System.currentTimeMillis() - lastHardIncrementationTime) > HARD_DEALY) {
+                        increment();
+                        lastHardIncrementationTime = System.currentTimeMillis();
+                    }
+                    return true;
+                }
+                return false;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                if (settings.getBoolean("hardControlOn", true)) {
+                    if ((System.currentTimeMillis() - lastHardDecrementationTime) > HARD_DEALY) {
+                        decrement();
+                        lastHardDecrementationTime = System.currentTimeMillis();
+                    }
+                    return true;
+                }
+                return false;
+            case KeyEvent.KEYCODE_CAMERA:
+                if (settings.getBoolean("hardControlOn", true)) {
+                    refresh();
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
     }
 
     @Override

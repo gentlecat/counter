@@ -24,7 +24,6 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String STATE_TITLE = "title";
     private static final String STATE_IS_NAV_OPEN = "is_nav_open";
-    private static final long HARD_DEALY = 700; // Milliseconds
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounterFragment;
     private CounterApplication app;
@@ -33,8 +32,6 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle navigationToggle;
     private CharSequence title;
     private SharedPreferences sharedPref;
-    private long lastHardIncrementationTime = System.currentTimeMillis();
-    private long lastHardDecrementationTime = System.currentTimeMillis();
     private FrameLayout menuFrame;
 
     @Override
@@ -118,35 +115,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_VOLUME_UP:
-                if (prefs.getBoolean("hardControlOn", true)) {
-                    if ((System.currentTimeMillis() - lastHardIncrementationTime) > HARD_DEALY) {
-                        currentCounterFragment.increment();
-                        lastHardIncrementationTime = System.currentTimeMillis();
-                    }
-                    return true;
-                }
-                return false;
-            case KeyEvent.KEYCODE_VOLUME_DOWN:
-                if (prefs.getBoolean("hardControlOn", true)) {
-                    if ((System.currentTimeMillis() - lastHardDecrementationTime) > HARD_DEALY) {
-                        currentCounterFragment.decrement();
-                        lastHardDecrementationTime = System.currentTimeMillis();
-                    }
-                    return true;
-                }
-                return false;
-            case KeyEvent.KEYCODE_CAMERA:
-                if (prefs.getBoolean("hardControlOn", true)) {
-                    currentCounterFragment.refresh();
-                    return true;
-                }
-                return false;
-            default:
-                return super.onKeyDown(keyCode, event);
-        }
+        return currentCounterFragment.onKeyDown(keyCode, event);
     }
 
     @Override
