@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String STATE_TITLE = "title";
     private static final String STATE_IS_NAV_OPEN = "is_nav_open";
+    private static final String STATE_ACTIVE_COUNTER = "activeKey";
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounterFragment;
     private CounterApplication app;
@@ -94,7 +95,7 @@ public class MainActivity extends ActionBarActivity {
         transaction.replace(R.id.menu_frame, countersListFragment);
         transaction.commit();
 
-        String previousCounter = sharedPref.getString("activeKey", getString(R.string.default_counter_name));
+        String previousCounter = sharedPref.getString(STATE_ACTIVE_COUNTER, getString(R.string.default_counter_name));
         switchCounter(new CounterFragment(previousCounter));
 
         if (sharedPref.getBoolean("keepScreenOn", false)) {
@@ -109,7 +110,7 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
         app.saveCounters();
         SharedPreferences.Editor settingsEditor = sharedPref.edit();
-        settingsEditor.putString("activeKey", currentCounterFragment.getCounterName());
+        settingsEditor.putString(STATE_ACTIVE_COUNTER, currentCounterFragment.getCounterName());
         settingsEditor.commit();
     }
 
@@ -170,9 +171,9 @@ public class MainActivity extends ActionBarActivity {
         dialog.show(getSupportFragmentManager(), AboutDialog.TAG);
     }
 
-    public void switchCounter(final CounterFragment fragment) {
-        currentCounterFragment = fragment;
-        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, currentCounterFragment).commit();
+    public void switchCounter(final CounterFragment counterFragment) {
+        currentCounterFragment = counterFragment;
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, currentCounterFragment).commit();
         closeDrawer();
     }
 
