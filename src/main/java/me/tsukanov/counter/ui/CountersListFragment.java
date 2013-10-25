@@ -48,7 +48,7 @@ public class CountersListFragment extends ListFragment {
         if (getActivity() == null) return;
         if (getActivity() instanceof MainActivity) {
             MainActivity ra = (MainActivity) getActivity();
-            ra.switchCounter(fragment);
+            ra.switchCounterFragment(fragment);
         }
     }
 

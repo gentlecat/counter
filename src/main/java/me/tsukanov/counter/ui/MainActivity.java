@@ -24,9 +24,11 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String STATE_TITLE = "title";
     private static final String STATE_IS_NAV_OPEN = "is_nav_open";
-    private static final String STATE_ACTIVE_COUNTER = "activeKey";
+    public static final String STATE_ACTIVE_COUNTER = "activeKey";
+    private static final String STATE_FIRST_LAUNCH = "isFirstLaunch";
+    private static final String PREF_KEEP_SCREEN_ON = "keepScreenOn";
     public CountersListFragment countersListFragment;
-    public CounterFragment currentCounterFragment;
+    public CounterFragment currentCounter;
     private CounterApplication app;
     private ActionBar actionBar;
     private DrawerLayout navigationLayout;
@@ -60,11 +62,11 @@ public class MainActivity extends ActionBarActivity {
                 R.string.drawer_close
         ) {
             public void onDrawerClosed(View view) {
+                title = currentCounter.getName();
                 actionBar.setTitle(title);
             }
 
             public void onDrawerOpened(View drawerView) {
-                title = actionBar.getTitle();
                 actionBar.setTitle(drawerTitle);
             }
         };
@@ -80,8 +82,8 @@ public class MainActivity extends ActionBarActivity {
         }
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        if (sharedPref.getBoolean("isFirstLaunch", true)) {
-            sharedPref.edit().putBoolean("isFirstLaunch", false).commit();
+        if (sharedPref.getBoolean(STATE_FIRST_LAUNCH, true)) {
+            sharedPref.edit().putBoolean(STATE_FIRST_LAUNCH, false).commit();
             showAboutDialog();
         }
     }
@@ -96,9 +98,9 @@ public class MainActivity extends ActionBarActivity {
         transaction.commit();
 
         String previousCounter = sharedPref.getString(STATE_ACTIVE_COUNTER, getString(R.string.default_counter_name));
-        switchCounter(new CounterFragment(previousCounter));
+        switchCounterFragment(new CounterFragment(previousCounter));
 
-        if (sharedPref.getBoolean("keepScreenOn", false)) {
+        if (sharedPref.getBoolean(PREF_KEEP_SCREEN_ON, false)) {
             getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         } else {
             getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -110,13 +112,13 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
         app.saveCounters();
         SharedPreferences.Editor settingsEditor = sharedPref.edit();
-        settingsEditor.putString(STATE_ACTIVE_COUNTER, currentCounterFragment.getCounterName());
+        settingsEditor.putString(STATE_ACTIVE_COUNTER, currentCounter.getCounterName());
         settingsEditor.commit();
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return currentCounterFragment.onKeyDown(keyCode, event);
+        return currentCounter.onKeyDown(keyCode, event);
     }
 
     @Override
@@ -171,9 +173,9 @@ public class MainActivity extends ActionBarActivity {
         dialog.show(getSupportFragmentManager(), AboutDialog.TAG);
     }
 
-    public void switchCounter(final CounterFragment counterFragment) {
-        currentCounterFragment = counterFragment;
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, currentCounterFragment).commit();
+    public void switchCounterFragment(final CounterFragment fragment) {
+        currentCounter = fragment;
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, currentCounter).commit();
         closeDrawer();
     }
 

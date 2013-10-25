@@ -69,6 +69,7 @@ public class CounterFragment extends Fragment {
         vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
+        /** Setting up sounds */
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
         soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
         soundsMap = new SparseIntArray(3);
@@ -81,8 +82,6 @@ public class CounterFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
         View view = inflater.inflate(R.layout.counter, container, false);
 
         counterLabel = (TextView) view.findViewById(R.id.counterLabel);
@@ -210,6 +209,10 @@ public class CounterFragment extends Fragment {
     private void saveValue() {
         app.counters.remove(name);
         app.counters.put(name, value);
+    }
+
+    public String getName() {
+        return name;
     }
 
     private void checkStateOfButtons() {

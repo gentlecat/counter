@@ -43,6 +43,8 @@
     <string name="settings_hard_summary">Change counter value using hardware buttons</string>
     <string name="settings_other">Other</string>
     <string name="settings_wipe_title">Remove all counters</string>
+    <string name="settings_wipe_confirmation">Are you sure want to remove all counters?</string>
+    <string name="settings_wipe_confirmation_yes">Remove all</string>
     <string name="settings_version_title">Version</string>
 
     <!-- Other stuff -->

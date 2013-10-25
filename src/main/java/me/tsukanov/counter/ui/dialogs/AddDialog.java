@@ -56,7 +56,7 @@ public class AddDialog extends DialogFragment {
                                     }
                                     CounterApplication app = (CounterApplication) activity.getApplication();
                                     app.counters.put(name, value);
-                                    activity.switchCounter(new CounterFragment(name, value));
+                                    activity.switchCounterFragment(new CounterFragment(name, value));
                                     activity.countersListFragment.updateList();
                                 }
                             }
