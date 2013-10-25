@@ -10,7 +10,7 @@ on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counte
 
 I hope you'll find this app useful. ;)
 
-![](http://i.imgur.com/RyI0DlT.png)
+![](http://i.imgur.com/iSaRtvp.png)
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests. If you want to help with translation go
@@ -22,9 +22,6 @@ and [translators](http://crowdin.net/project/simple-counter).
 You can track project stats [on Ohloh](https://www.ohloh.net/p/Simple-Counter).
 
 ## What was used
-* [ActionBarSherlock](http://actionbarsherlock.com/) for compatibility with older versions of Android
-* [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/)
-* [Robotium](http://www.robotium.org/) for testing
 * Sounds from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
 
 ## License

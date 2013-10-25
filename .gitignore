@@ -6,8 +6,12 @@
 *.class
 
 # Generated files
+.gradle
+/build
 bin/
 gen/
+gen-external-apklibs/
+target/
 
 # Local configuration
 local.properties
@@ -23,3 +27,11 @@ lint.xml
 *.ipr
 *.iws
 out/
+
+# Other
+tmp
+*~
+.DS_Store
+gradle/
+gradlew
+gradlew.bat
