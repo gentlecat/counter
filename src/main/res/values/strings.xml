@@ -63,11 +63,9 @@
         Values can be changed using volume buttons.</p>
         <p>This is an open source application. Source code is hosted on GitHub at
         <a href="https://github.com/Tsukanov/Simple-Counter/">https://github.com/Tsukanov/Simple-Counter/</a>.</p>
-        <p>It is my first Android application. The goal was to make something useful (at least for myself)
-        and easy to build. Feel free to submit bug reports
-        <a href="https://github.com/Tsukanov/Simple-Counter/issues">on GitHub</a>.</p>
-        <p>I hope you\'ll find this app useful. If you have some free time, please, rate this app in
-        <a href="https://play.google.com/store/apps/details?id=me.tsukanov.counter">Play Store</a>. Thanks!</p>
+        <p>This is my first Android application. The goal was to make something useful and easy to build.
+        Feel free to submit bug reports <a href="https://github.com/Tsukanov/Simple-Counter/issues">on GitHub</a>.</p>
+        <p>I hope you\'ll find this app useful!</p>
 
         <h2>Contributing</h2>
         <p>Feel free to make improvements and create pull requests. If you want to help with translation go to project\'s
