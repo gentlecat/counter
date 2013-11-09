@@ -31,7 +31,6 @@ public class CounterFragment extends Fragment {
     public static final int MIN_VALUE = 0;
     public static final int DEFAULT_VALUE = MIN_VALUE;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
-    private static final long HARD_DEALY = 700; // Milliseconds
     private String name = null;
     private int value = DEFAULT_VALUE;
     private CounterApplication app;
@@ -42,8 +41,6 @@ public class CounterFragment extends Fragment {
     private TextView counterLabel;
     private Button incrementButton;
     private Button decrementButton;
-    private long lastHardIncrementationTime = System.currentTimeMillis();
-    private long lastHardDecrementationTime = System.currentTimeMillis();
 
     public CounterFragment() {
     }
@@ -121,19 +118,13 @@ public class CounterFragment extends Fragment {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (settings.getBoolean("hardControlOn", true)) {
-                    if ((System.currentTimeMillis() - lastHardIncrementationTime) > HARD_DEALY) {
-                        increment();
-                        lastHardIncrementationTime = System.currentTimeMillis();
-                    }
+                    increment();
                     return true;
                 }
                 return false;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 if (settings.getBoolean("hardControlOn", true)) {
-                    if ((System.currentTimeMillis() - lastHardDecrementationTime) > HARD_DEALY) {
-                        decrement();
-                        lastHardDecrementationTime = System.currentTimeMillis();
-                    }
+                    decrement();
                     return true;
                 }
                 return false;
