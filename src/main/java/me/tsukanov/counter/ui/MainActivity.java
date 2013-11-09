@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -54,6 +55,7 @@ public class MainActivity extends ActionBarActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
 
+        final MainActivity thisActivity = this;
         navigationToggle = new ActionBarDrawerToggle(
                 this,
                 navigationLayout,
@@ -64,10 +66,12 @@ public class MainActivity extends ActionBarActivity {
             public void onDrawerClosed(View view) {
                 title = currentCounter.getName();
                 actionBar.setTitle(title);
+                supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
             public void onDrawerOpened(View drawerView) {
                 actionBar.setTitle(drawerTitle);
+                supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
         navigationLayout.setDrawerListener(navigationToggle);
@@ -171,6 +175,10 @@ public class MainActivity extends ActionBarActivity {
     private void showAboutDialog() {
         AboutDialog dialog = new AboutDialog();
         dialog.show(getSupportFragmentManager(), AboutDialog.TAG);
+    }
+
+    public boolean isNavigationOpen() {
+        return navigationLayout.isDrawerOpen(menuFrame);
     }
 
     public void switchCounterFragment(final CounterFragment fragment) {

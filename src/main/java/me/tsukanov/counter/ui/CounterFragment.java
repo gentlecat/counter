@@ -114,6 +114,23 @@ public class CounterFragment extends Fragment {
         inflater.inflate(R.menu.counter_menu, menu);
     }
 
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        boolean isDrawerOpen = ((MainActivity) getActivity()).isNavigationOpen();
+
+        /** Edit */
+        MenuItem editItem = menu.findItem(R.id.menu_edit);
+        editItem.setVisible(!isDrawerOpen);
+
+        /** Delete */
+        MenuItem deleteItem = menu.findItem(R.id.menu_delete);
+        deleteItem.setVisible(!isDrawerOpen);
+
+        /** Refresh */
+        MenuItem refreshItem = menu.findItem(R.id.menu_refresh);
+        refreshItem.setVisible(!isDrawerOpen);
+    }
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
