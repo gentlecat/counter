@@ -10,10 +10,10 @@
     <!-- Menu -->
     <string name="drawer_open">Open navigation</string>
     <string name="drawer_close">Close navigation</string>
-    <string name="menu_reset">Reset</string>
     <string name="menu_add">Add counter</string>
-    <string name="menu_edit">Edit</string>
-    <string name="menu_delete">Delete</string>
+    <string name="menu_reset">Reset counter</string>
+    <string name="menu_edit">Edit counter</string>
+    <string name="menu_delete">Delete counter</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_info">About</string>
 
@@ -42,16 +42,15 @@
     <string name="settings_hard_title">Use hardware buttons</string>
     <string name="settings_hard_summary">Change counter value using hardware buttons</string>
     <string name="settings_other">Other</string>
+    <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Remove all counters</string>
     <string name="settings_wipe_confirmation">Are you sure want to remove all counters?</string>
     <string name="settings_wipe_confirmation_yes">Remove all</string>
-    <string name="settings_version_title">Version</string>
 
     <!-- Other stuff -->
     <string name="toast_wipe_success">All counters have been removed.</string>
-    <string name="toast_remove_success_1">Counter</string>
-    <string name="toast_remove_success_2">has been removed.</string>
-    <string name="toast_no_name_message">Please, input the name.</string>
+    <string name="toast_remove_success">Counter \"%s\" has been removed.</string>
+    <string name="toast_no_name_message">Name is required!</string>
     <string name="default_counter_name">First counter</string>
     <string name="unknown">Unknown</string>
 

@@ -41,8 +41,7 @@ public class DeleteDialog extends DialogFragment {
                                 CounterApplication app = (CounterApplication) activity.getApplication();
                                 app.counters.remove(name);
                                 Toast.makeText(getActivity(),
-                                        getResources().getText(R.string.toast_remove_success_1) + " \"" + name + "\" "
-                                                + getResources().getText(R.string.toast_remove_success_2),
+                                        String.format(getString(R.string.toast_remove_success), name),
                                         Toast.LENGTH_SHORT).show();
                                 if (app.counters.isEmpty()) {
                                     app.counters.put(getString(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
