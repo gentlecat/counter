@@ -16,7 +16,7 @@ import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 
 public class SettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener {
-    SharedPreferences sharedPref;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
