@@ -71,11 +71,10 @@ public class CounterFragment extends Fragment {
 
         /** Setting up sounds */
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
-        soundsMap = new SparseIntArray(3);
+        soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        soundsMap = new SparseIntArray(2);
         soundsMap.put(Sound.INCREMENT_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.increment_sound, 1));
         soundsMap.put(Sound.DECREMENT_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.decrement_sound, 1));
-        soundsMap.put(Sound.RESET_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.reset_sound, 1));
 
         setHasOptionsMenu(true);
     }
@@ -220,8 +219,6 @@ public class CounterFragment extends Fragment {
 
     public void reset() {
         setValue(DEFAULT_VALUE);
-        vibrate(DEFAULT_VIBRATION_DURATION + 40);
-        playSound(Sound.RESET_SOUND);
     }
 
     public void setValue(int value) {
@@ -263,6 +260,6 @@ public class CounterFragment extends Fragment {
         }
     }
 
-    private enum Sound {INCREMENT_SOUND, DECREMENT_SOUND, RESET_SOUND}
+    private enum Sound {INCREMENT_SOUND, DECREMENT_SOUND}
 
 }
