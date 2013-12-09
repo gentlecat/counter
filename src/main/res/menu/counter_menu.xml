@@ -12,7 +12,7 @@
         android:title="@string/menu_delete"
         counter:showAsAction="ifRoom" />
     <item
-        android:id="@+id/menu_refresh"
+        android:id="@+id/menu_reset"
         android:icon="@drawable/ic_menu_reset"
         android:title="@string/menu_reset"
         counter:showAsAction="always" />

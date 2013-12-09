@@ -1,6 +1,9 @@
 package me.tsukanov.counter.ui;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -72,7 +75,7 @@ public class CounterFragment extends Fragment {
         soundsMap = new SparseIntArray(3);
         soundsMap.put(Sound.INCREMENT_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.increment_sound, 1));
         soundsMap.put(Sound.DECREMENT_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.decrement_sound, 1));
-        soundsMap.put(Sound.REFRESH_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.refresh_sound, 1));
+        soundsMap.put(Sound.RESET_SOUND.ordinal(), soundPool.load(getActivity(), R.raw.reset_sound, 1));
 
         setHasOptionsMenu(true);
     }
@@ -126,9 +129,9 @@ public class CounterFragment extends Fragment {
         MenuItem deleteItem = menu.findItem(R.id.menu_delete);
         deleteItem.setVisible(!isDrawerOpen);
 
-        /** Refresh */
-        MenuItem refreshItem = menu.findItem(R.id.menu_refresh);
-        refreshItem.setVisible(!isDrawerOpen);
+        /** Reset */
+        MenuItem resetItem = menu.findItem(R.id.menu_reset);
+        resetItem.setVisible(!isDrawerOpen);
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -147,7 +150,7 @@ public class CounterFragment extends Fragment {
                 return false;
             case KeyEvent.KEYCODE_CAMERA:
                 if (settings.getBoolean("hardControlOn", true)) {
-                    refresh();
+                    reset();
                     return true;
                 }
                 return false;
@@ -159,8 +162,8 @@ public class CounterFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_refresh:
-                refresh();
+            case R.id.menu_reset:
+                showResetConfirmationDialog();
                 return true;
             case R.id.menu_edit:
                 showEditDialog();
@@ -171,6 +174,22 @@ public class CounterFragment extends Fragment {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showResetConfirmationDialog() {
+        Dialog dialog = new AlertDialog.Builder(getActivity())
+                .setMessage(getResources().getText(R.string.dialog_reset_title))
+                .setCancelable(false)
+                .setPositiveButton(getResources().getText(R.string.dialog_button_reset),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                reset();
+                            }
+                        })
+                .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
+                .create();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.show();
     }
 
     private void showEditDialog() {
@@ -199,10 +218,10 @@ public class CounterFragment extends Fragment {
         }
     }
 
-    public void refresh() {
+    public void reset() {
         setValue(DEFAULT_VALUE);
         vibrate(DEFAULT_VIBRATION_DURATION + 40);
-        playSound(Sound.REFRESH_SOUND);
+        playSound(Sound.RESET_SOUND);
     }
 
     public void setValue(int value) {
@@ -244,6 +263,6 @@ public class CounterFragment extends Fragment {
         }
     }
 
-    private enum Sound {INCREMENT_SOUND, DECREMENT_SOUND, REFRESH_SOUND}
+    private enum Sound {INCREMENT_SOUND, DECREMENT_SOUND, RESET_SOUND}
 
 }

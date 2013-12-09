@@ -3,10 +3,11 @@ package me.tsukanov.counter;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import me.tsukanov.counter.ui.CounterFragment;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import me.tsukanov.counter.ui.CounterFragment;
 
 public class CounterApplication extends Application {
 

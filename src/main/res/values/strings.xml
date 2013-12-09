@@ -21,10 +21,12 @@
     <string name="dialog_add_title">Add new counter</string>
     <string name="dialog_edit_title">Edit counter</string>
     <string name="dialog_delete_title">Do you really want to delete this counter?</string>
+    <string name="dialog_reset_title">Do you really want reset this counter?</string>
     <string name="dialog_edit_name">Title:</string>
     <string name="dialog_edit_value">Value:</string>
     <string name="dialog_button_add">Add</string>
     <string name="dialog_button_apply">Apply</string>
+    <string name="dialog_button_reset">Reset</string>
     <string name="dialog_button_delete">Delete</string>
     <string name="dialog_button_cancel">Cancel</string>
     <string name="dialog_button_close">Close</string>
@@ -44,13 +46,15 @@
     <string name="settings_other">Other</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Remove all counters</string>
-    <string name="settings_wipe_confirmation">Are you sure want to remove all counters?</string>
+    <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
     <string name="settings_wipe_confirmation_yes">Remove all</string>
 
-    <!-- Other stuff -->
+    <!-- Toasts -->
     <string name="toast_wipe_success">All counters have been removed.</string>
     <string name="toast_remove_success">Counter \"%s\" has been removed.</string>
     <string name="toast_no_name_message">Name is required!</string>
+
+    <!-- Other stuff -->
     <string name="default_counter_name">First counter</string>
     <string name="unknown">Unknown</string>
 
