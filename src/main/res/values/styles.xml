@@ -2,15 +2,15 @@
 <resources>
 
     <style name="counter_value">
-        <item name="android:textSize">120dp</item>
+        <item name="android:textSize">120sp</item>
     </style>
 
     <style name="increment_button">
-        <item name="android:textSize">90dp</item>
+        <item name="android:textSize">90sp</item>
     </style>
 
     <style name="decrement_button">
-        <item name="android:textSize">45dp</item>
+        <item name="android:textSize">45sp</item>
     </style>
 
     <style name="editor_style">
