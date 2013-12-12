@@ -9,7 +9,7 @@ Simple Counter is available on [Play Store](https://play.google.com/store/apps/d
 
 I hope you'll find this app useful. ;)
 
-![](http://i.imgur.com/iSaRtvp.png)
+![](http://i.imgur.com/NwHprZi.jpg)
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests. If you want to help with translation go

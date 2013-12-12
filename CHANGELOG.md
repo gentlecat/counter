@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 12
+* Removed delay from hardware buttons.
+* Added reset confirmation dialog.
+* Counter controls moved to the action bar.
+* Updated navigation drawer.
+
 ## Version 11
 * Added 700ms delay for hardware buttons.
 * Fixed text color on *xlarge* devices.
