@@ -25,14 +25,8 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
-        String version;
-        try {
-            version = this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
-        } catch (NameNotFoundException e) {
-            version = getResources().getString(R.string.unknown);
-        }
         Preference versionPref = findPreference("version");
-        versionPref.setSummary(version);
+        versionPref.setSummary(getAppVersion());
 
         getPreferenceManager().findPreference("removeCounters")
                 .setOnPreferenceClickListener(new OnPreferenceClickListener() {
@@ -42,6 +36,14 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
                         return true;
                     }
                 });
+    }
+
+    private String getAppVersion() {
+        try {
+            return this.getPackageManager().getPackageInfo(this.getPackageName(), 0).versionName;
+        } catch (NameNotFoundException e) {
+            return getResources().getString(R.string.unknown);
+        }
     }
 
     @Override
