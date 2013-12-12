@@ -5,10 +5,12 @@
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_menu_settings"
         android:title="@string/menu_settings"
-        counter:showAsAction="never" />
+        counter:showAsAction="never"
+        android:orderInCategory="10" />
     <item
         android:id="@+id/menu_info"
         android:icon="@drawable/ic_menu_help"
         android:title="@string/menu_info"
-        counter:showAsAction="never" />
+        counter:showAsAction="never"
+        android:orderInCategory="11" />
 </menu>

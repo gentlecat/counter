@@ -5,15 +5,18 @@
         android:id="@+id/menu_edit"
         android:icon="@drawable/ic_menu_edit"
         android:title="@string/menu_edit"
-        counter:showAsAction="ifRoom" />
+        counter:showAsAction="ifRoom"
+        android:orderInCategory="2" />
     <item
         android:id="@+id/menu_delete"
         android:icon="@drawable/ic_menu_delete"
         android:title="@string/menu_delete"
-        counter:showAsAction="ifRoom" />
+        counter:showAsAction="ifRoom"
+        android:orderInCategory="3" />
     <item
         android:id="@+id/menu_reset"
         android:icon="@drawable/ic_menu_reset"
         android:title="@string/menu_reset"
-        counter:showAsAction="always" />
+        counter:showAsAction="always"
+        android:orderInCategory="1" />
 </menu>
