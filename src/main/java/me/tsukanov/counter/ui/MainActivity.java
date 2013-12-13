@@ -120,7 +120,8 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return currentCounter.onKeyDown(keyCode, event);
+        if (currentCounter.onKeyDown(keyCode, event)) return true;
+        else return super.onKeyDown(keyCode, event);
     }
 
     @Override
