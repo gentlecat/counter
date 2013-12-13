@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 13
+* Fixed broken back button
+
 ## Version 12
 * Removed delay from hardware buttons.
 * Added reset confirmation dialog.
