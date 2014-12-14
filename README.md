@@ -9,7 +9,7 @@ Simple Counter is available on [Play Store](https://play.google.com/store/apps/d
 
 I hope you'll find this app useful. ;)
 
-![](http://i.imgur.com/NwHprZi.jpg)
+![](https://i.imgur.com/Qnt4I5E.jpg)
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests. If you want to help with translation go
@@ -20,19 +20,3 @@ and [translators](http://crowdin.net/project/simple-counter).
 
 ## What was used
 * Sounds from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
-
-## License
-
-    Copyright 2013 Roman Tsukanov
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
