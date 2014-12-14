@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 14
+* Updated user interface.
+* Added Arabic and Finnish translations, updated old ones.
+
 ## Version 13
 * Fixed broken back button
 
