@@ -14,6 +14,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:elevation="20dp"
         android:text="@string/minus" />
 
     <Button
@@ -25,6 +26,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:elevation="10dp"
         android:text="@string/plus" />
 
     <FrameLayout
