@@ -18,7 +18,7 @@ public class CounterApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        counters = new LinkedHashMap<String, Integer>();
+        counters = new LinkedHashMap<>();
         data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
         loadCounters();
     }
@@ -28,8 +28,9 @@ public class CounterApplication extends Application {
         if (dataMap.isEmpty()) {
             counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
         } else {
-            for (Map.Entry<String, ?> entry : dataMap.entrySet())
+            for (Map.Entry<String, ?> entry : dataMap.entrySet()) {
                 counters.put(entry.getKey(), (Integer) entry.getValue());
+            }
         }
     }
 
