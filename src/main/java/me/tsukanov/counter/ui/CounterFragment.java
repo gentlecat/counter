@@ -1,5 +1,6 @@
 package me.tsukanov.counter.ui;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -48,10 +49,12 @@ public class CounterFragment extends Fragment {
     public CounterFragment() {
     }
 
+    @SuppressLint("ValidFragment")
     public CounterFragment(String name) {
         this.name = name;
     }
 
+    @SuppressLint("ValidFragment")
     public CounterFragment(String name, int value) {
         this.name = name;
         this.value = value;

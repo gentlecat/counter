@@ -4,13 +4,13 @@
     <item
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_menu_settings"
+        android:orderInCategory="10"
         android:title="@string/menu_settings"
-        counter:showAsAction="never"
-        android:orderInCategory="10" />
+        counter:showAsAction="never" />
     <item
         android:id="@+id/menu_info"
         android:icon="@drawable/ic_menu_help"
+        android:orderInCategory="11"
         android:title="@string/menu_info"
-        counter:showAsAction="never"
-        android:orderInCategory="11" />
+        counter:showAsAction="never" />
 </menu>
