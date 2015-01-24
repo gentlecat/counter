@@ -3,11 +3,11 @@
 ## Version 15
 * Updated user application icon (thanks to Dawid Tarasiuk).
 * Added Polish translation.
+* Removed "About" dialog.
 
 ## Version 14
 * Updated user interface.
 * Added Arabic and Finnish translations, updated old ones.
-* Removed "About" dialog.
 
 ## Version 13
 * Fixed broken back button
