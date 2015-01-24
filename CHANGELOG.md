@@ -7,6 +7,7 @@
 ## Version 14
 * Updated user interface.
 * Added Arabic and Finnish translations, updated old ones.
+* Removed "About" dialog.
 
 ## Version 13
 * Fixed broken back button

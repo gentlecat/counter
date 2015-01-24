@@ -18,14 +18,12 @@ import android.widget.FrameLayout;
 
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
-import me.tsukanov.counter.ui.dialogs.AboutDialog;
 
 public class MainActivity extends ActionBarActivity {
 
     private static final String STATE_TITLE = "title";
     private static final String STATE_IS_NAV_OPEN = "is_nav_open";
     public static final String STATE_ACTIVE_COUNTER = "activeKey";
-    private static final String STATE_FIRST_LAUNCH = "isFirstLaunch";
     private static final String PREF_KEEP_SCREEN_ON = "keepScreenOn";
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounter;
@@ -84,10 +82,6 @@ public class MainActivity extends ActionBarActivity {
         }
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        if (sharedPref.getBoolean(STATE_FIRST_LAUNCH, true)) {
-            sharedPref.edit().putBoolean(STATE_FIRST_LAUNCH, false).commit();
-            showAboutDialog();
-        }
     }
 
     @Override
@@ -120,8 +114,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (currentCounter.onKeyDown(keyCode, event)) return true;
-        else return super.onKeyDown(keyCode, event);
+        return super.onKeyDown(keyCode, event) || currentCounter.onKeyDown(keyCode, event);
     }
 
     @Override
@@ -163,17 +156,9 @@ public class MainActivity extends ActionBarActivity {
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.menu_info:
-                showAboutDialog();
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void showAboutDialog() {
-        AboutDialog dialog = new AboutDialog();
-        dialog.show(getSupportFragmentManager(), AboutDialog.TAG);
     }
 
     public boolean isNavigationOpen() {
