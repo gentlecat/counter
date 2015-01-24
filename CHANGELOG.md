@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 15
+* Updated user application icon (thanks to Dawid Tarasiuk).
+* Added Polish translation.
+
 ## Version 14
 * Updated user interface.
 * Added Arabic and Finnish translations, updated old ones.
