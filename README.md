@@ -16,7 +16,7 @@ Feel free to make improvements, report issues, and create pull requests. If you 
 translation go to project's [page on Crowdin](http://crowdin.net/project/simple-counter) (please,
 don't translate resources directly).
 
-Huge thanks to all [contributors](https://github.com/Tsukanov/Simple-Counter/contributors)
+Huge thanks to all [contributors](https://github.com/gentlecat/Simple-Counter/contributors)
 and [translators](http://crowdin.net/project/simple-counter).
 
 ## What was used
