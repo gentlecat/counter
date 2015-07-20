@@ -5,7 +5,8 @@ makes counting easier. You can have multiple counters with their own names and v
 changed using volume buttons.
 
 This is my first Android application. The goal was to make something useful and easy to build.
-Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter).
+Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
+and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).
 
 I hope you'll find this app useful. ;)
 
