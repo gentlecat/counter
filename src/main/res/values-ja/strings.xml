@@ -13,12 +13,12 @@
   <string name="dialog_add_title">新しいカウンターを追加</string>
   <string name="dialog_edit_title">カウンターを編集</string>
   <string name="dialog_delete_title">本当にこのカウンターを削除しますか?</string>
-  <string name="dialog_reset_title">Do you really want reset this counter?</string>
+  <string name="dialog_reset_title">このカウンターをリセットしてもよろしいですか?</string>
   <string name="dialog_edit_name">タイトル:</string>
   <string name="dialog_edit_value">値:</string>
   <string name="dialog_button_add">追加</string>
   <string name="dialog_button_apply">適用</string>
-  <string name="dialog_button_reset">Reset</string>
+  <string name="dialog_button_reset">リセット</string>
   <string name="dialog_button_delete">削除</string>
   <string name="dialog_button_cancel">キャンセル</string>
   <string name="dialog_button_close">閉じる</string>
@@ -36,7 +36,7 @@
   <string name="settings_other">その他</string>
   <string name="settings_version_title">バージョン</string>
   <string name="settings_wipe_title">すべてのカウンターを削除</string>
-  <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
+  <string name="settings_wipe_confirmation">すべてのカウンターを削除してもよろしいですか?</string>
   <string name="settings_wipe_confirmation_yes">すべてを削除</string>
   <string name="toast_wipe_success">すべてのカウンターが削除されました。</string>
   <string name="toast_remove_success">カウンター \"%s\" が削除されました。</string>

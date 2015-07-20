@@ -30,17 +30,6 @@
   <string name="settings_sounds_title">Kytke äänet</string>
   <string name="settings_sounds_summary">Soita äänet</string>
   <string name="settings_vibration_title">Kytke tärinä</string>
-  <string name="settings_vibration_summary">Vibrate on changes</string>
-  <string name="settings_hard_title">Use hardware buttons</string>
-  <string name="settings_hard_summary">Change counter value using hardware buttons</string>
-  <string name="settings_other">Other</string>
-  <string name="settings_version_title">Version</string>
-  <string name="settings_wipe_title">Remove all counters</string>
-  <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
   <string name="settings_wipe_confirmation_yes">Poista kaikki</string>
-  <string name="toast_wipe_success">All counters have been removed.</string>
-  <string name="toast_remove_success">Counter \"%s\" has been removed.</string>
-  <string name="toast_no_name_message">Name is required!</string>
-  <string name="default_counter_name">First counter</string>
   <string name="unknown">Tuntematon</string>
 </resources>
