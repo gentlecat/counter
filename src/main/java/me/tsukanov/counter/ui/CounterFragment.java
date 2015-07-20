@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -109,7 +109,7 @@ public class CounterFragment extends Fragment {
             app.counters.put(name, value);
         }
 
-        ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(name);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(name);
 
         return view;
     }

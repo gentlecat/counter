@@ -5,11 +5,11 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String STATE_TITLE = "title";
     private static final String STATE_IS_NAV_OPEN = "is_nav_open";
@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
         navigationToggle = new ActionBarDrawerToggle(
                 this,
                 navigationLayout,
-                R.drawable.ic_navigation_drawer,
+                null,
                 R.string.drawer_open,
                 R.string.drawer_close
         ) {

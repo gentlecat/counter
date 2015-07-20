@@ -41,8 +41,7 @@ public class CountersListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView lv, View v, int position, long id) {
         CounterFragment newContent = new CounterFragment(adapter.getItem(position).name);
-        if (newContent != null)
-            switchCounterFragment(newContent);
+        if (newContent != null) switchCounterFragment(newContent);
     }
 
     private void switchCounterFragment(CounterFragment fragment) {
