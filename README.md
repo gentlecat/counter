@@ -4,11 +4,14 @@ Simple Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) 
 makes counting easier. You can have multiple counters with their own names and values. Values can be
 changed using volume buttons.
 
-This is my first Android application. The goal was to make something useful and easy to build.
+**This project is no longer in active development! I have more important things in my life to work
+on. If you want to contribute a feature or fix a problem, please create a pull request.**
+
+This was my first Android application. The goal was to make something useful and easy to build.
 Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
 and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).
 
-I hope you'll find this app useful. ;)
+I hope you'll find this project useful.
 
 ![](https://i.imgur.com/Qnt4I5E.jpg)
 
