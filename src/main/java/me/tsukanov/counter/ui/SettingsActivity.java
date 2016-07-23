@@ -1,17 +1,21 @@
 package me.tsukanov.counter.ui;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
@@ -26,29 +30,53 @@ import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 
 public class SettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener {
-    private SharedPreferences sharedPref;
-    private AppCompatDelegate delegate;
+    private static final String KEY_REMOVE_COUNTERS = "removeCounters";
+    private static final String KEY_VERSION = "version";
+
+    private SharedPreferences mSharedPref;
+    private AppCompatDelegate mDelegate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getDelegate().installViewFactory();
         getDelegate().onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
+
+        mSharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+            onCreatePreferenceActivity();
+        } else {
+            onCreatePreferenceFragment();
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    private void onCreatePreferenceActivity() {
         addPreferencesFromResource(R.xml.settings);
+        findPreference(KEY_VERSION).setSummary(getAppVersion());
+        findPreference(KEY_REMOVE_COUNTERS)
+                .setOnPreferenceClickListener(getOnRemoveCountersClickListener());
+    }
 
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void onCreatePreferenceFragment() {
+        final SettingsFragment fragment = new SettingsFragment();
+        fragment.setOnRemoveCountersClickListener(getOnRemoveCountersClickListener());
+        fragment.setAppVersion(getAppVersion());
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, fragment)
+                .commit();
+    }
 
-        Preference versionPref = findPreference("version");
-        versionPref.setSummary(getAppVersion());
-
-        getPreferenceManager().findPreference("removeCounters")
-                .setOnPreferenceClickListener(new OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        showWipeDialog();
-                        return true;
-                    }
-                });
+    private OnPreferenceClickListener getOnRemoveCountersClickListener() {
+        return new OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                showWipeDialog();
+                return true;
+            }
+        };
     }
 
     @Override
@@ -89,7 +117,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
                 CounterApplication app = (CounterApplication) getApplication();
                 app.removeCounters();
 
-                SharedPreferences.Editor settingsEditor = sharedPref.edit();
+                SharedPreferences.Editor settingsEditor = mSharedPref.edit();
                 if (app.counters.isEmpty()) {
                     settingsEditor.putString(MainActivity.STATE_ACTIVE_COUNTER, getString(R.string.default_counter_name));
                 } else {
@@ -121,6 +149,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         getDelegate().setSupportActionBar(toolbar);
     }
 
+    @NonNull
     @Override
     public MenuInflater getMenuInflater() {
         return getDelegate().getMenuInflater();
@@ -181,10 +210,31 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
     }
 
     private AppCompatDelegate getDelegate() {
-        if (delegate == null) {
-            delegate = AppCompatDelegate.create(this, null);
+        if (mDelegate == null) {
+            mDelegate = AppCompatDelegate.create(this, null);
         }
-        return delegate;
+        return mDelegate;
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static class SettingsFragment extends PreferenceFragment {
+        private OnPreferenceClickListener mOnRemoveCountersClickListener;
+        private String mAppVersion;
+
+        public void setOnRemoveCountersClickListener(OnPreferenceClickListener onRemoveCountersClickListener) {
+            mOnRemoveCountersClickListener = onRemoveCountersClickListener;
+        }
+
+        public void setAppVersion(String appVersion) {
+            mAppVersion = appVersion;
+        }
+
+        @Override
+        public void onCreate(final Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.settings);
+            findPreference(KEY_VERSION).setSummary(mAppVersion);
+            findPreference(KEY_REMOVE_COUNTERS).setOnPreferenceClickListener(mOnRemoveCountersClickListener);
+        }
+    }
 }
