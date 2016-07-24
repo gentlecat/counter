@@ -6,9 +6,11 @@
 
     <LinearLayout
         android:id="@+id/add_counter"
+        android:theme="@style/DrawerSelectTheme"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
         android:padding="10dp">
 
         <ImageView
@@ -31,9 +33,11 @@
 
     <ListView
         android:id="@android:id/list"
+        android:theme="@style/DrawerSelectTheme"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:choiceMode="singleChoice"
+        android:listSelector="?attr/selectableItemBackground"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
 
