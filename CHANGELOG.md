@@ -2,9 +2,9 @@
 
 ## Version 17 (in development)
 
-* RTL support (Thanks to Oleg Danilov, https://github.com/199sm)
-* Updated existing translations
 * Dark theme
+* RTL support
+* Translation updates
 
 ## Version 16
 * Minor user interface updates (using new Android APIs).
