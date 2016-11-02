@@ -27,7 +27,7 @@
   <string name="dialog_button_close">Schließen</string>
   <!-- Settings -->
   <string name="settings_title">Einstellungen</string>
-  <string name="settings_screen">Bildschirm</string>
+  <string name="settings_display">Bildschirm</string>
   <string name="settings_keep_on_title">Bildschirm angeschaltet lassen</string>
   <string name="settings_keep_on_summary">Bildschirm anlassen solange die App aktiv ist</string>
   <string name="settings_controls">Kontrolle</string>

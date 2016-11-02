@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Annuler</string>
   <string name="dialog_button_close">Fermer</string>
   <string name="settings_title">Paramètres</string>
-  <string name="settings_screen">Écran</string>
+  <string name="settings_display">Écran</string>
   <string name="settings_keep_on_title">Garder l\'écran allumé</string>
   <string name="settings_keep_on_summary">Garder l\'écran allumé lorsque l\'application est active</string>
   <string name="settings_controls">Contrôles</string>

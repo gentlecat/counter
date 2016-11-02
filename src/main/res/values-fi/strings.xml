@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Peruuta</string>
   <string name="dialog_button_close">Sulje</string>
   <string name="settings_title">Asetukset</string>
-  <string name="settings_screen">Näyttö</string>
+  <string name="settings_display">Näyttö</string>
   <string name="settings_keep_on_title">Pidä näyttö päällä</string>
   <string name="settings_keep_on_summary">Pidä näyttö päällä kun sovellus on avoimena</string>
   <string name="settings_controls">Ohjaimet</string>

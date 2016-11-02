@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Cancella</string>
   <string name="dialog_button_close">Chiudi</string>
   <string name="settings_title">Impostazioni</string>
-  <string name="settings_screen">Schermo</string>
+  <string name="settings_display">Schermo</string>
   <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
   <string name="settings_keep_on_summary">Mantieni lo schermo acceso mentre l\'applicazione è attiva</string>
   <string name="settings_controls">Controlli</string>

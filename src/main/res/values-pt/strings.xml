@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Cancelar</string>
   <string name="dialog_button_close">Fechar</string>
   <string name="settings_title">Configurações</string>
-  <string name="settings_screen">Tela</string>
+  <string name="settings_display">Tela</string>
   <string name="settings_keep_on_title">Permanecer ativa</string>
   <string name="settings_keep_on_summary">Não apagar a tela enquanto o aplicativo estiver ativo</string>
   <string name="settings_controls">Controles</string>

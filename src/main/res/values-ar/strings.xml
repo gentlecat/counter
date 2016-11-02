@@ -27,7 +27,7 @@
   <string name="dialog_button_close">إغلاق</string>
   <!-- Settings -->
   <string name="settings_title">الضبط</string>
-  <string name="settings_screen">الشاشة</string>
+  <string name="settings_display">الشاشة</string>
   <string name="settings_keep_on_title">إبقاء الشاشه مضيئه</string>
   <string name="settings_keep_on_summary">إبقاء الشاشه مضيئه عندما يكون التطبيق مفعُل</string>
   <string name="settings_controls">التحكم</string>

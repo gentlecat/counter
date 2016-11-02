@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Avbryt</string>
   <string name="dialog_button_close">Stäng</string>
   <string name="settings_title">Inställningar</string>
-  <string name="settings_screen">Skärm</string>
+  <string name="settings_display">Skärm</string>
   <string name="settings_keep_on_title">Skärm på</string>
   <string name="settings_keep_on_summary">Håll skärmen på medan app är aktiv</string>
   <string name="settings_controls">Kontroller</string>

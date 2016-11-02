@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String STATE_IS_NAV_OPEN = "is_nav_open";
     public static final String STATE_ACTIVE_COUNTER = "activeKey";
     private static final String PREF_KEEP_SCREEN_ON = "keepScreenOn";
+    private static final String PREF_THEME = "theme";
+    private static final String THEME_DARK = "dark";
+    private static final String THEME_LIGHT = "light";
     public CountersListFragment countersListFragment;
     public CounterFragment currentCounter;
     private CounterApplication app;
@@ -37,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        if (sharedPref.getString(PREF_THEME, THEME_LIGHT).equals(THEME_DARK)) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_layout);
 
@@ -80,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 actionBar.setTitle(title);
             }
         }
-
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
     @Override

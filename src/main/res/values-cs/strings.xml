@@ -19,7 +19,7 @@
   <string name="dialog_button_cancel">Zrušit</string>
   <string name="dialog_button_close">Zavřít</string>
   <string name="settings_title">Nastavení</string>
-  <string name="settings_screen">Obrazovka</string>
+  <string name="settings_display">Obrazovka</string>
   <string name="settings_keep_on_title">Zapnutá obrazovka</string>
   <string name="settings_keep_on_summary">Obrazovka zůstane zapnutá, když je aplikace aktivní</string>
   <string name="settings_controls">Ovládání</string>

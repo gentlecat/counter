@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Anuluj</string>
   <string name="dialog_button_close">Zamknij</string>
   <string name="settings_title">Ustawienia</string>
-  <string name="settings_screen">Ekran</string>
+  <string name="settings_display">Ekran</string>
   <string name="settings_keep_on_title">Utrzymuj włączony ekran</string>
   <string name="settings_keep_on_summary">Utrzymuj włączony ekran, gdy aplikacja jest aktywna</string>
   <string name="settings_controls">Sterowanie</string>

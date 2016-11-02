@@ -27,7 +27,7 @@
   <string name="dialog_button_close">Cerrar</string>
   <!-- Settings -->
   <string name="settings_title">Configuración</string>
-  <string name="settings_screen">Pantalla</string>
+  <string name="settings_display">Pantalla</string>
   <string name="settings_keep_on_title">Mantener pantalla encendida</string>
   <string name="settings_keep_on_summary">Mantener pantalla encendida mientras aplicación está activa</string>
   <string name="settings_controls">Controles</string>

@@ -23,7 +23,7 @@
   <string name="dialog_button_cancel">Отмена</string>
   <string name="dialog_button_close">Закрыть</string>
   <string name="settings_title">Параметры</string>
-  <string name="settings_screen">Экран</string>
+  <string name="settings_display">Экран</string>
   <string name="settings_keep_on_title">Не выключать экран</string>
   <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
   <string name="settings_controls">Управление</string>
