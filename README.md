@@ -13,7 +13,7 @@ and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).
 
 I hope you'll find this project useful.
 
-![](https://i.imgur.com/Qnt4I5E.jpg)
+![](https://cloud.githubusercontent.com/assets/460525/19927344/a0c98c5e-a0f9-11e6-9703-f48e18f57209.png)
 
 ## Contributing
 Feel free to make improvements, report issues, and create pull requests. If you want to help with
