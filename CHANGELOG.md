@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 17 (in development)
+## Version 17
 
 * Dark theme
 * RTL support
