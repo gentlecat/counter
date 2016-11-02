@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- General -->
-    <string name="app_name" translatable="false">Simple Counter</string>
-    <string name="app_name_short">Counter</string>
+    <string name="app_name">Counter</string>
     <string name="plus" translatable="false">+</string>
     <string name="minus" translatable="false">-</string>
 

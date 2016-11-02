@@ -1,6 +1,6 @@
-# Simple Counter
+# Counter
 
-Simple Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android. It
+Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android. It
 makes counting easier. You can have multiple counters with their own names and values. Values can be
 changed using volume buttons.
 
@@ -8,7 +8,7 @@ changed using volume buttons.
 on. If you want to contribute a feature or fix a problem, please create a pull request.**
 
 This was my first Android application. The goal was to make something useful and easy to build.
-Simple Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
+Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
 and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).
 
 I hope you'll find this project useful.
@@ -20,7 +20,7 @@ Feel free to make improvements, report issues, and create pull requests. If you 
 translation go to project's [page on Crowdin](http://crowdin.net/project/simple-counter) (please,
 don't translate resources directly).
 
-Huge thanks to all [contributors](https://github.com/gentlecat/Simple-Counter/contributors)
+Huge thanks to all [contributors](https://github.com/gentlecat/counter/contributors)
 and [translators](http://crowdin.net/project/simple-counter).
 
 ## What was used
