@@ -32,8 +32,8 @@ import me.tsukanov.counter.ui.dialogs.EditDialog;
 
 public class CounterFragment extends Fragment {
     public static final int MAX_VALUE = 9999;
-    public static final int MIN_VALUE = 0;
-    public static final int DEFAULT_VALUE = MIN_VALUE;
+    public static final int MIN_VALUE = -9999;
+    public static final int DEFAULT_VALUE = 0;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
     private String name = null;
     private int value = DEFAULT_VALUE;
