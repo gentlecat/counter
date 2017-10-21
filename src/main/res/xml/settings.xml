@@ -6,17 +6,20 @@
             android:defaultValue="false"
             android:key="soundsOn"
             android:summary="@string/settings_sounds_summary"
-            android:title="@string/settings_sounds_title" />
+            android:title="@string/settings_sounds_title"
+            android:icon="@drawable/ic_volume_up"/>
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="vibrationOn"
             android:summary="@string/settings_vibration_summary"
-            android:title="@string/settings_vibration_title" />
+            android:title="@string/settings_vibration_title"
+            android:icon="@drawable/ic_vibration"/>
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="hardControlOn"
             android:summary="@string/settings_hard_summary"
-            android:title="@string/settings_hard_title" />
+            android:title="@string/settings_hard_title"
+            android:icon="@drawable/ic_phone_android"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_display">
@@ -25,23 +28,27 @@
             android:entries="@array/themeSelection"
             android:entryValues="@array/themeSelectionData"
             android:key="theme"
-            android:title="@string/settings_theme" />
+            android:title="@string/settings_theme"
+            android:icon="@drawable/ic_palette"/>
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="keepScreenOn"
             android:summary="@string/settings_keep_on_summary"
-            android:title="@string/settings_keep_on_title" />
+            android:title="@string/settings_keep_on_title"
+            android:icon="@drawable/ic_brightness"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_other">
         <Preference
             android:key="removeCounters"
-            android:title="@string/settings_wipe_title" />
+            android:title="@string/settings_wipe_title"
+            android:icon="@drawable/ic_delete"/>
         <Preference
             android:enabled="false"
             android:key="version"
             android:summary="@string/unknown"
-            android:title="@string/settings_version_title" />
+            android:title="@string/settings_version_title"
+            android:icon="@drawable/ic_info"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
