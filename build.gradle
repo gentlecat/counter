@@ -28,7 +28,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 26
 
-        versionCode 17
-        versionName "17"
+        versionCode 18
+        versionName "18"
     }
 }
