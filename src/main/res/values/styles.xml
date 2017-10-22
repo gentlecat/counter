@@ -3,18 +3,14 @@
 
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
         <item name="valueColor">#000000</item>
-        <item name="drawableDelete">@drawable/ic_action_delete_light</item>
-        <item name="drawableEdit">@drawable/ic_action_edit_light</item>
-        <item name="drawableReset">@drawable/ic_action_reset_light</item>
-        <item name="drawableSettings">@drawable/ic_action_settings_light</item>
+        <item name="drawableDelete">@drawable/ic_delete</item>
+        <item name="drawableEdit">@drawable/ic_edit</item>
+        <item name="drawableReset">@drawable/ic_reset</item>
+        <item name="drawableSettings">@drawable/ic_settings</item>
     </style>
 
     <style name="AppTheme.Dark" parent="@style/Theme.AppCompat">
         <item name="valueColor">#ffffff</item>
-        <item name="drawableDelete">@drawable/ic_action_delete_dark</item>
-        <item name="drawableEdit">@drawable/ic_action_edit_dark</item>
-        <item name="drawableReset">@drawable/ic_action_reset_dark</item>
-        <item name="drawableSettings">@drawable/ic_action_settings_dark</item>
     </style>
 
     <style name="DrawerSelectTheme" parent="AppTheme">
