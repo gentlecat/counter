@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 18
+
+* Increased minimum Android version requirement to 4.0 (Ice Cream Sandwich)
+* Fixed counter visibility in the dark theme
+* Added icons into settings
+* Translation updates
+
 ## Version 17
 
 * Dark theme
