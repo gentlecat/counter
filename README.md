@@ -1,6 +1,6 @@
 # Counter
 
-Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android. It
+Counter is a [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It
 makes counting easier. You can have multiple counters with their own names and values. Values can be
 changed using volume buttons.
 
@@ -21,8 +21,8 @@ translation go to project's [page on Crowdin](http://crowdin.net/project/simple-
 don't translate resources directly).
 
 Huge thanks to all [contributors](https://github.com/gentlecat/counter/contributors)
-and [translators](http://crowdin.net/project/simple-counter).
+and [translators](https://crowdin.net/project/simple-counter).
 
 ## What was used
 * Application icon made by [Dawid Tarasiuk](https://plus.google.com/u/0/105243332659178233856)
-* Sounds from [adobeflash.com](http://www.adobeflash.com/download/sounds/clicks/)
+* Sounds from [adobeflash.com](https://www.adobeflash.com/download/sounds/clicks/)
