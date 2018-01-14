@@ -2,7 +2,7 @@
 
 Counter is a [tally counter](http://en.wikipedia.org/wiki/Tally_counter) for Android. It
 makes counting easier. You can have multiple counters with their own names and values. Values can be
-changed using volume buttons. **This fork was made for a class project so further development is unlikely. Use it as you wish**
+changed using volume buttons.
 
 **This project is no longer in active development! I have more important things in my life to work
 on. If you want to contribute a feature or fix a problem, please create a pull request.**
