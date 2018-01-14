@@ -1,6 +1,6 @@
 # Changelog
 
-##Version 19 - custom_build
+##Version 19
 
 * Fixed name not getting trimmed when entered
 * Fixed overwriting counter when a counter with the same name is entered  
