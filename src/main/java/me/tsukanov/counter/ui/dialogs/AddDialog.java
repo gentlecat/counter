@@ -43,23 +43,33 @@ public class AddDialog extends DialogFragment {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 String name = nameInput.getText().toString();
-                                if (name.equals("")) {
-                                    Toast.makeText(activity,
-                                            getResources().getText(R.string.toast_no_name_message),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    int value;
-                                    String valueInputContents = valueInput.getText().toString();
-                                    if (!valueInputContents.equals("")) {
-                                        value = Integer.parseInt(valueInputContents);
-                                    } else {
-                                        value = CounterFragment.DEFAULT_VALUE;
-                                    }
-                                    CounterApplication app = (CounterApplication) activity.getApplication();
-                                    app.counters.put(name, value);
-                                    activity.switchCounterFragment(new CounterFragment(name, value));
-                                    activity.countersListFragment.updateList();
+                                name = name.trim();
+                                CounterApplication app = (CounterApplication) activity.getApplication();
+                                if (name.equals("") || name.length() == 0) {
+
+                                    name ="New counter";
+
                                 }
+
+                                int i = 2;
+                                String tempName = name;
+                                while(app.counters.containsKey(tempName)){
+                                    tempName =name + "_" + Integer.toString(i);
+                                    i++;
+                                }
+                                name=tempName;
+
+                                int value;
+                                String valueInputContents = valueInput.getText().toString();
+                                if (!valueInputContents.equals("")) {
+                                    value = Integer.parseInt(valueInputContents);
+                                } else {
+                                    value = CounterFragment.DEFAULT_VALUE;
+                                }
+                                CounterFragment temp = new CounterFragment(name,value);
+                                app.counters.put(name, value);
+                                activity.switchCounterFragment(temp);
+                                activity.countersListFragment.updateList();
                             }
                         })
                 .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null).create();

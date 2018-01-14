@@ -94,11 +94,25 @@ public class CounterFragment extends Fragment {
                 increment();
             }
         });
+       incrementButton.setOnLongClickListener(new View.OnLongClickListener() {
+
+            public boolean onLongClick(View v) {
+                incrementDecade();
+                return true;
+            }
+        });
 
         decrementButton = (Button) view.findViewById(R.id.decrementButton);
         decrementButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 decrement();
+            }
+        });
+        decrementButton.setOnLongClickListener(new View.OnLongClickListener() {
+
+            public boolean onLongClick(View v) {
+                decrementDecade();
+                return true;
             }
         });
 
@@ -212,10 +226,27 @@ public class CounterFragment extends Fragment {
         }
     }
 
+    public void incrementDecade() {
+        if (value < MAX_VALUE) {
+            setValue(value+10);
+            vibrate(DEFAULT_VIBRATION_DURATION + 10);
+            playSound(Sound.INCREMENT_SOUND);
+        }
+    }
+
+
     public void decrement() {
         if (value > MIN_VALUE) {
             setValue(--value);
             vibrate(DEFAULT_VIBRATION_DURATION + 20);
+            playSound(Sound.DECREMENT_SOUND);
+        }
+    }
+
+    public void decrementDecade() {
+        if (value > MIN_VALUE) {
+            setValue(value-10);
+            vibrate(DEFAULT_VIBRATION_DURATION + 30);
             playSound(Sound.DECREMENT_SOUND);
         }
     }

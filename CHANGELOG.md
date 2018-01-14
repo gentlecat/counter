@@ -1,5 +1,12 @@
 # Changelog
 
+##Version 19 - custom_build
+
+* Fixed name not getting trimmed when entered
+* Fixed overwriting counter when a counter with the same name is entered  
+* Added the possibility to enter a counter without naming it
+* Added long press to increase/decrease by 10
+
 ## Version 18
 
 * Increased minimum Android version requirement to 4.0 (Ice Cream Sandwich)
