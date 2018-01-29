@@ -19,8 +19,6 @@ import android.widget.FrameLayout;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 
-
-
 public class MainActivity extends AppCompatActivity {
 
     private static final String STATE_TITLE = "title";
@@ -39,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private CharSequence title;
     private SharedPreferences sharedPref;
     private FrameLayout menuFrame;
-
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -171,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     public boolean isNavigationOpen() {
         return navigationLayout.isDrawerOpen(menuFrame);

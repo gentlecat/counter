@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:26.1.0'
-    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile "com.android.support:support-v4:26.1.0"
+    compile "com.android.support:appcompat-v7:26.1.0"
 }
 
 android {
@@ -29,7 +29,5 @@ android {
 
         versionCode 19
         versionName '19'
-    }
-    productFlavors {
     }
 }

@@ -227,7 +227,7 @@ public class CounterFragment extends Fragment {
     }
 
     public void incrementDecade() {
-        if (value < MAX_VALUE) {
+        if (value + 10 < MAX_VALUE) {
             setValue(value+10);
             vibrate(DEFAULT_VIBRATION_DURATION + 10);
             playSound(Sound.INCREMENT_SOUND);
@@ -244,7 +244,7 @@ public class CounterFragment extends Fragment {
     }
 
     public void decrementDecade() {
-        if (value > MIN_VALUE) {
+        if (value - 10 > MIN_VALUE) {
             setValue(value-10);
             vibrate(DEFAULT_VIBRATION_DURATION + 30);
             playSound(Sound.DECREMENT_SOUND);
