@@ -42,22 +42,13 @@ public class AddDialog extends DialogFragment {
                 .setPositiveButton(getResources().getText(R.string.dialog_button_add),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                String name = nameInput.getText().toString().trim();
                                 CounterApplication app = (CounterApplication) activity.getApplication();
+                                String name = app.nameCounter(nameInput.getText().toString().trim());
                                 if (name.isEmpty()) {
 
-                                    name ="New counter";
+                                    name =app.nameCounter("New counter");
 
                                 }
-
-                                int suffix = 2;
-                                String tempName = name;
-                                while(app.counters.containsKey(tempName)){
-                                    tempName =name + "_" + Integer.toString(suffix);
-                                    suffix++;
-                                }
-                                name=tempName;
-
                                 int value;
                                 String valueInputContents = valueInput.getText().toString();
                                 if (!valueInputContents.equals("")) {

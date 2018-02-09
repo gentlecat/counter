@@ -48,4 +48,15 @@ public class CounterApplication extends Application {
         counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
     }
 
+    public String nameCounter(String name) {
+        int suffix = 2;
+        String tempName = name;
+        while(counters.containsKey(tempName)){
+            tempName =name + "_" + Integer.toString(suffix);
+            suffix++;
+        }
+        return tempName;
+    }
+
+
 }

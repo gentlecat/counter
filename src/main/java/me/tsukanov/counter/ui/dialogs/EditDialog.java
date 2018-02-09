@@ -56,13 +56,14 @@ public class EditDialog extends DialogFragment {
                 .setPositiveButton(getResources().getText(R.string.dialog_button_apply),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                String newName = nameInput.getText().toString();
+                                CounterApplication app = (CounterApplication) activity.getApplication();
+                                String newName = nameInput.getText().toString().trim();
                                 if (newName.equals("")) {
                                     Toast.makeText(activity,
                                             getResources().getText(R.string.toast_no_name_message),
                                             Toast.LENGTH_SHORT).show();
-                                } else {
-                                    CounterApplication app = (CounterApplication) activity.getApplication();
+                                } else if(!newName.equals(name)) {
+                                    newName = app.nameCounter(newName);
                                     app.counters.remove(name);
                                     int newValue;
                                     String valueInputContents = valueInput.getText().toString();
