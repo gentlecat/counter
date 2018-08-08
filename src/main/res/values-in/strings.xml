@@ -60,4 +60,6 @@
     <string name="default_counter_name">Penghitung pertama</string>
     <string name="unknown">Tidak diketahui</string>
 
+    <string name="dialog_edit_max">Maksimal</string>
+
 </resources>

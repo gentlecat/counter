@@ -60,4 +60,6 @@
     <string name="default_counter_name">First counter</string>
     <string name="unknown">Unknown</string>
 
+    <string name="dialog_edit_max">Maximum</string>
+
 </resources>
