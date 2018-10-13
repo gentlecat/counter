@@ -4,21 +4,23 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import java.util.LinkedHashMap;
+import java.util.SortedMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import me.tsukanov.counter.ui.CounterFragment;
 
 public class CounterApplication extends Application {
 
     private static final String DATA_FILE_NAME = "counters";
-    public LinkedHashMap<String, Integer> counters;
+    public SortedMap<String, Integer> counters;
     private SharedPreferences data;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        counters = new LinkedHashMap<>();
+        counters = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+
         data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
         loadCounters();
     }
