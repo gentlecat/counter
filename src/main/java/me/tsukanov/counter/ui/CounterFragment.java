@@ -87,6 +87,13 @@ public class CounterFragment extends Fragment {
         View view = inflater.inflate(R.layout.counter, container, false);
 
         counterLabel = (TextView) view.findViewById(R.id.counterLabel);
+        counterLabel.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                if (settings.getBoolean("labelControlOn", true)) {
+                    increment();
+                }
+            }
+        });
 
         incrementButton = (Button) view.findViewById(R.id.incrementButton);
         incrementButton.setOnClickListener(new OnClickListener() {
