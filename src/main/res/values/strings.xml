@@ -45,6 +45,8 @@
     <string name="settings_vibration_summary">Vibrate on changes</string>
     <string name="settings_hard_title">Use hardware buttons</string>
     <string name="settings_hard_summary">Change counter value using hardware buttons</string>
+    <string name="settings_label_increment_title">Increment with display value</string>
+    <string name="settings_label_increment_summary">Increment counter by tapping the current value</string>
     <string name="settings_other">Other</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Remove all counters</string>

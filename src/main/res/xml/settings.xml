@@ -20,6 +20,12 @@
             android:summary="@string/settings_hard_summary"
             android:title="@string/settings_hard_title"
             android:icon="@drawable/ic_phone_android"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="labelControlOn"
+            android:summary="@string/settings_label_increment_summary"
+            android:title="@string/settings_label_increment_title"
+            android:icon="@drawable/ic_exposure_plus_1"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_display">
