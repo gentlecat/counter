@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import me.tsukanov.counter.CounterApplication;
@@ -33,6 +34,11 @@ public class AddDialog extends DialogFragment {
         final EditText nameInput = (EditText) dialogView.findViewById(R.id.edit_name);
 
         final EditText valueInput = (EditText) dialogView.findViewById(R.id.edit_value);
+        final RadioButton p1 = dialogView.findViewById(R.id.oneplayer);
+        final RadioButton p2 = dialogView.findViewById(R.id.twoplayer);
+
+
+
         InputFilter[] valueFilter = new InputFilter[1];
         valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
         valueInput.setFilters(valueFilter);
@@ -56,8 +62,11 @@ public class AddDialog extends DialogFragment {
                                         value = CounterFragment.DEFAULT_VALUE;
                                     }
                                     CounterApplication app = (CounterApplication) activity.getApplication();
+
                                     app.counters.put(name, value);
-                                    activity.switchCounterFragment(new CounterFragment(name, value));
+                                    int num = 1;
+                                    if(p2.isChecked()) num = 2;
+                                    activity.switchCounterFragment(new CounterFragment(name, value, num));
                                     activity.countersListFragment.updateList();
                                 }
                             }
@@ -73,5 +82,7 @@ public class AddDialog extends DialogFragment {
     private int getValueCharLimit() {
         return String.valueOf(CounterFragment.MAX_VALUE).length();
     }
+
+
 
 }

@@ -34,6 +34,26 @@
             android:inputType="numberSigned"
             android:maxLength="8"
             android:maxLines="1" />
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/oneplayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="One Player Health" />
+
+            <RadioButton
+                android:id="@+id/twoplayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Two Player Health" />
+        </RadioGroup>
+
 
     </LinearLayout>
 </ScrollView>

@@ -72,7 +72,7 @@ public class EditDialog extends DialogFragment {
                                         newValue = CounterFragment.DEFAULT_VALUE;
                                     }
                                     app.counters.put(newName, newValue);
-                                    activity.switchCounterFragment(new CounterFragment(newName, newValue));
+                                    activity.switchCounterFragment(new CounterFragment(newName, newValue,0));
                                     activity.countersListFragment.updateList();
                                 }
                             }

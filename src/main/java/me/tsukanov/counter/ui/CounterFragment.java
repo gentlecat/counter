@@ -24,6 +24,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
@@ -36,15 +37,25 @@ public class CounterFragment extends Fragment {
     public static final int DEFAULT_VALUE = 0;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
     private String name = null;
-    private int value = DEFAULT_VALUE;
     private CounterApplication app;
     private SharedPreferences settings;
     private Vibrator vibrator;
     private SoundPool soundPool;
     private SparseIntArray soundsMap;
+
+    //P1
+    private int value = DEFAULT_VALUE;
     private TextView counterLabel;
     private Button incrementButton;
     private Button decrementButton;
+
+    //P2
+    private int value2 = DEFAULT_VALUE;
+    private TextView counterLabel2;
+    private Button incrementButton2;
+    private Button decrementButton2;
+
+    public static int mode = 0; // 1 or 2 health counters
 
     public CounterFragment() {
     }
@@ -55,9 +66,10 @@ public class CounterFragment extends Fragment {
     }
 
     @SuppressLint("ValidFragment")
-    public CounterFragment(String name, int value) {
+    public CounterFragment(String name, int value, int num) {
         this.name = name;
         this.value = value;
+        this.mode = num;
     }
 
     public String getCounterName() {
@@ -84,27 +96,57 @@ public class CounterFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.counter, container, false);
+        View view = null;
 
+        if (mode == 2) {
+            view = inflater.inflate(R.layout.doublecounter, container, false);
+            //p2
+
+            counterLabel2 = (TextView) view.findViewById(R.id.counterLabel2);
+
+            incrementButton2 = (Button) view.findViewById(R.id.incrementButton2);
+            incrementButton2.setOnClickListener(new OnClickListener() {
+                public void onClick(View v) {
+                    increment(2);
+                }
+            });
+
+            decrementButton2 = (Button) view.findViewById(R.id.decrementButton2);
+            decrementButton2.setOnClickListener(new OnClickListener() {
+                public void onClick(View v) {
+                    decrement(2);
+                }
+            });}
+        else{
+            view = inflater.inflate(R.layout.counter, container, false);
+        }
+
+        //p1
         counterLabel = (TextView) view.findViewById(R.id.counterLabel);
 
         incrementButton = (Button) view.findViewById(R.id.incrementButton);
         incrementButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                increment();
+                increment(1);
             }
         });
 
         decrementButton = (Button) view.findViewById(R.id.decrementButton);
         decrementButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                decrement();
+                decrement(1);
             }
         });
 
+
+
+
+
+
         if (name == null) name = getActivity().getString(R.string.default_counter_name);
         if (app.counters.containsKey(name)) {
-            setValue(app.counters.get(name));
+            setValue(app.counters.get(name),1);
+            if(mode==2)setValue(app.counters.get(name),2);
         } else {
             app.counters.put(name, value);
         }
@@ -140,13 +182,13 @@ public class CounterFragment extends Fragment {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (settings.getBoolean("hardControlOn", true)) {
-                    increment();
+                    increment(1);
                     return true;
                 }
                 return false;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 if (settings.getBoolean("hardControlOn", true)) {
-                    decrement();
+                    decrement(1);
                     return true;
                 }
                 return false;
@@ -204,31 +246,41 @@ public class CounterFragment extends Fragment {
         dialog.show(getFragmentManager(), DeleteDialog.TAG);
     }
 
-    public void increment() {
+    public void increment(int player) {
         if (value < MAX_VALUE) {
-            setValue(++value);
+            setValue(++value,player);
             vibrate(DEFAULT_VIBRATION_DURATION);
             playSound(Sound.INCREMENT_SOUND);
         }
     }
 
-    public void decrement() {
+    public void decrement(int player) {
         if (value > MIN_VALUE) {
-            setValue(--value);
+            setValue(--value,player);
             vibrate(DEFAULT_VIBRATION_DURATION + 20);
             playSound(Sound.DECREMENT_SOUND);
         }
     }
 
     public void reset() {
-        setValue(DEFAULT_VALUE);
+        setValue(DEFAULT_VALUE,1);
+        setValue(DEFAULT_VALUE,2);
     }
 
-    public void setValue(int value) {
+    public void setValue(int value, int player) {
         if (value > MAX_VALUE) value = MAX_VALUE;
         else if (value < MIN_VALUE) value = MIN_VALUE;
         this.value = value;
-        counterLabel.setText(Integer.toString(value));
+        if(mode==1){
+            if (player == 1)counterLabel.setText(Integer.toString(value));
+        }
+        else if(mode==2){
+            if (player == 1)counterLabel.setText(Integer.toString(value));
+            else if (player == 2)counterLabel2.setText(Integer.toString(value));
+            else {
+                System.out.println("Broken");
+            }
+        }
         checkStateOfButtons();
         saveValue();
     }
