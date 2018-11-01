@@ -4,7 +4,7 @@ Counter is a *simple* [tally counter](https://en.wikipedia.org/wiki/Tally_counte
 makes counting easier. You can have multiple counters with their own names and values. Values can be
 changed using volume buttons.
 
-This was my first Android application. The goal was to make something useful and easy to build. It's
+This was my first Android application. The goal was to make something easy to build. It's
 not very complex. I hope you'll find this project useful.
 
 ⚠️ Keep in mind that I'm no longer actively maintaining this app. Any contributions are still welcome
