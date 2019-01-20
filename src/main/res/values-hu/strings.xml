@@ -6,7 +6,9 @@
     <string name="drawer_open">Navigáció megnyitása</string>
     <string name="drawer_close">Navigáció bezárása</string>
     <string name="menu_add">Számláló hozzáadása</string>
+    <string name="menu_reset">Számláló visszaállítása</string>
     <string name="menu_edit">Számláló szerkesztése</string>
+    <string name="menu_delete">Számláló törlése</string>
     <string name="menu_settings">Beállítások</string>
     <string name="menu_info">Információ</string>
     <!-- Dialogs -->
@@ -41,6 +43,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Az összes számláló el lett távolítva.</string>
     <string name="toast_remove_success">\"%s\" nevű számláló el lett távolítva.</string>
+    <string name="toast_no_name_message">Meg kell adni egy nevet!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Első számláló</string>
     <string name="unknown">Ismeretlen</string>
