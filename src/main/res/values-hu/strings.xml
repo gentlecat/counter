@@ -12,8 +12,6 @@
     <string name="menu_settings">Beállítások</string>
     <string name="menu_info">Információ</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">Új számláló hozzáadása</string>
-    <string name="dialog_edit_title">Számláló szerkesztése</string>
     <string name="dialog_delete_title">Valóban törölni akarja ezt a számlálót?</string>
     <string name="dialog_reset_title">Valóban vissza akarja állítani ezt a számlálót?</string>
     <string name="dialog_edit_name">Elnevezés:</string>
@@ -26,15 +24,10 @@
     <string name="dialog_button_close">Bezárás</string>
     <!-- Settings -->
     <string name="settings_title">Beállítások</string>
-    <string name="settings_keep_on_title">Képernyő bekapcsolva tartása</string>
-    <string name="settings_keep_on_summary">Képernyő bekapcsolva tartása amíg az app aktív</string>
     <string name="settings_controls">Vezérlők</string>
     <string name="settings_sounds_title">Hangok bekapcsolása</string>
-    <string name="settings_sounds_summary">Hangok lejátszása</string>
     <string name="settings_vibration_title">Rezgés bekapcsolása</string>
-    <string name="settings_vibration_summary">Változást rezgéssel jelzi</string>
     <string name="settings_hard_title">Hardveres gombok</string>
-    <string name="settings_hard_summary">A számláló értékének megváltoztatása hardveres gombokkal</string>
     <string name="settings_other">Egyéb</string>
     <string name="settings_version_title">Verzió</string>
     <string name="settings_wipe_title">Összes számláló eltávolítása</string>
@@ -45,6 +38,5 @@
     <string name="toast_remove_success">\"%s\" nevű számláló el lett távolítva.</string>
     <string name="toast_no_name_message">Meg kell adni egy nevet!</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">Első számláló</string>
     <string name="unknown">Ismeretlen</string>
 </resources>
