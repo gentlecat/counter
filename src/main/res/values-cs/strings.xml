@@ -5,7 +5,9 @@
     <string name="app_name">Počítadlo</string>
     <!-- Menu -->
     <string name="menu_add">Přidat počítadlo</string>
+    <string name="menu_reset">Vymazat</string>
     <string name="menu_edit">Upravit počítadlo</string>
+    <string name="menu_delete">Smazat</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_info">O aplikaci</string>
     <!-- Dialogs -->
@@ -44,6 +46,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Všechna počítadla byla odstraněna.</string>
     <string name="toast_remove_success">Počítadlo \"%s\" bylo odstraněno.</string>
+    <string name="toast_no_name_message">Prosím, vložte jméno.</string>
     <!-- Other stuff -->
     <string name="default_counter_name">První počítadlo</string>
     <string name="unknown">Neznámé</string>
