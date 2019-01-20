@@ -4,50 +4,50 @@
     <!-- General -->
     <string name="app_name">Sayaç</string>
     <!-- Menu -->
-    <string name="drawer_open">Gezinmeyi Aç</string>
+    <string name="drawer_open">Gezinmeyi aç</string>
     <string name="drawer_close">Gezinmeyi kapat</string>
     <string name="menu_add">Sayaç ekle</string>
     <string name="menu_reset">Sayacı sıfırla</string>
-    <string name="menu_edit">Sayaç düzenle</string>
+    <string name="menu_edit">Sayacı düzenle</string>
     <string name="menu_delete">Sayacı sil</string>
     <string name="menu_settings">Ayarlar</string>
     <string name="menu_info">Hakkında</string>
     <!-- Dialogs -->
     <string name="dialog_add_title">Yeni sayaç ekle</string>
     <string name="dialog_edit_title">Sayacı düzenle</string>
-    <string name="dialog_delete_title">Bu sayacı silmek istiyor musunuz?</string>
-    <string name="dialog_reset_title">Bu sayacı sıfırlamak istiyor musunuz?</string>
+    <string name="dialog_delete_title">Bu sayacı gerçekten silmek istiyor musunuz?</string>
+    <string name="dialog_reset_title">Bu sayacı gerçekten sıfırlamak istiyor musunuz?</string>
     <string name="dialog_edit_name">Başlık:</string>
     <string name="dialog_edit_value">Değer:</string>
     <string name="dialog_button_add">Ekle</string>
     <string name="dialog_button_apply">Uygula</string>
-    <string name="dialog_button_reset">Sıfırla</string>
-    <string name="dialog_button_delete">Sil</string>
+    <string name="dialog_button_reset">Sayacı sıfırla</string>
+    <string name="dialog_button_delete">Sayacı sil</string>
     <string name="dialog_button_cancel">İptal</string>
     <string name="dialog_button_close">Kapat</string>
     <!-- Settings -->
     <string name="settings_title">Ayarlar</string>
     <string name="settings_display">Görüntü</string>
     <string name="settings_theme">Tema</string>
-    <string name="settings_theme_light">Işık</string>
-    <string name="settings_theme_dark">Karanlık</string>
+    <string name="settings_theme_light">Açık</string>
+    <string name="settings_theme_dark">Koyu</string>
     <string name="settings_keep_on_title">Ekranı açık tut</string>
-    <string name="settings_keep_on_summary">Uygulamaya etkinken ekranı açık tutun</string>
+    <string name="settings_keep_on_summary">Uygulama etkinken ekranı açık tutun</string>
     <string name="settings_controls">Kontroller</string>
-    <string name="settings_sounds_title">Sesleri açın</string>
-    <string name="settings_sounds_summary">Sesleri Çal</string>
-    <string name="settings_vibration_title">Titreşimleri açın</string>
-    <string name="settings_vibration_summary">Titreşim değişiklikleri</string>
-    <string name="settings_hard_title">Donanımsal düğmeleri kullan</string>
-    <string name="settings_hard_summary">Donanımsal düğmeleri kullanarak sayaç değerini değiştirin</string>
+    <string name="settings_sounds_title">Sesleri aç</string>
+    <string name="settings_sounds_summary">Sesleri oynatın</string>
+    <string name="settings_vibration_title">Titreşimi aç</string>
+    <string name="settings_vibration_summary">Sayaç değiştiğinde titret</string>
+    <string name="settings_hard_title">Donanım tuşlarını kullan</string>
+    <string name="settings_hard_summary">Donanım tuşlarını kullanarak sayaç değerini değiştirin</string>
     <string name="settings_other">Diğer</string>
     <string name="settings_version_title">Sürüm</string>
     <string name="settings_wipe_title">Tüm sayaçları kaldır</string>
-    <string name="settings_wipe_confirmation">Tüm sayaçları kaldırmak istiyor musunuz?</string>
+    <string name="settings_wipe_confirmation">Tüm sayaçları gerçekten silmek istiyor musunuz?</string>
     <string name="settings_wipe_confirmation_yes">Tümünü kaldır</string>
     <!-- Toasts -->
-    <string name="toast_wipe_success">Tüm sayaçları kaldırılmıştır.</string>
-    <string name="toast_remove_success">Sayaç \"%s\" kaldırıldı.</string>
+    <string name="toast_wipe_success">Tüm sayaçlar kaldırıldı.</string>
+    <string name="toast_remove_success">\"%s\" adlı sayaç kaldırıldı.</string>
     <string name="toast_no_name_message">İsim gereklidir!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">İlk sayaç</string>
