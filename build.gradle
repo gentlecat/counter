@@ -1,7 +1,7 @@
 buildscript {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
 
     dependencies {
@@ -9,27 +9,54 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
 apply plugin: "com.android.application"
 
-repositories {
-    mavenCentral()
-    google()
+ext {
+    compileSdkVersion = 28
+    minSdkVersion = 14
+    buildToolsVersion = "28.0.3"
+    supportLibVersion = "28.0.0"
+
+    appVersion = 20
 }
 
 dependencies {
-    implementation "com.android.support:support-compat:28.0.0"
-    implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation "com.android.support:support-compat:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
 }
 
+
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.compileSdkVersion
 
-        versionCode 20
-        versionName "20"
+        applicationId 'me.tsukanov.counter'
+        versionCode rootProject.ext.appVersion
+        versionName "${rootProject.ext.appVersion}"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
+            shrinkResources true
+        }
     }
 }
