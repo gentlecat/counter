@@ -14,6 +14,7 @@ import me.tsukanov.counter.ui.CounterFragment;
 public class CounterApplication extends Application {
 
     private static final String DATA_FILE_NAME = "counters";
+
     public SortedMap<String, Integer> counters;
     private SharedPreferences data;
 
