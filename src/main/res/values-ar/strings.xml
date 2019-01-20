@@ -21,12 +21,12 @@
     <string name="dialog_edit_value">القيمة:</string>
     <string name="dialog_button_add">إضافة</string>
     <string name="dialog_button_apply">تطبيق</string>
-    <string name="dialog_button_reset">إعادة ضبط</string>
-    <string name="dialog_button_delete">حذف</string>
+    <string name="dialog_button_reset">إعادة ضبط العداد</string>
+    <string name="dialog_button_delete">حذف العداد</string>
     <string name="dialog_button_cancel">إلغاء</string>
     <string name="dialog_button_close">إغلاق</string>
     <!-- Settings -->
-    <string name="settings_title">الضبط</string>
+    <string name="settings_title">الإعدادات</string>
     <string name="settings_display">العرض</string>
     <string name="settings_theme">المظهر</string>
     <string name="settings_theme_light">فاتح</string>
