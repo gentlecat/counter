@@ -8,7 +8,7 @@
     <string name="drawer_close">Cerrar navegación</string>
     <string name="menu_add">Agregar contador</string>
     <string name="menu_reset">Reiniciar contador</string>
-    <string name="menu_edit">Editar</string>
+    <string name="menu_edit">Editar contador</string>
     <string name="menu_delete">Borrar</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_info">Información</string>
@@ -21,7 +21,7 @@
     <string name="dialog_edit_value">Valor:</string>
     <string name="dialog_button_add">Añadir</string>
     <string name="dialog_button_apply">Aplicar</string>
-    <string name="dialog_button_reset">Resetear</string>
+    <string name="dialog_button_reset">Reiniciar contador</string>
     <string name="dialog_button_delete">Borrar</string>
     <string name="dialog_button_cancel">Cancelar</string>
     <string name="dialog_button_close">Cerrar</string>
