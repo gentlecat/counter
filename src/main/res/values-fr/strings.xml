@@ -8,7 +8,7 @@
     <string name="drawer_close">Fermer la navigation</string>
     <string name="menu_add">Ajouter un compteur</string>
     <string name="menu_reset">Réinitialiser</string>
-    <string name="menu_edit">Modifier</string>
+    <string name="menu_edit">Modifier le compteur</string>
     <string name="menu_delete">Supprimer</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_info">A propos</string>
