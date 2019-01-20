@@ -7,7 +7,9 @@
     <string name="drawer_open">Otwórz nawigację</string>
     <string name="drawer_close">Zamknij nawigację</string>
     <string name="menu_add">Dodaj licznik</string>
+    <string name="menu_reset">Zresetuj licznik</string>
     <string name="menu_edit">Edytuj licznik</string>
+    <string name="menu_delete">Usuń licznik</string>
     <string name="menu_settings">Ustawienia</string>
     <string name="menu_info">O aplikacji</string>
     <!-- Dialogs -->
@@ -46,6 +48,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Wszystkie liczniki zostały usunięte.</string>
     <string name="toast_remove_success">Licznik \"%s\" został usunięty.</string>
+    <string name="toast_no_name_message">Proszę wpisać nazwę.</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Pierwszy licznik</string>
     <string name="unknown">Nieznany</string>
