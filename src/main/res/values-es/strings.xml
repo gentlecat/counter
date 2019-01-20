@@ -13,8 +13,6 @@
     <string name="menu_settings">Configuración</string>
     <string name="menu_info">Información</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">Añadir nuevo contador</string>
-    <string name="dialog_edit_title">Editar contador</string>
     <string name="dialog_delete_title">¿Está seguro de que quiere borrar este contador?</string>
     <string name="dialog_reset_title">¿Realmente quieres resetear este contador?</string>
     <string name="dialog_edit_name">Título:</string>
@@ -31,15 +29,10 @@
     <string name="settings_theme">Tema</string>
     <string name="settings_theme_light">Claro</string>
     <string name="settings_theme_dark">Oscuro</string>
-    <string name="settings_keep_on_title">Mantener pantalla encendida</string>
-    <string name="settings_keep_on_summary">Mantener pantalla encendida mientras aplicación está activa</string>
     <string name="settings_controls">Controles</string>
     <string name="settings_sounds_title">Encender sonido</string>
-    <string name="settings_sounds_summary">Sonar</string>
     <string name="settings_vibration_title">Activar vibración</string>
-    <string name="settings_vibration_summary">Vibrar cuando haya cambios</string>
     <string name="settings_hard_title">Usar botones del hardware</string>
-    <string name="settings_hard_summary">Cambiar valores del contador con botones del hardware</string>
     <string name="settings_other">Otros</string>
     <string name="settings_version_title">Versión</string>
     <string name="settings_wipe_title">Borrar todos los contadores</string>
@@ -50,6 +43,5 @@
     <string name="toast_remove_success">Contador \"%s\" ha sido eliminado.</string>
     <string name="toast_no_name_message">¡Se requiere un nombre!</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">Primer contador</string>
     <string name="unknown">Desconocido</string>
 </resources>
