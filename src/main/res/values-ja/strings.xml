@@ -7,7 +7,9 @@
     <string name="drawer_open">ナビゲーションを開く</string>
     <string name="drawer_close">ナビゲーションを閉じる</string>
     <string name="menu_add">カウンターを追加</string>
+    <string name="menu_reset">カウンターをリセット</string>
     <string name="menu_edit">カウンターを編集</string>
+    <string name="menu_delete">カウンターを削除</string>
     <string name="menu_settings">設定</string>
     <string name="menu_info">このアプリについて</string>
     <!-- Dialogs -->
@@ -46,6 +48,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">すべてのカウンターが削除されました。</string>
     <string name="toast_remove_success">カウンター \"%s\" が削除されました。</string>
+    <string name="toast_no_name_message">名前が必要です!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">最初のカウンター</string>
     <string name="unknown">不明</string>
