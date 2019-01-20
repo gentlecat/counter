@@ -14,10 +14,9 @@ android:
     - android-28
 
     # Additional components
-    - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
 
     # System images
-    - sys-img-x86-android-26
-    - sys-img-armeabi-v7a-android-22
+    - sys-img-x86-google_apis-26
+    - sys-img-armeabi-v7a-android-14
