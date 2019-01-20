@@ -12,8 +12,6 @@
     <string name="menu_settings">Налаштування</string>
     <string name="menu_info">О програмі</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">Додати новий лічильник</string>
-    <string name="dialog_edit_title">Редагувати лічильник</string>
     <string name="dialog_delete_title">Ви дійсно хочете видалити цей лічильник?</string>
     <string name="dialog_reset_title">Ви дійсно хочете скинути цей лічильник?</string>
     <string name="dialog_edit_name">Назва:</string>
@@ -26,15 +24,10 @@
     <string name="dialog_button_close">Закрити</string>
     <!-- Settings -->
     <string name="settings_title">Налаштування</string>
-    <string name="settings_keep_on_title">Не вимикати екран</string>
-    <string name="settings_keep_on_summary">Не вимикати екран доки програма активна</string>
     <string name="settings_controls">Управління</string>
     <string name="settings_sounds_title">Увімкнути звуки</string>
-    <string name="settings_sounds_summary">Звуки при змінах лічильника</string>
     <string name="settings_vibration_title">Увімкнути вібрацію</string>
-    <string name="settings_vibration_summary">Вібрація при змінах лічильника</string>
     <string name="settings_hard_title">Використовувати апаратні кнопки</string>
-    <string name="settings_hard_summary">Змінити значення лічильника за допомогою апаратних кнопок</string>
     <string name="settings_other">Інше</string>
     <string name="settings_version_title">Версія</string>
     <string name="settings_wipe_title">Видалити всі лічильники</string>
@@ -45,6 +38,5 @@
     <string name="toast_remove_success">Лічильник \"%s\" буде видалено.</string>
     <string name="toast_no_name_message">Введіть ім\'я.</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">Перший лічильник</string>
     <string name="unknown">Невідомо</string>
 </resources>
