@@ -1,4 +1,7 @@
 language: android
+jdk: oraclejdk8
+sudo: false
+
 android:
   components:
     - tools
@@ -17,4 +20,4 @@ android:
 
     # System images
     - sys-img-x86-android-26
-    - sys-img-armeabi-v7a-android-17
+    - sys-img-armeabi-v7a-android-22
