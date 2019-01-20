@@ -20,8 +20,8 @@
     <string name="dialog_edit_value">Valore:</string>
     <string name="dialog_button_add">Aggiungi</string>
     <string name="dialog_button_apply">Applica</string>
-    <string name="dialog_button_reset">Azzera</string>
-    <string name="dialog_button_delete">Elimina</string>
+    <string name="dialog_button_reset">Azzera contatore</string>
+    <string name="dialog_button_delete">Elimina contatore</string>
     <string name="dialog_button_cancel">Cancella</string>
     <string name="dialog_button_close">Chiudi</string>
     <!-- Settings -->
