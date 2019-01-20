@@ -21,8 +21,8 @@
     <string name="dialog_edit_value">Wartość:</string>
     <string name="dialog_button_add">Dodaj</string>
     <string name="dialog_button_apply">Zastosuj</string>
-    <string name="dialog_button_reset">Zresetuj</string>
-    <string name="dialog_button_delete">Usuń</string>
+    <string name="dialog_button_reset">Zresetuj licznik</string>
+    <string name="dialog_button_delete">Usuń licznik</string>
     <string name="dialog_button_cancel">Anuluj</string>
     <string name="dialog_button_close">Zamknij</string>
     <!-- Settings -->
