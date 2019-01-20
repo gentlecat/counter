@@ -40,6 +40,8 @@
     <string name="settings_vibration_summary">値を変更したときに振動</string>
     <string name="settings_hard_title">ハードウェアボタンを使う</string>
     <string name="settings_hard_summary">ハードウェアボタンを使用してカウンターの値を変更</string>
+    <string name="settings_label_increment_title">表示値で増加</string>
+    <string name="settings_label_increment_summary">現在の値をタップしてカウンターを増加します</string>
     <string name="settings_other">その他</string>
     <string name="settings_version_title">バージョン</string>
     <string name="settings_wipe_title">すべてのカウンターを削除</string>
