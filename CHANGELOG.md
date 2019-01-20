@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 19
+
+* Added a way to increment the counter by clicking on the value
+* List of counters is now sorted alphabetically
+* Translation updates
+
 ## Version 18
 
 * Increased minimum Android version requirement to 4.0 (Ice Cream Sandwich)
