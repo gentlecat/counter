@@ -7,7 +7,9 @@
     <string name="drawer_open">Open navigatie</string>
     <string name="drawer_close">Sluit navigatie</string>
     <string name="menu_add">Voeg teller toe</string>
+    <string name="menu_reset">Reset teller</string>
     <string name="menu_edit">Bewerk teller</string>
+    <string name="menu_delete">Verwijder teller</string>
     <string name="menu_settings">Instellingen</string>
     <string name="menu_info">Over</string>
     <!-- Dialogs -->
@@ -46,6 +48,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Alle tellers zijn verwijderd.</string>
     <string name="toast_remove_success">Teller \"%s\" is verwijderd.</string>
+    <string name="toast_no_name_message">Naam is vereist!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Eerste teller</string>
     <string name="unknown">Onbekend</string>
