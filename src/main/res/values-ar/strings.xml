@@ -13,6 +13,7 @@
     <string name="menu_settings">الإعدادات</string>
     <string name="menu_info">من نحن</string>
     <!-- Dialogs -->
+    <string name="dialog_add_title">إضافة عداد جديد</string>
     <string name="dialog_delete_title">هل تريد حقاً حذف هذا العداد؟</string>
     <string name="dialog_reset_title">هل حقاً تريد إعادة ضبط هذا العداد؟</string>
     <string name="dialog_edit_name">العنوان:</string>
