@@ -8,7 +8,7 @@
     <string name="drawer_close">Закрыть навигацию</string>
     <string name="menu_add">Добавить счетчик</string>
     <string name="menu_reset">Сброс</string>
-    <string name="menu_edit">Изменить</string>
+    <string name="menu_edit">Редактировать cчетчик</string>
     <string name="menu_delete">Удалить</string>
     <string name="menu_settings">Параметры</string>
     <string name="menu_info">О приложении</string>
