@@ -6,7 +6,9 @@
     <string name="drawer_open">Avaa navigointi</string>
     <string name="drawer_close">Sulje navigointi</string>
     <string name="menu_add">Lisää laskuri</string>
+    <string name="menu_reset">Nollaa laskuri</string>
     <string name="menu_edit">Muokkaa laskuria</string>
+    <string name="menu_delete">Poista laskuri</string>
     <string name="menu_settings">Asetukset</string>
     <string name="menu_info">Tietoja</string>
     <!-- Dialogs -->
