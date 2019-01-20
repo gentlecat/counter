@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 20
+
+* Maximum (and minimum) counter limits are now significantly higher
+
 ## Version 19
 
 * Added a way to increment the counter by clicking on the value
