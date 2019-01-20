@@ -21,8 +21,8 @@
     <string name="dialog_edit_value">Wert:</string>
     <string name="dialog_button_add">Hinzufügen</string>
     <string name="dialog_button_apply">Anwenden</string>
-    <string name="dialog_button_reset">Zurücksetzen</string>
-    <string name="dialog_button_delete">Löschen</string>
+    <string name="dialog_button_reset">Zähler Zurücksetzen</string>
+    <string name="dialog_button_delete">Zähler löschen</string>
     <string name="dialog_button_cancel">Abbrechen</string>
     <string name="dialog_button_close">Schließen</string>
     <!-- Settings -->
@@ -40,7 +40,7 @@
     <string name="settings_vibration_summary">Bei Änderungen vibrieren</string>
     <string name="settings_hard_title">Hardwaretasten benutzen</string>
     <string name="settings_hard_summary">Wert mit Hardwaretasten verändern</string>
-    <string name="settings_other">Sonstige</string>
+    <string name="settings_other">Sonstiges</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Alle Zähler entfernen</string>
     <string name="settings_wipe_confirmation">Möchten Sie wirklich alle Zähler entfernen?</string>
