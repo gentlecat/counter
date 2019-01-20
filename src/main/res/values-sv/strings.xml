@@ -12,8 +12,6 @@
     <string name="menu_settings">Inställningar</string>
     <string name="menu_info">Om</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">Lägg till räknare</string>
-    <string name="dialog_edit_title">Redigera räknare</string>
     <string name="dialog_delete_title">Vill du verkligen ta bort denna räknare?</string>
     <string name="dialog_reset_title">Vill du verkligen återställa räknaren?</string>
     <string name="dialog_edit_name">Titel:</string>
@@ -26,15 +24,10 @@
     <string name="dialog_button_close">Stäng</string>
     <!-- Settings -->
     <string name="settings_title">Inställningar</string>
-    <string name="settings_keep_on_title">Skärm på</string>
-    <string name="settings_keep_on_summary">Håll skärmen på medan app är aktiv</string>
     <string name="settings_controls">Kontroller</string>
     <string name="settings_sounds_title">Slå på ljud</string>
-    <string name="settings_sounds_summary">Spela upp ljud</string>
     <string name="settings_vibration_title">Slå på vibrationer</string>
-    <string name="settings_vibration_summary">Vibrera vid förändringar</string>
     <string name="settings_hard_title">Använd hårdvaruknapparna</string>
-    <string name="settings_hard_summary">Ändra värde med hjälp av knappar</string>
     <string name="settings_other">Övrigt</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Ta bort alla räknare</string>
@@ -45,6 +38,5 @@
     <string name="toast_remove_success">Räknaren \"%s\" har tagits bort.</string>
     <string name="toast_no_name_message">Namn krävs!</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">Första räknaren</string>
     <string name="unknown">Okänt</string>
 </resources>
