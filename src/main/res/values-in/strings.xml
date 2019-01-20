@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- General -->
+    <string name="app_name">Penghitung</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="minus" translatable="false">-</string>
+
+    <!-- Menu -->
+    <string name="drawer_open">Buka Navigasi</string>
+    <string name="drawer_close">Tutup Navigasi</string>
+    <string name="menu_add">Tambah penghitung</string>
+    <string name="menu_reset">Atur ulang penghitung</string>
+    <string name="menu_edit">Ubah penghitung</string>
+    <string name="menu_delete">Hapus penghitung</string>
+    <string name="menu_settings">Pengaturan</string>
+    <string name="menu_info">Tentang</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_add_title">Tambah penghitung baru</string>
+    <string name="dialog_edit_title">Ubah penghitung</string>
+    <string name="dialog_delete_title">Anda akan menghapus penghitung ini?</string>
+    <string name="dialog_reset_title">Ada akan mengatur ulang penghitung ini?</string>
+    <string name="dialog_edit_name">Judul:</string>
+    <string name="dialog_edit_value">Nilai:</string>
+    <string name="dialog_button_add">Tambah</string>
+    <string name="dialog_button_apply">Terapkan</string>
+    <string name="dialog_button_reset">Atur Ulang</string>
+    <string name="dialog_button_delete">Hapus</string>
+    <string name="dialog_button_cancel">Batal</string>
+    <string name="dialog_button_close">Tutup</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_display">Tampilan</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_light">Cerah</string>
+    <string name="settings_theme_dark">Gelap</string>
+    <string name="settings_keep_on_title">Biarkan layar menyala</string>
+    <string name="settings_keep_on_summary">Biarkan layar menyala selama aplikasi aktif</string>
+    <string name="settings_controls">Kontrol</string>
+    <string name="settings_sounds_title">Nyalakan suara</string>
+    <string name="settings_sounds_summary">Putar suara</string>
+    <string name="settings_vibration_title">Nyalakan getar</string>
+    <string name="settings_vibration_summary">Bergetar ketika mengubah nilai</string>
+    <string name="settings_hard_title">Gunakan tombol hardware</string>
+    <string name="settings_hard_summary">Ubah nilai penghitung menggunakan tombol hardware</string>
+    <string name="settings_other">Lainnya</string>
+    <string name="settings_version_title">Versi</string>
+    <string name="settings_wipe_title">Hapus semua penghitung</string>
+    <string name="settings_wipe_confirmation">Anda akan menghapus semua penghitung?</string>
+    <string name="settings_wipe_confirmation_yes">Hapus semua</string>
+
+    <!-- Toasts -->
+    <string name="toast_wipe_success">Semua penghitung telah dihapus</string>
+    <string name="toast_remove_success">Penghitung \"%s\" telah dihapus.</string>
+    <string name="toast_no_name_message">Nama perlu diisi!</string>
+
+    <!-- Other stuff -->
+    <string name="default_counter_name">Penghitung pertama</string>
+    <string name="unknown">Tidak diketahui</string>
+
+</resources>
