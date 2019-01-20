@@ -7,7 +7,9 @@
     <string name="drawer_open">فتح قائمة التنقل</string>
     <string name="drawer_close">اغلاق قائمة التنقل</string>
     <string name="menu_add">إضافة عداد</string>
+    <string name="menu_reset">إعادة ضبط العداد</string>
     <string name="menu_edit">تعديل العداد</string>
+    <string name="menu_delete">حذف العداد</string>
     <string name="menu_settings">الإعدادات</string>
     <string name="menu_info">من نحن</string>
     <!-- Dialogs -->
@@ -46,6 +48,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">تم إزالة جميع العدادات.</string>
     <string name="toast_remove_success">تمت إزالة العداد \"%s\".</string>
+    <string name="toast_no_name_message">الاسم مطلوب!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">العداد الأول</string>
     <string name="unknown">‮غير معروف</string>
