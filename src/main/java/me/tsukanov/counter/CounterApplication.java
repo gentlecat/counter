@@ -21,7 +21,6 @@ public class CounterApplication extends Application {
     public void onCreate() {
         super.onCreate();
         counters = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
-
         data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
         loadCounters();
     }

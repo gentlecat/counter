@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREF_THEME = "theme";
     private static final String THEME_DARK = "dark";
     private static final String THEME_LIGHT = "light";
+
     public CountersListFragment countersListFragment;
     private CounterFragment currentCounter;
     private CounterApplication app;

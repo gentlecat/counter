@@ -9,10 +9,10 @@
         style="@style/increment_button"
         android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:text="@string/plus" />
 
     <Button
@@ -20,19 +20,25 @@
         style="@style/decrement_button"
         android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:text="@string/minus" />
 
-    <TextView
+    <TextView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/counterLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="210dp"
+        android:layout_marginRight="210dp"
+        android:gravity="center"
         android:textColor="?valueColor"
-        android:textAppearance="@style/counter_value" />
+        app:autoSizeMaxTextSize="300sp"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform" />
 
 </RelativeLayout>

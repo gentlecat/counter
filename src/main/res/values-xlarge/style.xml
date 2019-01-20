@@ -1,9 +1,5 @@
 <resources>
 
-    <style name="counter_value">
-        <item name="android:textSize">250sp</item>
-    </style>
-
     <style name="increment_button">
         <item name="android:textSize">120sp</item>
     </style>

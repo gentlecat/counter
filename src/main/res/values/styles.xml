@@ -17,10 +17,6 @@
         <item name="colorControlHighlight">#33ffffff</item>
     </style>
 
-    <style name="counter_value">
-        <item name="android:textSize">120sp</item>
-    </style>
-
     <style name="increment_button">
         <item name="android:textSize">90sp</item>
     </style>

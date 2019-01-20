@@ -2,6 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
     android:orientation="vertical">
 
     <Button
@@ -9,12 +13,9 @@
         style="@style/decrement_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
         android:elevation="20dp"
         android:text="@string/minus" />
 
@@ -24,10 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/decrementButton"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_alignParentLeft="true"
         android:elevation="10dp"
         android:text="@string/plus" />
 
@@ -35,19 +34,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/incrementButton"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentRight="true">
 
-        <TextView
+        <TextView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/counterLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:textColor="?valueColor"
-            android:textAppearance="@style/counter_value" />
+            app:autoSizeMaxTextSize="300sp"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform" />
     </FrameLayout>
 
 </RelativeLayout>
