@@ -20,8 +20,8 @@
     <string name="dialog_edit_value">Arvo:</string>
     <string name="dialog_button_add">Lisää</string>
     <string name="dialog_button_apply">Ota käytöön</string>
-    <string name="dialog_button_reset">Nollaa</string>
-    <string name="dialog_button_delete">Poista</string>
+    <string name="dialog_button_reset">Nollaa laskuri</string>
+    <string name="dialog_button_delete">Poista laskuri</string>
     <string name="dialog_button_cancel">Peruuta</string>
     <string name="dialog_button_close">Sulje</string>
     <!-- Settings -->
