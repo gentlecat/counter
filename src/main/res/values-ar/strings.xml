@@ -13,8 +13,6 @@
     <string name="menu_settings">الإعدادات</string>
     <string name="menu_info">من نحن</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">إضافة عداد جديد</string>
-    <string name="dialog_edit_title">تعديل العداد</string>
     <string name="dialog_delete_title">هل تريد حقاً حذف هذا العداد؟</string>
     <string name="dialog_reset_title">هل حقاً تريد إعادة ضبط هذا العداد؟</string>
     <string name="dialog_edit_name">العنوان:</string>
@@ -31,15 +29,10 @@
     <string name="settings_theme">المظهر</string>
     <string name="settings_theme_light">فاتح</string>
     <string name="settings_theme_dark">غامق</string>
-    <string name="settings_keep_on_title">إبقاء الشاشة تعمل</string>
-    <string name="settings_keep_on_summary">إبقاء الشاشة تعمل أثناء عمل التطبيق</string>
     <string name="settings_controls">التحكم</string>
     <string name="settings_sounds_title">تفعيل الأصوات</string>
-    <string name="settings_sounds_summary">تشغيل أصوات</string>
     <string name="settings_vibration_title">تفعيل الاهتزاز</string>
-    <string name="settings_vibration_summary">الاهتزاز عند التغيير</string>
     <string name="settings_hard_title">استخدام أزرار الهاتف</string>
-    <string name="settings_hard_summary">تغيير قيمة العداد باستخدام أزرار الهاتف</string>
     <string name="settings_other">الأخرى</string>
     <string name="settings_version_title">الإصدار</string>
     <string name="settings_wipe_title">إزالة جميع العدادات</string>
@@ -50,6 +43,5 @@
     <string name="toast_remove_success">تمت إزالة العداد \"%s\".</string>
     <string name="toast_no_name_message">الاسم مطلوب!</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">العداد الأول</string>
     <string name="unknown">‮غير معروف</string>
 </resources>
