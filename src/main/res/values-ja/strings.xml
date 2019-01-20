@@ -21,8 +21,8 @@
     <string name="dialog_edit_value">値:</string>
     <string name="dialog_button_add">追加</string>
     <string name="dialog_button_apply">適用</string>
-    <string name="dialog_button_reset">リセット</string>
-    <string name="dialog_button_delete">削除</string>
+    <string name="dialog_button_reset">カウンターをリセット</string>
+    <string name="dialog_button_delete">カウンターを削除</string>
     <string name="dialog_button_cancel">キャンセル</string>
     <string name="dialog_button_close">閉じる</string>
     <!-- Settings -->
