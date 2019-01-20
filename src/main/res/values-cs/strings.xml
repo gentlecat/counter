@@ -6,7 +6,7 @@
     <!-- Menu -->
     <string name="menu_add">Přidat počítadlo</string>
     <string name="menu_reset">Vymazat</string>
-    <string name="menu_edit">Upravit</string>
+    <string name="menu_edit">Upravit počítadlo</string>
     <string name="menu_delete">Smazat</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_info">O aplikaci</string>
