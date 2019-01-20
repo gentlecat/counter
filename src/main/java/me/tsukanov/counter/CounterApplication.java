@@ -1,11 +1,12 @@
 package me.tsukanov.counter;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import java.util.SortedMap;
 import java.util.Map;
+import java.util.SortedMap;
 import java.util.TreeMap;
 
 import me.tsukanov.counter.ui.CounterFragment;
@@ -25,7 +26,7 @@ public class CounterApplication extends Application {
         loadCounters();
     }
 
-    public void loadCounters() {
+    private void loadCounters() {
         Map<String, ?> dataMap = data.getAll();
         if (dataMap.isEmpty()) {
             counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
@@ -36,6 +37,7 @@ public class CounterApplication extends Application {
         }
     }
 
+    @SuppressLint("ApplySharedPref")
     public void saveCounters() {
         SharedPreferences.Editor dataEditor = data.edit();
         dataEditor.clear();

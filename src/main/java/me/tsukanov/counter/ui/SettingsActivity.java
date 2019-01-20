@@ -1,5 +1,6 @@
 package me.tsukanov.counter.ui;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,7 +10,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -18,16 +18,13 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.util.Log;
 import android.widget.Toast;
 
 import me.tsukanov.counter.CounterApplication;
@@ -56,11 +53,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         getDelegate().onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-            onCreatePreferenceActivity();
-        } else {
-            onCreatePreferenceFragment();
-        }
+        onCreatePreferenceFragment();
     }
 
     @SuppressWarnings("deprecation")
@@ -85,9 +78,12 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 
     private String getCurrentThemeName() {
         switch (mSharedPref.getString(KEY_THEME, THEME_LIGHT)) {
-            case THEME_LIGHT: return getResources().getString(R.string.settings_theme_light);
-            case THEME_DARK: return getResources().getString(R.string.settings_theme_dark);
-            default: return "Unknown";
+            case THEME_LIGHT:
+                return getResources().getString(R.string.settings_theme_light);
+            case THEME_DARK:
+                return getResources().getString(R.string.settings_theme_dark);
+            default:
+                return "Unknown";
         }
     }
 
@@ -145,14 +141,9 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals(KEY_THEME)) {
-            Preference pref;
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-               pref = findPreference(KEY_THEME);
-            } else {
-                pref = fragment.findPreference(KEY_THEME);
-            }
+            final Preference pref = fragment.findPreference(KEY_THEME);
             if (pref != null) {
-               pref.setSummary(getCurrentThemeName());
+                pref.setSummary(getCurrentThemeName());
             }
             // Restart to apply new theme, go back to this settings screen
             TaskStackBuilder.create(this)
@@ -166,6 +157,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.settings_wipe_confirmation);
         builder.setPositiveButton(R.string.settings_wipe_confirmation_yes, new DialogInterface.OnClickListener() {
+            @SuppressLint("ApplySharedPref")
             public void onClick(DialogInterface dialog, int id) {
                 CounterApplication app = (CounterApplication) getApplication();
                 app.removeCounters();
@@ -194,12 +186,8 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         builder.create().show();
     }
 
-    public ActionBar getSupportActionBar() {
+    private ActionBar getSupportActionBar() {
         return getDelegate().getSupportActionBar();
-    }
-
-    public void setSupportActionBar(@Nullable Toolbar toolbar) {
-        getDelegate().setSupportActionBar(toolbar);
     }
 
     @NonNull
@@ -275,15 +263,15 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         private String mAppVersion;
         private String mTheme;
 
-        public void setOnRemoveCountersClickListener(OnPreferenceClickListener onRemoveCountersClickListener) {
+        void setOnRemoveCountersClickListener(OnPreferenceClickListener onRemoveCountersClickListener) {
             mOnRemoveCountersClickListener = onRemoveCountersClickListener;
         }
 
-        public void setAppVersion(String appVersion) {
+        void setAppVersion(String appVersion) {
             mAppVersion = appVersion;
         }
 
-        public void setTheme(String theme) {
+        void setTheme(String theme) {
             mTheme = theme;
         }
 

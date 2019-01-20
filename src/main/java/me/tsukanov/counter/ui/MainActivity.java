@@ -1,5 +1,6 @@
 package me.tsukanov.counter.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String THEME_DARK = "dark";
     private static final String THEME_LIGHT = "light";
     public CountersListFragment countersListFragment;
-    public CounterFragment currentCounter;
+    private CounterFragment currentCounter;
     private CounterApplication app;
     private ActionBar actionBar;
     private DrawerLayout navigationLayout;
@@ -44,15 +45,15 @@ public class MainActivity extends AppCompatActivity {
         if (sharedPref.getString(PREF_THEME, THEME_LIGHT).equals(THEME_DARK)) {
             setTheme(R.style.AppTheme_Dark);
         }
-        
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_layout);
 
         app = (CounterApplication) getApplication();
 
         final CharSequence drawerTitle = title = getTitle();
-        navigationLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        menuFrame = (FrameLayout) findViewById(R.id.menu_frame);
+        navigationLayout = findViewById(R.id.drawer_layout);
+        menuFrame = findViewById(R.id.menu_frame);
 
         actionBar = getSupportActionBar();
 
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("ApplySharedPref")
     @Override
     protected void onPause() {
         super.onPause();
@@ -120,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return super.onKeyDown(keyCode, event) || currentCounter.onKeyDown(keyCode, event);
+        return super.onKeyDown(keyCode, event) || currentCounter.onKeyDown(keyCode);
     }
 
     @Override
@@ -177,11 +179,11 @@ public class MainActivity extends AppCompatActivity {
         closeDrawer();
     }
 
-    public void closeDrawer() {
+    private void closeDrawer() {
         navigationLayout.closeDrawer(menuFrame);
     }
 
-    public void openDrawer() {
+    private void openDrawer() {
         navigationLayout.openDrawer(menuFrame);
     }
 

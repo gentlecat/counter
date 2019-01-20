@@ -11,6 +11,7 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseIntArray;
@@ -32,7 +33,7 @@ import me.tsukanov.counter.ui.dialogs.EditDialog;
 
 public class CounterFragment extends Fragment {
     public static final int MAX_VALUE = 9999;
-    public static final int MIN_VALUE = -9999;
+    private static final int MIN_VALUE = -9999;
     public static final int DEFAULT_VALUE = 0;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
     private String name = null;
@@ -72,7 +73,7 @@ public class CounterFragment extends Fragment {
         vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-        /** Setting up sounds */
+        /* Setting up sounds */
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
         soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
         soundsMap = new SparseIntArray(2);
@@ -83,10 +84,10 @@ public class CounterFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.counter, container, false);
 
-        counterLabel = (TextView) view.findViewById(R.id.counterLabel);
+        counterLabel = view.findViewById(R.id.counterLabel);
         counterLabel.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 if (settings.getBoolean("labelControlOn", true)) {
@@ -95,14 +96,14 @@ public class CounterFragment extends Fragment {
             }
         });
 
-        incrementButton = (Button) view.findViewById(R.id.incrementButton);
+        incrementButton = view.findViewById(R.id.incrementButton);
         incrementButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 increment();
             }
         });
 
-        decrementButton = (Button) view.findViewById(R.id.decrementButton);
+        decrementButton = view.findViewById(R.id.decrementButton);
         decrementButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 decrement();
@@ -130,20 +131,20 @@ public class CounterFragment extends Fragment {
     public void onPrepareOptionsMenu(Menu menu) {
         boolean isDrawerOpen = ((MainActivity) getActivity()).isNavigationOpen();
 
-        /** Edit */
+        /* Edit */
         MenuItem editItem = menu.findItem(R.id.menu_edit);
         editItem.setVisible(!isDrawerOpen);
 
-        /** Delete */
+        /* Delete */
         MenuItem deleteItem = menu.findItem(R.id.menu_delete);
         deleteItem.setVisible(!isDrawerOpen);
 
-        /** Reset */
+        /* Reset */
         MenuItem resetItem = menu.findItem(R.id.menu_reset);
         resetItem.setVisible(!isDrawerOpen);
     }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 if (settings.getBoolean("hardControlOn", true)) {
@@ -211,7 +212,7 @@ public class CounterFragment extends Fragment {
         dialog.show(getFragmentManager(), DeleteDialog.TAG);
     }
 
-    public void increment() {
+    private void increment() {
         if (value < MAX_VALUE) {
             setValue(++value);
             vibrate(DEFAULT_VIBRATION_DURATION);
@@ -219,7 +220,7 @@ public class CounterFragment extends Fragment {
         }
     }
 
-    public void decrement() {
+    private void decrement() {
         if (value > MIN_VALUE) {
             setValue(--value);
             vibrate(DEFAULT_VIBRATION_DURATION + 20);
@@ -227,11 +228,11 @@ public class CounterFragment extends Fragment {
         }
     }
 
-    public void reset() {
+    private void reset() {
         setValue(DEFAULT_VALUE);
     }
 
-    public void setValue(int value) {
+    private void setValue(int value) {
         if (value > MAX_VALUE) value = MAX_VALUE;
         else if (value < MIN_VALUE) value = MIN_VALUE;
         this.value = value;

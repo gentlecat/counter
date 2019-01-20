@@ -2,6 +2,7 @@ package me.tsukanov.counter.ui;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,7 @@ public class CountersListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.menu, null);
-        LinearLayout addButton = (LinearLayout) view.findViewById(R.id.add_counter);
+        LinearLayout addButton = view.findViewById(R.id.add_counter);
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showAddDialog();
@@ -66,24 +67,25 @@ public class CountersListFragment extends ListFragment {
     }
 
     private class Counter {
-        public String name;
+        final String name;
 
-        public Counter(String name) {
+        Counter(String name) {
             this.name = name;
         }
     }
 
-    public class CountersListAdapter extends ArrayAdapter<Counter> {
+    class CountersListAdapter extends ArrayAdapter<Counter> {
 
-        public CountersListAdapter(Context context) {
+        CountersListAdapter(Context context) {
             super(context, 0);
         }
 
-        public View getView(int position, View convertView, ViewGroup parent) {
+        @NonNull
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.menu_row, null);
             }
-            TextView title = (TextView) convertView.findViewById(R.id.row_title);
+            TextView title = convertView.findViewById(R.id.row_title);
             title.setText(getItem(position).name);
             return convertView;
         }

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.text.InputFilter;
 import android.view.LayoutInflater;
@@ -24,15 +25,16 @@ public class AddDialog extends DialogFragment {
     public AddDialog() {
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final MainActivity activity = (MainActivity) getActivity();
 
         View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_edit, null);
 
-        final EditText nameInput = (EditText) dialogView.findViewById(R.id.edit_name);
+        final EditText nameInput = dialogView.findViewById(R.id.edit_name);
 
-        final EditText valueInput = (EditText) dialogView.findViewById(R.id.edit_value);
+        final EditText valueInput = dialogView.findViewById(R.id.edit_value);
         InputFilter[] valueFilter = new InputFilter[1];
         valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
         valueInput.setFilters(valueFilter);
