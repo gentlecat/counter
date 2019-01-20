@@ -21,8 +21,8 @@
     <string name="dialog_edit_value">Verdi:</string>
     <string name="dialog_button_add">Legg til</string>
     <string name="dialog_button_apply">Påfør</string>
-    <string name="dialog_button_reset">Tilbakestill</string>
-    <string name="dialog_button_delete">Slett</string>
+    <string name="dialog_button_reset">Tilbakestill teller</string>
+    <string name="dialog_button_delete">Slett teller</string>
     <string name="dialog_button_cancel">Avbryt</string>
     <string name="dialog_button_close">Lukk</string>
     <!-- Settings -->
