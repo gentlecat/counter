@@ -9,7 +9,7 @@
     <string name="menu_add">Agregar contador</string>
     <string name="menu_reset">Reiniciar contador</string>
     <string name="menu_edit">Editar contador</string>
-    <string name="menu_delete">Borrar</string>
+    <string name="menu_delete">Borrar contador</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_info">Información</string>
     <!-- Dialogs -->
@@ -21,7 +21,7 @@
     <string name="dialog_edit_value">Valor:</string>
     <string name="dialog_button_add">Añadir</string>
     <string name="dialog_button_apply">Aplicar</string>
-    <string name="dialog_button_reset">Reiniciar contador</string>
+    <string name="dialog_button_reset">Reiniciar</string>
     <string name="dialog_button_delete">Borrar</string>
     <string name="dialog_button_cancel">Cancelar</string>
     <string name="dialog_button_close">Cerrar</string>
@@ -34,7 +34,7 @@
     <string name="settings_keep_on_title">Mantén la pantalla encendida</string>
     <string name="settings_keep_on_summary">Mantén la pantalla encendida mientras la aplicación esté activa</string>
     <string name="settings_controls">Controles</string>
-    <string name="settings_sounds_title">Encender sonido</string>
+    <string name="settings_sounds_title">Encender sonidos</string>
     <string name="settings_sounds_summary">Reproduce sonidos al cambiar valores</string>
     <string name="settings_vibration_title">Activar vibración</string>
     <string name="settings_vibration_summary">Vibrar al cambiar valores</string>
