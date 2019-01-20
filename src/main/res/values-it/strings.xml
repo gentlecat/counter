@@ -6,7 +6,9 @@
     <string name="drawer_open">Apri navigazione</string>
     <string name="drawer_close">Chiudi navigazione</string>
     <string name="menu_add">Aggiungi contatore</string>
+    <string name="menu_reset">Azzera contatore</string>
     <string name="menu_edit">Modifica contatore</string>
+    <string name="menu_delete">Elimina contatore</string>
     <string name="menu_settings">Impostazioni</string>
     <string name="menu_info">About</string>
     <!-- Dialogs -->
@@ -41,6 +43,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Tutti i dati sono stati rimossi.</string>
     <string name="toast_remove_success">Il contatore \"%s\" è stato rimosso.</string>
+    <string name="toast_no_name_message">Per favore, inserisci il nome.</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Primo contatore</string>
     <string name="unknown">Sconosciuto</string>
