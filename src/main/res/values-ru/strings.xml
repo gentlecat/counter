@@ -7,7 +7,9 @@
     <string name="drawer_open">Открыть навигацию</string>
     <string name="drawer_close">Закрыть навигацию</string>
     <string name="menu_add">Добавить счетчик</string>
+    <string name="menu_reset">Сброс</string>
     <string name="menu_edit">Редактировать cчетчик</string>
+    <string name="menu_delete">Удалить</string>
     <string name="menu_settings">Параметры</string>
     <string name="menu_info">О приложении</string>
     <!-- Dialogs -->
@@ -46,6 +48,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Все счетчики были удалены.</string>
     <string name="toast_remove_success">Счетчик \"%s\" был удален.</string>
+    <string name="toast_no_name_message">Введите имя.</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Первый счетчик</string>
     <string name="unknown">Неизвестно</string>
