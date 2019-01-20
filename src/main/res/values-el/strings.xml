@@ -7,7 +7,9 @@
     <string name="drawer_open">Άνοιγμα μενού πλοήγησης</string>
     <string name="drawer_close">Κλείσιμο Πλοήγησης</string>
     <string name="menu_add">Προσθήκη νέου μετρητή</string>
+    <string name="menu_reset">Επαναφορά μετρητή</string>
     <string name="menu_edit">Επεξεργασία μετρητή</string>
+    <string name="menu_delete">Διαγραφή μετρητή</string>
     <string name="menu_settings">Ρυθμίσεις</string>
     <string name="menu_info">Σχετικά</string>
     <!-- Dialogs -->
@@ -46,6 +48,7 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">Όλα οι μετρητές έχουν καταργηθεί.</string>
     <string name="toast_remove_success">Ο μετρητής \"%s\" έχει καταργηθεί.</string>
+    <string name="toast_no_name_message">Απαιτείται όνομα!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Πρώτος μετρητής</string>
     <string name="unknown">Άγνωστο</string>
