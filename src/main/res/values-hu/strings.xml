@@ -20,8 +20,8 @@
     <string name="dialog_edit_value">Érték:</string>
     <string name="dialog_button_add">Hozzáadás</string>
     <string name="dialog_button_apply">Elfogadás</string>
-    <string name="dialog_button_reset">Visszaállitás</string>
-    <string name="dialog_button_delete">Törlés</string>
+    <string name="dialog_button_reset">Számláló visszaállítása</string>
+    <string name="dialog_button_delete">Számláló törlése</string>
     <string name="dialog_button_cancel">Mégsem</string>
     <string name="dialog_button_close">Bezárás</string>
     <!-- Settings -->
