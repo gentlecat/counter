@@ -21,8 +21,8 @@
     <string name="dialog_edit_value">Τιμή:</string>
     <string name="dialog_button_add">Προσθήκη</string>
     <string name="dialog_button_apply">Εφαρμογή</string>
-    <string name="dialog_button_reset">Επαναφορά</string>
-    <string name="dialog_button_delete">Διαγραφή</string>
+    <string name="dialog_button_reset">Επαναφορά μετρητή</string>
+    <string name="dialog_button_delete">Διαγραφή μετρητή</string>
     <string name="dialog_button_cancel">Άκυρο</string>
     <string name="dialog_button_close">Κλείσιμο</string>
     <!-- Settings -->
