@@ -50,8 +50,8 @@
     <!-- Toasts -->
     <string name="toast_wipe_success">全部計數器皆已刪除。</string>
     <string name="toast_remove_success">「%s」計數器已刪除。</string>
-    <string name="toast_no_name_message">標題為必填！</string>
+    <string name="toast_no_name_message">標題必填！</string>
     <!-- Other stuff -->
     <string name="default_counter_name">新計數器</string>
-    <string name="unknown">未知</string>
+    <string name="unknown">不明</string>
 </resources>
