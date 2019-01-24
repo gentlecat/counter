@@ -39,8 +39,8 @@
     <string name="settings_vibration_title">開啟震動</string>
     <string name="settings_vibration_summary">數值改變時震動</string>
     <string name="settings_hard_title">使用硬體按鍵</string>
-    <string name="settings_hard_summary">利用音量鍵改變計數器</string>
-    <string name="settings_label_increment_title">輕敲數值即可增加</string>
+    <string name="settings_hard_summary">透過音量鍵改變計數器數值</string>
+    <string name="settings_label_increment_title">輕敲數值以增加</string>
     <string name="settings_label_increment_summary">輕敲目前數值即可增加計數器數值</string>
     <string name="settings_other">其他</string>
     <string name="settings_version_title">版本</string>
