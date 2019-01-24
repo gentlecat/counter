@@ -4,6 +4,8 @@
     <!-- General -->
     <string name="app_name">計數器</string>
     <!-- Menu -->
+    <string name="drawer_open">開啟導覽列</string>
+    <string name="drawer_close">關閉導覽列</string>
     <string name="menu_add">新增計數器</string>
     <string name="menu_reset">歸零計數器</string>
     <string name="menu_edit">編輯計數器</string>
@@ -26,14 +28,30 @@
     <!-- Settings -->
     <string name="settings_title">設定</string>
     <string name="settings_display">顯示</string>
+    <string name="settings_theme">佈景主題</string>
+    <string name="settings_theme_light">亮色</string>
+    <string name="settings_theme_dark">暗色</string>
+    <string name="settings_keep_on_title">保持螢幕開啟</string>
+    <string name="settings_keep_on_summary">程式若在使用中則保持螢幕開啟</string>
+    <string name="settings_controls">控制</string>
     <string name="settings_sounds_title">開啟音效</string>
     <string name="settings_sounds_summary">數值改變時播放音效</string>
     <string name="settings_vibration_title">開啟震動</string>
     <string name="settings_vibration_summary">數值改變時震動</string>
+    <string name="settings_hard_title">使用硬體按鍵</string>
+    <string name="settings_hard_summary">利用音量鍵改變計數器</string>
+    <string name="settings_label_increment_title">輕敲數值即可增加</string>
+    <string name="settings_label_increment_summary">輕敲目前數值即可增加計數器數值</string>
     <string name="settings_other">其他</string>
     <string name="settings_version_title">版本</string>
+    <string name="settings_wipe_title">刪除所有計數器</string>
+    <string name="settings_wipe_confirmation">您確定要刪除所有計數器？</string>
     <string name="settings_wipe_confirmation_yes">删除全部</string>
     <!-- Toasts -->
+    <string name="toast_wipe_success">已刪除所有計數器。</string>
+    <string name="toast_remove_success">「%s」計數器已刪除。</string>
     <string name="toast_no_name_message">標題為必填！</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">新計數器</string>
+    <string name="unknown">未知</string>
 </resources>
