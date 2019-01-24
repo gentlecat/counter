@@ -4,8 +4,8 @@
     <!-- General -->
     <string name="app_name">計數器</string>
     <!-- Menu -->
-    <string name="drawer_open">開啟導覽列</string>
-    <string name="drawer_close">關閉導覽列</string>
+    <string name="drawer_open">開啟側邊選單</string>
+    <string name="drawer_close">關閉側邊選單</string>
     <string name="menu_add">新增計數器</string>
     <string name="menu_reset">歸零計數器</string>
     <string name="menu_edit">編輯計數器</string>
@@ -19,7 +19,7 @@
     <string name="dialog_reset_title">您確定要歸零此計數器嗎？</string>
     <string name="dialog_edit_name">標題：</string>
     <string name="dialog_edit_value">數值：</string>
-    <string name="dialog_button_add">增加</string>
+    <string name="dialog_button_add">新增</string>
     <string name="dialog_button_apply">套用</string>
     <string name="dialog_button_reset">歸零</string>
     <string name="dialog_button_delete">刪除</string>
