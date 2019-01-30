@@ -38,6 +38,18 @@
     <string name="settings_sounds_summary">Väärtusi muutes mängi helisid</string>
     <string name="settings_vibration_title">Lülita vibratsioon sisse</string>
     <string name="settings_vibration_summary">Väärtusi muutes vibreeri</string>
+    <string name="settings_hard_title">Kasuta riistavara nuppe</string>
+    <string name="settings_hard_summary">Muuda väärtusi kasutades helitugevuse nuppe</string>
+    <string name="settings_other">Muu</string>
+    <string name="settings_version_title">Versioon</string>
+    <string name="settings_wipe_title">Eemalda kõik loendurid</string>
+    <string name="settings_wipe_confirmation">Kas olete kindel, et soovite kõik loendurid kustutada?</string>
+    <string name="settings_wipe_confirmation_yes">Eemalda kõik</string>
     <!-- Toasts -->
+    <string name="toast_wipe_success">Kõik loendurid on eemaldatud.</string>
+    <string name="toast_remove_success">Loendur \"%s\" on eemaldatud.</string>
+    <string name="toast_no_name_message">Nimi on kohustuslik!</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">Uus loendur</string>
+    <string name="unknown">Tundmatu</string>
 </resources>
