@@ -40,6 +40,8 @@
     <string name="settings_vibration_summary">Väärtusi muutes vibreeri</string>
     <string name="settings_hard_title">Kasuta riistavara nuppe</string>
     <string name="settings_hard_summary">Muuda väärtusi kasutades helitugevuse nuppe</string>
+    <string name="settings_label_increment_title">Vajutage väärtuse tõstmiseks</string>
+    <string name="settings_label_increment_summary">Vajutades käesolevale väärtusele kasvatate loendurit</string>
     <string name="settings_other">Muu</string>
     <string name="settings_version_title">Versioon</string>
     <string name="settings_wipe_title">Eemalda kõik loendurid</string>
