@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.Map;
+
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.AddDialog;
@@ -55,8 +57,8 @@ public class CountersListFragment extends ListFragment {
 
     public void updateList() {
         adapter = new CountersListAdapter(getActivity());
-        for (String key : app.counters.keySet()) {
-            adapter.add(new Counter(key));
+        for (Map.Entry<String, Integer> e : app.counters.entrySet()) {
+            adapter.add(new Counter(e.getKey(), String.valueOf(e.getValue())));
         }
         setListAdapter(adapter);
     }
@@ -68,9 +70,11 @@ public class CountersListFragment extends ListFragment {
 
     private class Counter {
         final String name;
+        final String count;
 
-        Counter(String name) {
+        Counter(String name, String count) {
             this.name = name;
+            this.count = count;
         }
     }
 
@@ -83,10 +87,12 @@ public class CountersListFragment extends ListFragment {
         @NonNull
         public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.menu_row, null);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.menu_row_value, null);
             }
             TextView title = convertView.findViewById(R.id.row_title);
             title.setText(getItem(position).name);
+            TextView count = convertView.findViewById(R.id.row_count);
+            count.setText(getItem(position).count);
             return convertView;
         }
 
