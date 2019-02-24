@@ -87,7 +87,7 @@ public class CountersListFragment extends ListFragment {
         @NonNull
         public View getView(int position, View convertView, @NonNull ViewGroup parent) {
             if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.menu_row_value, null);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.menu_row, null);
             }
             TextView title = convertView.findViewById(R.id.row_title);
             title.setText(getItem(position).name);
