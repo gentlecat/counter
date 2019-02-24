@@ -234,6 +234,7 @@ public class CounterFragment extends Fragment {
 
     private void reset() {
         setValue(DEFAULT_VALUE);
+        ((MainActivity) getActivity()).countersListFragment.updateList();
     }
 
     private void setValue(int value) {
