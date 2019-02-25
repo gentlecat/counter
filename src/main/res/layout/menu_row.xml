@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
+        android:paddingLeft="8dp"
         android:textAppearance="@android:style/TextAppearance.Medium"
-        android:textColor="#ccc" />
+        android:textColor="#C0C0C0" />
 </LinearLayout>
