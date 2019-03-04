@@ -39,6 +39,9 @@
     <string name="settings_vibration_title">Activer le vibreur</string>
     <string name="settings_vibration_summary">Vibrer sur les changements de valeur</string>
     <string name="settings_hard_title">Utilisez les boutons matériels</string>
+    <string name="settings_hard_summary">Changer la valeur du compteur à l’aide des boutons de volume</string>
+    <string name="settings_label_increment_title">Tapez une valeur pour incrémenter</string>
+    <string name="settings_label_increment_summary">Incrémenter un compteur en tapant la valeur actuelle</string>
     <string name="settings_other">Autres</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Supprimer tous les compteurs</string>
@@ -49,5 +52,6 @@
     <string name="toast_remove_success">Le compteur \"%s\" a été supprimé.</string>
     <string name="toast_no_name_message">S\'il vous plaît, entrez le nom.</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">Nouveau compteur</string>
     <string name="unknown">Inconnu</string>
 </resources>
