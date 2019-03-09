@@ -14,7 +14,7 @@
     <string name="menu_info">このアプリについて</string>
     <!-- Dialogs -->
     <string name="dialog_add_title">新しいカウンターを追加</string>
-    <string name="dialog_edit_title">カウンターを編集</string>
+    <string name="dialog_edit_title">このカウンターを編集</string>
     <string name="dialog_delete_title">本当にこのカウンターを削除しますか?</string>
     <string name="dialog_reset_title">このカウンターをリセットしてもよろしいですか?</string>
     <string name="dialog_edit_name">タイトル:</string>
@@ -31,16 +31,16 @@
     <string name="settings_theme">テーマ</string>
     <string name="settings_theme_light">ライト</string>
     <string name="settings_theme_dark">ダーク</string>
-    <string name="settings_keep_on_title">画面を常時点灯</string>
-    <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯</string>
+    <string name="settings_keep_on_title">画面をオンのままにする</string>
+    <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯します</string>
     <string name="settings_controls">コントロール</string>
     <string name="settings_sounds_title">サウンドをオン</string>
-    <string name="settings_sounds_summary">音を鳴らす</string>
+    <string name="settings_sounds_summary">値を変更するときにサウンドを再生します</string>
     <string name="settings_vibration_title">振動をオン</string>
     <string name="settings_vibration_summary">値を変更したときに振動</string>
     <string name="settings_hard_title">ハードウェアボタンを使う</string>
-    <string name="settings_hard_summary">ハードウェアボタンを使用してカウンターの値を変更</string>
-    <string name="settings_label_increment_title">表示値で増加</string>
+    <string name="settings_hard_summary">音量ボタンを使用してカウンターの値を変更します</string>
+    <string name="settings_label_increment_title">値をタップして増加</string>
     <string name="settings_label_increment_summary">現在の値をタップしてカウンターを増加します</string>
     <string name="settings_other">その他</string>
     <string name="settings_version_title">バージョン</string>
@@ -52,6 +52,6 @@
     <string name="toast_remove_success">カウンター \"%s\" が削除されました。</string>
     <string name="toast_no_name_message">名前が必要です!</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">最初のカウンター</string>
+    <string name="default_counter_name">新しいカウンター</string>
     <string name="unknown">不明</string>
 </resources>

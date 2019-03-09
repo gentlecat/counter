@@ -13,8 +13,6 @@
     <string name="menu_settings">Ρυθμίσεις</string>
     <string name="menu_info">Σχετικά</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">Προσθήκη νέου μετρητή</string>
-    <string name="dialog_edit_title">Επεξεργασία μετρητή</string>
     <string name="dialog_delete_title">Θέλετε να σίγουρα διαγράψετε το μετρητή;</string>
     <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
     <string name="dialog_edit_name">Τίτλος:</string>
@@ -31,15 +29,10 @@
     <string name="settings_theme">Θέμα</string>
     <string name="settings_theme_light">Φωτεινό</string>
     <string name="settings_theme_dark">Σκοτεινό</string>
-    <string name="settings_keep_on_title">Η οθόνη να παραμένει ενεργή</string>
-    <string name="settings_keep_on_summary">Να παραμένει η οθόνη ενώ η εφαρμογή είναι ενεργή</string>
     <string name="settings_controls">Στοιχεία ελέγχου</string>
     <string name="settings_sounds_title">Ενεργοποιήσε τους ήχους</string>
-    <string name="settings_sounds_summary">Αναπαραγωγή ήχου</string>
     <string name="settings_vibration_title">Ενεργοποιήσε τη δόνηση</string>
-    <string name="settings_vibration_summary">Δόνηση σε αλλαγή</string>
     <string name="settings_hard_title">Χρήση πλήκτρων</string>
-    <string name="settings_hard_summary">Αλλάξτε την τιμή του μετρητή χρησιμοποιώντας τα κουμπιά</string>
     <string name="settings_other">Άλλα</string>
     <string name="settings_version_title">Έκδοση</string>
     <string name="settings_wipe_title">Διαγραφή όλων των μετρητών</string>
@@ -50,6 +43,5 @@
     <string name="toast_remove_success">Ο μετρητής \"%s\" έχει καταργηθεί.</string>
     <string name="toast_no_name_message">Απαιτείται όνομα!</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">Πρώτος μετρητής</string>
     <string name="unknown">Άγνωστο</string>
 </resources>

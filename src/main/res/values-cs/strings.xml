@@ -11,8 +11,6 @@
     <string name="menu_settings">Nastavení</string>
     <string name="menu_info">O aplikaci</string>
     <!-- Dialogs -->
-    <string name="dialog_add_title">Přidat nové počítadlo</string>
-    <string name="dialog_edit_title">Upravit počítadlo</string>
     <string name="dialog_delete_title">Opravdu chcete smazat toto počítadlo?</string>
     <string name="dialog_reset_title">Jste si jistí, že chcete počítadlo obnovit?</string>
     <string name="dialog_edit_name">Název:</string>
@@ -29,15 +27,10 @@
     <string name="settings_theme">Motiv</string>
     <string name="settings_theme_light">Světlý</string>
     <string name="settings_theme_dark">Tmavý</string>
-    <string name="settings_keep_on_title">Zapnutá obrazovka</string>
-    <string name="settings_keep_on_summary">Obrazovka zůstane zapnutá, když je aplikace aktivní</string>
     <string name="settings_controls">Ovládání</string>
     <string name="settings_sounds_title">Zapnout zvuky</string>
-    <string name="settings_sounds_summary">Přehrává zvuky</string>
     <string name="settings_vibration_title">Zapnout vibrace</string>
-    <string name="settings_vibration_summary">Vibrovat při změně</string>
     <string name="settings_hard_title">Používat hardwarová tlačítka</string>
-    <string name="settings_hard_summary">Změní hodnotu pomocí hardwarových tlačítek</string>
     <string name="settings_other">Ostatní</string>
     <string name="settings_version_title">Verze</string>
     <string name="settings_wipe_title">Odstranit všechna počítadla</string>
@@ -48,6 +41,5 @@
     <string name="toast_remove_success">Počítadlo \"%s\" bylo odstraněno.</string>
     <string name="toast_no_name_message">Prosím, vložte jméno.</string>
     <!-- Other stuff -->
-    <string name="default_counter_name">První počítadlo</string>
     <string name="unknown">Neznámé</string>
 </resources>
