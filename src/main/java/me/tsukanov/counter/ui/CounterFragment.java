@@ -219,6 +219,7 @@ public class CounterFragment extends Fragment {
             setValue(++value);
             vibrate(DEFAULT_VIBRATION_DURATION);
             playSound(Sound.INCREMENT_SOUND);
+            ((MainActivity) getActivity()).countersListFragment.updateList();
         }
     }
 
@@ -227,11 +228,13 @@ public class CounterFragment extends Fragment {
             setValue(--value);
             vibrate(DEFAULT_VIBRATION_DURATION + 20);
             playSound(Sound.DECREMENT_SOUND);
+            ((MainActivity) getActivity()).countersListFragment.updateList();
         }
     }
 
     private void reset() {
         setValue(DEFAULT_VALUE);
+        ((MainActivity) getActivity()).countersListFragment.updateList();
     }
 
     private void setValue(int value) {
