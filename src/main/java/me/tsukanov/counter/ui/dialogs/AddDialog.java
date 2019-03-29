@@ -18,6 +18,8 @@ import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.CounterFragment;
 import me.tsukanov.counter.ui.MainActivity;
 
+import static me.tsukanov.counter.Limits.MAX_VALUE;
+
 public class AddDialog extends DialogFragment {
 
     public static final String TAG = "AddDialog";
@@ -73,7 +75,8 @@ public class AddDialog extends DialogFragment {
     }
 
     private int getValueCharLimit() {
-        return String.valueOf(CounterFragment.MAX_VALUE).length();
+        // TODO: Find a better way to set the limits
+        return String.valueOf(MAX_VALUE).length() - 1;
     }
 
 }

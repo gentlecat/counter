@@ -10,6 +10,7 @@ import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,6 +18,8 @@ import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.CounterFragment;
 import me.tsukanov.counter.ui.MainActivity;
+
+import static me.tsukanov.counter.Limits.MAX_VALUE;
 
 public class EditDialog extends DialogFragment {
 
@@ -49,6 +52,7 @@ public class EditDialog extends DialogFragment {
 
         final EditText valueInput = dialogView.findViewById(R.id.edit_value);
         valueInput.setText(String.valueOf(value));
+        valueInput.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
         InputFilter[] valueFilter = new InputFilter[1];
         valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
         valueInput.setFilters(valueFilter);
@@ -88,7 +92,8 @@ public class EditDialog extends DialogFragment {
     }
 
     private int getValueCharLimit() {
-        return String.valueOf(CounterFragment.MAX_VALUE).length();
+        // TODO: Find a better way to set the limits
+        return String.valueOf(MAX_VALUE).length() - 1;
     }
 
 }

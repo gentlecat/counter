@@ -31,10 +31,11 @@ import me.tsukanov.counter.R;
 import me.tsukanov.counter.ui.dialogs.DeleteDialog;
 import me.tsukanov.counter.ui.dialogs.EditDialog;
 
+import static me.tsukanov.counter.Limits.MAX_VALUE;
+import static me.tsukanov.counter.Limits.MIN_VALUE;
+
 public class CounterFragment extends Fragment {
 
-    public static final int MAX_VALUE = Integer.MAX_VALUE;
-    private static final int MIN_VALUE = Integer.MIN_VALUE;
     public static final int DEFAULT_VALUE = 0;
     private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
 
