@@ -32,8 +32,10 @@
     <string name="settings_theme_light">Açık</string>
     <string name="settings_theme_dark">Koyu</string>
     <string name="settings_keep_on_title">Ekranı açık tut</string>
+    <string name="settings_keep_on_summary">Uygulamaya etkinken ekranı açık tutun</string>
     <string name="settings_controls">Kontroller</string>
     <string name="settings_sounds_title">Sesleri aç</string>
+    <string name="settings_sounds_summary">Değerleri değiştirirken sesleri çal</string>
     <string name="settings_vibration_title">Titreşimi aç</string>
     <string name="settings_hard_title">Donanım tuşlarını kullan</string>
     <string name="settings_other">Diğer</string>
