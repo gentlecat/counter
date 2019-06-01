@@ -13,6 +13,8 @@
     <string name="menu_settings">Ustawienia</string>
     <string name="menu_info">O aplikacji</string>
     <!-- Dialogs -->
+    <string name="dialog_add_title">Dodaj nowy licznik</string>
+    <string name="dialog_edit_title">Edytuj ten licznik</string>
     <string name="dialog_delete_title">Czy na pewno chcesz usunąć ten licznik?</string>
     <string name="dialog_reset_title">Czy na pewno chcesz zresetować licznik?</string>
     <string name="dialog_edit_name">Tytuł:</string>
@@ -31,8 +33,13 @@
     <string name="settings_theme_dark">Ciemny</string>
     <string name="settings_controls">Sterowanie</string>
     <string name="settings_sounds_title">Włącz dźwięki</string>
+    <string name="settings_sounds_summary">Odtwórz dźwięk przy zmienianiu wartości</string>
     <string name="settings_vibration_title">Włącz wibracje</string>
+    <string name="settings_vibration_summary">Wibruj przy zmienianiu wartości</string>
     <string name="settings_hard_title">Użyj przycisków sprzętowych</string>
+    <string name="settings_hard_summary">Zmień wartość licznika przyciskami głośności</string>
+    <string name="settings_label_increment_title">Kliknij, aby zwiększyć wartość</string>
+    <string name="settings_label_increment_summary">Kliknij licznik, aby zwiększyć wartość</string>
     <string name="settings_other">Inne</string>
     <string name="settings_version_title">Wersja</string>
     <string name="settings_wipe_title">Usuń wszystkie liczniki</string>
@@ -43,5 +50,6 @@
     <string name="toast_remove_success">Licznik \"%s\" został usunięty.</string>
     <string name="toast_no_name_message">Proszę wpisać nazwę.</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">Nowy licznik</string>
     <string name="unknown">Nieznany</string>
 </resources>
