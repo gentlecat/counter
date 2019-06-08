@@ -17,22 +17,7 @@ target/
 # Local configuration
 local.properties
 release.properties
-lint.xml
-
-# Workspace settings
-*.metadata
-
-# IntelliJ IDEA
-.idea
-*.iml
-*.ipr
-*.iws
-out/
 
 # Other
-tmp
-*~
-.DS_Store
-gradle/
 gradlew
 gradlew.bat
