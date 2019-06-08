@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="valueColor" format="reference|color" />
-
     <attr name="drawableDelete" format="reference" />
     <attr name="drawableEdit" format="reference" />
     <attr name="drawableReset" format="reference" />
