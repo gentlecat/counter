@@ -31,9 +31,10 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
 
   /** @param defaultCounterName Name that will be assigned to a default counter. */
   public SharedPrefsCounterStorage(
-      @NonNull final Context context, @NonNull final String defaultCounterName) {
+      @NonNull final Context context,
+      @NonNull final BroadcastHelper broadcastHelper, @NonNull final String defaultCounterName) {
     this.sharedPreferences = context.getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
-    this.broadcastHelper = new BroadcastHelper(context);
+    this.broadcastHelper = broadcastHelper;
     this.defaultCounterName = defaultCounterName;
   }
 

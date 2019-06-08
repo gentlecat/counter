@@ -1,7 +1,6 @@
 package me.tsukanov.counter.repository.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
@@ -15,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.domain.exception.CounterException;
+import me.tsukanov.counter.infrastructure.Actions;
+import me.tsukanov.counter.infrastructure.BroadcastHelper;
 import me.tsukanov.counter.repository.SharedPrefsCounterStorage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,6 +32,7 @@ class SharedPrefsCounterStorageTest {
   @Mock private Context context;
   @Mock private SharedPreferences sharedPreferences;
   @Mock private SharedPreferences.Editor prefsEditor;
+  @Mock private BroadcastHelper broadcastHelper;
 
   private SharedPrefsCounterStorage systemUnderTest;
 
@@ -38,12 +40,12 @@ class SharedPrefsCounterStorageTest {
   void setUp() {
     when(context.getSharedPreferences(anyString(), anyInt())).thenReturn(sharedPreferences);
 
-    systemUnderTest = new SharedPrefsCounterStorage(context, DEFAULT_COUNTER_NAME);
+    systemUnderTest = new SharedPrefsCounterStorage(context, broadcastHelper, DEFAULT_COUNTER_NAME);
   }
 
   @AfterEach
   void tearDown() {
-    verifyNoMoreInteractions(context, sharedPreferences, prefsEditor);
+    verifyNoMoreInteractions(context, sharedPreferences, prefsEditor, broadcastHelper);
   }
 
   @Test
@@ -58,12 +60,16 @@ class SharedPrefsCounterStorageTest {
 
   @Test
   void read_withDefaultCounter() {
+    when(sharedPreferences.edit()).thenReturn(prefsEditor);
     when(sharedPreferences.getAll()).thenReturn(Collections.EMPTY_MAP);
 
     final List<IntegerCounter> output = systemUnderTest.readAll(true);
     assertEquals(1, output.size());
 
     verify(sharedPreferences).getAll();
+    verify(prefsEditor).putInt(DEFAULT_COUNTER_NAME, 0);
+    verify(prefsEditor).commit();
+    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
   }
 
   @Test
@@ -82,6 +88,7 @@ class SharedPrefsCounterStorageTest {
     verify(prefsEditor).putInt("Second counter", 1);
     verify(prefsEditor).putInt("Third counter", -1);
     verify(prefsEditor).commit();
+    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
   }
 
   @Test
@@ -93,6 +100,7 @@ class SharedPrefsCounterStorageTest {
     verify(sharedPreferences).edit();
     verify(prefsEditor).clear();
     verify(prefsEditor).commit();
+    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
   }
 
   @Test
@@ -104,5 +112,6 @@ class SharedPrefsCounterStorageTest {
     verify(sharedPreferences).edit();
     verify(prefsEditor).clear();
     verify(prefsEditor).commit();
+    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
   }
 }

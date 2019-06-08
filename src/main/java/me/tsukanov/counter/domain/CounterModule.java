@@ -6,6 +6,7 @@ import dagger.Provides;
 import javax.inject.Singleton;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
+import me.tsukanov.counter.infrastructure.BroadcastHelper;
 import me.tsukanov.counter.repository.CounterStorage;
 import me.tsukanov.counter.repository.SharedPrefsCounterStorage;
 
@@ -28,6 +29,8 @@ public class CounterModule {
   @Singleton
   CounterStorage provideCounterStorage(final @NonNull CounterApplication app) {
     return new SharedPrefsCounterStorage(
-        app, (String) app.getResources().getText(R.string.default_counter_name));
+        app,
+        new BroadcastHelper(app),
+        (String) app.getResources().getText(R.string.default_counter_name));
   }
 }
