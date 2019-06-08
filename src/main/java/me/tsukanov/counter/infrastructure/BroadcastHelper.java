@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import android.util.Log;
 import me.tsukanov.counter.CounterApplication;
 
-public final class BroadcastHelper {
+public class BroadcastHelper {
 
   public static final String EXTRA_COUNTER_NAME =
       String.format("%s.EXTRA_COUNTER_NAME", CounterApplication.PACKAGE_NAME);
