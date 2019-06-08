@@ -1,55 +1,29 @@
 package me.tsukanov.counter;
 
-import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
-import me.tsukanov.counter.ui.CounterFragment;
+import dagger.android.DispatchingAndroidInjector;
+import javax.inject.Inject;
+import me.tsukanov.counter.domain.CounterApplicationComponent;
+import me.tsukanov.counter.domain.CounterModule;
+import me.tsukanov.counter.domain.DaggerCounterApplicationComponent;
 
 public class CounterApplication extends Application {
 
-    private static final String DATA_FILE_NAME = "counters";
+  public static final String PACKAGE_NAME = "me.tsukanov.counter";
 
-    public SortedMap<String, Integer> counters;
-    private SharedPreferences data;
+  @Inject DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        counters = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
-        data = getBaseContext().getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
-        loadCounters();
-    }
+  private static CounterApplicationComponent component;
 
-    private void loadCounters() {
-        Map<String, ?> dataMap = data.getAll();
-        if (dataMap.isEmpty()) {
-            counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
-        } else {
-            for (Map.Entry<String, ?> entry : dataMap.entrySet()) {
-                counters.put(entry.getKey(), (Integer) entry.getValue());
-            }
-        }
-    }
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    component =
+        DaggerCounterApplicationComponent.builder().counterModule(new CounterModule(this)).build();
+  }
 
-    @SuppressLint("ApplySharedPref")
-    public void saveCounters() {
-        SharedPreferences.Editor dataEditor = data.edit();
-        dataEditor.clear();
-        for (String name : counters.keySet()) {
-            dataEditor.putInt(name, counters.get(name));
-        }
-        dataEditor.commit();
-    }
-
-    public void removeCounters() {
-        counters.clear();
-        counters.put((String) getResources().getText(R.string.default_counter_name), CounterFragment.DEFAULT_VALUE);
-    }
-
+  public static CounterApplicationComponent getComponent() {
+    return component;
+  }
 }

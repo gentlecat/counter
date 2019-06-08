@@ -35,7 +35,7 @@
         android:layout_marginLeft="210dp"
         android:layout_marginRight="210dp"
         android:gravity="center"
-        android:textColor="?valueColor"
+        android:textColor="?android:attr/textColorPrimary"
         app:autoSizeMaxTextSize="300sp"
         app:autoSizeMinTextSize="20sp"
         app:autoSizeStepGranularity="2sp"

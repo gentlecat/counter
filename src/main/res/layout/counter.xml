@@ -46,7 +46,7 @@
             android:layout_height="190dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="?valueColor"
+            android:textColor="?android:attr/textColorPrimary"
             app:autoSizeMaxTextSize="300sp"
             app:autoSizeMinTextSize="20sp"
             app:autoSizeStepGranularity="2sp"
