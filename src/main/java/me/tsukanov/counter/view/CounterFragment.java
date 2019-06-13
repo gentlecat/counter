@@ -75,10 +75,6 @@ public class CounterFragment extends Fragment {
 
     initCounter();
 
-    /* Setting up sounds */
-    incrementSoundPlayer = MediaPlayer.create(getContext(), R.raw.increment_sound);
-    decrementSoundPlayer = MediaPlayer.create(getContext(), R.raw.decrement_sound);
-
     setHasOptionsMenu(true);
   }
 
@@ -102,6 +98,25 @@ public class CounterFragment extends Fragment {
   public void onSaveInstanceState(@NonNull final Bundle savedInstanceState) {
     savedInstanceState.putString(STATE_SELECTED_COUNTER_NAME, this.name);
     super.onSaveInstanceState(savedInstanceState);
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+
+    /* Setting up sounds */
+    incrementSoundPlayer = MediaPlayer.create(getContext(), R.raw.increment_sound);
+    decrementSoundPlayer = MediaPlayer.create(getContext(), R.raw.decrement_sound);
+  }
+
+  @Override
+  public void onPause() {
+    super.onPause();
+
+    incrementSoundPlayer.reset();
+    incrementSoundPlayer.release();
+    decrementSoundPlayer.reset();
+    decrementSoundPlayer.release();
   }
 
   @Override
