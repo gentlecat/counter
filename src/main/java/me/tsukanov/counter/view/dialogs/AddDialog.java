@@ -22,8 +22,6 @@ import me.tsukanov.counter.view.CounterFragment;
 
 public class AddDialog extends DialogFragment {
 
-  private static final String TAG = AddDialog.class.getSimpleName();
-
   @NonNull
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
