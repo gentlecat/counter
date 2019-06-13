@@ -9,19 +9,20 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
@@ -37,8 +38,6 @@ import me.tsukanov.counter.view.Themes;
 public class MainActivity extends AppCompatActivity {
 
   private static final String TAG = MainActivity.class.getSimpleName();
-
-  private static final String STATE_IS_NAV_OPEN = "IS_NAVIGATION_OPEN";
 
   private ActionBar actionBar;
   private DrawerLayout navigationLayout;
@@ -56,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
     registerIntentReceivers(getApplicationContext());
 
     super.onCreate(savedInstanceState);
-
-    selectedCounterName = findActiveCounter().getName();
-    actionBar.setTitle(selectedCounterName);
 
     // Enable ActionBar home button to behave as action to toggle navigation drawer
     actionBar.setDisplayHomeAsUpEnabled(true);
@@ -105,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
     Themes.initCurrentTheme(sharedPrefs);
 
     initCountersList();
-    switchCounter(selectedCounterName);
+    switchCounter(findActiveCounter().getName());
 
     if (sharedPrefs.getBoolean(SharedPrefKeys.KEEP_SCREEN_ON.getName(), false)) {
-      getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+      getWindow().addFlags(LayoutParams.FLAG_KEEP_SCREEN_ON);
     } else {
-      getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+      getWindow().clearFlags(LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
   }
 
@@ -118,6 +114,24 @@ public class MainActivity extends AppCompatActivity {
     final FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
     transaction.replace(R.id.menu_frame, new CountersListFragment());
     transaction.commit();
+  }
+
+  private void switchCounter(@NonNull final String counterName) {
+    this.selectedCounterName = counterName;
+
+    final Bundle bundle = new Bundle();
+    bundle.putString(CounterFragment.COUNTER_NAME_ATTRIBUTE, counterName);
+
+    selectedCounterFragment = new CounterFragment();
+    selectedCounterFragment.setArguments(bundle);
+    getSupportFragmentManager()
+        .beginTransaction()
+        .replace(R.id.content_frame, selectedCounterFragment)
+        .commitAllowingStateLoss();
+
+    actionBar.setTitle(counterName);
+
+    if (isNavigationOpen()) closeNavigation();
   }
 
   /**
@@ -143,9 +157,10 @@ public class MainActivity extends AppCompatActivity {
     return storage.readAll(true).get(0);
   }
 
-  // TODO: Move this into the fragment
   @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
+    // Since there's no way to keep track of these events from the fragment side, we have to pass
+    // them to it for processing.
     return super.onKeyDown(keyCode, event) || selectedCounterFragment.onKeyDown(keyCode);
   }
 
@@ -172,30 +187,13 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @Override
-  public void onSaveInstanceState(@NonNull final Bundle savedInstanceState) {
-    savedInstanceState.putBoolean(STATE_IS_NAV_OPEN, navigationLayout.isDrawerOpen(menuFrame));
-    super.onSaveInstanceState(savedInstanceState);
-  }
-
-  private void restoreSavedState(
-      @Nullable final Bundle savedInstanceState, @NonNull final String selectedCounterKey) {
-    if (savedInstanceState == null) return;
-
-    if (savedInstanceState.getBoolean(STATE_IS_NAV_OPEN)) {
-      actionBar.setTitle(getTitle()); // sets it to the application title
-    } else {
-      actionBar.setTitle(selectedCounterKey);
-    }
-  }
-
-  @Override
   public void onConfigurationChanged(@NonNull final Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
     navigationToggle.onConfigurationChanged(newConfig);
   }
 
   @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     switch (item.getItemId()) {
       case android.R.id.home:
         if (isNavigationOpen()) closeNavigation();
@@ -209,24 +207,6 @@ public class MainActivity extends AppCompatActivity {
       default:
         return super.onOptionsItemSelected(item);
     }
-  }
-
-  private void switchCounter(@NonNull final String counterName) {
-    this.selectedCounterName = counterName;
-
-    final Bundle bundle = new Bundle();
-    bundle.putString(CounterFragment.COUNTER_NAME_ATTRIBUTE, counterName);
-
-    selectedCounterFragment = new CounterFragment();
-    selectedCounterFragment.setArguments(bundle);
-    getSupportFragmentManager()
-        .beginTransaction()
-        .replace(R.id.content_frame, selectedCounterFragment)
-        .commitAllowingStateLoss();
-
-    actionBar.setTitle(counterName);
-
-    if (isNavigationOpen()) closeNavigation();
   }
 
   public boolean isNavigationOpen() {

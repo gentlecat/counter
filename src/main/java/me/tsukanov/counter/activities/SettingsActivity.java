@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -42,7 +43,10 @@ public class SettingsActivity extends AppCompatActivity
     settingsFragment.setAppVersion(getAppVersion());
     settingsFragment.setTheme(getCurrentThemeName());
 
-    getSupportFragmentManager().beginTransaction().replace(android.R.id.content, settingsFragment).commit();
+    getSupportFragmentManager()
+        .beginTransaction()
+        .replace(android.R.id.content, settingsFragment)
+        .commit();
   }
 
   private String getCurrentThemeName() {
@@ -60,14 +64,14 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   @Override
-  protected void onPostCreate(Bundle savedInstanceState) {
+  protected void onPostCreate(final Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
     getDelegate().onPostCreate(savedInstanceState);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   }
 
   @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
+  public boolean onOptionsItemSelected(final @NonNull MenuItem item) {
     if (item.getItemId() == android.R.id.home) {
       finish();
       return true;
@@ -96,11 +100,12 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   @Override
-  public boolean onPreferenceChange(Preference preference, Object newValue) {
+  public boolean onPreferenceChange(final Preference preference, final Object newValue) {
     return false;
   }
 
-  public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+  public void onSharedPreferenceChanged(
+      final SharedPreferences sharedPreferences, final String key) {
     if (key.equals(SharedPrefKeys.THEME.getName())) {
       final Preference pref = settingsFragment.findPreference(SharedPrefKeys.THEME.getName());
       if (pref != null) {
