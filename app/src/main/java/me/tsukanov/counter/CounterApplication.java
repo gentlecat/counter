@@ -10,6 +10,7 @@ import me.tsukanov.counter.domain.DaggerCounterApplicationComponent;
 
 public class CounterApplication extends Application {
 
+  // TODO: See if there's a better way to retrieve this
   public static final String PACKAGE_NAME = "me.tsukanov.counter";
 
   @Inject DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
