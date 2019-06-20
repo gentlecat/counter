@@ -31,6 +31,7 @@
     <string name="settings_theme">佈景主題</string>
     <string name="settings_theme_light">亮色</string>
     <string name="settings_theme_dark">暗色</string>
+    <string name="settings_theme_system">採用系統預設值</string>
     <string name="settings_keep_on_title">保持螢幕開啟</string>
     <string name="settings_keep_on_summary">程式若在使用中則保持螢幕開啟</string>
     <string name="settings_controls">控制</string>
