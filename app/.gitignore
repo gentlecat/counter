@@ -3,14 +3,12 @@
 *.ap_
 *.aab
 
+# Java class files
+*.class
+
 # Generated files
-.gradle
 /build
 bin/
 gen/
 gen-external-apklibs/
 target/
-
-# Local configuration
-local.properties
-release.properties

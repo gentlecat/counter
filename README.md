@@ -1,4 +1,4 @@
-# Counter
+# Counter ![Build status](https://img.shields.io/circleci/build/github/gentlecat/counter/master.svg?style=flat-square)
 
 Counter is a *simple* [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It
 makes counting easier. You can have multiple counters with their own names and values. Values can be
