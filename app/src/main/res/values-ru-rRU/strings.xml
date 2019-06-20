@@ -31,6 +31,7 @@
     <string name="settings_theme">Стиль</string>
     <string name="settings_theme_light">Светлый</string>
     <string name="settings_theme_dark">Темный</string>
+    <string name="settings_theme_system">Использовать системные настройки</string>
     <string name="settings_keep_on_title">Держать экран включенным</string>
     <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
     <string name="settings_controls">Управление</string>
