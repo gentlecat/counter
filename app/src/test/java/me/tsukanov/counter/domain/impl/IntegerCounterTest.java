@@ -1,17 +1,18 @@
 package me.tsukanov.counter.domain.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import me.tsukanov.counter.domain.Counter;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.domain.exception.CounterException;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class IntegerCounterTest {
+public class IntegerCounterTest {
+
   private static final String DEFAULT_NAME = "Test name";
 
   @Test
-  void nameSetting_worksAsExpected() throws CounterException {
+  public void nameSetting_worksAsExpected() throws CounterException {
     final Counter counter = new IntegerCounter(DEFAULT_NAME);
     assertEquals(DEFAULT_NAME, counter.getName());
 
@@ -21,43 +22,43 @@ class IntegerCounterTest {
   }
 
   @Test
-  void valueSetting() throws Exception {
+  public void valueSetting() throws Exception {
     final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME, 0);
-    assertEquals(0, counter.getValue());
+    assertEquals(0, counter.getValue().intValue());
 
     counter.setValue(42);
-    assertEquals(42, counter.getValue());
+    assertEquals(42, counter.getValue().intValue());
 
     counter.setValue(IntegerCounter.MAX_VALUE);
-    assertEquals(999999999, counter.getValue());
+    assertEquals(999999999, counter.getValue().intValue());
 
     counter.setValue(IntegerCounter.MIN_VALUE);
-    assertEquals(-99999999, counter.getValue());
+    assertEquals(-99999999, counter.getValue().intValue());
   }
 
   @Test
-  void increment() throws Exception {
+  public void increment() throws Exception {
     final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME, 0);
-    assertEquals(0, counter.getValue());
+    assertEquals(0, counter.getValue().intValue());
 
     counter.increment();
-    assertEquals(1, counter.getValue());
+    assertEquals(1, counter.getValue().intValue());
 
     counter.increment();
     counter.increment();
-    assertEquals(3, counter.getValue());
+    assertEquals(3, counter.getValue().intValue());
   }
 
   @Test
-  void decrement() throws Exception {
+  public void decrement() throws Exception {
     final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME, 0);
-    assertEquals(0, counter.getValue());
+    assertEquals(0, counter.getValue().intValue());
 
     counter.decrement();
-    assertEquals(-1, counter.getValue());
+    assertEquals(-1, counter.getValue().intValue());
 
     counter.decrement();
     counter.decrement();
-    assertEquals(-3, counter.getValue());
+    assertEquals(-3, counter.getValue().intValue());
   }
 }

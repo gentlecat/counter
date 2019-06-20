@@ -1,6 +1,6 @@
 package me.tsukanov.counter.repository.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
@@ -17,15 +17,15 @@ import me.tsukanov.counter.domain.exception.CounterException;
 import me.tsukanov.counter.infrastructure.Actions;
 import me.tsukanov.counter.infrastructure.BroadcastHelper;
 import me.tsukanov.counter.repository.SharedPrefsCounterStorage;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnitRunner;
 
-@ExtendWith(MockitoExtension.class)
-class SharedPrefsCounterStorageTest {
+@RunWith(MockitoJUnitRunner.class)
+public class SharedPrefsCounterStorageTest {
 
   private static final String DEFAULT_COUNTER_NAME = "Test counter";
 
@@ -36,30 +36,31 @@ class SharedPrefsCounterStorageTest {
 
   private SharedPrefsCounterStorage systemUnderTest;
 
-  @BeforeEach
-  void setUp() {
+  @Before
+  public void setUp() {
     when(context.getSharedPreferences(anyString(), anyInt())).thenReturn(sharedPreferences);
 
     systemUnderTest = new SharedPrefsCounterStorage(context, broadcastHelper, DEFAULT_COUNTER_NAME);
   }
 
-  @AfterEach
-  void tearDown() {
+  @After
+  public void tearDown() {
     verifyNoMoreInteractions(context, sharedPreferences, prefsEditor, broadcastHelper);
   }
 
   @Test
-  void read_withoutDefaultCounter() {
+  public void read_withoutDefaultCounter() {
     when(sharedPreferences.getAll()).thenReturn(Collections.EMPTY_MAP);
 
     final List<IntegerCounter> output = systemUnderTest.readAll(false);
     assertEquals(0, output.size());
 
     verify(sharedPreferences).getAll();
+    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
   }
 
   @Test
-  void read_withDefaultCounter() {
+  public void read_withDefaultCounter() {
     when(sharedPreferences.edit()).thenReturn(prefsEditor);
     when(sharedPreferences.getAll()).thenReturn(Collections.EMPTY_MAP);
 
@@ -67,13 +68,15 @@ class SharedPrefsCounterStorageTest {
     assertEquals(1, output.size());
 
     verify(sharedPreferences).getAll();
+    verify(sharedPreferences).edit();
     verify(prefsEditor).putInt(DEFAULT_COUNTER_NAME, 0);
     verify(prefsEditor).commit();
     verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
+    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
   }
 
   @Test
-  void write() throws CounterException {
+  public void write() throws CounterException {
     when(sharedPreferences.edit()).thenReturn(prefsEditor);
 
     systemUnderTest.overwriteAll(
@@ -89,10 +92,11 @@ class SharedPrefsCounterStorageTest {
     verify(prefsEditor).putInt("Third counter", -1);
     verify(prefsEditor).commit();
     verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
+    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
   }
 
   @Test
-  void overwrite_withNoCounters() {
+  public void overwrite_withNoCounters() {
     when(sharedPreferences.edit()).thenReturn(prefsEditor);
 
     systemUnderTest.overwriteAll(Collections.emptyList());
@@ -101,10 +105,11 @@ class SharedPrefsCounterStorageTest {
     verify(prefsEditor).clear();
     verify(prefsEditor).commit();
     verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
+    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
   }
 
   @Test
-  void wipe() {
+  public void wipe() {
     when(sharedPreferences.edit()).thenReturn(prefsEditor);
 
     systemUnderTest.wipe();
@@ -113,5 +118,6 @@ class SharedPrefsCounterStorageTest {
     verify(prefsEditor).clear();
     verify(prefsEditor).commit();
     verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
+    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
   }
 }

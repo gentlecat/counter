@@ -207,8 +207,7 @@ public class CounterFragment extends Fragment {
             .setMessage(getResources().getText(R.string.dialog_reset_title))
             .setCancelable(false)
             .setPositiveButton(
-                getResources().getText(R.string.dialog_button_reset),
-                (d, id) -> reset())
+                getResources().getText(R.string.dialog_button_reset), (d, id) -> reset())
             .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
             .create();
     Objects.requireNonNull(dialog.getWindow())
