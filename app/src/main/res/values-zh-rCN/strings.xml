@@ -30,6 +30,7 @@
     <string name="settings_theme">主题</string>
     <string name="settings_theme_light">亮色</string>
     <string name="settings_theme_dark">暗色</string>
+    <string name="settings_theme_system">使用系统默认值</string>
     <string name="settings_controls">控制</string>
     <string name="settings_sounds_title">开启音效</string>
     <string name="settings_vibration_title">开启振动</string>
