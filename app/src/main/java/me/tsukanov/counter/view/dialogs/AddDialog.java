@@ -32,7 +32,7 @@ public class AddDialog extends DialogFragment {
 
     final EditText valueInput = dialogView.findViewById(R.id.edit_value);
     final InputFilter[] valueFilter = new InputFilter[1];
-    valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
+    valueFilter[0] = new InputFilter.LengthFilter(IntegerCounter.getValueCharLimit());
     valueInput.setFilters(valueFilter);
 
     final Dialog dialog =
@@ -75,18 +75,8 @@ public class AddDialog extends DialogFragment {
     return dialog;
   }
 
-  private int getValueCharLimit() {
-    // TODO: Find a better way to set the limits
-    return String.valueOf(IntegerCounter.MAX_VALUE).length() - 1;
-  }
-
   private void addCounter(@NonNull final IntegerCounter counter) {
-    final CounterStorage storage = CounterApplication.getComponent().localStorage();
-    // TODO: Add a method that would just do the below for me in one call
-    final List<IntegerCounter> counters = storage.readAll(false);
-    counters.add(counter);
-    storage.overwriteAll(counters);
-
+    CounterApplication.getComponent().localStorage().write(counter);
     new BroadcastHelper(this.getContext()).sendSelectCounterBroadcast(counter.getName());
   }
 }

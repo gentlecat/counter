@@ -3,6 +3,7 @@ package me.tsukanov.counter.view.dialogs;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import android.text.InputFilter;
@@ -56,7 +57,7 @@ public class EditDialog extends DialogFragment {
     valueInput.setText(String.valueOf(oldValue));
     valueInput.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
     InputFilter[] valueFilter = new InputFilter[1];
-    valueFilter[0] = new InputFilter.LengthFilter(getValueCharLimit());
+    valueFilter[0] = new InputFilter.LengthFilter(IntegerCounter.getValueCharLimit());
     valueInput.setFilters(valueFilter);
 
     Dialog dialog =
@@ -83,14 +84,17 @@ public class EditDialog extends DialogFragment {
                       newValue = CounterFragment.DEFAULT_VALUE;
                     }
 
-                    CounterStorage<IntegerCounter> storage =
+                    final CounterStorage storage =
                         CounterApplication.getComponent().localStorage();
 
                     storage.delete(oldName);
                     try {
                       storage.write(new IntegerCounter(newName, newValue));
                     } catch (CounterException e) {
-                      // TODO: Handle
+                      Log.getStackTraceString(e);
+                      Toast.makeText(
+                              getContext(), R.string.toast_unable_to_modify, Toast.LENGTH_SHORT)
+                          .show();
                     }
 
                     new BroadcastHelper(getContext()).sendSelectCounterBroadcast(newName);
@@ -103,10 +107,5 @@ public class EditDialog extends DialogFragment {
     dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
     return dialog;
-  }
-
-  private int getValueCharLimit() {
-    // TODO: Find a better way to set the limits
-    return String.valueOf(IntegerCounter.MAX_VALUE).length() - 1;
   }
 }

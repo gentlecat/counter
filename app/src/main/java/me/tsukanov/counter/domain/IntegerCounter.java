@@ -85,6 +85,14 @@ public class IntegerCounter implements Counter<Integer> {
     }
   }
 
+  /**
+   * Provides max number of characters that would fit within the {@link IntegerCounter} value
+   * limits.
+   */
+  public static int getValueCharLimit() {
+    return String.valueOf(IntegerCounter.MAX_VALUE).length() - 1;
+  }
+
   @SuppressWarnings("BooleanMethodIsAlwaysInverted")
   private static boolean isValidName(@NonNull final String name) {
     return name.length() > 0;

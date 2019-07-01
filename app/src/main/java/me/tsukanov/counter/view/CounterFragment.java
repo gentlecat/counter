@@ -232,7 +232,7 @@ public class CounterFragment extends Fragment {
       playSound(incrementSoundPlayer);
     } catch (Exception e) {
       Log.getStackTraceString(e);
-      // TODO: Handle
+      throw new RuntimeException(e);
     }
 
     invalidateUI();
@@ -245,7 +245,8 @@ public class CounterFragment extends Fragment {
       vibrate(DEFAULT_VIBRATION_DURATION + 20);
       playSound(decrementSoundPlayer);
     } catch (Exception e) {
-      // TODO: Handle
+      Log.getStackTraceString(e);
+      throw new RuntimeException(e);
     }
 
     invalidateUI();
@@ -256,7 +257,8 @@ public class CounterFragment extends Fragment {
     try {
       counter.reset();
     } catch (Exception e) {
-      // TODO: Handle
+      Log.getStackTraceString(e);
+      throw new RuntimeException(e);
     }
 
     invalidateUI();
