@@ -9,9 +9,7 @@ import me.tsukanov.counter.domain.CounterModule;
 import me.tsukanov.counter.domain.DaggerCounterApplicationComponent;
 
 public class CounterApplication extends Application {
-
-  // TODO: See if there's a better way to retrieve this
-  public static final String PACKAGE_NAME = "me.tsukanov.counter";
+  public static String PACKAGE_NAME;
 
   @Inject DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
@@ -20,8 +18,11 @@ public class CounterApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+
     component =
         DaggerCounterApplicationComponent.builder().counterModule(new CounterModule(this)).build();
+
+    PACKAGE_NAME = getApplicationContext().getPackageName();
   }
 
   public static CounterApplicationComponent getComponent() {
