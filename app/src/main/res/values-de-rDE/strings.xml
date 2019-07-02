@@ -42,7 +42,7 @@
     <string name="settings_vibration_summary">Bei Änderungen vibrieren</string>
     <string name="settings_hard_title">Hardwaretasten benutzen</string>
     <string name="settings_hard_summary">Werde mit Lautstärkereglern verändern</string>
-    <string name="settings_label_increment_title">Tippe auf Wert zum Inkrementieren</string>
+    <string name="settings_label_increment_title">Tippe auf Wert zum erhöhen</string>
     <string name="settings_label_increment_summary">Erhöhe einen Zähler, indem du den aktuellen Wert tippst</string>
     <string name="settings_other">Sonstiges</string>
     <string name="settings_version_title">Version</string>
