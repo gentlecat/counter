@@ -31,6 +31,8 @@
     <string name="settings_theme">Desgin</string>
     <string name="settings_theme_light">Hell</string>
     <string name="settings_theme_dark">Dunkel</string>
+    <string name="settings_theme_auto_battery">Vom Batterien Sparer gesetzt</string>
+    <string name="settings_theme_system">Systemstandard verwenden</string>
     <string name="settings_keep_on_title">Bildschirm eingeschaltet lassen</string>
     <string name="settings_keep_on_summary">Bildschirm anlassen solange die App aktiv ist</string>
     <string name="settings_controls">Kontrolle</string>
@@ -40,6 +42,8 @@
     <string name="settings_vibration_summary">Bei Änderungen vibrieren</string>
     <string name="settings_hard_title">Hardwaretasten benutzen</string>
     <string name="settings_hard_summary">Werde mit Lautstärkereglern verändern</string>
+    <string name="settings_label_increment_title">Tippe auf Wert zum erhöhen</string>
+    <string name="settings_label_increment_summary">Erhöhe einen Zähler, indem du den aktuellen Wert tippst</string>
     <string name="settings_other">Sonstiges</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Alle Zähler entfernen</string>

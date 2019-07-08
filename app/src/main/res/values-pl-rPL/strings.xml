@@ -31,6 +31,8 @@
     <string name="settings_theme">Motyw</string>
     <string name="settings_theme_light">Jasny</string>
     <string name="settings_theme_dark">Ciemny</string>
+    <string name="settings_theme_system">Użyj ustawień systemowych</string>
+    <string name="settings_keep_on_title">Utrzymuj włączony ekran</string>
     <string name="settings_controls">Sterowanie</string>
     <string name="settings_sounds_title">Włącz dźwięki</string>
     <string name="settings_sounds_summary">Odtwórz dźwięk przy zmienianiu wartości</string>

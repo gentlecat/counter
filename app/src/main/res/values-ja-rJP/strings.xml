@@ -31,6 +31,8 @@
     <string name="settings_theme">テーマ</string>
     <string name="settings_theme_light">ライト</string>
     <string name="settings_theme_dark">ダーク</string>
+    <string name="settings_theme_auto_battery">バッテリーセーバーで設定</string>
+    <string name="settings_theme_system">システムのデフォルトを使用する</string>
     <string name="settings_keep_on_title">画面をオンのままにする</string>
     <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯します</string>
     <string name="settings_controls">コントロール</string>
