@@ -53,6 +53,7 @@
     <string name="toast_wipe_success">Kõik loendurid on eemaldatud.</string>
     <string name="toast_remove_success">Loendur \"%s\" on eemaldatud.</string>
     <string name="toast_no_name_message">Nimi on kohustuslik!</string>
+    <string name="toast_unable_to_modify">Miskit läks lugeri uuendamisega nihu. Vabandame!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Uus loendur</string>
     <string name="unknown">Tundmatu</string>
