@@ -16,10 +16,9 @@ public interface Counter<T> {
 
   void setValue(@NonNull T newValue) throws InvalidValueException;
 
-  // TODO: Consider refactoring methods below to not throw exceptions.
-  void increment() throws InvalidValueException;
+  void increment();
 
-  void decrement() throws InvalidValueException;
+  void decrement();
 
   /** Resets counter to its default value. Default value depends on the type {@link T}. */
   void reset();

@@ -226,28 +226,18 @@ public class CounterFragment extends Fragment {
   }
 
   private void increment() {
-    try {
-      counter.increment();
-      vibrate(DEFAULT_VIBRATION_DURATION);
-      playSound(incrementSoundPlayer);
-    } catch (Exception e) {
-      Log.getStackTraceString(e);
-      throw new RuntimeException(e);
-    }
+    counter.increment();
+    vibrate(DEFAULT_VIBRATION_DURATION);
+    playSound(incrementSoundPlayer);
 
     invalidateUI();
     saveValue();
   }
 
   private void decrement() {
-    try {
-      counter.decrement();
-      vibrate(DEFAULT_VIBRATION_DURATION + 20);
-      playSound(decrementSoundPlayer);
-    } catch (Exception e) {
-      Log.getStackTraceString(e);
-      throw new RuntimeException(e);
-    }
+    counter.decrement();
+    vibrate(DEFAULT_VIBRATION_DURATION + 20);
+    playSound(decrementSoundPlayer);
 
     invalidateUI();
     saveValue();

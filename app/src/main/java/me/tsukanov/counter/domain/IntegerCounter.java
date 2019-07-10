@@ -1,5 +1,6 @@
 package me.tsukanov.counter.domain;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 import me.tsukanov.counter.domain.exception.CounterException;
 import me.tsukanov.counter.domain.exception.InvalidNameException;
@@ -10,6 +11,8 @@ import me.tsukanov.counter.domain.exception.InvalidValueException;
  * of counters are always {@link String}.
  */
 public class IntegerCounter implements Counter<Integer> {
+
+  private static final String TAG = IntegerCounter.class.getSimpleName();
 
   public static final int MAX_VALUE = 1000000000 - 1;
   public static final int MIN_VALUE = -100000000 + 1;
@@ -68,12 +71,20 @@ public class IntegerCounter implements Counter<Integer> {
     this.value = newValue;
   }
 
-  public void increment() throws InvalidValueException {
-    setValue(this.value + 1);
+  public void increment() {
+    try {
+      setValue(this.value + 1);
+    } catch (InvalidValueException e) {
+      Log.e(TAG, "Unable to increment the counter", e);
+    }
   }
 
-  public void decrement() throws InvalidValueException {
-    setValue(this.value - 1);
+  public void decrement() {
+    try {
+      setValue(this.value - 1);
+    } catch (InvalidValueException e) {
+      Log.e(TAG, "Unable to decrement the counter", e);
+    }
   }
 
   public void reset() {

@@ -3,8 +3,8 @@ package me.tsukanov.counter.repository;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import androidx.annotation.NonNull;
 import android.util.Log;
+import androidx.annotation.NonNull;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +32,8 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
   /** @param defaultCounterName Name that will be assigned to a default counter. */
   public SharedPrefsCounterStorage(
       @NonNull final Context context,
-      @NonNull final BroadcastHelper broadcastHelper, @NonNull final String defaultCounterName) {
+      @NonNull final BroadcastHelper broadcastHelper,
+      @NonNull final String defaultCounterName) {
     this.sharedPreferences = context.getSharedPreferences(DATA_FILE_NAME, Context.MODE_PRIVATE);
     this.broadcastHelper = broadcastHelper;
     this.defaultCounterName = defaultCounterName;
@@ -56,7 +57,6 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
         }
       }
     } catch (CounterException e) {
-      // TODO: Look into refactoring this to avoid runtime exceptions
       throw new RuntimeException(e);
     }
 
