@@ -13,6 +13,7 @@
     <string name="menu_settings">Innstillinger</string>
     <string name="menu_info">Om</string>
     <!-- Dialogs -->
+    <string name="dialog_add_title">Legg til ny teller</string>
     <string name="dialog_delete_title">Har du virkelig lyst til å slette denne telleren?</string>
     <string name="dialog_reset_title">Har du virkelig lyst til å tilbakestille denne telleren?</string>
     <string name="dialog_edit_name">Tittel:</string>
@@ -29,6 +30,8 @@
     <string name="settings_theme">Tema</string>
     <string name="settings_theme_light">Lyst</string>
     <string name="settings_theme_dark">Mørkt</string>
+    <string name="settings_keep_on_title">Hold skjermen på</string>
+    <string name="settings_keep_on_summary">Hold skjermen på når appen er i bruk</string>
     <string name="settings_controls">Kontroller</string>
     <string name="settings_sounds_title">Skru på lyder</string>
     <string name="settings_vibration_title">Skru på vibrasjon</string>
