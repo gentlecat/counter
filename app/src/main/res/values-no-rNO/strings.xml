@@ -4,7 +4,7 @@
     <!-- General -->
     <string name="app_name">Teller</string>
     <!-- Menu -->
-    <string name="drawer_open">Åpn navigasjon</string>
+    <string name="drawer_open">Åpne navigasjon</string>
     <string name="drawer_close">Lukk navigasjon</string>
     <string name="menu_add">Legg til teller</string>
     <string name="menu_reset">Tilbakestill teller</string>
@@ -19,7 +19,7 @@
     <string name="dialog_edit_name">Tittel:</string>
     <string name="dialog_edit_value">Verdi:</string>
     <string name="dialog_button_add">Legg til</string>
-    <string name="dialog_button_apply">Påfør</string>
+    <string name="dialog_button_apply">Bruk</string>
     <string name="dialog_button_reset">Tilbakestill teller</string>
     <string name="dialog_button_delete">Slett teller</string>
     <string name="dialog_button_cancel">Avbryt</string>
@@ -45,6 +45,8 @@
     <string name="toast_wipe_success">Alle tellerne har blitt slettet.</string>
     <string name="toast_remove_success">Telleren \"%s\" har blitt slettet.</string>
     <string name="toast_no_name_message">Navn er påkrevet!</string>
+    <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">Ny teller</string>
     <string name="unknown">Ukjent</string>
 </resources>
