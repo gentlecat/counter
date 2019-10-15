@@ -15,14 +15,14 @@
     <!-- Dialogs -->
     <string name="dialog_add_title">Adicionar um novo contador</string>
     <string name="dialog_edit_title">Editar este contador</string>
-    <string name="dialog_delete_title">Deseja realmente apagar este contador?</string>
-    <string name="dialog_reset_title">Deseja realmente repor este contador?</string>
+    <string name="dialog_delete_title">Deseja mesmo apagar este contador?</string>
+    <string name="dialog_reset_title">Deseja mesmo repor este contador?</string>
     <string name="dialog_edit_name">Título:</string>
     <string name="dialog_edit_value">Valor:</string>
     <string name="dialog_button_add">Adicionar</string>
     <string name="dialog_button_apply">Aplicar</string>
-    <string name="dialog_button_reset">Repor contador</string>
-    <string name="dialog_button_delete">Apagar o contador</string>
+    <string name="dialog_button_reset">Repor</string>
+    <string name="dialog_button_delete">Apagar</string>
     <string name="dialog_button_cancel">Cancelar</string>
     <string name="dialog_button_close">Fechar</string>
     <!-- Settings -->
@@ -53,6 +53,8 @@
     <string name="toast_wipe_success">Todos os contadores foram removidos.</string>
     <string name="toast_remove_success">O contador \"%s\" foi removido.</string>
     <string name="toast_no_name_message">Nome é necessário!</string>
+    <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">Novo contador</string>
     <string name="unknown">Desconhecido</string>
 </resources>
