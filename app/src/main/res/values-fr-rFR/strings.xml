@@ -31,6 +31,8 @@
     <string name="settings_theme">Thèmes</string>
     <string name="settings_theme_light">Clair</string>
     <string name="settings_theme_dark">Sombre</string>
+    <string name="settings_theme_auto_battery">Définir par l\'économiseur de batterie</string>
+    <string name="settings_theme_system">Utiliser la valeur système par défaut</string>
     <string name="settings_keep_on_title">Garder l\'écran allumé</string>
     <string name="settings_keep_on_summary">Garder l\'écran allumé lorsque l\'application est active</string>
     <string name="settings_controls">Contrôles</string>
@@ -51,6 +53,7 @@
     <string name="toast_wipe_success">Tous les compteurs ont été supprimés.</string>
     <string name="toast_remove_success">Le compteur \"%s\" a été supprimé.</string>
     <string name="toast_no_name_message">S\'il vous plaît, entrez le nom.</string>
+    <string name="toast_unable_to_modify">Une erreur s\'est produite lors de la mise à jour du compteur. Désolé!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Nouveau compteur</string>
     <string name="unknown">Inconnu</string>
