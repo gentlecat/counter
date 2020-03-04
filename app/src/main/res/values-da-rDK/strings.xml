@@ -36,8 +36,13 @@
     <string name="settings_keep_on_summary">Hold skærmen tændt når appen er aktiv</string>
     <string name="settings_controls">Styring</string>
     <string name="settings_sounds_title">Tænd for lyde</string>
+    <string name="settings_sounds_summary">Spil lyde når man ændrer værdier</string>
     <string name="settings_vibration_title">Tænd for vibration</string>
+    <string name="settings_vibration_summary">Vibrér når værdi ændres</string>
     <string name="settings_hard_title">Brug hardware-knapper</string>
+    <string name="settings_hard_summary">Ændr tællerværdi med hardware-knapper</string>
+    <string name="settings_label_increment_title">Tryk værdi for at inkrementere</string>
+    <string name="settings_label_increment_summary">Tryk på nuværende værdi for at inkrementere tæller</string>
     <string name="settings_other">Andet</string>
     <string name="settings_version_title">Version</string>
     <string name="settings_wipe_title">Fjern alle tællere</string>
