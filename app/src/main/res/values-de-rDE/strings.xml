@@ -53,6 +53,7 @@
     <string name="toast_wipe_success">Alle Zähler wurden entfernt</string>
     <string name="toast_remove_success">Zähler \"%s\" wurde entfernt.</string>
     <string name="toast_no_name_message">Bitte trage einen Namen ein</string>
+    <string name="toast_unable_to_modify">Etwas ist bei dem Aktualisieren des Zählers falsch gelaufen. Sorry!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Zähler hinzufügen</string>
     <string name="unknown">Unbekannt</string>

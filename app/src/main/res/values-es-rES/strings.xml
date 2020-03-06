@@ -53,6 +53,7 @@
     <string name="toast_wipe_success">Se han borrado todos los contadores.</string>
     <string name="toast_remove_success">Contador \"%s\" ha sido eliminado.</string>
     <string name="toast_no_name_message">¡Se requiere un nombre!</string>
+    <string name="toast_unable_to_modify">Algo ha salido mal al actualizar el contador. ¡Lo sentimos!</string>
     <!-- Other stuff -->
     <string name="default_counter_name">Nuevo contador</string>
     <string name="unknown">Desconocido</string>

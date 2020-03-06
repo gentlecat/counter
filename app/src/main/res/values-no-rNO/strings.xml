@@ -4,7 +4,7 @@
     <!-- General -->
     <string name="app_name">Teller</string>
     <!-- Menu -->
-    <string name="drawer_open">Åpn navigasjon</string>
+    <string name="drawer_open">Åpne navigasjon</string>
     <string name="drawer_close">Lukk navigasjon</string>
     <string name="menu_add">Legg til teller</string>
     <string name="menu_reset">Tilbakestill teller</string>
@@ -13,12 +13,14 @@
     <string name="menu_settings">Innstillinger</string>
     <string name="menu_info">Om</string>
     <!-- Dialogs -->
+    <string name="dialog_add_title">Legg til ny teller</string>
+    <string name="dialog_edit_title">Rediger denne telleren</string>
     <string name="dialog_delete_title">Har du virkelig lyst til å slette denne telleren?</string>
     <string name="dialog_reset_title">Har du virkelig lyst til å tilbakestille denne telleren?</string>
     <string name="dialog_edit_name">Tittel:</string>
     <string name="dialog_edit_value">Verdi:</string>
     <string name="dialog_button_add">Legg til</string>
-    <string name="dialog_button_apply">Påfør</string>
+    <string name="dialog_button_apply">Bruk</string>
     <string name="dialog_button_reset">Tilbakestill teller</string>
     <string name="dialog_button_delete">Slett teller</string>
     <string name="dialog_button_cancel">Avbryt</string>
@@ -29,10 +31,19 @@
     <string name="settings_theme">Tema</string>
     <string name="settings_theme_light">Lyst</string>
     <string name="settings_theme_dark">Mørkt</string>
+    <string name="settings_theme_auto_battery">Valgt av batterisparing</string>
+    <string name="settings_theme_system">Bruk systemstandard</string>
+    <string name="settings_keep_on_title">Hold skjermen på</string>
+    <string name="settings_keep_on_summary">Hold skjermen på når appen er i bruk</string>
     <string name="settings_controls">Kontroller</string>
     <string name="settings_sounds_title">Skru på lyder</string>
+    <string name="settings_sounds_summary">Spill av lyder når tellerverdien endres</string>
     <string name="settings_vibration_title">Skru på vibrasjon</string>
+    <string name="settings_vibration_summary">Vibrer når tellerverdien endres</string>
     <string name="settings_hard_title">Bruk maskinvareknapper</string>
+    <string name="settings_hard_summary">Endre tellerverdien ved å bruke volumknappene</string>
+    <string name="settings_label_increment_title">Trykk på tellerverdi for å øke</string>
+    <string name="settings_label_increment_summary">Øk telleren ved å trykke på gjeldende verdi</string>
     <string name="settings_other">Annet</string>
     <string name="settings_version_title">Versjon</string>
     <string name="settings_wipe_title">Slett alle tellerne</string>
@@ -42,6 +53,8 @@
     <string name="toast_wipe_success">Alle tellerne har blitt slettet.</string>
     <string name="toast_remove_success">Telleren \"%s\" har blitt slettet.</string>
     <string name="toast_no_name_message">Navn er påkrevet!</string>
+    <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
     <!-- Other stuff -->
+    <string name="default_counter_name">Ny teller</string>
     <string name="unknown">Ukjent</string>
 </resources>
