@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0-beta05'
+        classpath 'com.android.tools.build:gradle:4.0.0-beta01'
     }
 }
 
@@ -9,9 +9,9 @@ apply plugin: 'idea'
 
 dependencies {
 
-    implementation 'androidx.core:core:1.0.2'
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.preference:preference:1.1.0-beta01'
+    implementation 'androidx.core:core:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.preference:preference:1.1.0'
 
     compileOnly 'javax.annotation:jsr250-api:1.0'
     api 'javax.inject:javax.inject:1'
