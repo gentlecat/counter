@@ -29,9 +29,9 @@ public class EditDialog extends DialogFragment {
   private static final String BUNDLE_ARGUMENT_VALUE = "value";
 
   public static EditDialog newInstance(final @NonNull String counterName, int counterValue) {
-    EditDialog dialog = new EditDialog();
+    final EditDialog dialog = new EditDialog();
 
-    Bundle arguments = new Bundle();
+    final Bundle arguments = new Bundle();
     arguments.putString(BUNDLE_ARGUMENT_NAME, counterName);
     arguments.putInt(BUNDLE_ARGUMENT_VALUE, counterValue);
     dialog.setArguments(arguments);
@@ -48,7 +48,7 @@ public class EditDialog extends DialogFragment {
 
     final MainActivity activity = (MainActivity) getActivity();
 
-    View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_edit, null);
+    final View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_edit, null);
 
     final EditText nameInput = dialogView.findViewById(R.id.edit_name);
     nameInput.setText(oldName);
@@ -56,11 +56,11 @@ public class EditDialog extends DialogFragment {
     final EditText valueInput = dialogView.findViewById(R.id.edit_value);
     valueInput.setText(String.valueOf(oldValue));
     valueInput.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
-    InputFilter[] valueFilter = new InputFilter[1];
+    final InputFilter[] valueFilter = new InputFilter[1];
     valueFilter[0] = new InputFilter.LengthFilter(IntegerCounter.getValueCharLimit());
     valueInput.setFilters(valueFilter);
 
-    Dialog dialog =
+    final Dialog dialog =
         new AlertDialog.Builder(getActivity())
             .setView(dialogView)
             .setTitle(getString(R.string.dialog_edit_title))
@@ -79,13 +79,22 @@ public class EditDialog extends DialogFragment {
                     int newValue;
                     String valueInputContents = valueInput.getText().toString();
                     if (!valueInputContents.equals("")) {
-                      newValue = Integer.parseInt(valueInputContents);
+                      try {
+                        newValue = Integer.parseInt(valueInputContents);
+                      } catch (NumberFormatException e) {
+                        Log.w(TAG, "Unable to parse new value", e);
+                        Toast.makeText(
+                                activity,
+                                getResources().getText(R.string.toast_unable_to_modify),
+                                Toast.LENGTH_SHORT)
+                            .show();
+                        newValue = CounterFragment.DEFAULT_VALUE;
+                      }
                     } else {
                       newValue = CounterFragment.DEFAULT_VALUE;
                     }
 
-                    final CounterStorage storage =
-                        CounterApplication.getComponent().localStorage();
+                    final CounterStorage storage = CounterApplication.getComponent().localStorage();
 
                     storage.delete(oldName);
                     try {
