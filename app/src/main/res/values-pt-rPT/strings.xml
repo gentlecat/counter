@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- General -->
-    <string name="app_name">Contador</string>
-    <!-- Menu -->
-    <string name="drawer_open">Abrir a navegação</string>
-    <string name="drawer_close">Fechar a navegação</string>
-    <string name="menu_add">Adicionar contador</string>
-    <string name="menu_reset">Repor contador</string>
-    <string name="menu_edit">Editar o contador</string>
-    <string name="menu_delete">Apagar contador</string>
-    <string name="menu_settings">Definições</string>
-    <string name="menu_info">Acerca</string>
-    <!-- Dialogs -->
-    <string name="dialog_add_title">Adicionar um novo contador</string>
-    <string name="dialog_edit_title">Editar este contador</string>
-    <string name="dialog_delete_title">Deseja mesmo apagar este contador?</string>
-    <string name="dialog_reset_title">Deseja mesmo repor este contador?</string>
-    <string name="dialog_edit_name">Título:</string>
-    <string name="dialog_edit_value">Valor:</string>
-    <string name="dialog_button_add">Adicionar</string>
-    <string name="dialog_button_apply">Aplicar</string>
-    <string name="dialog_button_reset">Repor</string>
-    <string name="dialog_button_delete">Apagar</string>
-    <string name="dialog_button_cancel">Cancelar</string>
-    <string name="dialog_button_close">Fechar</string>
-    <!-- Settings -->
-    <string name="settings_title">Definições</string>
-    <string name="settings_display">Ecrã</string>
-    <string name="settings_theme">Tema</string>
-    <string name="settings_theme_light">Claro</string>
-    <string name="settings_theme_dark">Escuro</string>
-    <string name="settings_theme_auto_battery">Definir por Economia de bateria</string>
-    <string name="settings_theme_system">Usar padrão do sistema</string>
-    <string name="settings_keep_on_title">Manter o ecrã ligado</string>
-    <string name="settings_keep_on_summary">Manter o ecrã ligado enquanto a aplicação está ativa</string>
-    <string name="settings_controls">Controlos</string>
-    <string name="settings_sounds_title">Ativar sons</string>
-    <string name="settings_sounds_summary">Reproduzir sons ao alterar valores</string>
-    <string name="settings_vibration_title">Ativar vibração</string>
-    <string name="settings_vibration_summary">Vibrar nas alterações de valor</string>
-    <string name="settings_hard_title">Usar botões de hardware</string>
-    <string name="settings_hard_summary">Alterar o valor do contador usando os botões de volume</string>
-    <string name="settings_label_increment_title">Tocar no valor para incrementar</string>
-    <string name="settings_label_increment_summary">Incrementar um contador tocando no valor atual</string>
-    <string name="settings_other">Outros</string>
-    <string name="settings_version_title">Versão</string>
-    <string name="settings_wipe_title">Remover todos os contadores</string>
-    <string name="settings_wipe_confirmation">Deseja mesmo remover todos os contadores?</string>
-    <string name="settings_wipe_confirmation_yes">Remover todos</string>
-    <!-- Toasts -->
-    <string name="toast_wipe_success">Todos os contadores foram removidos.</string>
-    <string name="toast_remove_success">O contador \"%s\" foi removido.</string>
-    <string name="toast_no_name_message">Nome é necessário!</string>
-    <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
-    <!-- Other stuff -->
-    <string name="default_counter_name">Novo contador</string>
-    <string name="unknown">Desconhecido</string>
+  <!-- General -->
+  <string name="app_name">Contador</string>
+  <!-- Menu -->
+  <string name="drawer_open">Abrir a navegação</string>
+  <string name="drawer_close">Fechar a navegação</string>
+  <string name="menu_add">Adicionar contador</string>
+  <string name="menu_reset">Repor contador</string>
+  <string name="menu_edit">Editar o contador</string>
+  <string name="menu_delete">Apagar contador</string>
+  <string name="menu_settings">Definições</string>
+  <string name="menu_info">Acerca</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">Adicionar um novo contador</string>
+  <string name="dialog_edit_title">Editar este contador</string>
+  <string name="dialog_delete_title">Deseja mesmo apagar este contador?</string>
+  <string name="dialog_reset_title">Deseja mesmo repor este contador?</string>
+  <string name="dialog_edit_name">Título:</string>
+  <string name="dialog_edit_value">Valor:</string>
+  <string name="dialog_button_add">Adicionar</string>
+  <string name="dialog_button_apply">Aplicar</string>
+  <string name="dialog_button_reset">Repor</string>
+  <string name="dialog_button_delete">Apagar</string>
+  <string name="dialog_button_cancel">Cancelar</string>
+  <string name="dialog_button_close">Fechar</string>
+  <!-- Settings -->
+  <string name="settings_title">Definições</string>
+  <string name="settings_display">Ecrã</string>
+  <string name="settings_theme">Tema</string>
+  <string name="settings_theme_light">Claro</string>
+  <string name="settings_theme_dark">Escuro</string>
+  <string name="settings_theme_auto_battery">Definir por Economia de bateria</string>
+  <string name="settings_theme_system">Usar padrão do sistema</string>
+  <string name="settings_keep_on_title">Manter o ecrã ligado</string>
+  <string name="settings_keep_on_summary">Manter o ecrã ligado enquanto a aplicação está ativa</string>
+  <string name="settings_controls">Controlos</string>
+  <string name="settings_sounds_title">Ativar sons</string>
+  <string name="settings_sounds_summary">Reproduzir sons ao alterar valores</string>
+  <string name="settings_vibration_title">Ativar vibração</string>
+  <string name="settings_vibration_summary">Vibrar nas alterações de valor</string>
+  <string name="settings_hard_title">Usar botões de hardware</string>
+  <string name="settings_hard_summary">Alterar o valor do contador usando os botões de volume</string>
+  <string name="settings_label_increment_title">Tocar no valor para incrementar</string>
+  <string name="settings_label_increment_summary">Incrementar um contador tocando no valor atual</string>
+  <string name="settings_other">Outros</string>
+  <string name="settings_version_title">Versão</string>
+  <string name="settings_wipe_title">Remover todos os contadores</string>
+  <string name="settings_wipe_confirmation">Deseja mesmo remover todos os contadores?</string>
+  <string name="settings_wipe_confirmation_yes">Remover todos</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Todos os contadores foram removidos.</string>
+  <string name="toast_remove_success">O contador \"%s\" foi removido.</string>
+  <string name="toast_no_name_message">Nome é necessário!</string>
+  <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">Novo contador</string>
+  <string name="unknown">Desconhecido</string>
 </resources>
