@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- General -->
-    <string name="app_name">Counter</string>
-    <!-- Menu -->
-    <string name="drawer_open">Ouvrir la navigation</string>
-    <string name="drawer_close">Fermer la navigation</string>
-    <string name="menu_add">Ajouter un compteur</string>
-    <string name="menu_reset">Réinitialiser</string>
-    <string name="menu_edit">Modifier le compteur</string>
-    <string name="menu_delete">Supprimer</string>
-    <string name="menu_settings">Paramètres</string>
-    <string name="menu_info">À propos</string>
-    <!-- Dialogs -->
-    <string name="dialog_add_title">Ajouter un nouveau compteur</string>
-    <string name="dialog_edit_title">Modifier ce compteur</string>
-    <string name="dialog_delete_title">Voulez-vous vraiment supprimer ce compteur ?</string>
-    <string name="dialog_reset_title">Voulez-vous vraiment réinitialiser ce compteur ?</string>
-    <string name="dialog_edit_name">Titre :</string>
-    <string name="dialog_edit_value">Valeur :</string>
-    <string name="dialog_button_add">Ajouter</string>
-    <string name="dialog_button_apply">Appliquer</string>
-    <string name="dialog_button_reset">Réinitialiser</string>
-    <string name="dialog_button_delete">Supprimer</string>
-    <string name="dialog_button_cancel">Annuler</string>
-    <string name="dialog_button_close">Fermer</string>
-    <!-- Settings -->
-    <string name="settings_title">Paramètres</string>
-    <string name="settings_display">Affichage</string>
-    <string name="settings_theme">Thèmes</string>
-    <string name="settings_theme_light">Clair</string>
-    <string name="settings_theme_dark">Sombre</string>
-    <string name="settings_theme_auto_battery">Définir par l\'économiseur de batterie</string>
-    <string name="settings_theme_system">Utiliser la valeur système par défaut</string>
-    <string name="settings_keep_on_title">Garder l\'écran allumé</string>
-    <string name="settings_keep_on_summary">Garder l\'écran allumé lorsque l\'application est active</string>
-    <string name="settings_controls">Contrôles</string>
-    <string name="settings_sounds_title">Activer les sons</string>
-    <string name="settings_sounds_summary">Jouer des sons lors du changement de valeurs</string>
-    <string name="settings_vibration_title">Activer le vibreur</string>
-    <string name="settings_vibration_summary">Vibrer sur les changements de valeur</string>
-    <string name="settings_hard_title">Utilisez les boutons matériels</string>
-    <string name="settings_hard_summary">Changer la valeur du compteur à l’aide des boutons de volume</string>
-    <string name="settings_label_increment_title">Tapez une valeur pour incrémenter</string>
-    <string name="settings_label_increment_summary">Incrémenter un compteur en tapant la valeur actuelle</string>
-    <string name="settings_other">Autres</string>
-    <string name="settings_version_title">Version</string>
-    <string name="settings_wipe_title">Supprimer tous les compteurs</string>
-    <string name="settings_wipe_confirmation">Voulez-vous vraiment supprimer tous les compteurs ?</string>
-    <string name="settings_wipe_confirmation_yes">Tout supprimer</string>
-    <!-- Toasts -->
-    <string name="toast_wipe_success">Tous les compteurs ont été supprimés.</string>
-    <string name="toast_remove_success">Le compteur \"%s\" a été supprimé.</string>
-    <string name="toast_no_name_message">S\'il vous plaît, entrez le nom.</string>
-    <string name="toast_unable_to_modify">Une erreur s\'est produite lors de la mise à jour du compteur. Désolé !</string>
-    <!-- Other stuff -->
-    <string name="default_counter_name">Nouveau compteur</string>
-    <string name="unknown">Inconnu</string>
+  <!-- General -->
+  <string name="app_name">Counter</string>
+  <!-- Menu -->
+  <string name="drawer_open">Ouvrir la navigation</string>
+  <string name="drawer_close">Fermer la navigation</string>
+  <string name="menu_add">Ajouter un compteur</string>
+  <string name="menu_reset">Réinitialiser</string>
+  <string name="menu_edit">Modifier le compteur</string>
+  <string name="menu_delete">Supprimer</string>
+  <string name="menu_settings">Paramètres</string>
+  <string name="menu_info">À propos</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">Ajouter un nouveau compteur</string>
+  <string name="dialog_edit_title">Modifier ce compteur</string>
+  <string name="dialog_delete_title">Voulez-vous vraiment supprimer ce compteur ?</string>
+  <string name="dialog_reset_title">Voulez-vous vraiment réinitialiser ce compteur ?</string>
+  <string name="dialog_edit_name">Titre :</string>
+  <string name="dialog_edit_value">Valeur :</string>
+  <string name="dialog_button_add">Ajouter</string>
+  <string name="dialog_button_apply">Appliquer</string>
+  <string name="dialog_button_reset">Réinitialiser</string>
+  <string name="dialog_button_delete">Supprimer</string>
+  <string name="dialog_button_cancel">Annuler</string>
+  <string name="dialog_button_close">Fermer</string>
+  <!-- Settings -->
+  <string name="settings_title">Paramètres</string>
+  <string name="settings_display">Affichage</string>
+  <string name="settings_theme">Thèmes</string>
+  <string name="settings_theme_light">Clair</string>
+  <string name="settings_theme_dark">Sombre</string>
+  <string name="settings_theme_auto_battery">Définir par l\'économiseur de batterie</string>
+  <string name="settings_theme_system">Utiliser la valeur système par défaut</string>
+  <string name="settings_keep_on_title">Garder l\'écran allumé</string>
+  <string name="settings_keep_on_summary">Garder l\'écran allumé lorsque l\'application est active</string>
+  <string name="settings_controls">Contrôles</string>
+  <string name="settings_sounds_title">Activer les sons</string>
+  <string name="settings_sounds_summary">Jouer des sons lors du changement de valeurs</string>
+  <string name="settings_vibration_title">Activer le vibreur</string>
+  <string name="settings_vibration_summary">Vibrer sur les changements de valeur</string>
+  <string name="settings_hard_title">Utilisez les boutons matériels</string>
+  <string name="settings_hard_summary">Changer la valeur du compteur à l’aide des boutons de volume</string>
+  <string name="settings_label_increment_title">Tapez une valeur pour incrémenter</string>
+  <string name="settings_label_increment_summary">Incrémenter un compteur en tapant la valeur actuelle</string>
+  <string name="settings_other">Autres</string>
+  <string name="settings_version_title">Version</string>
+  <string name="settings_wipe_title">Supprimer tous les compteurs</string>
+  <string name="settings_wipe_confirmation">Voulez-vous vraiment supprimer tous les compteurs ?</string>
+  <string name="settings_wipe_confirmation_yes">Tout supprimer</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Tous les compteurs ont été supprimés.</string>
+  <string name="toast_remove_success">Le compteur \"%s\" a été supprimé.</string>
+  <string name="toast_no_name_message">S\'il vous plaît, entrez le nom.</string>
+  <string name="toast_unable_to_modify">Une erreur s\'est produite lors de la mise à jour du compteur. Désolé !</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">Nouveau compteur</string>
+  <string name="unknown">Inconnu</string>
 </resources>
