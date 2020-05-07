@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- General -->
-    <!-- Menu -->
-    <!-- Dialogs -->
-    <!-- Settings -->
-    <!-- Toasts -->
-    <!-- Other stuff -->
+  <!-- General -->
+  <!-- Menu -->
+  <!-- Dialogs -->
+  <!-- Settings -->
+  <!-- Toasts -->
+  <!-- Other stuff -->
 </resources>

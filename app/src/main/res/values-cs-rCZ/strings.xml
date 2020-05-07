@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- General -->
-    <string name="app_name">Počítadlo</string>
-    <!-- Menu -->
-    <string name="menu_add">Přidat počítadlo</string>
-    <string name="menu_reset">Vymazat</string>
-    <string name="menu_edit">Upravit počítadlo</string>
-    <string name="menu_delete">Smazat</string>
-    <string name="menu_settings">Nastavení</string>
-    <string name="menu_info">O aplikaci</string>
-    <!-- Dialogs -->
-    <string name="dialog_delete_title">Opravdu chcete smazat toto počítadlo?</string>
-    <string name="dialog_reset_title">Jste si jistí, že chcete počítadlo obnovit?</string>
-    <string name="dialog_edit_name">Název:</string>
-    <string name="dialog_edit_value">Hodnota:</string>
-    <string name="dialog_button_add">Přidat</string>
-    <string name="dialog_button_apply">Použít</string>
-    <string name="dialog_button_reset">Vymazat</string>
-    <string name="dialog_button_delete">Smazat</string>
-    <string name="dialog_button_cancel">Zrušit</string>
-    <string name="dialog_button_close">Zavřít</string>
-    <!-- Settings -->
-    <string name="settings_title">Nastavení</string>
-    <string name="settings_display">Displej</string>
-    <string name="settings_theme">Motiv</string>
-    <string name="settings_theme_light">Světlý</string>
-    <string name="settings_theme_dark">Tmavý</string>
-    <string name="settings_controls">Ovládání</string>
-    <string name="settings_sounds_title">Zapnout zvuky</string>
-    <string name="settings_vibration_title">Zapnout vibrace</string>
-    <string name="settings_hard_title">Používat hardwarová tlačítka</string>
-    <string name="settings_other">Ostatní</string>
-    <string name="settings_version_title">Verze</string>
-    <string name="settings_wipe_title">Odstranit všechna počítadla</string>
-    <string name="settings_wipe_confirmation">Jste si jistí, že chcete odstranit všechna počítadla?</string>
-    <string name="settings_wipe_confirmation_yes">Odstranit vše</string>
-    <!-- Toasts -->
-    <string name="toast_wipe_success">Všechna počítadla byla odstraněna.</string>
-    <string name="toast_remove_success">Počítadlo \"%s\" bylo odstraněno.</string>
-    <string name="toast_no_name_message">Prosím, vložte jméno.</string>
-    <!-- Other stuff -->
-    <string name="unknown">Neznámé</string>
+  <!-- General -->
+  <string name="app_name">Počítadlo</string>
+  <!-- Menu -->
+  <string name="menu_add">Přidat počítadlo</string>
+  <string name="menu_reset">Vymazat</string>
+  <string name="menu_edit">Upravit počítadlo</string>
+  <string name="menu_delete">Smazat</string>
+  <string name="menu_settings">Nastavení</string>
+  <string name="menu_info">O aplikaci</string>
+  <!-- Dialogs -->
+  <string name="dialog_delete_title">Opravdu chcete smazat toto počítadlo?</string>
+  <string name="dialog_reset_title">Jste si jistí, že chcete počítadlo obnovit?</string>
+  <string name="dialog_edit_name">Název:</string>
+  <string name="dialog_edit_value">Hodnota:</string>
+  <string name="dialog_button_add">Přidat</string>
+  <string name="dialog_button_apply">Použít</string>
+  <string name="dialog_button_reset">Vymazat</string>
+  <string name="dialog_button_delete">Smazat</string>
+  <string name="dialog_button_cancel">Zrušit</string>
+  <string name="dialog_button_close">Zavřít</string>
+  <!-- Settings -->
+  <string name="settings_title">Nastavení</string>
+  <string name="settings_display">Displej</string>
+  <string name="settings_theme">Motiv</string>
+  <string name="settings_theme_light">Světlý</string>
+  <string name="settings_theme_dark">Tmavý</string>
+  <string name="settings_controls">Ovládání</string>
+  <string name="settings_sounds_title">Zapnout zvuky</string>
+  <string name="settings_vibration_title">Zapnout vibrace</string>
+  <string name="settings_hard_title">Používat hardwarová tlačítka</string>
+  <string name="settings_other">Ostatní</string>
+  <string name="settings_version_title">Verze</string>
+  <string name="settings_wipe_title">Odstranit všechna počítadla</string>
+  <string name="settings_wipe_confirmation">Jste si jistí, že chcete odstranit všechna počítadla?</string>
+  <string name="settings_wipe_confirmation_yes">Odstranit vše</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Všechna počítadla byla odstraněna.</string>
+  <string name="toast_remove_success">Počítadlo \"%s\" bylo odstraněno.</string>
+  <string name="toast_no_name_message">Prosím, vložte jméno.</string>
+  <!-- Other stuff -->
+  <string name="unknown">Neznámé</string>
 </resources>
