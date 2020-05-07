@@ -3,28 +3,32 @@ package me.tsukanov.counter.view.dialogs;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.Toast;
-import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
+import me.tsukanov.counter.activities.MainActivity;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.domain.exception.CounterException;
 import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.CounterStorage;
 import me.tsukanov.counter.view.CounterFragment;
 
 public class AddDialog extends DialogFragment {
 
+  public static final String TAG = AddDialog.class.getSimpleName();
+
   @NonNull
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+    final MainActivity activity = (MainActivity) getActivity();
 
     final View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_edit, null);
 
@@ -55,7 +59,17 @@ public class AddDialog extends DialogFragment {
                   int value;
                   final String valueInputContents = valueInput.getText().toString().trim();
                   if (!valueInputContents.isEmpty()) {
-                    value = Integer.parseInt(valueInputContents);
+                    try {
+                      value = Integer.parseInt(valueInputContents);
+                    } catch (NumberFormatException e) {
+                      Log.w(TAG, "Unable to parse new value", e);
+                      Toast.makeText(
+                              activity,
+                              getResources().getText(R.string.toast_unable_to_modify),
+                              Toast.LENGTH_SHORT)
+                          .show();
+                      value = CounterFragment.DEFAULT_VALUE;
+                    }
                   } else {
                     value = CounterFragment.DEFAULT_VALUE;
                   }

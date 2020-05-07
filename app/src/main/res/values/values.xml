@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <!-- Theme variants -->
-    <string-array name="themeSelectionEntries">
-        <item>@string/settings_theme_light</item>
-        <item>@string/settings_theme_dark</item>
-        <item>@string/settings_theme_auto_battery</item>
-        <item>@string/settings_theme_system</item>
-    </string-array>
-    <string-array name="themeSelectionValues">
-        <item>light</item>
-        <item>dark</item>
-        <item>auto</item>
-        <item>system</item>
-    </string-array>
+  <!-- Theme variants -->
+  <string-array name="themeSelectionEntries">
+    <item>@string/settings_theme_light</item>
+    <item>@string/settings_theme_dark</item>
+    <item>@string/settings_theme_auto_battery</item>
+    <item>@string/settings_theme_system</item>
+  </string-array>
+  <string-array name="themeSelectionValues">
+    <item>light</item>
+    <item>dark</item>
+    <item>auto</item>
+    <item>system</item>
+  </string-array>
 
 </resources>

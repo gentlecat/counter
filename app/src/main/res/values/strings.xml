@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <!-- General -->
-    <string name="app_name">Counter</string>
-    <string name="plus" translatable="false">+</string>
-    <string name="minus" translatable="false">-</string>
+  <!-- General -->
+  <string name="app_name">Counter</string>
+  <string name="plus" translatable="false">+</string>
+  <string name="minus" translatable="false">-</string>
 
-    <!-- Menu -->
-    <string name="drawer_open">Open navigation</string>
-    <string name="drawer_close">Close navigation</string>
-    <string name="menu_add">Add counter</string>
-    <string name="menu_reset">Reset counter</string>
-    <string name="menu_edit">Edit counter</string>
-    <string name="menu_delete">Delete counter</string>
-    <string name="menu_settings">Settings</string>
-    <string name="menu_info">About</string>
+  <!-- Menu -->
+  <string name="drawer_open">Open navigation</string>
+  <string name="drawer_close">Close navigation</string>
+  <string name="menu_add">Add counter</string>
+  <string name="menu_reset">Reset counter</string>
+  <string name="menu_edit">Edit counter</string>
+  <string name="menu_delete">Delete counter</string>
+  <string name="menu_settings">Settings</string>
+  <string name="menu_info">About</string>
 
-    <!-- Dialogs -->
-    <string name="dialog_add_title">Add a new counter</string>
-    <string name="dialog_edit_title">Edit this counter</string>
-    <string name="dialog_delete_title">Do you really want to delete this counter?</string>
-    <string name="dialog_reset_title">Do you really want reset this counter?</string>
-    <string name="dialog_edit_name">Title:</string>
-    <string name="dialog_edit_value">Value:</string>
-    <string name="dialog_button_add">Add</string>
-    <string name="dialog_button_apply">Apply</string>
-    <string name="dialog_button_reset">Reset</string>
-    <string name="dialog_button_delete">Delete</string>
-    <string name="dialog_button_cancel">Cancel</string>
-    <string name="dialog_button_close">Close</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">Add a new counter</string>
+  <string name="dialog_edit_title">Edit this counter</string>
+  <string name="dialog_delete_title">Do you really want to delete this counter?</string>
+  <string name="dialog_reset_title">Do you really want reset this counter?</string>
+  <string name="dialog_edit_name">Title:</string>
+  <string name="dialog_edit_value">Value:</string>
+  <string name="dialog_button_add">Add</string>
+  <string name="dialog_button_apply">Apply</string>
+  <string name="dialog_button_reset">Reset</string>
+  <string name="dialog_button_delete">Delete</string>
+  <string name="dialog_button_cancel">Cancel</string>
+  <string name="dialog_button_close">Close</string>
 
-    <!-- Settings -->
-    <string name="settings_title">Settings</string>
-    <string name="settings_display">Display</string>
-    <string name="settings_theme">Theme</string>
-    <string name="settings_theme_light">Light</string>
-    <string name="settings_theme_dark">Dark</string>
-    <string name="settings_theme_auto_battery">Set by Battery Saver</string>
-    <string name="settings_theme_system">Use system default</string>
-    <string name="settings_keep_on_title">Keep the screen on</string>
-    <string name="settings_keep_on_summary">Keep the screen on while app is active</string>
-    <string name="settings_controls">Controls</string>
-    <string name="settings_sounds_title">Turn on sounds</string>
-    <string name="settings_sounds_summary">Play sounds when changing values</string>
-    <string name="settings_vibration_title">Turn on vibration</string>
-    <string name="settings_vibration_summary">Vibrate on value changes</string>
-    <string name="settings_hard_title">Use hardware buttons</string>
-    <string name="settings_hard_summary">Change counter value using volume buttons</string>
-    <string name="settings_label_increment_title">Tap value to increment</string>
-    <string name="settings_label_increment_summary">Increment a counter by tapping the current value</string>
-    <string name="settings_other">Other</string>
-    <string name="settings_version_title">Version</string>
-    <string name="settings_wipe_title">Remove all counters</string>
-    <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
-    <string name="settings_wipe_confirmation_yes">Remove all</string>
+  <!-- Settings -->
+  <string name="settings_title">Settings</string>
+  <string name="settings_display">Display</string>
+  <string name="settings_theme">Theme</string>
+  <string name="settings_theme_light">Light</string>
+  <string name="settings_theme_dark">Dark</string>
+  <string name="settings_theme_auto_battery">Set by Battery Saver</string>
+  <string name="settings_theme_system">Use system default</string>
+  <string name="settings_keep_on_title">Keep the screen on</string>
+  <string name="settings_keep_on_summary">Keep the screen on while app is active</string>
+  <string name="settings_controls">Controls</string>
+  <string name="settings_sounds_title">Turn on sounds</string>
+  <string name="settings_sounds_summary">Play sounds when changing values</string>
+  <string name="settings_vibration_title">Turn on vibration</string>
+  <string name="settings_vibration_summary">Vibrate on value changes</string>
+  <string name="settings_hard_title">Use hardware buttons</string>
+  <string name="settings_hard_summary">Change counter value using volume buttons</string>
+  <string name="settings_label_increment_title">Tap value to increment</string>
+  <string name="settings_label_increment_summary">Increment a counter by tapping the current value</string>
+  <string name="settings_other">Other</string>
+  <string name="settings_version_title">Version</string>
+  <string name="settings_wipe_title">Remove all counters</string>
+  <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
+  <string name="settings_wipe_confirmation_yes">Remove all</string>
 
-    <!-- Toasts -->
-    <string name="toast_wipe_success">All counters have been removed.</string>
-    <string name="toast_remove_success">Counter \"%s\" has been removed.</string>
-    <string name="toast_no_name_message">Name is required!</string>
-    <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">All counters have been removed.</string>
+  <string name="toast_remove_success">Counter \"%s\" has been removed.</string>
+  <string name="toast_no_name_message">Name is required!</string>
+  <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
 
-    <!-- Other stuff -->
-    <string name="default_counter_name">New counter</string>
-    <string name="unknown">Unknown</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">New counter</string>
+  <string name="unknown">Unknown</string>
 
 </resources>

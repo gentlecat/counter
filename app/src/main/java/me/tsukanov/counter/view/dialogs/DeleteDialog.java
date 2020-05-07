@@ -45,7 +45,7 @@ public class DeleteDialog extends DialogFragment {
                   storage.delete(name);
 
                   // Switch to a different counter
-                  new BroadcastHelper(Objects.requireNonNull(getContext()))
+                  new BroadcastHelper(requireContext())
                       .sendSelectCounterBroadcast(storage.getFirst().getName());
                 })
             .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)

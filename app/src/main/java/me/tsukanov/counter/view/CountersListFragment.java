@@ -53,26 +53,17 @@ public class CountersListFragment extends ListFragment {
     final IntentFilter counterSetChangeFilter =
         new IntentFilter(Actions.COUNTER_SET_CHANGE.getActionName());
     counterSetChangeFilter.addCategory(Intent.CATEGORY_DEFAULT);
-    Objects.requireNonNull(getActivity()).getApplication()
+    requireActivity()
+        .getApplication()
         .registerReceiver(new UpdateReceiver(), counterSetChangeFilter);
   }
 
   @Override
-  public void onListItemClick(@NonNull final ListView lv, @NonNull final View v, final int position, final long id) {
-    //    CounterFragment newContent = new CounterFragment(adapter.getItem(position).getName());
-    //    if (newContent != null) switchCounterFragment(newContent);
-
-    new BroadcastHelper(this.getContext())
+  public void onListItemClick(
+      @NonNull final ListView lv, @NonNull final View v, final int position, final long id) {
+    new BroadcastHelper(this.requireContext())
         .sendSelectCounterBroadcast(listAdapter.getItem(position).getName());
   }
-
-  //  private void switchCounterFragment(CounterFragment fragment) {
-  //    if (getActivity() == null) return;
-  //    if (getActivity() instanceof MainActivity) {
-  //      MainActivity ra = (MainActivity) getActivity();
-  //      ra.switchCounterFragment(fragment);
-  //    }
-  //  }
 
   private void updateList() {
     if (!isFragmentActive()) return;
@@ -88,8 +79,7 @@ public class CountersListFragment extends ListFragment {
 
   private void showAddDialog() {
     final AddDialog dialog = new AddDialog();
-    assert getFragmentManager() != null;
-    dialog.show(getFragmentManager(), TAG);
+    dialog.show(getParentFragmentManager(), TAG);
   }
 
   private class UpdateReceiver extends BroadcastReceiver {

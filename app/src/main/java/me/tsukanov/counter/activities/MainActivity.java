@@ -17,12 +17,12 @@ import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
+import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
@@ -147,11 +147,14 @@ public class MainActivity extends AppCompatActivity {
 
     final String savedActiveCounter =
         sharedPrefs.getString(SharedPrefKeys.ACTIVE_COUNTER.getName(), null);
+
     // Checking whether it still exists...
-    try {
-      return storage.read(savedActiveCounter);
-    } catch (MissingCounterException e) {
-      // No need to do anything.
+    if (savedActiveCounter != null) {
+      try {
+        return storage.read(savedActiveCounter);
+      } catch (MissingCounterException e) {
+        // No need to do anything.
+      }
     }
 
     return storage.readAll(true).get(0);

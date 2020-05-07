@@ -70,7 +70,7 @@ public class CounterFragment extends Fragment {
     restoreSavedState(savedInstanceState);
 
     vibrator =
-        (Vibrator) Objects.requireNonNull(getActivity()).getSystemService(Context.VIBRATOR_SERVICE);
+        (Vibrator) requireActivity().getSystemService(Context.VIBRATOR_SERVICE);
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
     initCounter();
@@ -82,7 +82,7 @@ public class CounterFragment extends Fragment {
     final CounterStorage<IntegerCounter> storage = CounterApplication.getComponent().localStorage();
     try {
       final String requestedCounter =
-          Objects.requireNonNull(getArguments()).getString(COUNTER_NAME_ATTRIBUTE);
+          requireArguments().getString(COUNTER_NAME_ATTRIBUTE);
       if (requestedCounter == null) {
         this.counter = storage.readAll(true).get(0);
         return;
@@ -151,7 +151,7 @@ public class CounterFragment extends Fragment {
   @Override
   public void onPrepareOptionsMenu(@NonNull final Menu menu) {
     boolean isDrawerOpen =
-        ((MainActivity) Objects.requireNonNull(getActivity())).isNavigationOpen();
+        ((MainActivity) requireActivity()).isNavigationOpen();
 
     MenuItem editItem = menu.findItem(R.id.menu_edit);
     editItem.setVisible(!isDrawerOpen);
@@ -217,12 +217,12 @@ public class CounterFragment extends Fragment {
 
   private void showEditDialog() {
     final EditDialog dialog = EditDialog.newInstance(counter.getName(), counter.getValue());
-    dialog.show(Objects.requireNonNull(getFragmentManager()), EditDialog.TAG);
+    dialog.show(getParentFragmentManager(), EditDialog.TAG);
   }
 
   private void showDeleteDialog() {
     final DeleteDialog dialog = DeleteDialog.newInstance(counter.getName());
-    dialog.show(Objects.requireNonNull(getFragmentManager()), DeleteDialog.TAG);
+    dialog.show(getParentFragmentManager(), DeleteDialog.TAG);
   }
 
   private void increment() {
