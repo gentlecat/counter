@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- General -->
-    <string name="app_name">計數器</string>
-    <!-- Menu -->
-    <string name="drawer_open">開啟側邊選單</string>
-    <string name="drawer_close">關閉側邊選單</string>
-    <string name="menu_add">新增計數器</string>
-    <string name="menu_reset">歸零計數器</string>
-    <string name="menu_edit">編輯計數器</string>
-    <string name="menu_delete">刪除計數器</string>
-    <string name="menu_settings">設定</string>
-    <string name="menu_info">關於</string>
-    <!-- Dialogs -->
-    <string name="dialog_add_title">新增計數器</string>
-    <string name="dialog_edit_title">編輯此計數器</string>
-    <string name="dialog_delete_title">您確定要刪除此計數器嗎？</string>
-    <string name="dialog_reset_title">您確定要歸零此計數器嗎？</string>
-    <string name="dialog_edit_name">標題：</string>
-    <string name="dialog_edit_value">數值：</string>
-    <string name="dialog_button_add">新增</string>
-    <string name="dialog_button_apply">套用</string>
-    <string name="dialog_button_reset">歸零</string>
-    <string name="dialog_button_delete">刪除</string>
-    <string name="dialog_button_cancel">取消</string>
-    <string name="dialog_button_close">關閉</string>
-    <!-- Settings -->
-    <string name="settings_title">設定</string>
-    <string name="settings_display">顯示</string>
-    <string name="settings_theme">佈景主題</string>
-    <string name="settings_theme_light">亮色</string>
-    <string name="settings_theme_dark">暗色</string>
-    <string name="settings_theme_auto_battery">以省電模式決定</string>
-    <string name="settings_theme_system">採用系統預設值</string>
-    <string name="settings_keep_on_title">保持螢幕開啟</string>
-    <string name="settings_keep_on_summary">程式若在使用中則保持螢幕開啟</string>
-    <string name="settings_controls">控制</string>
-    <string name="settings_sounds_title">開啟音效</string>
-    <string name="settings_sounds_summary">數值改變時播放音效</string>
-    <string name="settings_vibration_title">開啟震動</string>
-    <string name="settings_vibration_summary">數值改變時震動</string>
-    <string name="settings_hard_title">使用硬體按鍵</string>
-    <string name="settings_hard_summary">透過音量鍵改變計數器數值</string>
-    <string name="settings_label_increment_title">透過輕敲數值來增加</string>
-    <string name="settings_label_increment_summary">透過輕敲目前數值來增加計數器的數值</string>
-    <string name="settings_other">其他</string>
-    <string name="settings_version_title">版本</string>
-    <string name="settings_wipe_title">刪除全部計數器</string>
-    <string name="settings_wipe_confirmation">您確定要刪除全部計數器嗎？</string>
-    <string name="settings_wipe_confirmation_yes">刪除全部</string>
-    <!-- Toasts -->
-    <string name="toast_wipe_success">全部計數器皆已刪除。</string>
-    <string name="toast_remove_success">「%s」計數器已刪除。</string>
-    <string name="toast_no_name_message">標題必填！</string>
-    <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
-    <!-- Other stuff -->
-    <string name="default_counter_name">新計數器</string>
-    <string name="unknown">不明</string>
+  <!-- General -->
+  <string name="app_name">計數器</string>
+  <!-- Menu -->
+  <string name="drawer_open">開啟側邊選單</string>
+  <string name="drawer_close">關閉側邊選單</string>
+  <string name="menu_add">新增計數器</string>
+  <string name="menu_reset">歸零計數器</string>
+  <string name="menu_edit">編輯計數器</string>
+  <string name="menu_delete">刪除計數器</string>
+  <string name="menu_settings">設定</string>
+  <string name="menu_info">關於</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">新增計數器</string>
+  <string name="dialog_edit_title">編輯此計數器</string>
+  <string name="dialog_delete_title">您確定要刪除此計數器嗎？</string>
+  <string name="dialog_reset_title">您確定要歸零此計數器嗎？</string>
+  <string name="dialog_edit_name">標題：</string>
+  <string name="dialog_edit_value">數值：</string>
+  <string name="dialog_button_add">新增</string>
+  <string name="dialog_button_apply">套用</string>
+  <string name="dialog_button_reset">歸零</string>
+  <string name="dialog_button_delete">刪除</string>
+  <string name="dialog_button_cancel">取消</string>
+  <string name="dialog_button_close">關閉</string>
+  <!-- Settings -->
+  <string name="settings_title">設定</string>
+  <string name="settings_display">顯示</string>
+  <string name="settings_theme">佈景主題</string>
+  <string name="settings_theme_light">亮色</string>
+  <string name="settings_theme_dark">暗色</string>
+  <string name="settings_theme_auto_battery">以省電模式決定</string>
+  <string name="settings_theme_system">採用系統預設值</string>
+  <string name="settings_keep_on_title">保持螢幕開啟</string>
+  <string name="settings_keep_on_summary">程式若在使用中則保持螢幕開啟</string>
+  <string name="settings_controls">控制</string>
+  <string name="settings_sounds_title">開啟音效</string>
+  <string name="settings_sounds_summary">數值改變時播放音效</string>
+  <string name="settings_vibration_title">開啟震動</string>
+  <string name="settings_vibration_summary">數值改變時震動</string>
+  <string name="settings_hard_title">使用硬體按鍵</string>
+  <string name="settings_hard_summary">透過音量鍵改變計數器數值</string>
+  <string name="settings_label_increment_title">透過輕敲數值來增加</string>
+  <string name="settings_label_increment_summary">透過輕敲目前數值來增加計數器的數值</string>
+  <string name="settings_other">其他</string>
+  <string name="settings_version_title">版本</string>
+  <string name="settings_wipe_title">刪除全部計數器</string>
+  <string name="settings_wipe_confirmation">您確定要刪除全部計數器嗎？</string>
+  <string name="settings_wipe_confirmation_yes">刪除全部</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">全部計數器皆已刪除。</string>
+  <string name="toast_remove_success">「%s」計數器已刪除。</string>
+  <string name="toast_no_name_message">標題必填！</string>
+  <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">新計數器</string>
+  <string name="unknown">不明</string>
 </resources>
