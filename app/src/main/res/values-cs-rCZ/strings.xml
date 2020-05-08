@@ -8,7 +8,6 @@
   <string name="menu_edit">Upravit počítadlo</string>
   <string name="menu_delete">Smazat</string>
   <string name="menu_settings">Nastavení</string>
-  <string name="menu_info">O aplikaci</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Opravdu chcete smazat toto počítadlo?</string>
   <string name="dialog_reset_title">Jste si jistí, že chcete počítadlo obnovit?</string>
@@ -19,7 +18,6 @@
   <string name="dialog_button_reset">Vymazat</string>
   <string name="dialog_button_delete">Smazat</string>
   <string name="dialog_button_cancel">Zrušit</string>
-  <string name="dialog_button_close">Zavřít</string>
   <!-- Settings -->
   <string name="settings_title">Nastavení</string>
   <string name="settings_display">Displej</string>
@@ -36,8 +34,6 @@
   <string name="settings_wipe_confirmation">Jste si jistí, že chcete odstranit všechna počítadla?</string>
   <string name="settings_wipe_confirmation_yes">Odstranit vše</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Všechna počítadla byla odstraněna.</string>
-  <string name="toast_remove_success">Počítadlo \"%s\" bylo odstraněno.</string>
   <string name="toast_no_name_message">Prosím, vložte jméno.</string>
   <!-- Other stuff -->
   <string name="unknown">Neznámé</string>
