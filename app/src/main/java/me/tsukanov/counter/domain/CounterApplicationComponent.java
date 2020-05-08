@@ -11,5 +11,5 @@ import me.tsukanov.counter.repository.CounterStorage;
 @Component(modules = { AndroidInjectionModule.class, CounterModule.class})
 public interface CounterApplicationComponent extends AndroidInjector<CounterApplication> {
 
-  CounterStorage localStorage();
+  CounterStorage<IntegerCounter> localStorage();
 }

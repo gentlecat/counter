@@ -27,7 +27,7 @@ public class CounterModule {
 
   @Provides
   @Singleton
-  CounterStorage provideCounterStorage(final @NonNull CounterApplication app) {
+  CounterStorage<IntegerCounter> provideCounterStorage(final @NonNull CounterApplication app) {
     return new SharedPrefsCounterStorage(
         app,
         new BroadcastHelper(app),

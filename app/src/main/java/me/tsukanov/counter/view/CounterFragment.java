@@ -70,7 +70,7 @@ public class CounterFragment extends Fragment {
     restoreSavedState(savedInstanceState);
 
     vibrator = (Vibrator) requireActivity().getSystemService(Context.VIBRATOR_SERVICE);
-    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireActivity());
 
     initCounter();
 

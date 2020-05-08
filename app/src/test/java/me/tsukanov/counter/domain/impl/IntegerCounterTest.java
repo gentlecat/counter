@@ -13,7 +13,7 @@ public class IntegerCounterTest {
 
   @Test
   public void nameSetting_worksAsExpected() throws CounterException {
-    final Counter counter = new IntegerCounter(DEFAULT_NAME);
+    final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME);
     assertEquals(DEFAULT_NAME, counter.getName());
 
     final String newName = "New name";

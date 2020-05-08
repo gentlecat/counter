@@ -10,8 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.domain.Counter;
+import me.tsukanov.counter.domain.IntegerCounter;
 
-class CountersListAdapter extends ArrayAdapter<Counter> {
+class CountersListAdapter extends ArrayAdapter<IntegerCounter> {
 
   private static final String TAG = CountersListAdapter.class.getSimpleName();
 
@@ -27,7 +28,7 @@ class CountersListAdapter extends ArrayAdapter<Counter> {
     final TextView titleView = convertView.findViewById(R.id.row_title);
     final TextView countView = convertView.findViewById(R.id.row_count);
 
-    final Counter counter = getItem(position);
+    final IntegerCounter counter = getItem(position);
     if (counter != null) {
       titleView.setText(counter.getName());
       countView.setText(counter.getValue().toString());

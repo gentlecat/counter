@@ -7,6 +7,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.domain.IntegerCounter;
@@ -31,7 +32,8 @@ public class DeleteDialog extends DialogFragment {
   @NonNull
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    final String name = getArguments().getString(BUNDLE_ARGUMENT_NAME);
+
+    final String name = requireArguments().getString(BUNDLE_ARGUMENT_NAME);
 
     final Dialog deleteDialog =
         new AlertDialog.Builder(getActivity())
@@ -57,7 +59,8 @@ public class DeleteDialog extends DialogFragment {
                 })
             .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
             .create();
-    deleteDialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    Objects.requireNonNull(deleteDialog.getWindow())
+        .setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
     return deleteDialog;
   }

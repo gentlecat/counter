@@ -14,10 +14,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import java.util.List;
-import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
-import me.tsukanov.counter.domain.Counter;
+import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.infrastructure.Actions;
 import me.tsukanov.counter.infrastructure.BroadcastHelper;
 import me.tsukanov.counter.view.dialogs.AddDialog;
@@ -68,10 +67,10 @@ public class CountersListFragment extends ListFragment {
   private void updateList() {
     if (!isFragmentActive()) return;
 
-    List<Counter> counters = CounterApplication.getComponent().localStorage().readAll(false);
+    List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
 
     listAdapter = new CountersListAdapter(getActivity());
-    for (final Counter c : counters) {
+    for (final IntegerCounter c : counters) {
       listAdapter.add(c);
     }
     setListAdapter(listAdapter);

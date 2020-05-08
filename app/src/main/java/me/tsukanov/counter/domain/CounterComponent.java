@@ -8,5 +8,5 @@ import me.tsukanov.counter.repository.CounterStorage;
 @Component(modules = CounterModule.class)
 public interface CounterComponent {
 
-  CounterStorage localStorage();
+  CounterStorage<IntegerCounter> localStorage();
 }

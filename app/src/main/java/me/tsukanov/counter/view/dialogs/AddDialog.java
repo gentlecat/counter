@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.activities.MainActivity;
@@ -84,13 +85,14 @@ public class AddDialog extends DialogFragment {
             .create();
 
     dialog.setCanceledOnTouchOutside(true);
-    dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    Objects.requireNonNull(dialog.getWindow())
+        .setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
     return dialog;
   }
 
   private void addCounter(@NonNull final IntegerCounter counter) {
     CounterApplication.getComponent().localStorage().write(counter);
-    new BroadcastHelper(this.getContext()).sendSelectCounterBroadcast(counter.getName());
+    new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(counter.getName());
   }
 }

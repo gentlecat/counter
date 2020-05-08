@@ -3,16 +3,17 @@ package me.tsukanov.counter.view.dialogs;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.util.Log;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
+import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.activities.MainActivity;
@@ -43,8 +44,8 @@ public class EditDialog extends DialogFragment {
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-    final String oldName = getArguments().getString(BUNDLE_ARGUMENT_NAME);
-    final int oldValue = getArguments().getInt(BUNDLE_ARGUMENT_VALUE);
+    final String oldName = requireArguments().getString(BUNDLE_ARGUMENT_NAME);
+    final int oldValue = requireArguments().getInt(BUNDLE_ARGUMENT_VALUE);
 
     final MainActivity activity = (MainActivity) getActivity();
 
@@ -94,7 +95,8 @@ public class EditDialog extends DialogFragment {
                       newValue = CounterFragment.DEFAULT_VALUE;
                     }
 
-                    final CounterStorage storage = CounterApplication.getComponent().localStorage();
+                    final CounterStorage<IntegerCounter> storage =
+                        CounterApplication.getComponent().localStorage();
 
                     storage.delete(oldName);
                     try {
@@ -106,14 +108,15 @@ public class EditDialog extends DialogFragment {
                           .show();
                     }
 
-                    new BroadcastHelper(getContext()).sendSelectCounterBroadcast(newName);
+                    new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName);
                   }
                 })
             .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
             .create();
 
     dialog.setCanceledOnTouchOutside(true);
-    dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    Objects.requireNonNull(dialog.getWindow())
+        .setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
     return dialog;
   }
