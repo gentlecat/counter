@@ -9,7 +9,6 @@
   <string name="menu_edit">Számláló szerkesztése</string>
   <string name="menu_delete">Számláló törlése</string>
   <string name="menu_settings">Beállítások</string>
-  <string name="menu_info">Információ</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Valóban törölni akarja ezt a számlálót?</string>
   <string name="dialog_reset_title">Valóban vissza akarja állítani ezt a számlálót?</string>
@@ -20,7 +19,6 @@
   <string name="dialog_button_reset">Számláló visszaállítása</string>
   <string name="dialog_button_delete">Számláló törlése</string>
   <string name="dialog_button_cancel">Mégsem</string>
-  <string name="dialog_button_close">Bezárás</string>
   <!-- Settings -->
   <string name="settings_title">Beállítások</string>
   <string name="settings_controls">Vezérlők</string>
@@ -33,8 +31,6 @@
   <string name="settings_wipe_confirmation">Biztosan el szeretné távolítani az összes számlálót?</string>
   <string name="settings_wipe_confirmation_yes">Összes eltávolítása</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Az összes számláló el lett távolítva.</string>
-  <string name="toast_remove_success">\"%s\" nevű számláló el lett távolítva.</string>
   <string name="toast_no_name_message">Meg kell adni egy nevet!</string>
   <!-- Other stuff -->
   <string name="unknown">Ismeretlen</string>
