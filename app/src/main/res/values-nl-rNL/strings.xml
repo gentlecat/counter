@@ -10,7 +10,6 @@
   <string name="menu_edit">Bewerk teller</string>
   <string name="menu_delete">Verwijder teller</string>
   <string name="menu_settings">Instellingen</string>
-  <string name="menu_info">Over</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Wilt u deze teller echt verwijderen?</string>
   <string name="dialog_reset_title">Wilt u deze teller resetten?</string>
@@ -21,7 +20,6 @@
   <string name="dialog_button_reset">Reset teller</string>
   <string name="dialog_button_delete">Verwijder teller</string>
   <string name="dialog_button_cancel">Annuleer</string>
-  <string name="dialog_button_close">Sluiten</string>
   <!-- Settings -->
   <string name="settings_title">Instellingen</string>
   <string name="settings_display">Scherm</string>

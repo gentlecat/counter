@@ -10,7 +10,6 @@
   <string name="menu_edit">Edytuj licznik</string>
   <string name="menu_delete">Usuń licznik</string>
   <string name="menu_settings">Ustawienia</string>
-  <string name="menu_info">O aplikacji</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Dodaj nowy licznik</string>
   <string name="dialog_edit_title">Edytuj ten licznik</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Zresetuj licznik</string>
   <string name="dialog_button_delete">Usuń licznik</string>
   <string name="dialog_button_cancel">Anuluj</string>
-  <string name="dialog_button_close">Zamknij</string>
   <!-- Settings -->
   <string name="settings_title">Ustawienia</string>
   <string name="settings_display">Wygląd</string>

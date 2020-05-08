@@ -10,7 +10,6 @@
   <string name="menu_edit">Editar contador</string>
   <string name="menu_delete">Borrar contador</string>
   <string name="menu_settings">Configuración</string>
-  <string name="menu_info">Información</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Añadir un nuevo contador</string>
   <string name="dialog_edit_title">Editar este contador</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Reiniciar</string>
   <string name="dialog_button_delete">Borrar</string>
   <string name="dialog_button_cancel">Cancelar</string>
-  <string name="dialog_button_close">Cerrar</string>
   <!-- Settings -->
   <string name="settings_title">Configuración</string>
   <string name="settings_display">Visualización</string>

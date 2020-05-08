@@ -10,7 +10,6 @@
   <string name="menu_edit">カウンターを編集</string>
   <string name="menu_delete">カウンターを削除</string>
   <string name="menu_settings">設定</string>
-  <string name="menu_info">このアプリについて</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">新しいカウンターを追加</string>
   <string name="dialog_edit_title">このカウンターを編集</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">カウンターをリセット</string>
   <string name="dialog_button_delete">カウンターを削除</string>
   <string name="dialog_button_cancel">キャンセル</string>
-  <string name="dialog_button_close">閉じる</string>
   <!-- Settings -->
   <string name="settings_title">設定</string>
   <string name="settings_display">表示</string>

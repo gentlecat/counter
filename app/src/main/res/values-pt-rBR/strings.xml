@@ -10,7 +10,6 @@
   <string name="menu_edit">Editar contador</string>
   <string name="menu_delete">Excluir o contador</string>
   <string name="menu_settings">Configurações</string>
-  <string name="menu_info">Sobre</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Criar novo contador</string>
   <string name="dialog_edit_title">Editar este contador</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Zerar</string>
   <string name="dialog_button_delete">Apagar</string>
   <string name="dialog_button_cancel">Cancelar</string>
-  <string name="dialog_button_close">Fechar</string>
   <!-- Settings -->
   <string name="settings_title">Configurações</string>
   <string name="settings_display">Tela</string>

@@ -10,7 +10,6 @@
   <string name="menu_edit">编辑计数器</string>
   <string name="menu_delete">删除计数器</string>
   <string name="menu_settings">设置</string>
-  <string name="menu_info">关于</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">新增计数器</string>
   <string name="dialog_edit_title">编辑此计数器</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">重置计数器</string>
   <string name="dialog_button_delete">删除计数器</string>
   <string name="dialog_button_cancel">取消</string>
-  <string name="dialog_button_close">关闭</string>
   <!-- Settings -->
   <string name="settings_title">设置</string>
   <string name="settings_display">显示</string>

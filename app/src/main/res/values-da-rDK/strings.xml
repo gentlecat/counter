@@ -10,7 +10,6 @@
   <string name="menu_edit">Redigér tæller</string>
   <string name="menu_delete">Slet tæller</string>
   <string name="menu_settings">Indstillinger</string>
-  <string name="menu_info">Om</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Tilføj ny tæller</string>
   <string name="dialog_edit_title">Redigér tæller</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Nulstil tæller</string>
   <string name="dialog_button_delete">Slet tæller</string>
   <string name="dialog_button_cancel">Annullér</string>
-  <string name="dialog_button_close">Luk</string>
   <!-- Settings -->
   <string name="settings_title">Indstillinger</string>
   <string name="settings_display">Visning</string>

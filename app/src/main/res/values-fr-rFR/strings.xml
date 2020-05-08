@@ -10,7 +10,6 @@
   <string name="menu_edit">Modifier le compteur</string>
   <string name="menu_delete">Supprimer</string>
   <string name="menu_settings">Paramètres</string>
-  <string name="menu_info">À propos</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Ajouter un nouveau compteur</string>
   <string name="dialog_edit_title">Modifier ce compteur</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Réinitialiser</string>
   <string name="dialog_button_delete">Supprimer</string>
   <string name="dialog_button_cancel">Annuler</string>
-  <string name="dialog_button_close">Fermer</string>
   <!-- Settings -->
   <string name="settings_title">Paramètres</string>
   <string name="settings_display">Affichage</string>

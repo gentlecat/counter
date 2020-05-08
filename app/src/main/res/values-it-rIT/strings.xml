@@ -9,7 +9,6 @@
   <string name="menu_edit">Modifica contatore</string>
   <string name="menu_delete">Elimina contatore</string>
   <string name="menu_settings">Impostazioni</string>
-  <string name="menu_info">About</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Sei sicuro di voler eliminare questo contatore?</string>
   <string name="dialog_reset_title">Vuoi veramente azzerare questo contatore?</string>
@@ -20,7 +19,6 @@
   <string name="dialog_button_reset">Azzera contatore</string>
   <string name="dialog_button_delete">Elimina contatore</string>
   <string name="dialog_button_cancel">Cancella</string>
-  <string name="dialog_button_close">Chiudi</string>
   <!-- Settings -->
   <string name="settings_title">Impostazioni</string>
   <string name="settings_controls">Controlli</string>

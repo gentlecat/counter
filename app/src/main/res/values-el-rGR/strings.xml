@@ -10,7 +10,6 @@
   <string name="menu_edit">Επεξεργασία μετρητή</string>
   <string name="menu_delete">Διαγραφή μετρητή</string>
   <string name="menu_settings">Ρυθμίσεις</string>
-  <string name="menu_info">Σχετικά</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Θέλετε να σίγουρα διαγράψετε το μετρητή;</string>
   <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
@@ -21,7 +20,6 @@
   <string name="dialog_button_reset">Επαναφορά μετρητή</string>
   <string name="dialog_button_delete">Διαγραφή μετρητή</string>
   <string name="dialog_button_cancel">Άκυρο</string>
-  <string name="dialog_button_close">Κλείσιμο</string>
   <!-- Settings -->
   <string name="settings_title">Ρυθμίσεις</string>
   <string name="settings_display">Εμφάνιση</string>

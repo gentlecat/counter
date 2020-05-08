@@ -10,7 +10,6 @@
   <string name="menu_edit">Redigér teller</string>
   <string name="menu_delete">Slett teller</string>
   <string name="menu_settings">Innstillinger</string>
-  <string name="menu_info">Om</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Legg til ny teller</string>
   <string name="dialog_edit_title">Rediger denne telleren</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Tilbakestill teller</string>
   <string name="dialog_button_delete">Slett teller</string>
   <string name="dialog_button_cancel">Avbryt</string>
-  <string name="dialog_button_close">Lukk</string>
   <!-- Settings -->
   <string name="settings_title">Innstillinger</string>
   <string name="settings_display">Visning</string>

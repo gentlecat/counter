@@ -8,9 +8,6 @@
     <item name="drawableSettings">@drawable/ic_settings</item>
   </style>
 
-  <style name="AppTheme.Dark" parent="@style/Theme.AppCompat">
-  </style>
-
   <style name="DrawerSelectTheme" parent="AppTheme">
     <item name="colorControlHighlight">#33ffffff</item>
   </style>

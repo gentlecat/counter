@@ -7,7 +7,6 @@
   <string name="menu_edit">ویرایش شمارنده</string>
   <string name="menu_delete">حذف شمارنده</string>
   <string name="menu_settings">تنظیمات</string>
-  <string name="menu_info">درباره</string>
   <!-- Dialogs -->
   <string name="dialog_button_add">افزودن</string>
   <string name="dialog_button_apply">اعمال تغییرات</string>

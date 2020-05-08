@@ -10,7 +10,6 @@
   <string name="menu_edit">Muuda loendurit</string>
   <string name="menu_delete">Kustuta loendur</string>
   <string name="menu_settings">Seaded</string>
-  <string name="menu_info">Teave</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Lisa uus loendur</string>
   <string name="dialog_edit_title">Selle loenduri muutmine</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Lähtesta</string>
   <string name="dialog_button_delete">Kustuta</string>
   <string name="dialog_button_cancel">Loobu</string>
-  <string name="dialog_button_close">Sulge</string>
   <!-- Settings -->
   <string name="settings_title">Seaded</string>
   <string name="settings_display">Ekraan</string>

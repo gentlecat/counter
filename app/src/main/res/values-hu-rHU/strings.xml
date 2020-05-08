@@ -9,7 +9,6 @@
   <string name="menu_edit">Számláló szerkesztése</string>
   <string name="menu_delete">Számláló törlése</string>
   <string name="menu_settings">Beállítások</string>
-  <string name="menu_info">Információ</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Valóban törölni akarja ezt a számlálót?</string>
   <string name="dialog_reset_title">Valóban vissza akarja állítani ezt a számlálót?</string>
@@ -20,7 +19,6 @@
   <string name="dialog_button_reset">Számláló visszaállítása</string>
   <string name="dialog_button_delete">Számláló törlése</string>
   <string name="dialog_button_cancel">Mégsem</string>
-  <string name="dialog_button_close">Bezárás</string>
   <!-- Settings -->
   <string name="settings_title">Beállítások</string>
   <string name="settings_controls">Vezérlők</string>
