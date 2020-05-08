@@ -46,12 +46,15 @@
   <string name="settings_other">Прочее</string>
   <string name="settings_version_title">Версия приложения</string>
   <string name="settings_wipe_title">Удалить все счетчики</string>
+  <string name="settings_export_title">Экспорт счетчиков</string>
+  <string name="settings_export_summary">Экспортировать все счетчики в формате CSV</string>
   <string name="settings_wipe_confirmation">Вы действительно хотите удалить все счетчики?</string>
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Все счетчики были удалены.</string>
   <string name="toast_remove_success">Счетчик \"%s\" был удален.</string>
   <string name="toast_no_name_message">Имя не может быть пустым!</string>
+  <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Счетчик</string>
   <string name="unknown">Неизвестно</string>
