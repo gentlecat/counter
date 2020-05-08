@@ -10,7 +10,6 @@
   <string name="menu_edit">Редактировать cчетчик</string>
   <string name="menu_delete">Удалить</string>
   <string name="menu_settings">Настройки</string>
-  <string name="menu_info">О приложении</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Добавить новый счетчик</string>
   <string name="dialog_edit_title">Изменить счетчик</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Сброс</string>
   <string name="dialog_button_delete">Удалить</string>
   <string name="dialog_button_cancel">Отмена</string>
-  <string name="dialog_button_close">Закрыть</string>
   <!-- Settings -->
   <string name="settings_title">Настройки</string>
   <string name="settings_display">Дисплей</string>
@@ -51,8 +49,6 @@
   <string name="settings_wipe_confirmation">Вы действительно хотите удалить все счетчики?</string>
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Все счетчики были удалены.</string>
-  <string name="toast_remove_success">Счетчик \"%s\" был удален.</string>
   <string name="toast_no_name_message">Имя не может быть пустым!</string>
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
   <!-- Other stuff -->
