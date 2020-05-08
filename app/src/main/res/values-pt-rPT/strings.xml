@@ -10,7 +10,6 @@
   <string name="menu_edit">Editar o contador</string>
   <string name="menu_delete">Apagar contador</string>
   <string name="menu_settings">Definições</string>
-  <string name="menu_info">Acerca</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Adicionar um novo contador</string>
   <string name="dialog_edit_title">Editar este contador</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Repor</string>
   <string name="dialog_button_delete">Apagar</string>
   <string name="dialog_button_cancel">Cancelar</string>
-  <string name="dialog_button_close">Fechar</string>
   <!-- Settings -->
   <string name="settings_title">Definições</string>
   <string name="settings_display">Ecrã</string>
@@ -49,8 +47,6 @@
   <string name="settings_wipe_confirmation">Deseja mesmo remover todos os contadores?</string>
   <string name="settings_wipe_confirmation_yes">Remover todos</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Todos os contadores foram removidos.</string>
-  <string name="toast_remove_success">O contador \"%s\" foi removido.</string>
   <string name="toast_no_name_message">Nome é necessário!</string>
   <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
   <!-- Other stuff -->
