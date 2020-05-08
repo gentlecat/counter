@@ -28,6 +28,8 @@
   <string name="settings_theme">المظهر</string>
   <string name="settings_theme_light">فاتح</string>
   <string name="settings_theme_dark">غامق</string>
+  <string name="settings_theme_auto_battery">تعيين بواسطة وضع توفير البطارية</string>
+  <string name="settings_theme_system">استخدام الإعداد الافتراضي للنظام</string>
   <string name="settings_keep_on_title">إبقاء الشاشة تعمل</string>
   <string name="settings_keep_on_summary">إبقاء الشاشة تعمل أثناء عمل التطبيق</string>
   <string name="settings_controls">التحكم</string>
@@ -42,10 +44,16 @@
   <string name="settings_other">الأخرى</string>
   <string name="settings_version_title">الإصدار</string>
   <string name="settings_wipe_title">إزالة جميع العدادات</string>
+  <string name="settings_export_title">تصدير العدادات</string>
+  <string name="settings_export_summary">تصدير جميع العدادات بتنسيق CSV</string>
   <string name="settings_wipe_confirmation">هل تريد حقاً إزالة جميع العدادات؟</string>
   <string name="settings_wipe_confirmation_yes">إزالة الكل</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">تم حذف جميع العدادات.</string>
+  <string name="toast_delete_success">تم حذف العداد \"%s\".</string>
   <string name="toast_no_name_message">الاسم مطلوب!</string>
+  <string name="toast_unable_to_modify">حدث خطأ ما أثناء تحديث العداد. عذراً!</string>
+  <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>
   <string name="unknown">‮غير معروف</string>
