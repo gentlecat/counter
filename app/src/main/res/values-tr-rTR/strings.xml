@@ -10,7 +10,6 @@
   <string name="menu_edit">Sayacı düzenle</string>
   <string name="menu_delete">Sayacı sil</string>
   <string name="menu_settings">Ayarlar</string>
-  <string name="menu_info">Hakkında</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Yeni sayaç ekle</string>
   <string name="dialog_edit_title">Sayacı düzenle</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Sayacı sıfırla</string>
   <string name="dialog_button_delete">Sayacı sil</string>
   <string name="dialog_button_cancel">İptal</string>
-  <string name="dialog_button_close">Kapat</string>
   <!-- Settings -->
   <string name="settings_title">Ayarlar</string>
   <string name="settings_display">Görüntü</string>
@@ -43,8 +41,6 @@
   <string name="settings_wipe_confirmation">Tüm sayaçları gerçekten silmek istiyor musunuz?</string>
   <string name="settings_wipe_confirmation_yes">Tümünü kaldır</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Tüm sayaçlar kaldırıldı.</string>
-  <string name="toast_remove_success">\"%s\" adlı sayaç kaldırıldı.</string>
   <string name="toast_no_name_message">İsim gereklidir!</string>
   <!-- Other stuff -->
   <string name="unknown">Bilinmiyor</string>
