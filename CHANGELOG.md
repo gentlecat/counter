@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 21
+
+* Translation updates
+* Major refactoring under the hood
+
 ## Version 20
 
 * Maximum (and minimum) counter limits are now significantly higher
