@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Tout supprimer</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Tous les compteurs ont été supprimés.</string>
-  <string name="toast_remove_success">Le compteur \"%s\" a été supprimé.</string>
+  <string name="toast_delete_success">Le compteur \"%s\" a été supprimé.</string>
   <string name="toast_no_name_message">S\'il vous plaît, entrez le nom.</string>
   <string name="toast_unable_to_modify">Une erreur s\'est produite lors de la mise à jour du compteur. Désolé !</string>
   <!-- Other stuff -->

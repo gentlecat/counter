@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Remover todos</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Todos os contadores foram removidos.</string>
-  <string name="toast_remove_success">O contador \"%s\" foi removido.</string>
+  <string name="toast_delete_success">O contador \"%s\" foi removido.</string>
   <string name="toast_no_name_message">Nome é necessário!</string>
   <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
   <!-- Other stuff -->

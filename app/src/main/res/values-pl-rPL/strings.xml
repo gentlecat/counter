@@ -48,7 +48,7 @@
   <string name="settings_wipe_confirmation_yes">Usuń wszystkie</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Wszystkie liczniki zostały usunięte.</string>
-  <string name="toast_remove_success">Licznik \"%s\" został usunięty.</string>
+  <string name="toast_delete_success">Licznik \"%s\" został usunięty.</string>
   <string name="toast_no_name_message">Proszę wpisać nazwę.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nowy licznik</string>

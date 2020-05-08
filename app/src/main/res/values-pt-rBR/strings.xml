@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Apagar tudo</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Todos os contadores foram apagados.</string>
-  <string name="toast_remove_success">Contador \"%s\" foi apagado.</string>
+  <string name="toast_delete_success">Contador \"%s\" foi apagado.</string>
   <string name="toast_no_name_message">O nome é obrigatório!</string>
   <string name="toast_unable_to_modify">Alguma coisa deu errado ao salvar o contador. Desculpe!</string>
   <!-- Other stuff -->

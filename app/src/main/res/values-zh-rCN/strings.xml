@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">删除全部</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">已移除全部计数器。</string>
-  <string name="toast_remove_success">已移除计数器 \"%s\"。</string>
+  <string name="toast_delete_success">已移除计数器 \"%s\"。</string>
   <string name="toast_no_name_message">名称为必填项！</string>
   <string name="toast_unable_to_modify">很抱歉，更新计数器时出现问题。</string>
   <!-- Other stuff -->

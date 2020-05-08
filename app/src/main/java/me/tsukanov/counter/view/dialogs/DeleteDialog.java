@@ -3,10 +3,10 @@ package me.tsukanov.counter.view.dialogs;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
-import android.view.ViewGroup.LayoutParams;
-import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.domain.IntegerCounter;
@@ -43,6 +43,13 @@ public class DeleteDialog extends DialogFragment {
                   final CounterStorage<IntegerCounter> storage =
                       CounterApplication.getComponent().localStorage();
                   storage.delete(name);
+
+                  Toast.makeText(
+                          getContext(),
+                          String.format(
+                              (String) getResources().getText(R.string.toast_delete_success), name),
+                          Toast.LENGTH_SHORT)
+                      .show();
 
                   // Switch to a different counter
                   new BroadcastHelper(requireContext())

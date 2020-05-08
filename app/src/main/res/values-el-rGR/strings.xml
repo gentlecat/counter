@@ -39,7 +39,7 @@
   <string name="settings_wipe_confirmation_yes">Διαγραφή όλων</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Όλα οι μετρητές έχουν καταργηθεί.</string>
-  <string name="toast_remove_success">Ο μετρητής \"%s\" έχει καταργηθεί.</string>
+  <string name="toast_delete_success">Ο μετρητής \"%s\" έχει καταργηθεί.</string>
   <string name="toast_no_name_message">Απαιτείται όνομα!</string>
   <!-- Other stuff -->
   <string name="unknown">Άγνωστο</string>

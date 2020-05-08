@@ -48,7 +48,7 @@
   <string name="settings_wipe_confirmation_yes">إزالة الكل</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">تم إزالة جميع العدادات.</string>
-  <string name="toast_remove_success">تمت إزالة العداد \"%s\".</string>
+  <string name="toast_delete_success">تمت إزالة العداد \"%s\".</string>
   <string name="toast_no_name_message">الاسم مطلوب!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>

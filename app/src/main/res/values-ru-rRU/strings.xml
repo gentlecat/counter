@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Все счетчики были удалены.</string>
-  <string name="toast_remove_success">Счетчик \"%s\" был удален.</string>
+  <string name="toast_delete_success">Счетчик \"%s\" был удален.</string>
   <string name="toast_no_name_message">Имя не может быть пустым!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Счетчик</string>
