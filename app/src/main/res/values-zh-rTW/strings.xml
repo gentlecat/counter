@@ -10,7 +10,6 @@
   <string name="menu_edit">編輯計數器</string>
   <string name="menu_delete">刪除計數器</string>
   <string name="menu_settings">設定</string>
-  <string name="menu_info">關於</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">新增計數器</string>
   <string name="dialog_edit_title">編輯此計數器</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">歸零</string>
   <string name="dialog_button_delete">刪除</string>
   <string name="dialog_button_cancel">取消</string>
-  <string name="dialog_button_close">關閉</string>
   <!-- Settings -->
   <string name="settings_title">設定</string>
   <string name="settings_display">顯示</string>
@@ -49,8 +47,6 @@
   <string name="settings_wipe_confirmation">您確定要刪除全部計數器嗎？</string>
   <string name="settings_wipe_confirmation_yes">刪除全部</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">全部計數器皆已刪除。</string>
-  <string name="toast_remove_success">「%s」計數器已刪除。</string>
   <string name="toast_no_name_message">標題必填！</string>
   <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
   <!-- Other stuff -->
