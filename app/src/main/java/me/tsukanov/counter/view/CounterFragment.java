@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -22,6 +21,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
@@ -69,8 +69,7 @@ public class CounterFragment extends Fragment {
     super.onCreate(savedInstanceState);
     restoreSavedState(savedInstanceState);
 
-    vibrator =
-        (Vibrator) requireActivity().getSystemService(Context.VIBRATOR_SERVICE);
+    vibrator = (Vibrator) requireActivity().getSystemService(Context.VIBRATOR_SERVICE);
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
     initCounter();
@@ -81,8 +80,7 @@ public class CounterFragment extends Fragment {
   private void initCounter() {
     final CounterStorage<IntegerCounter> storage = CounterApplication.getComponent().localStorage();
     try {
-      final String requestedCounter =
-          requireArguments().getString(COUNTER_NAME_ATTRIBUTE);
+      final String requestedCounter = requireArguments().getString(COUNTER_NAME_ATTRIBUTE);
       if (requestedCounter == null) {
         this.counter = storage.readAll(true).get(0);
         return;
@@ -150,8 +148,7 @@ public class CounterFragment extends Fragment {
 
   @Override
   public void onPrepareOptionsMenu(@NonNull final Menu menu) {
-    boolean isDrawerOpen =
-        ((MainActivity) requireActivity()).isNavigationOpen();
+    boolean isDrawerOpen = ((MainActivity) requireActivity()).isNavigationOpen();
 
     MenuItem editItem = menu.findItem(R.id.menu_edit);
     editItem.setVisible(!isDrawerOpen);
