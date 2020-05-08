@@ -1,6 +1,7 @@
 package me.tsukanov.counter.repository.impl;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
@@ -10,8 +11,10 @@ import static org.mockito.Mockito.when;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.domain.exception.CounterException;
 import me.tsukanov.counter.infrastructure.Actions;
@@ -23,6 +26,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.stubbing.OngoingStubbing;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SharedPrefsCounterStorageTest {
@@ -118,6 +122,18 @@ public class SharedPrefsCounterStorageTest {
     verify(prefsEditor).clear();
     verify(prefsEditor).commit();
     verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
+    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
+  }
+
+  @Test
+  public void toCSV() throws Exception {
+    final Map testData = ImmutableMap.of("first", 0, "second, ok", -1);
+    when(sharedPreferences.getAll()).thenReturn(testData);
+
+    final String output = systemUnderTest.toCSV();
+    assertEquals("first,0\r\n" + "\"second, ok\",-1\r\n", output);
+
+    verify(sharedPreferences).getAll();
     verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
   }
 }

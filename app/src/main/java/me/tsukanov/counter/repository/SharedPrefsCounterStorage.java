@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import androidx.annotation.NonNull;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,8 @@ import me.tsukanov.counter.domain.exception.CounterException;
 import me.tsukanov.counter.infrastructure.Actions;
 import me.tsukanov.counter.infrastructure.BroadcastHelper;
 import me.tsukanov.counter.repository.exceptions.MissingCounterException;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
 /**
  * Counter storage that uses {@link SharedPreferences} as a medium.
@@ -135,5 +138,19 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
     prefsEditor.commit();
 
     broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE);
+  }
+
+  @NonNull
+  @Override
+  public String toCSV() throws IOException {
+
+    final StringBuilder output = new StringBuilder();
+    final CSVPrinter csvPrinter = new CSVPrinter(output, CSVFormat.DEFAULT);
+
+    for (final IntegerCounter c : readAll(false)) {
+      csvPrinter.printRecord(c.getName(), c.getValue());
+    }
+
+    return output.toString();
   }
 }

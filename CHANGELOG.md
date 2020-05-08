@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 22 (WIP)
+
+* Added a way to export all counters in CSV format (this feature can be accessed from app settings)
+
 ## Version 21
 
 * Translation updates

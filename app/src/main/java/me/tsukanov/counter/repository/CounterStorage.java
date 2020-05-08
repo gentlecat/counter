@@ -1,6 +1,7 @@
 package me.tsukanov.counter.repository;
 
 import androidx.annotation.NonNull;
+import java.io.IOException;
 import java.util.List;
 import me.tsukanov.counter.repository.exceptions.MissingCounterException;
 
@@ -40,4 +41,8 @@ public interface CounterStorage<COUNTER_TYPE> {
 
   /** Removes all stored counters. */
   void wipe();
+
+  /** Exports all counters into CSV formatted string. */
+  @NonNull
+  String toCSV() throws IOException;
 }

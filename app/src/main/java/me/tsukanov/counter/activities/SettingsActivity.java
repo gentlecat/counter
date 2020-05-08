@@ -1,17 +1,20 @@
 package me.tsukanov.counter.activities;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceManager;
+import java.io.IOException;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
@@ -21,7 +24,10 @@ import me.tsukanov.counter.view.Themes;
 public class SettingsActivity extends AppCompatActivity
     implements OnPreferenceChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
+  private static final String TAG = SettingsActivity.class.getSimpleName();
+
   public static final String KEY_REMOVE_COUNTERS = "removeCounters";
+  public static final String KEY_EXPORT_COUNTERS = "exportCounters";
   public static final String KEY_VERSION = "version";
 
   private SharedPreferences sharedPrefs;
@@ -40,6 +46,7 @@ public class SettingsActivity extends AppCompatActivity
   private void initSettingsFragment() {
     settingsFragment = new SettingsFragment();
     settingsFragment.setOnRemoveCountersClickListener(getOnRemoveCountersClickListener());
+    settingsFragment.setOnExportClickListener(getOnExportClickListener());
     settingsFragment.setAppVersion(getAppVersion());
     settingsFragment.setTheme(getCurrentThemeName());
 
@@ -59,6 +66,22 @@ public class SettingsActivity extends AppCompatActivity
   private OnPreferenceClickListener getOnRemoveCountersClickListener() {
     return preference -> {
       showWipeDialog();
+      return true;
+    };
+  }
+
+  private OnPreferenceClickListener getOnExportClickListener() {
+    return preference -> {
+      try {
+        export();
+      } catch (IOException e) {
+        Log.e(TAG, "Error occurred while exporting counters", e);
+        Toast.makeText(
+                getBaseContext(),
+                getResources().getText(R.string.toast_unable_to_export),
+                Toast.LENGTH_SHORT)
+            .show();
+      }
       return true;
     };
   }
@@ -131,5 +154,17 @@ public class SettingsActivity extends AppCompatActivity
     builder.setNegativeButton(R.string.dialog_button_cancel, (dialog, id) -> dialog.dismiss());
 
     builder.create().show();
+  }
+
+  private void export() throws IOException {
+    final Intent exportIntent = new Intent();
+    exportIntent.setAction(Intent.ACTION_SEND);
+    exportIntent.putExtra(
+        Intent.EXTRA_TEXT, CounterApplication.getComponent().localStorage().toCSV());
+    exportIntent.setType("text/csv");
+
+    final Intent shareIntent =
+        Intent.createChooser(exportIntent, getResources().getText(R.string.settings_export_title));
+    startActivity(shareIntent);
   }
 }

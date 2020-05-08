@@ -50,6 +50,11 @@
       android:key="removeCounters"
       android:title="@string/settings_wipe_title" />
     <Preference
+      android:icon="@drawable/ic_share"
+      android:key="exportCounters"
+      android:summary="@string/settings_export_summary"
+      android:title="@string/settings_export_title" />
+    <Preference
       android:enabled="false"
       android:icon="@drawable/ic_info"
       android:key="version"

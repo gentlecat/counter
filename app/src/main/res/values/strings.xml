@@ -52,6 +52,8 @@
   <string name="settings_other">Other</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Remove all counters</string>
+  <string name="settings_export_title">Export counters</string>
+  <string name="settings_export_summary">Export all counters in CSV format</string>
   <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
   <string name="settings_wipe_confirmation_yes">Remove all</string>
 
@@ -60,6 +62,7 @@
   <string name="toast_remove_success">Counter \"%s\" has been removed.</string>
   <string name="toast_no_name_message">Name is required!</string>
   <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
+  <string name="toast_unable_to_export">Something went wrong while exporting the counters. Sorry!</string>
 
   <!-- Other stuff -->
   <string name="default_counter_name">New counter</string>
