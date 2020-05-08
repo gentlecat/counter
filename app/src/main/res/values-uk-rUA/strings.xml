@@ -9,7 +9,6 @@
   <string name="menu_edit">Редагувати лічильник</string>
   <string name="menu_delete">Видалити</string>
   <string name="menu_settings">Налаштування</string>
-  <string name="menu_info">О програмі</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Ви дійсно хочете видалити цей лічильник?</string>
   <string name="dialog_reset_title">Ви дійсно хочете скинути цей лічильник?</string>
@@ -20,7 +19,6 @@
   <string name="dialog_button_reset">Скинути</string>
   <string name="dialog_button_delete">Видалити</string>
   <string name="dialog_button_cancel">Відміна</string>
-  <string name="dialog_button_close">Закрити</string>
   <!-- Settings -->
   <string name="settings_title">Налаштування</string>
   <string name="settings_controls">Управління</string>
@@ -33,8 +31,6 @@
   <string name="settings_wipe_confirmation">Ви дійсно хочете видалити всі лічильники?</string>
   <string name="settings_wipe_confirmation_yes">Видалити все</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Усі лічильники було видалено.</string>
-  <string name="toast_remove_success">Лічильник \"%s\" буде видалено.</string>
   <string name="toast_no_name_message">Введіть ім\'я.</string>
   <!-- Other stuff -->
   <string name="unknown">Невідомо</string>
