@@ -9,7 +9,6 @@
   <string name="menu_edit">Modifica contatore</string>
   <string name="menu_delete">Elimina contatore</string>
   <string name="menu_settings">Impostazioni</string>
-  <string name="menu_info">About</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Sei sicuro di voler eliminare questo contatore?</string>
   <string name="dialog_reset_title">Vuoi veramente azzerare questo contatore?</string>
@@ -20,7 +19,6 @@
   <string name="dialog_button_reset">Azzera contatore</string>
   <string name="dialog_button_delete">Elimina contatore</string>
   <string name="dialog_button_cancel">Cancella</string>
-  <string name="dialog_button_close">Chiudi</string>
   <!-- Settings -->
   <string name="settings_title">Impostazioni</string>
   <string name="settings_controls">Controlli</string>
@@ -33,8 +31,6 @@
   <string name="settings_wipe_confirmation">Vuoi veramente rimuovere tutti i contatori?</string>
   <string name="settings_wipe_confirmation_yes">Rimuovi tutti</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Tutti i dati sono stati rimossi.</string>
-  <string name="toast_remove_success">Il contatore \"%s\" è stato rimosso.</string>
   <string name="toast_no_name_message">Per favore, inserisci il nome.</string>
   <!-- Other stuff -->
   <string name="unknown">Sconosciuto</string>
