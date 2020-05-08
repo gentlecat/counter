@@ -10,7 +10,6 @@
   <string name="menu_edit">Redigér tæller</string>
   <string name="menu_delete">Slet tæller</string>
   <string name="menu_settings">Indstillinger</string>
-  <string name="menu_info">Om</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Tilføj ny tæller</string>
   <string name="dialog_edit_title">Redigér tæller</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">Nulstil tæller</string>
   <string name="dialog_button_delete">Slet tæller</string>
   <string name="dialog_button_cancel">Annullér</string>
-  <string name="dialog_button_close">Luk</string>
   <!-- Settings -->
   <string name="settings_title">Indstillinger</string>
   <string name="settings_display">Visning</string>
@@ -49,8 +47,6 @@
   <string name="settings_wipe_confirmation">Er du sikker på, du vil fjerne alle tællere?</string>
   <string name="settings_wipe_confirmation_yes">Fjern alle</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Alle tællere er blevet fjernet.</string>
-  <string name="toast_remove_success">Tæller \"%s\" er blevet fjernet.</string>
   <string name="toast_no_name_message">Navn er påkrævet!</string>
   <string name="toast_unable_to_modify">Noget gik galt mens tælleren blev opdateret. Undskyld!</string>
   <!-- Other stuff -->
