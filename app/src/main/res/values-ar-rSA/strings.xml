@@ -10,7 +10,6 @@
   <string name="menu_edit">تحرير العداد</string>
   <string name="menu_delete">حذف العداد</string>
   <string name="menu_settings">الإعدادات</string>
-  <string name="menu_info">من نحن</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">إضافة عداد جديد</string>
   <string name="dialog_edit_title">تحرير هذا العداد</string>
@@ -23,7 +22,6 @@
   <string name="dialog_button_reset">إعادة ضبط العداد</string>
   <string name="dialog_button_delete">حذف العداد</string>
   <string name="dialog_button_cancel">إلغاء</string>
-  <string name="dialog_button_close">إغلاق</string>
   <!-- Settings -->
   <string name="settings_title">الإعدادات</string>
   <string name="settings_display">العرض</string>
@@ -47,8 +45,6 @@
   <string name="settings_wipe_confirmation">هل تريد حقاً إزالة جميع العدادات؟</string>
   <string name="settings_wipe_confirmation_yes">إزالة الكل</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">تم إزالة جميع العدادات.</string>
-  <string name="toast_remove_success">تمت إزالة العداد \"%s\".</string>
   <string name="toast_no_name_message">الاسم مطلوب!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>
