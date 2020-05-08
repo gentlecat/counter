@@ -9,7 +9,6 @@
   <string name="menu_edit">Redigera räknare</string>
   <string name="menu_delete">Ta bort räknare</string>
   <string name="menu_settings">Inställningar</string>
-  <string name="menu_info">Om</string>
   <!-- Dialogs -->
   <string name="dialog_delete_title">Vill du verkligen ta bort denna räknare?</string>
   <string name="dialog_reset_title">Vill du verkligen återställa räknaren?</string>
@@ -20,7 +19,6 @@
   <string name="dialog_button_reset">Återställ</string>
   <string name="dialog_button_delete">Ta bort</string>
   <string name="dialog_button_cancel">Avbryt</string>
-  <string name="dialog_button_close">Stäng</string>
   <!-- Settings -->
   <string name="settings_title">Inställningar</string>
   <string name="settings_controls">Kontroller</string>
@@ -33,8 +31,6 @@
   <string name="settings_wipe_confirmation">Vill du verkligen ta bort alla räknare?</string>
   <string name="settings_wipe_confirmation_yes">Ta bort alla</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Alla räknare har tagits bort.</string>
-  <string name="toast_remove_success">Räknaren \"%s\" har tagits bort.</string>
   <string name="toast_no_name_message">Namn krävs!</string>
   <!-- Other stuff -->
   <string name="unknown">Okänt</string>
