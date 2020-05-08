@@ -44,11 +44,16 @@
   <string name="settings_other">その他</string>
   <string name="settings_version_title">バージョン</string>
   <string name="settings_wipe_title">すべてのカウンターを削除</string>
+  <string name="settings_export_title">カウンタ―をエクスポート</string>
+  <string name="settings_export_summary">すべてのカウンタ―を CSV 形式でエクスポートします</string>
   <string name="settings_wipe_confirmation">すべてのカウンターを削除してもよろしいですか?</string>
   <string name="settings_wipe_confirmation_yes">すべてを削除</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">すべてのカウンターが削除されました。</string>
+  <string name="toast_delete_success">カウンター \"%s\" が削除されました。</string>
   <string name="toast_no_name_message">名前が必要です!</string>
   <string name="toast_unable_to_modify">カウンタ―の更新中に問題が発生しました。申し訳ありません!</string>
+  <string name="toast_unable_to_export">カウンタ―のエクスポート中に問題が発生しました。申し訳ありません!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新しいカウンター</string>
   <string name="unknown">不明</string>
