@@ -23,8 +23,4 @@
     <item name="android:textSize">45sp</item>
   </style>
 
-  <style name="editor_style">
-    <item name="android:padding">16dp</item>
-  </style>
-
 </resources>
