@@ -47,8 +47,6 @@
   <string name="settings_wipe_confirmation">Möchten Sie wirklich alle Zähler entfernen?</string>
   <string name="settings_wipe_confirmation_yes">Alle entfernen</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Alle Zähler wurden entfernt</string>
-  <string name="toast_delete_success">Zähler \"%s\" wurde entfernt.</string>
   <string name="toast_no_name_message">Bitte trage einen Namen ein</string>
   <string name="toast_unable_to_modify">Etwas ist bei dem Aktualisieren des Zählers falsch gelaufen. Sorry!</string>
   <!-- Other stuff -->
