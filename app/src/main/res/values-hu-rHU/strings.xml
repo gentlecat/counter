@@ -31,8 +31,6 @@
   <string name="settings_wipe_confirmation">Biztosan el szeretné távolítani az összes számlálót?</string>
   <string name="settings_wipe_confirmation_yes">Összes eltávolítása</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Az összes számláló el lett távolítva.</string>
-  <string name="toast_delete_success">\"%s\" nevű számláló el lett távolítva.</string>
   <string name="toast_no_name_message">Meg kell adni egy nevet!</string>
   <!-- Other stuff -->
   <string name="unknown">Ismeretlen</string>
