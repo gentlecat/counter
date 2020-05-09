@@ -31,8 +31,6 @@
   <string name="settings_wipe_confirmation">Ви дійсно хочете видалити всі лічильники?</string>
   <string name="settings_wipe_confirmation_yes">Видалити все</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Усі лічильники було видалено.</string>
-  <string name="toast_delete_success">Лічильник \"%s\" буде видалено.</string>
   <string name="toast_no_name_message">Введіть ім\'я.</string>
   <!-- Other stuff -->
   <string name="unknown">Невідомо</string>
