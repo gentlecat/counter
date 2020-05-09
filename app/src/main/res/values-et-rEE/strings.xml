@@ -44,13 +44,16 @@
   <string name="settings_other">Muu</string>
   <string name="settings_version_title">Versioon</string>
   <string name="settings_wipe_title">Eemalda kõik loendurid</string>
+  <string name="settings_export_title">Ekspordi loendurid</string>
+  <string name="settings_export_summary">Ekspordi kõik loendurid CSV formaati</string>
   <string name="settings_wipe_confirmation">Kas olete kindel, et soovite kõik loendurid kustutada?</string>
   <string name="settings_wipe_confirmation_yes">Eemalda kõik</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Kõik loendurid on eemaldatud.</string>
-  <string name="toast_delete_success">Loendur \"%s\" on eemaldatud.</string>
+  <string name="toast_wipe_success">Kõik loendurid on kustutatud.</string>
+  <string name="toast_delete_success">Loendur \"%s\" on kustutatud.</string>
   <string name="toast_no_name_message">Nimi on kohustuslik!</string>
   <string name="toast_unable_to_modify">Miskit läks lugeri uuendamisega nihu. Vabandame!</string>
+  <string name="toast_unable_to_export">Midagi läks loendurite eksportimisel valesti. Vabandame!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Uus loendur</string>
   <string name="unknown">Tundmatu</string>
