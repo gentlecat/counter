@@ -36,8 +36,6 @@
   <string name="settings_wipe_confirmation">Wilt u echt alle tellers verwijderen?</string>
   <string name="settings_wipe_confirmation_yes">Alle verwijderen</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Alle tellers zijn verwijderd.</string>
-  <string name="toast_delete_success">Teller \"%s\" is verwijderd.</string>
   <string name="toast_no_name_message">Naam is vereist!</string>
   <!-- Other stuff -->
   <string name="unknown">Onbekend</string>
