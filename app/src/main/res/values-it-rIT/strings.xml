@@ -31,8 +31,6 @@
   <string name="settings_wipe_confirmation">Vuoi veramente rimuovere tutti i contatori?</string>
   <string name="settings_wipe_confirmation_yes">Rimuovi tutti</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Tutti i dati sono stati rimossi.</string>
-  <string name="toast_delete_success">Il contatore \"%s\" è stato rimosso.</string>
   <string name="toast_no_name_message">Per favore, inserisci il nome.</string>
   <!-- Other stuff -->
   <string name="unknown">Sconosciuto</string>
