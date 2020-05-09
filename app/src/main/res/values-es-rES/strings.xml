@@ -44,10 +44,12 @@
   <string name="settings_other">Otros</string>
   <string name="settings_version_title">Versión</string>
   <string name="settings_wipe_title">Borrar todos los contadores</string>
+  <string name="settings_export_title">Exportar contadores</string>
+  <string name="settings_export_summary">Exportar todos los contadores en formato CSV</string>
   <string name="settings_wipe_confirmation">¿Realmente desea borrar todos los contadores?</string>
   <string name="settings_wipe_confirmation_yes">Eliminar todos</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Se han borrado todos los contadores.</string>
+  <string name="toast_wipe_success">Todos los contadores han sido eliminados.</string>
   <string name="toast_delete_success">Contador \"%s\" ha sido eliminado.</string>
   <string name="toast_no_name_message">¡Se requiere un nombre!</string>
   <string name="toast_unable_to_modify">Algo ha salido mal al actualizar el contador. ¡Lo sentimos!</string>
