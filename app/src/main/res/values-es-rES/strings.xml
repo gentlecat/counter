@@ -8,7 +8,7 @@
   <string name="menu_add">Añadir contador</string>
   <string name="menu_reset">Reiniciar contador</string>
   <string name="menu_edit">Editar contador</string>
-  <string name="menu_delete">Borrar contador</string>
+  <string name="menu_delete">Eliminar contador</string>
   <string name="menu_settings">Ajustes</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Añadir un nuevo contador</string>
@@ -43,10 +43,10 @@
   <string name="settings_label_increment_summary">Incrementar un contador al pulsar el valor actual</string>
   <string name="settings_other">Otros</string>
   <string name="settings_version_title">Versión</string>
-  <string name="settings_wipe_title">Borrar todos los contadores</string>
+  <string name="settings_wipe_title">Eliminar todos los contadores</string>
   <string name="settings_export_title">Exportar contadores</string>
   <string name="settings_export_summary">Exportar todos los contadores en formato CSV</string>
-  <string name="settings_wipe_confirmation">¿Realmente desea borrar todos los contadores?</string>
+  <string name="settings_wipe_confirmation">¿Seguro que quieres borrar todos los contadores?</string>
   <string name="settings_wipe_confirmation_yes">Eliminar todos</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Todos los contadores han sido eliminados.</string>
