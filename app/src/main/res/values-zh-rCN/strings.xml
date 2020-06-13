@@ -45,9 +45,12 @@
   <string name="settings_version_title">版本</string>
   <string name="settings_wipe_title">移除所有计数器</string>
   <string name="settings_export_title">导出计数器</string>
+  <string name="settings_export_summary">以 CSV 格式导出所有计数器</string>
   <string name="settings_wipe_confirmation">您是否想移除所有计数器？</string>
   <string name="settings_wipe_confirmation_yes">删除全部</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">已移除全部计数器。</string>
+  <string name="toast_delete_success">计数器 \"%s\" 已被删除。</string>
   <string name="toast_no_name_message">名称为必填项！</string>
   <string name="toast_unable_to_modify">很抱歉，更新计数器时出现问题。</string>
   <string name="toast_unable_to_export">很抱歉，导出计数器时出现问题。</string>
