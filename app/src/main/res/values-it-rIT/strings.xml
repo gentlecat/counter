@@ -24,7 +24,10 @@
   <string name="dialog_button_cancel">Cancella</string>
   <!-- Settings -->
   <string name="settings_title">Impostazioni</string>
+  <string name="settings_display">Visualizzazione</string>
   <string name="settings_theme">Tema</string>
+  <string name="settings_theme_light">Chiaro</string>
+  <string name="settings_theme_dark">Scuro</string>
   <string name="settings_controls">Controlli</string>
   <string name="settings_sounds_title">Attiva suoni</string>
   <string name="settings_vibration_title">Attiva vibrazione</string>
