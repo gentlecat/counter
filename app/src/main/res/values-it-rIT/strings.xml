@@ -28,16 +28,28 @@
   <string name="settings_theme">Tema</string>
   <string name="settings_theme_light">Chiaro</string>
   <string name="settings_theme_dark">Scuro</string>
+  <string name="settings_theme_auto_battery">Impostato dal risparmio energetico</string>
+  <string name="settings_theme_system">Usa tema del sistema</string>
+  <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
+  <string name="settings_keep_on_summary">Mantieni lo schermo accesso mentre l\'applicazione è attiva</string>
   <string name="settings_controls">Controlli</string>
   <string name="settings_sounds_title">Attiva suoni</string>
+  <string name="settings_sounds_summary">Riproduci suoni durante la modifica dei valori</string>
   <string name="settings_vibration_title">Attiva vibrazione</string>
-  <string name="settings_hard_title">Utilizza i pulsanti hardware</string>
+  <string name="settings_vibration_summary">Vibra durante la modifica dei valori</string>
+  <string name="settings_hard_title">Utilizza i pulsanti del volume</string>
+  <string name="settings_hard_summary">Cambia valori dei contatori usando i pulsanti del volume</string>
+  <string name="settings_label_increment_title">Premi valore per aumentare</string>
+  <string name="settings_label_increment_summary">Incrementa un contatore premendo il valore corrente</string>
   <string name="settings_other">Altri</string>
   <string name="settings_version_title">Versione</string>
   <string name="settings_wipe_title">Rimuovere tutti i contatori</string>
+  <string name="settings_export_title">Esporta contatori</string>
+  <string name="settings_export_summary">Esporta tutti i contatori in formato CSV</string>
   <string name="settings_wipe_confirmation">Vuoi veramente rimuovere tutti i contatori?</string>
   <string name="settings_wipe_confirmation_yes">Rimuovi tutti</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Tutti i contatori sono stati rimossi.</string>
   <string name="toast_no_name_message">Per favore, inserisci il nome.</string>
   <!-- Other stuff -->
   <string name="unknown">Sconosciuto</string>
