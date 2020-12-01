@@ -44,11 +44,16 @@
   <string name="settings_other">Autres</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Supprimer tous les compteurs</string>
+  <string name="settings_export_title">Exporter les compteurs</string>
+  <string name="settings_export_summary">Exporter tous les compteurs au format CSV</string>
   <string name="settings_wipe_confirmation">Voulez-vous vraiment supprimer tous les compteurs ?</string>
   <string name="settings_wipe_confirmation_yes">Tout supprimer</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Tous les compteurs ont été supprimés.</string>
+  <string name="toast_delete_success">Le compteur \"%s\" a été supprimé.</string>
   <string name="toast_no_name_message">S\'il vous plaît, entrez le nom.</string>
   <string name="toast_unable_to_modify">Une erreur s\'est produite lors de la mise à jour du compteur. Désolé !</string>
+  <string name="toast_unable_to_export">Une erreur s\'est produite lors de l\'exportation du compteur. Désolé !</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nouveau compteur</string>
   <string name="unknown">Inconnu</string>
