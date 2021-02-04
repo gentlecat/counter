@@ -181,6 +181,7 @@ public class CounterFragment extends Fragment {
     }
   }
 
+  @SuppressLint("NonConstantResourceId")
   @Override
   public boolean onOptionsItemSelected(@NonNull final MenuItem item) {
     switch (item.getItemId()) {
@@ -257,11 +258,8 @@ public class CounterFragment extends Fragment {
   private void invalidateUI() {
     counterLabel.setText(Integer.toString(counter.getValue()));
 
-    if (counter.getValue() >= IntegerCounter.MAX_VALUE) incrementButton.setEnabled(false);
-    else incrementButton.setEnabled(true);
-
-    if (counter.getValue() <= IntegerCounter.MIN_VALUE) decrementButton.setEnabled(false);
-    else decrementButton.setEnabled(true);
+    incrementButton.setEnabled(counter.getValue() < IntegerCounter.MAX_VALUE);
+    decrementButton.setEnabled(counter.getValue() > IntegerCounter.MIN_VALUE);
   }
 
   private void saveValue() {
