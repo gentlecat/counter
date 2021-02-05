@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Counter</string>
   <!-- Menu -->
   <string name="drawer_open">Відкрити навігацію</string>
   <string name="drawer_close">Закрити навігацію</string>
