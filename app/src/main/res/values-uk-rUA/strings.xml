@@ -11,6 +11,8 @@
   <string name="menu_delete">Видалити</string>
   <string name="menu_settings">Налаштування</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Додати новий лічильник</string>
+  <string name="dialog_edit_title">Редагувати цей лічильник</string>
   <string name="dialog_delete_title">Ви дійсно хочете видалити цей лічильник?</string>
   <string name="dialog_reset_title">Ви дійсно хочете скинути цей лічильник?</string>
   <string name="dialog_edit_name">Назва:</string>
@@ -22,17 +24,37 @@
   <string name="dialog_button_cancel">Скасувати</string>
   <!-- Settings -->
   <string name="settings_title">Налаштування</string>
+  <string name="settings_display">Дисплей</string>
+  <string name="settings_theme">Тема</string>
+  <string name="settings_theme_light">Світла</string>
+  <string name="settings_theme_dark">Темна</string>
+  <string name="settings_theme_auto_battery">Визначено енергозбереженням</string>
+  <string name="settings_theme_system">Використовувати системне значення</string>
+  <string name="settings_keep_on_title">Не вимикати екран</string>
+  <string name="settings_keep_on_summary">Не вимикати екран доки додаток активний</string>
   <string name="settings_controls">Керування</string>
   <string name="settings_sounds_title">Увімкнути звуки</string>
+  <string name="settings_sounds_summary">Відтворювати звуки при зміні значень</string>
   <string name="settings_vibration_title">Увімкнути вібрацію</string>
+  <string name="settings_vibration_summary">Вібрація при зміні значення</string>
   <string name="settings_hard_title">Використовувати апаратні кнопки</string>
+  <string name="settings_hard_summary">Змінити значення лічильника за допомогою кнопок гучності</string>
+  <string name="settings_label_increment_title">Збільшувати при натисканні на значення</string>
+  <string name="settings_label_increment_summary">Увімкнути збільшення значення лічильника після натискання на нього</string>
   <string name="settings_other">Інше</string>
   <string name="settings_version_title">Версія</string>
   <string name="settings_wipe_title">Видалити всі лічильники</string>
+  <string name="settings_export_title">Експортувати лічильники</string>
+  <string name="settings_export_summary">Експортувати всі лічильники у форматі CSV</string>
   <string name="settings_wipe_confirmation">Ви дійсно хочете видалити всі лічильники?</string>
-  <string name="settings_wipe_confirmation_yes">Видалити все</string>
+  <string name="settings_wipe_confirmation_yes">Видалити всі</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Усі лічильники видалено.</string>
+  <string name="toast_delete_success">Лічильник \"%s\" видалено.</string>
   <string name="toast_no_name_message">Введіть ім\'я.</string>
+  <string name="toast_unable_to_modify">Помилка при оновленні лічильника. Вибачте!</string>
+  <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">Новий лічильник</string>
   <string name="unknown">Невідомо</string>
 </resources>
