@@ -5,7 +5,7 @@
   <!-- Menu -->
   <string name="drawer_open">Open navigatie</string>
   <string name="drawer_close">Sluit navigatie</string>
-  <string name="menu_add">Voeg teller toe</string>
+  <string name="menu_add">Voeg nieuwe teller toe</string>
   <string name="menu_reset">Reset teller</string>
   <string name="menu_edit">Bewerk teller</string>
   <string name="menu_delete">Verwijder teller</string>
@@ -40,13 +40,21 @@
   <string name="settings_hard_title">Gebruik fisieke knoppen</string>
   <string name="settings_hard_summary">Gebruik de volume knoppen om te tellen</string>
   <string name="settings_label_increment_title">Tik op waarde om te verhogen</string>
+  <string name="settings_label_increment_summary">Verhoog een teller door op de huidige waarde te tikken</string>
   <string name="settings_other">Overig</string>
   <string name="settings_version_title">Versie</string>
   <string name="settings_wipe_title">Verwijder alle tellers</string>
+  <string name="settings_export_title">Tellers exporteren</string>
+  <string name="settings_export_summary">Exporteer alle tellers in CSV-formaat</string>
   <string name="settings_wipe_confirmation">Wilt u echt alle tellers verwijderen?</string>
   <string name="settings_wipe_confirmation_yes">Alle verwijderen</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Alle tellers zijn verwijderd.</string>
+  <string name="toast_delete_success">Teller \"%s\" is verwijderd.</string>
   <string name="toast_no_name_message">Naam is vereist!</string>
+  <string name="toast_unable_to_modify">Er ging iets mis tijdens het bijwerken van de teller. Sorry!</string>
+  <string name="toast_unable_to_export">Er is iets mis gegaan tijdens het exporteren van de tellers. Sorry!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">Voeg nieuwe teller toe</string>
   <string name="unknown">Onbekend</string>
 </resources>
