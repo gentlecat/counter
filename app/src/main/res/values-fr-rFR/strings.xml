@@ -25,7 +25,7 @@
   <!-- Settings -->
   <string name="settings_title">Paramètres</string>
   <string name="settings_display">Affichage</string>
-  <string name="settings_theme">Thèmes</string>
+  <string name="settings_theme">Thème</string>
   <string name="settings_theme_light">Clair</string>
   <string name="settings_theme_dark">Sombre</string>
   <string name="settings_theme_auto_battery">Définir par l\'économiseur de batterie</string>
@@ -37,7 +37,7 @@
   <string name="settings_sounds_summary">Jouer des sons lors du changement de valeurs</string>
   <string name="settings_vibration_title">Activer le vibreur</string>
   <string name="settings_vibration_summary">Vibrer sur les changements de valeur</string>
-  <string name="settings_hard_title">Utilisez les boutons matériels</string>
+  <string name="settings_hard_title">Utiliser les boutons physiques</string>
   <string name="settings_hard_summary">Changer la valeur du compteur à l’aide des boutons de volume</string>
   <string name="settings_label_increment_title">Tapez une valeur pour incrémenter</string>
   <string name="settings_label_increment_summary">Incrémenter un compteur en tapant la valeur actuelle</string>
