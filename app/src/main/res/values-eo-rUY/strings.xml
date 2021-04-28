@@ -22,6 +22,19 @@
   <string name="dialog_button_cancel">Nuligi</string>
   <!-- Settings -->
   <string name="settings_title">Agordoj</string>
+  <string name="settings_theme">Etoso</string>
+  <string name="settings_theme_light">Hela</string>
+  <string name="settings_theme_dark">Malhela</string>
+  <string name="settings_controls">Stiriloj</string>
+  <string name="settings_version_title">Versio</string>
+  <string name="settings_wipe_title">Forigi ĉiujn nombrilojn</string>
+  <string name="settings_export_title">Elporti nombrilojn</string>
+  <string name="settings_export_summary">Elporti ĉiujn nombrilojn en CSV formato</string>
+  <string name="settings_wipe_confirmation">Ĉu vi certe volas forigi ĉiujn nombrilojn?</string>
+  <string name="settings_wipe_confirmation_yes">Forigi ĉiujn</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Forigis ĉiujn nombrilojn.</string>
+  <string name="toast_delete_success">Nombrilo \"%s\" estas forigita.</string>
+  <string name="toast_no_name_message">Nomo estas bezonata.</string>
   <!-- Other stuff -->
 </resources>
