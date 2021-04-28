@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Nombrilo</string>
   <!-- Menu -->
+  <string name="menu_add">Aldoni nombrilon</string>
+  <string name="menu_reset">Restarigi nombrilon</string>
+  <string name="menu_edit">Redakti nombrilon</string>
+  <string name="menu_delete">Forigi nombrilon</string>
+  <string name="menu_settings">Agordoj</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Aldoni novan nombrilon</string>
+  <string name="dialog_edit_title">Redakti ĉi tiun nombrilon</string>
+  <string name="dialog_delete_title">Ĉu vi certe volas forigi ĉi tiun nombrilon?</string>
+  <string name="dialog_reset_title">Ĉu vi certe volas restarigi ĉi tiun nombrilon?</string>
+  <string name="dialog_edit_name">Titolo:</string>
+  <string name="dialog_edit_value">Valoro:</string>
+  <string name="dialog_button_add">Aldoni</string>
+  <string name="dialog_button_apply">Apliki</string>
+  <string name="dialog_button_reset">Restarigi</string>
+  <string name="dialog_button_delete">Forigi</string>
+  <string name="dialog_button_cancel">Nuligi</string>
   <!-- Settings -->
+  <string name="settings_title">Agordoj</string>
   <!-- Toasts -->
   <!-- Other stuff -->
 </resources>
