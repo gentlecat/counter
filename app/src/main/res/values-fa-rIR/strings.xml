@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
-  <string name="app_name">کانتر</string>
+  <string name="app_name">شمارنده</string>
   <!-- Menu -->
   <string name="menu_add">افزودن شمارنده</string>
   <string name="menu_edit">ویرایش شمارنده</string>
   <string name="menu_delete">حذف شمارنده</string>
   <string name="menu_settings">تنظیمات</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">افزودن شمارنده</string>
+  <string name="dialog_edit_title">ویرایش شمارنده</string>
+  <string name="dialog_delete_title">آیا مطمئنید که می‌خواهید این شمارنده را حذف کنید؟</string>
+  <string name="dialog_edit_name">عنوان:</string>
+  <string name="dialog_edit_value">مقدار:</string>
   <string name="dialog_button_add">افزودن</string>
   <string name="dialog_button_apply">اعمال تغییرات</string>
+  <string name="dialog_button_delete">حذف</string>
+  <string name="dialog_button_cancel">لغو</string>
   <!-- Settings -->
   <string name="settings_title">تنظیمات</string>
+  <string name="settings_theme_light">روشن</string>
   <string name="settings_theme_dark">تیره</string>
   <string name="settings_theme_auto_battery">تنظیم شده توسط ذخیره کننده باتری</string>
   <string name="settings_theme_system">استفاده از سیستم پیش فرض</string>
@@ -19,6 +27,15 @@
   <string name="settings_keep_on_summary">وقتی برنامه فعال است صفحه را روشن نگه دار</string>
   <string name="settings_controls">کنترل ها</string>
   <string name="settings_sounds_title">صدا ها را فعال کن</string>
+  <string name="settings_label_increment_title">برای افزایش مقدار ضربه بزنید</string>
+  <string name="settings_version_title">نسخه</string>
+  <string name="settings_wipe_title">حذف همه‌ی شمارنده‌ها</string>
+  <string name="settings_wipe_confirmation">آیا واقعاً می‌خواهید همه‌ی شمارنده‌ها را حذف کنید؟</string>
+  <string name="settings_wipe_confirmation_yes">حذف همه</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">تمامی شمارنده‌ها حذف شدند.</string>
+  <string name="toast_delete_success">شمارنده \"%1$s\" حذف شد.</string>
+  <string name="toast_no_name_message">نوشتن نام ضروری است.</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">شمارنده جدید</string>
 </resources>

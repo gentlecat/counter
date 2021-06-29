@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <!-- General -->
+  <string name="app_name">Nombrilo</string>
+  <!-- Menu -->
+  <string name="menu_add">Aldoni nombrilon</string>
+  <string name="menu_reset">Restarigi nombrilon</string>
+  <string name="menu_edit">Redakti nombrilon</string>
+  <string name="menu_delete">Forigi nombrilon</string>
+  <string name="menu_settings">Agordoj</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">Aldoni novan nombrilon</string>
+  <string name="dialog_edit_title">Redakti ĉi tiun nombrilon</string>
+  <string name="dialog_delete_title">Ĉu vi certe volas forigi ĉi tiun nombrilon?</string>
+  <string name="dialog_reset_title">Ĉu vi certe volas restarigi ĉi tiun nombrilon?</string>
+  <string name="dialog_edit_name">Titolo:</string>
+  <string name="dialog_edit_value">Valoro:</string>
+  <string name="dialog_button_add">Aldoni</string>
+  <string name="dialog_button_apply">Apliki</string>
+  <string name="dialog_button_reset">Restarigi</string>
+  <string name="dialog_button_delete">Forigi</string>
+  <string name="dialog_button_cancel">Nuligi</string>
+  <!-- Settings -->
+  <string name="settings_title">Agordoj</string>
+  <string name="settings_display">Montrado</string>
+  <string name="settings_theme">Etoso</string>
+  <string name="settings_theme_light">Hela</string>
+  <string name="settings_theme_dark">Malhela</string>
+  <string name="settings_theme_system">Laŭ operaciumo</string>
+  <string name="settings_controls">Stiriloj</string>
+  <string name="settings_sounds_title">Ŝalti sonojn</string>
+  <string name="settings_vibration_title">Ŝalti vibradon</string>
+  <string name="settings_other">Aliaj</string>
+  <string name="settings_version_title">Versio</string>
+  <string name="settings_wipe_title">Forigi ĉiujn nombrilojn</string>
+  <string name="settings_export_title">Elporti nombrilojn</string>
+  <string name="settings_export_summary">Elporti ĉiujn nombrilojn en CSV formato</string>
+  <string name="settings_wipe_confirmation">Ĉu vi certe volas forigi ĉiujn nombrilojn?</string>
+  <string name="settings_wipe_confirmation_yes">Forigi ĉiujn</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Forigis ĉiujn nombrilojn.</string>
+  <string name="toast_delete_success">Nombrilo \"%s\" estas forigita.</string>
+  <string name="toast_no_name_message">Nomo estas bezonata.</string>
+  <string name="toast_unable_to_modify">Io misokazis dum ĝisdatigo de la nombrilo. Pardonu!</string>
+  <string name="toast_unable_to_export">Io misokazis dum elportado de la nombriloj. Pardonu!</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">Nova nombrilo</string>
+  <string name="unknown">Nekonata</string>
+</resources>

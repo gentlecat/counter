@@ -44,6 +44,8 @@
   <string name="settings_other">Sonstiges</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Alle Zähler entfernen</string>
+  <string name="settings_export_title">Zähler exportieren</string>
+  <string name="settings_export_summary">Alle Zeitpläne als CSV-Datei exportieren</string>
   <string name="settings_wipe_confirmation">Möchten Sie wirklich alle Zähler entfernen?</string>
   <string name="settings_wipe_confirmation_yes">Alle entfernen</string>
   <!-- Toasts -->
@@ -51,6 +53,7 @@
   <string name="toast_delete_success">Zähler \"%s\" wurde entfernt.</string>
   <string name="toast_no_name_message">Bitte trage einen Namen ein</string>
   <string name="toast_unable_to_modify">Etwas ist bei dem Aktualisieren des Zählers falsch gelaufen. Sorry!</string>
+  <string name="toast_unable_to_export">Etwas ist beim Exportieren der Zähler falsch gelaufen. Sorry!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Zähler hinzufügen</string>
   <string name="unknown">Unbekannt</string>

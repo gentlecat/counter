@@ -34,8 +34,6 @@
   <string name="settings_wipe_confirmation">Jste si jistí, že chcete odstranit všechna počítadla?</string>
   <string name="settings_wipe_confirmation_yes">Odstranit vše</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Všechna počítadla byla odstraněna.</string>
-  <string name="toast_delete_success">Počítadlo \"%s\" bylo odstraněno.</string>
   <string name="toast_no_name_message">Prosím, vložte jméno.</string>
   <!-- Other stuff -->
   <string name="unknown">Neznámé</string>

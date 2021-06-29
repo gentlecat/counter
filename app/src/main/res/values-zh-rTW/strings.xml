@@ -44,13 +44,16 @@
   <string name="settings_other">其他</string>
   <string name="settings_version_title">版本</string>
   <string name="settings_wipe_title">刪除全部計數器</string>
+  <string name="settings_export_title">匯出計數器</string>
+  <string name="settings_export_summary">以 CSV 格式匯出全部計數器</string>
   <string name="settings_wipe_confirmation">您確定要刪除全部計數器嗎？</string>
   <string name="settings_wipe_confirmation_yes">刪除全部</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">全部計數器皆已刪除。</string>
-  <string name="toast_delete_success">「%s」計數器已刪除。</string>
+  <string name="toast_wipe_success">已刪除全部計數器。</string>
+  <string name="toast_delete_success">已刪除「%s」計數器。</string>
   <string name="toast_no_name_message">標題必填！</string>
   <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
+  <string name="toast_unable_to_export">匯出計數器的時候出錯了，真抱歉！</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新計數器</string>
   <string name="unknown">不明</string>
