@@ -6,16 +6,54 @@
   <string name="drawer_close">Închide navigarea</string>
   <string name="menu_add">Adaugă contor</string>
   <string name="menu_reset">Resetează contorul</string>
-  <string name="menu_edit">Editare contor</string>
-  <string name="menu_delete">Ștergere contor</string>
+  <string name="menu_edit">Editează contorul</string>
+  <string name="menu_delete">Șterge contorul</string>
   <string name="menu_settings">Setări</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Adaugă un contor nou</string>
   <string name="dialog_edit_title">Editează acest contor</string>
   <string name="dialog_delete_title">Sigur vrei să ștergi acest contor?</string>
   <string name="dialog_reset_title">Sigur vrei să resetezi acest contor?</string>
+  <string name="dialog_edit_name">Titlu:</string>
+  <string name="dialog_edit_value">Valoare:</string>
+  <string name="dialog_button_add">Adaugă</string>
+  <string name="dialog_button_apply">Aplică</string>
+  <string name="dialog_button_reset">Resetează</string>
+  <string name="dialog_button_delete">Șterge</string>
+  <string name="dialog_button_cancel">Anulează</string>
   <!-- Settings -->
   <string name="settings_title">Setări</string>
+  <string name="settings_display">Afișaj</string>
+  <string name="settings_theme">Temă</string>
+  <string name="settings_theme_light">Luminos</string>
+  <string name="settings_theme_dark">Întunecat</string>
+  <string name="settings_theme_auto_battery">Setată de Economisirea bateriei</string>
+  <string name="settings_theme_system">Folosește valoarea implicită de sistem</string>
+  <string name="settings_keep_on_title">Păstrează ecranul pornit</string>
+  <string name="settings_keep_on_summary">Păstrează ecranul pornit în timp ce aplicația este activă</string>
+  <string name="settings_controls">Comenzi</string>
+  <string name="settings_sounds_title">Pornește sunetele</string>
+  <string name="settings_sounds_summary">Redă sunete la schimbarea valorilor</string>
+  <string name="settings_vibration_title">Pornește vibrația</string>
+  <string name="settings_vibration_summary">Vibrează la modificările valorii</string>
+  <string name="settings_hard_title">Utilizează butoanele fizice</string>
+  <string name="settings_hard_summary">Modifică valoarea contorului folosind butoanele de volum</string>
+  <string name="settings_label_increment_title">Atinge valoarea pentru a o crește</string>
+  <string name="settings_label_increment_summary">Crește un contor prin atingerea valorii curente</string>
+  <string name="settings_other">Altele</string>
+  <string name="settings_version_title">Versiune</string>
+  <string name="settings_wipe_title">Elimină toate contoarele</string>
+  <string name="settings_export_title">Exportă contoare</string>
+  <string name="settings_export_summary">Exportă toate contoarele în format CSV</string>
+  <string name="settings_wipe_confirmation">Sigur vrei să elimini toate contoarele?</string>
+  <string name="settings_wipe_confirmation_yes">Elimină toate</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Toate contoarele au fost șterse.</string>
+  <string name="toast_delete_success">Contorul „%s” a fost șters.</string>
+  <string name="toast_no_name_message">Numele este obligatoriu!</string>
+  <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
+  <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">Contor nou</string>
+  <string name="unknown">Necunoscut</string>
 </resources>
