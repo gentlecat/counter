@@ -2,8 +2,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <!-- Menu -->
+  <string name="drawer_open">Deschide navigarea</string>
+  <string name="drawer_close">Închide navigarea</string>
+  <string name="menu_add">Adaugă contor</string>
+  <string name="menu_reset">Resetează contorul</string>
+  <string name="menu_edit">Editare contor</string>
+  <string name="menu_delete">Ștergere contor</string>
+  <string name="menu_settings">Setări</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Adaugă un contor nou</string>
+  <string name="dialog_edit_title">Editează acest contor</string>
+  <string name="dialog_delete_title">Sigur vrei să ștergi acest contor?</string>
+  <string name="dialog_reset_title">Sigur vrei să resetezi acest contor?</string>
   <!-- Settings -->
+  <string name="settings_title">Setări</string>
   <!-- Toasts -->
   <!-- Other stuff -->
 </resources>
