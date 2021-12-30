@@ -277,10 +277,14 @@ public class CounterFragment extends Fragment {
   /** Plays sound if sounds are turned on. */
   private void playSound(@NonNull final MediaPlayer soundPlayer) {
     if (sharedPrefs.getBoolean(SharedPrefKeys.SOUNDS_ON.getName(), false)) {
-      if (soundPlayer.isPlaying()) {
-        soundPlayer.seekTo(0);
+      try {
+        if (soundPlayer.isPlaying()) {
+          soundPlayer.seekTo(0);
+        }
+        soundPlayer.start();
+      } catch (Exception e) {
+        Log.e(TAG, "Unable to play sound", e);
       }
-      soundPlayer.start();
     }
   }
 }
