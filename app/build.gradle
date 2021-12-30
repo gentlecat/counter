@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0-beta05'
+        classpath 'com.android.tools.build:gradle:7.0.4'
     }
 }
 
