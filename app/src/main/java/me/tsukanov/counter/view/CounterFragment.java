@@ -270,7 +270,11 @@ public class CounterFragment extends Fragment {
   /** Triggers vibration for a specified duration, if vibration is turned on. */
   private void vibrate(long duration) {
     if (sharedPrefs.getBoolean(SharedPrefKeys.VIBRATION_ON.getName(), true)) {
-      vibrator.vibrate(duration);
+      try {
+        vibrator.vibrate(duration);
+      } catch (Exception e) {
+        Log.e(TAG, "Unable to vibrate", e);
+      }
     }
   }
 
