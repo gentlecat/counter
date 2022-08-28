@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 24
+
+* Counters in the list are now stored alphabetically
+
 ## Version 23
 
 * Translation updates

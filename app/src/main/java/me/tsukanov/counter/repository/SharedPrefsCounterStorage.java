@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +63,8 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
     } catch (CounterException e) {
       throw new RuntimeException(e);
     }
+
+    Collections.sort(counters, (x, y) -> x.getName().compareTo(y.getName()));
 
     return counters;
   }
