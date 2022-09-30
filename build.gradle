@@ -8,6 +8,7 @@ subprojects {
 
         dependencies {
             classpath 'com.android.tools.build:gradle:4.1.3'
+
         }
     }
 
@@ -19,7 +20,7 @@ subprojects {
 }
 
 ext {
-    compileSdkVersion = 31
+    compileSdkVersion = 32
     minSdkVersion = 19
 
     appVersion = 24

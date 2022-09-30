@@ -2,6 +2,9 @@ package me.tsukanov.counter;
 
 import android.app.Activity;
 import android.app.Application;
+
+import com.google.android.material.color.DynamicColors;
+
 import dagger.android.DispatchingAndroidInjector;
 import javax.inject.Inject;
 import me.tsukanov.counter.domain.CounterApplicationComponent;
@@ -18,6 +21,8 @@ public class CounterApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+
+    DynamicColors.applyToActivitiesIfAvailable(this);
 
     component =
         DaggerCounterApplicationComponent.builder().counterModule(new CounterModule(this)).build();
