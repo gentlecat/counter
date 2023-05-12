@@ -34,7 +34,7 @@
     android:layout_marginLeft="210dp"
     android:layout_marginRight="210dp"
     android:gravity="center"
-    android:textColor="?android:attr/textColorPrimary"
+    android:textAppearance="@style/counter_value"
     app:autoSizeMaxTextSize="300sp"
     app:autoSizeMinTextSize="20sp"
     app:autoSizeStepGranularity="2sp"

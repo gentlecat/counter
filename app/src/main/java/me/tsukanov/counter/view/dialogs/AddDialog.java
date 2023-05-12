@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
@@ -31,7 +30,7 @@ public class AddDialog extends DialogFragment {
 
     final MainActivity activity = (MainActivity) getActivity();
 
-    final View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_edit, null);
+    final View dialogView = getLayoutInflater().inflate(R.layout.dialog_edit, null);
 
     final EditText nameInput = dialogView.findViewById(R.id.edit_name);
 

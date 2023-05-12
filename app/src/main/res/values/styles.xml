@@ -2,10 +2,20 @@
 <resources>
 
   <style name="AppTheme" parent="Theme.Material3.DayNight">
+    <item name="android:textViewStyle">@style/TextViewStyle</item>
+    <item name="android:buttonStyle">@style/ButtonStyle</item>
     <item name="drawableDelete">@drawable/ic_delete</item>
     <item name="drawableEdit">@drawable/ic_edit</item>
     <item name="drawableReset">@drawable/ic_reset</item>
     <item name="drawableSettings">@drawable/ic_settings</item>
+  </style>
+
+  <style name="TextViewStyle" parent="android:Widget.TextView">
+    <item name="android:fontFamily">sans-serif</item>
+  </style>
+
+  <style name="ButtonStyle" parent="android:Widget.Holo.Button">
+    <item name="android:fontFamily">sans-serif-light</item>
   </style>
 
   <style name="DrawerSelectTheme" parent="AppTheme">
@@ -18,6 +28,11 @@
 
   <style name="decrement_button">
     <item name="android:textSize">45sp</item>
+  </style>
+
+  <style name="counter_value">
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="android:textStyle">bold</item>
   </style>
 
 </resources>

@@ -22,7 +22,7 @@
       android:layout_height="match_parent"
       android:layout_gravity="center"
       android:gravity="center"
-      android:textColor="?android:attr/textColorPrimary"
+      android:textAppearance="@style/counter_value"
       app:autoSizeMaxTextSize="300sp"
       app:autoSizeMinTextSize="20sp"
       app:autoSizeStepGranularity="2sp"
