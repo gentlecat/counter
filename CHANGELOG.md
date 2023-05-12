@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 25
+
+* Visual refresh
+
 ## Version 24
 
 * Counters in the list are now stored alphabetically
