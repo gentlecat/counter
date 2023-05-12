@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
@@ -10,23 +10,23 @@ apply plugin: 'idea'
 dependencies {
 
     implementation 'androidx.core:core:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'com.google.android.material:material:1.9.0'
 
     compileOnly 'javax.annotation:jsr250-api:1.0'
     api 'javax.inject:javax.inject:1'
     api 'com.google.guava:guava:30.1-jre'
-    api 'com.google.dagger:dagger:2.35.1'
-    api 'com.google.dagger:dagger-android:2.35.1'
-    api 'com.google.dagger:dagger-android-support:2.35.1'
-    api 'org.apache.commons:commons-csv:1.8'
+    api 'com.google.dagger:dagger:2.46'
+    api 'com.google.dagger:dagger-android:2.46'
+    api 'com.google.dagger:dagger-android-support:2.46'
+    api 'org.apache.commons:commons-csv:1.10.0'
 
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.33'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.33'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.46'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.46'
 
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:2.27.0'
+    testImplementation 'org.mockito:mockito-core:5.3.1'
 }
 
 android {
@@ -38,6 +38,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.compileSdkVersion
 
+        namespace 'me.tsukanov.counter'
         applicationId 'me.tsukanov.counter'
         versionCode rootProject.ext.appVersion
         versionName "${rootProject.ext.appVersion}"
