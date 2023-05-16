@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 26
+
+* Styling adjustment
+
 ## Version 25
 
 * Visual refresh
