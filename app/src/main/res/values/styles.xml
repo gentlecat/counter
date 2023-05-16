@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="AppTheme" parent="Theme.Material3.DayNight">
-    <item name="android:textViewStyle">@style/TextViewStyle</item>
-    <item name="android:buttonStyle">@style/ButtonStyle</item>
-    <item name="drawableDelete">@drawable/ic_delete</item>
-    <item name="drawableEdit">@drawable/ic_edit</item>
-    <item name="drawableReset">@drawable/ic_reset</item>
-    <item name="drawableSettings">@drawable/ic_settings</item>
-  </style>
-
   <style name="TextViewStyle" parent="android:Widget.TextView">
     <item name="android:fontFamily">sans-serif</item>
   </style>
