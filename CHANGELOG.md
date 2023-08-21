@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 27
+
+* Menu styling adjustment
+
 ## Version 26
 
 * Styling adjustment
