@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:counter="http://schemas.android.com/apk/res-auto">
+  xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <item
     android:id="@+id/menu_settings"
     android:icon="?drawableSettings"
     android:orderInCategory="10"
     android:title="@string/menu_settings"
-    counter:showAsAction="never" />
+    app:iconTint="?android:attr/textColorPrimary"
+    app:showAsAction="never" />
 
 </menu>

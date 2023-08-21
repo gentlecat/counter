@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:counter="http://schemas.android.com/apk/res-auto">
+  xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <item
     android:id="@+id/menu_edit"
     android:icon="?drawableEdit"
     android:orderInCategory="2"
     android:title="@string/menu_edit"
-    counter:showAsAction="ifRoom" />
+    app:iconTint="?android:attr/textColorPrimary"
+    app:showAsAction="ifRoom" />
 
   <item
     android:id="@+id/menu_delete"
     android:icon="?drawableDelete"
     android:orderInCategory="3"
     android:title="@string/menu_delete"
-    counter:showAsAction="ifRoom" />
+    app:iconTint="?android:attr/textColorPrimary"
+    app:showAsAction="ifRoom" />
 
   <item
     android:id="@+id/menu_reset"
     android:icon="?drawableReset"
     android:orderInCategory="1"
     android:title="@string/menu_reset"
-    counter:showAsAction="always" />
+    app:iconTint="?android:attr/textColorPrimary"
+    app:showAsAction="always" />
 
 </menu>
