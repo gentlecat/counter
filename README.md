@@ -1,4 +1,9 @@
-# Counter ![Build status](https://img.shields.io/circleci/build/github/gentlecat/counter/master.svg?style=flat-square)
+# Counter
+
+**⚠️ This app is in maintanance mode. Do not expect new functionality. You are free to make pull requests
+with new features or bug fixes.**
+
+---
 
 Counter is a *simple* [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It
 makes counting easier. You can have multiple counters with their own names and values. Values can be
@@ -18,10 +23,10 @@ Feel free to make improvements, report issues, and create pull requests. If you 
 translation, go to project's [page on Crowdin](http://crowdin.net/project/simple-counter) (please,
 don't translate resources directly).
 
+## Credits
+
 Huge thanks to all [contributors](https://github.com/gentlecat/counter/contributors)
 and [translators](https://crowdin.net/project/simple-counter).
-
-## What was used
 
 * Application icon made by [Dawid Tarasiuk](https://plus.google.com/u/0/105243332659178233856)
 * Sounds from [adobeflash.com](https://www.adobeflash.com/download/sounds/clicks/)
