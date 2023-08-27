@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 28
+
+* Fixed issue with inconsistent clickable area for counter value.
+
 ## Version 27
 
 * Menu styling adjustment

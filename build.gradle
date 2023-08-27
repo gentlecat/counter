@@ -22,7 +22,7 @@ ext {
     compileSdkVersion = 33
     minSdkVersion = 19
 
-    appVersion = 27
+    appVersion = 28
 }
 
 task clean(type: Delete) {
