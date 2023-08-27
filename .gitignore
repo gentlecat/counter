@@ -10,7 +10,10 @@ bin/
 gen/
 gen-external-apklibs/
 target/
+*.hprof
+Screenshot_*
 
 # Local configuration
 local.properties
 release.properties
+
