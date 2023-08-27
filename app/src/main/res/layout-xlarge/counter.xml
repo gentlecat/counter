@@ -6,9 +6,10 @@
   android:orientation="vertical">
 
   <FrameLayout
+    android:id="@+id/counterFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="0.5">
+    android:layout_weight="0.3">
 
     <TextView xmlns:app="http://schemas.android.com/apk/res-auto"
       android:id="@+id/counterLabel"
@@ -31,6 +32,14 @@
     android:orientation="horizontal">
 
     <Button
+      android:id="@+id/decrementButton"
+      style="@style/decrement_button"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/minus" />
+
+    <Button
       android:id="@+id/incrementButton"
       style="@style/increment_button"
       android:layout_width="match_parent"
@@ -38,13 +47,6 @@
       android:layout_weight="1"
       android:text="@string/plus" />
 
-    <Button
-      android:id="@+id/decrementButton"
-      style="@style/decrement_button"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_weight="1"
-      android:text="@string/minus" />
   </LinearLayout>
 
 </LinearLayout>

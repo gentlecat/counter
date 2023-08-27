@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,6 +50,7 @@ public class CounterFragment extends Fragment {
 
   private SharedPreferences sharedPrefs;
   private Vibrator vibrator;
+  private FrameLayout counterFrame;
   private TextView counterLabel;
   private Button incrementButton;
   private Button decrementButton;
@@ -129,7 +131,9 @@ public class CounterFragment extends Fragment {
     decrementButton.setOnClickListener(v -> decrement());
 
     counterLabel = view.findViewById(R.id.counterLabel);
-    counterLabel.setOnClickListener(
+
+    counterFrame = view.findViewById(R.id.counterFrame);
+    counterFrame.setOnClickListener(
         v -> {
           if (sharedPrefs.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.getName(), true)) {
             increment();
