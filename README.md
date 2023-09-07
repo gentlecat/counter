@@ -28,5 +28,5 @@ don't translate resources directly).
 Huge thanks to all [contributors](https://github.com/gentlecat/counter/contributors)
 and [translators](https://crowdin.net/project/simple-counter).
 
-* Application icon made by [Dawid Tarasiuk](https://plus.google.com/u/0/105243332659178233856)
+* Application icon made by @armand-leguillou
 * Sounds from [adobeflash.com](https://www.adobeflash.com/download/sounds/clicks/)
