@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 29
+
+* Updated app icon
+* Updated translations
+
 ## Version 28
 
 * Fixed issue with inconsistent clickable area for counter value.
