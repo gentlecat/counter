@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
@@ -46,14 +49,27 @@ public class AddDialog extends DialogFragment {
             .setPositiveButton(
                 getResources().getText(R.string.dialog_button_add),
                 (dialog1, which) -> {
-                  final String name = nameInput.getText().toString().trim();
+                  String name = nameInput.getText().toString().trim();
                   if (name.isEmpty()) {
-                    Toast.makeText(
-                            getActivity(),
-                            getResources().getText(R.string.toast_no_name_message),
-                            Toast.LENGTH_SHORT)
-                        .show();
-                    return;
+                      int counterCount = 1;
+                      String genericName = "New Counter ";
+                      boolean runAgain = true;
+                      List<String> counterNames = new ArrayList<>();
+                      List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
+                      for (int i = 0; i < counters.size(); i++) {
+                          counterNames.add(counters.get(i).getName());
+                      }
+                      while (runAgain) {
+                          runAgain = false;
+                          for (String counterName:counterNames
+                          ) {
+                              if (counterName.equals(genericName + counterCount)) {
+                                  counterCount++;
+                                  runAgain = true;
+                              }
+                          }
+                      }
+                      name = genericName + counterCount;
                   }
 
                   int value;
