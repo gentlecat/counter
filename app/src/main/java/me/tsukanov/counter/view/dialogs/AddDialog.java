@@ -12,9 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.activities.MainActivity;
@@ -92,22 +94,17 @@ public class AddDialog extends DialogFragment {
 
   private String checkCounterName(String name){
       if (name.isEmpty()) {
-          int counterCount = 1;
+          int counterCount;
           String genericName = getString(R.string.app_name) + " ";
           boolean runAgain = true;
-          List<String> counterNames = new ArrayList<>();
-          List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
-          for (int i = 0; i < counters.size(); i++) {
-              counterNames.add(counters.get(i).getName());
-          }
+          Set<String> counterNames;
+          counterNames = CounterApplication.getComponent().localStorage().readAll(false).stream().map(IntegerCounter::getName).collect(Collectors.toSet());
+          counterCount = counterNames.size() + 1;
           while (runAgain) {
               runAgain = false;
-              for (String counterName:counterNames
-              ) {
-                  if (counterName.equals(genericName + counterCount)) {
-                      counterCount++;
-                      runAgain = true;
-                  }
+              if (counterNames.contains(genericName + counterCount)){
+                  runAgain = true;
+                  counterCount++;
               }
           }
           name = genericName + counterCount;
