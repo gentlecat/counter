@@ -49,28 +49,7 @@ public class AddDialog extends DialogFragment {
             .setPositiveButton(
                 getResources().getText(R.string.dialog_button_add),
                 (dialog1, which) -> {
-                  String name = nameInput.getText().toString().trim();
-                  if (name.isEmpty()) {
-                      int counterCount = 1;
-                      String genericName = "New Counter ";
-                      boolean runAgain = true;
-                      List<String> counterNames = new ArrayList<>();
-                      List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
-                      for (int i = 0; i < counters.size(); i++) {
-                          counterNames.add(counters.get(i).getName());
-                      }
-                      while (runAgain) {
-                          runAgain = false;
-                          for (String counterName:counterNames
-                          ) {
-                              if (counterName.equals(genericName + counterCount)) {
-                                  counterCount++;
-                                  runAgain = true;
-                              }
-                          }
-                      }
-                      name = genericName + counterCount;
-                  }
+                  String name = checkCounterName(nameInput.getText().toString().trim());
 
                   int value;
                   final String valueInputContents = valueInput.getText().toString().trim();
@@ -110,4 +89,30 @@ public class AddDialog extends DialogFragment {
     CounterApplication.getComponent().localStorage().write(counter);
     new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(counter.getName());
   }
+
+  private String checkCounterName(String name){
+      if (name.isEmpty()) {
+          int counterCount = 1;
+          String genericName = "New Counter ";
+          boolean runAgain = true;
+          List<String> counterNames = new ArrayList<>();
+          List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
+          for (int i = 0; i < counters.size(); i++) {
+              counterNames.add(counters.get(i).getName());
+          }
+          while (runAgain) {
+              runAgain = false;
+              for (String counterName:counterNames
+              ) {
+                  if (counterName.equals(genericName + counterCount)) {
+                      counterCount++;
+                      runAgain = true;
+                  }
+              }
+          }
+          name = genericName + counterCount;
+      }
+      return name;
+  }
+
 }
