@@ -93,7 +93,7 @@ public class AddDialog extends DialogFragment {
   private String checkCounterName(String name){
       if (name.isEmpty()) {
           int counterCount = 1;
-          String genericName = "New Counter ";
+          String genericName = getString(R.string.app_name) + " ";
           boolean runAgain = true;
           List<String> counterNames = new ArrayList<>();
           List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
