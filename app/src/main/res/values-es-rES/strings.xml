@@ -51,7 +51,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">Se han eliminado todos los contadores.</string>
   <string name="toast_delete_success">El contador «%s» se ha eliminado.</string>
-  <string name="toast_no_name_message">¡Se requiere un nombre!</string>
   <string name="toast_unable_to_modify">Algo ha salido mal al actualizar el contador. ¡Lo sentimos!</string>
   <string name="toast_unable_to_export">Algo ha salido mal al exportar los contadores. ¡Lo sentimos!</string>
   <!-- Other stuff -->

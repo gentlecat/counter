@@ -51,7 +51,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">تم حذف جميع العدادات.</string>
   <string name="toast_delete_success">تم حذف العداد \"%s\".</string>
-  <string name="toast_no_name_message">الاسم مطلوب!</string>
   <string name="toast_unable_to_modify">حدث خطأ ما أثناء تحديث العداد. عذراً!</string>
   <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
   <!-- Other stuff -->

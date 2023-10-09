@@ -51,7 +51,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle Zähler wurden gelöscht.</string>
   <string name="toast_delete_success">Zähler \"%s\" wurde gelöscht.</string>
-  <string name="toast_no_name_message">Ein Name ist erforderlich!</string>
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
   <!-- Other stuff -->

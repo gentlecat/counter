@@ -40,8 +40,6 @@
   <string name="settings_wipe_title">Tüm sayaçları kaldır</string>
   <string name="settings_wipe_confirmation">Tüm sayaçları gerçekten silmek istiyor musunuz?</string>
   <string name="settings_wipe_confirmation_yes">Tümünü kaldır</string>
-  <!-- Toasts -->
-  <string name="toast_no_name_message">İsim gereklidir!</string>
   <!-- Other stuff -->
   <string name="unknown">Bilinmiyor</string>
 </resources>

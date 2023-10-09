@@ -51,7 +51,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">Усі лічильники видалено.</string>
   <string name="toast_delete_success">Лічильник \"%s\" видалено.</string>
-  <string name="toast_no_name_message">Ім\'я не може бути порожнім!</string>
   <string name="toast_unable_to_modify">Помилка при оновленні лічильника. Вибачте!</string>
   <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
   <!-- Other stuff -->

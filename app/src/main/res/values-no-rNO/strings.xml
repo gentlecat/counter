@@ -47,7 +47,6 @@
   <string name="settings_wipe_confirmation">Har du virkelig lyst til å slette alle tellerne?</string>
   <string name="settings_wipe_confirmation_yes">Slett alle</string>
   <!-- Toasts -->
-  <string name="toast_no_name_message">Navn er påkrevet!</string>
   <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny teller</string>

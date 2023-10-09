@@ -51,7 +51,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle tellers zijn verwijderd.</string>
   <string name="toast_delete_success">Teller \"%s\" is verwijderd.</string>
-  <string name="toast_no_name_message">Naam is vereist!</string>
   <string name="toast_unable_to_modify">Er ging iets mis tijdens het bijwerken van de teller. Sorry!</string>
   <string name="toast_unable_to_export">Er is iets mis gegaan tijdens het exporteren van de tellers. Sorry!</string>
   <!-- Other stuff -->

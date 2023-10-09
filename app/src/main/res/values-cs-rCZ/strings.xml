@@ -33,8 +33,6 @@
   <string name="settings_wipe_title">Odstranit všechna počítadla</string>
   <string name="settings_wipe_confirmation">Jste si jistí, že chcete odstranit všechna počítadla?</string>
   <string name="settings_wipe_confirmation_yes">Odstranit vše</string>
-  <!-- Toasts -->
-  <string name="toast_no_name_message">Prosím, vložte jméno.</string>
   <!-- Other stuff -->
   <string name="unknown">Neznámé</string>
 </resources>

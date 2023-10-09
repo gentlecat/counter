@@ -50,7 +50,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">Toate contoarele au fost șterse.</string>
   <string name="toast_delete_success">Contorul „%s” a fost șters.</string>
-  <string name="toast_no_name_message">Numele este obligatoriu!</string>
   <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
   <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
   <!-- Other stuff -->

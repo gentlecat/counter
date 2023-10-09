@@ -51,7 +51,6 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">已移除全部计数器。</string>
   <string name="toast_delete_success">计数器 \"%s\" 已被删除。</string>
-  <string name="toast_no_name_message">名称为必填项！</string>
   <string name="toast_unable_to_modify">很抱歉，更新计数器时出现问题。</string>
   <string name="toast_unable_to_export">很抱歉，导出计数器时出现问题。</string>
   <!-- Other stuff -->
