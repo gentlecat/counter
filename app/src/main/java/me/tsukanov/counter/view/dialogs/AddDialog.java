@@ -11,7 +11,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+
+
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.activities.MainActivity;
@@ -46,15 +51,7 @@ public class AddDialog extends DialogFragment {
             .setPositiveButton(
                 getResources().getText(R.string.dialog_button_add),
                 (dialog1, which) -> {
-                  final String name = nameInput.getText().toString().trim();
-                  if (name.isEmpty()) {
-                    Toast.makeText(
-                            getActivity(),
-                            getResources().getText(R.string.toast_no_name_message),
-                            Toast.LENGTH_SHORT)
-                        .show();
-                    return;
-                  }
+                  String name = checkCounterName(nameInput.getText().toString().trim());
 
                   int value;
                   final String valueInputContents = valueInput.getText().toString().trim();
@@ -94,4 +91,25 @@ public class AddDialog extends DialogFragment {
     CounterApplication.getComponent().localStorage().write(counter);
     new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(counter.getName());
   }
+
+  private String checkCounterName(String name){
+      if (name.isEmpty()) {
+          int counterCount;
+          String genericName = getString(R.string.app_name) + " ";
+          boolean runAgain = true;
+          Set<String> counterNames;
+          counterNames = CounterApplication.getComponent().localStorage().readAll(false).stream().map(IntegerCounter::getName).collect(Collectors.toSet());
+          counterCount = counterNames.size() + 1;
+          while (runAgain) {
+              runAgain = false;
+              if (counterNames.contains(genericName + counterCount)){
+                  runAgain = true;
+                  counterCount++;
+              }
+          }
+          name = genericName + counterCount;
+      }
+      return name;
+  }
+
 }
