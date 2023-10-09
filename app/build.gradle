@@ -1,6 +1,8 @@
 buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.1.4'
+        classpath 'com.puppycrawl.tools:checkstyle:10.12.4'
     }
 }
 
@@ -17,7 +19,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
 
     compileOnly 'javax.annotation:jsr250-api:1.0'
-    api 'com.google.guava:guava:32.1.2-jre'
+    api 'com.google.guava:guava:32.0.1-jre'
     api 'javax.inject:javax.inject:1'
     api 'org.apache.commons:commons-csv:1.10.0'
 
@@ -85,3 +87,28 @@ idea {
         downloadSources = true
     }
 }
+
+apply plugin: 'com.github.spotbugs'
+spotbugs {
+    ignoreFailures = true
+}
+
+apply plugin: 'checkstyle'
+checkstyle {
+    configFile rootProject.file('checkstyle.xml')
+    ignoreFailures false
+    maxWarnings = 0
+    showViolations true
+    toolVersion '10.12.4'
+}
+
+task checkstyle(type: Checkstyle) {
+    source 'src/main/java'
+    source 'src/test/java'
+    include '**/*.java'
+    classpath = files()
+}
+
+preBuild.dependsOn('checkstyle')
+assemble.dependsOn('lint')
+check.dependsOn('checkstyle')

@@ -160,7 +160,7 @@ public class SettingsActivity extends AppCompatActivity
     final Intent exportIntent = new Intent();
     exportIntent.setAction(Intent.ACTION_SEND);
     exportIntent.putExtra(
-        Intent.EXTRA_TEXT, CounterApplication.getComponent().localStorage().toCSV());
+        Intent.EXTRA_TEXT, CounterApplication.getComponent().localStorage().toCsv());
     exportIntent.setType("text/csv");
 
     final Intent shareIntent =

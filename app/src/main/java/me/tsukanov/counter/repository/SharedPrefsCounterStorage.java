@@ -33,7 +33,11 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
   private final BroadcastHelper broadcastHelper;
   private final String defaultCounterName;
 
-  /** @param defaultCounterName Name that will be assigned to a default counter. */
+  /**
+   * Default constructor.
+   *
+   * @param defaultCounterName Name that will be assigned to a default counter.
+   */
   public SharedPrefsCounterStorage(
       @NonNull final Context context,
       @NonNull final BroadcastHelper broadcastHelper,
@@ -76,7 +80,9 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
     final List<IntegerCounter> counters = readAll(false);
 
     for (IntegerCounter c : counters) {
-      if (c.getName().equals(name)) return c;
+      if (c.getName().equals(name)) {
+        return c;
+      }
     }
 
     throw new MissingCounterException(String.format("Unable find counter: %s", name));
@@ -145,7 +151,7 @@ public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter>
 
   @NonNull
   @Override
-  public String toCSV() throws IOException {
+  public String toCsv() throws IOException {
 
     final StringBuilder output = new StringBuilder();
     final CSVPrinter csvPrinter = new CSVPrinter(output, CSVFormat.DEFAULT);

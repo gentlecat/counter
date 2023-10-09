@@ -6,13 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.ListFragment;
 import java.util.List;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
@@ -65,7 +65,9 @@ public class CountersListFragment extends ListFragment {
   }
 
   private void updateList() {
-    if (!isFragmentActive()) return;
+    if (!isFragmentActive()) {
+      return;
+    }
 
     List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
 

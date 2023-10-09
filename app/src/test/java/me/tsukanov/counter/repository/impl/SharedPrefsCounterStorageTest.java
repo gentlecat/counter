@@ -124,11 +124,11 @@ public class SharedPrefsCounterStorageTest {
   }
 
   @Test
-  public void toCSV() throws Exception {
+  public void toCsv() throws Exception {
     final Map testData = ImmutableMap.of("first", 0, "second, ok", -1);
     when(sharedPreferences.getAll()).thenReturn(testData);
 
-    final String output = systemUnderTest.toCSV();
+    final String output = systemUnderTest.toCsv();
     assertEquals("first,0\r\n" + "\"second, ok\",-1\r\n", output);
 
     verify(sharedPreferences).getAll();

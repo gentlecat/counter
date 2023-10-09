@@ -2,7 +2,6 @@ package me.tsukanov.counter.domain.impl;
 
 import static org.junit.Assert.assertEquals;
 
-import me.tsukanov.counter.domain.Counter;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.domain.exception.CounterException;
 import org.junit.Test;

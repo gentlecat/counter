@@ -2,8 +2,8 @@ package me.tsukanov.counter.infrastructure;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.annotation.NonNull;
 import android.util.Log;
+import androidx.annotation.NonNull;
 import me.tsukanov.counter.CounterApplication;
 
 public class BroadcastHelper {
@@ -13,7 +13,7 @@ public class BroadcastHelper {
 
   private static final String TAG = BroadcastHelper.class.getSimpleName();
 
-  @NonNull private final Context context;
+  private final Context context;
 
   public BroadcastHelper(@NonNull final Context context) {
     this.context = context;

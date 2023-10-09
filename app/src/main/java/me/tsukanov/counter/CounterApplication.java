@@ -2,9 +2,7 @@ package me.tsukanov.counter;
 
 import android.app.Activity;
 import android.app.Application;
-
 import com.google.android.material.color.DynamicColors;
-
 import dagger.android.DispatchingAndroidInjector;
 import javax.inject.Inject;
 import me.tsukanov.counter.domain.CounterApplicationComponent;

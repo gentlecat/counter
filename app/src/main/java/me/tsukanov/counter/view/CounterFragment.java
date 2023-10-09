@@ -61,7 +61,9 @@ public class CounterFragment extends Fragment {
   private MediaPlayer decrementSoundPlayer;
 
   private void restoreSavedState(@Nullable final Bundle savedInstanceState) {
-    if (savedInstanceState == null) return;
+    if (savedInstanceState == null) {
+      return;
+    }
 
     this.name = savedInstanceState.getString(STATE_SELECTED_COUNTER_NAME);
   }
@@ -140,7 +142,7 @@ public class CounterFragment extends Fragment {
           }
         });
 
-    invalidateUI();
+    updateInterface();
 
     return view;
   }
@@ -232,7 +234,7 @@ public class CounterFragment extends Fragment {
     vibrate(DEFAULT_VIBRATION_DURATION);
     playSound(incrementSoundPlayer);
 
-    invalidateUI();
+    updateInterface();
     saveValue();
   }
 
@@ -241,7 +243,7 @@ public class CounterFragment extends Fragment {
     vibrate(DEFAULT_VIBRATION_DURATION + 20);
     playSound(decrementSoundPlayer);
 
-    invalidateUI();
+    updateInterface();
     saveValue();
   }
 
@@ -253,13 +255,13 @@ public class CounterFragment extends Fragment {
       throw new RuntimeException(e);
     }
 
-    invalidateUI();
+    updateInterface();
     saveValue();
   }
 
   /** Updates UI elements of the fragment based on current value of the counter. */
   @SuppressLint("SetTextI18n")
-  private void invalidateUI() {
+  private void updateInterface() {
     counterLabel.setText(Integer.toString(counter.getValue()));
 
     incrementButton.setEnabled(counter.getValue() < IntegerCounter.MAX_VALUE);

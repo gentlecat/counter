@@ -34,13 +34,19 @@ public enum Themes {
   public static Themes findOrGetDefault(final @Nullable String identifier) {
     if (identifier != null) {
       for (final Themes t : values()) {
-        if (t.getIdentifier().equals(identifier)) return t;
+        if (t.getIdentifier().equals(identifier)) {
+          return t;
+        }
       }
     }
     return LIGHT;
   }
 
-  /** @param sharedPrefs {@link SharedPreferences} that contain the theme preference. */
+  /**
+   * Sets up current theme.
+   *
+   * @param sharedPrefs {@link SharedPreferences} that contain the theme preference.
+   */
   public static void initCurrentTheme(@NonNull final SharedPreferences sharedPrefs) {
     final Themes currentTheme =
         Themes.findOrGetDefault(sharedPrefs.getString(SharedPrefKeys.THEME.getName(), null));
@@ -56,6 +62,7 @@ public enum Themes {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
         break;
       case SYSTEM:
+      default:
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         break;
     }

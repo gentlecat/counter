@@ -130,11 +130,13 @@ public class MainActivity extends AppCompatActivity {
 
     actionBar.setTitle(counterName);
 
-    if (isNavigationOpen()) closeNavigation();
+    if (isNavigationOpen()) {
+      closeNavigation();
+    }
   }
 
   /**
-   * Finds which counter is selected based on the following priority:
+   * Finds which counter is selected based on priority.
    *
    * <ol>
    *   <li>From value stored during the previous session
@@ -198,8 +200,11 @@ public class MainActivity extends AppCompatActivity {
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     switch (item.getItemId()) {
       case android.R.id.home:
-        if (isNavigationOpen()) closeNavigation();
-        else openDrawer();
+        if (isNavigationOpen()) {
+          closeNavigation();
+        } else {
+          openDrawer();
+        }
         return true;
 
       case R.id.menu_settings:
