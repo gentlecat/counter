@@ -67,48 +67,43 @@ public class EditDialog extends DialogFragment {
             .setPositiveButton(
                 getResources().getText(R.string.dialog_button_apply),
                 (d, which) -> {
-                  final String newName = nameInput.getText().toString();
-                  if (newName.equals("")) {
-                    Toast.makeText(
-                            activity,
-                            getResources().getText(R.string.toast_no_name_message),
-                            Toast.LENGTH_SHORT)
-                        .show();
-                  } else {
+                  String newName = nameInput.getText().toString().trim();
+                  if (newName.isEmpty()) {
+                    newName = oldName;
+                  }
 
-                    int newValue;
-                    String valueInputContents = valueInput.getText().toString();
-                    if (!valueInputContents.equals("")) {
-                      try {
-                        newValue = Integer.parseInt(valueInputContents);
-                      } catch (NumberFormatException e) {
-                        Log.w(TAG, "Unable to parse new value", e);
-                        Toast.makeText(
-                                activity,
-                                getResources().getText(R.string.toast_unable_to_modify),
-                                Toast.LENGTH_SHORT)
-                            .show();
-                        newValue = CounterFragment.DEFAULT_VALUE;
-                      }
-                    } else {
+                  int newValue;
+                  String valueInputContents = valueInput.getText().toString();
+                  if (!valueInputContents.equals("")) {
+                    try {
+                      newValue = Integer.parseInt(valueInputContents);
+                    } catch (NumberFormatException e) {
+                      Log.w(TAG, "Unable to parse new value", e);
+                      Toast.makeText(
+                              activity,
+                              getResources().getText(R.string.toast_unable_to_modify),
+                              Toast.LENGTH_SHORT)
+                          .show();
                       newValue = CounterFragment.DEFAULT_VALUE;
                     }
-
-                    final CounterStorage<IntegerCounter> storage =
-                        CounterApplication.getComponent().localStorage();
-
-                    storage.delete(oldName);
-                    try {
-                      storage.write(new IntegerCounter(newName, newValue));
-                    } catch (CounterException e) {
-                      Log.getStackTraceString(e);
-                      Toast.makeText(
-                              getContext(), R.string.toast_unable_to_modify, Toast.LENGTH_SHORT)
-                          .show();
-                    }
-
-                    new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName);
+                  } else {
+                    newValue = CounterFragment.DEFAULT_VALUE;
                   }
+
+                  final CounterStorage<IntegerCounter> storage =
+                      CounterApplication.getComponent().localStorage();
+
+                  storage.delete(oldName);
+                  try {
+                    storage.write(new IntegerCounter(newName, newValue));
+                  } catch (CounterException e) {
+                    Log.getStackTraceString(e);
+                    Toast.makeText(
+                            getContext(), R.string.toast_unable_to_modify, Toast.LENGTH_SHORT)
+                        .show();
+                  }
+
+                  new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName);
                 })
             .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
             .create();

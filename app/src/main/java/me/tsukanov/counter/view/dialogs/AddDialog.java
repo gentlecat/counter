@@ -11,12 +11,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
-
-
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
-
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.activities.MainActivity;
@@ -50,8 +47,11 @@ public class AddDialog extends DialogFragment {
             .setTitle(getString(R.string.dialog_add_title))
             .setPositiveButton(
                 getResources().getText(R.string.dialog_button_add),
-                (dialog1, which) -> {
-                  String name = checkCounterName(nameInput.getText().toString().trim());
+                (d, which) -> {
+                  String name = nameInput.getText().toString().trim();
+                  if (name.isEmpty()) {
+                    name = generateDefaultName();
+                  }
 
                   int value;
                   final String valueInputContents = valueInput.getText().toString().trim();
@@ -92,24 +92,18 @@ public class AddDialog extends DialogFragment {
     new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(counter.getName());
   }
 
-  private String checkCounterName(String name){
-      if (name.isEmpty()) {
-          int counterCount;
-          String genericName = getString(R.string.app_name) + " ";
-          boolean runAgain = true;
-          Set<String> counterNames;
-          counterNames = CounterApplication.getComponent().localStorage().readAll(false).stream().map(IntegerCounter::getName).collect(Collectors.toSet());
-          counterCount = counterNames.size() + 1;
-          while (runAgain) {
-              runAgain = false;
-              if (counterNames.contains(genericName + counterCount)){
-                  runAgain = true;
-                  counterCount++;
-              }
-          }
-          name = genericName + counterCount;
-      }
-      return name;
-  }
+  @NonNull
+  private String generateDefaultName() {
+    final Set<String> existingNames = new HashSet<>();
+    for (IntegerCounter c : CounterApplication.getComponent().localStorage().readAll(false)) {
+      existingNames.add(c.getName());
+    }
 
+    final String namePrefix = getString(R.string.app_name) + " ";
+    int nameSuffix = existingNames.size() + 1;
+    while (existingNames.contains(namePrefix + nameSuffix)) {
+      nameSuffix++;
+    }
+    return namePrefix + nameSuffix;
+  }
 }
