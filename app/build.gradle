@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:8.5.2'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.1.4'
         classpath 'com.puppycrawl.tools:checkstyle:10.12.4'
     }
