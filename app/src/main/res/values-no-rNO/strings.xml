@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
-  <string name="app_name">Teller</string>
+  <string name="app_name">Telling</string>
   <!-- Menu -->
   <string name="drawer_open">Åpne navigasjon</string>
   <string name="drawer_close">Lukk navigasjon</string>
@@ -44,10 +44,15 @@
   <string name="settings_other">Annet</string>
   <string name="settings_version_title">Versjon</string>
   <string name="settings_wipe_title">Slett alle tellerne</string>
+  <string name="settings_export_title">Eksporter tellinger</string>
+  <string name="settings_export_summary">Eksporter alle tellinger i CSV-format</string>
   <string name="settings_wipe_confirmation">Har du virkelig lyst til å slette alle tellerne?</string>
   <string name="settings_wipe_confirmation_yes">Slett alle</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Alle tellinger har blitt slettet.</string>
+  <string name="toast_delete_success">Telling \"%s\" har blitt slettet.</string>
   <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
+  <string name="toast_unable_to_export">Noe gikk galt under eksport av tellingene. Beklager!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny teller</string>
   <string name="unknown">Ukjent</string>
