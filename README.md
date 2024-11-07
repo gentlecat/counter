@@ -1,6 +1,6 @@
-# Counter
+# Counter [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L715SF5E)
 
-**⚠️ This app is in maintanance mode. Do not expect new functionality. You are free to make pull requests
+**⚠️ This app is in maintenance mode. Do not expect new functionality. You are free to make pull requests
 with new features or bug fixes.**
 
 ---
