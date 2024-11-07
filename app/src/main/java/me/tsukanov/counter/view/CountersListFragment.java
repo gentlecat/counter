@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.ListFragment;
 import java.util.List;
 import me.tsukanov.counter.CounterApplication;
@@ -52,9 +53,12 @@ public class CountersListFragment extends ListFragment {
     final IntentFilter counterSetChangeFilter =
         new IntentFilter(Actions.COUNTER_SET_CHANGE.getActionName());
     counterSetChangeFilter.addCategory(Intent.CATEGORY_DEFAULT);
-    requireActivity()
-        .getApplication()
-        .registerReceiver(new UpdateReceiver(), counterSetChangeFilter);
+
+    ContextCompat.registerReceiver(
+        requireActivity().getApplication(),
+        new UpdateReceiver(),
+        counterSetChangeFilter,
+        ContextCompat.RECEIVER_NOT_EXPORTED);
   }
 
   @Override
