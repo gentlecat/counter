@@ -27,8 +27,8 @@ subprojects {
 }
 
 ext {
-    compileSdkVersion = 33
-    minSdkVersion = 19
+    compileSdkVersion = 35
+    minSdkVersion = 21
 
     appVersion = 29
 }
