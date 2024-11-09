@@ -30,6 +30,7 @@
   <string name="settings_wipe_title">Ta bort alla räknare</string>
   <string name="settings_wipe_confirmation">Vill du verkligen ta bort alla räknare?</string>
   <string name="settings_wipe_confirmation_yes">Ta bort alla</string>
+  <!-- Toasts -->
   <!-- Other stuff -->
   <string name="unknown">Okänt</string>
 </resources>
