@@ -9,7 +9,8 @@ public enum SharedPrefKeys {
   HARDWARE_BTN_CONTROL_ON("hardControlOn"),
   VIBRATION_ON("vibrationOn"),
   SOUNDS_ON("soundsOn"),
-  THEME("theme");
+  THEME("theme"),
+  GOOGLE_PLAY_WARNING("googlePlayWarning");
 
   @NonNull private final String name;
 

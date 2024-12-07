@@ -1,6 +1,7 @@
 package me.tsukanov.counter.activities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -15,6 +19,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,6 +29,7 @@ import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
+import java.util.List;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
@@ -111,6 +118,12 @@ public class MainActivity extends AppCompatActivity {
       getWindow().addFlags(LayoutParams.FLAG_KEEP_SCREEN_ON);
     } else {
       getWindow().clearFlags(LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    final boolean isGooglePlayWarningSeen =
+        sharedPrefs.getBoolean(SharedPrefKeys.GOOGLE_PLAY_WARNING.getName(), false);
+    if (!isGooglePlayWarningSeen && isInstalledViaGooglePlay(this)) {
+      showGooglePlayDialog();
     }
   }
 
@@ -219,6 +232,78 @@ public class MainActivity extends AppCompatActivity {
       default:
         return super.onOptionsItemSelected(item);
     }
+  }
+
+  private boolean isInstalledViaGooglePlay(@NonNull final Context context) {
+    final String installer =
+        context.getPackageManager().getInstallerPackageName(context.getPackageName());
+    return installer != null
+        && List.of("com.android.vending", "com.google.android.feedback").contains(installer);
+  }
+
+  @SuppressWarnings("checkstyle:linelength")
+  private void showGooglePlayDialog() {
+    final SpannableString message =
+        new SpannableString(
+            """
+            Apologies for the interruption.
+      
+            In January 2025 my developer account will most likely be suspended and this app will be delisted from the Google Play Store due to policy changes. I'm now required to list my home address, which I'm not willing to do.
+      
+            You can still get this app from F-Droid, GitHub and other sources. Go to https://counter.roman.zone for details.
+      
+            Thank you for using the app! You will only see this message once.
+            """);
+    Linkify.addLinks(message, Linkify.ALL);
+
+    final AlertDialog d =
+        new AlertDialog.Builder(this)
+            .setTitle("A note from the developer")
+            .setMessage(message)
+            .setPositiveButton(
+                "I understand",
+                (dialog, id) -> {
+                  sharedPrefs.edit()
+                          .putBoolean(SharedPrefKeys.GOOGLE_PLAY_WARNING.getName(), true)
+                          .apply();
+                  Toast.makeText(getBaseContext(), "Thanks for using the app.", Toast.LENGTH_SHORT)
+                      .show();
+                })
+            .create();
+
+    d.show();
+
+    // Make the textview clickable. Must be called after show()
+    ((TextView) d.findViewById(android.R.id.message))
+        .setMovementMethod(LinkMovementMethod.getInstance());
+
+    //
+    //
+    //
+    //    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    //    builder.setTitle("A note from the developer");
+    //    builder.setMessage(
+    //        """
+    //        Apologies for the interruption. A note from the developer of this app:
+    //
+    //        In January of 2025 my developer account will most likely be suspended and this app
+    // will be delisted from Google Play Store.
+    //
+    //        You can still get this app from F-Droid, GitHub and other sources.
+    //
+    //        ADD URL NOT GITHUB
+    //
+    //        You will only see this message once.
+    //        """);
+    //    builder.setPositiveButton(
+    //        "I understand",
+    //        (dialog, id) -> {
+    //          Toast.makeText(
+    //                  getBaseContext(), "Thanks for using the app.", Toast.LENGTH_SHORT)
+    //              .show();
+    //        });
+    //
+    //    builder.create().show();
   }
 
   public boolean isNavigationOpen() {
