@@ -52,6 +52,8 @@
   <string name="settings_wipe_title">Remove all counters</string>
   <string name="settings_export_title">Export counters</string>
   <string name="settings_export_summary">Export all counters in CSV format</string>
+  <string name="settings_homepage_title">Homepage</string>
+  <string name="settings_homepage_summary">App info and the source code</string>
   <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
   <string name="settings_wipe_confirmation_yes">Remove all</string>
 
