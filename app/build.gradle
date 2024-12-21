@@ -2,7 +2,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:8.7.3'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:5.1.4'
-        classpath 'com.puppycrawl.tools:checkstyle:10.12.4'
+        classpath 'com.puppycrawl.tools:checkstyle:10.20.2'
     }
 }
 
@@ -12,8 +12,8 @@ apply plugin: 'idea'
 dependencies {
 
     implementation 'androidx.core:core:1.15.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.appcompat:appcompat-resources:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat-resources:1.6.1'
     implementation 'androidx.preference:preference:1.2.1'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.android.material:material:1.12.0'
