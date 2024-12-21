@@ -4,11 +4,7 @@
 requests with new features or bug fixes.
 
 ⚠️ **In 2025 this app will disappear from Google Play and my developer account will be deactivated.**
-Google is introducing [a policy](https://android-developers.googleblog.com/2023/07/boosting-trust-and-transparency-in-google-play.html)
-that's hostile to indie developers. I'm now required to provide my home address for public display
-on the Play Store. That's not something I'm going to do. If you are one of more than 600k users
-who downloaded the app via Google Play, I encourage you to switch to the [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter)
-distribution. While future updates are unlikely, they are not going to be on Google Play.
+See [the section below](#google-play-store) for details.
 
 ---
 
@@ -37,3 +33,11 @@ and [translators](https://crowdin.net/project/simple-counter).
 
 * Application icon made by @armand-leguillou
 * Sounds from [adobeflash.com](https://www.adobeflash.com/download/sounds/clicks/)
+
+## Google Play Store
+
+Google is introducing [a policy](https://android-developers.googleblog.com/2023/07/boosting-trust-and-transparency-in-google-play.html)
+that's hostile to indie developers. I'm now required to provide my home address for public display
+on the Play Store. That's not something I'm going to do. If you are one of more than 600k users
+who downloaded the app via Google Play, I encourage you to switch to the [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter)
+distribution. While future updates are unlikely, they are not going to be on Google Play.
