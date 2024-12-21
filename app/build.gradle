@@ -99,7 +99,7 @@ checkstyle {
     ignoreFailures false
     maxWarnings = 0
     showViolations true
-    toolVersion '10.12.4'
+    toolVersion '10.20.2'
 }
 
 tasks.register('checkstyle', Checkstyle) {
