@@ -46,6 +46,8 @@
   <string name="settings_wipe_title">Alle Zähler entfernen</string>
   <string name="settings_export_title">Zähler exportieren</string>
   <string name="settings_export_summary">Alle Zähler im CSV-Format exportieren</string>
+  <string name="settings_homepage_title">Startseite</string>
+  <string name="settings_homepage_summary">App-Info und Quellcode</string>
   <string name="settings_wipe_confirmation">Möchtest Du wirklich alle Zähler entfernen?</string>
   <string name="settings_wipe_confirmation_yes">Alle entfernen</string>
   <!-- Toasts -->
