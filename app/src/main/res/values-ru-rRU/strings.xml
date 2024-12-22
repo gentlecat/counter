@@ -22,6 +22,9 @@
   <string name="dialog_button_reset">Сброс</string>
   <string name="dialog_button_delete">Удалить</string>
   <string name="dialog_button_cancel">Отмена</string>
+  <string name="dialog_playstore_button">Все понятно</string>
+  <string name="dialog_playstore_title">Сообщение от разработчика</string>
+  <string name="dialog_playstore_toast">Спасибо за использование приложения!</string>
   <!-- Settings -->
   <string name="settings_title">Настройки</string>
   <string name="settings_display">Дисплей</string>
