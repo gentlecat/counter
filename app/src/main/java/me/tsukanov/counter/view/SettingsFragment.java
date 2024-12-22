@@ -1,6 +1,7 @@
 package me.tsukanov.counter.view;
 
 import static me.tsukanov.counter.activities.SettingsActivity.KEY_EXPORT_COUNTERS;
+import static me.tsukanov.counter.activities.SettingsActivity.KEY_HOMEPAGE;
 import static me.tsukanov.counter.activities.SettingsActivity.KEY_REMOVE_COUNTERS;
 import static me.tsukanov.counter.activities.SettingsActivity.KEY_VERSION;
 
@@ -18,6 +19,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
 
   private OnPreferenceClickListener onRemoveCountersClickListener;
   private OnPreferenceClickListener onExportClickListener;
+  private OnPreferenceClickListener onHomepageClickListener;
   private String appVersion;
   private String theme;
 
@@ -29,6 +31,11 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
   public void setOnExportClickListener(
       final @NonNull OnPreferenceClickListener onExportClickListener) {
     this.onExportClickListener = onExportClickListener;
+  }
+
+  public void setOnHomepageClickListener(
+      final @NonNull OnPreferenceClickListener onHomepageClickListener) {
+    this.onHomepageClickListener = onHomepageClickListener;
   }
 
   public void setAppVersion(String appVersion) {
@@ -52,6 +59,8 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
       findPreference(KEY_REMOVE_COUNTERS)
           .setOnPreferenceClickListener(onRemoveCountersClickListener);
       findPreference(KEY_EXPORT_COUNTERS).setOnPreferenceClickListener(onExportClickListener);
+
+      findPreference(KEY_HOMEPAGE).setOnPreferenceClickListener(onHomepageClickListener);
 
     } catch (NullPointerException e) {
       Log.e(TAG, "Unable to retrieve one of the preferences", e);
