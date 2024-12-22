@@ -55,6 +55,16 @@
       android:summary="@string/settings_export_summary"
       android:title="@string/settings_export_title" />
     <Preference
+      android:icon="@drawable/ic_tip"
+      android:key="tip"
+      android:summary="@string/settings_tip_summary"
+      android:title="@string/settings_tip_title" />
+    <Preference
+      android:icon="@drawable/ic_link"
+      android:key="homepage"
+      android:summary="@string/settings_homepage_summary"
+      android:title="@string/settings_homepage_title" />
+    <Preference
       android:enabled="false"
       android:icon="@drawable/ic_info"
       android:key="version"

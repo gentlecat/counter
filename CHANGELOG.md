@@ -1,9 +1,13 @@
 # Changelog
 
+## Version 30
+
+* Added a link to the project page.
+
 ## Version 29
 
-* Updated app icon
-* Updated translations
+* Updated app icon.
+* Updated translations.
 
 ## Version 28
 
@@ -11,56 +15,56 @@
 
 ## Version 27
 
-* Menu styling adjustment
+* Menu styling adjustment.
 
 ## Version 26
 
-* Styling adjustment
+* Styling adjustment.
 
 ## Version 25
 
-* Visual refresh
+* Visual refresh.
 
 ## Version 24
 
-* Counters in the list are now stored alphabetically
+* Counters in the list are now stored alphabetically.
 
 ## Version 23
 
-* Translation updates
-* Fixes for some types of app crashes
+* Translation updates.
+* Fixes for some types of app crashes.
 
 ## Version 22
 
-* Added a way to export all counters in CSV format (this feature can be accessed from app settings)
+* Added a way to export all counters in CSV format (this feature can be accessed from app settings).
 
 ## Version 21
 
-* Translation updates
-* Major refactoring under the hood
+* Translation updates.
+* Major refactoring under the hood.
 
 ## Version 20
 
-* Maximum (and minimum) counter limits are now significantly higher
+* Maximum (and minimum) counter limits are now significantly higher.
 
 ## Version 19
 
-* Added a way to increment the counter by clicking on the value
-* List of counters is now sorted alphabetically
-* Translation updates
+* Added a way to increment the counter by clicking on the value.
+* List of counters is now sorted alphabetically.
+* Translation updates.
 
 ## Version 18
 
-* Increased minimum Android version requirement to 4.0 (Ice Cream Sandwich)
-* Fixed counter visibility in the dark theme
-* Added icons into settings
-* Translation updates
+* Increased minimum Android version requirement to 4.0 (Ice Cream Sandwich).
+* Fixed counter visibility in the dark theme.
+* Added icons into settings.
+* Translation updates.
 
 ## Version 17
 
-* Dark theme
-* RTL support
-* Translation updates
+* Dark theme.
+* RTL support.
+* Translation updates.
 
 ## Version 16
 * Minor user interface updates (using new Android APIs).
@@ -77,7 +81,7 @@
 * Added Arabic and Finnish translations, updated old ones.
 
 ## Version 13
-* Fixed broken back button
+* Fixed broken back button.
 
 ## Version 12
 * Removed delay from hardware buttons.
@@ -95,12 +99,12 @@
 * Updated localization (added Czech and updated other languages).
 
 ## Version 9
-* Added "About" window
+* Added "About" window.
 * Interface improvements for devices with small screens.
 * Updated localization (added German, Spanish, and French).
 
 ## Version 8
-* Updated app icon
+* Updated app icon.
 
 ## 2.3.1 (7)
 * Added Italian localization (made by Vincenzo Petronio).

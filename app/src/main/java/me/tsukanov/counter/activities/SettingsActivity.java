@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -28,6 +29,8 @@ public class SettingsActivity extends AppCompatActivity
 
   public static final String KEY_REMOVE_COUNTERS = "removeCounters";
   public static final String KEY_EXPORT_COUNTERS = "exportCounters";
+  public static final String KEY_HOMEPAGE = "homepage";
+  public static final String KEY_TIP = "tip";
   public static final String KEY_VERSION = "version";
 
   private SharedPreferences sharedPrefs;
@@ -47,6 +50,8 @@ public class SettingsActivity extends AppCompatActivity
     settingsFragment = new SettingsFragment();
     settingsFragment.setOnRemoveCountersClickListener(getOnRemoveCountersClickListener());
     settingsFragment.setOnExportClickListener(getOnExportClickListener());
+    settingsFragment.setOnHomepageClickListener(getOnHomepageClickListener());
+    settingsFragment.setOnTipClickListener(getOnTipClickListener());
     settingsFragment.setAppVersion(getAppVersion());
     settingsFragment.setTheme(getCurrentThemeName());
 
@@ -82,6 +87,20 @@ public class SettingsActivity extends AppCompatActivity
                 Toast.LENGTH_SHORT)
             .show();
       }
+      return true;
+    };
+  }
+
+  private OnPreferenceClickListener getOnHomepageClickListener() {
+    return preference -> {
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone")));
+      return true;
+    };
+  }
+
+  private OnPreferenceClickListener getOnTipClickListener() {
+    return preference -> {
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone/tip")));
       return true;
     };
   }
