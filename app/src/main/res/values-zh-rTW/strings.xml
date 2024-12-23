@@ -46,6 +46,8 @@
   <string name="settings_wipe_title">刪除全部計數器</string>
   <string name="settings_export_title">匯出計數器</string>
   <string name="settings_export_summary">以 CSV 格式匯出全部計數器</string>
+  <string name="settings_homepage_title">網站</string>
+  <string name="settings_homepage_summary">應用程式資訊及原始碼</string>
   <string name="settings_wipe_confirmation">您確定要刪除全部計數器嗎？</string>
   <string name="settings_wipe_confirmation_yes">刪除全部</string>
   <!-- Toasts -->
