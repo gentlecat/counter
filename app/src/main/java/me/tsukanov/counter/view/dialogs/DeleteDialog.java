@@ -7,12 +7,14 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+import java.util.Map;
 import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.infrastructure.BroadcastHelper;
 import me.tsukanov.counter.repository.CounterStorage;
+import org.apache.commons.text.StringSubstitutor;
 
 public class DeleteDialog extends DialogFragment {
 
@@ -48,8 +50,11 @@ public class DeleteDialog extends DialogFragment {
 
                   Toast.makeText(
                           getContext(),
-                          String.format(
-                              (String) getResources().getText(R.string.toast_delete_success), name),
+                          StringSubstitutor.replace(
+                              getResources().getText(R.string.toast_delete_success),
+                              Map.of("name", name),
+                              "{",
+                              "}"),
                           Toast.LENGTH_SHORT)
                       .show();
 

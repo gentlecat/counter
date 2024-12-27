@@ -61,7 +61,7 @@
 
   <!-- Toasts -->
   <string name="toast_wipe_success">All counters have been deleted.</string>
-  <string name="toast_delete_success">Counter \"%s\" has been deleted.</string>
+  <string name="toast_delete_success">Counter \"{name}\" has been deleted.</string>
   <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
   <string name="toast_unable_to_export">Something went wrong while exporting the counters. Sorry!</string>
 
