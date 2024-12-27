@@ -5,6 +5,7 @@
   <string name="app_name">Counter</string>
   <string name="plus" translatable="false">+</string>
   <string name="minus" translatable="false">-</string>
+  <string name="last_update_timestamp">Last updated at {timestamp}</string>
 
   <!-- Menu -->
   <string name="drawer_open">Open navigation</string>

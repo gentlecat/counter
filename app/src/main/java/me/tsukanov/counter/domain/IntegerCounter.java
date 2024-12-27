@@ -2,9 +2,11 @@ package me.tsukanov.counter.domain;
 
 import android.util.Log;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import me.tsukanov.counter.domain.exception.CounterException;
 import me.tsukanov.counter.domain.exception.InvalidNameException;
 import me.tsukanov.counter.domain.exception.InvalidValueException;
+import org.joda.time.DateTime;
 
 /**
  * Variation of the {@link Counter} that uses {@link Integer} type as a value. Names (identifiers)
@@ -20,12 +22,14 @@ public class IntegerCounter implements Counter<Integer> {
 
   private String name;
   private Integer value = DEFAULT_VALUE;
+  private @Nullable DateTime lastUpdate;
 
   public IntegerCounter(@NonNull final String name) throws CounterException {
     if (!isValidName(name)) {
       throw new InvalidNameException("Provided name is invalid");
     }
     this.name = name;
+    this.lastUpdate = new DateTime();
   }
 
   public IntegerCounter(@NonNull final String name, @NonNull final Integer value)
@@ -42,6 +46,27 @@ public class IntegerCounter implements Counter<Integer> {
               value, MIN_VALUE, MAX_VALUE));
     }
     this.value = value;
+
+    this.lastUpdate = null;
+  }
+
+  public IntegerCounter(
+      @NonNull final String name, @NonNull final Integer value, @Nullable final DateTime lastUpdate)
+      throws CounterException {
+    if (!isValidName(name)) {
+      throw new InvalidNameException("Provided name is invalid");
+    }
+    this.name = name;
+
+    if (!isValidValue(value)) {
+      throw new InvalidValueException(
+          String.format(
+              "Desired value (%s) is outside of allowed range: %s to %s",
+              value, MIN_VALUE, MAX_VALUE));
+    }
+    this.value = value;
+
+    this.lastUpdate = lastUpdate;
   }
 
   @NonNull
@@ -61,6 +86,12 @@ public class IntegerCounter implements Counter<Integer> {
     return this.value;
   }
 
+  @Override
+  @Nullable
+  public DateTime getLastUpdatedDate() {
+    return this.lastUpdate;
+  }
+
   public void setValue(@NonNull final Integer newValue) throws InvalidValueException {
     if (!isValidValue(newValue)) {
       throw new InvalidValueException(
@@ -69,6 +100,7 @@ public class IntegerCounter implements Counter<Integer> {
               newValue, MIN_VALUE, MAX_VALUE));
     }
     this.value = newValue;
+    this.lastUpdate = new DateTime();
   }
 
   public void increment() {

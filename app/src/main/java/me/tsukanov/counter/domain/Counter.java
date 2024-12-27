@@ -1,8 +1,10 @@
 package me.tsukanov.counter.domain;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import me.tsukanov.counter.domain.exception.InvalidNameException;
 import me.tsukanov.counter.domain.exception.InvalidValueException;
+import org.joda.time.DateTime;
 
 public interface Counter<T> {
 
@@ -13,6 +15,9 @@ public interface Counter<T> {
 
   @NonNull
   T getValue();
+
+  @Nullable
+  DateTime getLastUpdatedDate();
 
   void setValue(@NonNull T newValue) throws InvalidValueException;
 
