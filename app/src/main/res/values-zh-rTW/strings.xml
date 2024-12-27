@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">刪除全部</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">已刪除全部計數器。</string>
-  <string name="toast_delete_success">已刪除「%s」計數器。</string>
+  <string name="toast_delete_success">已刪除「{name}」計數器。</string>
   <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
   <string name="toast_unable_to_export">匯出計數器的時候出錯了，真抱歉！</string>
   <!-- Other stuff -->

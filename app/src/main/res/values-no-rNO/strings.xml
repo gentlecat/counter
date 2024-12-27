@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Slett alle</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle tellinger har blitt slettet.</string>
-  <string name="toast_delete_success">Telling \"%s\" har blitt slettet.</string>
+  <string name="toast_delete_success">Telling \"{name}\" har blitt slettet.</string>
   <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
   <string name="toast_unable_to_export">Noe gikk galt under eksport av tellingene. Beklager!</string>
   <!-- Other stuff -->

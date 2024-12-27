@@ -39,7 +39,7 @@
   <string name="settings_wipe_confirmation_yes">Forigi ĉiujn</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Forigis ĉiujn nombrilojn.</string>
-  <string name="toast_delete_success">Nombrilo \"%s\" estas forigita.</string>
+  <string name="toast_delete_success">Nombrilo \"{name}\" estas forigita.</string>
   <string name="toast_unable_to_modify">Io misokazis dum ĝisdatigo de la nombrilo. Pardonu!</string>
   <string name="toast_unable_to_export">Io misokazis dum elportado de la nombriloj. Pardonu!</string>
   <!-- Other stuff -->

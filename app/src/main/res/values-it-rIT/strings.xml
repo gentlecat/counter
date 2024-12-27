@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Rimuovi tutti</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Tutti i contatori sono stati rimossi.</string>
-  <string name="toast_delete_success">Il contatore \"%s\" è stato rimosso.</string>
+  <string name="toast_delete_success">Il contatore \"{name}\" è stato rimosso.</string>
   <string name="toast_unable_to_modify">Qualcosa è andato storto durante l\'aggiornamento del contatore.</string>
   <string name="toast_unable_to_export">Qualcosa è andato storto durante l\'esportazione dei contatori.</string>
   <!-- Other stuff -->

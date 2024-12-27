@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Eemalda kõik</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Kõik loendurid on kustutatud.</string>
-  <string name="toast_delete_success">Loendur \"%s\" on kustutatud.</string>
+  <string name="toast_delete_success">Loendur \"{name}\" on kustutatud.</string>
   <string name="toast_unable_to_modify">Miskit läks lugeri uuendamisega nihu. Vabandame!</string>
   <string name="toast_unable_to_export">Midagi läks loendurite eksportimisel valesti. Vabandame!</string>
   <!-- Other stuff -->

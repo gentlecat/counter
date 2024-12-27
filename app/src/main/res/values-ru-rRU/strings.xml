@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Все счетчики удалены.</string>
-  <string name="toast_delete_success">Счетчик \"%s\" удален.</string>
+  <string name="toast_delete_success">Счетчик \"{name}\" удален.</string>
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Счетчик</string>

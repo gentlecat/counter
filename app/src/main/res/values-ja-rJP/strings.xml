@@ -50,7 +50,7 @@
   <string name="settings_wipe_confirmation_yes">すべてを削除</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">すべてのカウンターが削除されました。</string>
-  <string name="toast_delete_success">カウンター \"%s\" が削除されました。</string>
+  <string name="toast_delete_success">カウンター \"{name}\" が削除されました。</string>
   <string name="toast_unable_to_modify">カウンタ―の更新中に問題が発生しました。申し訳ありません!</string>
   <string name="toast_unable_to_export">カウンタ―のエクスポート中に問題が発生しました。申し訳ありません!</string>
   <!-- Other stuff -->
