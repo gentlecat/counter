@@ -3,6 +3,7 @@
 ## Version 30
 
 * Added a link to the project page.
+* Use system theme by default instead of "light".
 
 ## Version 29
 

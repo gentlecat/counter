@@ -39,7 +39,7 @@ public enum Themes {
         }
       }
     }
-    return LIGHT;
+    return SYSTEM;
   }
 
   /**
