@@ -55,5 +55,4 @@
   <string name="toast_unable_to_export">هنگام صدور شمارنده ها مشکلی پیش آمد. متاسفیم!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">شمارنده جدید</string>
-  <string name="unknown">ناشناخته</string>
 </resources>
