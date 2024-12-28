@@ -2,9 +2,10 @@
 
 ## Version 30
 
-* Added a link to the project page.
-* Use system theme by default instead of "light".
-* Increased minimum Android version requirement to 7.0 (Nougat).
+* Links to the project page and tip jar were added to settings.
+* System theme is now the default instead of "light".
+* Minimum Android version requirement is now 7.0 (Nougat).
+* Updated translations.
 
 ## Version 29
 
