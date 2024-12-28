@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     toolbar.setNavigationOnClickListener(view -> openDrawer());
 
     navigationLayout = findViewById(R.id.mainNavigationLayout);
-        menuFrame = findViewById(R.id.mainMenuFrame);
+    menuFrame = findViewById(R.id.mainMenuFrame);
   }
 
   private void registerIntentReceivers(@NonNull final Context context) {
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void initCountersList() {
     final FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainMenuFrame, new CountersListFragment());
+    transaction.replace(R.id.mainMenuFrame, new CountersListFragment());
     transaction.commit();
   }
 
@@ -109,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
         .replace(R.id.mainContentFrame, selectedCounterFragment)
         .commitAllowingStateLoss();
 
-        toolbar.setTitle(counterName);
+    toolbar.setTitle(counterName);
 
-        if (isNavigationOpen()) {
-          closeNavigation();
-        }
+    if (isNavigationOpen()) {
+      closeNavigation();
+    }
   }
 
   /**
@@ -167,34 +166,34 @@ public class MainActivity extends AppCompatActivity {
 
   @Override
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-      return switch (item.getItemId()) {
-          case android.R.id.home -> {
-              if (isNavigationOpen()) {
-                  closeNavigation();
-              } else {
-                  openDrawer();
-              }
-              yield true;
-          }
-          case R.id.menu_settings -> {
-              startActivity(new Intent(this, SettingsActivity.class));
-              yield true;
-          }
-          default -> super.onOptionsItemSelected(item);
-      };
+    return switch (item.getItemId()) {
+      case android.R.id.home -> {
+        if (isNavigationOpen()) {
+          closeNavigation();
+        } else {
+          openDrawer();
+        }
+        yield true;
+      }
+      case R.id.menu_settings -> {
+        startActivity(new Intent(this, SettingsActivity.class));
+        yield true;
+      }
+      default -> super.onOptionsItemSelected(item);
+    };
   }
 
-    public boolean isNavigationOpen() {
-      return navigationLayout.isDrawerOpen(menuFrame);
-    }
+  public boolean isNavigationOpen() {
+    return navigationLayout.isDrawerOpen(menuFrame);
+  }
 
-    private void closeNavigation() {
-      navigationLayout.closeDrawer(menuFrame);
-    }
+  private void closeNavigation() {
+    navigationLayout.closeDrawer(menuFrame);
+  }
 
-    private void openDrawer() {
-      navigationLayout.openDrawer(menuFrame);
-    }
+  private void openDrawer() {
+    navigationLayout.openDrawer(menuFrame);
+  }
 
   private class CounterChangeReceiver extends BroadcastReceiver {
 

@@ -113,6 +113,6 @@ tasks.register('checkstyle', Checkstyle) {
     classpath = files()
 }
 
-//preBuild.dependsOn('checkstyle')
+preBuild.dependsOn('checkstyle')
 assemble.dependsOn('lint')
-//check.dependsOn('checkstyle')
+check.dependsOn('checkstyle')
