@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">Telling</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Åpne navigasjon</string>
   <string name="menu_add">Legg til teller</string>
   <string name="menu_reset">Tilbakestill teller</string>
   <string name="menu_edit">Redigér teller</string>
@@ -13,6 +14,8 @@
   <string name="dialog_edit_title">Rediger denne telleren</string>
   <string name="dialog_delete_title">Har du virkelig lyst til å slette denne telleren?</string>
   <string name="dialog_reset_title">Har du virkelig lyst til å tilbakestille denne telleren?</string>
+  <string name="dialog_edit_name">Tittel:</string>
+  <string name="dialog_edit_value">Verdi:</string>
   <string name="dialog_button_add">Legg til</string>
   <string name="dialog_button_apply">Bruk</string>
   <string name="dialog_button_reset">Tilbakestill teller</string>
