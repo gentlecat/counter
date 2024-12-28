@@ -3,3 +3,7 @@ files:
     translation: /app/src/main/res/values-%android_code%/%original_file_name%
     translate_attributes: 0
     content_segmentation: 0
+  - source: /resources/store/listing.xml
+    translation: /resources/store/%android_code%/%original_file_name%
+    translate_attributes: 0
+    content_segmentation: 0
