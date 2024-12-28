@@ -45,6 +45,8 @@
   <string name="settings_wipe_title">Eemalda kõik loendurid</string>
   <string name="settings_export_title">Ekspordi loendurid</string>
   <string name="settings_export_summary">Ekspordi kõik loendurid CSV formaati</string>
+  <string name="settings_homepage_title">Koduleht</string>
+  <string name="settings_homepage_summary">Rakenduse teave ja lähtekood</string>
   <string name="settings_wipe_confirmation">Kas olete kindel, et soovite kõik loendurid kustutada?</string>
   <string name="settings_wipe_confirmation_yes">Eemalda kõik</string>
   <!-- Toasts -->
