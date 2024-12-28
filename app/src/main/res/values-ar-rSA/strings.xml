@@ -54,5 +54,4 @@
   <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>
-  <string name="unknown">‮غير معروف</string>
 </resources>
