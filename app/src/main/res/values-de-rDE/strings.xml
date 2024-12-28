@@ -56,5 +56,4 @@
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Neuer Zähler</string>
-  <string name="unknown">Unbekannt</string>
 </resources>
