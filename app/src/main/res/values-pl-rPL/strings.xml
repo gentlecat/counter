@@ -3,8 +3,6 @@
   <!-- General -->
   <string name="app_name">Counter (Licznik)</string>
   <!-- Menu -->
-  <string name="drawer_open">Otwórz nawigację</string>
-  <string name="drawer_close">Zamknij nawigację</string>
   <string name="menu_add">Dodaj licznik</string>
   <string name="menu_reset">Zresetuj licznik</string>
   <string name="menu_edit">Edytuj licznik</string>
@@ -15,8 +13,6 @@
   <string name="dialog_edit_title">Edytuj ten licznik</string>
   <string name="dialog_delete_title">Czy na pewno chcesz usunąć ten licznik?</string>
   <string name="dialog_reset_title">Czy na pewno chcesz zresetować licznik?</string>
-  <string name="dialog_edit_name">Tytuł:</string>
-  <string name="dialog_edit_value">Wartość:</string>
   <string name="dialog_button_add">Dodaj</string>
   <string name="dialog_button_apply">Zastosuj</string>
   <string name="dialog_button_reset">Zresetuj licznik</string>
