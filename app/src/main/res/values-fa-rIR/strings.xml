@@ -13,6 +13,8 @@
   <string name="dialog_edit_title">ویرایش شمارنده</string>
   <string name="dialog_delete_title">آیا مطمئنید که می‌خواهید این شمارنده را حذف کنید؟</string>
   <string name="dialog_reset_title">آیا مطمئنید که می‌خواهید این شمارنده را بازنشانی کنید؟</string>
+  <string name="dialog_edit_name">عنوان:</string>
+  <string name="dialog_edit_value">مقدار:</string>
   <string name="dialog_button_add">افزودن</string>
   <string name="dialog_button_apply">اعمال تغییرات</string>
   <string name="dialog_button_reset">بازنشانی</string>
