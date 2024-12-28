@@ -11,7 +11,7 @@ subprojects {
         }
 
         dependencies {
-            classpath 'com.android.tools.build:gradle:4.1.3'
+            classpath 'com.android.tools.build:gradle:8.7.3'
         }
 
     }
@@ -33,6 +33,12 @@ ext {
     appVersion = 30
 }
 
-task clean(type: Delete) {
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += [
+            'org.gradle.jvmargs=-Xmx8g',
+    ]
+}
+
+tasks.register('clean', Delete) {
     delete getLayout().getBuildDirectory()
 }

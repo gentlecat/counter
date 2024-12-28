@@ -45,6 +45,8 @@ android {
 
     compileOptions.incremental = false
 
+    buildFeatures.buildConfig = true
+
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.compileSdkVersion
@@ -61,13 +63,24 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
             debuggable false
             jniDebuggable false
             renderscriptDebuggable false
             pseudoLocalesEnabled false
             zipAlignEnabled true
+
             shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+//            proguardFiles
+//            getDefaultProguardFile('proguard-android-optimize.txt')
+//
+//            // List additional ProGuard rules for the given build type here. By default,
+//            // Android Studio creates and includes an empty rules file for you (located
+//            // at the root directory of each module).
+//            'proguard-rules.pro'
+//            testProguardFiles
         }
     }
 
