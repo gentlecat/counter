@@ -59,5 +59,4 @@
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Первый счетчик</string>
-  <string name="unknown">Неизвестно</string>
 </resources>
