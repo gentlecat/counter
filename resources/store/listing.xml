@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+  <title><![CDATA[Counter]]></title>
+  <shortDescription><![CDATA[Simple, easy to use, ad-free tally counter.]]></shortDescription>
+  <fullDescription>
+    <![CDATA[Track multiple counters with their own names and values. Values can be changed using volume buttons. There is a way to export all counters into a CSV file.
+
+    This is an open source application. If you want to fix a bug or propose a new feature, check out the project on GitHub: https://counter.roman.zone
+
+    If you want to help with translation, please go to https://counter.roman.zone/translation
+
+    Thank you for using the app! I hope you find it useful.]]>
+  </fullDescription>
+</content>
