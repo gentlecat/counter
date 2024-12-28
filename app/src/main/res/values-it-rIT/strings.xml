@@ -54,5 +54,4 @@
   <string name="toast_unable_to_export">Qualcosa è andato storto durante l\'esportazione dei contatori.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuovo contatore</string>
-  <string name="unknown">Sconosciuto</string>
 </resources>
