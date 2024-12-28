@@ -52,7 +52,7 @@
   <string name="settings_wipe_title">Remove all counters</string>
   <string name="settings_export_title">Export counters</string>
   <string name="settings_export_summary">Export all counters in CSV format</string>
-  <string name="settings_tip_title">Tip the developer</string>
+  <string name="settings_tip_title">Buy me a coffee</string>
   <string name="settings_tip_summary">Support the creator of this app</string>
   <string name="settings_homepage_title">Homepage</string>
   <string name="settings_homepage_summary">App info and the source code</string>
