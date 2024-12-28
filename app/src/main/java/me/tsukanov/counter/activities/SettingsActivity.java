@@ -112,13 +112,6 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   @Override
-  protected void onPostCreate(final Bundle savedInstanceState) {
-    super.onPostCreate(savedInstanceState);
-    getDelegate().onPostCreate(savedInstanceState);
-    //    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-  }
-
-  @Override
   public boolean onOptionsItemSelected(final @NonNull MenuItem item) {
     if (item.getItemId() == android.R.id.home) {
       finish();
