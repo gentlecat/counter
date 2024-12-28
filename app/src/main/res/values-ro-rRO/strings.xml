@@ -3,8 +3,6 @@
   <!-- General -->
   <string name="app_name">Counter</string>
   <!-- Menu -->
-  <string name="drawer_open">Deschide navigarea</string>
-  <string name="drawer_close">Închide navigarea</string>
   <string name="menu_add">Adaugă contor</string>
   <string name="menu_reset">Resetează contorul</string>
   <string name="menu_edit">Editează contorul</string>
@@ -15,8 +13,6 @@
   <string name="dialog_edit_title">Editează acest contor</string>
   <string name="dialog_delete_title">Sigur vrei să ștergi acest contor?</string>
   <string name="dialog_reset_title">Sigur vrei să resetezi acest contor?</string>
-  <string name="dialog_edit_name">Titlu:</string>
-  <string name="dialog_edit_value">Valoare:</string>
   <string name="dialog_button_add">Adaugă</string>
   <string name="dialog_button_apply">Aplică</string>
   <string name="dialog_button_reset">Resetează</string>
