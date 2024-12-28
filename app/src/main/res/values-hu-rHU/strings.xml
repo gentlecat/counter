@@ -2,8 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <!-- Menu -->
-  <string name="drawer_open">Navigáció megnyitása</string>
-  <string name="drawer_close">Navigáció bezárása</string>
   <string name="menu_add">Számláló hozzáadása</string>
   <string name="menu_reset">Számláló visszaállítása</string>
   <string name="menu_edit">Számláló szerkesztése</string>
@@ -12,8 +10,6 @@
   <!-- Dialogs -->
   <string name="dialog_delete_title">Valóban törölni akarja ezt a számlálót?</string>
   <string name="dialog_reset_title">Valóban vissza akarja állítani ezt a számlálót?</string>
-  <string name="dialog_edit_name">Elnevezés:</string>
-  <string name="dialog_edit_value">Érték:</string>
   <string name="dialog_button_add">Hozzáadás</string>
   <string name="dialog_button_apply">Elfogadás</string>
   <string name="dialog_button_reset">Számláló visszaállítása</string>
