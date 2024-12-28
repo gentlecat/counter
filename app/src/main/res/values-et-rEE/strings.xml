@@ -3,8 +3,6 @@
   <!-- General -->
   <string name="app_name">Loendur</string>
   <!-- Menu -->
-  <string name="drawer_open">Ava navigatsioon</string>
-  <string name="drawer_close">Sulge navigatsioon</string>
   <string name="menu_add">Lisa loendur</string>
   <string name="menu_reset">Lähtesta loendur</string>
   <string name="menu_edit">Muuda loendurit</string>
@@ -15,8 +13,6 @@
   <string name="dialog_edit_title">Selle loenduri muutmine</string>
   <string name="dialog_delete_title">Kas olete kindel, et soovite seda loendurit kustutada?</string>
   <string name="dialog_reset_title">Kas olete kindel, et soovite seda loendurit lähtestada?</string>
-  <string name="dialog_edit_name">Pealkiri:</string>
-  <string name="dialog_edit_value">Väärtus:</string>
   <string name="dialog_button_add">Lisa</string>
   <string name="dialog_button_apply">Rakenda</string>
   <string name="dialog_button_reset">Lähtesta</string>
