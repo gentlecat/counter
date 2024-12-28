@@ -46,6 +46,8 @@
   <string name="settings_wipe_title">Видалити всі лічильники</string>
   <string name="settings_export_title">Експортувати лічильники</string>
   <string name="settings_export_summary">Експортувати всі лічильники у форматі CSV</string>
+  <string name="settings_tip_title">Підтримати розробника</string>
+  <string name="settings_tip_summary">Підтримати творця цього додатку</string>
   <string name="settings_wipe_confirmation">Ви дійсно хочете видалити всі лічильники?</string>
   <string name="settings_wipe_confirmation_yes">Видалити всі</string>
   <!-- Toasts -->
@@ -54,6 +56,6 @@
   <string name="toast_unable_to_modify">Помилка при оновленні лічильника. Вибачте!</string>
   <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
   <!-- Other stuff -->
-  <string name="default_counter_name">Новий лічильник</string>
+  <string name="default_counter_name">Перший лічильник</string>
   <string name="unknown">Невідомо</string>
 </resources>
