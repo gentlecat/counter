@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">Contatore</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Apri navigazione</string>
   <string name="menu_add">Aggiungi contatore</string>
   <string name="menu_reset">Azzera contatore</string>
   <string name="menu_edit">Modifica contatore</string>
@@ -13,6 +14,8 @@
   <string name="dialog_edit_title">Modifica questo contatore</string>
   <string name="dialog_delete_title">Sei sicuro di voler eliminare questo contatore?</string>
   <string name="dialog_reset_title">Vuoi veramente azzerare questo contatore?</string>
+  <string name="dialog_edit_name">Titolo:</string>
+  <string name="dialog_edit_value">Valore:</string>
   <string name="dialog_button_add">Aggiungi</string>
   <string name="dialog_button_apply">Applica</string>
   <string name="dialog_button_reset">Azzera contatore</string>
