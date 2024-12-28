@@ -15,6 +15,9 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceManager;
+
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.io.IOException;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
@@ -40,6 +43,11 @@ public class SettingsActivity extends AppCompatActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    setContentView(R.layout.layout_settings);
+
+    MaterialToolbar actionBar = findViewById(R.id.settingsToolbar);
+    setSupportActionBar(actionBar);
+
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
     Themes.initCurrentTheme(sharedPrefs);
 
@@ -57,7 +65,7 @@ public class SettingsActivity extends AppCompatActivity
 
     getSupportFragmentManager()
         .beginTransaction()
-        .replace(android.R.id.content, settingsFragment)
+        .replace(R.id.settingsFrame, settingsFragment)
         .commit();
   }
 
@@ -109,7 +117,7 @@ public class SettingsActivity extends AppCompatActivity
   protected void onPostCreate(final Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
     getDelegate().onPostCreate(savedInstanceState);
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   }
 
   @Override

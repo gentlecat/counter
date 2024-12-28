@@ -1,5 +1,5 @@
 <resources>
 
-  <dimen name="dialog_layout_padding">26dp</dimen>
+  <dimen name="dialog_layout_padding">24dp</dimen>
 
 </resources>

@@ -6,23 +6,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
+import com.google.android.material.appbar.MaterialToolbar;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
@@ -39,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
   private static final String TAG = MainActivity.class.getSimpleName();
 
-  private ActionBar actionBar;
+  private MaterialToolbar toolbar;
   private DrawerLayout navigationLayout;
-  private ActionBarDrawerToggle navigationToggle;
   private SharedPreferences sharedPrefs;
   private FrameLayout menuFrame;
   private String selectedCounterName;
@@ -50,23 +47,20 @@ public class MainActivity extends AppCompatActivity {
   @Override
   public void onCreate(final Bundle savedInstanceState) {
 
-    actionBar = getSupportActionBar();
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
     registerIntentReceivers(getApplicationContext());
 
     super.onCreate(savedInstanceState);
 
-    // Enable ActionBar home button to behave as action to toggle navigation drawer
-    actionBar.setDisplayHomeAsUpEnabled(true);
-    actionBar.setHomeButtonEnabled(true);
+    setContentView(R.layout.layout_main);
 
-    setContentView(R.layout.drawer_layout);
+    toolbar = findViewById(R.id.mainToolbar);
+    setSupportActionBar(toolbar);
 
-    navigationLayout = findViewById(R.id.drawer_layout);
-    navigationToggle = generateActionBarToggle(this.actionBar, navigationLayout);
-    navigationLayout.addDrawerListener(navigationToggle);
+    toolbar.setNavigationOnClickListener(view -> openDrawer());
 
-    menuFrame = findViewById(R.id.menu_frame);
+    navigationLayout = findViewById(R.id.mainNavigationLayout);
+        menuFrame = findViewById(R.id.mainMenuFrame);
   }
 
   private void registerIntentReceivers(@NonNull final Context context) {
@@ -77,25 +71,7 @@ public class MainActivity extends AppCompatActivity {
         context,
         new CounterChangeReceiver(),
         counterSelectionFilter,
-        ContextCompat.RECEIVER_NOT_EXPORTED);
-  }
-
-  private ActionBarDrawerToggle generateActionBarToggle(
-      @NonNull final ActionBar actionBar, @NonNull final DrawerLayout drawerLayout) {
-
-    return new ActionBarDrawerToggle(
-        this, drawerLayout, null, R.string.drawer_open, R.string.drawer_close) {
-
-      public void onDrawerClosed(View view) {
-        actionBar.setTitle(selectedCounterName);
-        supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-      }
-
-      public void onDrawerOpened(View drawerView) {
-        actionBar.setTitle(getTitle());
-        supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-      }
-    };
+        ContextCompat.RECEIVER_EXPORTED);
   }
 
   @Override
@@ -116,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void initCountersList() {
     final FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-    transaction.replace(R.id.menu_frame, new CountersListFragment());
+        transaction.replace(R.id.mainMenuFrame, new CountersListFragment());
     transaction.commit();
   }
 
@@ -130,14 +106,14 @@ public class MainActivity extends AppCompatActivity {
     selectedCounterFragment.setArguments(bundle);
     getSupportFragmentManager()
         .beginTransaction()
-        .replace(R.id.content_frame, selectedCounterFragment)
+        .replace(R.id.mainContentFrame, selectedCounterFragment)
         .commitAllowingStateLoss();
 
-    actionBar.setTitle(counterName);
+        toolbar.setTitle(counterName);
 
-    if (isNavigationOpen()) {
-      closeNavigation();
-    }
+        if (isNavigationOpen()) {
+          closeNavigation();
+        }
   }
 
   /**
@@ -179,12 +155,6 @@ public class MainActivity extends AppCompatActivity {
     return true;
   }
 
-  @Override
-  protected void onPostCreate(Bundle savedInstanceState) {
-    super.onPostCreate(savedInstanceState);
-    navigationToggle.syncState();
-  }
-
   @SuppressLint("ApplySharedPref")
   @Override
   protected void onPause() {
@@ -196,42 +166,35 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @Override
-  public void onConfigurationChanged(@NonNull final Configuration newConfig) {
-    super.onConfigurationChanged(newConfig);
-    navigationToggle.onConfigurationChanged(newConfig);
-  }
-
-  @Override
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-    switch (item.getItemId()) {
-      case android.R.id.home:
-        if (isNavigationOpen()) {
-          closeNavigation();
-        } else {
-          openDrawer();
-        }
-        return true;
+      return switch (item.getItemId()) {
+          case android.R.id.home -> {
+              if (isNavigationOpen()) {
+                  closeNavigation();
+              } else {
+                  openDrawer();
+              }
+              yield true;
+          }
+          case R.id.menu_settings -> {
+              startActivity(new Intent(this, SettingsActivity.class));
+              yield true;
+          }
+          default -> super.onOptionsItemSelected(item);
+      };
+  }
 
-      case R.id.menu_settings:
-        startActivity(new Intent(this, SettingsActivity.class));
-        return true;
-
-      default:
-        return super.onOptionsItemSelected(item);
+    public boolean isNavigationOpen() {
+      return navigationLayout.isDrawerOpen(menuFrame);
     }
-  }
 
-  public boolean isNavigationOpen() {
-    return navigationLayout.isDrawerOpen(menuFrame);
-  }
+    private void closeNavigation() {
+      navigationLayout.closeDrawer(menuFrame);
+    }
 
-  private void closeNavigation() {
-    navigationLayout.closeDrawer(menuFrame);
-  }
-
-  private void openDrawer() {
-    navigationLayout.openDrawer(menuFrame);
-  }
+    private void openDrawer() {
+      navigationLayout.openDrawer(menuFrame);
+    }
 
   private class CounterChangeReceiver extends BroadcastReceiver {
 

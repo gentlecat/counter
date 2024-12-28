@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.Material3.Dark">
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
@@ -30,6 +30,8 @@
 
         <item name="android:textViewStyle">@style/TextViewStyle</item>
         <item name="android:buttonStyle">@style/ButtonStyle</item>
+
+        <item name="drawableAdd">@drawable/ic_add</item>
         <item name="drawableDelete">@drawable/ic_delete</item>
         <item name="drawableEdit">@drawable/ic_edit</item>
         <item name="drawableReset">@drawable/ic_reset</item>

@@ -8,8 +8,7 @@
   <string name="last_update_timestamp">Last updated at {timestamp}</string>
 
   <!-- Menu -->
-  <string name="drawer_open">Open navigation</string>
-  <string name="drawer_close">Close navigation</string>
+  <string name="menu_counters_list">Open the list of counters</string>
   <string name="menu_add">Add counter</string>
   <string name="menu_reset">Reset counter</string>
   <string name="menu_edit">Edit counter</string>
@@ -21,8 +20,8 @@
   <string name="dialog_edit_title">Edit this counter</string>
   <string name="dialog_delete_title">Do you really want to delete this counter?</string>
   <string name="dialog_reset_title">Do you really want reset this counter?</string>
-  <string name="dialog_edit_name">Title:</string>
-  <string name="dialog_edit_value">Value:</string>
+  <string name="dialog_edit_name">Title</string>
+  <string name="dialog_edit_value">Value</string>
   <string name="dialog_button_add">Add</string>
   <string name="dialog_button_apply">Apply</string>
   <string name="dialog_button_reset">Reset</string>

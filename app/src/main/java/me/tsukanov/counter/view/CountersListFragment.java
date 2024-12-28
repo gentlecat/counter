@@ -58,7 +58,7 @@ public class CountersListFragment extends ListFragment {
         requireActivity().getApplication(),
         new UpdateReceiver(),
         counterSetChangeFilter,
-        ContextCompat.RECEIVER_NOT_EXPORTED);
+        ContextCompat.RECEIVER_EXPORTED);
   }
 
   @Override

@@ -9,6 +9,6 @@ public enum Actions {
 
   @NonNull
   public String getActionName() {
-    return String.format("%s.%s", CounterApplication.PACKAGE_NAME, this.toString());
+    return String.format("%s.%s", CounterApplication.PACKAGE_NAME, this);
   }
 }

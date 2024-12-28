@@ -10,7 +10,6 @@
   </style>
 
   <style name="DrawerSelectTheme" parent="AppTheme">
-    <item name="colorControlHighlight">#33ffffff</item>
   </style>
 
   <style name="increment_button">

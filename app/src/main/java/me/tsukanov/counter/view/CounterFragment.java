@@ -17,22 +17,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 import me.tsukanov.counter.CounterApplication;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
-import me.tsukanov.counter.activities.MainActivity;
 import me.tsukanov.counter.domain.IntegerCounter;
 import me.tsukanov.counter.repository.CounterStorage;
 import me.tsukanov.counter.repository.exceptions.MissingCounterException;
 import me.tsukanov.counter.view.dialogs.DeleteDialog;
 import me.tsukanov.counter.view.dialogs.EditDialog;
+import org.apache.commons.text.StringSubstitutor;
+import org.joda.time.format.DateTimeFormat;
 
 public class CounterFragment extends Fragment {
 
@@ -50,8 +52,9 @@ public class CounterFragment extends Fragment {
 
   private SharedPreferences sharedPrefs;
   private Vibrator vibrator;
-  private FrameLayout counterFrame;
+
   private TextView counterLabel;
+  private TextView updateTimestampLabel;
   private Button incrementButton;
   private Button decrementButton;
 
@@ -133,14 +136,15 @@ public class CounterFragment extends Fragment {
     decrementButton.setOnClickListener(v -> decrement());
 
     counterLabel = view.findViewById(R.id.counterLabel);
+    updateTimestampLabel = view.findViewById(R.id.updateTimestampLabel);
 
-    counterFrame = view.findViewById(R.id.counterFrame);
-    counterFrame.setOnClickListener(
-        v -> {
-          if (sharedPrefs.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.getName(), true)) {
-            increment();
-          }
-        });
+    view.findViewById(R.id.counterFrame)
+        .setOnClickListener(
+            v -> {
+              if (sharedPrefs.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.getName(), true)) {
+                increment();
+              }
+            });
 
     updateInterface();
 
@@ -150,20 +154,6 @@ public class CounterFragment extends Fragment {
   @Override
   public void onCreateOptionsMenu(@NonNull final Menu menu, @NonNull final MenuInflater inflater) {
     inflater.inflate(R.menu.counter_menu, menu);
-  }
-
-  @Override
-  public void onPrepareOptionsMenu(@NonNull final Menu menu) {
-    boolean isDrawerOpen = ((MainActivity) requireActivity()).isNavigationOpen();
-
-    MenuItem editItem = menu.findItem(R.id.menu_edit);
-    editItem.setVisible(!isDrawerOpen);
-
-    MenuItem deleteItem = menu.findItem(R.id.menu_delete);
-    deleteItem.setVisible(!isDrawerOpen);
-
-    MenuItem resetItem = menu.findItem(R.id.menu_reset);
-    resetItem.setVisible(!isDrawerOpen);
   }
 
   public boolean onKeyDown(int keyCode) {
@@ -263,6 +253,20 @@ public class CounterFragment extends Fragment {
   @SuppressLint("SetTextI18n")
   private void updateInterface() {
     counterLabel.setText(Integer.toString(counter.getValue()));
+
+    if (counter.getLastUpdatedDate() != null) {
+      final String formattedTimestamp =
+          counter
+              .getLastUpdatedDate()
+              .toString(
+                  DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withLocale(Locale.getDefault()));
+      updateTimestampLabel.setText(
+          StringSubstitutor.replace(
+              getResources().getText(R.string.last_update_timestamp),
+              Map.of("timestamp", formattedTimestamp),
+              "{",
+              "}"));
+    }
 
     incrementButton.setEnabled(counter.getValue() < IntegerCounter.MAX_VALUE);
     decrementButton.setEnabled(counter.getValue() > IntegerCounter.MIN_VALUE);

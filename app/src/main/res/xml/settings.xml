@@ -1,75 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true">
 
   <PreferenceCategory android:title="@string/settings_controls">
     <CheckBoxPreference
-      android:defaultValue="false"
-      android:icon="@drawable/ic_volume_up"
-      android:key="soundsOn"
-      android:summary="@string/settings_sounds_summary"
-      android:title="@string/settings_sounds_title" />
+        android:defaultValue="false"
+        android:icon="@drawable/ic_volume"
+        android:key="soundsOn"
+        android:summary="@string/settings_sounds_summary"
+        android:title="@string/settings_sounds_title" />
     <CheckBoxPreference
-      android:defaultValue="true"
-      android:icon="@drawable/ic_vibration"
-      android:key="vibrationOn"
-      android:summary="@string/settings_vibration_summary"
-      android:title="@string/settings_vibration_title" />
+        android:defaultValue="true"
+        android:icon="@drawable/ic_vibration"
+        android:key="vibrationOn"
+        android:summary="@string/settings_vibration_summary"
+        android:title="@string/settings_vibration_title" />
     <CheckBoxPreference
-      android:defaultValue="true"
-      android:icon="@drawable/ic_phone_android"
-      android:key="hardControlOn"
-      android:summary="@string/settings_hard_summary"
-      android:title="@string/settings_hard_title" />
+        android:defaultValue="true"
+        android:icon="@drawable/ic_phone"
+        android:key="hardControlOn"
+        android:summary="@string/settings_hard_summary"
+        android:title="@string/settings_hard_title" />
     <CheckBoxPreference
-      android:defaultValue="true"
-      android:icon="@drawable/ic_exposure_plus_1"
-      android:key="labelControlOn"
-      android:summary="@string/settings_label_increment_summary"
-      android:title="@string/settings_label_increment_title" />
+        android:defaultValue="true"
+        android:icon="@drawable/ic_plus_one"
+        android:key="labelControlOn"
+        android:summary="@string/settings_label_increment_summary"
+        android:title="@string/settings_label_increment_title" />
   </PreferenceCategory>
 
   <PreferenceCategory android:title="@string/settings_display">
     <ListPreference
-      android:defaultValue="light"
-      android:entries="@array/themeSelectionEntries"
-      android:entryValues="@array/themeSelectionValues"
-      android:icon="@drawable/ic_palette"
-      android:key="theme"
-      android:title="@string/settings_theme" />
+        android:defaultValue="light"
+        android:entries="@array/themeSelectionEntries"
+        android:entryValues="@array/themeSelectionValues"
+        android:icon="@drawable/ic_palette"
+        android:key="theme"
+        android:title="@string/settings_theme" />
     <CheckBoxPreference
-      android:defaultValue="false"
-      android:icon="@drawable/ic_brightness"
-      android:key="keepScreenOn"
-      android:summary="@string/settings_keep_on_summary"
-      android:title="@string/settings_keep_on_title" />
+        android:defaultValue="false"
+        android:icon="@drawable/ic_brightness"
+        android:key="keepScreenOn"
+        android:summary="@string/settings_keep_on_summary"
+        android:title="@string/settings_keep_on_title" />
   </PreferenceCategory>
 
   <PreferenceCategory android:title="@string/settings_other">
     <Preference
-      android:icon="@drawable/ic_delete"
-      android:key="removeCounters"
-      android:title="@string/settings_wipe_title" />
+        android:icon="@drawable/ic_delete"
+        android:key="removeCounters"
+        android:title="@string/settings_wipe_title" />
     <Preference
-      android:icon="@drawable/ic_share"
-      android:key="exportCounters"
-      android:summary="@string/settings_export_summary"
-      android:title="@string/settings_export_title" />
+        android:icon="@drawable/ic_share"
+        android:key="exportCounters"
+        android:summary="@string/settings_export_summary"
+        android:title="@string/settings_export_title" />
     <Preference
-      android:icon="@drawable/ic_tip"
-      android:key="tip"
-      android:summary="@string/settings_tip_summary"
-      android:title="@string/settings_tip_title" />
+        android:icon="@drawable/ic_tip"
+        android:key="tip"
+        android:summary="@string/settings_tip_summary"
+        android:title="@string/settings_tip_title" />
     <Preference
-      android:icon="@drawable/ic_link"
-      android:key="homepage"
-      android:summary="@string/settings_homepage_summary"
-      android:title="@string/settings_homepage_title" />
+        android:icon="@drawable/ic_link"
+        android:key="homepage"
+        android:summary="@string/settings_homepage_summary"
+        android:title="@string/settings_homepage_title" />
     <Preference
-      android:enabled="false"
-      android:icon="@drawable/ic_info"
-      android:key="version"
-      android:summary="@string/unknown"
-      android:title="@string/settings_version_title" />
+        android:enabled="false"
+        android:icon="@drawable/ic_info"
+        android:key="version"
+        android:summary="@string/unknown"
+        android:title="@string/settings_version_title" />
   </PreferenceCategory>
 
 </PreferenceScreen>

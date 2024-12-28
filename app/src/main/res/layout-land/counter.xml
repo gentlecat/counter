@@ -1,56 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:layout_marginLeft="16dp"
-  android:layout_marginTop="16dp"
-  android:layout_marginRight="16dp"
-  android:layout_marginBottom="16dp"
-  android:baselineAligned="false"
-  android:orientation="horizontal">
-
-  <FrameLayout
-    android:id="@+id/counterFrame"
-    android:layout_width="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="0.91">
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="56dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
+    android:orientation="horizontal">
+
+  <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="0.91"
+      android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/counterFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/updateTimestampLabel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+
+      <TextView
+          android:id="@+id/counterLabel"
+          android:layout_width="match_parent"
+          android:layout_height="190dp"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:textAppearance="@style/counter_value"
+          app:autoSizeMaxTextSize="300sp"
+          app:autoSizeMinTextSize="20sp"
+          app:autoSizeStepGranularity="2sp"
+          app:autoSizeTextType="uniform"
+          tools:text="42" />
+
+    </FrameLayout>
 
     <TextView
-      android:id="@+id/counterLabel"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:textAppearance="@style/counter_value"
-      app:autoSizeMaxTextSize="300sp"
-      app:autoSizeMinTextSize="20sp"
-      app:autoSizeStepGranularity="2sp"
-      app:autoSizeTextType="uniform"
-      tools:text="42" />
-  </FrameLayout>
+        android:id="@+id/updateTimestampLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="viewStart"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        tools:text="42" />
+
+  </RelativeLayout>
 
   <LinearLayout
-    android:layout_width="150dp"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+      android:layout_width="150dp"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
 
     <Button
-      android:id="@+id/incrementButton"
-      style="@style/increment_button"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_weight="0.65"
-      android:text="@string/plus" />
+        android:id="@+id/incrementButton"
+        style="@style/increment_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.65"
+        android:text="@string/plus" />
 
     <Button
-      android:id="@+id/decrementButton"
-      style="@style/decrement_button"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_weight="1"
-      android:text="@string/minus" />
+        android:id="@+id/decrementButton"
+        style="@style/decrement_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/minus" />
   </LinearLayout>
 
 </LinearLayout>
