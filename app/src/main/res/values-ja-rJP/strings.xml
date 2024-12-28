@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">カウンター</string>
   <!-- Menu -->
+  <string name="menu_counters_list">ナビゲーションを開く</string>
   <string name="menu_add">カウンターを追加</string>
   <string name="menu_reset">カウンターをリセット</string>
   <string name="menu_edit">カウンターを編集</string>
@@ -13,6 +14,8 @@
   <string name="dialog_edit_title">このカウンターを編集</string>
   <string name="dialog_delete_title">本当にこのカウンターを削除しますか?</string>
   <string name="dialog_reset_title">このカウンターをリセットしてもよろしいですか?</string>
+  <string name="dialog_edit_name">タイトル:</string>
+  <string name="dialog_edit_value">値:</string>
   <string name="dialog_button_add">追加</string>
   <string name="dialog_button_apply">適用</string>
   <string name="dialog_button_reset">カウンターをリセット</string>
