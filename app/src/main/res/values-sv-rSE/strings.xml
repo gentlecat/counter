@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <!-- Menu -->
+  <string name="menu_counters_list">Öppna navigering</string>
   <string name="menu_add">Lägg till räknare</string>
   <string name="menu_reset">Återställ räknare</string>
   <string name="menu_edit">Redigera räknare</string>
@@ -10,6 +11,8 @@
   <!-- Dialogs -->
   <string name="dialog_delete_title">Vill du verkligen ta bort denna räknare?</string>
   <string name="dialog_reset_title">Vill du verkligen återställa räknaren?</string>
+  <string name="dialog_edit_name">Titel:</string>
+  <string name="dialog_edit_value">Värde:</string>
   <string name="dialog_button_add">Lägg tilll</string>
   <string name="dialog_button_apply">Bekräfta</string>
   <string name="dialog_button_reset">Återställ</string>
