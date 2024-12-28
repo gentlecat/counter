@@ -44,5 +44,4 @@
   <string name="toast_unable_to_export">Io misokazis dum elportado de la nombriloj. Pardonu!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nova nombrilo</string>
-  <string name="unknown_version">Nekonata</string>
 </resources>
