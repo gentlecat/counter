@@ -11,6 +11,8 @@
   <!-- Dialogs -->
   <string name="dialog_delete_title">Opravdu chcete smazat toto počítadlo?</string>
   <string name="dialog_reset_title">Jste si jistí, že chcete počítadlo obnovit?</string>
+  <string name="dialog_edit_name">Název:</string>
+  <string name="dialog_edit_value">Hodnota:</string>
   <string name="dialog_button_add">Přidat</string>
   <string name="dialog_button_apply">Použít</string>
   <string name="dialog_button_reset">Vymazat</string>
