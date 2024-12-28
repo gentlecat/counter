@@ -29,6 +29,6 @@
   <string name="settings_wipe_title">Összes számláló eltávolítása</string>
   <string name="settings_wipe_confirmation">Biztosan el szeretné távolítani az összes számlálót?</string>
   <string name="settings_wipe_confirmation_yes">Összes eltávolítása</string>
+  <!-- Toasts -->
   <!-- Other stuff -->
-  <string name="unknown_version">Ismeretlen</string>
 </resources>
