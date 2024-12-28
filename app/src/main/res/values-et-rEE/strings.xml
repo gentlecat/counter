@@ -14,8 +14,8 @@
   <string name="dialog_edit_title">Selle loenduri muutmine</string>
   <string name="dialog_delete_title">Kas olete kindel, et soovite seda loendurit kustutada?</string>
   <string name="dialog_reset_title">Kas olete kindel, et soovite seda loendurit lähtestada?</string>
-  <string name="dialog_edit_name">Pealkiri:</string>
-  <string name="dialog_edit_value">Väärtus:</string>
+  <string name="dialog_edit_name">Pealkiri</string>
+  <string name="dialog_edit_value">Väärtus</string>
   <string name="dialog_button_add">Lisa</string>
   <string name="dialog_button_apply">Rakenda</string>
   <string name="dialog_button_reset">Lähtesta</string>
