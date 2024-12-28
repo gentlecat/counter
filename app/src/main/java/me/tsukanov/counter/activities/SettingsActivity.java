@@ -99,14 +99,14 @@ public class SettingsActivity extends AppCompatActivity
 
   private OnPreferenceClickListener getOnHomepageClickListener() {
     return preference -> {
-      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone")));
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone?utm_source=app")));
       return true;
     };
   }
 
   private OnPreferenceClickListener getOnTipClickListener() {
     return preference -> {
-      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone/tip")));
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone/tip?utm_source=app")));
       return true;
     };
   }
