@@ -12,10 +12,7 @@ changed using the volume buttons.
 **Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
 and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).**
 
-<img src="resources/screenshots/1_framed.png" width="200" />
-<img src="resources/screenshots/2_framed.png" width="200" />
-<img src="resources/screenshots/3_framed.png" width="200" />
-<img src="resources/screenshots/4_framed.png" width="200" />
+<img src="resources/screenshots/1_framed.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/2_framed.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/3_framed.png" width="180" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/4_framed.png" width="180" />
 
 ## Contributing
 
