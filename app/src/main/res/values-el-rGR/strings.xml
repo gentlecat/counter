@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">Μετρητής</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Άνοιγμα μενού πλοήγησης</string>
   <string name="menu_add">Προσθήκη νέου μετρητή</string>
   <string name="menu_reset">Επαναφορά μετρητή</string>
   <string name="menu_edit">Επεξεργασία μετρητή</string>
@@ -11,6 +12,8 @@
   <!-- Dialogs -->
   <string name="dialog_delete_title">Θέλετε να σίγουρα διαγράψετε το μετρητή;</string>
   <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
+  <string name="dialog_edit_name">Τίτλος:</string>
+  <string name="dialog_edit_value">Τιμή:</string>
   <string name="dialog_button_add">Προσθήκη</string>
   <string name="dialog_button_apply">Εφαρμογή</string>
   <string name="dialog_button_reset">Επαναφορά μετρητή</string>
