@@ -26,5 +26,4 @@
   <string name="settings_wipe_confirmation_yes">Poista kaikki</string>
   <!-- Toasts -->
   <!-- Other stuff -->
-  <string name="unknown">Tuntematon</string>
 </resources>
