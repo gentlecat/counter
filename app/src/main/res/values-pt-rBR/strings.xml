@@ -49,5 +49,4 @@
   <string name="toast_unable_to_modify">Alguma coisa deu errado ao salvar o contador. Desculpe!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Novo contador</string>
-  <string name="unknown_version">Desconhecido</string>
 </resources>
