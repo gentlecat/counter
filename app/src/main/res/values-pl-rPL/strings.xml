@@ -43,6 +43,7 @@
   <string name="settings_wipe_title">Usuń wszystkie liczniki</string>
   <string name="settings_wipe_confirmation">Czy na pewno chcesz usunąć wszystkie liczniki?</string>
   <string name="settings_wipe_confirmation_yes">Usuń wszystkie</string>
+  <!-- Toasts -->
   <!-- Other stuff -->
   <string name="default_counter_name">Nowy licznik</string>
   <string name="unknown">Nieznany</string>
