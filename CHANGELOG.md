@@ -4,6 +4,7 @@
 
 * Added a link to the project page.
 * Use system theme by default instead of "light".
+* Increased minimum Android version requirement to 7.0 (Nougat).
 
 ## Version 29
 

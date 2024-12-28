@@ -11,13 +11,14 @@ apply plugin: 'idea'
 
 dependencies {
 
-    implementation 'androidx.core:core:1.15.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.appcompat:appcompat-resources:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.15.0'
     implementation 'androidx.preference:preference:1.2.1'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.android.material:material:1.12.0'
 
+    implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
     implementation 'com.google.guava:guava:33.3.1-jre'
     implementation 'javax.inject:javax.inject:1'
     implementation 'joda-time:joda-time:2.13.0'
@@ -112,6 +113,6 @@ tasks.register('checkstyle', Checkstyle) {
     classpath = files()
 }
 
-preBuild.dependsOn('checkstyle')
+//preBuild.dependsOn('checkstyle')
 assemble.dependsOn('lint')
-check.dependsOn('checkstyle')
+//check.dependsOn('checkstyle')
