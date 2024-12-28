@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">Counter</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Ouvrir la navigation</string>
   <string name="menu_add">Ajouter un compteur</string>
   <string name="menu_reset">Réinitialiser</string>
   <string name="menu_edit">Modifier le compteur</string>
@@ -13,6 +14,8 @@
   <string name="dialog_edit_title">Modifier ce compteur</string>
   <string name="dialog_delete_title">Voulez-vous vraiment supprimer ce compteur ?</string>
   <string name="dialog_reset_title">Voulez-vous vraiment réinitialiser ce compteur ?</string>
+  <string name="dialog_edit_name">Titre :</string>
+  <string name="dialog_edit_value">Valeur :</string>
   <string name="dialog_button_add">Ajouter</string>
   <string name="dialog_button_apply">Appliquer</string>
   <string name="dialog_button_reset">Réinitialiser</string>
