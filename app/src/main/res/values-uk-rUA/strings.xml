@@ -3,8 +3,6 @@
   <!-- General -->
   <string name="app_name">Counter</string>
   <!-- Menu -->
-  <string name="drawer_open">Відкрити навігацію</string>
-  <string name="drawer_close">Закрити навігацію</string>
   <string name="menu_add">Додати лічильник</string>
   <string name="menu_reset">Скинути</string>
   <string name="menu_edit">Редагувати лічильник</string>
@@ -15,8 +13,6 @@
   <string name="dialog_edit_title">Редагувати цей лічильник</string>
   <string name="dialog_delete_title">Ви дійсно хочете видалити цей лічильник?</string>
   <string name="dialog_reset_title">Ви дійсно хочете скинути цей лічильник?</string>
-  <string name="dialog_edit_name">Назва:</string>
-  <string name="dialog_edit_value">Значення:</string>
   <string name="dialog_button_add">Додати</string>
   <string name="dialog_button_apply">Застосувати</string>
   <string name="dialog_button_reset">Скинути</string>
