@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Counter</string>
   <!-- Menu -->
   <string name="menu_counters_list">Deschide navigarea</string>
   <string name="menu_add">Adaugă contor</string>
@@ -44,6 +45,8 @@
   <string name="settings_wipe_title">Elimină toate contoarele</string>
   <string name="settings_export_title">Exportă contoare</string>
   <string name="settings_export_summary">Exportă toate contoarele în format CSV</string>
+  <string name="settings_homepage_title">Pagină de pornire</string>
+  <string name="settings_homepage_summary">Informații despre aplicație și codul sursă</string>
   <string name="settings_wipe_confirmation">Sigur vrei să elimini toate contoarele?</string>
   <string name="settings_wipe_confirmation_yes">Elimină toate</string>
   <!-- Toasts -->
@@ -53,5 +56,4 @@
   <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Contor nou</string>
-  <string name="unknown_version">Necunoscut</string>
 </resources>
