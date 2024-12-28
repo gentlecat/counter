@@ -55,5 +55,4 @@
   <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Перший лічильник</string>
-  <string name="unknown">Невідомо</string>
 </resources>
