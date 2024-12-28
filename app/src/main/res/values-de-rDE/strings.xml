@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Zähler</string>
+  <string name="last_update_timestamp">Zuletzt aktualisiert um {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Liste der Zähler öffnen</string>
   <string name="menu_add">Zähler hinzufügen</string>
@@ -46,6 +47,7 @@
   <string name="settings_export_title">Zähler exportieren</string>
   <string name="settings_export_summary">Alle Zähler im CSV-Format exportieren</string>
   <string name="settings_tip_title">Spendiere mir einen Kaffee</string>
+  <string name="settings_tip_summary">Unterstütze den Entwickler dieser App</string>
   <string name="settings_homepage_title">Webseite</string>
   <string name="settings_homepage_summary">App-Info und Quellcode</string>
   <string name="settings_wipe_confirmation">Möchtest Du wirklich alle Zähler entfernen?</string>
@@ -56,5 +58,5 @@
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
   <!-- Other stuff -->
-  <string name="default_counter_name">Neuer Zähler</string>
+  <string name="default_counter_name">Erster Zähler</string>
 </resources>
