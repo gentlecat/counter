@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">Teller</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Open navigatie</string>
   <string name="menu_add">Voeg nieuwe teller toe</string>
   <string name="menu_reset">Reset teller</string>
   <string name="menu_edit">Bewerk teller</string>
@@ -13,6 +14,8 @@
   <string name="dialog_edit_title">Bewerk teller</string>
   <string name="dialog_delete_title">Wilt u deze teller echt verwijderen?</string>
   <string name="dialog_reset_title">Wilt u deze teller resetten?</string>
+  <string name="dialog_edit_name">Naam:</string>
+  <string name="dialog_edit_value">Waarde:</string>
   <string name="dialog_button_add">Toevoegen</string>
   <string name="dialog_button_apply">Toepassen</string>
   <string name="dialog_button_reset">Reset teller</string>
