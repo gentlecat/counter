@@ -4,6 +4,7 @@
   <string name="app_name">شمارنده</string>
   <!-- Menu -->
   <string name="menu_add">افزودن شمارنده</string>
+  <string name="menu_reset">بازنشانی شمارنده</string>
   <string name="menu_edit">ویرایش شمارنده</string>
   <string name="menu_delete">حذف شمارنده</string>
   <string name="menu_settings">تنظیمات</string>
@@ -11,14 +12,18 @@
   <string name="dialog_add_title">افزودن شمارنده</string>
   <string name="dialog_edit_title">ویرایش شمارنده</string>
   <string name="dialog_delete_title">آیا مطمئنید که می‌خواهید این شمارنده را حذف کنید؟</string>
+  <string name="dialog_reset_title">آیا مطمئنید که می‌خواهید این شمارنده را بازنشانی کنید؟</string>
   <string name="dialog_edit_name">عنوان:</string>
   <string name="dialog_edit_value">مقدار:</string>
   <string name="dialog_button_add">افزودن</string>
   <string name="dialog_button_apply">اعمال تغییرات</string>
+  <string name="dialog_button_reset">بازنشانی</string>
   <string name="dialog_button_delete">حذف</string>
   <string name="dialog_button_cancel">لغو</string>
   <!-- Settings -->
   <string name="settings_title">تنظیمات</string>
+  <string name="settings_display">نمایش</string>
+  <string name="settings_theme">پوسته</string>
   <string name="settings_theme_light">روشن</string>
   <string name="settings_theme_dark">تیره</string>
   <string name="settings_theme_auto_battery">تنظیم شده توسط ذخیره کننده باتری</string>
@@ -27,14 +32,28 @@
   <string name="settings_keep_on_summary">وقتی برنامه فعال است صفحه را روشن نگه دار</string>
   <string name="settings_controls">کنترل ها</string>
   <string name="settings_sounds_title">صدا ها را فعال کن</string>
+  <string name="settings_sounds_summary">هنگام تغییر مقادیر صدا پخش شود</string>
+  <string name="settings_vibration_title">فعال کردن لرزش</string>
+  <string name="settings_vibration_summary">لرزش به هنگام تغییر مقادیر</string>
+  <string name="settings_hard_title">استفاده از دکمه‌های سخت افزاری</string>
+  <string name="settings_hard_summary">مقادیر شمارنده را با استفاده از دکمه های کنترل صدا تغییر دهید</string>
   <string name="settings_label_increment_title">برای افزایش مقدار ضربه بزنید</string>
+  <string name="settings_label_increment_summary">مقدار یک شمارنده را با ضربه بر روی مقدار فعلی افزایش دهید</string>
+  <string name="settings_other">غیره</string>
   <string name="settings_version_title">نسخه</string>
   <string name="settings_wipe_title">حذف همه‌ی شمارنده‌ها</string>
+  <string name="settings_export_title">صدور شمارنده‌ها</string>
+  <string name="settings_export_summary">صدور همه شمارنده ها در فرمت CSV</string>
+  <string name="settings_homepage_title">صفحه اصلی</string>
+  <string name="settings_homepage_summary">اطلاعات اپلیکیشن و کد منبع</string>
   <string name="settings_wipe_confirmation">آیا واقعاً می‌خواهید همه‌ی شمارنده‌ها را حذف کنید؟</string>
   <string name="settings_wipe_confirmation_yes">حذف همه</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">تمامی شمارنده‌ها حذف شدند.</string>
   <string name="toast_delete_success">شمارنده \"%1$s\" حذف شد.</string>
+  <string name="toast_unable_to_modify">هنگام به‌روزرسانی شمارنده مشکلی پیش آمد. متاسفیم!</string>
+  <string name="toast_unable_to_export">هنگام صدور شمارنده ها مشکلی پیش آمد. متاسفیم!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">شمارنده جدید</string>
+  <string name="unknown">ناشناخته</string>
 </resources>
