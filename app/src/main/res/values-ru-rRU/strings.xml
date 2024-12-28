@@ -45,11 +45,14 @@
   <string name="settings_wipe_title">Удалить все счетчики</string>
   <string name="settings_export_title">Экспорт счетчиков</string>
   <string name="settings_export_summary">Экспортировать все счетчики в формате CSV</string>
+  <string name="settings_homepage_title">Домашняя страница</string>
+  <string name="settings_homepage_summary">Информация о приложении и исходный код</string>
   <string name="settings_wipe_confirmation">Вы действительно хотите удалить все счетчики?</string>
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Все счетчики удалены.</string>
   <string name="toast_delete_success">Счетчик \"{name}\" удален.</string>
+  <string name="toast_unable_to_modify">Что-то пошло не так при обновлении счётчика. Извините!</string>
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Счетчик</string>
