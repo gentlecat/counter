@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Counter</string>
   <!-- Menu -->
-  <string name="drawer_open">Ouvrir la navigation</string>
-  <string name="drawer_close">Fermer la navigation</string>
+  <string name="menu_counters_list">Ouvrir la navigation</string>
   <string name="menu_add">Ajouter un compteur</string>
   <string name="menu_reset">Réinitialiser</string>
   <string name="menu_edit">Modifier le compteur</string>

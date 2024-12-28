@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Tæller</string>
   <!-- Menu -->
-  <string name="drawer_open">Åbn navigation</string>
-  <string name="drawer_close">Luk navigation</string>
+  <string name="menu_counters_list">Åbn navigation</string>
   <string name="menu_add">Tilføj tæller</string>
   <string name="menu_reset">Nulstil tæller</string>
   <string name="menu_edit">Redigér tæller</string>

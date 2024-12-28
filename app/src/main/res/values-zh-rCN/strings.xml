@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">计数器</string>
   <!-- Menu -->
-  <string name="drawer_open">开启导航</string>
-  <string name="drawer_close">关闭导航</string>
+  <string name="menu_counters_list">开启导航</string>
   <string name="menu_add">新增计数器</string>
   <string name="menu_reset">重置计数器</string>
   <string name="menu_edit">编辑计数器</string>

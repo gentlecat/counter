@@ -2,8 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <!-- Menu -->
-  <string name="drawer_open">Navigáció megnyitása</string>
-  <string name="drawer_close">Navigáció bezárása</string>
+  <string name="menu_counters_list">Navigáció megnyitása</string>
   <string name="menu_add">Számláló hozzáadása</string>
   <string name="menu_reset">Számláló visszaállítása</string>
   <string name="menu_edit">Számláló szerkesztése</string>

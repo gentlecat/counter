@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Loendur</string>
   <!-- Menu -->
-  <string name="drawer_open">Ava navigatsioon</string>
-  <string name="drawer_close">Sulge navigatsioon</string>
+  <string name="menu_counters_list">Ava navigatsioon</string>
   <string name="menu_add">Lisa loendur</string>
   <string name="menu_reset">Lähtesta loendur</string>
   <string name="menu_edit">Muuda loendurit</string>

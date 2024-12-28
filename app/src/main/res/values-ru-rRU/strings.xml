@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Счетчик</string>
   <!-- Menu -->
-  <string name="drawer_open">Открыть навигацию</string>
-  <string name="drawer_close">Закрыть навигацию</string>
+  <string name="menu_counters_list">Открыть навигацию</string>
   <string name="menu_add">Добавить счетчик</string>
   <string name="menu_reset">Сброс</string>
   <string name="menu_edit">Редактировать cчетчик</string>

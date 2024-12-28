@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Teller</string>
   <!-- Menu -->
-  <string name="drawer_open">Open navigatie</string>
-  <string name="drawer_close">Sluit navigatie</string>
+  <string name="menu_counters_list">Open navigatie</string>
   <string name="menu_add">Voeg nieuwe teller toe</string>
   <string name="menu_reset">Reset teller</string>
   <string name="menu_edit">Bewerk teller</string>

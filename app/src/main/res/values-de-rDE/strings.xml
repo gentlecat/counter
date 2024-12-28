@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Zähler</string>
   <!-- Menu -->
-  <string name="drawer_open">Navigation öffnen</string>
-  <string name="drawer_close">Navigation schließen</string>
+  <string name="menu_counters_list">Navigation öffnen</string>
   <string name="menu_add">Zähler hinzufügen</string>
   <string name="menu_reset">Zähler zurücksetzen</string>
   <string name="menu_edit">Zähler bearbeiten</string>

@@ -2,8 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <!-- Menu -->
-  <string name="drawer_open">Avaa navigointi</string>
-  <string name="drawer_close">Sulje navigointi</string>
+  <string name="menu_counters_list">Avaa navigointi</string>
   <string name="menu_add">Lisää laskuri</string>
   <string name="menu_reset">Nollaa laskuri</string>
   <string name="menu_edit">Muokkaa laskuria</string>

@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Contador</string>
   <!-- Menu -->
-  <string name="drawer_open">Abrir navegación</string>
-  <string name="drawer_close">Cerrar navegación</string>
+  <string name="menu_counters_list">Abrir navegación</string>
   <string name="menu_add">Añadir contador</string>
   <string name="menu_reset">Reiniciar contador</string>
   <string name="menu_edit">Editar contador</string>

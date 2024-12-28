@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">カウンター</string>
   <!-- Menu -->
-  <string name="drawer_open">ナビゲーションを開く</string>
-  <string name="drawer_close">ナビゲーションを閉じる</string>
+  <string name="menu_counters_list">ナビゲーションを開く</string>
   <string name="menu_add">カウンターを追加</string>
   <string name="menu_reset">カウンターをリセット</string>
   <string name="menu_edit">カウンターを編集</string>

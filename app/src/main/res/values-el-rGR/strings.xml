@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Μετρητής</string>
   <!-- Menu -->
-  <string name="drawer_open">Άνοιγμα μενού πλοήγησης</string>
-  <string name="drawer_close">Κλείσιμο Πλοήγησης</string>
+  <string name="menu_counters_list">Άνοιγμα μενού πλοήγησης</string>
   <string name="menu_add">Προσθήκη νέου μετρητή</string>
   <string name="menu_reset">Επαναφορά μετρητή</string>
   <string name="menu_edit">Επεξεργασία μετρητή</string>

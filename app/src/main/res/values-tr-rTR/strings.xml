@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">Sayaç</string>
   <!-- Menu -->
-  <string name="drawer_open">Gezinmeyi aç</string>
-  <string name="drawer_close">Gezinmeyi kapat</string>
+  <string name="menu_counters_list">Gezinmeyi aç</string>
   <string name="menu_add">Sayaç ekle</string>
   <string name="menu_reset">Sayacı sıfırla</string>
   <string name="menu_edit">Sayacı düzenle</string>

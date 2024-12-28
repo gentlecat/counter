@@ -3,8 +3,7 @@
   <!-- General -->
   <string name="app_name">計數器</string>
   <!-- Menu -->
-  <string name="drawer_open">開啟側邊選單</string>
-  <string name="drawer_close">關閉側邊選單</string>
+  <string name="menu_counters_list">開啟側邊選單</string>
   <string name="menu_add">新增計數器</string>
   <string name="menu_reset">歸零計數器</string>
   <string name="menu_edit">編輯計數器</string>
