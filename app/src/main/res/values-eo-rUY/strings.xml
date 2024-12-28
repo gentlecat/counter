@@ -13,8 +13,6 @@
   <string name="dialog_edit_title">Redakti ĉi tiun nombrilon</string>
   <string name="dialog_delete_title">Ĉu vi certe volas forigi ĉi tiun nombrilon?</string>
   <string name="dialog_reset_title">Ĉu vi certe volas restarigi ĉi tiun nombrilon?</string>
-  <string name="dialog_edit_name">Titolo:</string>
-  <string name="dialog_edit_value">Valoro:</string>
   <string name="dialog_button_add">Aldoni</string>
   <string name="dialog_button_apply">Apliki</string>
   <string name="dialog_button_reset">Restarigi</string>
