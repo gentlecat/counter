@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 31
+
+* Default theme configuration has been fixed.
+
 ## Version 30
 
 * Links to the project page and tip jar were added to settings.

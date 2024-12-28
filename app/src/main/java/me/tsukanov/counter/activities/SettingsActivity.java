@@ -68,10 +68,7 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private String getCurrentThemeName() {
-    return getResources()
-        .getString(
-            Themes.findOrGetDefault(sharedPrefs.getString(SharedPrefKeys.THEME.getName(), null))
-                .getLabelId());
+    return getResources().getString(Themes.getCurrent(sharedPrefs).getLabelId());
   }
 
   private OnPreferenceClickListener getOnRemoveCountersClickListener() {
@@ -99,14 +96,17 @@ public class SettingsActivity extends AppCompatActivity
 
   private OnPreferenceClickListener getOnHomepageClickListener() {
     return preference -> {
-      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone?utm_source=app")));
+      startActivity(
+          new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone?utm_source=app")));
       return true;
     };
   }
 
   private OnPreferenceClickListener getOnTipClickListener() {
     return preference -> {
-      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone/tip?utm_source=app")));
+      startActivity(
+          new Intent(
+              Intent.ACTION_VIEW, Uri.parse("https://counter.roman.zone/tip?utm_source=app")));
       return true;
     };
   }

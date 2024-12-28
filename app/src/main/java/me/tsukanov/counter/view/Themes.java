@@ -2,7 +2,6 @@ package me.tsukanov.counter.view;
 
 import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import me.tsukanov.counter.R;
 import me.tsukanov.counter.SharedPrefKeys;
@@ -31,12 +30,11 @@ public enum Themes {
   }
 
   @NonNull
-  public static Themes findOrGetDefault(final @Nullable String identifier) {
-    if (identifier != null) {
-      for (final Themes t : values()) {
-        if (t.getIdentifier().equals(identifier)) {
-          return t;
-        }
+  public static Themes getCurrent(final @NonNull SharedPreferences sharedPrefs) {
+    final String identifier = sharedPrefs.getString(SharedPrefKeys.THEME.getName(), SYSTEM.name());
+    for (final Themes t : values()) {
+      if (t.getIdentifier().equals(identifier)) {
+        return t;
       }
     }
     return SYSTEM;
@@ -47,9 +45,8 @@ public enum Themes {
    *
    * @param sharedPrefs {@link SharedPreferences} that contain the theme preference.
    */
-  public static void initCurrentTheme(@NonNull final SharedPreferences sharedPrefs) {
-    final Themes currentTheme =
-        Themes.findOrGetDefault(sharedPrefs.getString(SharedPrefKeys.THEME.getName(), null));
+  public static void initCurrentTheme(final @NonNull SharedPreferences sharedPrefs) {
+    final Themes currentTheme = Themes.getCurrent(sharedPrefs);
 
     switch (currentTheme) {
       case LIGHT:

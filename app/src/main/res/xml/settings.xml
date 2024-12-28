@@ -31,7 +31,7 @@
 
   <PreferenceCategory android:title="@string/settings_display">
     <ListPreference
-        android:defaultValue="light"
+        android:defaultValue="system"
         android:entries="@array/themeSelectionEntries"
         android:entryValues="@array/themeSelectionValues"
         android:icon="@drawable/ic_palette"

@@ -30,7 +30,7 @@ ext {
     compileSdkVersion = 35
     minSdkVersion = 24
 
-    appVersion = 30
+    appVersion = 31
 }
 
 tasks.withType(JavaCompile).configureEach {
