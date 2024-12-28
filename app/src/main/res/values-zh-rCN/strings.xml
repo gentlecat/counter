@@ -45,6 +45,8 @@
   <string name="settings_wipe_title">移除所有计数器</string>
   <string name="settings_export_title">导出计数器</string>
   <string name="settings_export_summary">以 CSV 格式导出所有计数器</string>
+  <string name="settings_homepage_title">网站</string>
+  <string name="settings_homepage_summary">应用程序信息和源代码</string>
   <string name="settings_wipe_confirmation">您是否想移除所有计数器？</string>
   <string name="settings_wipe_confirmation_yes">删除全部</string>
   <!-- Toasts -->
@@ -54,5 +56,4 @@
   <string name="toast_unable_to_export">很抱歉，导出计数器时出现问题。</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新建计数器</string>
-  <string name="unknown_version">未知</string>
 </resources>
