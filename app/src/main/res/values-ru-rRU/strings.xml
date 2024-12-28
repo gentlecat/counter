@@ -2,20 +2,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Счетчик</string>
+  <string name="last_update_timestamp">Последнее обновление: {timestamp}</string>
   <!-- Menu -->
-  <string name="menu_counters_list">Открыть навигацию</string>
+  <string name="menu_counters_list">Открыть список счетчиков</string>
   <string name="menu_add">Добавить счетчик</string>
   <string name="menu_reset">Сброс</string>
-  <string name="menu_edit">Редактировать cчетчик</string>
+  <string name="menu_edit">Изменить</string>
   <string name="menu_delete">Удалить</string>
   <string name="menu_settings">Настройки</string>
   <!-- Dialogs -->
   <string name="dialog_add_title">Добавить новый счетчик</string>
-  <string name="dialog_edit_title">Изменить счетчик</string>
+  <string name="dialog_edit_title">Редактировать этот счетчик</string>
   <string name="dialog_delete_title">Вы действительно хотите удалить этот счетчик?</string>
-  <string name="dialog_reset_title">Вы действительно хотите сбросить счетчик?</string>
-  <string name="dialog_edit_name">Название:</string>
-  <string name="dialog_edit_value">Значение:</string>
+  <string name="dialog_reset_title">Вы действительно хотите сбросить этот счетчик?</string>
+  <string name="dialog_edit_name">Название</string>
+  <string name="dialog_edit_value">Значение</string>
   <string name="dialog_button_add">Добавить</string>
   <string name="dialog_button_apply">Применить</string>
   <string name="dialog_button_reset">Сброс</string>
@@ -27,7 +28,7 @@
   <string name="settings_theme">Стиль</string>
   <string name="settings_theme_light">Светлый</string>
   <string name="settings_theme_dark">Темный</string>
-  <string name="settings_theme_auto_battery">Задано энергосбережением</string>
+  <string name="settings_theme_auto_battery">Задается экономией батареи</string>
   <string name="settings_theme_system">Использовать системные настройки</string>
   <string name="settings_keep_on_title">Держать экран включенным</string>
   <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
@@ -45,13 +46,17 @@
   <string name="settings_wipe_title">Удалить все счетчики</string>
   <string name="settings_export_title">Экспорт счетчиков</string>
   <string name="settings_export_summary">Экспортировать все счетчики в формате CSV</string>
+  <string name="settings_tip_title">Купить мне кофе</string>
+  <string name="settings_tip_summary">Поддержать создателя этого приложения</string>
+  <string name="settings_homepage_title">Домашняя страница</string>
+  <string name="settings_homepage_summary">Информация о приложении и исходный код</string>
   <string name="settings_wipe_confirmation">Вы действительно хотите удалить все счетчики?</string>
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Все счетчики удалены.</string>
   <string name="toast_delete_success">Счетчик \"{name}\" удален.</string>
+  <string name="toast_unable_to_modify">Что-то пошло не так при обновлении счётчика. Извините!</string>
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
   <!-- Other stuff -->
-  <string name="default_counter_name">Счетчик</string>
-  <string name="unknown_version">Неизвестно</string>
+  <string name="default_counter_name">Первый счетчик</string>
 </resources>
