@@ -56,5 +56,4 @@
   <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Contor nou</string>
-  <string name="unknown">Necunoscut</string>
 </resources>
