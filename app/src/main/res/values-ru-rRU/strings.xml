@@ -3,6 +3,7 @@
   <!-- General -->
   <string name="app_name">Счетчик</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Открыть навигацию</string>
   <string name="menu_add">Добавить счетчик</string>
   <string name="menu_reset">Сброс</string>
   <string name="menu_edit">Редактировать cчетчик</string>
@@ -13,6 +14,8 @@
   <string name="dialog_edit_title">Изменить счетчик</string>
   <string name="dialog_delete_title">Вы действительно хотите удалить этот счетчик?</string>
   <string name="dialog_reset_title">Вы действительно хотите сбросить счетчик?</string>
+  <string name="dialog_edit_name">Название:</string>
+  <string name="dialog_edit_value">Значение:</string>
   <string name="dialog_button_add">Добавить</string>
   <string name="dialog_button_apply">Применить</string>
   <string name="dialog_button_reset">Сброс</string>
