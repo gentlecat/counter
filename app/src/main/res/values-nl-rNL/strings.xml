@@ -54,5 +54,4 @@
   <string name="toast_unable_to_export">Er is iets mis gegaan tijdens het exporteren van de tellers. Sorry!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Voeg nieuwe teller toe</string>
-  <string name="unknown">Onbekend</string>
 </resources>
