@@ -3,8 +3,6 @@
   <!-- General -->
   <string name="app_name">Sayaç</string>
   <!-- Menu -->
-  <string name="drawer_open">Gezinmeyi aç</string>
-  <string name="drawer_close">Gezinmeyi kapat</string>
   <string name="menu_add">Sayaç ekle</string>
   <string name="menu_reset">Sayacı sıfırla</string>
   <string name="menu_edit">Sayacı düzenle</string>
@@ -15,8 +13,6 @@
   <string name="dialog_edit_title">Sayacı düzenle</string>
   <string name="dialog_delete_title">Bu sayacı gerçekten silmek istiyor musunuz?</string>
   <string name="dialog_reset_title">Bu sayacı gerçekten sıfırlamak istiyor musunuz?</string>
-  <string name="dialog_edit_name">Başlık:</string>
-  <string name="dialog_edit_value">Değer:</string>
   <string name="dialog_button_add">Ekle</string>
   <string name="dialog_button_apply">Uygula</string>
   <string name="dialog_button_reset">Sayacı sıfırla</string>
