@@ -3,8 +3,6 @@
   <!-- General -->
   <string name="app_name">Zähler</string>
   <!-- Menu -->
-  <string name="drawer_open">Navigation öffnen</string>
-  <string name="drawer_close">Navigation schließen</string>
   <string name="menu_add">Zähler hinzufügen</string>
   <string name="menu_reset">Zähler zurücksetzen</string>
   <string name="menu_edit">Zähler bearbeiten</string>
@@ -15,8 +13,6 @@
   <string name="dialog_edit_title">Zähler bearbeiten</string>
   <string name="dialog_delete_title">Möchtest Du diesen Zähler wirklich löschen?</string>
   <string name="dialog_reset_title">Möchtest Du diesen Zähler wirklich zurücksetzen?</string>
-  <string name="dialog_edit_name">Titel:</string>
-  <string name="dialog_edit_value">Wert:</string>
   <string name="dialog_button_add">Hinzufügen</string>
   <string name="dialog_button_apply">Anwenden</string>
   <string name="dialog_button_reset">Zähler zurücksetzen</string>
