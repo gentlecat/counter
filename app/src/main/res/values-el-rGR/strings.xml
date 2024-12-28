@@ -35,5 +35,5 @@
   <string name="settings_wipe_confirmation">Θέλετε σίγουρα να διαγράψετε όλους τους μετρητές;</string>
   <string name="settings_wipe_confirmation_yes">Διαγραφή όλων</string>
   <!-- Other stuff -->
-  <string name="unknown">Άγνωστο</string>
+  <string name="unknown_version">Άγνωστο</string>
 </resources>

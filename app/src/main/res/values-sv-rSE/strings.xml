@@ -30,5 +30,5 @@
   <string name="settings_wipe_confirmation">Vill du verkligen ta bort alla räknare?</string>
   <string name="settings_wipe_confirmation_yes">Ta bort alla</string>
   <!-- Other stuff -->
-  <string name="unknown">Okänt</string>
+  <string name="unknown_version">Okänt</string>
 </resources>

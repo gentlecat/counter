@@ -54,5 +54,5 @@
   <string name="toast_unable_to_export">Une erreur s\'est produite lors de l\'exportation du compteur. Désolé !</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nouveau compteur</string>
-  <string name="unknown">Inconnu</string>
+  <string name="unknown_version">Inconnu</string>
 </resources>

@@ -54,5 +54,5 @@
   <string name="toast_unable_to_export">カウンタ―のエクスポート中に問題が発生しました。申し訳ありません!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新しいカウンター</string>
-  <string name="unknown">不明</string>
+  <string name="unknown_version">不明</string>
 </resources>

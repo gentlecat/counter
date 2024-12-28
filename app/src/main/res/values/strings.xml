@@ -67,6 +67,6 @@
 
   <!-- Other stuff -->
   <string name="default_counter_name">First counter</string>
-  <string name="unknown">Unknown</string>
+  <string name="unknown_version" translatable="false">Unknown</string>
 
 </resources>

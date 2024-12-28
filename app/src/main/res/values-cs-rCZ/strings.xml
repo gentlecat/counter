@@ -34,5 +34,5 @@
   <string name="settings_wipe_confirmation">Jste si jistí, že chcete odstranit všechna počítadla?</string>
   <string name="settings_wipe_confirmation_yes">Odstranit vše</string>
   <!-- Other stuff -->
-  <string name="unknown">Neznámé</string>
+  <string name="unknown_version">Neznámé</string>
 </resources>

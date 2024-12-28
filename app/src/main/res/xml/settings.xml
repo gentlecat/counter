@@ -69,7 +69,7 @@
         android:enabled="false"
         android:icon="@drawable/ic_info"
         android:key="version"
-        android:summary="@string/unknown"
+        android:summary="@string/unknown_version"
         android:title="@string/settings_version_title" />
   </PreferenceCategory>
 

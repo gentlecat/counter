@@ -54,5 +54,5 @@
   <string name="toast_unable_to_export">Midagi läks loendurite eksportimisel valesti. Vabandame!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Uus loendur</string>
-  <string name="unknown">Tundmatu</string>
+  <string name="unknown_version">Tundmatu</string>
 </resources>
