@@ -71,7 +71,6 @@ android {
             jniDebuggable false
             renderscriptDebuggable false
             pseudoLocalesEnabled false
-            zipAlignEnabled true
 
             shrinkResources true
             minifyEnabled true
@@ -115,7 +114,6 @@ checkstyle {
     ignoreFailures false
     maxWarnings = 0
     showViolations true
-    toolVersion '10.20.2'
 }
 
 tasks.register('checkstyle', Checkstyle) {
