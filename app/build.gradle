@@ -15,8 +15,8 @@ apply plugin: 'idea'
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat-resources:1.6.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat-resources:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.core:core-ktx:1.15.0'
     implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'com.android.support:multidex:1.0.3'
