@@ -1,304 +1,304 @@
-package me.tsukanov.counter.view;
+package me.tsukanov.counter.view
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.os.Vibrator;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.preference.PreferenceManager;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Objects;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.SharedPrefKeys;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.repository.CounterStorage;
-import me.tsukanov.counter.repository.exceptions.MissingCounterException;
-import me.tsukanov.counter.view.dialogs.DeleteDialog;
-import me.tsukanov.counter.view.dialogs.EditDialog;
-import org.apache.commons.text.StringSubstitutor;
-import org.joda.time.format.DateTimeFormat;
+import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.Context
+import android.content.DialogInterface
+import android.content.SharedPreferences
+import android.media.MediaPlayer
+import android.os.Bundle
+import android.os.Vibrator
+import android.util.Log
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.SharedPrefKeys
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.repository.exceptions.MissingCounterException
+import me.tsukanov.counter.view.dialogs.DeleteDialog
+import me.tsukanov.counter.view.dialogs.EditDialog
+import org.apache.commons.text.StringSubstitutor
+import org.joda.time.format.DateTimeFormat
+import java.util.Locale
+import java.util.Map
 
-public class CounterFragment extends Fragment {
+class CounterFragment : Fragment() {
+    /** Name is used as a key to look up and modify counter value in storage.  */
+    private var name: String? = null
 
-  private static final String TAG = CounterFragment.class.getSimpleName();
+    private var sharedPrefs: SharedPreferences? = null
+    private var vibrator: Vibrator? = null
 
-  public static final String COUNTER_NAME_ATTRIBUTE = "COUNTER_NAME";
+    private var counterLabel: TextView? = null
+    private var updateTimestampLabel: TextView? = null
+    private var incrementButton: Button? = null
+    private var decrementButton: Button? = null
 
-  public static final int DEFAULT_VALUE = 0;
-  private static final long DEFAULT_VIBRATION_DURATION = 30; // Milliseconds
+    private var counter: IntegerCounter? = null
 
-  private static final String STATE_SELECTED_COUNTER_NAME = "SELECTED_COUNTER_NAME";
+    private var incrementSoundPlayer: MediaPlayer? = null
+    private var decrementSoundPlayer: MediaPlayer? = null
 
-  /** Name is used as a key to look up and modify counter value in storage. */
-  private String name;
-
-  private SharedPreferences sharedPrefs;
-  private Vibrator vibrator;
-
-  private TextView counterLabel;
-  private TextView updateTimestampLabel;
-  private Button incrementButton;
-  private Button decrementButton;
-
-  private IntegerCounter counter;
-
-  private MediaPlayer incrementSoundPlayer;
-  private MediaPlayer decrementSoundPlayer;
-
-  private void restoreSavedState(@Nullable final Bundle savedInstanceState) {
-    if (savedInstanceState == null) {
-      return;
-    }
-
-    this.name = savedInstanceState.getString(STATE_SELECTED_COUNTER_NAME);
-  }
-
-  @Override
-  public void onCreate(@Nullable final Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    restoreSavedState(savedInstanceState);
-
-    vibrator = (Vibrator) requireActivity().getSystemService(Context.VIBRATOR_SERVICE);
-    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireActivity());
-
-    initCounter();
-
-    setHasOptionsMenu(true);
-  }
-
-  private void initCounter() {
-    final CounterStorage<IntegerCounter> storage = CounterApplication.getComponent().localStorage();
-    try {
-      final String requestedCounter = requireArguments().getString(COUNTER_NAME_ATTRIBUTE);
-      if (requestedCounter == null) {
-        this.counter = storage.readAll(true).get(0);
-        return;
-      }
-      this.counter = storage.read(requestedCounter);
-    } catch (MissingCounterException e) {
-      Log.w(TAG, "Unable to find provided counter. Retrieving a different one.", e);
-      this.counter = storage.readAll(true).get(0);
-    }
-  }
-
-  @Override
-  public void onSaveInstanceState(@NonNull final Bundle savedInstanceState) {
-    savedInstanceState.putString(STATE_SELECTED_COUNTER_NAME, this.name);
-    super.onSaveInstanceState(savedInstanceState);
-  }
-
-  @Override
-  public void onResume() {
-    super.onResume();
-
-    /* Setting up sounds */
-    incrementSoundPlayer = MediaPlayer.create(getContext(), R.raw.increment_sound);
-    decrementSoundPlayer = MediaPlayer.create(getContext(), R.raw.decrement_sound);
-  }
-
-  @Override
-  public void onPause() {
-    super.onPause();
-
-    incrementSoundPlayer.reset();
-    incrementSoundPlayer.release();
-    decrementSoundPlayer.reset();
-    decrementSoundPlayer.release();
-  }
-
-  @Override
-  public View onCreateView(
-      @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    final View view = inflater.inflate(R.layout.counter, container, false);
-
-    incrementButton = view.findViewById(R.id.incrementButton);
-    incrementButton.setOnClickListener(v -> increment());
-
-    decrementButton = view.findViewById(R.id.decrementButton);
-    decrementButton.setOnClickListener(v -> decrement());
-
-    counterLabel = view.findViewById(R.id.counterLabel);
-    updateTimestampLabel = view.findViewById(R.id.updateTimestampLabel);
-
-    view.findViewById(R.id.counterFrame)
-        .setOnClickListener(
-            v -> {
-              if (sharedPrefs.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.getName(), true)) {
-                increment();
-              }
-            });
-
-    updateInterface();
-
-    return view;
-  }
-
-  @Override
-  public void onCreateOptionsMenu(@NonNull final Menu menu, @NonNull final MenuInflater inflater) {
-    inflater.inflate(R.menu.counter_menu, menu);
-  }
-
-  public boolean onKeyDown(int keyCode) {
-    switch (keyCode) {
-      case KeyEvent.KEYCODE_VOLUME_UP:
-        if (sharedPrefs.getBoolean(SharedPrefKeys.HARDWARE_BTN_CONTROL_ON.getName(), true)) {
-          increment();
-          return true;
+    private fun restoreSavedState(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            return
         }
-        return false;
 
-      case KeyEvent.KEYCODE_VOLUME_DOWN:
-        if (sharedPrefs.getBoolean(SharedPrefKeys.HARDWARE_BTN_CONTROL_ON.getName(), true)) {
-          decrement();
-          return true;
+        this.name = savedInstanceState.getString(STATE_SELECTED_COUNTER_NAME)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        restoreSavedState(savedInstanceState)
+
+        vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireActivity())
+
+        initCounter()
+
+        setHasOptionsMenu(true)
+    }
+
+    private fun initCounter() {
+        val storage = CounterApplication.component!!.localStorage()
+        try {
+            val requestedCounter = requireArguments().getString(COUNTER_NAME_ATTRIBUTE)
+            if (requestedCounter == null) {
+                this.counter = storage!!.readAll(true)[0]
+                return
+            }
+            this.counter = storage!!.read(requestedCounter)
+        } catch (e: MissingCounterException) {
+            Log.w(TAG, "Unable to find provided counter. Retrieving a different one.", e)
+            this.counter = storage!!.readAll(true)[0]
         }
-        return false;
-
-      default:
-        return false;
-    }
-  }
-
-  @SuppressLint("NonConstantResourceId")
-  @Override
-  public boolean onOptionsItemSelected(@NonNull final MenuItem item) {
-    switch (item.getItemId()) {
-      case R.id.menu_reset:
-        showResetConfirmationDialog();
-        return true;
-      case R.id.menu_edit:
-        showEditDialog();
-        return true;
-      case R.id.menu_delete:
-        showDeleteDialog();
-        return true;
-      default:
-        return super.onOptionsItemSelected(item);
-    }
-  }
-
-  private void showResetConfirmationDialog() {
-    final Dialog dialog =
-        new AlertDialog.Builder(getActivity())
-            .setMessage(getResources().getText(R.string.dialog_reset_title))
-            .setCancelable(false)
-            .setPositiveButton(
-                getResources().getText(R.string.dialog_button_reset), (d, id) -> reset())
-            .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
-            .create();
-    Objects.requireNonNull(dialog.getWindow())
-        .setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-    dialog.show();
-  }
-
-  private void showEditDialog() {
-    final EditDialog dialog = EditDialog.newInstance(counter.getName(), counter.getValue());
-    dialog.show(getParentFragmentManager(), EditDialog.TAG);
-  }
-
-  private void showDeleteDialog() {
-    final DeleteDialog dialog = DeleteDialog.newInstance(counter.getName());
-    dialog.show(getParentFragmentManager(), DeleteDialog.TAG);
-  }
-
-  private void increment() {
-    counter.increment();
-    vibrate(DEFAULT_VIBRATION_DURATION);
-    playSound(incrementSoundPlayer);
-
-    updateInterface();
-    saveValue();
-  }
-
-  private void decrement() {
-    counter.decrement();
-    vibrate(DEFAULT_VIBRATION_DURATION + 20);
-    playSound(decrementSoundPlayer);
-
-    updateInterface();
-    saveValue();
-  }
-
-  private void reset() {
-    try {
-      counter.reset();
-    } catch (Exception e) {
-      Log.getStackTraceString(e);
-      throw new RuntimeException(e);
     }
 
-    updateInterface();
-    saveValue();
-  }
-
-  /** Updates UI elements of the fragment based on current value of the counter. */
-  @SuppressLint("SetTextI18n")
-  private void updateInterface() {
-    counterLabel.setText(Integer.toString(counter.getValue()));
-
-    if (counter.getLastUpdatedDate() != null) {
-      final String formattedTimestamp =
-          counter
-              .getLastUpdatedDate()
-              .toString(
-                  DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withLocale(Locale.getDefault()));
-      updateTimestampLabel.setText(
-          StringSubstitutor.replace(
-              getResources().getText(R.string.last_update_timestamp),
-              Map.of("timestamp", formattedTimestamp),
-              "{",
-              "}"));
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putString(STATE_SELECTED_COUNTER_NAME, this.name)
+        super.onSaveInstanceState(savedInstanceState)
     }
 
-    incrementButton.setEnabled(counter.getValue() < IntegerCounter.MAX_VALUE);
-    decrementButton.setEnabled(counter.getValue() > IntegerCounter.MIN_VALUE);
-  }
+    override fun onResume() {
+        super.onResume()
 
-  private void saveValue() {
-    final CounterStorage<IntegerCounter> storage = CounterApplication.getComponent().localStorage();
-    storage.write(counter);
-  }
-
-  /** Triggers vibration for a specified duration, if vibration is turned on. */
-  private void vibrate(long duration) {
-    if (sharedPrefs.getBoolean(SharedPrefKeys.VIBRATION_ON.getName(), true)) {
-      try {
-        vibrator.vibrate(duration);
-      } catch (Exception e) {
-        Log.e(TAG, "Unable to vibrate", e);
-      }
+        /* Setting up sounds */
+        incrementSoundPlayer = MediaPlayer.create(context, R.raw.increment_sound)
+        decrementSoundPlayer = MediaPlayer.create(context, R.raw.decrement_sound)
     }
-  }
 
-  /** Plays sound if sounds are turned on. */
-  private void playSound(@NonNull final MediaPlayer soundPlayer) {
-    if (sharedPrefs.getBoolean(SharedPrefKeys.SOUNDS_ON.getName(), false)) {
-      try {
-        if (soundPlayer.isPlaying()) {
-          soundPlayer.seekTo(0);
+    override fun onPause() {
+        super.onPause()
+
+        incrementSoundPlayer!!.reset()
+        incrementSoundPlayer!!.release()
+        decrementSoundPlayer!!.reset()
+        decrementSoundPlayer!!.release()
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.counter, container, false)
+
+        incrementButton = view.findViewById(R.id.incrementButton)
+        incrementButton!!.setOnClickListener { v: View? -> increment() }
+
+        decrementButton = view.findViewById(R.id.decrementButton)
+        decrementButton!!.setOnClickListener { v: View? -> decrement() }
+
+        counterLabel = view.findViewById(R.id.counterLabel)
+        updateTimestampLabel = view.findViewById(R.id.updateTimestampLabel)
+
+        view.findViewById<View>(R.id.counterFrame)
+            .setOnClickListener { v: View? ->
+                if (sharedPrefs!!.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.key, true)) {
+                    increment()
+                }
+            }
+
+        updateInterface()
+
+        return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.counter_menu, menu)
+    }
+
+    fun onKeyDown(keyCode: Int): Boolean {
+        when (keyCode) {
+            KeyEvent.KEYCODE_VOLUME_UP -> {
+                if (sharedPrefs!!.getBoolean(SharedPrefKeys.HARDWARE_BTN_CONTROL_ON.key, true)) {
+                    increment()
+                    return true
+                }
+                return false
+            }
+
+            KeyEvent.KEYCODE_VOLUME_DOWN -> {
+                if (sharedPrefs!!.getBoolean(SharedPrefKeys.HARDWARE_BTN_CONTROL_ON.key, true)) {
+                    decrement()
+                    return true
+                }
+                return false
+            }
+
+            else -> return false
         }
-        soundPlayer.start();
-      } catch (Exception e) {
-        Log.e(TAG, "Unable to play sound", e);
-      }
     }
-  }
+
+    @SuppressLint("NonConstantResourceId")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_reset -> {
+                showResetConfirmationDialog()
+                return true
+            }
+
+            R.id.menu_edit -> {
+                showEditDialog()
+                return true
+            }
+
+            R.id.menu_delete -> {
+                showDeleteDialog()
+                return true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showResetConfirmationDialog() {
+        val dialog: Dialog =
+            AlertDialog.Builder(activity)
+                .setMessage(resources.getText(R.string.dialog_reset_title))
+                .setCancelable(false)
+                .setPositiveButton(
+                    resources.getText(R.string.dialog_button_reset)
+                ) { d: DialogInterface?, id: Int -> reset() }
+                .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)
+                .create()
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        dialog.show()
+    }
+
+    private fun showEditDialog() {
+        val dialog = EditDialog.newInstance(counter!!.name, counter!!.value)
+        dialog.show(parentFragmentManager, EditDialog.TAG)
+    }
+
+    private fun showDeleteDialog() {
+        val dialog = DeleteDialog.newInstance(counter!!.name)
+        dialog.show(parentFragmentManager, DeleteDialog.TAG)
+    }
+
+    private fun increment() {
+        counter!!.increment()
+        vibrate(DEFAULT_VIBRATION_DURATION)
+        playSound(incrementSoundPlayer!!)
+
+        updateInterface()
+        saveValue()
+    }
+
+    private fun decrement() {
+        counter!!.decrement()
+        vibrate(DEFAULT_VIBRATION_DURATION + 20)
+        playSound(decrementSoundPlayer!!)
+
+        updateInterface()
+        saveValue()
+    }
+
+    private fun reset() {
+        try {
+            counter!!.reset()
+        } catch (e: Exception) {
+            Log.getStackTraceString(e)
+            throw RuntimeException(e)
+        }
+
+        updateInterface()
+        saveValue()
+    }
+
+    /** Updates UI elements of the fragment based on current value of the counter.  */
+    @SuppressLint("SetTextI18n")
+    private fun updateInterface() {
+        counterLabel!!.text = counter!!.value.toString()
+
+        if (counter!!.lastUpdatedDate != null) {
+            val formattedTimestamp =
+                counter!!.lastUpdatedDate!!.toString(
+                    DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
+                        .withLocale(Locale.getDefault())
+                )
+            updateTimestampLabel!!.text = StringSubstitutor.replace(
+                resources.getText(R.string.last_update_timestamp),
+                Map.of("timestamp", formattedTimestamp),
+                "{",
+                "}"
+            )
+        }
+
+        incrementButton!!.isEnabled = counter!!.value < IntegerCounter.MAX_VALUE
+        decrementButton!!.isEnabled = counter!!.value > IntegerCounter.MIN_VALUE
+    }
+
+    private fun saveValue() {
+        val storage = CounterApplication.component!!.localStorage()
+        storage!!.write(counter)
+    }
+
+    /** Triggers vibration for a specified duration, if vibration is turned on.  */
+    private fun vibrate(duration: Long) {
+        if (sharedPrefs!!.getBoolean(SharedPrefKeys.VIBRATION_ON.key, true)) {
+            try {
+                vibrator!!.vibrate(duration)
+            } catch (e: Exception) {
+                Log.e(TAG, "Unable to vibrate", e)
+            }
+        }
+    }
+
+    /** Plays sound if sounds are turned on.  */
+    private fun playSound(soundPlayer: MediaPlayer) {
+        if (sharedPrefs!!.getBoolean(SharedPrefKeys.SOUNDS_ON.key, false)) {
+            try {
+                if (soundPlayer.isPlaying) {
+                    soundPlayer.seekTo(0)
+                }
+                soundPlayer.start()
+            } catch (e: Exception) {
+                Log.e(TAG, "Unable to play sound", e)
+            }
+        }
+    }
+
+    companion object {
+        private val TAG: String = CounterFragment::class.java.simpleName
+
+        const val COUNTER_NAME_ATTRIBUTE: String = "COUNTER_NAME"
+
+        const val DEFAULT_VALUE: Int = 0
+        private const val DEFAULT_VIBRATION_DURATION: Long = 30 // Milliseconds
+
+        private const val STATE_SELECTED_COUNTER_NAME = "SELECTED_COUNTER_NAME"
+    }
 }

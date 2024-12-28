@@ -1,63 +1,69 @@
-package me.tsukanov.counter.domain.impl;
+package me.tsukanov.counter.domain.impl
 
-import static org.junit.Assert.assertEquals;
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.domain.exception.CounterException
+import org.junit.Assert
+import org.junit.Test
 
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.domain.exception.CounterException;
-import org.junit.Test;
+class IntegerCounterTest {
 
-public class IntegerCounterTest {
+    companion object {
+        private const val DEFAULT_NAME = "Test name"
+    }
 
-  private static final String DEFAULT_NAME = "Test name";
+    @Test
+    @Throws(CounterException::class)
+    fun nameSetting_worksAsExpected() {
+        val counter = IntegerCounter(DEFAULT_NAME)
+        Assert.assertEquals(DEFAULT_NAME, counter.name)
 
-  @Test
-  public void nameSetting_worksAsExpected() throws CounterException {
-    final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME);
-    assertEquals(DEFAULT_NAME, counter.getName());
+        val newName = "New name"
+        counter.name = newName
+        Assert.assertEquals(newName, counter.name)
+    }
 
-    final String newName = "New name";
-    counter.setName(newName);
-    assertEquals(newName, counter.getName());
-  }
+    @Test
+    @Throws(Exception::class)
+    fun valueSetting() {
+        val counter = IntegerCounter(DEFAULT_NAME, 0)
+        Assert.assertEquals(0, counter.value.toLong())
 
-  @Test
-  public void valueSetting() throws Exception {
-    final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME, 0);
-    assertEquals(0, counter.getValue().intValue());
+        counter.value = 42
+        Assert.assertEquals(42, counter.value.toLong())
 
-    counter.setValue(42);
-    assertEquals(42, counter.getValue().intValue());
+        counter.value = IntegerCounter.MAX_VALUE
+        Assert.assertEquals(999999999, counter.value.toLong())
 
-    counter.setValue(IntegerCounter.MAX_VALUE);
-    assertEquals(999999999, counter.getValue().intValue());
+        counter.value = IntegerCounter.MIN_VALUE
+        Assert.assertEquals(-99999999, counter.value.toLong())
+    }
 
-    counter.setValue(IntegerCounter.MIN_VALUE);
-    assertEquals(-99999999, counter.getValue().intValue());
-  }
+    @Test
+    @Throws(Exception::class)
+    fun increment() {
+        val counter = IntegerCounter(DEFAULT_NAME, 0)
+        Assert.assertEquals(0, counter.value.toLong())
 
-  @Test
-  public void increment() throws Exception {
-    final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME, 0);
-    assertEquals(0, counter.getValue().intValue());
+        counter.increment()
+        Assert.assertEquals(1, counter.value.toLong())
 
-    counter.increment();
-    assertEquals(1, counter.getValue().intValue());
+        counter.increment()
+        counter.increment()
+        Assert.assertEquals(3, counter.value.toLong())
+    }
 
-    counter.increment();
-    counter.increment();
-    assertEquals(3, counter.getValue().intValue());
-  }
+    @Test
+    @Throws(Exception::class)
+    fun decrement() {
+        val counter = IntegerCounter(DEFAULT_NAME, 0)
+        Assert.assertEquals(0, counter.value.toLong())
 
-  @Test
-  public void decrement() throws Exception {
-    final IntegerCounter counter = new IntegerCounter(DEFAULT_NAME, 0);
-    assertEquals(0, counter.getValue().intValue());
+        counter.decrement()
+        Assert.assertEquals(-1, counter.value.toLong())
 
-    counter.decrement();
-    assertEquals(-1, counter.getValue().intValue());
+        counter.decrement()
+        counter.decrement()
+        Assert.assertEquals(-3, counter.value.toLong())
+    }
 
-    counter.decrement();
-    counter.decrement();
-    assertEquals(-3, counter.getValue().intValue());
-  }
 }

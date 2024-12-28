@@ -1,8 +1,3 @@
-package me.tsukanov.counter.domain.exception;
+package me.tsukanov.counter.domain.exception
 
-public class InvalidValueException extends CounterException {
-
-  public InvalidValueException(String message) {
-    super(message);
-  }
-}
+class InvalidValueException(message: String?) : CounterException(message)

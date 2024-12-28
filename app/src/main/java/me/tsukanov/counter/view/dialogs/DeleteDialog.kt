@@ -1,72 +1,71 @@
-package me.tsukanov.counter.view.dialogs;
+package me.tsukanov.counter.view.dialogs
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.os.Bundle;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
-import java.util.Map;
-import java.util.Objects;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.CounterStorage;
-import org.apache.commons.text.StringSubstitutor;
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
+import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import org.apache.commons.text.StringSubstitutor
+import java.util.Map
 
-public class DeleteDialog extends DialogFragment {
+class DeleteDialog : DialogFragment() {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val name = requireArguments().getString(BUNDLE_ARGUMENT_NAME)
 
-  public static final String TAG = "DeleteDialog";
-  private static final String BUNDLE_ARGUMENT_NAME = "selected_position";
+        val deleteDialog: Dialog =
+            AlertDialog.Builder(activity)
+                .setMessage(resources.getText(R.string.dialog_delete_title))
+                .setCancelable(false)
+                .setPositiveButton(
+                    resources.getText(R.string.dialog_button_delete)
+                ) { dialog: DialogInterface?, id: Int ->
+                    val storage =
+                        CounterApplication.component!!.localStorage()
+                    storage!!.delete(name!!)
 
-  public static DeleteDialog newInstance(final @NonNull String counterName) {
-    final DeleteDialog dialog = new DeleteDialog();
+                    Toast.makeText(
+                        context,
+                        StringSubstitutor.replace(
+                            resources.getText(R.string.toast_delete_success),
+                            Map.of("name", name),
+                            "{",
+                            "}"
+                        ),
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
 
-    final Bundle arguments = new Bundle();
-    arguments.putString(BUNDLE_ARGUMENT_NAME, counterName);
-    dialog.setArguments(arguments);
+                    // Switch to a different counter
+                    BroadcastHelper(requireContext())
+                        .sendSelectCounterBroadcast(storage!!.first()!!.name)
+                }
+                .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)
+                .create()
+        deleteDialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
 
-    return dialog;
-  }
+        return deleteDialog
+    }
 
-  @NonNull
-  @Override
-  public Dialog onCreateDialog(Bundle savedInstanceState) {
+    companion object {
+        const val TAG: String = "DeleteDialog"
+        private const val BUNDLE_ARGUMENT_NAME = "selected_position"
 
-    final String name = requireArguments().getString(BUNDLE_ARGUMENT_NAME);
+        fun newInstance(counterName: String): DeleteDialog {
+            val dialog = DeleteDialog()
 
-    final Dialog deleteDialog =
-        new AlertDialog.Builder(getActivity())
-            .setMessage(getResources().getText(R.string.dialog_delete_title))
-            .setCancelable(false)
-            .setPositiveButton(
-                getResources().getText(R.string.dialog_button_delete),
-                (dialog, id) -> {
-                  final CounterStorage<IntegerCounter> storage =
-                      CounterApplication.getComponent().localStorage();
-                  storage.delete(name);
+            val arguments = Bundle()
+            arguments.putString(BUNDLE_ARGUMENT_NAME, counterName)
+            dialog.arguments = arguments
 
-                  Toast.makeText(
-                          getContext(),
-                          StringSubstitutor.replace(
-                              getResources().getText(R.string.toast_delete_success),
-                              Map.of("name", name),
-                              "{",
-                              "}"),
-                          Toast.LENGTH_SHORT)
-                      .show();
-
-                  // Switch to a different counter
-                  new BroadcastHelper(requireContext())
-                      .sendSelectCounterBroadcast(storage.getFirst().getName());
-                })
-            .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
-            .create();
-    Objects.requireNonNull(deleteDialog.getWindow())
-        .setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-
-    return deleteDialog;
-  }
+            return dialog
+        }
+    }
 }

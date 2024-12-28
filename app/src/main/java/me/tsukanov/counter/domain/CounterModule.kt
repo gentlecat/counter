@@ -1,36 +1,31 @@
-package me.tsukanov.counter.domain;
+package me.tsukanov.counter.domain
 
-import androidx.annotation.NonNull;
-import dagger.Module;
-import dagger.Provides;
-import javax.inject.Singleton;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.CounterStorage;
-import me.tsukanov.counter.repository.SharedPrefsCounterStorage;
+import dagger.Module
+import dagger.Provides
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.repository.CounterStorage
+import me.tsukanov.counter.repository.SharedPrefsCounterStorage
+import javax.inject.Singleton
 
 @Module
-public class CounterModule {
+class CounterModule(private val app: CounterApplication) {
 
-  private final CounterApplication app;
+    @Provides
+    @Singleton
+    fun provideApp(): CounterApplication {
+        return app
+    }
 
-  public CounterModule(CounterApplication app) {
-    this.app = app;
-  }
+    @Provides
+    @Singleton
+    fun provideCounterStorage(app: CounterApplication): CounterStorage<IntegerCounter> {
+        return SharedPrefsCounterStorage(
+            app,
+            BroadcastHelper(app),
+            app.resources.getText(R.string.default_counter_name) as String
+        )
+    }
 
-  @Provides
-  @Singleton
-  CounterApplication provideApp() {
-    return app;
-  }
-
-  @Provides
-  @Singleton
-  CounterStorage<IntegerCounter> provideCounterStorage(final @NonNull CounterApplication app) {
-    return new SharedPrefsCounterStorage(
-        app,
-        new BroadcastHelper(app),
-        (String) app.getResources().getText(R.string.default_counter_name));
-  }
 }

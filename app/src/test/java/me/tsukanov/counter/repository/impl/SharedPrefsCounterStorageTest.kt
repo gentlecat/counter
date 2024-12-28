@@ -1,142 +1,175 @@
-package me.tsukanov.counter.repository.impl;
+package me.tsukanov.counter.repository.impl
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import android.content.Context
+import android.content.SharedPreferences
+import com.google.common.collect.ImmutableList
+import com.google.common.collect.ImmutableMap
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.domain.exception.CounterException
+import me.tsukanov.counter.infrastructure.Actions
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.repository.SharedPrefsCounterStorage
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.mockito.ArgumentMatchers
+import org.mockito.Mock
+import org.mockito.Mockito
+import org.mockito.junit.MockitoJUnitRunner
+import java.util.Collections
+import java.util.HashMap
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.domain.exception.CounterException;
-import me.tsukanov.counter.infrastructure.Actions;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.SharedPrefsCounterStorage;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+@RunWith(MockitoJUnitRunner::class)
+class SharedPrefsCounterStorageTest {
 
-@RunWith(MockitoJUnitRunner.class)
-public class SharedPrefsCounterStorageTest {
+    companion object {
+        private const val DEFAULT_COUNTER_NAME = "Test counter"
+    }
 
-  private static final String DEFAULT_COUNTER_NAME = "Test counter";
+    @Mock
+    private val context: Context? = null
 
-  @Mock private Context context;
-  @Mock private SharedPreferences countersSharedPrefs;
-  @Mock private SharedPreferences timestampSharedPrefs;
-  @Mock private SharedPreferences.Editor countersPrefsEditor;
-  @Mock private SharedPreferences.Editor timestampPrefsEditor;
-  @Mock private BroadcastHelper broadcastHelper;
+    @Mock
+    private val countersSharedPrefs: SharedPreferences? = null
 
-  private SharedPrefsCounterStorage systemUnderTest;
+    @Mock
+    private val timestampSharedPrefs: SharedPreferences? = null
 
-  @Before
-  public void setUp() {
-    when(context.getSharedPreferences(eq("counters"), anyInt())).thenReturn(countersSharedPrefs);
-    when(countersSharedPrefs.edit()).thenReturn(countersPrefsEditor);
-    when(countersSharedPrefs.edit().putInt(anyString(), anyInt())).thenReturn(countersPrefsEditor);
+    @Mock
+    private val countersPrefsEditor: SharedPreferences.Editor? = null
 
-    when(context.getSharedPreferences(eq("update-timestamps"), anyInt()))
-        .thenReturn(timestampSharedPrefs);
-    when(timestampSharedPrefs.edit()).thenReturn(timestampPrefsEditor);
-    when(timestampSharedPrefs.edit().putString(anyString(), anyString()))
-        .thenReturn(timestampPrefsEditor);
+    @Mock
+    private val timestampPrefsEditor: SharedPreferences.Editor? = null
 
-    systemUnderTest = new SharedPrefsCounterStorage(context, broadcastHelper, DEFAULT_COUNTER_NAME);
-  }
+    @Mock
+    private val broadcastHelper: BroadcastHelper? = null
 
-  @Test
-  public void read_withoutDefaultCounter() {
-    when(countersSharedPrefs.getAll()).thenReturn(Collections.EMPTY_MAP);
+    private var systemUnderTest: SharedPrefsCounterStorage? = null
 
-    final List<IntegerCounter> output = systemUnderTest.readAll(false);
-    assertEquals(0, output.size());
+    @Before
+    fun setUp() {
+        Mockito.`when`(
+            context!!.getSharedPreferences(
+                ArgumentMatchers.eq("counters"),
+                ArgumentMatchers.anyInt()
+            )
+        ).thenReturn(countersSharedPrefs)
+        Mockito.`when`(countersSharedPrefs!!.edit()).thenReturn(countersPrefsEditor)
+        Mockito.`when`(
+            countersSharedPrefs.edit()
+                .putInt(ArgumentMatchers.anyString(), ArgumentMatchers.anyInt())
+        ).thenReturn(countersPrefsEditor)
 
-    verify(countersSharedPrefs).getAll();
-    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
-    verify(context).getSharedPreferences("update-timestamps", Context.MODE_PRIVATE);
-  }
+        Mockito.`when`(
+            context.getSharedPreferences(
+                ArgumentMatchers.eq("update-timestamps"),
+                ArgumentMatchers.anyInt()
+            )
+        )
+            .thenReturn(timestampSharedPrefs)
+        Mockito.`when`(timestampSharedPrefs!!.edit()).thenReturn(timestampPrefsEditor)
+        Mockito.`when`(
+            timestampSharedPrefs.edit()
+                .putString(ArgumentMatchers.anyString(), ArgumentMatchers.anyString())
+        )
+            .thenReturn(timestampPrefsEditor)
 
-  @Test
-  public void read_withDefaultCounter() {
-    when(countersSharedPrefs.getAll()).thenReturn(Collections.EMPTY_MAP);
+        systemUnderTest = SharedPrefsCounterStorage(
+            context,
+            broadcastHelper!!, DEFAULT_COUNTER_NAME
+        )
+    }
 
-    final List<IntegerCounter> output = systemUnderTest.readAll(true);
-    assertEquals(1, output.size());
+    @Test
+    fun read_withoutDefaultCounter() {
+        Mockito.`when`(countersSharedPrefs!!.all).thenReturn(Collections.emptyMap())
 
-    verify(countersSharedPrefs).getAll();
-    verify(countersPrefsEditor).putInt(DEFAULT_COUNTER_NAME, 0);
-    verify(countersPrefsEditor).commit();
-    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
-    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
-    verify(context).getSharedPreferences("update-timestamps", Context.MODE_PRIVATE);
-  }
+        val output = systemUnderTest!!.readAll(false)
+        Assert.assertEquals(0, output.size.toLong())
 
-  @Test
-  public void write() throws CounterException {
-    systemUnderTest.overwriteAll(
-        ImmutableList.of(
-            new IntegerCounter("First counter", 0),
-            new IntegerCounter("Second counter", 1),
-            new IntegerCounter("Third counter", -1)));
+        Mockito.verify(countersSharedPrefs).all
+        Mockito.verify(context)!!.getSharedPreferences("counters", Context.MODE_PRIVATE)
+        Mockito.verify(context)!!.getSharedPreferences("update-timestamps", Context.MODE_PRIVATE)
+    }
 
-    verify(countersPrefsEditor).clear();
-    verify(countersPrefsEditor).putInt("First counter", 0);
-    verify(countersPrefsEditor).putInt("Second counter", 1);
-    verify(countersPrefsEditor).putInt("Third counter", -1);
-    verify(countersPrefsEditor).commit();
-    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
-    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
-    verify(context).getSharedPreferences("update-timestamps", Context.MODE_PRIVATE);
-  }
+    @Test
+    fun read_withDefaultCounter() {
+        Mockito.`when`(countersSharedPrefs!!.all).thenReturn(Collections.emptyMap())
 
-  @Test
-  public void overwrite_withNoCounters() {
-    systemUnderTest.overwriteAll(Collections.emptyList());
+        val output = systemUnderTest!!.readAll(true)
+        Assert.assertEquals(1, output.size.toLong())
 
-    verify(countersPrefsEditor).clear();
-    verify(countersPrefsEditor).commit();
-    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
-    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
-    verify(context).getSharedPreferences("update-timestamps", Context.MODE_PRIVATE);
-  }
+        Mockito.verify(countersSharedPrefs).all
+        Mockito.verify(countersPrefsEditor)!!.putInt(DEFAULT_COUNTER_NAME, 0)
+        Mockito.verify(countersPrefsEditor)!!.commit()
+        Mockito.verify(broadcastHelper)!!.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+        Mockito.verify(context)!!.getSharedPreferences("counters", Context.MODE_PRIVATE)
+        Mockito.verify(context)!!.getSharedPreferences("update-timestamps", Context.MODE_PRIVATE)
+    }
 
-  @Test
-  public void wipe() {
-    systemUnderTest.wipe();
+    @Test
+    @Throws(CounterException::class)
+    fun write() {
+        systemUnderTest!!.overwriteAll(
+            ImmutableList.of(
+                IntegerCounter("First counter", 0),
+                IntegerCounter("Second counter", 1),
+                IntegerCounter("Third counter", -1)
+            )
+        )
 
-    verify(countersPrefsEditor).clear();
-    verify(countersPrefsEditor).commit();
-    verify(broadcastHelper).sendBroadcast(Actions.COUNTER_SET_CHANGE);
-    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
-    verify(context).getSharedPreferences("update-timestamps", Context.MODE_PRIVATE);
-  }
+        Mockito.verify(countersPrefsEditor)!!.clear()
+        Mockito.verify(countersPrefsEditor)!!.putInt("First counter", 0)
+        Mockito.verify(countersPrefsEditor)!!.putInt("Second counter", 1)
+        Mockito.verify(countersPrefsEditor)!!.putInt("Third counter", -1)
+        Mockito.verify(countersPrefsEditor)!!.commit()
+        Mockito.verify(broadcastHelper)!!.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+        Mockito.verify(context)!!.getSharedPreferences("counters", Context.MODE_PRIVATE)
+        Mockito.verify(context)!!.getSharedPreferences("update-timestamps", Context.MODE_PRIVATE)
+    }
 
-  @Test
-  public void toCsv() throws Exception {
-    final Map testData = ImmutableMap.of("first", 0, "second, ok", -1);
-    when(countersSharedPrefs.getAll()).thenReturn(testData);
+    @Test
+    fun overwrite_withNoCounters() {
+        systemUnderTest!!.overwriteAll(emptyList())
 
-    final String output = systemUnderTest.toCsv();
-    assertEquals(
-        """
-        Name,Value,Last Update\r
-        first,0,\r
-        "second, ok",-1,\r
-        """,
-        output);
+        Mockito.verify(countersPrefsEditor)!!.clear()
+        Mockito.verify(countersPrefsEditor)!!.commit()
+        Mockito.verify(broadcastHelper)!!.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+        Mockito.verify(context)!!.getSharedPreferences("counters", Context.MODE_PRIVATE)
+        Mockito.verify(context)!!.getSharedPreferences("update-timestamps", Context.MODE_PRIVATE)
+    }
 
-    verify(countersSharedPrefs).getAll();
-    verify(context).getSharedPreferences("counters", Context.MODE_PRIVATE);
-    verify(context).getSharedPreferences("update-timestamps", Context.MODE_PRIVATE);
-  }
+    @Test
+    fun wipe() {
+        systemUnderTest!!.wipe()
+
+        Mockito.verify(countersPrefsEditor)!!.clear()
+        Mockito.verify(countersPrefsEditor)!!.commit()
+        Mockito.verify(broadcastHelper)!!.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+        Mockito.verify(context)!!.getSharedPreferences("counters", Context.MODE_PRIVATE)
+        Mockito.verify(context)!!.getSharedPreferences("update-timestamps", Context.MODE_PRIVATE)
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun toCsv() {
+        val testData: Map<*, *> = ImmutableMap.of("first", 0, "second, ok", -1)
+        Mockito.`when`(countersSharedPrefs!!.all).thenReturn(testData as MutableMap<String, *>?)
+
+        val output = systemUnderTest!!.toCsv()
+
+        Assert.assertEquals(
+            """
+            "Name","Value","Last Update"
+            "first","0",""
+            "second, ok","-1",""
+            """.trimIndent() + "\n",
+            output
+        )
+
+        Mockito.verify(countersSharedPrefs).all
+        Mockito.verify(context)!!.getSharedPreferences("counters", Context.MODE_PRIVATE)
+        Mockito.verify(context)!!.getSharedPreferences("update-timestamps", Context.MODE_PRIVATE)
+    }
 }

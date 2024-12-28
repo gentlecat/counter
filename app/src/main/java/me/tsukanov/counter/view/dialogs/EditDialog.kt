@@ -1,117 +1,111 @@
-package me.tsukanov.counter.view.dialogs;
+package me.tsukanov.counter.view.dialogs
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.os.Bundle;
-import android.text.InputFilter;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
-import java.util.Objects;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.activities.MainActivity;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.domain.exception.CounterException;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.CounterStorage;
-import me.tsukanov.counter.view.CounterFragment;
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
+import android.os.Bundle
+import android.text.InputFilter
+import android.text.InputFilter.LengthFilter
+import android.util.Log
+import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.activities.MainActivity
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.domain.IntegerCounter.Companion.valueCharLimit
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.view.CounterFragment
+import java.util.Objects
 
-public class EditDialog extends DialogFragment {
+class EditDialog : DialogFragment() {
 
-  public static final String TAG = EditDialog.class.getSimpleName();
-  private static final String BUNDLE_ARGUMENT_NAME = "name";
-  private static final String BUNDLE_ARGUMENT_VALUE = "value";
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val oldName = requireArguments().getString(BUNDLE_ARGUMENT_NAME)
+        val oldValue = requireArguments().getInt(BUNDLE_ARGUMENT_VALUE)
 
-  public static EditDialog newInstance(final @NonNull String counterName, int counterValue) {
-    final EditDialog dialog = new EditDialog();
+        val activity = activity as MainActivity?
 
-    final Bundle arguments = new Bundle();
-    arguments.putString(BUNDLE_ARGUMENT_NAME, counterName);
-    arguments.putInt(BUNDLE_ARGUMENT_VALUE, counterValue);
-    dialog.setArguments(arguments);
+        val dialogView = layoutInflater.inflate(R.layout.dialog_edit, null)
 
-    return dialog;
-  }
+        val nameInput = dialogView.findViewById<EditText>(R.id.edit_name)
+        nameInput.setText(oldName)
 
-  @NonNull
-  @Override
-  public Dialog onCreateDialog(Bundle savedInstanceState) {
+        val valueInput = dialogView.findViewById<EditText>(R.id.edit_value)
+        valueInput.setText(oldValue.toString())
+        valueInput.inputType = EditorInfo.TYPE_CLASS_NUMBER
+        val valueFilter = arrayOfNulls<InputFilter>(1)
+        valueFilter[0] = LengthFilter(valueCharLimit)
+        valueInput.filters = valueFilter
 
-    final String oldName = requireArguments().getString(BUNDLE_ARGUMENT_NAME);
-    final int oldValue = requireArguments().getInt(BUNDLE_ARGUMENT_VALUE);
-
-    final MainActivity activity = (MainActivity) getActivity();
-
-    final View dialogView = getLayoutInflater().inflate(R.layout.dialog_edit, null);
-
-    final EditText nameInput = dialogView.findViewById(R.id.edit_name);
-    nameInput.setText(oldName);
-
-    final EditText valueInput = dialogView.findViewById(R.id.edit_value);
-    valueInput.setText(String.valueOf(oldValue));
-    valueInput.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
-    final InputFilter[] valueFilter = new InputFilter[1];
-    valueFilter[0] = new InputFilter.LengthFilter(IntegerCounter.getValueCharLimit());
-    valueInput.setFilters(valueFilter);
-
-    final Dialog dialog =
-        new AlertDialog.Builder(getActivity())
-            .setView(dialogView)
-            .setTitle(getString(R.string.dialog_edit_title))
-            .setPositiveButton(
-                getResources().getText(R.string.dialog_button_apply),
-                (d, which) -> {
-                  String newName = nameInput.getText().toString().trim();
-                  if (newName.isEmpty()) {
-                    newName = oldName;
-                  }
-
-                  int newValue;
-                  String valueInputContents = valueInput.getText().toString();
-                  if (!valueInputContents.equals("")) {
-                    try {
-                      newValue = Integer.parseInt(valueInputContents);
-                    } catch (NumberFormatException e) {
-                      Log.w(TAG, "Unable to parse new value", e);
-                      Toast.makeText(
-                              activity,
-                              getResources().getText(R.string.toast_unable_to_modify),
-                              Toast.LENGTH_SHORT)
-                          .show();
-                      newValue = CounterFragment.DEFAULT_VALUE;
+        val dialog: Dialog =
+            AlertDialog.Builder(getActivity())
+                .setView(dialogView)
+                .setTitle(getString(R.string.dialog_edit_title))
+                .setPositiveButton(
+                    resources.getText(R.string.dialog_button_apply)
+                ) { d: DialogInterface?, which: Int ->
+                    var newName: String? = nameInput.text.toString().trim { it <= ' ' }
+                    if (newName!!.isEmpty()) {
+                        newName = oldName
                     }
-                  } else {
-                    newValue = CounterFragment.DEFAULT_VALUE;
-                  }
 
-                  final CounterStorage<IntegerCounter> storage =
-                      CounterApplication.getComponent().localStorage();
+                    var newValue: Int
+                    val valueInputContents = valueInput.text.toString()
+                    if (valueInputContents != "") {
+                        try {
+                            newValue = valueInputContents.toInt()
+                        } catch (e: NumberFormatException) {
+                            Log.w(TAG, "Unable to parse new value", e)
+                            Toast.makeText(
+                                activity,
+                                resources.getText(R.string.toast_unable_to_modify),
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                            newValue = CounterFragment.DEFAULT_VALUE
+                        }
+                    } else {
+                        newValue = CounterFragment.DEFAULT_VALUE
+                    }
 
-                  storage.delete(oldName);
-                  try {
-                    storage.write(new IntegerCounter(newName, newValue));
-                  } catch (CounterException e) {
-                    Log.getStackTraceString(e);
-                    Toast.makeText(
-                            getContext(), R.string.toast_unable_to_modify, Toast.LENGTH_SHORT)
-                        .show();
-                  }
+                    val storage = CounterApplication.component!!.localStorage()
 
-                  new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName);
-                })
-            .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
-            .create();
+                    storage!!.delete(oldName!!)
+                    storage!!.write(IntegerCounter(newName!!, newValue))
+                    BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName)
+                }
+                .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)
+                .create()
 
-    dialog.setCanceledOnTouchOutside(true);
-    Objects.requireNonNull(dialog.getWindow())
-        .setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
 
-    return dialog;
-  }
+        return dialog
+    }
+
+    companion object {
+        val TAG: String = EditDialog::class.java.simpleName
+
+        private const val BUNDLE_ARGUMENT_NAME = "name"
+        private const val BUNDLE_ARGUMENT_VALUE = "value"
+
+        fun newInstance(counterName: String, counterValue: Int): EditDialog {
+            val dialog = EditDialog()
+
+            val arguments = Bundle()
+            arguments.putString(BUNDLE_ARGUMENT_NAME, counterName)
+            arguments.putInt(BUNDLE_ARGUMENT_VALUE, counterValue)
+            dialog.arguments = arguments
+
+            return dialog
+        }
+    }
+
 }

@@ -1,101 +1,96 @@
-package me.tsukanov.counter.view;
+package me.tsukanov.counter.view
 
-import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.ListFragment;
-import java.util.List;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.infrastructure.Actions;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.view.dialogs.AddDialog;
+import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.ListView
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.ListFragment
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.infrastructure.Actions
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.view.dialogs.AddDialog
 
-public class CountersListFragment extends ListFragment {
+class CountersListFragment : ListFragment() {
 
-  private static final String TAG = CountersListFragment.class.getSimpleName();
+    private var listAdapter: CountersListAdapter? = null
 
-  private CountersListAdapter listAdapter;
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreate(savedInstanceState)
 
-  @Override
-  public View onCreateView(
-      @NonNull final LayoutInflater inflater,
-      final ViewGroup container,
-      final Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+        @SuppressLint("InflateParams") val view = inflater.inflate(R.layout.menu, null)
 
-    @SuppressLint("InflateParams")
-    final View view = inflater.inflate(R.layout.menu, null);
+        val addButton = view.findViewById<LinearLayout>(R.id.add_counter)
+        addButton.setOnClickListener { v: View? -> showAddDialog() }
 
-    final LinearLayout addButton = view.findViewById(R.id.add_counter);
-    addButton.setOnClickListener(v -> showAddDialog());
-
-    return view;
-  }
-
-  @Override
-  public void onActivityCreated(Bundle savedInstanceState) {
-    super.onActivityCreated(savedInstanceState);
-
-    updateList();
-
-    final IntentFilter counterSetChangeFilter =
-        new IntentFilter(Actions.COUNTER_SET_CHANGE.getActionName());
-    counterSetChangeFilter.addCategory(Intent.CATEGORY_DEFAULT);
-
-    ContextCompat.registerReceiver(
-        requireActivity().getApplication(),
-        new UpdateReceiver(),
-        counterSetChangeFilter,
-        ContextCompat.RECEIVER_EXPORTED);
-  }
-
-  @Override
-  public void onListItemClick(
-      @NonNull final ListView lv, @NonNull final View v, final int position, final long id) {
-    new BroadcastHelper(this.requireContext())
-        .sendSelectCounterBroadcast(listAdapter.getItem(position).getName());
-  }
-
-  private void updateList() {
-    if (!isFragmentActive()) {
-      return;
+        return view
     }
 
-    List<IntegerCounter> counters = CounterApplication.getComponent().localStorage().readAll(false);
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-    listAdapter = new CountersListAdapter(getActivity());
-    for (final IntegerCounter c : counters) {
-      listAdapter.add(c);
+        updateList()
+
+        val counterSetChangeFilter =
+            IntentFilter(Actions.COUNTER_SET_CHANGE.actionName)
+        counterSetChangeFilter.addCategory(Intent.CATEGORY_DEFAULT)
+
+        ContextCompat.registerReceiver(
+            requireActivity().application,
+            UpdateReceiver(),
+            counterSetChangeFilter,
+            ContextCompat.RECEIVER_EXPORTED
+        )
     }
-    setListAdapter(listAdapter);
-  }
 
-  private void showAddDialog() {
-    final AddDialog dialog = new AddDialog();
-    dialog.show(getParentFragmentManager(), TAG);
-  }
-
-  private class UpdateReceiver extends BroadcastReceiver {
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-      updateList();
+    override fun onListItemClick(
+        lv: ListView, v: View, position: Int, id: Long
+    ) {
+        BroadcastHelper(this.requireContext())
+            .sendSelectCounterBroadcast(listAdapter!!.getItem(position)!!.name)
     }
-  }
 
-  private boolean isFragmentActive() {
-    return isAdded() && !isDetached() && !isRemoving();
-  }
+    private fun updateList() {
+        if (!isFragmentActive) {
+            return
+        }
+
+        val counters = CounterApplication.component!!.localStorage()!!.readAll(false)
+
+        listAdapter = CountersListAdapter(requireActivity())
+        for (c in counters) {
+            listAdapter!!.add(c)
+        }
+        setListAdapter(listAdapter)
+    }
+
+    private fun showAddDialog() {
+        val dialog = AddDialog()
+        dialog.show(parentFragmentManager, TAG)
+    }
+
+    private inner class UpdateReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            updateList()
+        }
+    }
+
+    private val isFragmentActive: Boolean
+        get() = isAdded && !isDetached && !isRemoving
+
+    companion object {
+        private val TAG: String = CountersListFragment::class.java.simpleName
+    }
 }

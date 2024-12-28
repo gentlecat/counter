@@ -7,14 +7,18 @@ buildscript {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'idea'
+
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat-resources:1.6.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.core:core:1.15.0'
-    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.android.material:material:1.12.0'
 
@@ -27,8 +31,8 @@ dependencies {
 
     compileOnly 'javax.annotation:jsr250-api:1.0'
 
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.53'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.53'
+    kapt 'com.google.dagger:dagger-compiler:2.53'
+    kapt 'com.google.dagger:dagger-android-processor:2.53'
     api 'com.google.dagger:dagger-android-support:2.53'
     api 'com.google.dagger:dagger-android:2.53'
     api 'com.google.dagger:dagger:2.53'
@@ -72,15 +76,6 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-//            proguardFiles
-//            getDefaultProguardFile('proguard-android-optimize.txt')
-//
-//            // List additional ProGuard rules for the given build type here. By default,
-//            // Android Studio creates and includes an empty rules file for you (located
-//            // at the root directory of each module).
-//            'proguard-rules.pro'
-//            testProguardFiles
         }
     }
 
@@ -94,6 +89,10 @@ android {
             returnDefaultValues = true
             includeAndroidResources = true
         }
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
     }
 
 }

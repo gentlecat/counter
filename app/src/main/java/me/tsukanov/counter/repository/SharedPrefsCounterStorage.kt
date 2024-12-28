@@ -1,196 +1,171 @@
-package me.tsukanov.counter.repository;
+package me.tsukanov.counter.repository
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
-import androidx.annotation.NonNull;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import me.tsukanov.counter.domain.Counter;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.domain.exception.CounterException;
-import me.tsukanov.counter.infrastructure.Actions;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.exceptions.MissingCounterException;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
+import android.util.Log
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.domain.exception.CounterException
+import me.tsukanov.counter.infrastructure.Actions
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.repository.exceptions.MissingCounterException
+import org.apache.commons.csv.CSVFormat
+import org.apache.commons.csv.CSVPrinter
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
+import org.joda.time.format.DateTimeFormatter
+import org.joda.time.format.ISODateTimeFormat
+import java.io.IOException
+import java.util.LinkedList
 
 /**
- * Counter storage that uses {@link SharedPreferences} as a medium.
+ * Counter storage that uses [SharedPreferences] as a medium.
  *
- * <p>This implementation us based on the {@link IntegerCounter} variation of the {@link Counter}.
+ *
+ * This implementation us based on the [IntegerCounter] variation of the [Counter].
  */
-public class SharedPrefsCounterStorage implements CounterStorage<IntegerCounter> {
+class SharedPrefsCounterStorage(
+    context: Context,
+    private val broadcastHelper: BroadcastHelper,
+    private val defaultCounterName: String
+) : CounterStorage<IntegerCounter> {
 
-  private static final String TAG = SharedPrefsCounterStorage.class.getSimpleName();
+    private val values: SharedPreferences =
+        context.getSharedPreferences(VALUES_FILE_NAME, Context.MODE_PRIVATE)
+    private val updateTimestamps: SharedPreferences =
+        context.getSharedPreferences(UPDATE_TIMESTAMPS_FILE_NAME, Context.MODE_PRIVATE)
 
-  private static final String VALUES_FILE_NAME = "counters";
-  private static final String UPDATE_TIMESTAMPS_FILE_NAME = "update-timestamps";
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
-      ISODateTimeFormat.basicDateTimeNoMillis().withZone(DateTimeZone.getDefault());
+    override fun readAll(addDefault: Boolean): List<IntegerCounter> {
+        val counters: MutableList<IntegerCounter> = LinkedList()
 
-  private final SharedPreferences values;
-  private final SharedPreferences updateTimestamps;
+        val valuesMap = values.all
 
-  private final BroadcastHelper broadcastHelper;
-  private final String defaultCounterName;
+        try {
+            if (valuesMap.isEmpty() && addDefault) {
+                val defaultCounter = IntegerCounter(this.defaultCounterName)
+                counters.add(defaultCounter)
+                write(defaultCounter)
+                return counters
+            }
 
-  /**
-   * Default constructor.
-   *
-   * @param defaultCounterName Name that will be assigned to a default counter.
-   */
-  public SharedPrefsCounterStorage(
-      @NonNull final Context context,
-      @NonNull final BroadcastHelper broadcastHelper,
-      @NonNull final String defaultCounterName) {
-    this.values = context.getSharedPreferences(VALUES_FILE_NAME, Context.MODE_PRIVATE);
-    this.updateTimestamps =
-        context.getSharedPreferences(UPDATE_TIMESTAMPS_FILE_NAME, Context.MODE_PRIVATE);
-    this.broadcastHelper = broadcastHelper;
-    this.defaultCounterName = defaultCounterName;
-  }
+            for ((key, value) in valuesMap) {
+                val updateTimestampStr = updateTimestamps.getString(key, null)
+                val updateTimestamp =
+                    if (updateTimestampStr != null)
+                        DateTime.parse(updateTimestampStr, TIMESTAMP_FORMATTER)
+                    else
+                        null
 
-  @Override
-  @NonNull
-  public List<IntegerCounter> readAll(boolean addDefault) {
-    final List<IntegerCounter> counters = new LinkedList<>();
-
-    final Map<String, ?> valuesMap = values.getAll();
-
-    try {
-      if (valuesMap.isEmpty() && addDefault) {
-        final IntegerCounter defaultCounter = new IntegerCounter(this.defaultCounterName);
-        counters.add(defaultCounter);
-        write(defaultCounter);
-        return counters;
-      }
-
-      for (Map.Entry<String, ?> valEntry : valuesMap.entrySet()) {
-        final String updateTimestampStr = updateTimestamps.getString(valEntry.getKey(), null);
-        final DateTime updateTimestamp =
-            updateTimestampStr != null
-                ? DateTime.parse(updateTimestampStr, TIMESTAMP_FORMATTER)
-                : null;
-
-        counters.add(
-            new IntegerCounter(valEntry.getKey(), (Integer) valEntry.getValue(), updateTimestamp));
-      }
-      Collections.sort(counters, (x, y) -> x.getName().compareTo(y.getName()));
-      return counters;
-
-    } catch (CounterException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  @NonNull
-  @Override
-  public IntegerCounter read(@NonNull final Object identifierObj) throws MissingCounterException {
-    final String name = identifierObj.toString();
-    final List<IntegerCounter> counters = readAll(false);
-
-    for (IntegerCounter c : counters) {
-      if (c.getName().equals(name)) {
-        return c;
-      }
+                counters.add(
+                    IntegerCounter(key, (value as Int?)!!, updateTimestamp)
+                )
+            }
+            counters.sortWith { x: IntegerCounter, y: IntegerCounter -> x.name.compareTo(y.name) }
+            return counters
+        } catch (e: CounterException) {
+            throw RuntimeException(e)
+        }
     }
 
-    throw new MissingCounterException(String.format("Unable find counter: %s", name));
-  }
+    @Throws(MissingCounterException::class)
+    override fun read(counterIdentifier: Any): IntegerCounter {
+        val name = counterIdentifier.toString()
+        val counters = readAll(false)
 
-  @NonNull
-  @Override
-  public IntegerCounter getFirst() {
-    return readAll(true).get(0);
-  }
+        for (c in counters) {
+            if (c.name == name) {
+                return c
+            }
+        }
 
-  /**
-   * Saves provided counter in storage. If it's identifier is already defined, existing counter will
-   * be overwritten.
-   */
-  @SuppressLint("ApplySharedPref")
-  @Override
-  public void write(@NonNull final IntegerCounter counter) {
-    values.edit().putInt(counter.getName(), counter.getValue()).commit();
-
-    if (counter.getLastUpdatedDate() != null) {
-      updateTimestamps
-          .edit()
-          .putString(counter.getName(), counter.getLastUpdatedDate().toString(TIMESTAMP_FORMATTER))
-          .commit();
+        throw MissingCounterException(String.format("Unable find counter: %s", name))
     }
 
-    broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE);
-  }
-
-  @SuppressLint("ApplySharedPref")
-  @Override
-  public void overwriteAll(@NonNull List<IntegerCounter> counters) {
-    Log.i(TAG, String.format("Writing %s counters to storage", counters.size()));
-
-    final SharedPreferences.Editor prefsEditor = values.edit();
-    prefsEditor.clear();
-    for (IntegerCounter c : counters) {
-      prefsEditor.putInt(c.getName(), c.getValue());
-    }
-    boolean success = prefsEditor.commit();
-
-    if (success) {
-      Log.i(TAG, "Writing has been completed");
-    } else {
-      Log.e(TAG, "Failed to overwrite counters to storage");
+    override fun first(): IntegerCounter {
+        return readAll(true)[0]
     }
 
-    broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE);
-  }
+    /**
+     * Saves provided counter in storage. If it's identifier is already defined, existing counter will
+     * be overwritten.
+     */
+    @SuppressLint("ApplySharedPref")
+    override fun write(counter: IntegerCounter) {
+        values.edit().putInt(counter.name, counter.value).commit()
 
-  @SuppressLint("ApplySharedPref")
-  @Override
-  public void delete(@NonNull Object counterName) {
-    final SharedPreferences.Editor prefsEditor = values.edit();
-    prefsEditor.remove(counterName.toString());
-    prefsEditor.commit();
+        if (counter.lastUpdatedDate != null) {
+            updateTimestamps
+                .edit()
+                .putString(counter.name, counter.lastUpdatedDate!!.toString(TIMESTAMP_FORMATTER))
+                .commit()
+        }
 
-    broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE);
-  }
-
-  @SuppressLint("ApplySharedPref")
-  @Override
-  public void wipe() {
-    SharedPreferences.Editor prefsEditor = values.edit();
-    prefsEditor.clear();
-    prefsEditor.commit();
-
-    broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE);
-  }
-
-  @NonNull
-  @Override
-  public String toCsv() throws IOException {
-    final StringBuilder output = new StringBuilder();
-    try (CSVPrinter csvPrinter = new CSVPrinter(output, CSVFormat.DEFAULT)) {
-
-      csvPrinter.printRecord("Name", "Value", "Last Update");
-
-      for (final IntegerCounter c : readAll(false)) {
-        csvPrinter.printRecord(
-            c.getName(),
-            c.getValue(),
-            c.getLastUpdatedDate() != null
-                ? c.getLastUpdatedDate().toString(TIMESTAMP_FORMATTER)
-                : "");
-      }
-
-      return output.toString();
+        broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE)
     }
-  }
+
+    @SuppressLint("ApplySharedPref")
+    override fun overwriteAll(counters: List<IntegerCounter>) {
+        Log.i(TAG, String.format("Writing %s counters to storage", counters.size))
+
+        val prefsEditor = values.edit()
+        prefsEditor.clear()
+        for (c in counters) {
+            prefsEditor.putInt(c.name, c.value)
+        }
+        val success = prefsEditor.commit()
+
+        if (success) {
+            Log.i(TAG, "Writing has been completed")
+        } else {
+            Log.e(TAG, "Failed to overwrite counters to storage")
+        }
+
+        broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+    }
+
+    @SuppressLint("ApplySharedPref")
+    override fun delete(counterIdentifier: Any) {
+        val prefsEditor = values.edit()
+        prefsEditor.remove(counterIdentifier.toString())
+        prefsEditor.commit()
+
+        broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+    }
+
+    @SuppressLint("ApplySharedPref")
+    override fun wipe() {
+        val prefsEditor = values.edit()
+        prefsEditor.clear()
+        prefsEditor.commit()
+
+        broadcastHelper.sendBroadcast(Actions.COUNTER_SET_CHANGE)
+    }
+
+    @Throws(IOException::class)
+    override fun toCsv(): String {
+        val output = StringBuilder()
+        CSVPrinter(output, CSVFormat.POSTGRESQL_CSV).use { csvPrinter ->
+            csvPrinter.printRecord("Name", "Value", "Last Update")
+            for (c in readAll(false)) {
+                csvPrinter.printRecord(
+                    c.name,
+                    c.value,
+                    if (c.lastUpdatedDate != null)
+                        c.lastUpdatedDate!!.toString(TIMESTAMP_FORMATTER)
+                    else
+                        ""
+                )
+            }
+            return output.toString()
+        }
+    }
+
+    companion object {
+        private val TAG: String = SharedPrefsCounterStorage::class.java.simpleName
+
+        private const val VALUES_FILE_NAME = "counters"
+        private const val UPDATE_TIMESTAMPS_FILE_NAME = "update-timestamps"
+        private val TIMESTAMP_FORMATTER: DateTimeFormatter =
+            ISODateTimeFormat.basicDateTimeNoMillis().withZone(DateTimeZone.getDefault())
+    }
 }

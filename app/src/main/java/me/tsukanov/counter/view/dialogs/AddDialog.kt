@@ -1,109 +1,103 @@
-package me.tsukanov.counter.view.dialogs;
+package me.tsukanov.counter.view.dialogs
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.os.Bundle;
-import android.text.InputFilter;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.EditText;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.activities.MainActivity;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.domain.exception.CounterException;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.view.CounterFragment;
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
+import android.os.Bundle
+import android.text.InputFilter
+import android.text.InputFilter.LengthFilter
+import android.util.Log
+import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.activities.MainActivity
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.domain.IntegerCounter.Companion.valueCharLimit
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.view.CounterFragment
 
-public class AddDialog extends DialogFragment {
+class AddDialog : DialogFragment() {
 
-  public static final String TAG = AddDialog.class.getSimpleName();
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val activity = activity as MainActivity?
 
-  @NonNull
-  @Override
-  public Dialog onCreateDialog(Bundle savedInstanceState) {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_edit, null)
 
-    final MainActivity activity = (MainActivity) getActivity();
+        val nameInput = dialogView.findViewById<EditText>(R.id.edit_name)
 
-    final View dialogView = getLayoutInflater().inflate(R.layout.dialog_edit, null);
+        val valueInput = dialogView.findViewById<EditText>(R.id.edit_value)
+        val valueFilter = arrayOfNulls<InputFilter>(1)
+        valueFilter[0] = LengthFilter(valueCharLimit)
+        valueInput.filters = valueFilter
 
-    final EditText nameInput = dialogView.findViewById(R.id.edit_name);
-
-    final EditText valueInput = dialogView.findViewById(R.id.edit_value);
-    final InputFilter[] valueFilter = new InputFilter[1];
-    valueFilter[0] = new InputFilter.LengthFilter(IntegerCounter.getValueCharLimit());
-    valueInput.setFilters(valueFilter);
-
-    final Dialog dialog =
-        new AlertDialog.Builder(getActivity())
-            .setView(dialogView)
-            .setTitle(getString(R.string.dialog_add_title))
-            .setPositiveButton(
-                getResources().getText(R.string.dialog_button_add),
-                (d, which) -> {
-                  String name = nameInput.getText().toString().trim();
-                  if (name.isEmpty()) {
-                    name = generateDefaultName();
-                  }
-
-                  int value;
-                  final String valueInputContents = valueInput.getText().toString().trim();
-                  if (!valueInputContents.isEmpty()) {
-                    try {
-                      value = Integer.parseInt(valueInputContents);
-                    } catch (NumberFormatException e) {
-                      Log.w(TAG, "Unable to parse new value", e);
-                      Toast.makeText(
-                              activity,
-                              getResources().getText(R.string.toast_unable_to_modify),
-                              Toast.LENGTH_SHORT)
-                          .show();
-                      value = CounterFragment.DEFAULT_VALUE;
+        val dialog: Dialog =
+            AlertDialog.Builder(getActivity())
+                .setView(dialogView)
+                .setTitle(getString(R.string.dialog_add_title))
+                .setPositiveButton(
+                    resources.getText(R.string.dialog_button_add)
+                ) { d: DialogInterface?, which: Int ->
+                    var name = nameInput.text.toString().trim { it <= ' ' }
+                    if (name.isEmpty()) {
+                        name = generateDefaultName()
                     }
-                  } else {
-                    value = CounterFragment.DEFAULT_VALUE;
-                  }
 
-                  try {
-                    addCounter(new IntegerCounter(name, value));
-                  } catch (CounterException e) {
-                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-                  }
-                })
-            .setNegativeButton(getResources().getText(R.string.dialog_button_cancel), null)
-            .create();
+                    var value: Int
+                    val valueInputContents = valueInput.text.toString().trim { it <= ' ' }
+                    if (!valueInputContents.isEmpty()) {
+                        try {
+                            value = valueInputContents.toInt()
+                        } catch (e: NumberFormatException) {
+                            Log.w(TAG, "Unable to parse new value", e)
+                            Toast.makeText(
+                                activity,
+                                resources.getText(R.string.toast_unable_to_modify),
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                            value = CounterFragment.DEFAULT_VALUE
+                        }
+                    } else {
+                        value = CounterFragment.DEFAULT_VALUE
+                    }
+                    addCounter(IntegerCounter(name, value))
+                }
+                .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)
+                .create()
 
-    dialog.setCanceledOnTouchOutside(true);
-    Objects.requireNonNull(dialog.getWindow())
-        .setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
 
-    return dialog;
-  }
-
-  private void addCounter(@NonNull final IntegerCounter counter) {
-    CounterApplication.getComponent().localStorage().write(counter);
-    new BroadcastHelper(requireContext()).sendSelectCounterBroadcast(counter.getName());
-  }
-
-  @NonNull
-  private String generateDefaultName() {
-    final Set<String> existingNames = new HashSet<>();
-    for (IntegerCounter c : CounterApplication.getComponent().localStorage().readAll(false)) {
-      existingNames.add(c.getName());
+        return dialog
     }
 
-    final String namePrefix = getString(R.string.app_name) + " ";
-    int nameSuffix = existingNames.size() + 1;
-    while (existingNames.contains(namePrefix + nameSuffix)) {
-      nameSuffix++;
+    private fun addCounter(counter: IntegerCounter) {
+        CounterApplication.component!!.localStorage()!!.write(counter)
+        BroadcastHelper(requireContext()).sendSelectCounterBroadcast(counter.name)
     }
-    return namePrefix + nameSuffix;
-  }
+
+    private fun generateDefaultName(): String {
+        val existingNames: MutableSet<String> = HashSet()
+        for (c in CounterApplication.component!!.localStorage()!!.readAll(false)) {
+            existingNames.add(c!!.name)
+        }
+
+        val namePrefix = getString(R.string.app_name) + " "
+        var nameSuffix = existingNames.size + 1
+        while (existingNames.contains(namePrefix + nameSuffix)) {
+            nameSuffix++
+        }
+        return namePrefix + nameSuffix
+    }
+
+    companion object {
+        val TAG: String = AddDialog::class.java.simpleName
+    }
+
 }

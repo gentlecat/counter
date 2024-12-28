@@ -1,34 +1,37 @@
-package me.tsukanov.counter;
+package me.tsukanov.counter
 
-import android.app.Activity;
-import android.app.Application;
-import com.google.android.material.color.DynamicColors;
-import dagger.android.DispatchingAndroidInjector;
-import javax.inject.Inject;
-import me.tsukanov.counter.domain.CounterApplicationComponent;
-import me.tsukanov.counter.domain.CounterModule;
-import me.tsukanov.counter.domain.DaggerCounterApplicationComponent;
+import android.app.Activity
+import android.app.Application
+import com.google.android.material.color.DynamicColors
+import dagger.android.DispatchingAndroidInjector
+import me.tsukanov.counter.domain.CounterApplicationComponent
+import me.tsukanov.counter.domain.CounterModule
+import me.tsukanov.counter.domain.DaggerCounterApplicationComponent
+import javax.inject.Inject
 
-public class CounterApplication extends Application {
-  public static String PACKAGE_NAME;
+class CounterApplication : Application() {
 
-  @Inject DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
+    @JvmField
+    @Inject
+    var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>? = null
 
-  private static CounterApplicationComponent component;
+    override fun onCreate() {
+        super.onCreate()
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
+        DynamicColors.applyToActivitiesIfAvailable(this)
 
-    DynamicColors.applyToActivitiesIfAvailable(this);
+        component = DaggerCounterApplicationComponent.builder()
+            .counterModule(CounterModule(this))
+            .build()
 
-    component =
-        DaggerCounterApplicationComponent.builder().counterModule(new CounterModule(this)).build();
+        PACKAGE_NAME = applicationContext.packageName
+    }
 
-    PACKAGE_NAME = getApplicationContext().getPackageName();
-  }
+    companion object {
+        var PACKAGE_NAME: String? = null
 
-  public static CounterApplicationComponent getComponent() {
-    return component;
-  }
+        var component: CounterApplicationComponent? = null
+            private set
+    }
+
 }

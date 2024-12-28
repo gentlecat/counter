@@ -5,6 +5,7 @@
 
 # Generated files
 .gradle
+.kotlin
 /build
 bin/
 gen/

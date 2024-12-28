@@ -1,30 +1,23 @@
-package me.tsukanov.counter.domain;
+package me.tsukanov.counter.domain
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import me.tsukanov.counter.domain.exception.InvalidNameException;
-import me.tsukanov.counter.domain.exception.InvalidValueException;
-import org.joda.time.DateTime;
+import me.tsukanov.counter.domain.exception.InvalidNameException
+import me.tsukanov.counter.domain.exception.InvalidValueException
+import org.joda.time.DateTime
 
-public interface Counter<T> {
+interface Counter<T> {
 
-  @NonNull
-  String getName();
+    @set:Throws(InvalidNameException::class)
+    var name: String
 
-  void setName(@NonNull final String newName) throws InvalidNameException;
+    @set:Throws(InvalidValueException::class)
+    var value: T
 
-  @NonNull
-  T getValue();
+    val lastUpdatedDate: DateTime?
 
-  @Nullable
-  DateTime getLastUpdatedDate();
+    fun increment()
 
-  void setValue(@NonNull T newValue) throws InvalidValueException;
+    fun decrement()
 
-  void increment();
-
-  void decrement();
-
-  /** Resets counter to its default value. Default value depends on the type {@link T}. */
-  void reset();
+    /** Resets counter to its default value. Default value depends on the type [T].  */
+    fun reset()
 }

@@ -1,8 +1,3 @@
-package me.tsukanov.counter.domain.exception;
+package me.tsukanov.counter.domain.exception
 
-public class InvalidNameException extends CounterException {
-
-  public InvalidNameException(String message) {
-    super(message);
-  }
-}
+class InvalidNameException(message: String?) : CounterException(message)

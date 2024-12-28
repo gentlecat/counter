@@ -1,210 +1,204 @@
-package me.tsukanov.counter.activities;
+package me.tsukanov.counter.activities
 
-import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.WindowManager.LayoutParams;
-import android.widget.FrameLayout;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.preference.PreferenceManager;
-import com.google.android.material.appbar.MaterialToolbar;
-import me.tsukanov.counter.CounterApplication;
-import me.tsukanov.counter.R;
-import me.tsukanov.counter.SharedPrefKeys;
-import me.tsukanov.counter.domain.IntegerCounter;
-import me.tsukanov.counter.infrastructure.Actions;
-import me.tsukanov.counter.infrastructure.BroadcastHelper;
-import me.tsukanov.counter.repository.CounterStorage;
-import me.tsukanov.counter.repository.exceptions.MissingCounterException;
-import me.tsukanov.counter.view.CounterFragment;
-import me.tsukanov.counter.view.CountersListFragment;
-import me.tsukanov.counter.view.Themes;
+import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.SharedPreferences
+import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.WindowManager
+import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.preference.PreferenceManager
+import com.google.android.material.appbar.MaterialToolbar
+import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.R
+import me.tsukanov.counter.SharedPrefKeys
+import me.tsukanov.counter.domain.IntegerCounter
+import me.tsukanov.counter.infrastructure.Actions
+import me.tsukanov.counter.infrastructure.BroadcastHelper
+import me.tsukanov.counter.repository.exceptions.MissingCounterException
+import me.tsukanov.counter.view.CounterFragment
+import me.tsukanov.counter.view.CountersListFragment
+import me.tsukanov.counter.view.Themes.Companion.initCurrentTheme
 
-public class MainActivity extends AppCompatActivity {
+class MainActivity : AppCompatActivity() {
 
-  private static final String TAG = MainActivity.class.getSimpleName();
+    private var toolbar: MaterialToolbar? = null
+    private var navigationLayout: DrawerLayout? = null
+    private var sharedPrefs: SharedPreferences? = null
+    private var menuFrame: FrameLayout? = null
+    private var selectedCounterName: String? = null
+    private var selectedCounterFragment: CounterFragment? = null
 
-  private MaterialToolbar toolbar;
-  private DrawerLayout navigationLayout;
-  private SharedPreferences sharedPrefs;
-  private FrameLayout menuFrame;
-  private String selectedCounterName;
-  private CounterFragment selectedCounterFragment;
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
+        registerIntentReceivers(applicationContext)
 
-  @Override
-  public void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState)
 
-    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-    registerIntentReceivers(getApplicationContext());
+        setContentView(R.layout.layout_main)
 
-    super.onCreate(savedInstanceState);
+        toolbar = findViewById(R.id.mainToolbar)
+        toolbar?.setNavigationOnClickListener { v: View? -> openDrawer() }
+        setSupportActionBar(toolbar)
 
-    setContentView(R.layout.layout_main);
-
-    toolbar = findViewById(R.id.mainToolbar);
-    setSupportActionBar(toolbar);
-
-    toolbar.setNavigationOnClickListener(view -> openDrawer());
-
-    navigationLayout = findViewById(R.id.mainNavigationLayout);
-    menuFrame = findViewById(R.id.mainMenuFrame);
-  }
-
-  private void registerIntentReceivers(@NonNull final Context context) {
-    final IntentFilter counterSelectionFilter =
-        new IntentFilter(Actions.SELECT_COUNTER.getActionName());
-    counterSelectionFilter.addCategory(Intent.CATEGORY_DEFAULT);
-    ContextCompat.registerReceiver(
-        context,
-        new CounterChangeReceiver(),
-        counterSelectionFilter,
-        ContextCompat.RECEIVER_EXPORTED);
-  }
-
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    Themes.initCurrentTheme(sharedPrefs);
-
-    initCountersList();
-    switchCounter(findActiveCounter().getName());
-
-    if (sharedPrefs.getBoolean(SharedPrefKeys.KEEP_SCREEN_ON.getName(), false)) {
-      getWindow().addFlags(LayoutParams.FLAG_KEEP_SCREEN_ON);
-    } else {
-      getWindow().clearFlags(LayoutParams.FLAG_KEEP_SCREEN_ON);
-    }
-  }
-
-  private void initCountersList() {
-    final FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-    transaction.replace(R.id.mainMenuFrame, new CountersListFragment());
-    transaction.commit();
-  }
-
-  private void switchCounter(@NonNull final String counterName) {
-    this.selectedCounterName = counterName;
-
-    final Bundle bundle = new Bundle();
-    bundle.putString(CounterFragment.COUNTER_NAME_ATTRIBUTE, counterName);
-
-    selectedCounterFragment = new CounterFragment();
-    selectedCounterFragment.setArguments(bundle);
-    getSupportFragmentManager()
-        .beginTransaction()
-        .replace(R.id.mainContentFrame, selectedCounterFragment)
-        .commitAllowingStateLoss();
-
-    toolbar.setTitle(counterName);
-
-    if (isNavigationOpen()) {
-      closeNavigation();
-    }
-  }
-
-  /**
-   * Finds which counter is selected based on priority.
-   *
-   * <ol>
-   *   <li>From value stored during the previous session
-   *   <li>First of the stored counters <em>(default one will be generated if none are present)</em>
-   * </ol>
-   */
-  private IntegerCounter findActiveCounter() {
-    CounterStorage<IntegerCounter> storage = CounterApplication.getComponent().localStorage();
-
-    final String savedActiveCounter =
-        sharedPrefs.getString(SharedPrefKeys.ACTIVE_COUNTER.getName(), null);
-
-    // Checking whether it still exists...
-    if (savedActiveCounter != null) {
-      try {
-        return storage.read(savedActiveCounter);
-      } catch (MissingCounterException e) {
-        // No need to do anything.
-      }
+        navigationLayout = findViewById(R.id.mainNavigationLayout)
+        menuFrame = findViewById(R.id.mainMenuFrame)
     }
 
-    return storage.readAll(true).get(0);
-  }
+    private fun registerIntentReceivers(context: Context) {
+        val counterSelectionFilter =
+            IntentFilter(Actions.SELECT_COUNTER.actionName)
+        counterSelectionFilter.addCategory(Intent.CATEGORY_DEFAULT)
+        ContextCompat.registerReceiver(
+            context,
+            CounterChangeReceiver(),
+            counterSelectionFilter,
+            ContextCompat.RECEIVER_EXPORTED
+        )
+    }
 
-  @Override
-  public boolean onKeyDown(int keyCode, KeyEvent event) {
-    // Since there's no way to keep track of these events from the fragment side, we have to pass
-    // them to it for processing.
-    return super.onKeyDown(keyCode, event) || selectedCounterFragment.onKeyDown(keyCode);
-  }
+    override fun onResume() {
+        super.onResume()
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.main_menu, menu);
-    return true;
-  }
+        initCurrentTheme(sharedPrefs!!)
 
-  @SuppressLint("ApplySharedPref")
-  @Override
-  protected void onPause() {
-    super.onPause();
+        initCountersList()
+        switchCounter(findActiveCounter()!!.name)
 
-    final SharedPreferences.Editor prefsEditor = sharedPrefs.edit();
-    prefsEditor.putString(SharedPrefKeys.ACTIVE_COUNTER.getName(), selectedCounterName);
-    prefsEditor.commit();
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-    return switch (item.getItemId()) {
-      case android.R.id.home -> {
-        if (isNavigationOpen()) {
-          closeNavigation();
+        if (sharedPrefs!!.getBoolean(SharedPrefKeys.KEEP_SCREEN_ON.key, false)) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         } else {
-          openDrawer();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
-        yield true;
-      }
-      case R.id.menu_settings -> {
-        startActivity(new Intent(this, SettingsActivity.class));
-        yield true;
-      }
-      default -> super.onOptionsItemSelected(item);
-    };
-  }
-
-  public boolean isNavigationOpen() {
-    return navigationLayout.isDrawerOpen(menuFrame);
-  }
-
-  private void closeNavigation() {
-    navigationLayout.closeDrawer(menuFrame);
-  }
-
-  private void openDrawer() {
-    navigationLayout.openDrawer(menuFrame);
-  }
-
-  private class CounterChangeReceiver extends BroadcastReceiver {
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-      final String counterName = intent.getStringExtra(BroadcastHelper.EXTRA_COUNTER_NAME);
-      Log.d(
-          TAG,
-          String.format(
-              "Received counter change broadcast. Switching to counter \"%s\"", counterName));
-      switchCounter(counterName);
     }
-  }
+
+    private fun initCountersList() {
+        val transaction = this.supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.mainMenuFrame, CountersListFragment())
+        transaction.commit()
+    }
+
+    private fun switchCounter(counterName: String) {
+        this.selectedCounterName = counterName
+
+        val bundle = Bundle()
+        bundle.putString(CounterFragment.COUNTER_NAME_ATTRIBUTE, counterName)
+
+        selectedCounterFragment = CounterFragment()
+        selectedCounterFragment!!.arguments = bundle
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.mainContentFrame, selectedCounterFragment!!)
+            .commitAllowingStateLoss()
+
+        toolbar!!.title = counterName
+
+        if (isNavigationOpen) {
+            closeNavigation()
+        }
+    }
+
+    /**
+     * Finds which counter is selected based on priority.
+     *
+     *
+     *  1. From value stored during the previous session
+     *  1. First of the stored counters *(default one will be generated if none are present)*
+     *
+     */
+    private fun findActiveCounter(): IntegerCounter? {
+        val storage = CounterApplication.component!!.localStorage()
+
+        val savedActiveCounter =
+            sharedPrefs!!.getString(SharedPrefKeys.ACTIVE_COUNTER.key, null)
+
+        // Checking whether it still exists...
+        if (savedActiveCounter != null) {
+            try {
+                return storage!!.read(savedActiveCounter)
+            } catch (e: MissingCounterException) {
+                // No need to do anything.
+            }
+        }
+
+        return storage!!.readAll(true)[0]
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        // Since there's no way to keep track of these events from the fragment side, we have to pass
+        // them to it for processing.
+        return super.onKeyDown(keyCode, event) || selectedCounterFragment!!.onKeyDown(keyCode)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    @SuppressLint("ApplySharedPref")
+    override fun onPause() {
+        super.onPause()
+
+        val prefsEditor = sharedPrefs!!.edit()
+        prefsEditor.putString(SharedPrefKeys.ACTIVE_COUNTER.key, selectedCounterName)
+        prefsEditor.commit()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                if (isNavigationOpen) {
+                    closeNavigation()
+                } else {
+                    openDrawer()
+                }
+                true
+            }
+
+            R.id.menu_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private val isNavigationOpen: Boolean
+        get() = navigationLayout!!.isDrawerOpen(menuFrame!!)
+
+    private fun closeNavigation() {
+        navigationLayout!!.closeDrawer(menuFrame!!)
+    }
+
+    private fun openDrawer() {
+        navigationLayout!!.openDrawer(menuFrame!!)
+    }
+
+    private inner class CounterChangeReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val counterName = intent.getStringExtra(BroadcastHelper.EXTRA_COUNTER_NAME)
+            Log.d(
+                TAG,
+                String.format(
+                    "Received counter change broadcast. Switching to counter \"%s\"", counterName
+                )
+            )
+            switchCounter(counterName!!)
+        }
+    }
+
+    companion object {
+        private val TAG: String = MainActivity::class.java.simpleName
+    }
 }

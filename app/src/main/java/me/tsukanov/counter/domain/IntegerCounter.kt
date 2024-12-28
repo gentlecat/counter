@@ -1,148 +1,135 @@
-package me.tsukanov.counter.domain;
+package me.tsukanov.counter.domain
 
-import android.util.Log;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import me.tsukanov.counter.domain.exception.CounterException;
-import me.tsukanov.counter.domain.exception.InvalidNameException;
-import me.tsukanov.counter.domain.exception.InvalidValueException;
-import org.joda.time.DateTime;
+import android.util.Log
+import me.tsukanov.counter.domain.exception.InvalidNameException
+import me.tsukanov.counter.domain.exception.InvalidValueException
+import org.joda.time.DateTime
 
 /**
- * Variation of the {@link Counter} that uses {@link Integer} type as a value. Names (identifiers)
- * of counters are always {@link String}.
+ * Variation of the [Counter] that uses [Integer] type as a value. Names (identifiers)
+ * of counters are always [String].
  */
-public class IntegerCounter implements Counter<Integer> {
+class IntegerCounter : Counter<Int> {
 
-  private static final String TAG = IntegerCounter.class.getSimpleName();
+    override var name: String = ""
+        @Throws(InvalidNameException::class)
+        set(newName) {
+            if (!isValidName(newName)) {
+                throw InvalidNameException("Provided name is invalid")
+            }
+            field = newName
+        }
 
-  public static final int MAX_VALUE = 1000000000 - 1;
-  public static final int MIN_VALUE = -100000000 + 1;
-  private static final int DEFAULT_VALUE = 0;
+    override var value: Int = DEFAULT_VALUE
+        @Throws(InvalidValueException::class)
+        set(newValue) {
+            if (!isValidValue(newValue)) {
+                throw InvalidValueException(
+                    String.format(
+                        "Desired value (%s) is outside of allowed range: %s to %s",
+                        newValue, MIN_VALUE, MAX_VALUE
+                    )
+                )
+            }
+            field = newValue
+            lastUpdatedDate = DateTime()
+        }
 
-  private String name;
-  private Integer value = DEFAULT_VALUE;
-  private @Nullable DateTime lastUpdate;
+    override var lastUpdatedDate: DateTime?
+        private set
 
-  public IntegerCounter(@NonNull final String name) throws CounterException {
-    if (!isValidName(name)) {
-      throw new InvalidNameException("Provided name is invalid");
+    constructor(name: String) {
+        if (!isValidName(name)) {
+            throw InvalidNameException("Provided name is invalid")
+        }
+        this.name = name
+        this.lastUpdatedDate = DateTime()
     }
-    this.name = name;
-    this.lastUpdate = new DateTime();
-  }
 
-  public IntegerCounter(@NonNull final String name, @NonNull final Integer value)
-      throws CounterException {
-    if (!isValidName(name)) {
-      throw new InvalidNameException("Provided name is invalid");
+    constructor(name: String, value: Int) {
+        if (!isValidName(name)) {
+            throw InvalidNameException("Provided name is invalid")
+        }
+        this.name = name
+
+        if (!isValidValue(value)) {
+            throw InvalidValueException(
+                String.format(
+                    "Desired value (%s) is outside of allowed range: %s to %s",
+                    value, MIN_VALUE, MAX_VALUE
+                )
+            )
+        }
+        this.value = value
+
+        this.lastUpdatedDate = null
     }
-    this.name = name;
 
-    if (!isValidValue(value)) {
-      throw new InvalidValueException(
-          String.format(
-              "Desired value (%s) is outside of allowed range: %s to %s",
-              value, MIN_VALUE, MAX_VALUE));
+    constructor(name: String, value: Int, lastUpdate: DateTime?) {
+        if (!isValidName(name)) {
+            throw InvalidNameException("Provided name is invalid")
+        }
+        this.name = name
+
+        if (!isValidValue(value)) {
+            throw InvalidValueException(
+                String.format(
+                    "Desired value (%s) is outside of allowed range: %s to %s",
+                    value, MIN_VALUE, MAX_VALUE
+                )
+            )
+        }
+        this.value = value
+
+        this.lastUpdatedDate = lastUpdate
     }
-    this.value = value;
 
-    this.lastUpdate = null;
-  }
-
-  public IntegerCounter(
-      @NonNull final String name, @NonNull final Integer value, @Nullable final DateTime lastUpdate)
-      throws CounterException {
-    if (!isValidName(name)) {
-      throw new InvalidNameException("Provided name is invalid");
+    override fun increment() {
+        try {
+            this.value += 1
+        } catch (e: InvalidValueException) {
+            Log.e(TAG, "Unable to increment the counter", e)
+        }
     }
-    this.name = name;
 
-    if (!isValidValue(value)) {
-      throw new InvalidValueException(
-          String.format(
-              "Desired value (%s) is outside of allowed range: %s to %s",
-              value, MIN_VALUE, MAX_VALUE));
+    override fun decrement() {
+        try {
+            this.value -= 1
+        } catch (e: InvalidValueException) {
+            Log.e(TAG, "Unable to decrement the counter", e)
+        }
     }
-    this.value = value;
 
-    this.lastUpdate = lastUpdate;
-  }
-
-  @NonNull
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(@NonNull String newName) throws InvalidNameException {
-    if (!isValidName(newName)) {
-      throw new InvalidNameException("Provided name is invalid");
+    override fun reset() {
+        try {
+            value = DEFAULT_VALUE
+        } catch (e: Exception) {
+            // This should never happen, but we should still handle the exception...
+            throw RuntimeException(e)
+        }
     }
-    this.name = newName;
-  }
 
-  @NonNull
-  public Integer getValue() {
-    return this.value;
-  }
+    companion object {
+        private val TAG: String = IntegerCounter::class.java.simpleName
 
-  @Override
-  @Nullable
-  public DateTime getLastUpdatedDate() {
-    return this.lastUpdate;
-  }
+        const val MAX_VALUE: Int = 1000000000 - 1
+        const val MIN_VALUE: Int = -100000000 + 1
+        private const val DEFAULT_VALUE = 0
 
-  public void setValue(@NonNull final Integer newValue) throws InvalidValueException {
-    if (!isValidValue(newValue)) {
-      throw new InvalidValueException(
-          String.format(
-              "Desired value (%s) is outside of allowed range: %s to %s",
-              newValue, MIN_VALUE, MAX_VALUE));
+        @JvmStatic
+        val valueCharLimit: Int
+            /**
+             * Provides max number of characters that would fit within the [IntegerCounter] value
+             * limits.
+             */
+            get() = MAX_VALUE.toString().length - 1
+
+        private fun isValidName(name: String): Boolean {
+            return name.isNotEmpty()
+        }
+
+        private fun isValidValue(value: Int): Boolean {
+            return value in MIN_VALUE..MAX_VALUE
+        }
     }
-    this.value = newValue;
-    this.lastUpdate = new DateTime();
-  }
-
-  public void increment() {
-    try {
-      setValue(this.value + 1);
-    } catch (InvalidValueException e) {
-      Log.e(TAG, "Unable to increment the counter", e);
-    }
-  }
-
-  public void decrement() {
-    try {
-      setValue(this.value - 1);
-    } catch (InvalidValueException e) {
-      Log.e(TAG, "Unable to decrement the counter", e);
-    }
-  }
-
-  public void reset() {
-    try {
-      setValue(DEFAULT_VALUE);
-    } catch (Exception e) {
-      // This should never happen, but we should still handle the exception...
-      throw new RuntimeException(e);
-    }
-  }
-
-  /**
-   * Provides max number of characters that would fit within the {@link IntegerCounter} value
-   * limits.
-   */
-  public static int getValueCharLimit() {
-    return String.valueOf(IntegerCounter.MAX_VALUE).length() - 1;
-  }
-
-  @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-  private static boolean isValidName(@NonNull final String name) {
-    return name.length() > 0;
-  }
-
-  @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-  private static boolean isValidValue(@NonNull final Integer value) {
-    return MIN_VALUE <= value && value <= MAX_VALUE;
-  }
 }

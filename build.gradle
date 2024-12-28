@@ -12,6 +12,7 @@ subprojects {
 
         dependencies {
             classpath 'com.android.tools.build:gradle:8.7.3'
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21"
         }
 
     }
@@ -31,12 +32,6 @@ ext {
     minSdkVersion = 24
 
     appVersion = 31
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.compilerArgs += [
-            'org.gradle.jvmargs=-Xmx8g',
-    ]
 }
 
 tasks.register('clean', Delete) {

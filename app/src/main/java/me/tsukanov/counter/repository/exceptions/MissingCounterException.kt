@@ -1,10 +1,5 @@
-package me.tsukanov.counter.repository.exceptions;
+package me.tsukanov.counter.repository.exceptions
 
-import me.tsukanov.counter.domain.exception.CounterException;
+import me.tsukanov.counter.domain.exception.CounterException
 
-public class MissingCounterException extends CounterException {
-
-  public MissingCounterException(String message) {
-    super(message);
-  }
-}
+class MissingCounterException(message: String?) : CounterException(message)
