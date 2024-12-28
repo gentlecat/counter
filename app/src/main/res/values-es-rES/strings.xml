@@ -54,5 +54,4 @@
   <string name="toast_unable_to_export">Algo ha salido mal al exportar los contadores. ¡Lo sentimos!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuevo contador</string>
-  <string name="unknown_version">Desconocido</string>
 </resources>
