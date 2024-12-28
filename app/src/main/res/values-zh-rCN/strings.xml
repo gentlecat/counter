@@ -56,5 +56,4 @@
   <string name="toast_unable_to_export">很抱歉，导出计数器时出现问题。</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新建计数器</string>
-  <string name="unknown">未知</string>
 </resources>
