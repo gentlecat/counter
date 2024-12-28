@@ -2,8 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <!-- Menu -->
-  <string name="drawer_open">Avaa navigointi</string>
-  <string name="drawer_close">Sulje navigointi</string>
   <string name="menu_add">Lisää laskuri</string>
   <string name="menu_reset">Nollaa laskuri</string>
   <string name="menu_edit">Muokkaa laskuria</string>
@@ -12,8 +10,6 @@
   <!-- Dialogs -->
   <string name="dialog_delete_title">Haluatko todella poistaa tämän laskimen?</string>
   <string name="dialog_reset_title">Haluatko varmasti nollata laskurin?</string>
-  <string name="dialog_edit_name">Otsikko:</string>
-  <string name="dialog_edit_value">Arvo:</string>
   <string name="dialog_button_add">Lisää</string>
   <string name="dialog_button_apply">Ota käytöön</string>
   <string name="dialog_button_reset">Nollaa laskuri</string>
