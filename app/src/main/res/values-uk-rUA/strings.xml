@@ -45,7 +45,10 @@
   <string name="settings_wipe_title">Видалити всі лічильники</string>
   <string name="settings_export_title">Експортувати лічильники</string>
   <string name="settings_export_summary">Експортувати всі лічильники у форматі CSV</string>
+  <string name="settings_tip_title">Купіть мені кави</string>
   <string name="settings_tip_summary">Підтримати творця цього додатку</string>
+  <string name="settings_homepage_title">Домашня сторінка</string>
+  <string name="settings_homepage_summary">Інформація про додаток та вихідний код</string>
   <string name="settings_wipe_confirmation">Ви дійсно хочете видалити всі лічильники?</string>
   <string name="settings_wipe_confirmation_yes">Видалити всі</string>
   <!-- Toasts -->
