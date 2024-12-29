@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Μετρητής</string>
+  <string name="last_update_timestamp">Τελευταία ενημέρωση στο {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Άνοιγμα μενού πλοήγησης</string>
   <string name="menu_add">Προσθήκη νέου μετρητή</string>
@@ -10,6 +11,8 @@
   <string name="menu_delete">Διαγραφή μετρητή</string>
   <string name="menu_settings">Ρυθμίσεις</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Προσθήκη νέου μετρητή</string>
+  <string name="dialog_edit_title">Επεξεργασία μετρητή</string>
   <string name="dialog_delete_title">Θέλετε να σίγουρα διαγράψετε το μετρητή;</string>
   <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
   <string name="dialog_edit_name">Τίτλος:</string>
@@ -25,15 +28,35 @@
   <string name="settings_theme">Θέμα</string>
   <string name="settings_theme_light">Φωτεινό</string>
   <string name="settings_theme_dark">Σκοτεινό</string>
+  <string name="settings_theme_auto_battery">Ορισμός βάσει Εξοικονόμησης μπαταρίας</string>
+  <string name="settings_theme_system">Χρήση προεπιλογής συστήματος</string>
+  <string name="settings_keep_on_title">Κρατήστε την οθόνη ενεργή</string>
+  <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ενεργή</string>
   <string name="settings_controls">Στοιχεία ελέγχου</string>
   <string name="settings_sounds_title">Ενεργοποιήσε τους ήχους</string>
+  <string name="settings_sounds_summary">Αναπαραγωγή ήχων κατά την αλλαγή τιμών</string>
   <string name="settings_vibration_title">Ενεργοποιήσε τη δόνηση</string>
+  <string name="settings_vibration_summary">Δόνηση στις αλλαγές τιμής</string>
   <string name="settings_hard_title">Χρήση πλήκτρων</string>
+  <string name="settings_hard_summary">Αλλαγή τιμής μετρητή χρησιμοποιώντας τα κουμπιά έντασης</string>
+  <string name="settings_label_increment_title">Πατήστε την τιμή για αύξηση</string>
+  <string name="settings_label_increment_summary">Αύξηση μετρητή πατώντας την τρέχουσα τιμή</string>
   <string name="settings_other">Άλλα</string>
   <string name="settings_version_title">Έκδοση</string>
   <string name="settings_wipe_title">Διαγραφή όλων των μετρητών</string>
+  <string name="settings_export_title">Μετρητές εξαγωγής</string>
+  <string name="settings_export_summary">Εξαγωγή όλων των μετρητών σε μορφή CSV</string>
+  <string name="settings_tip_title">Αγοράστε μου έναν καφέ</string>
+  <string name="settings_tip_summary">Υποστηρίξτε τον δημιουργό αυτής της εφαρμογής</string>
+  <string name="settings_homepage_title">Αρχική</string>
+  <string name="settings_homepage_summary">Πληροφορίες εφαρμογής και πηγαίος κώδικας</string>
   <string name="settings_wipe_confirmation">Θέλετε σίγουρα να διαγράψετε όλους τους μετρητές;</string>
   <string name="settings_wipe_confirmation_yes">Διαγραφή όλων</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Όλοι οι μετρητές έχουν διαγραφεί.</string>
+  <string name="toast_delete_success">Counter \"{name}\" έχει διαγραφεί.</string>
+  <string name="toast_unable_to_modify">Κάτι πήγε στραβά κατά την ενημέρωση του μετρητή. Συγγνώμη!</string>
+  <string name="toast_unable_to_export">Κάτι πήγε στραβά κατά την εξαγωγή των μετρητών. Συγνώμη!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">Πρώτος μετρητής</string>
 </resources>
