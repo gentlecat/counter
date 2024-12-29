@@ -2,8 +2,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Zähler</string>
+  <string name="last_update_timestamp">Zuletzt aktualisiert um {timestamp}</string>
   <!-- Menu -->
-  <string name="menu_counters_list">Navigation öffnen</string>
+  <string name="menu_counters_list">Liste der Zähler öffnen</string>
   <string name="menu_add">Zähler hinzufügen</string>
   <string name="menu_reset">Zähler zurücksetzen</string>
   <string name="menu_edit">Zähler bearbeiten</string>
@@ -14,8 +15,8 @@
   <string name="dialog_edit_title">Zähler bearbeiten</string>
   <string name="dialog_delete_title">Möchtest Du diesen Zähler wirklich löschen?</string>
   <string name="dialog_reset_title">Möchtest Du diesen Zähler wirklich zurücksetzen?</string>
-  <string name="dialog_edit_name">Titel:</string>
-  <string name="dialog_edit_value">Wert:</string>
+  <string name="dialog_edit_name">Name</string>
+  <string name="dialog_edit_value">Wert</string>
   <string name="dialog_button_add">Hinzufügen</string>
   <string name="dialog_button_apply">Anwenden</string>
   <string name="dialog_button_reset">Zähler zurücksetzen</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">Alle Zähler entfernen</string>
   <string name="settings_export_title">Zähler exportieren</string>
   <string name="settings_export_summary">Alle Zähler im CSV-Format exportieren</string>
+  <string name="settings_tip_title">Spendiere mir einen Kaffee</string>
+  <string name="settings_tip_summary">Unterstütze den Entwickler dieser App</string>
+  <string name="settings_homepage_title">Webseite</string>
+  <string name="settings_homepage_summary">App-Info und Quellcode</string>
   <string name="settings_wipe_confirmation">Möchtest Du wirklich alle Zähler entfernen?</string>
   <string name="settings_wipe_confirmation_yes">Alle entfernen</string>
   <!-- Toasts -->
@@ -53,6 +58,5 @@
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
   <!-- Other stuff -->
-  <string name="default_counter_name">Neuer Zähler</string>
-  <string name="unknown_version">Unbekannt</string>
+  <string name="default_counter_name">Erster Zähler</string>
 </resources>

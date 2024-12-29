@@ -39,6 +39,7 @@
   <string name="settings_wipe_title">Tüm sayaçları kaldır</string>
   <string name="settings_wipe_confirmation">Tüm sayaçları gerçekten silmek istiyor musunuz?</string>
   <string name="settings_wipe_confirmation_yes">Tümünü kaldır</string>
+  <!-- Toasts -->
   <!-- Other stuff -->
-  <string name="unknown_version">Bilinmiyor</string>
+  <string name="default_counter_name">İlk sayaç</string>
 </resources>

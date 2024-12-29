@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Laskuri</string>
+  <string name="last_update_timestamp">Viimeksi päivitetty {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Avaa navigointi</string>
   <string name="menu_add">Lisää laskuri</string>
@@ -9,6 +11,8 @@
   <string name="menu_delete">Poista laskuri</string>
   <string name="menu_settings">Asetukset</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Lisää uusi laskuri</string>
+  <string name="dialog_edit_title">Muokkaa laskuria</string>
   <string name="dialog_delete_title">Haluatko todella poistaa tämän laskimen?</string>
   <string name="dialog_reset_title">Haluatko varmasti nollata laskurin?</string>
   <string name="dialog_edit_name">Otsikko:</string>
@@ -20,11 +24,39 @@
   <string name="dialog_button_cancel">Peruuta</string>
   <!-- Settings -->
   <string name="settings_title">Asetukset</string>
+  <string name="settings_display">Näyttö</string>
+  <string name="settings_theme">Teema</string>
+  <string name="settings_theme_light">Vaalea</string>
+  <string name="settings_theme_dark">Tumma</string>
+  <string name="settings_theme_auto_battery">Aseta virransäästäjän mukaan</string>
+  <string name="settings_theme_system">Käytä järjestelmän oletusta</string>
+  <string name="settings_keep_on_title">Pidä näyttö päällä</string>
+  <string name="settings_keep_on_summary">Pidä näyttö päällä, kun sovellus on käytössä</string>
   <string name="settings_controls">Ohjaimet</string>
   <string name="settings_sounds_title">Kytke äänet</string>
+  <string name="settings_sounds_summary">Toista äänet arvoja muuttaessa</string>
   <string name="settings_vibration_title">Kytke tärinä</string>
+  <string name="settings_vibration_summary">Värinä arvon muutoksissa</string>
+  <string name="settings_hard_title">Käytä laitteistopainikkeita</string>
+  <string name="settings_hard_summary">Muuta laskurin arvoa käyttämällä äänenvoimakkuuden painikkeita</string>
+  <string name="settings_label_increment_title">Napauta arvoa lisätäksesi</string>
+  <string name="settings_label_increment_summary">Kasvata laskuria napauttamalla nykyistä arvoa</string>
+  <string name="settings_other">Muu</string>
+  <string name="settings_version_title">Versio</string>
+  <string name="settings_wipe_title">Poista kaikki laskurit</string>
+  <string name="settings_export_title">Vienti laskurit</string>
+  <string name="settings_export_summary">Vie kaikki laskurit CSV-muodossa</string>
+  <string name="settings_tip_title">Osta minulle kahvi</string>
+  <string name="settings_tip_summary">Tue tämän sovelluksen luojaa</string>
+  <string name="settings_homepage_title">Kotisivu</string>
+  <string name="settings_homepage_summary">Sovelluksen tiedot ja lähdekoodi</string>
+  <string name="settings_wipe_confirmation">Haluatko varmasti poistaa kaikki laskurit?</string>
   <string name="settings_wipe_confirmation_yes">Poista kaikki</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Kaikki laskurit on poistettu.</string>
+  <string name="toast_delete_success">Laskuri \"{name}\" on poistettu.</string>
+  <string name="toast_unable_to_modify">Jokin meni pieleen laskuria päivitettäessä. Anteeksi!</string>
+  <string name="toast_unable_to_export">Jokin meni pieleen laskurin viennissä. Anteeksi!</string>
   <!-- Other stuff -->
-  <string name="unknown_version">Tuntematon</string>
+  <string name="default_counter_name">Ensimmäinen laskuri</string>
 </resources>

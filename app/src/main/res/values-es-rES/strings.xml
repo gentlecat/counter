@@ -2,8 +2,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contador</string>
+  <string name="last_update_timestamp">Última actualización en {timestamp}</string>
   <!-- Menu -->
-  <string name="menu_counters_list">Abrir navegación</string>
+  <string name="menu_counters_list">Abrir lista de contadores</string>
   <string name="menu_add">Añadir contador</string>
   <string name="menu_reset">Reiniciar contador</string>
   <string name="menu_edit">Editar contador</string>
@@ -14,8 +15,8 @@
   <string name="dialog_edit_title">Editar este contador</string>
   <string name="dialog_delete_title">¿Seguro que quieres borrar este contador?</string>
   <string name="dialog_reset_title">¿Seguro que quieres reiniciar este contador?</string>
-  <string name="dialog_edit_name">Título:</string>
-  <string name="dialog_edit_value">Valor:</string>
+  <string name="dialog_edit_name">Título</string>
+  <string name="dialog_edit_value">Valor</string>
   <string name="dialog_button_add">Añadir</string>
   <string name="dialog_button_apply">Aplicar</string>
   <string name="dialog_button_reset">Reiniciar</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">Eliminar todos los contadores</string>
   <string name="settings_export_title">Exportar contadores</string>
   <string name="settings_export_summary">Exportar todos los contadores en formato CSV</string>
+  <string name="settings_tip_title">Invítame a un café</string>
+  <string name="settings_tip_summary">Apoya al creador de esta aplicación</string>
+  <string name="settings_homepage_title">Página de inicio</string>
+  <string name="settings_homepage_summary">Información de la aplicación y el código fuente</string>
   <string name="settings_wipe_confirmation">¿Seguro que quieres borrar todos los contadores?</string>
   <string name="settings_wipe_confirmation_yes">Eliminar todos</string>
   <!-- Toasts -->
@@ -54,5 +59,4 @@
   <string name="toast_unable_to_export">Algo ha salido mal al exportar los contadores. ¡Lo sentimos!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuevo contador</string>
-  <string name="unknown_version">Desconocido</string>
 </resources>

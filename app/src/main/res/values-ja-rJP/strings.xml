@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">カウンター</string>
+  <string name="last_update_timestamp">最終更新 {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">ナビゲーションを開く</string>
   <string name="menu_add">カウンターを追加</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">すべてのカウンターを削除</string>
   <string name="settings_export_title">カウンタ―をエクスポート</string>
   <string name="settings_export_summary">すべてのカウンタ―を CSV 形式でエクスポートします</string>
+  <string name="settings_tip_title">コーヒーを買ってください</string>
+  <string name="settings_tip_summary">このアプリの作成者をサポートする</string>
+  <string name="settings_homepage_title">ホームページ</string>
+  <string name="settings_homepage_summary">アプリ情報とソース コード</string>
   <string name="settings_wipe_confirmation">すべてのカウンターを削除してもよろしいですか?</string>
   <string name="settings_wipe_confirmation_yes">すべてを削除</string>
   <!-- Toasts -->
@@ -54,5 +59,4 @@
   <string name="toast_unable_to_export">カウンタ―のエクスポート中に問題が発生しました。申し訳ありません!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新しいカウンター</string>
-  <string name="unknown_version">不明</string>
 </resources>

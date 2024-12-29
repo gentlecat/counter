@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">العداد</string>
+  <string name="last_update_timestamp">آخر تحديث في {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">فتح قائمة التنقل</string>
   <string name="menu_add">إضافة عداد</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">إزالة جميع العدادات</string>
   <string name="settings_export_title">تصدير العدادات</string>
   <string name="settings_export_summary">تصدير جميع العدادات بتنسيق CSV</string>
+  <string name="settings_tip_title">اشتري لي قهوة</string>
+  <string name="settings_tip_summary">دعم منشئ هذا التطبيق</string>
+  <string name="settings_homepage_title">الصفحة الرئيسية</string>
+  <string name="settings_homepage_summary">معلومات التطبيق والكود المصدر</string>
   <string name="settings_wipe_confirmation">هل تريد حقاً إزالة جميع العدادات؟</string>
   <string name="settings_wipe_confirmation_yes">إزالة الكل</string>
   <!-- Toasts -->
@@ -54,5 +59,4 @@
   <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>
-  <string name="unknown_version">‮غير معروف</string>
 </resources>

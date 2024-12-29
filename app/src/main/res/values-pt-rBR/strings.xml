@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contador</string>
+  <string name="last_update_timestamp">Última atualização em {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Abrir navegação</string>
   <string name="menu_add">Adicionar contador</string>
@@ -43,11 +44,19 @@
   <string name="settings_other">Outros</string>
   <string name="settings_version_title">Versão</string>
   <string name="settings_wipe_title">Apagar todos os contadores</string>
+  <string name="settings_export_title">Exportar contadores</string>
+  <string name="settings_export_summary">Exportar todos os contadores no formato CSV</string>
+  <string name="settings_tip_title">Compre-me um café</string>
+  <string name="settings_tip_summary">Apoie o criador deste app</string>
+  <string name="settings_homepage_title">Página</string>
+  <string name="settings_homepage_summary">Informações do app e o código-fonte</string>
   <string name="settings_wipe_confirmation">Quer mesmo apagar todos os contadores?</string>
   <string name="settings_wipe_confirmation_yes">Apagar tudo</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Todos os contadores foram excluídos.</string>
+  <string name="toast_delete_success">Contador \"{name}\" foi excluído.</string>
   <string name="toast_unable_to_modify">Alguma coisa deu errado ao salvar o contador. Desculpe!</string>
+  <string name="toast_unable_to_export">Algo deu errado ao exportar os contadores. Desculpe!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Novo contador</string>
-  <string name="unknown_version">Desconhecido</string>
 </resources>

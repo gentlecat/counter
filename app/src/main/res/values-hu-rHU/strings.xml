@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Számláló</string>
   <!-- Menu -->
   <string name="menu_counters_list">Navigáció megnyitása</string>
   <string name="menu_add">Számláló hozzáadása</string>
@@ -29,6 +30,7 @@
   <string name="settings_wipe_title">Összes számláló eltávolítása</string>
   <string name="settings_wipe_confirmation">Biztosan el szeretné távolítani az összes számlálót?</string>
   <string name="settings_wipe_confirmation_yes">Összes eltávolítása</string>
+  <!-- Toasts -->
   <!-- Other stuff -->
-  <string name="unknown_version">Ismeretlen</string>
+  <string name="default_counter_name">Első számláló</string>
 </resources>

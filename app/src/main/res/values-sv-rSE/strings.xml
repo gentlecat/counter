@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Räknare</string>
+  <string name="last_update_timestamp">Senast uppdaterad på {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Öppna navigering</string>
   <string name="menu_add">Lägg till räknare</string>
@@ -9,6 +11,8 @@
   <string name="menu_delete">Ta bort räknare</string>
   <string name="menu_settings">Inställningar</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Lägg till en ny räknare</string>
+  <string name="dialog_edit_title">Redigera denna räknare</string>
   <string name="dialog_delete_title">Vill du verkligen ta bort denna räknare?</string>
   <string name="dialog_reset_title">Vill du verkligen återställa räknaren?</string>
   <string name="dialog_edit_name">Titel:</string>
@@ -20,15 +24,39 @@
   <string name="dialog_button_cancel">Avbryt</string>
   <!-- Settings -->
   <string name="settings_title">Inställningar</string>
+  <string name="settings_display">Visa</string>
+  <string name="settings_theme">Tema</string>
+  <string name="settings_theme_light">Ljus</string>
+  <string name="settings_theme_dark">Mörk</string>
+  <string name="settings_theme_auto_battery">Set by Battery Saver (Automatic Copy)</string>
+  <string name="settings_theme_system">Använd systemets standard</string>
+  <string name="settings_keep_on_title">Håll skärmen på</string>
+  <string name="settings_keep_on_summary">Håll skärmen på medan appen är aktiv</string>
   <string name="settings_controls">Kontroller</string>
   <string name="settings_sounds_title">Slå på ljud</string>
+  <string name="settings_sounds_summary">Spela upp ljud när värden ändras</string>
   <string name="settings_vibration_title">Slå på vibrationer</string>
+  <string name="settings_vibration_summary">Vibrera vid värdeändringar</string>
   <string name="settings_hard_title">Använd hårdvaruknapparna</string>
+  <string name="settings_hard_summary">Ändra räknarvärde med volymknappar</string>
+  <string name="settings_label_increment_title">Tryck på värdet för att öka</string>
+  <string name="settings_label_increment_summary">Öka en räknare genom att trycka på det aktuella värdet</string>
   <string name="settings_other">Övrigt</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Ta bort alla räknare</string>
+  <string name="settings_export_title">Exportera räknare</string>
+  <string name="settings_export_summary">Exportera alla räknare i CSV-format</string>
+  <string name="settings_tip_title">Köp mig ett kaffe</string>
+  <string name="settings_tip_summary">Stöd skaparen av denna app</string>
+  <string name="settings_homepage_title">Hemsida</string>
+  <string name="settings_homepage_summary">Appinformation och källkoden</string>
   <string name="settings_wipe_confirmation">Vill du verkligen ta bort alla räknare?</string>
   <string name="settings_wipe_confirmation_yes">Ta bort alla</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Alla räknare har tagits bort.</string>
+  <string name="toast_delete_success">Räknaren \"{name}\" har tagits bort.</string>
+  <string name="toast_unable_to_modify">Något gick fel när disken uppdaterades. Tyvärr!</string>
+  <string name="toast_unable_to_export">Något gick fel när diskarna exporterades. Tyvärr!</string>
   <!-- Other stuff -->
-  <string name="unknown_version">Okänt</string>
+  <string name="default_counter_name">Första räknaren</string>
 </resources>

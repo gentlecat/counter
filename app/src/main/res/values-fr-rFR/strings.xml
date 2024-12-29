@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Counter</string>
+  <string name="last_update_timestamp">Dernière mise à jour à {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Ouvrir la navigation</string>
   <string name="menu_add">Ajouter un compteur</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">Supprimer tous les compteurs</string>
   <string name="settings_export_title">Exporter les compteurs</string>
   <string name="settings_export_summary">Exporter tous les compteurs au format CSV</string>
+  <string name="settings_tip_title">Achetez-moi un café</string>
+  <string name="settings_tip_summary">Soutenir le créateur de cette application</string>
+  <string name="settings_homepage_title">Page d\'accueil</string>
+  <string name="settings_homepage_summary">Informations sur l\'application et le code source</string>
   <string name="settings_wipe_confirmation">Voulez-vous vraiment supprimer tous les compteurs ?</string>
   <string name="settings_wipe_confirmation_yes">Tout supprimer</string>
   <!-- Toasts -->
@@ -54,5 +59,4 @@
   <string name="toast_unable_to_export">Une erreur s\'est produite lors de l\'exportation du compteur. Désolé !</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nouveau compteur</string>
-  <string name="unknown_version">Inconnu</string>
 </resources>
