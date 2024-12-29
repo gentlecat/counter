@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contatore</string>
+  <string name="last_update_timestamp">Ultimo aggiornamento alle {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Apri navigazione</string>
   <string name="menu_add">Aggiungi contatore</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">Rimuovere tutti i contatori</string>
   <string name="settings_export_title">Esporta contatori</string>
   <string name="settings_export_summary">Esporta tutti i contatori in formato CSV</string>
+  <string name="settings_tip_title">Comprami un caffè</string>
+  <string name="settings_tip_summary">Supporta il creatore di questa app</string>
+  <string name="settings_homepage_title">Homepage</string>
+  <string name="settings_homepage_summary">Informazioni sull\'app e il codice sorgente</string>
   <string name="settings_wipe_confirmation">Vuoi veramente rimuovere tutti i contatori?</string>
   <string name="settings_wipe_confirmation_yes">Rimuovi tutti</string>
   <!-- Toasts -->
