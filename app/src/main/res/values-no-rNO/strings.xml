@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Telling</string>
+  <string name="last_update_timestamp">Sist oppdatert hos {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åpne navigasjon</string>
   <string name="menu_add">Legg til teller</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">Slett alle tellerne</string>
   <string name="settings_export_title">Eksporter tellinger</string>
   <string name="settings_export_summary">Eksporter alle tellinger i CSV-format</string>
+  <string name="settings_tip_title">Kjøpe meg en kaffe</string>
+  <string name="settings_tip_summary">Støtt den som oppretter denne app</string>
+  <string name="settings_homepage_title">Hjemmeside</string>
+  <string name="settings_homepage_summary">App-informasjon og kildekode</string>
   <string name="settings_wipe_confirmation">Har du virkelig lyst til å slette alle tellerne?</string>
   <string name="settings_wipe_confirmation_yes">Slett alle</string>
   <!-- Toasts -->
