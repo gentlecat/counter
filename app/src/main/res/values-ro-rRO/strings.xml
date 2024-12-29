@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Counter</string>
+  <string name="last_update_timestamp">Ultima actualizare la {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Deschide navigarea</string>
   <string name="menu_add">Adaugă contor</string>
@@ -45,6 +46,8 @@
   <string name="settings_wipe_title">Elimină toate contoarele</string>
   <string name="settings_export_title">Exportă contoare</string>
   <string name="settings_export_summary">Exportă toate contoarele în format CSV</string>
+  <string name="settings_tip_title">Cumpără-mi o cafea</string>
+  <string name="settings_tip_summary">Sprijină creatorul acestei aplicații</string>
   <string name="settings_homepage_title">Pagină de pornire</string>
   <string name="settings_homepage_summary">Informații despre aplicație și codul sursă</string>
   <string name="settings_wipe_confirmation">Sigur vrei să elimini toate contoarele?</string>
