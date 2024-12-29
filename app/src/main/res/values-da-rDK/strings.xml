@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Tæller</string>
+  <string name="last_update_timestamp">Sidst opdateret på {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åbn navigation</string>
   <string name="menu_add">Tilføj tæller</string>
@@ -43,10 +44,19 @@
   <string name="settings_other">Andet</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Fjern alle tællere</string>
+  <string name="settings_export_title">Eksporter tællere</string>
+  <string name="settings_export_summary">Eksporter alle tællere i CSV-format</string>
+  <string name="settings_tip_title">Køb mig en kaffe</string>
+  <string name="settings_tip_summary">Støt opretteren af denne app</string>
+  <string name="settings_homepage_title">Hjemmeside</string>
+  <string name="settings_homepage_summary">App info og kildekoden</string>
   <string name="settings_wipe_confirmation">Er du sikker på, du vil fjerne alle tællere?</string>
   <string name="settings_wipe_confirmation_yes">Fjern alle</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Alle tællere er blevet slettet.</string>
+  <string name="toast_delete_success">Tæller \"{name}\" er blevet slettet.</string>
   <string name="toast_unable_to_modify">Noget gik galt mens tælleren blev opdateret. Undskyld!</string>
+  <string name="toast_unable_to_export">Noget gik galt under eksport af tællerne. Beklager!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny tæller</string>
 </resources>
