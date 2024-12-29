@@ -3,6 +3,7 @@
 ## Version 31
 
 * Default theme configuration has been fixed.
+* Updated translations.
 
 ## Version 30
 
