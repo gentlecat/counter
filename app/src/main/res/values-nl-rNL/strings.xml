@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Teller</string>
+  <string name="last_update_timestamp">Laatst bijgewerkt op {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Open navigatie</string>
   <string name="menu_add">Voeg nieuwe teller toe</string>
@@ -45,6 +46,10 @@
   <string name="settings_wipe_title">Verwijder alle tellers</string>
   <string name="settings_export_title">Tellers exporteren</string>
   <string name="settings_export_summary">Exporteer alle tellers in CSV-formaat</string>
+  <string name="settings_tip_title">Koop een koffie voor me</string>
+  <string name="settings_tip_summary">Ondersteun de maker van deze app</string>
+  <string name="settings_homepage_title">Startpagina</string>
+  <string name="settings_homepage_summary">App info en de broncode</string>
   <string name="settings_wipe_confirmation">Wilt u echt alle tellers verwijderen?</string>
   <string name="settings_wipe_confirmation_yes">Alle verwijderen</string>
   <!-- Toasts -->
