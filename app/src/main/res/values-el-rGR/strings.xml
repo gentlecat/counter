@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Μετρητής</string>
-  <string name="last_update_timestamp">Τελευταία ενημέρωση στο {timestamp}</string>
+  <string name="last_update_timestamp">Τελευταία αλλαγή στο {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Άνοιγμα μενού πλοήγησης</string>
   <string name="menu_add">Προσθήκη νέου μετρητή</string>
