@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
   <string name="settings_keep_on_summary">Mantieni lo schermo accesso mentre l\'applicazione è attiva</string>
   <string name="settings_controls">Controlli</string>
+  <string name="settings_hide_controls_title">Nascondi i pulsanti</string>
   <string name="settings_hide_controls_summary">Si potrebbe voler attivare i pulsanti del volume utilizzare o il tocco per aumentare l\'opzione</string>
   <string name="settings_sounds_title">Attiva suoni</string>
   <string name="settings_sounds_summary">Riproduci suoni durante la modifica dei valori</string>
