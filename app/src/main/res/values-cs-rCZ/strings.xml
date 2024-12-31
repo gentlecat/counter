@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Ponechat obrazovku zapnutou</string>
   <string name="settings_keep_on_summary">Ponechat obrazovku zapnutou, když je aplikace aktivní</string>
   <string name="settings_controls">Ovládání</string>
+  <string name="settings_hide_controls_title">Skrýt tlačítka</string>
+  <string name="settings_hide_controls_summary">Možná budete chtít zapnout použití tlačítek hlasitosti nebo klepnutí pro zvýšení</string>
   <string name="settings_sounds_title">Zapnout zvuky</string>
   <string name="settings_sounds_summary">Přehrát zvuky při změně hodnot</string>
   <string name="settings_vibration_title">Zapnout vibrace</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Změnit hodnotu počítadla pomocí tlačítek hlasitosti</string>
   <string name="settings_label_increment_title">Klepnutím na hodnotu zvýšíte</string>
   <string name="settings_label_increment_summary">Zvyšte počítadlo klepnutím na aktuální hodnotu</string>
+  <string name="settings_hide_last_update_title">Skrýt časovou značku poslední změny</string>
   <string name="settings_other">Ostatní</string>
   <string name="settings_version_title">Verze</string>
   <string name="settings_wipe_title">Odstranit všechna počítadla</string>
