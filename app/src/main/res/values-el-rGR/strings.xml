@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Κρατήστε την οθόνη ενεργή</string>
   <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ενεργή</string>
   <string name="settings_controls">Στοιχεία ελέγχου</string>
+  <string name="settings_hide_controls_title">Απόκρυψη των κουμπιών</string>
   <string name="settings_hide_controls_summary">Μπορεί να θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ήχου ή το πάτημα για αύξηση της επιλογής</string>
   <string name="settings_sounds_title">Ενεργοποιήσε τους ήχους</string>
   <string name="settings_sounds_summary">Αναπαραγωγή ήχων κατά την αλλαγή τιμών</string>
