@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Hold skjermen på</string>
   <string name="settings_keep_on_summary">Hold skjermen på når appen er i bruk</string>
   <string name="settings_controls">Kontroller</string>
+  <string name="settings_hide_controls_title">Skjul knappene</string>
   <string name="settings_hide_controls_summary">Du vil kanskje slå på volumknappene du bruker, eller på for å øke alternativet</string>
   <string name="settings_sounds_title">Skru på lyder</string>
   <string name="settings_sounds_summary">Spill av lyder når tellerverdien endres</string>
