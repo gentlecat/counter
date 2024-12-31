@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">カウンター</string>
-  <string name="last_update_timestamp">最終更新 {timestamp}</string>
+  <string name="last_update_timestamp">最終変更日時 {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">ナビゲーションを開く</string>
   <string name="menu_add">カウンターを追加</string>
