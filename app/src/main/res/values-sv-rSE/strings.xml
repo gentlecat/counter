@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Räknare</string>
-  <string name="last_update_timestamp">Senast uppdaterad på {timestamp}</string>
+  <string name="last_update_timestamp">Senast ändrad på {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Öppna navigering</string>
   <string name="menu_add">Lägg till räknare</string>
