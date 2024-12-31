@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">画面をオンのままにする</string>
   <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯します</string>
   <string name="settings_controls">コントロール</string>
+  <string name="settings_hide_controls_summary">音量ボタンの使用をオンにするか、タップして増分オプションをオンにするかも知れません</string>
   <string name="settings_sounds_title">サウンドをオン</string>
   <string name="settings_sounds_summary">値を変更するときにサウンドを再生します</string>
   <string name="settings_vibration_title">振動をオン</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">音量ボタンを使用してカウンターの値を変更します</string>
   <string name="settings_label_increment_title">値をタップして増加</string>
   <string name="settings_label_increment_summary">現在の値をタップしてカウンターを増加します</string>
+  <string name="settings_hide_last_update_title">最後の変更タイムスタンプを非表示</string>
   <string name="settings_other">その他</string>
   <string name="settings_version_title">バージョン</string>
   <string name="settings_wipe_title">すべてのカウンターを削除</string>
