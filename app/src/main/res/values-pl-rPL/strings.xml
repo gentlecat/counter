@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Utrzymuj włączony ekran</string>
   <string name="settings_keep_on_summary">Utrzymuj włączony ekran, gdy aplikacja jest aktywna</string>
   <string name="settings_controls">Sterowanie</string>
+  <string name="settings_hide_controls_summary">Możesz włączyć przyciski głośności lub stuknij, aby zwiększyć</string>
   <string name="settings_sounds_title">Włącz dźwięki</string>
   <string name="settings_sounds_summary">Odtwórz dźwięk przy zmienianiu wartości</string>
   <string name="settings_vibration_title">Włącz wibracje</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Zmień wartość licznika przyciskami głośności</string>
   <string name="settings_label_increment_title">Kliknij, aby zwiększyć wartość</string>
   <string name="settings_label_increment_summary">Kliknij licznik, aby zwiększyć wartość</string>
+  <string name="settings_hide_last_update_title">Ukryj znacznik czasu ostatniej zmiany</string>
   <string name="settings_other">Inne</string>
   <string name="settings_version_title">Wersja</string>
   <string name="settings_wipe_title">Usuń wszystkie liczniki</string>
