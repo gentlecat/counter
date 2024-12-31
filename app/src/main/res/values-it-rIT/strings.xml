@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contatore</string>
-  <string name="last_update_timestamp">Ultimo aggiornamento alle {timestamp}</string>
+  <string name="last_update_timestamp">Ultima modifica alle {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Apri navigazione</string>
   <string name="menu_add">Aggiungi contatore</string>
