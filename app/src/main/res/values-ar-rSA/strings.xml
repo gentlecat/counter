@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">العداد</string>
-  <string name="last_update_timestamp">آخر تحديث في {timestamp}</string>
+  <string name="last_update_timestamp">آخر تغيير في {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">فتح قائمة التنقل</string>
   <string name="menu_add">إضافة عداد</string>

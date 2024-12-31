@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contador</string>
-  <string name="last_update_timestamp">Última atualização em {timestamp}</string>
+  <string name="last_update_timestamp">Última alteração em {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Abrir a navegação</string>
   <string name="menu_add">Adicionar contador</string>
@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Manter o ecrã ligado</string>
   <string name="settings_keep_on_summary">Manter o ecrã ligado enquanto a aplicação está ativa</string>
   <string name="settings_controls">Controlos</string>
+  <string name="settings_hide_controls_title">Ocultar os botões</string>
+  <string name="settings_hide_controls_summary">Você pode querer ativar o uso dos botões de volume ou a opção de incremento</string>
   <string name="settings_sounds_title">Ativar sons</string>
   <string name="settings_sounds_summary">Reproduzir sons ao alterar valores</string>
   <string name="settings_vibration_title">Ativar vibração</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Alterar o valor do contador usando os botões de volume</string>
   <string name="settings_label_increment_title">Tocar no valor para incrementar</string>
   <string name="settings_label_increment_summary">Incrementar um contador tocando no valor atual</string>
+  <string name="settings_hide_last_update_title">Ocultar a última alteração do horário</string>
   <string name="settings_other">Outros</string>
   <string name="settings_version_title">Versão</string>
   <string name="settings_wipe_title">Remover todos os contadores</string>

@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Tæller</string>
-  <string name="last_update_timestamp">Sidst opdateret på {timestamp}</string>
+  <string name="last_update_timestamp">Sidst ændret hos {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åbn navigation</string>
   <string name="menu_add">Tilføj tæller</string>
@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Hold skærmen tændt</string>
   <string name="settings_keep_on_summary">Hold skærmen tændt når appen er aktiv</string>
   <string name="settings_controls">Styring</string>
+  <string name="settings_hide_controls_summary">Du vil måske slå lydstyrkeknapper til brug eller tryk for at øge indstillingen</string>
   <string name="settings_sounds_title">Tænd for lyde</string>
   <string name="settings_sounds_summary">Spil lyde når man ændrer værdier</string>
   <string name="settings_vibration_title">Tænd for vibration</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Ændr tællerværdi med hardware-knapper</string>
   <string name="settings_label_increment_title">Tryk værdi for at inkrementere</string>
   <string name="settings_label_increment_summary">Tryk på nuværende værdi for at inkrementere tæller</string>
+  <string name="settings_hide_last_update_title">Skjul sidste ændringstidsstempel</string>
   <string name="settings_other">Andet</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Fjern alle tællere</string>

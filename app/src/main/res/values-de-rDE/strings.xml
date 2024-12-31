@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Zähler</string>
-  <string name="last_update_timestamp">Zuletzt aktualisiert um {timestamp}</string>
+  <string name="last_update_timestamp">Zuletzt geändert am {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Liste der Zähler öffnen</string>
   <string name="menu_add">Zähler hinzufügen</string>
@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Bildschirm aktiv halten</string>
   <string name="settings_keep_on_summary">Bildschirm eingeschaltet lassen, während die App aktiv ist</string>
   <string name="settings_controls">Steuerelemente</string>
+  <string name="settings_hide_controls_summary">Sie sollten die Lautstärketasten verwenden oder das Tippen zum Hochladen aktivieren</string>
   <string name="settings_sounds_title">Sound aktivieren</string>
   <string name="settings_sounds_summary">Töne abspielen, wenn Werte geändert werden</string>
   <string name="settings_vibration_title">Vibration aktivieren</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Zählerwert mit Lautstärketasten ändern</string>
   <string name="settings_label_increment_title">Zum Erhöhen Wert antippen</string>
   <string name="settings_label_increment_summary">Erhöhe einen Zähler, indem Du den aktuellen Wert antippst</string>
+  <string name="settings_hide_last_update_title">Den letzten Änderungszeitstempel ausblenden</string>
   <string name="settings_other">Sonstiges</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Alle Zähler entfernen</string>

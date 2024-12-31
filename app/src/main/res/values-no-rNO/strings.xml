@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Telling</string>
-  <string name="last_update_timestamp">Sist oppdatert hos {timestamp}</string>
+  <string name="last_update_timestamp">Sist endret hos {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åpne navigasjon</string>
   <string name="menu_add">Legg til teller</string>
@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Hold skjermen på</string>
   <string name="settings_keep_on_summary">Hold skjermen på når appen er i bruk</string>
   <string name="settings_controls">Kontroller</string>
+  <string name="settings_hide_controls_summary">Du vil kanskje slå på volumknappene du bruker, eller på for å øke alternativet</string>
   <string name="settings_sounds_title">Skru på lyder</string>
   <string name="settings_sounds_summary">Spill av lyder når tellerverdien endres</string>
   <string name="settings_vibration_title">Skru på vibrasjon</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Endre tellerverdien ved å bruke volumknappene</string>
   <string name="settings_label_increment_title">Trykk på tellerverdi for å øke</string>
   <string name="settings_label_increment_summary">Øk telleren ved å trykke på gjeldende verdi</string>
+  <string name="settings_hide_last_update_title">Skjul den siste endrings tidsstempel</string>
   <string name="settings_other">Annet</string>
   <string name="settings_version_title">Versjon</string>
   <string name="settings_wipe_title">Slett alle tellerne</string>

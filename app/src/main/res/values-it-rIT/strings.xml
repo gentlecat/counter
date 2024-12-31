@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contatore</string>
-  <string name="last_update_timestamp">Ultimo aggiornamento alle {timestamp}</string>
+  <string name="last_update_timestamp">Ultima modifica alle {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Apri navigazione</string>
   <string name="menu_add">Aggiungi contatore</string>
@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
   <string name="settings_keep_on_summary">Mantieni lo schermo accesso mentre l\'applicazione è attiva</string>
   <string name="settings_controls">Controlli</string>
+  <string name="settings_hide_controls_summary">Si potrebbe voler attivare i pulsanti del volume utilizzare o il tocco per aumentare l\'opzione</string>
   <string name="settings_sounds_title">Attiva suoni</string>
   <string name="settings_sounds_summary">Riproduci suoni durante la modifica dei valori</string>
   <string name="settings_vibration_title">Attiva vibrazione</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Cambia valori dei contatori usando i pulsanti del volume</string>
   <string name="settings_label_increment_title">Premi valore per aumentare</string>
   <string name="settings_label_increment_summary">Incrementa un contatore premendo il valore corrente</string>
+  <string name="settings_hide_last_update_title">Nascondi il timestamp dell\'ultima modifica</string>
   <string name="settings_other">Altri</string>
   <string name="settings_version_title">Versione</string>
   <string name="settings_wipe_title">Rimuovere tutti i contatori</string>

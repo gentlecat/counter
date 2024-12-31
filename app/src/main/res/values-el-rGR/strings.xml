@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Μετρητής</string>
-  <string name="last_update_timestamp">Τελευταία ενημέρωση στο {timestamp}</string>
+  <string name="last_update_timestamp">Τελευταία αλλαγή στο {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Άνοιγμα μενού πλοήγησης</string>
   <string name="menu_add">Προσθήκη νέου μετρητή</string>
@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Κρατήστε την οθόνη ενεργή</string>
   <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ενεργή</string>
   <string name="settings_controls">Στοιχεία ελέγχου</string>
+  <string name="settings_hide_controls_summary">Μπορεί να θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ήχου ή το πάτημα για αύξηση της επιλογής</string>
   <string name="settings_sounds_title">Ενεργοποιήσε τους ήχους</string>
   <string name="settings_sounds_summary">Αναπαραγωγή ήχων κατά την αλλαγή τιμών</string>
   <string name="settings_vibration_title">Ενεργοποιήσε τη δόνηση</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Αλλαγή τιμής μετρητή χρησιμοποιώντας τα κουμπιά έντασης</string>
   <string name="settings_label_increment_title">Πατήστε την τιμή για αύξηση</string>
   <string name="settings_label_increment_summary">Αύξηση μετρητή πατώντας την τρέχουσα τιμή</string>
+  <string name="settings_hide_last_update_title">Απόκρυψη της τελευταίας χρονοσήμανσης αλλαγής</string>
   <string name="settings_other">Άλλα</string>
   <string name="settings_version_title">Έκδοση</string>
   <string name="settings_wipe_title">Διαγραφή όλων των μετρητών</string>

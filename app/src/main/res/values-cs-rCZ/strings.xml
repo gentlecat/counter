@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Počítadlo</string>
-  <string name="last_update_timestamp">Naposledy aktualizováno v {timestamp}</string>
+  <string name="last_update_timestamp">Naposledy změněno v {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Otevřít seznam čítačů</string>
   <string name="menu_add">Přidat počítadlo</string>

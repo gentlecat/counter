@@ -32,6 +32,8 @@
   <string name="settings_keep_on_title">Не вимикати екран</string>
   <string name="settings_keep_on_summary">Не вимикати екран доки додаток активний</string>
   <string name="settings_controls">Керування</string>
+  <string name="settings_hide_controls_title">Приховати кнопки</string>
+  <string name="settings_hide_controls_summary">Ви можете включити кнопки гучності або торкніться, щоб збільшити параметр</string>
   <string name="settings_sounds_title">Увімкнути звуки</string>
   <string name="settings_sounds_summary">Відтворювати звуки при зміні значень</string>
   <string name="settings_vibration_title">Увімкнути вібрацію</string>
@@ -40,6 +42,7 @@
   <string name="settings_hard_summary">Змінити значення лічильника за допомогою кнопок гучності</string>
   <string name="settings_label_increment_title">Збільшувати при натисканні на значення</string>
   <string name="settings_label_increment_summary">Увімкнути збільшення значення лічильника після натискання на нього</string>
+  <string name="settings_hide_last_update_title">Приховати останню зміну часу</string>
   <string name="settings_other">Інше</string>
   <string name="settings_version_title">Версія</string>
   <string name="settings_wipe_title">Видалити всі лічильники</string>

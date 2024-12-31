@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contor</string>
-  <string name="last_update_timestamp">Ultima actualizare la {timestamp}</string>
+  <string name="last_update_timestamp">Ultima modificare la {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Deschide lista de contoare</string>
   <string name="menu_add">Adaugă contor</string>
