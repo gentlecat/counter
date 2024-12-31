@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Håll skärmen på</string>
   <string name="settings_keep_on_summary">Håll skärmen på medan appen är aktiv</string>
   <string name="settings_controls">Kontroller</string>
+  <string name="settings_hide_controls_title">Dölj knapparna</string>
+  <string name="settings_hide_controls_summary">Du kanske vill aktivera volymknapparna använd eller tryck för att öka</string>
   <string name="settings_sounds_title">Slå på ljud</string>
   <string name="settings_sounds_summary">Spela upp ljud när värden ändras</string>
   <string name="settings_vibration_title">Slå på vibrationer</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Ändra räknarvärde med volymknappar</string>
   <string name="settings_label_increment_title">Tryck på värdet för att öka</string>
   <string name="settings_label_increment_summary">Öka en räknare genom att trycka på det aktuella värdet</string>
+  <string name="settings_hide_last_update_title">Dölj den senaste ändringen tidsstämpel</string>
   <string name="settings_other">Övrigt</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Ta bort alla räknare</string>
