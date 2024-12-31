@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Telling</string>
-  <string name="last_update_timestamp">Sist oppdatert hos {timestamp}</string>
+  <string name="last_update_timestamp">Sist endret hos {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åpne navigasjon</string>
   <string name="menu_add">Legg til teller</string>
