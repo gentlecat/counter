@@ -34,6 +34,7 @@ import java.util.Locale
 import java.util.Map
 
 class CounterFragment : Fragment() {
+
     /** Name is used as a key to look up and modify counter value in storage.  */
     private var name: String? = null
 
@@ -112,14 +113,24 @@ class CounterFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.counter, container, false)
 
+        counterLabel = view.findViewById(R.id.counterLabel)
+
         incrementButton = view.findViewById(R.id.incrementButton)
         incrementButton!!.setOnClickListener { v: View? -> increment() }
 
         decrementButton = view.findViewById(R.id.decrementButton)
         decrementButton!!.setOnClickListener { v: View? -> decrement() }
 
-        counterLabel = view.findViewById(R.id.counterLabel)
+        if (sharedPrefs!!.getBoolean(SharedPrefKeys.HIDE_CONTROLS.key, false)) {
+            incrementButton!!.visibility = View.GONE;
+            decrementButton!!.visibility = View.GONE;
+        }
+
         updateTimestampLabel = view.findViewById(R.id.updateTimestampLabel)
+
+        if (sharedPrefs!!.getBoolean(SharedPrefKeys.HIDE_LAST_UPDATE.key, false)) {
+            updateTimestampLabel!!.visibility = View.GONE;
+        }
 
         view.findViewById<View>(R.id.counterFrame)
             .setOnClickListener { v: View? ->

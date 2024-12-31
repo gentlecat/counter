@@ -39,6 +39,8 @@
   <string name="settings_keep_on_title">Keep the screen on</string>
   <string name="settings_keep_on_summary">Keep the screen on while app is active</string>
   <string name="settings_controls">Controls</string>
+  <string name="settings_hide_controls_title">Hide the buttons</string>
+  <string name="settings_hide_controls_summary">You might want to turn on volume buttons use or the tap to increment option</string>
   <string name="settings_sounds_title">Turn on sounds</string>
   <string name="settings_sounds_summary">Play sounds when changing values</string>
   <string name="settings_vibration_title">Turn on vibration</string>
@@ -47,6 +49,7 @@
   <string name="settings_hard_summary">Change counter value using volume buttons</string>
   <string name="settings_label_increment_title">Tap value to increment</string>
   <string name="settings_label_increment_summary">Increment a counter by tapping the current value</string>
+  <string name="settings_hide_last_update_title">Hide the last change timestamp</string>
   <string name="settings_other">Other</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Remove all counters</string>

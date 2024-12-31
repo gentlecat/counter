@@ -58,13 +58,19 @@
       android:id="@+id/updateTimestampLabel"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_alignParentStart="true"
-      android:layout_alignParentBottom="true"
+      android:layout_above="@+id/anchor"
       android:layout_marginTop="12dp"
       android:layout_marginBottom="16dp"
       android:textAlignment="center"
       android:textSize="16sp"
       android:textStyle="italic"
       tools:text="42" />
+
+  <View
+      android:id="@+id/anchor"
+      android:layout_width="match_parent"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentBottom="true"
+      android:layout_height="1dp" />
 
 </RelativeLayout>

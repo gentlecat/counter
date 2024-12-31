@@ -43,6 +43,17 @@
         android:key="keepScreenOn"
         android:summary="@string/settings_keep_on_summary"
         android:title="@string/settings_keep_on_title" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:icon="@drawable/ic_display"
+        android:key="hideControls"
+        android:summary="@string/settings_hide_controls_summary"
+        android:title="@string/settings_hide_controls_title" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:icon="@drawable/ic_time"
+        android:key="hideLastUpdate"
+        android:title="@string/settings_hide_last_update_title" />
   </PreferenceCategory>
 
   <PreferenceCategory android:title="@string/settings_other">
