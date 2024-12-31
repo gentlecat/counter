@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Bildschirm aktiv halten</string>
   <string name="settings_keep_on_summary">Bildschirm eingeschaltet lassen, während die App aktiv ist</string>
   <string name="settings_controls">Steuerelemente</string>
+  <string name="settings_hide_controls_title">Buttons ausblenden</string>
   <string name="settings_hide_controls_summary">Sie sollten die Lautstärketasten verwenden oder das Tippen zum Hochladen aktivieren</string>
   <string name="settings_sounds_title">Sound aktivieren</string>
   <string name="settings_sounds_summary">Töne abspielen, wenn Werte geändert werden</string>
