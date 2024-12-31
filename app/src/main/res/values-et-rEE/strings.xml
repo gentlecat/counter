@@ -32,6 +32,7 @@
   <string name="settings_keep_on_title">Hoia ekraan sisse lülitatuna</string>
   <string name="settings_keep_on_summary">Hoia ekraan sees kui rakendus on aktiivne</string>
   <string name="settings_controls">Juhtpaneel</string>
+  <string name="settings_hide_controls_title">Peida nupud</string>
   <string name="settings_sounds_title">Lülita heli sisse</string>
   <string name="settings_sounds_summary">Väärtusi muutes mängi helisid</string>
   <string name="settings_vibration_title">Lülita vibratsioon sisse</string>
