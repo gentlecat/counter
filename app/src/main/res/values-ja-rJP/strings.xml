@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">画面をオンのままにする</string>
   <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯します</string>
   <string name="settings_controls">コントロール</string>
+  <string name="settings_hide_controls_title">ボタンを隠す</string>
   <string name="settings_hide_controls_summary">音量ボタンの使用をオンにするか、タップして増分オプションをオンにするかも知れません</string>
   <string name="settings_sounds_title">サウンドをオン</string>
   <string name="settings_sounds_summary">値を変更するときにサウンドを再生します</string>

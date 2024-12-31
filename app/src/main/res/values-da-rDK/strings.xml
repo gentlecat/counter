@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Hold skærmen tændt</string>
   <string name="settings_keep_on_summary">Hold skærmen tændt når appen er aktiv</string>
   <string name="settings_controls">Styring</string>
+  <string name="settings_hide_controls_title">Skjul knapperne</string>
   <string name="settings_hide_controls_summary">Du vil måske slå lydstyrkeknapper til brug eller tryk for at øge indstillingen</string>
   <string name="settings_sounds_title">Tænd for lyde</string>
   <string name="settings_sounds_summary">Spil lyde når man ændrer værdier</string>

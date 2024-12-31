@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Scherm aanhouden</string>
   <string name="settings_keep_on_summary">Houdt scherm aan wanneer de app actief is</string>
   <string name="settings_controls">Bediening</string>
+  <string name="settings_hide_controls_title">Verberg de knoppen</string>
   <string name="settings_hide_controls_summary">U wilt misschien de volumeknoppen gebruiken of tik om te verhogen</string>
   <string name="settings_sounds_title">Geluid aan</string>
   <string name="settings_sounds_summary">Speel geluid af wanneer waarden worden aangepast</string>

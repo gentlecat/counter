@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Mantener la pantalla encendida</string>
   <string name="settings_keep_on_summary">Mantener la pantalla encendida mientras la aplicación esté activa</string>
   <string name="settings_controls">Controles</string>
+  <string name="settings_hide_controls_title">Ocultar los botones</string>
+  <string name="settings_hide_controls_summary">Puede que desee activar los botones de volumen o la opción de incrementar</string>
   <string name="settings_sounds_title">Encender sonidos</string>
   <string name="settings_sounds_summary">Reproducir sonidos al cambiar valores</string>
   <string name="settings_vibration_title">Activar vibración</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Cambiar el valor del contador con los botones de volumen</string>
   <string name="settings_label_increment_title">Pulsa el valor para aumentarlo</string>
   <string name="settings_label_increment_summary">Aumenta un contador pulsando el valor actual</string>
+  <string name="settings_hide_last_update_title">Ocultar la fecha del último cambio</string>
   <string name="settings_other">Otros</string>
   <string name="settings_version_title">Versión</string>
   <string name="settings_wipe_title">Eliminar todos los contadores</string>

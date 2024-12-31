@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Păstrează ecranul pornit</string>
   <string name="settings_keep_on_summary">Păstrează ecranul pornit în timp ce aplicația este activă</string>
   <string name="settings_controls">Comenzi</string>
+  <string name="settings_hide_controls_title">Ascunde butoanele</string>
+  <string name="settings_hide_controls_summary">Poate doriţi să activaţi utilizarea butoanelor de volum sau opţiunea \"atingeți pentru incrementalitate\"</string>
   <string name="settings_sounds_title">Pornește sunetele</string>
   <string name="settings_sounds_summary">Redă sunete la schimbarea valorilor</string>
   <string name="settings_vibration_title">Pornește vibrația</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Modifică valoarea contorului folosind butoanele de volum</string>
   <string name="settings_label_increment_title">Atinge valoarea pentru a o crește</string>
   <string name="settings_label_increment_summary">Crește un contor prin atingerea valorii curente</string>
+  <string name="settings_hide_last_update_title">Ascunde ultima modificare de marcaj de timp</string>
   <string name="settings_other">Altele</string>
   <string name="settings_version_title">Versiune</string>
   <string name="settings_wipe_title">Elimină toate contoarele</string>

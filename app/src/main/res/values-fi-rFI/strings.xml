@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Pidä näyttö päällä</string>
   <string name="settings_keep_on_summary">Pidä näyttö päällä, kun sovellus on käytössä</string>
   <string name="settings_controls">Ohjaimet</string>
+  <string name="settings_hide_controls_title">Piilota painikkeet</string>
   <string name="settings_hide_controls_summary">Voit halutessasi kytkeä äänenvoimakkuuden painikkeet käyttöön tai napauta lisäysasetusta varten</string>
   <string name="settings_sounds_title">Kytke äänet</string>
   <string name="settings_sounds_summary">Toista äänet arvoja muuttaessa</string>

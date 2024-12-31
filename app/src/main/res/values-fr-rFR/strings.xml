@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Garder l\'écran allumé</string>
   <string name="settings_keep_on_summary">Garder l\'écran allumé lorsque l\'application est active</string>
   <string name="settings_controls">Contrôles</string>
+  <string name="settings_hide_controls_title">Masquer les boutons</string>
+  <string name="settings_hide_controls_summary">Vous pouvez activer les boutons de volume ou le tapoter pour incrémenter</string>
   <string name="settings_sounds_title">Activer les sons</string>
   <string name="settings_sounds_summary">Jouer des sons lors du changement de valeurs</string>
   <string name="settings_vibration_title">Activer le vibreur</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Changer la valeur du compteur à l’aide des boutons de volume</string>
   <string name="settings_label_increment_title">Tapez une valeur pour incrémenter</string>
   <string name="settings_label_increment_summary">Incrémenter un compteur en tapant la valeur actuelle</string>
+  <string name="settings_hide_last_update_title">Masquer l\'horodatage de la dernière modification</string>
   <string name="settings_other">Autre</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Supprimer tous les compteurs</string>
