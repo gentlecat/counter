@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Счетчик</string>
-  <string name="last_update_timestamp">Последнее обновление: {timestamp}</string>
+  <string name="last_update_timestamp">Последнее изменение в {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Открыть список счетчиков</string>
   <string name="menu_add">Добавить счетчик</string>
