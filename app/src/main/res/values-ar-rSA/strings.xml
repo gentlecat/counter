@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">إبقاء الشاشة تعمل</string>
   <string name="settings_keep_on_summary">إبقاء الشاشة تعمل أثناء عمل التطبيق</string>
   <string name="settings_controls">التحكم</string>
+  <string name="settings_hide_controls_title">إخفاء الأزرار</string>
+  <string name="settings_hide_controls_summary">قد ترغب في تشغيل استخدام أزرار الصوت أو النقر على خيار الزيادة</string>
   <string name="settings_sounds_title">تفعيل الأصوات</string>
   <string name="settings_sounds_summary">تشغيل أصوات عند تغيير القيم</string>
   <string name="settings_vibration_title">تفعيل الاهتزاز</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">تغيير قيمة العداد باستخدام أزرار الصوت</string>
   <string name="settings_label_increment_title">اضغط على القيمة للزيادة</string>
   <string name="settings_label_increment_summary">زيادة العداد عن طريق الضغط على القيمة الحالية</string>
+  <string name="settings_hide_last_update_title">إخفاء آخر تغيير للطابع الزمني</string>
   <string name="settings_other">الأخرى</string>
   <string name="settings_version_title">الإصدار</string>
   <string name="settings_wipe_title">إزالة جميع العدادات</string>
