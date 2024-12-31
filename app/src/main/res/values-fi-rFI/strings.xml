@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Pidä näyttö päällä</string>
   <string name="settings_keep_on_summary">Pidä näyttö päällä, kun sovellus on käytössä</string>
   <string name="settings_controls">Ohjaimet</string>
+  <string name="settings_hide_controls_summary">Voit halutessasi kytkeä äänenvoimakkuuden painikkeet käyttöön tai napauta lisäysasetusta varten</string>
   <string name="settings_sounds_title">Kytke äänet</string>
   <string name="settings_sounds_summary">Toista äänet arvoja muuttaessa</string>
   <string name="settings_vibration_title">Kytke tärinä</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Muuta laskurin arvoa käyttämällä äänenvoimakkuuden painikkeita</string>
   <string name="settings_label_increment_title">Napauta arvoa lisätäksesi</string>
   <string name="settings_label_increment_summary">Kasvata laskuria napauttamalla nykyistä arvoa</string>
+  <string name="settings_hide_last_update_title">Piilota viimeinen muutosaikaleima</string>
   <string name="settings_other">Muu</string>
   <string name="settings_version_title">Versio</string>
   <string name="settings_wipe_title">Poista kaikki laskurit</string>
