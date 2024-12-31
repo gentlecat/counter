@@ -33,6 +33,8 @@
   <string name="settings_keep_on_title">Держать экран включенным</string>
   <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
   <string name="settings_controls">Управление</string>
+  <string name="settings_hide_controls_title">Скрыть кнопки</string>
+  <string name="settings_hide_controls_summary">Вы можете включить кнопки громкости или нажать на увеличение</string>
   <string name="settings_sounds_title">Включить звуки</string>
   <string name="settings_sounds_summary">Возпроизводить звуки при изменении значений</string>
   <string name="settings_vibration_title">Включить вибрацию</string>
@@ -41,6 +43,7 @@
   <string name="settings_hard_summary">Включить модификацию счетчика с помощью кнопок регулировки громкости</string>
   <string name="settings_label_increment_title">Увеличивать при нажатии на значение</string>
   <string name="settings_label_increment_summary">Включить увеличение значения счетчика по нажатию на него</string>
+  <string name="settings_hide_last_update_title">Скрыть время последнего изменения</string>
   <string name="settings_other">Прочее</string>
   <string name="settings_version_title">Версия приложения</string>
   <string name="settings_wipe_title">Удалить все счетчики</string>
