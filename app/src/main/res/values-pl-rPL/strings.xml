@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Counter (Licznik)</string>
-  <string name="last_update_timestamp">Ostatnia aktualizacja w {timestamp}</string>
+  <string name="last_update_timestamp">Ostatnio zmienione w {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Otwórz nawigację</string>
   <string name="menu_add">Dodaj licznik</string>
