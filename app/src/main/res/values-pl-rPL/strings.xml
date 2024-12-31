@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Utrzymuj włączony ekran</string>
   <string name="settings_keep_on_summary">Utrzymuj włączony ekran, gdy aplikacja jest aktywna</string>
   <string name="settings_controls">Sterowanie</string>
+  <string name="settings_hide_controls_title">Ukryj przyciski</string>
   <string name="settings_hide_controls_summary">Możesz włączyć przyciski głośności lub stuknij, aby zwiększyć</string>
   <string name="settings_sounds_title">Włącz dźwięki</string>
   <string name="settings_sounds_summary">Odtwórz dźwięk przy zmienianiu wartości</string>
