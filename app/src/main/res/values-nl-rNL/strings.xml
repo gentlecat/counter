@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Teller</string>
-  <string name="last_update_timestamp">Laatst bijgewerkt op {timestamp}</string>
+  <string name="last_update_timestamp">Laatst gewijzigd op {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Open navigatie</string>
   <string name="menu_add">Voeg nieuwe teller toe</string>
