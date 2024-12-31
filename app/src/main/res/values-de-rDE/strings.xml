@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Zähler</string>
-  <string name="last_update_timestamp">Zuletzt aktualisiert um {timestamp}</string>
+  <string name="last_update_timestamp">Zuletzt geändert am {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Liste der Zähler öffnen</string>
   <string name="menu_add">Zähler hinzufügen</string>
