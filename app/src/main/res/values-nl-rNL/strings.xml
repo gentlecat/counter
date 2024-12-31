@@ -33,6 +33,7 @@
   <string name="settings_keep_on_title">Scherm aanhouden</string>
   <string name="settings_keep_on_summary">Houdt scherm aan wanneer de app actief is</string>
   <string name="settings_controls">Bediening</string>
+  <string name="settings_hide_controls_summary">U wilt misschien de volumeknoppen gebruiken of tik om te verhogen</string>
   <string name="settings_sounds_title">Geluid aan</string>
   <string name="settings_sounds_summary">Speel geluid af wanneer waarden worden aangepast</string>
   <string name="settings_vibration_title">Vibratie aan</string>
@@ -41,6 +42,7 @@
   <string name="settings_hard_summary">Gebruik de volume knoppen om te tellen</string>
   <string name="settings_label_increment_title">Tik op waarde om te verhogen</string>
   <string name="settings_label_increment_summary">Verhoog een teller door op de huidige waarde te tikken</string>
+  <string name="settings_hide_last_update_title">Verberg de laatste wijziging tijdstempel</string>
   <string name="settings_other">Overig</string>
   <string name="settings_version_title">Versie</string>
   <string name="settings_wipe_title">Verwijder alle tellers</string>
