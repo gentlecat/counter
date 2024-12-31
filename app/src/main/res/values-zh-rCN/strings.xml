@@ -32,6 +32,8 @@
   <string name="settings_keep_on_title">保持屏幕常亮</string>
   <string name="settings_keep_on_summary">在使用应用程序时保持屏幕常亮</string>
   <string name="settings_controls">控制</string>
+  <string name="settings_hide_controls_title">隐藏按钮</string>
+  <string name="settings_hide_controls_summary">您可能想要开启音量按钮或点击以增量选项</string>
   <string name="settings_sounds_title">开启音效</string>
   <string name="settings_sounds_summary">在数值更改时播放声音</string>
   <string name="settings_vibration_title">开启振动</string>
@@ -40,6 +42,7 @@
   <string name="settings_hard_summary">使用音量键更改计数</string>
   <string name="settings_label_increment_title">点击以增加计数</string>
   <string name="settings_label_increment_summary">点击当前计数值来 +1</string>
+  <string name="settings_hide_last_update_title">隐藏上次更改的时间戳</string>
   <string name="settings_other">其他</string>
   <string name="settings_version_title">版本</string>
   <string name="settings_wipe_title">移除所有计数器</string>
