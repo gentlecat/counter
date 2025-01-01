@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Счетчик \"{name}\" удален.</string>
   <string name="toast_unable_to_modify">Что-то пошло не так при обновлении счётчика. Извините!</string>
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
+  <string name="toast_tutorial">Попробуйте нажать на номер!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Первый счетчик</string>
 </resources>
