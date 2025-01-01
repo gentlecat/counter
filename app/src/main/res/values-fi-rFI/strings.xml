@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Laskuri \"{name}\" on poistettu.</string>
   <string name="toast_unable_to_modify">Jokin meni pieleen laskuria päivitettäessä. Anteeksi!</string>
   <string name="toast_unable_to_export">Jokin meni pieleen laskurin viennissä. Anteeksi!</string>
+  <string name="toast_tutorial">Yritä klikata numeroa!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ensimmäinen laskuri</string>
 </resources>
