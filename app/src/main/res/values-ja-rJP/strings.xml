@@ -60,6 +60,7 @@
   <string name="toast_delete_success">カウンター \"{name}\" が削除されました。</string>
   <string name="toast_unable_to_modify">カウンタ―の更新中に問題が発生しました。申し訳ありません!</string>
   <string name="toast_unable_to_export">カウンタ―のエクスポート中に問題が発生しました。申し訳ありません!</string>
+  <string name="toast_tutorial">数字をクリックしてみてください！</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新しいカウンター</string>
 </resources>
