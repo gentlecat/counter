@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Contador \"{name}\" foi excluído.</string>
   <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
   <string name="toast_unable_to_export">Algo deu errado ao exportar os contadores. Desculpe!</string>
+  <string name="toast_tutorial">Tente clicar no número!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Novo contador</string>
 </resources>
