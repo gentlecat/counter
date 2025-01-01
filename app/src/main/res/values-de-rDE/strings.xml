@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Zähler \"{name}\" wurde gelöscht.</string>
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
+  <string name="toast_tutorial">Klicke auf die Nummer!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Erster Zähler</string>
 </resources>
