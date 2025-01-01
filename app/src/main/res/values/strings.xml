@@ -67,6 +67,7 @@
   <string name="toast_delete_success">Counter \"{name}\" has been deleted.</string>
   <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
   <string name="toast_unable_to_export">Something went wrong while exporting the counters. Sorry!</string>
+  <string name="toast_tutorial">Try clicking on the number!</string>
 
   <!-- Other stuff -->
   <string name="default_counter_name">First counter</string>
