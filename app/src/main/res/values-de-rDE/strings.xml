@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Zähler</string>
-  <string name="last_update_timestamp">Zuletzt geändert am {timestamp}</string>
+  <string name="last_update_timestamp">Zuletzt geändert um {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Liste der Zähler öffnen</string>
   <string name="menu_add">Zähler hinzufügen</string>
@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Zähler \"{name}\" wurde gelöscht.</string>
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
+  <string name="toast_tutorial">Klicke auf die Nummer!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Erster Zähler</string>
 </resources>

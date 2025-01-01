@@ -60,6 +60,7 @@
   <string name="toast_delete_success">تم حذف العداد \"{name}\".</string>
   <string name="toast_unable_to_modify">حدث خطأ ما أثناء تحديث العداد. عذراً!</string>
   <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
+  <string name="toast_tutorial">حاول النقر على الرقم!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>
 </resources>

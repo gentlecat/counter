@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Počítadlo \"{name}\" bylo smazáno.</string>
   <string name="toast_unable_to_modify">Při aktualizaci čítače nastala chyba. Omlouváme se!</string>
   <string name="toast_unable_to_export">Při exportu počítadel nastala chyba. Omlouváme se!</string>
+  <string name="toast_tutorial">Zkuste kliknout na číslo!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">První počítadlo</string>
 </resources>

@@ -59,6 +59,7 @@
   <string name="toast_delete_success">计数器 \"{name}\" 已被删除。</string>
   <string name="toast_unable_to_modify">很抱歉，更新计数器时出现问题。</string>
   <string name="toast_unable_to_export">很抱歉，导出计数器时出现问题。</string>
+  <string name="toast_tutorial">尝试点击数字！</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新建计数器</string>
 </resources>

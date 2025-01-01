@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Räknaren \"{name}\" har tagits bort.</string>
   <string name="toast_unable_to_modify">Något gick fel när disken uppdaterades. Tyvärr!</string>
   <string name="toast_unable_to_export">Något gick fel när diskarna exporterades. Tyvärr!</string>
+  <string name="toast_tutorial">Prova att klicka på numret!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Första räknaren</string>
 </resources>

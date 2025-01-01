@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Counter \"{name}\" έχει διαγραφεί.</string>
   <string name="toast_unable_to_modify">Κάτι πήγε στραβά κατά την ενημέρωση του μετρητή. Συγγνώμη!</string>
   <string name="toast_unable_to_export">Κάτι πήγε στραβά κατά την εξαγωγή των μετρητών. Συγνώμη!</string>
+  <string name="toast_tutorial">Δοκίμασε να κάνεις κλικ στον αριθμό!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Πρώτος μετρητής</string>
 </resources>

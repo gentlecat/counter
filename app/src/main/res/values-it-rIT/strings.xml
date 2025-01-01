@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Il contatore \"{name}\" è stato rimosso.</string>
   <string name="toast_unable_to_modify">Qualcosa è andato storto durante l\'aggiornamento del contatore.</string>
   <string name="toast_unable_to_export">Qualcosa è andato storto durante l\'esportazione dei contatori.</string>
+  <string name="toast_tutorial">Prova a cliccare sul numero!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuovo contatore</string>
 </resources>

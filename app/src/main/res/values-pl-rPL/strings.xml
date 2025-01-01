@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Licznik \"{name}\" został usunięty.</string>
   <string name="toast_unable_to_modify">Coś poszło nie tak podczas aktualizacji licznika. Przepraszamy!</string>
   <string name="toast_unable_to_export">Coś poszło nie tak podczas eksportowania liczników. Przepraszamy!</string>
+  <string name="toast_tutorial">Spróbuj kliknąć na numer!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nowy licznik</string>
 </resources>

@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Teller \"{name}\" is verwijderd.</string>
   <string name="toast_unable_to_modify">Er ging iets mis tijdens het bijwerken van de teller. Sorry!</string>
   <string name="toast_unable_to_export">Er is iets mis gegaan tijdens het exporteren van de tellers. Sorry!</string>
+  <string name="toast_tutorial">Probeer te klikken op het nummer!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Voeg nieuwe teller toe</string>
 </resources>

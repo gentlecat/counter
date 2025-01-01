@@ -59,6 +59,7 @@
   <string name="toast_delete_success">Лічильник \"{name}\" видалено.</string>
   <string name="toast_unable_to_modify">Помилка при оновленні лічильника. Вибачте!</string>
   <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
+  <string name="toast_tutorial">Спробуйте натиснути на номер!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Перший лічильник</string>
 </resources>

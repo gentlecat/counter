@@ -60,6 +60,7 @@
   <string name="toast_delete_success">El contador «{name}» se ha eliminado.</string>
   <string name="toast_unable_to_modify">Algo ha salido mal al actualizar el contador. ¡Lo sentimos!</string>
   <string name="toast_unable_to_export">Algo ha salido mal al exportar los contadores. ¡Lo sentimos!</string>
+  <string name="toast_tutorial">¡Intenta hacer clic en el número!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuevo contador</string>
 </resources>
