@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 32 [WIP]
+
+* Added an option to hide some parts of the interface.
+
 ## Version 31
 
 * Default theme configuration has been fixed.
