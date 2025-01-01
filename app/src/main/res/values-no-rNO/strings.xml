@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Telling \"{name}\" har blitt slettet.</string>
   <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
   <string name="toast_unable_to_export">Noe gikk galt under eksport av tellingene. Beklager!</string>
+  <string name="toast_tutorial">Prøv å klikke på nummeret!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny teller</string>
 </resources>
