@@ -60,6 +60,7 @@
   <string name="toast_delete_success">Contorul „{name}” a fost șters.</string>
   <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
   <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
+  <string name="toast_tutorial">Încercați să faceți clic pe număr!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Primul contor</string>
 </resources>
