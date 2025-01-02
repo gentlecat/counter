@@ -68,12 +68,6 @@ class SharedPrefsCounterStorageTest {
             )
         )
             .thenReturn(timestampSharedPrefs)
-        Mockito.`when`(timestampSharedPrefs!!.edit()).thenReturn(timestampPrefsEditor)
-        Mockito.`when`(
-            timestampSharedPrefs.edit()
-                .putString(ArgumentMatchers.anyString(), ArgumentMatchers.anyString())
-        )
-            .thenReturn(timestampPrefsEditor)
 
         systemUnderTest = SharedPrefsCounterStorage(
             context,
