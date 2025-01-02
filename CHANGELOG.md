@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 32 [WIP]
+## Version 32
 
 * Added an option to hide some parts of the interface.
 
