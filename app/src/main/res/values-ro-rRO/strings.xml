@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Contor</string>
-  <string name="last_update_timestamp">Ultima modificare la {timestamp}</string>
+  <string name="last_update_timestamp">Ultima modificare efectuată la {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Deschide lista de contoare</string>
   <string name="menu_add">Adaugă contor</string>
@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">Păstrează ecranul pornit în timp ce aplicația este activă</string>
   <string name="settings_controls">Comenzi</string>
   <string name="settings_hide_controls_title">Ascunde butoanele</string>
-  <string name="settings_hide_controls_summary">Poate doriţi să activaţi utilizarea butoanelor de volum sau opţiunea \"atingeți pentru incrementalitate\"</string>
+  <string name="settings_hide_controls_summary">Poate dorești să activezi utilizarea butoanelor de volum sau să atingi opțiunea increment</string>
   <string name="settings_sounds_title">Pornește sunetele</string>
   <string name="settings_sounds_summary">Redă sunete la schimbarea valorilor</string>
   <string name="settings_vibration_title">Pornește vibrația</string>
@@ -43,7 +43,7 @@
   <string name="settings_hard_summary">Modifică valoarea contorului folosind butoanele de volum</string>
   <string name="settings_label_increment_title">Atinge valoarea pentru a o crește</string>
   <string name="settings_label_increment_summary">Crește un contor prin atingerea valorii curente</string>
-  <string name="settings_hide_last_update_title">Ascunde ultima modificare de marcaj de timp</string>
+  <string name="settings_hide_last_update_title">Ascunde marcajul temporal al ultimei modificări</string>
   <string name="settings_other">Altele</string>
   <string name="settings_version_title">Versiune</string>
   <string name="settings_wipe_title">Elimină toate contoarele</string>
@@ -60,7 +60,7 @@
   <string name="toast_delete_success">Contorul „{name}” a fost șters.</string>
   <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
   <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
-  <string name="toast_tutorial">Încercați să faceți clic pe număr!</string>
+  <string name="toast_tutorial">Încearcă să dai clic pe număr!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Primul contor</string>
 </resources>
