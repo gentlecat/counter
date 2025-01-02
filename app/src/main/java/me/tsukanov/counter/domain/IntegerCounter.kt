@@ -43,7 +43,7 @@ class IntegerCounter : Counter<Int> {
             throw InvalidNameException("Provided name is invalid")
         }
         this.name = name
-        this.lastUpdatedDate = DateTime()
+        this.lastUpdatedDate = null
     }
 
     constructor(name: String, value: Int) {

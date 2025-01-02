@@ -19,6 +19,7 @@ import me.tsukanov.counter.domain.IntegerCounter
 import me.tsukanov.counter.domain.IntegerCounter.Companion.valueCharLimit
 import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.view.CounterFragment
+import org.joda.time.DateTime
 import java.util.Objects
 
 class EditDialog : DialogFragment() {
@@ -74,8 +75,8 @@ class EditDialog : DialogFragment() {
 
                     val storage = CounterApplication.component!!.localStorage()
 
+                    storage!!.write(IntegerCounter(newName!!, newValue, DateTime()))
                     storage!!.delete(oldName!!)
-                    storage!!.write(IntegerCounter(newName!!, newValue))
                     BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName)
                 }
                 .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)
