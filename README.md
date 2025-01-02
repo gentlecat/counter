@@ -1,13 +1,8 @@
 # Counter
 
-🚧 **This app is in maintenance mode.** Do not expect new functionality. You are free to make pull
-requests with new features or bug fixes.
-
----
-
 Counter is a *simple* [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It
 makes counting easier. You can have multiple counters with their own names and values. Values can be
-changed using the volume buttons.
+changed using the volume buttons. There's a way to export all your data in CSV format.
 
 **Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
 and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).**
@@ -26,4 +21,4 @@ Huge thanks to all [contributors](https://github.com/gentlecat/counter/contribut
 and [translators](https://crowdin.net/project/simple-counter).
 
 * Application icon made by @armand-leguillou
-* Sounds from [adobeflash.com](https://www.adobeflash.com/download/sounds/clicks/)
+* Sounds from [adobeflash.com](https://web.archive.org/web/20160412220948/https://www.adobeflash.com/download/sounds/clicks/)
