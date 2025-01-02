@@ -1,14 +1,4 @@
-# Built application files
-*.apk
-*.ap_
-*.aab
-
-# Java class files
-*.class
-
-# Generated files
+# Generated stuff
 /build
-bin/
-gen/
-gen-external-apklibs/
-target/
+/debug
+/release
