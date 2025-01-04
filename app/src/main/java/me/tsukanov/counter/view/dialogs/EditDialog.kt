@@ -75,8 +75,9 @@ class EditDialog : DialogFragment() {
 
                     val storage = CounterApplication.component!!.localStorage()
 
-                    storage!!.write(IntegerCounter(newName!!, newValue, DateTime()))
                     storage!!.delete(oldName!!)
+                    storage!!.write(IntegerCounter(newName!!, newValue, DateTime()))
+
                     BroadcastHelper(requireContext()).sendSelectCounterBroadcast(newName)
                 }
                 .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)

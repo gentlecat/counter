@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 33
+
+* Fixed counter editing regression.
+
 ## Version 32
 
 * Added an option to hide some parts of the interface.
