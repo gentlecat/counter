@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 34 [WIP]
+
+* Edit dialog now allows entering negative numbers.
+
 ## Version 33
 
 * Fixed counter editing regression.

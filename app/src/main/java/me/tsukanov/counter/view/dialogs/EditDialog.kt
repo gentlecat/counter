@@ -1,5 +1,6 @@
 package me.tsukanov.counter.view.dialogs
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface
@@ -8,7 +9,6 @@ import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
 import android.util.Log
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
@@ -20,10 +20,10 @@ import me.tsukanov.counter.domain.IntegerCounter.Companion.valueCharLimit
 import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.view.CounterFragment
 import org.joda.time.DateTime
-import java.util.Objects
 
 class EditDialog : DialogFragment() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val oldName = requireArguments().getString(BUNDLE_ARGUMENT_NAME)
         val oldValue = requireArguments().getInt(BUNDLE_ARGUMENT_VALUE)
@@ -37,7 +37,7 @@ class EditDialog : DialogFragment() {
 
         val valueInput = dialogView.findViewById<EditText>(R.id.edit_value)
         valueInput.setText(oldValue.toString())
-        valueInput.inputType = EditorInfo.TYPE_CLASS_NUMBER
+
         val valueFilter = arrayOfNulls<InputFilter>(1)
         valueFilter[0] = LengthFilter(valueCharLimit)
         valueInput.filters = valueFilter
