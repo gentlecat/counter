@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Counter</string>
+  <string name="last_update_timestamp">Востаннє змінено {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Відкрити навігацію</string>
   <string name="menu_add">Додати лічильник</string>
