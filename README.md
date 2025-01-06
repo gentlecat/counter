@@ -1,16 +1,13 @@
 # Counter
 
-🚧 **This app is in maintenance mode.** Do not expect new functionality. You are free to make pull
-requests with new features or bug fixes.
+Simple [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It makes counting easier!
+You can have multiple counters with their own names and values. Values can be changed using the volume buttons
+or by tapping on the screen. All your data can be exported in CSV format.
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80" />](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80" />](https://f-droid.org/packages/me.tsukanov.counter)
 
 ---
-
-Counter is a *simple* [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It
-makes counting easier. You can have multiple counters with their own names and values. Values can be
-changed using the volume buttons.
-
-**Counter is available on [Play Store](https://play.google.com/store/apps/details?id=me.tsukanov.counter)
-and [F-Droid](https://f-droid.org/repository/browse/?fdid=me.tsukanov.counter).**
 
 <img src="resources/screenshots/5_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/1_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/2_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/3_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/4_framed.png" width="150" />
 
