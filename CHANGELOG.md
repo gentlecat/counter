@@ -1,8 +1,9 @@
 # Changelog
 
-## Version 34 [WIP]
+## Version 34
 
 * Edit dialog now allows entering negative numbers.
+* Updated translations.
 
 ## Version 33
 
