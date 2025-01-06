@@ -254,22 +254,26 @@ class CounterFragment : Fragment() {
     private fun updateInterface() {
         counterLabel!!.text = counter!!.value.toString()
 
-        if (counter!!.lastUpdatedDate != null) {
-            val formattedTimestamp =
-                counter!!.lastUpdatedDate!!.toString(
-                    DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
-                        .withLocale(Locale.getDefault())
-                )
-            updateTimestampLabel!!.text = StringSubstitutor.replace(
-                resources.getText(R.string.last_update_timestamp),
-                Map.of("timestamp", formattedTimestamp),
-                "{",
-                "}"
-            )
-        }
-
         incrementButton!!.isEnabled = counter!!.value < IntegerCounter.MAX_VALUE
         decrementButton!!.isEnabled = counter!!.value > IntegerCounter.MIN_VALUE
+
+        if (counter!!.lastUpdatedDate != null) {
+            try {
+                val formattedTimestamp =
+                    counter!!.lastUpdatedDate!!.toString(
+                        DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
+                            .withLocale(Locale.getDefault())
+                    )
+                updateTimestampLabel!!.text = StringSubstitutor.replace(
+                    resources.getText(R.string.last_update_timestamp),
+                    Map.of("timestamp", formattedTimestamp),
+                    "{",
+                    "}"
+                )
+            } catch (e: IllegalStateException) {
+                Log.e(TAG, "Failed to change last updated date", e)
+            }
+        }
     }
 
     private fun saveValue() {
