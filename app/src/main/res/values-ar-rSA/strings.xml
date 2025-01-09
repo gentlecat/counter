@@ -4,7 +4,7 @@
   <string name="app_name">العداد</string>
   <string name="last_update_timestamp">آخر تغيير في {timestamp}</string>
   <!-- Menu -->
-  <string name="menu_counters_list">فتح قائمة التنقل</string>
+  <string name="menu_counters_list">عداد بسيط، سهل الاستعمال، خالي من الإعلانات</string>
   <string name="menu_add">إضافة عداد</string>
   <string name="menu_reset">إعادة ضبط العداد</string>
   <string name="menu_edit">تحرير العداد</string>
@@ -15,8 +15,8 @@
   <string name="dialog_edit_title">تحرير هذا العداد</string>
   <string name="dialog_delete_title">هل تريد حقاً حذف هذا العداد؟</string>
   <string name="dialog_reset_title">هل حقاً تريد إعادة ضبط هذا العداد؟</string>
-  <string name="dialog_edit_name">العنوان:</string>
-  <string name="dialog_edit_value">القيمة:</string>
+  <string name="dialog_edit_name">العنوان</string>
+  <string name="dialog_edit_value">القيمة</string>
   <string name="dialog_button_add">إضافة</string>
   <string name="dialog_button_apply">تطبيق</string>
   <string name="dialog_button_reset">إعادة ضبط العداد</string>
