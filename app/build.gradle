@@ -33,7 +33,7 @@ dependencies {
 
     compileOnly 'javax.annotation:jsr250-api:1.0'
 
-    kapt 'com.google.dagger:dagger-compiler:2.53'
+    kapt 'com.google.dagger:dagger-compiler:2.55'
     kapt 'com.google.dagger:dagger-android-processor:2.53'
     api 'com.google.dagger:dagger-android-support:2.53'
     api 'com.google.dagger:dagger-android:2.53'
