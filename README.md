@@ -9,7 +9,7 @@ Simple [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android.
 
 ---
 
-<img src="resources/screenshots/5_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/1_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/2_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/3_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="resources/screenshots/4_framed.png" width="150" />
+<img src="metadata/en-US/images/phoneScreenshotsFramed/5_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="metadata/en-US/images/phoneScreenshotsFramed/1_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="metadata/en-US/images/phoneScreenshotsFramed/2_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="metadata/en-US/images/phoneScreenshotsFramed/3_framed.png" width="150" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="metadata/en-US/images/phoneScreenshotsFramed/4_framed.png" width="150" />
 
 ## Contributing
 
