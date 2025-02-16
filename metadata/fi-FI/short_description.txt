@@ -1,1 +1,1 @@
-Yksinkertainen täysin laskuri Androidille. Se tekee laskusta helpompaa!
+Tally counter joka tekee laskusta helpompaa.
