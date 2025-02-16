@@ -1,0 +1,1 @@
+Simple tally counter for Android. It makes counting easier!
