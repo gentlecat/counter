@@ -1,1 +1,1 @@
-Enkelt telteller for Android. Den gjør telling lettere!
+Delt teller som gjør telling lettere.
