@@ -1,0 +1,5 @@
+Semplice contatore tally per Android. Facilita il conteggio!
+
+È possibile avere più contatori con i propri nomi e valori. I valori possono essere modificati utilizzando i pulsanti del volume o toccando lo schermo.
+
+Tutti i tuoi dati possono essere esportati in formato CSV.
