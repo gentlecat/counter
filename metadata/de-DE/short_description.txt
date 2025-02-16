@@ -1,1 +1,1 @@
-Einfacher Zähler für Android. Es macht das Zählen einfacher!
+Tally counter was das Zählen einfacher macht.
