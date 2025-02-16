@@ -1,0 +1,1 @@
+Simpel tæller til Android. Det gør tælle lettere!
