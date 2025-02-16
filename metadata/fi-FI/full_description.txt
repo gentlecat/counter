@@ -1,0 +1,5 @@
+Yksinkertainen täysin laskuri Androidille. Se tekee laskusta helpompaa!
+
+Sinulla voi olla useita laskureita omilla nimillä ja arvoilla. Arvoja voidaan muuttaa käyttämällä äänenvoimakkuuden painikkeita tai napauttamalla näyttöä.
+
+Kaikki tietosi voidaan viedä CSV-muodossa.

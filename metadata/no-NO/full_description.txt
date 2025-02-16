@@ -1,0 +1,5 @@
+Enkelt telteller for Android. Den gjør telling lettere!
+
+Du kan ha flere tellere med egne navn og verdier. Verdier kan endres ved å bruke volumknappene eller ved å trykke på skjermen.
+
+Alle dataene dine kan eksporteres i CSV-format.

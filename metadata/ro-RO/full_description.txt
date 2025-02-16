@@ -1,0 +1,5 @@
+Contor simplu pentru Android. Face numărătoarea mai ușoară!
+
+Poți avea mai multe contoare cu propriile nume și valori. Valorile pot fi modificate folosind butoanele de volum sau atingând ecranul.
+
+Toate datele dvs. pot fi exportate în format CSV.

@@ -1,0 +1,1 @@
+Tally contatore che rende il conteggio più facile.

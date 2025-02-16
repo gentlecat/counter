@@ -1,0 +1,1 @@
+Tally counter joka tekee laskusta helpompaa.

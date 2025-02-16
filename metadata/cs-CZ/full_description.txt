@@ -1,0 +1,5 @@
+Jednoduché počítadlo pro Android. Snadno to počítá!
+
+Můžete mít více počitadel s vlastními jmény a hodnotami. Hodnoty lze změnit pomocí tlačítek hlasitosti nebo klepnutím na obrazovku.
+
+Všechna vaše data mohou být exportována ve formátu CSV.
