@@ -1,1 +1,1 @@
-Prosty licznik dla Androida. To ułatwia liczebność!
+Rozlicznik który ułatwia liczenie.
