@@ -1,0 +1,1 @@
+Einfacher Zähler für Android. Es macht das Zählen einfacher!
