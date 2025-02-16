@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 35
+
+* Updated translations.
+
 ## Version 34
 
 * Edit dialog now allows entering negative numbers.
