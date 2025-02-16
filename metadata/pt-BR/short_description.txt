@@ -1,0 +1,1 @@
+Contador simples para Android. Torna a contagem mais fácil!
