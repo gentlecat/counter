@@ -1,1 +1,1 @@
-Enkel tally räknare för Android. Det gör det lättare att räkna!
+Tally räknare som gör räkningen enklare.
