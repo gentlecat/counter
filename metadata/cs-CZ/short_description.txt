@@ -1,1 +1,1 @@
-Jednoduché počítadlo pro Android. Snadno to počítá!
+Tally počitadlo, které usnadňuje počítání.
