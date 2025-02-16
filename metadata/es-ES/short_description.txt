@@ -1,0 +1,1 @@
+Contador de cuentas simple para Android. ¡Esto hace que el recuento sea más fácil!
