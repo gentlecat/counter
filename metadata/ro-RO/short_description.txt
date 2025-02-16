@@ -1,1 +1,1 @@
-Contor simplu pentru Android. Face numărătoarea mai ușoară!
+Contor care face numărătoarea mai uşoară.
