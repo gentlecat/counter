@@ -1,0 +1,5 @@
+Contador de cuentas simple para Android. ¡Esto hace que el recuento sea más fácil!
+
+Puedes tener varios contadores con sus propios nombres y valores. Los valores se pueden cambiar usando los botones de volumen o pulsando en la pantalla.
+
+Todos sus datos pueden ser exportados en formato CSV.
