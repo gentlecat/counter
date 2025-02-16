@@ -1,1 +1,1 @@
-Semplice contatore tally per Android. Facilita il conteggio!
+Tally contatore che rende il conteggio più facile.
