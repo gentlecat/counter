@@ -3,3 +3,5 @@ files:
     translation: /app/src/main/res/values-%android_code%/%original_file_name%
     translate_attributes: 0
     content_segmentation: 0
+  - source: /metadata/en-US/*.txt
+    translation: /metadata/%locale%/%original_file_name%
