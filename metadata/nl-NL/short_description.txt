@@ -1,1 +1,1 @@
-Eenvoudige teller voor Android. Het wordt makkelijker om te tellen!
+Tally teller die het tellen makkelijker maakt.
