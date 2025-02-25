@@ -1,5 +1,3 @@
-Eenvoudige teller voor Android. Het wordt makkelijker om te tellen!
-
 Je kunt meerdere tellers hebben met hun eigen namen en waarden. Waarden kunnen worden gewijzigd met behulp van de volumeknoppen of door op het scherm te tikken.
 
 Al uw gegevens kunnen worden geëxporteerd in CSV-formaat.
