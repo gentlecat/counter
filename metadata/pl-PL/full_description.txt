@@ -1,5 +1,3 @@
-Prosty licznik dla Androida. To ułatwia liczebność!
-
 Możesz mieć wiele liczników z ich własnymi nazwami i wartościami. Wartości można zmieniać za pomocą przycisków głośności lub poprzez dotknięcie ekranu.
 
 Wszystkie Twoje dane mogą być eksportowane w formacie CSV.
