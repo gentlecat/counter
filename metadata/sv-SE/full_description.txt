@@ -1,5 +1,3 @@
-Enkel tally räknare för Android. Det gör det lättare att räkna!
-
 Du kan ha flera räknare med egna namn och värden. Värden kan ändras med hjälp av volymknapparna eller genom att trycka på skärmen.
 
 Alla dina data kan exporteras i CSV-format.
