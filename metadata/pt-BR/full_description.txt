@@ -1,5 +1,3 @@
-Contador simples para Android. Torna a contagem mais fácil!
-
 Você pode ter vários contadores com seus próprios nomes e valores. Os valores podem ser alterados usando os botões de volume ou tocando na tela.
 
 Todos os seus dados podem ser exportados em formato CSV.
