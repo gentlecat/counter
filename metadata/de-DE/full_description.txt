@@ -1,5 +1,3 @@
-Einfacher Zähler für Android. Es macht das Zählen einfacher!
-
 Sie können mehrere Zähler mit eigenen Namen und Werten haben. Werte können über die Lautstärketasten oder durch Tippen auf den Bildschirm geändert werden.
 
 Alle Ihre Daten können im CSV-Format exportiert werden.

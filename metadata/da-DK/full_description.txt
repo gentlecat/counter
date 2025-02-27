@@ -1,5 +1,3 @@
-Simpel tæller til Android. Det gør tælle lettere!
-
 Du kan have flere tællere med deres egne navne og værdier. Værdier kan ændres ved hjælp af lydstyrkeknapperne eller ved at trykke på skærmen.
 
 Alle dine data kan eksporteres i CSV-format.

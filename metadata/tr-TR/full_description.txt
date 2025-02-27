@@ -1,5 +1,3 @@
-Simple tally counter for Android. It makes counting easier!
-
 You can have multiple counters with their own names and values. Values can be changed using the volume buttons or by tapping on the screen.
 
 All your data can be exported in CSV format.
