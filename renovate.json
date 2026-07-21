@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>renovate-bot/config"],
+  "packageRules": [
+    {
+      "description": "Dagger artifacts must share one version, or kapt fails",
+      "matchPackageNames": ["com.google.dagger:**"],
+      "groupName": "Dagger"
+    }
+  ]
+}
