@@ -1,5 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "dependencyDashboard": false
+  "dependencyDashboard": false,
+  "packageRules": [
+    {
+      "description": "Auto-merge everything but major bumps once checks pass",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true
+    }
+  ]
 }
