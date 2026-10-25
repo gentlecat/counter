@@ -1,14 +1,12 @@
 buildscript {
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.13.2'
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.13'
         classpath 'com.puppycrawl.tools:checkstyle:10.26.1'
     }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.android.legacy-kapt'
 
 apply plugin: 'idea'
 
@@ -47,15 +45,15 @@ dependencies {
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk = rootProject.ext.compileSdkVersion
 
     compileOptions.incremental = false
 
     buildFeatures.buildConfig = true
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.compileSdkVersion
+        minSdk = rootProject.ext.minSdkVersion
+        targetSdk = rootProject.ext.targetSdkVersion
 
         namespace 'me.tsukanov.counter'
         applicationId 'me.tsukanov.counter'
@@ -69,14 +67,13 @@ android {
 
     buildTypes {
         release {
-            debuggable false
-            jniDebuggable false
-            renderscriptDebuggable false
-            pseudoLocalesEnabled false
+            debuggable = false
+            jniDebuggable = false
+            pseudoLocalesEnabled = false
 
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources = true
+            minifyEnabled = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -90,10 +87,6 @@ android {
             returnDefaultValues = true
             includeAndroidResources = true
         }
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
     }
 
 }
