@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Cancel superseded pull request runs, but never a run on main.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   build:
     # Android build-tools (aapt2) only ship x86_64 Linux binaries.
@@ -21,17 +26,30 @@ jobs:
         with:
           java-version: '17'
           distribution: 'corretto'
-          cache: gradle
 
       - name: Set Up Android SDK
         uses: https://github.com/android-actions/setup-android@v4
 
+      # Caches the Gradle distribution and dependencies. Only main writes the
+      # cache, so pull requests restore it without overwriting it. The
+      # configuration cache is not saved, as that needs a secret encryption
+      # key. The dependency graph and job summary need GitHub APIs.
+      - name: Set Up Gradle
+        uses: https://github.com/gradle/actions/setup-gradle@v5.0.2
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+          dependency-graph: disabled
+          add-job-summary: never
+
       # gradle.properties gives the daemon 8 GB, and the Kotlin daemon inherits
       # it. Together with R8 and the test workers that's more than the runner
       # has, so the daemon gets killed. Use less memory and compile in-process.
+      # Instead of `build`, build only the release variant (the debug APK is
+      # never used) and run unit tests, lint and SpotBugs once. Checkstyle runs
+      # as a dependency of `preBuild`.
       - name: Build with Gradle
         run: >-
-          ./gradlew build
+          ./gradlew assembleRelease testDebugUnitTest lintRelease spotbugsRelease
           -Dorg.gradle.jvmargs=-Xmx3g
           -Pkotlin.compiler.execution.strategy=in-process
           --max-workers=2
