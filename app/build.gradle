@@ -40,7 +40,7 @@ dependencies {
     api 'com.google.dagger:dagger:2.60.1'
 
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.17.0'
+    testImplementation 'org.mockito:mockito-core:5.24.0'
 
     // For some reason without this build fails with duplicate classes exception.
     implementation(platform('org.jetbrains.kotlin:kotlin-bom:2.1.21'))
