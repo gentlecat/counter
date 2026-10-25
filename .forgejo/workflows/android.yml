@@ -26,5 +26,12 @@ jobs:
       - name: Set Up Android SDK
         uses: https://github.com/android-actions/setup-android@v4
 
+      # gradle.properties gives the daemon 8 GB, and the Kotlin daemon inherits
+      # it. Together with R8 and the test workers that's more than the runner
+      # has, so the daemon gets killed. Use less memory and compile in-process.
       - name: Build with Gradle
-        run: ./gradlew build
+        run: >-
+          ./gradlew build
+          -Dorg.gradle.jvmargs=-Xmx3g
+          -Pkotlin.compiler.execution.strategy=in-process
+          --max-workers=2
