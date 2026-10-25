@@ -6,6 +6,11 @@
       "description": "Dagger artifacts must share one version, or kapt fails",
       "matchPackageNames": ["com.google.dagger:**"],
       "groupName": "Dagger"
+    },
+    {
+      "description": "androidx.core 1.19 needs compileSdk 37 and Android Gradle plugin 9.1; remove once the build is on AGP 9",
+      "matchPackageNames": ["androidx.core:**"],
+      "allowedVersions": "<1.19.0"
     }
   ]
 }
