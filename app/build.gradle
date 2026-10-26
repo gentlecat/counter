@@ -1,7 +1,7 @@
 buildscript {
     dependencies {
         classpath 'com.github.spotbugs.snom:spotbugs-gradle-plugin:6.5.13'
-        classpath 'com.puppycrawl.tools:checkstyle:10.26.1'
+        classpath 'com.puppycrawl.tools:checkstyle:14.3.0'
     }
 }
 
