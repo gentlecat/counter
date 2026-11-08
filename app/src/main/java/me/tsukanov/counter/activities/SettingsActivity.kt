@@ -17,7 +17,6 @@ class SettingsActivity :
     AppCompatActivity(),
     Preference.OnPreferenceChangeListener,
     OnSharedPreferenceChangeListener {
-
     private var sharedPrefs: SharedPreferences? = null
     private var settingsFragment: SettingsFragment? = null
 
@@ -57,13 +56,9 @@ class SettingsActivity :
         sharedPrefs!!.unregisterOnSharedPreferenceChangeListener(this)
     }
 
-    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-        return false
-    }
+    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean = false
 
-    override fun onSharedPreferenceChanged(
-        sharedPreferences: SharedPreferences, key: String?
-    ) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         if (key != null && key == SharedPrefKeys.THEME.key) {
             val pref = settingsFragment!!.findPreference<Preference>(SharedPrefKeys.THEME.key)
             if (pref != null) {

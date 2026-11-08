@@ -10,7 +10,6 @@ import org.joda.time.DateTime
  * of counters are always [String].
  */
 class IntegerCounter : Counter<Int> {
-
     override var name: String = ""
         @Throws(InvalidNameException::class)
         set(newName) {
@@ -27,8 +26,10 @@ class IntegerCounter : Counter<Int> {
                 throw InvalidValueException(
                     String.format(
                         "Desired value (%s) is outside of allowed range: %s to %s",
-                        newValue, MIN_VALUE, MAX_VALUE
-                    )
+                        newValue,
+                        MIN_VALUE,
+                        MAX_VALUE,
+                    ),
                 )
             }
             field = newValue
@@ -56,8 +57,10 @@ class IntegerCounter : Counter<Int> {
             throw InvalidValueException(
                 String.format(
                     "Desired value (%s) is outside of allowed range: %s to %s",
-                    value, MIN_VALUE, MAX_VALUE
-                )
+                    value,
+                    MIN_VALUE,
+                    MAX_VALUE,
+                ),
             )
         }
         this.value = value
@@ -75,8 +78,10 @@ class IntegerCounter : Counter<Int> {
             throw InvalidValueException(
                 String.format(
                     "Desired value (%s) is outside of allowed range: %s to %s",
-                    value, MIN_VALUE, MAX_VALUE
-                )
+                    value,
+                    MIN_VALUE,
+                    MAX_VALUE,
+                ),
             )
         }
         this.value = value
@@ -116,20 +121,16 @@ class IntegerCounter : Counter<Int> {
         const val MIN_VALUE: Int = -100000000 + 1
         private const val DEFAULT_VALUE = 0
 
+        /**
+         * Provides max number of characters that would fit within the [IntegerCounter] value
+         * limits.
+         */
         @JvmStatic
         val valueCharLimit: Int
-            /**
-             * Provides max number of characters that would fit within the [IntegerCounter] value
-             * limits.
-             */
             get() = MAX_VALUE.toString().length - 1
 
-        private fun isValidName(name: String): Boolean {
-            return name.isNotEmpty()
-        }
+        private fun isValidName(name: String): Boolean = name.isNotEmpty()
 
-        private fun isValidValue(value: Int): Boolean {
-            return value in MIN_VALUE..MAX_VALUE
-        }
+        private fun isValidValue(value: Int): Boolean = value in MIN_VALUE..MAX_VALUE
     }
 }

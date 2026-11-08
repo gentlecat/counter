@@ -22,7 +22,6 @@ import me.tsukanov.counter.view.CounterFragment
 import org.joda.time.DateTime
 
 class EditDialog : DialogFragment() {
-
     @SuppressLint("SetTextI18n")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val oldName = requireArguments().getString(BUNDLE_ARGUMENT_NAME)
@@ -47,7 +46,7 @@ class EditDialog : DialogFragment() {
                 .setView(dialogView)
                 .setTitle(getString(R.string.dialog_edit_title))
                 .setPositiveButton(
-                    resources.getText(R.string.dialog_button_apply)
+                    resources.getText(R.string.dialog_button_apply),
                 ) { d: DialogInterface?, which: Int ->
                     var newName: String? = nameInput.text.toString().trim { it <= ' ' }
                     if (newName!!.isEmpty()) {
@@ -64,7 +63,7 @@ class EditDialog : DialogFragment() {
                             Toast.makeText(
                                 activity,
                                 resources.getText(R.string.toast_unable_to_modify),
-                                Toast.LENGTH_SHORT
+                                Toast.LENGTH_SHORT,
                             )
                                 .show()
                             newValue = CounterFragment.DEFAULT_VALUE
@@ -86,7 +85,7 @@ class EditDialog : DialogFragment() {
         dialog.setCanceledOnTouchOutside(true)
         dialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.WRAP_CONTENT,
         )
 
         return dialog
@@ -109,5 +108,4 @@ class EditDialog : DialogFragment() {
             return dialog
         }
     }
-
 }

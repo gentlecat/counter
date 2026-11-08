@@ -31,7 +31,6 @@ import me.tsukanov.counter.view.CountersListFragment
 import me.tsukanov.counter.view.Themes.Companion.initCurrentTheme
 
 class MainActivity : AppCompatActivity() {
-
     private var toolbar: MaterialToolbar? = null
     private var navigationLayout: DrawerLayout? = null
     private var sharedPrefs: SharedPreferences? = null
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             context,
             CounterChangeReceiver(),
             counterSelectionFilter,
-            ContextCompat.RECEIVER_EXPORTED
+            ContextCompat.RECEIVER_EXPORTED,
         )
     }
 
@@ -154,24 +153,22 @@ class MainActivity : AppCompatActivity() {
         prefsEditor.commit()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                if (isNavigationOpen) {
-                    closeNavigation()
-                } else {
-                    openDrawer()
-                }
-                true
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        android.R.id.home -> {
+            if (isNavigationOpen) {
+                closeNavigation()
+            } else {
+                openDrawer()
             }
-
-            R.id.menu_settings -> {
-                startActivity(Intent(this, SettingsActivity::class.java))
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
+            true
         }
+
+        R.id.menu_settings -> {
+            startActivity(Intent(this, SettingsActivity::class.java))
+            true
+        }
+
+        else -> super.onOptionsItemSelected(item)
     }
 
     private val isNavigationOpen: Boolean
@@ -191,8 +188,9 @@ class MainActivity : AppCompatActivity() {
             Log.d(
                 TAG,
                 String.format(
-                    "Received counter change broadcast. Switching to counter \"%s\"", counterName
-                )
+                    "Received counter change broadcast. Switching to counter \"%s\"",
+                    counterName,
+                ),
             )
             switchCounter(counterName!!)
         }

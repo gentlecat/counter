@@ -16,9 +16,8 @@ import me.tsukanov.counter.domain.DaggerCounterApplicationComponent
 import javax.inject.Inject
 
 class CounterApplication : Application() {
-
     companion object {
-        var PACKAGE_NAME: String? = null
+        var appPackageName: String? = null
 
         var component: CounterApplicationComponent? = null
             private set
@@ -37,7 +36,7 @@ class CounterApplication : Application() {
 
         initFirstUse()
 
-        PACKAGE_NAME = applicationContext.packageName
+        appPackageName = applicationContext.packageName
 
         DynamicColors.applyToActivitiesIfAvailable(this)
     }
@@ -45,7 +44,6 @@ class CounterApplication : Application() {
     private fun initFirstUse() {
         val wasAppUsed = component!!.localStorage()!!.readAll(false).isNotEmpty()
         if (!wasAppUsed) {
-
             // Hide controls if this this is the first time the app is used.
             PreferenceManager.getDefaultSharedPreferences(this).edit()
                 .putBoolean(SharedPrefKeys.HIDE_CONTROLS.key, true)
@@ -56,8 +54,6 @@ class CounterApplication : Application() {
                 delay(3_000)
                 Toast.makeText(this@CounterApplication, R.string.toast_tutorial, Toast.LENGTH_LONG).show()
             }
-
         }
     }
-
 }

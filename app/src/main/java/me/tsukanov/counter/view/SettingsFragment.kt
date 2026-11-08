@@ -19,17 +19,15 @@ import org.apache.commons.lang3.StringUtils
 import java.io.IOException
 
 class SettingsFragment : PreferenceFragmentCompat() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         try {
-
             val sharedPrefs =
                 PreferenceManager.getDefaultSharedPreferences(this.requireActivity())
             findPreference<Preference>(SharedPrefKeys.THEME.key)
                 ?.setSummary(
-                    resources.getString(getCurrent(sharedPrefs).labelId)
+                    resources.getString(getCurrent(sharedPrefs).labelId),
                 )
 
             findPreference<Preference>(KEY_VERSION)!!.summary =
@@ -45,8 +43,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     startActivity(
                         Intent(
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://counter.roman.zone?utm_source=app")
-                        )
+                            Uri.parse("https://counter.roman.zone?utm_source=app"),
+                        ),
                     )
                     true
                 }
@@ -56,12 +54,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     startActivity(
                         Intent(
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://counter.roman.zone/tip?utm_source=app")
-                        )
+                            Uri.parse("https://counter.roman.zone/tip?utm_source=app"),
+                        ),
                     )
                     true
                 }
-
         } catch (e: NullPointerException) {
             Log.e(TAG, "Unable to retrieve one of the preferences", e)
         }
@@ -101,12 +98,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 Log.e(
                     TAG,
                     "Error occurred while exporting counters",
-                    e
+                    e,
                 )
                 Toast.makeText(
                     this.activity,
                     resources.getText(R.string.toast_unable_to_export),
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_SHORT,
                 )
                     .show()
             }
@@ -117,18 +114,18 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val builder = AlertDialog.Builder(this.activity)
         builder.setMessage(R.string.settings_wipe_confirmation)
         builder.setPositiveButton(
-            R.string.settings_wipe_confirmation_yes
+            R.string.settings_wipe_confirmation_yes,
         ) { dialog: DialogInterface?, id: Int ->
             CounterApplication.component!!.localStorage()!!.wipe()
             Toast.makeText(
                 this.activity,
                 resources.getText(R.string.toast_wipe_success),
-                Toast.LENGTH_SHORT
+                Toast.LENGTH_SHORT,
             )
                 .show()
         }
         builder.setNegativeButton(
-            R.string.dialog_button_cancel
+            R.string.dialog_button_cancel,
         ) { dialog: DialogInterface, id: Int -> dialog.dismiss() }
 
         builder.create().show()
@@ -139,7 +136,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val exportIntent = Intent()
         exportIntent.setAction(Intent.ACTION_SEND)
         exportIntent.putExtra(
-            Intent.EXTRA_TEXT, CounterApplication.component!!.localStorage()!!.toCsv()
+            Intent.EXTRA_TEXT,
+            CounterApplication.component!!.localStorage()!!.toCsv(),
         )
         exportIntent.setType("text/csv")
 

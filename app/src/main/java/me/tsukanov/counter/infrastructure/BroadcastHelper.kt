@@ -6,7 +6,6 @@ import android.util.Log
 import me.tsukanov.counter.CounterApplication
 
 class BroadcastHelper(private val context: Context) {
-
     private fun sendBroadcast(intent: Intent) {
         context.sendBroadcast(intent)
     }
@@ -27,14 +26,14 @@ class BroadcastHelper(private val context: Context) {
 
         Log.d(
             TAG,
-            String.format("Sending counter selection broadcast [counterName=%s]", counterName)
+            String.format("Sending counter selection broadcast [counterName=%s]", counterName),
         )
     }
 
     companion object {
         @JvmField
         val EXTRA_COUNTER_NAME: String =
-            String.format("%s.EXTRA_COUNTER_NAME", CounterApplication.PACKAGE_NAME)
+            String.format("%s.EXTRA_COUNTER_NAME", CounterApplication.appPackageName)
 
         private val TAG: String = BroadcastHelper::class.java.simpleName
     }

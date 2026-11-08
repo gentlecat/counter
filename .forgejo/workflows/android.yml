@@ -44,12 +44,11 @@ jobs:
       # gradle.properties gives the daemon 8 GB, and the Kotlin daemon inherits
       # it. Together with R8 and the test workers that's more than the runner
       # has, so the daemon gets killed. Use less memory and compile in-process.
-      # Instead of `build`, build only the release variant (the debug APK is
-      # never used) and run unit tests, lint and SpotBugs once. Checkstyle runs
-      # as a dependency of `preBuild`.
+      # Instead of `build`, check the formatting, build only the release
+      # variant (the debug APK is never used), and run unit tests and lint once.
       - name: Build with Gradle
         run: >-
-          ./gradlew assembleRelease testDebugUnitTest lintRelease spotbugsRelease
+          ./gradlew spotlessCheck assembleRelease testDebugUnitTest lintRelease
           -Dorg.gradle.jvmargs=-Xmx3g
           -Pkotlin.compiler.execution.strategy=in-process
           --max-workers=2

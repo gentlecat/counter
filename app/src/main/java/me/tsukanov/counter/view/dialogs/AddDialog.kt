@@ -20,7 +20,6 @@ import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.view.CounterFragment
 
 class AddDialog : DialogFragment() {
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val activity = activity as MainActivity?
 
@@ -38,7 +37,7 @@ class AddDialog : DialogFragment() {
                 .setView(dialogView)
                 .setTitle(getString(R.string.dialog_add_title))
                 .setPositiveButton(
-                    resources.getText(R.string.dialog_button_add)
+                    resources.getText(R.string.dialog_button_add),
                 ) { d: DialogInterface?, which: Int ->
                     var name = nameInput.text.toString().trim { it <= ' ' }
                     if (name.isEmpty()) {
@@ -55,7 +54,7 @@ class AddDialog : DialogFragment() {
                             Toast.makeText(
                                 activity,
                                 resources.getText(R.string.toast_unable_to_modify),
-                                Toast.LENGTH_SHORT
+                                Toast.LENGTH_SHORT,
                             )
                                 .show()
                             value = CounterFragment.DEFAULT_VALUE
@@ -71,7 +70,7 @@ class AddDialog : DialogFragment() {
         dialog.setCanceledOnTouchOutside(true)
         dialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.WRAP_CONTENT,
         )
 
         return dialog
@@ -99,5 +98,4 @@ class AddDialog : DialogFragment() {
     companion object {
         val TAG: String = AddDialog::class.java.simpleName
     }
-
 }

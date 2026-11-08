@@ -20,17 +20,13 @@ import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.view.dialogs.AddDialog
 
 class CountersListFragment : ListFragment() {
-
     private var listAdapter: CountersListAdapter? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
 
-        @SuppressLint("InflateParams") val view = inflater.inflate(R.layout.menu, null)
+        @SuppressLint("InflateParams")
+        val view = inflater.inflate(R.layout.menu, null)
 
         val addButton = view.findViewById<LinearLayout>(R.id.add_counter)
         addButton.setOnClickListener { v: View? -> showAddDialog() }
@@ -51,13 +47,11 @@ class CountersListFragment : ListFragment() {
             requireActivity().application,
             UpdateReceiver(),
             counterSetChangeFilter,
-            ContextCompat.RECEIVER_EXPORTED
+            ContextCompat.RECEIVER_EXPORTED,
         )
     }
 
-    override fun onListItemClick(
-        lv: ListView, v: View, position: Int, id: Long
-    ) {
+    override fun onListItemClick(lv: ListView, v: View, position: Int, id: Long) {
         BroadcastHelper(this.requireContext())
             .sendSelectCounterBroadcast(listAdapter!!.getItem(position)!!.name)
     }

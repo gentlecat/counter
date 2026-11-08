@@ -34,7 +34,6 @@ import java.util.Locale
 import java.util.Map
 
 class CounterFragment : Fragment() {
-
     /** Name is used as a key to look up and modify counter value in storage.  */
     private var name: String? = null
 
@@ -94,7 +93,7 @@ class CounterFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        /* Setting up sounds */
+        // Setting up sounds
         incrementSoundPlayer = MediaPlayer.create(context, R.raw.increment_sound)
         decrementSoundPlayer = MediaPlayer.create(context, R.raw.decrement_sound)
     }
@@ -108,9 +107,7 @@ class CounterFragment : Fragment() {
         decrementSoundPlayer!!.release()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.counter, container, false)
 
         counterLabel = view.findViewById(R.id.counterLabel)
@@ -122,14 +119,14 @@ class CounterFragment : Fragment() {
         decrementButton!!.setOnClickListener { v: View? -> decrement() }
 
         if (sharedPrefs!!.getBoolean(SharedPrefKeys.HIDE_CONTROLS.key, false)) {
-            incrementButton!!.visibility = View.GONE;
-            decrementButton!!.visibility = View.GONE;
+            incrementButton!!.visibility = View.GONE
+            decrementButton!!.visibility = View.GONE
         }
 
         updateTimestampLabel = view.findViewById(R.id.updateTimestampLabel)
 
         if (sharedPrefs!!.getBoolean(SharedPrefKeys.HIDE_LAST_UPDATE.key, false)) {
-            updateTimestampLabel!!.visibility = View.GONE;
+            updateTimestampLabel!!.visibility = View.GONE
         }
 
         view.findViewById<View>(R.id.counterFrame)
@@ -198,13 +195,13 @@ class CounterFragment : Fragment() {
                 .setMessage(resources.getText(R.string.dialog_reset_title))
                 .setCancelable(false)
                 .setPositiveButton(
-                    resources.getText(R.string.dialog_button_reset)
+                    resources.getText(R.string.dialog_button_reset),
                 ) { d: DialogInterface?, id: Int -> reset() }
                 .setNegativeButton(resources.getText(R.string.dialog_button_cancel), null)
                 .create()
         dialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.WRAP_CONTENT,
         )
         dialog.show()
     }
@@ -262,13 +259,13 @@ class CounterFragment : Fragment() {
                 val formattedTimestamp =
                     counter!!.lastUpdatedDate!!.toString(
                         DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
-                            .withLocale(Locale.getDefault())
+                            .withLocale(Locale.getDefault()),
                     )
                 updateTimestampLabel!!.text = StringSubstitutor.replace(
                     resources.getText(R.string.last_update_timestamp),
                     Map.of("timestamp", formattedTimestamp),
                     "{",
-                    "}"
+                    "}",
                 )
             } catch (e: IllegalStateException) {
                 Log.e(TAG, "Failed to change last updated date", e)

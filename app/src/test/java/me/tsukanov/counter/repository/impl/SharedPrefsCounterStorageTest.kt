@@ -22,7 +22,6 @@ import java.util.HashMap
 
 @RunWith(MockitoJUnitRunner::class)
 class SharedPrefsCounterStorageTest {
-
     companion object {
         private const val DEFAULT_COUNTER_NAME = "Test counter"
     }
@@ -52,26 +51,27 @@ class SharedPrefsCounterStorageTest {
         Mockito.`when`(
             context!!.getSharedPreferences(
                 ArgumentMatchers.eq("counters"),
-                ArgumentMatchers.anyInt()
-            )
+                ArgumentMatchers.anyInt(),
+            ),
         ).thenReturn(countersSharedPrefs)
         Mockito.`when`(countersSharedPrefs!!.edit()).thenReturn(countersPrefsEditor)
         Mockito.`when`(
             countersSharedPrefs.edit()
-                .putInt(ArgumentMatchers.anyString(), ArgumentMatchers.anyInt())
+                .putInt(ArgumentMatchers.anyString(), ArgumentMatchers.anyInt()),
         ).thenReturn(countersPrefsEditor)
 
         Mockito.`when`(
             context.getSharedPreferences(
                 ArgumentMatchers.eq("update-timestamps"),
-                ArgumentMatchers.anyInt()
-            )
+                ArgumentMatchers.anyInt(),
+            ),
         )
             .thenReturn(timestampSharedPrefs)
 
         systemUnderTest = SharedPrefsCounterStorage(
             context,
-            broadcastHelper!!, DEFAULT_COUNTER_NAME
+            broadcastHelper!!,
+            DEFAULT_COUNTER_NAME,
         )
     }
 
@@ -109,8 +109,8 @@ class SharedPrefsCounterStorageTest {
             ImmutableList.of(
                 IntegerCounter("First counter", 0),
                 IntegerCounter("Second counter", 1),
-                IntegerCounter("Third counter", -1)
-            )
+                IntegerCounter("Third counter", -1),
+            ),
         )
 
         Mockito.verify(countersPrefsEditor)!!.clear()
@@ -159,7 +159,7 @@ class SharedPrefsCounterStorageTest {
             "first","0",""
             "second, ok","-1",""
             """.trimIndent() + "\n",
-            output
+            output,
         )
 
         Mockito.verify(countersSharedPrefs).all

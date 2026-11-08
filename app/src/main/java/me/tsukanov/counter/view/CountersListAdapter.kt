@@ -10,9 +10,7 @@ import android.widget.TextView
 import me.tsukanov.counter.R
 import me.tsukanov.counter.domain.IntegerCounter
 
-internal class CountersListAdapter(context: Context) :
-    ArrayAdapter<IntegerCounter?>(context, 0) {
-
+internal class CountersListAdapter(context: Context) : ArrayAdapter<IntegerCounter?>(context, 0) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var convertView = convertView
         if (convertView == null) {

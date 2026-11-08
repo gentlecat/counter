@@ -11,21 +11,15 @@ import javax.inject.Singleton
 
 @Module
 class CounterModule(private val app: CounterApplication) {
+    @Provides
+    @Singleton
+    fun provideApp(): CounterApplication = app
 
     @Provides
     @Singleton
-    fun provideApp(): CounterApplication {
-        return app
-    }
-
-    @Provides
-    @Singleton
-    fun provideCounterStorage(app: CounterApplication): CounterStorage<IntegerCounter> {
-        return SharedPrefsCounterStorage(
-            app,
-            BroadcastHelper(app),
-            app.resources.getText(R.string.default_counter_name) as String
-        )
-    }
-
+    fun provideCounterStorage(app: CounterApplication): CounterStorage<IntegerCounter> = SharedPrefsCounterStorage(
+        app,
+        BroadcastHelper(app),
+        app.resources.getText(R.string.default_counter_name) as String,
+    )
 }

@@ -5,7 +5,6 @@ import me.tsukanov.counter.domain.exception.InvalidValueException
 import org.joda.time.DateTime
 
 interface Counter<T> {
-
     @set:Throws(InvalidNameException::class)
     var name: String
 

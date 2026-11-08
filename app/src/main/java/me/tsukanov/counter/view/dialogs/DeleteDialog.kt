@@ -22,7 +22,7 @@ class DeleteDialog : DialogFragment() {
                 .setMessage(resources.getText(R.string.dialog_delete_title))
                 .setCancelable(false)
                 .setPositiveButton(
-                    resources.getText(R.string.dialog_button_delete)
+                    resources.getText(R.string.dialog_button_delete),
                 ) { dialog: DialogInterface?, id: Int ->
                     val storage =
                         CounterApplication.component!!.localStorage()
@@ -34,9 +34,9 @@ class DeleteDialog : DialogFragment() {
                             resources.getText(R.string.toast_delete_success),
                             Map.of("name", name),
                             "{",
-                            "}"
+                            "}",
                         ),
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_SHORT,
                     )
                         .show()
 
@@ -48,7 +48,7 @@ class DeleteDialog : DialogFragment() {
                 .create()
         deleteDialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.WRAP_CONTENT,
         )
 
         return deleteDialog

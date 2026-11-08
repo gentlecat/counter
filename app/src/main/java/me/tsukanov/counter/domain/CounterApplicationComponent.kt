@@ -12,10 +12,8 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         CounterModule::class,
-    ]
+    ],
 )
 interface CounterApplicationComponent : AndroidInjector<CounterApplication?> {
-
     fun localStorage(): CounterStorage<IntegerCounter?>?
-
 }

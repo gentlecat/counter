@@ -27,9 +27,8 @@ import java.util.LinkedList
 class SharedPrefsCounterStorage(
     context: Context,
     private val broadcastHelper: BroadcastHelper,
-    private val defaultCounterName: String
+    private val defaultCounterName: String,
 ) : CounterStorage<IntegerCounter> {
-
     private val values: SharedPreferences =
         context.getSharedPreferences(VALUES_FILE_NAME, Context.MODE_PRIVATE)
     private val updateTimestamps: SharedPreferences =
@@ -51,13 +50,14 @@ class SharedPrefsCounterStorage(
             for ((key, value) in valuesMap) {
                 val updateTimestampStr = updateTimestamps.getString(key, null)
                 val updateTimestamp =
-                    if (updateTimestampStr != null)
+                    if (updateTimestampStr != null) {
                         DateTime.parse(updateTimestampStr, TIMESTAMP_FORMATTER)
-                    else
+                    } else {
                         null
+                    }
 
                 counters.add(
-                    IntegerCounter(key, (value as Int?)!!, updateTimestamp)
+                    IntegerCounter(key, (value as Int?)!!, updateTimestamp),
                 )
             }
             counters.sortWith { x: IntegerCounter, y: IntegerCounter -> x.name.compareTo(y.name) }
@@ -81,9 +81,7 @@ class SharedPrefsCounterStorage(
         throw MissingCounterException(String.format("Unable find counter: %s", name))
     }
 
-    override fun first(): IntegerCounter {
-        return readAll(true)[0]
-    }
+    override fun first(): IntegerCounter = readAll(true)[0]
 
     /**
      * Saves provided counter in storage. If it's identifier is already defined, existing counter will
@@ -150,10 +148,11 @@ class SharedPrefsCounterStorage(
                 csvPrinter.printRecord(
                     c.name,
                     c.value,
-                    if (c.lastUpdatedDate != null)
+                    if (c.lastUpdatedDate != null) {
                         c.lastUpdatedDate!!.toString(TIMESTAMP_FORMATTER)
-                    else
+                    } else {
                         ""
+                    },
                 )
             }
             return output.toString()

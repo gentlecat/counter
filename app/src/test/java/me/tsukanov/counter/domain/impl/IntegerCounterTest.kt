@@ -6,7 +6,6 @@ import org.junit.Assert
 import org.junit.Test
 
 class IntegerCounterTest {
-
     companion object {
         private const val DEFAULT_NAME = "Test name"
     }
@@ -65,5 +64,4 @@ class IntegerCounterTest {
         counter.decrement()
         Assert.assertEquals(-3, counter.value.toLong())
     }
-
 }

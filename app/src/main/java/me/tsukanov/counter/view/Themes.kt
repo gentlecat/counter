@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatDelegate
 import me.tsukanov.counter.R
 import me.tsukanov.counter.SharedPrefKeys
 
-enum class Themes(private val identifier: String, val labelId: Int) {
+enum class Themes(
+    private val identifier: String,
+    val labelId: Int,
+) {
     LIGHT("light", R.string.settings_theme_light),
     DARK("dark", R.string.settings_theme_dark),
     AUTO("auto", R.string.settings_theme_auto_battery),
-    SYSTEM("system", R.string.settings_theme_system);
+    SYSTEM("system", R.string.settings_theme_system),
+    ;
 
     companion object {
         fun getCurrent(sharedPrefs: SharedPreferences): Themes {

@@ -14,6 +14,15 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.diffplug.spotless' version '8.11.0'
+}
+
+// Where Spotless downloads ktlint from.
+repositories {
+    mavenCentral()
+}
+
 subprojects {
 
     buildscript {
@@ -45,6 +54,28 @@ ext {
     appVersion = 35
 }
 
-tasks.register('clean', Delete) {
-    delete getLayout().getBuildDirectory()
+// ktlint's own code style, with trailing commas and one parameter per line. The same settings are in
+// .editorconfig for editors, but Spotless only reads them from here.
+def ktlintStyle = [
+    'ktlint_code_style'                                                                       : 'ktlint_official',
+    'max_line_length'                                                                         : '120',
+    'ktlint_function_naming_ignore_when_annotated_with'                                       : 'Composable',
+    // Keeps `val x = foo(` and `= flow {` on one line.
+    'ktlint_standard_multiline-expression-wrapping'                                           : 'disabled',
+    'ktlint_function_signature_body_expression_wrapping'                                      : 'default',
+    // A class with two or more parameters, or a function with five or more, puts each on its own line.
+    'ktlint_class_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than'   : '2',
+    'ktlint_function_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than': '5',
+    'ktlint_standard_chain-method-continuation'                                               : 'disabled',
+    'ktlint_standard_when-entry-bracing'                                                      : 'disabled',
+]
+
+// `./gradlew spotlessApply` formats the Kotlin code, and `spotlessCheck`, which CI runs, fails if
+// anything is left to format.
+spotless {
+    kotlin {
+        target '**/*.kt'
+        targetExclude '**/build/**'
+        ktlint('1.8.0').editorConfigOverride(ktlintStyle)
+    }
 }
