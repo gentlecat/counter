@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         // Since there's no way to keep track of these events from the fragment side, we have to pass
         // them to it for processing.
-        return super.onKeyDown(keyCode, event) || selectedCounterFragment!!.onKeyDown(keyCode)
+        return super.onKeyDown(keyCode, event) || selectedCounterFragment!!.onKeyDown(keyCode, event)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

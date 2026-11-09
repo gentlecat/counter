@@ -145,7 +145,11 @@ class CounterFragment : Fragment() {
         inflater.inflate(R.menu.counter_menu, menu)
     }
 
-    fun onKeyDown(keyCode: Int): Boolean {
+    fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        // Holding a volume key repeats it; count only the first press, like a mechanical counter
+        if (event.repeatCount > 0) {
+            return isCountingKey(keyCode)
+        }
         when (keyCode) {
             KeyEvent.KEYCODE_VOLUME_UP -> {
                 if (sharedPrefs!!.getBoolean(SharedPrefKeys.HARDWARE_BTN_CONTROL_ON.key, true)) {
@@ -166,6 +170,10 @@ class CounterFragment : Fragment() {
             else -> return false
         }
     }
+
+    private fun isCountingKey(keyCode: Int): Boolean =
+        (keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) &&
+            sharedPrefs!!.getBoolean(SharedPrefKeys.HARDWARE_BTN_CONTROL_ON.key, true)
 
     @SuppressLint("NonConstantResourceId")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
