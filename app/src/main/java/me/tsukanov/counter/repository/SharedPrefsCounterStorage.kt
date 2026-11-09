@@ -9,8 +9,6 @@ import me.tsukanov.counter.domain.exception.CounterException
 import me.tsukanov.counter.infrastructure.Actions
 import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.repository.exceptions.MissingCounterException
-import org.apache.commons.csv.CSVFormat
-import org.apache.commons.csv.CSVPrinter
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 import org.joda.time.format.DateTimeFormatter
@@ -140,24 +138,7 @@ class SharedPrefsCounterStorage(
     }
 
     @Throws(IOException::class)
-    override fun toCsv(): String {
-        val output = StringBuilder()
-        CSVPrinter(output, CSVFormat.POSTGRESQL_CSV).use { csvPrinter ->
-            csvPrinter.printRecord("Name", "Value", "Last Update")
-            for (c in readAll(false)) {
-                csvPrinter.printRecord(
-                    c.name,
-                    c.value,
-                    if (c.lastUpdatedDate != null) {
-                        c.lastUpdatedDate!!.toString(TIMESTAMP_FORMATTER)
-                    } else {
-                        ""
-                    },
-                )
-            }
-            return output.toString()
-        }
-    }
+    override fun toCsv(): String = CounterCsv.write(readAll(false))
 
     companion object {
         private val TAG: String = SharedPrefsCounterStorage::class.java.simpleName

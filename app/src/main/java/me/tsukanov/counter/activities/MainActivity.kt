@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
@@ -16,6 +17,7 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.IntentCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.MaterialToolbar
@@ -27,6 +29,7 @@ import me.tsukanov.counter.infrastructure.Actions
 import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.repository.exceptions.MissingCounterException
 import me.tsukanov.counter.view.CounterFragment
+import me.tsukanov.counter.view.CounterImport
 import me.tsukanov.counter.view.CountersListFragment
 import me.tsukanov.counter.view.Themes.Companion.initCurrentTheme
 
@@ -52,6 +55,24 @@ class MainActivity : AppCompatActivity() {
 
         navigationLayout = findViewById(R.id.mainNavigationLayout)
         menuFrame = findViewById(R.id.mainMenuFrame)
+
+        if (savedInstanceState == null) {
+            importSharedFile(intent)
+        }
+    }
+
+    /** Imports counters from a CSV file opened with or shared to the app. */
+    private fun importSharedFile(intent: Intent) {
+        val uri =
+            when (intent.action) {
+                Intent.ACTION_VIEW -> intent.data
+                Intent.ACTION_SEND -> IntentCompat.getParcelableExtra(intent, Intent.EXTRA_STREAM, Uri::class.java)
+                else -> null
+            } ?: return
+        CounterImport(this) {
+            initCountersList()
+            switchCounter(findActiveCounter()!!.name)
+        }.start(uri)
     }
 
     private fun registerIntentReceivers(context: Context) {

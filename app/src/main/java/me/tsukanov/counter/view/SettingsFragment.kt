@@ -1,6 +1,8 @@
 package me.tsukanov.counter.view
 
 import android.app.AlertDialog
+import android.content.ActivityNotFoundException
+import android.content.ComponentName
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -8,17 +10,26 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import me.tsukanov.counter.CounterApplication
 import me.tsukanov.counter.R
 import me.tsukanov.counter.SharedPrefKeys
+import me.tsukanov.counter.activities.MainActivity
 import me.tsukanov.counter.view.Themes.Companion.getCurrent
 import org.apache.commons.lang3.StringUtils
 import java.io.IOException
 
 class SettingsFragment : PreferenceFragmentCompat() {
+    private val importFilePicker =
+        registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
+            if (uri != null) {
+                CounterImport(requireActivity()).start(uri)
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,6 +53,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 onRemoveCountersClickListener
             findPreference<Preference>(KEY_EXPORT_COUNTERS)!!.onPreferenceClickListener =
                 onExportClickListener
+            findPreference<Preference>(KEY_IMPORT_COUNTERS)!!.onPreferenceClickListener =
+                Preference.OnPreferenceClickListener { p: Preference? ->
+                    try {
+                        importFilePicker.launch(CounterImport.CSV_MIME_TYPES)
+                    } catch (e: ActivityNotFoundException) {
+                        Log.e(TAG, "No app to pick a file with", e)
+                        Toast.makeText(activity, R.string.toast_unable_to_import, Toast.LENGTH_SHORT).show()
+                    }
+                    true
+                }
 
             findPreference<Preference>(KEY_HOMEPAGE)!!.onPreferenceClickListener =
                 Preference.OnPreferenceClickListener { p: Preference? ->
@@ -169,6 +190,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         val shareIntent =
             Intent.createChooser(exportIntent, resources.getText(R.string.settings_export_title))
+        // The app accepts shared CSV files for import, so it shouldn't offer itself here
+        shareIntent.putExtra(
+            Intent.EXTRA_EXCLUDE_COMPONENTS,
+            arrayOf(ComponentName(requireContext(), MainActivity::class.java)),
+        )
         startActivity(shareIntent)
     }
 
@@ -182,6 +208,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         const val KEY_RESET_COUNTERS: String = "resetCounters"
         const val KEY_REMOVE_COUNTERS: String = "removeCounters"
         const val KEY_EXPORT_COUNTERS: String = "exportCounters"
+        const val KEY_IMPORT_COUNTERS: String = "importCounters"
         const val KEY_HOMEPAGE: String = "homepage"
         const val KEY_TIP: String = "tip"
         const val KEY_VERSION: String = "version"

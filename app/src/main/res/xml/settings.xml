@@ -71,6 +71,11 @@
         android:summary="@string/settings_export_summary"
         android:title="@string/settings_export_title" />
     <Preference
+        android:icon="@drawable/ic_import"
+        android:key="importCounters"
+        android:summary="@string/settings_import_summary"
+        android:title="@string/settings_import_title" />
+    <Preference
         android:icon="@drawable/ic_tip"
         android:key="tip"
         android:summary="@string/settings_tip_summary"

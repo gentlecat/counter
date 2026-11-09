@@ -56,6 +56,8 @@
   <string name="settings_wipe_title">Remove all counters</string>
   <string name="settings_export_title">Export counters</string>
   <string name="settings_export_summary">Export all counters in CSV format</string>
+  <string name="settings_import_title">Import counters</string>
+  <string name="settings_import_summary">Add counters from an exported CSV file</string>
   <string name="settings_tip_title">Buy me a coffee</string>
   <string name="settings_tip_summary">Support the creator of this app</string>
   <string name="settings_homepage_title">Homepage</string>
@@ -65,12 +67,27 @@
   <string name="settings_reset_all_confirmation">Do you really want to reset all counters?</string>
   <string name="settings_reset_all_confirmation_yes">Reset all</string>
 
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d counter in the file already exists here. Replace it with the value from the file?</item>
+    <item quantity="other">%d counters in the file already exist here. Replace them with the values from the file?</item>
+  </plurals>
+  <string name="import_clash_replace">Replace</string>
+  <string name="import_clash_keep">Keep current</string>
+  <string name="import_summary_title">Import finished</string>
+  <string name="import_summary_added">Added: %d</string>
+  <string name="import_summary_replaced">Replaced: %d</string>
+  <string name="import_summary_kept">Kept current: %d</string>
+  <string name="import_summary_invalid">Rows that couldn\'t be read: %d</string>
+  <string name="import_nothing_found">No counters found in this file.</string>
+
   <!-- Toasts -->
   <string name="toast_wipe_success">All counters have been deleted.</string>
   <string name="toast_reset_all_success">All counters have been reset.</string>
   <string name="toast_delete_success">Counter \"{name}\" has been deleted.</string>
   <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
   <string name="toast_unable_to_export">Something went wrong while exporting the counters. Sorry!</string>
+  <string name="toast_unable_to_import">Something went wrong while reading the file. Sorry!</string>
   <string name="toast_tutorial">Try clicking on the number!</string>
 
   <!-- Other stuff -->
