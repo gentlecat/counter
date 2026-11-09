@@ -33,6 +33,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
             findPreference<Preference>(KEY_VERSION)!!.summary =
                 appVersion
 
+            findPreference<Preference>(KEY_RESET_COUNTERS)!!.onPreferenceClickListener =
+                Preference.OnPreferenceClickListener { p: Preference? ->
+                    showResetAllDialog()
+                    true
+                }
             findPreference<Preference>(KEY_REMOVE_COUNTERS)!!.onPreferenceClickListener =
                 onRemoveCountersClickListener
             findPreference<Preference>(KEY_EXPORT_COUNTERS)!!.onPreferenceClickListener =
@@ -131,6 +136,27 @@ class SettingsFragment : PreferenceFragmentCompat() {
         builder.create().show()
     }
 
+    private fun showResetAllDialog() {
+        AlertDialog.Builder(this.activity)
+            .setMessage(R.string.settings_reset_all_confirmation)
+            .setPositiveButton(R.string.settings_reset_all_confirmation_yes) { dialog: DialogInterface?, id: Int ->
+                val storage = CounterApplication.component!!.localStorage()!!
+                for (counter in storage.readAll(false).filterNotNull()) {
+                    counter.reset()
+                    storage.write(counter)
+                }
+                Toast.makeText(
+                    this.activity,
+                    resources.getText(R.string.toast_reset_all_success),
+                    Toast.LENGTH_SHORT,
+                )
+                    .show()
+            }
+            .setNegativeButton(R.string.dialog_button_cancel) { dialog: DialogInterface, id: Int -> dialog.dismiss() }
+            .create()
+            .show()
+    }
+
     @Throws(IOException::class)
     private fun export() {
         val exportIntent = Intent()
@@ -153,6 +179,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     companion object {
         private val TAG: String = SettingsFragment::class.java.simpleName
 
+        const val KEY_RESET_COUNTERS: String = "resetCounters"
         const val KEY_REMOVE_COUNTERS: String = "removeCounters"
         const val KEY_EXPORT_COUNTERS: String = "exportCounters"
         const val KEY_HOMEPAGE: String = "homepage"

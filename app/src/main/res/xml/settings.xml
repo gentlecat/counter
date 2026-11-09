@@ -58,6 +58,10 @@
 
   <PreferenceCategory android:title="@string/settings_other">
     <Preference
+        android:icon="@drawable/ic_reset"
+        android:key="resetCounters"
+        android:title="@string/settings_reset_all_title" />
+    <Preference
         android:icon="@drawable/ic_delete"
         android:key="removeCounters"
         android:title="@string/settings_wipe_title" />

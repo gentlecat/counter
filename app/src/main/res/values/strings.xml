@@ -52,6 +52,7 @@
   <string name="settings_hide_last_update_title">Hide the last change timestamp</string>
   <string name="settings_other">Other</string>
   <string name="settings_version_title">Version</string>
+  <string name="settings_reset_all_title">Reset all counters</string>
   <string name="settings_wipe_title">Remove all counters</string>
   <string name="settings_export_title">Export counters</string>
   <string name="settings_export_summary">Export all counters in CSV format</string>
@@ -61,9 +62,12 @@
   <string name="settings_homepage_summary">App info and the source code</string>
   <string name="settings_wipe_confirmation">Do you really want to remove all counters?</string>
   <string name="settings_wipe_confirmation_yes">Remove all</string>
+  <string name="settings_reset_all_confirmation">Do you really want to reset all counters?</string>
+  <string name="settings_reset_all_confirmation_yes">Reset all</string>
 
   <!-- Toasts -->
   <string name="toast_wipe_success">All counters have been deleted.</string>
+  <string name="toast_reset_all_success">All counters have been reset.</string>
   <string name="toast_delete_success">Counter \"{name}\" has been deleted.</string>
   <string name="toast_unable_to_modify">Something went wrong while updating the counter. Sorry!</string>
   <string name="toast_unable_to_export">Something went wrong while exporting the counters. Sorry!</string>
