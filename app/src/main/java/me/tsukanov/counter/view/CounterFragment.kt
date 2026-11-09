@@ -11,11 +11,13 @@ import android.media.SoundPool
 import android.os.Bundle
 import android.os.Vibrator
 import android.util.Log
+import android.view.GestureDetector
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -33,6 +35,7 @@ import org.apache.commons.text.StringSubstitutor
 import org.joda.time.format.DateTimeFormat
 import java.util.Locale
 import java.util.Map
+import kotlin.math.abs
 
 class CounterFragment : Fragment() {
     /** Name is used as a key to look up and modify counter value in storage.  */
@@ -137,17 +140,69 @@ class CounterFragment : Fragment() {
             updateTimestampLabel!!.visibility = View.GONE
         }
 
-        view.findViewById<View>(R.id.counterFrame)
-            .setOnClickListener { v: View? ->
-                if (sharedPrefs!!.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.key, true)) {
-                    increment()
-                }
-            }
+        setUpCounterFrame(view.findViewById(R.id.counterFrame))
 
         updateInterface()
 
         return view
     }
+
+    /** Tapping the number adds one, swiping up or down adds or subtracts one, and a long press offers a reset. */
+    @SuppressLint("ClickableViewAccessibility") // Taps and long presses go through performClick and performLongClick
+    private fun setUpCounterFrame(counterFrame: View) {
+        counterFrame.setOnClickListener { v: View? ->
+            if (isLabelControlOn) {
+                increment()
+            }
+        }
+        counterFrame.setOnLongClickListener { v: View? ->
+            if (isLabelControlOn) {
+                showResetConfirmationDialog()
+            }
+            isLabelControlOn
+        }
+
+        var longPressed = false
+        val gestureDetector =
+            GestureDetector(
+                requireContext(),
+                object : GestureDetector.SimpleOnGestureListener() {
+                    override fun onSingleTapUp(e: MotionEvent): Boolean = counterFrame.performClick()
+
+                    override fun onLongPress(e: MotionEvent) {
+                        longPressed = counterFrame.performLongClick()
+                    }
+                },
+            )
+        // Otherwise the second of two quick taps would count as a double tap instead of a tap
+        gestureDetector.setOnDoubleTapListener(null)
+
+        val swipeDistance = SWIPE_DISTANCE_DP * resources.displayMetrics.density
+        var downX = 0f
+        var downY = 0f
+        counterFrame.setOnTouchListener { v: View, event: MotionEvent ->
+            when (event.actionMasked) {
+                MotionEvent.ACTION_DOWN -> {
+                    downX = event.x
+                    downY = event.y
+                    longPressed = false
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    val dx = event.x - downX
+                    val dy = event.y - downY
+                    if (!longPressed && isLabelControlOn && abs(dy) > swipeDistance && abs(dy) > abs(dx)) {
+                        if (dy > 0) decrement() else increment()
+                    }
+                }
+            }
+            gestureDetector.onTouchEvent(event)
+            true
+        }
+    }
+
+    private val isLabelControlOn: Boolean
+        get() = sharedPrefs!!.getBoolean(SharedPrefKeys.LABEL_CONTROL_ON.key, true)
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.counter_menu, menu)
@@ -320,6 +375,7 @@ class CounterFragment : Fragment() {
         const val DEFAULT_VALUE: Int = 0
         private const val DEFAULT_VIBRATION_DURATION: Long = 30 // Milliseconds
         private const val MAX_SOUND_STREAMS = 4
+        private const val SWIPE_DISTANCE_DP = 48
 
         private const val STATE_SELECTED_COUNTER_NAME = "SELECTED_COUNTER_NAME"
     }
