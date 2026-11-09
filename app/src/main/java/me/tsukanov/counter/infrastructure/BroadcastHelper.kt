@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import me.tsukanov.counter.CounterApplication
+import me.tsukanov.counter.widget.CounterWidget
 
 class BroadcastHelper(private val context: Context) {
     private fun sendBroadcast(intent: Intent) {
@@ -15,6 +16,11 @@ class BroadcastHelper(private val context: Context) {
         intent.setAction(action.actionName)
         intent.addCategory(Intent.CATEGORY_DEFAULT)
         sendBroadcast(intent)
+
+        if (action == Actions.COUNTER_SET_CHANGE) {
+            // Home screen widgets show counter values too
+            CounterWidget.updateAll(context)
+        }
     }
 
     fun sendSelectCounterBroadcast(counterName: String) {

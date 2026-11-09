@@ -18,6 +18,7 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
+import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.MaterialToolbar
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             importSharedFile(intent)
         }
+        selectCounterFromIntent(intent)
     }
 
     /** Imports counters from a CSV file opened with or shared to the app. */
@@ -73,6 +75,19 @@ class MainActivity : AppCompatActivity() {
             initCountersList()
             switchCounter(findActiveCounter()!!.name)
         }.start(uri)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        selectCounterFromIntent(intent)
+    }
+
+    /** Opens the counter named in the intent, such as the one a home screen widget shows. */
+    private fun selectCounterFromIntent(intent: Intent) {
+        val counterName = intent.getStringExtra(BroadcastHelper.EXTRA_COUNTER_NAME) ?: return
+        // onResume opens the active counter
+        sharedPrefs!!.edit { putString(SharedPrefKeys.ACTIVE_COUNTER.key, counterName) }
     }
 
     private fun registerIntentReceivers(context: Context) {

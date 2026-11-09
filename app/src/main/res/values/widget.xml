@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="widget_radius">16dp</dimen>
+  <color name="widget_background">@color/md_theme_light_surface</color>
+  <color name="widget_name">@color/md_theme_light_onSurfaceVariant</color>
+  <color name="widget_value">@color/md_theme_light_onSurface</color>
+  <color name="widget_button">@color/md_theme_light_primaryContainer</color>
+  <color name="widget_button_icon">@color/md_theme_light_onPrimaryContainer</color>
+</resources>

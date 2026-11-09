@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="widget_background">@color/md_theme_dark_surface</color>
+  <color name="widget_name">@color/md_theme_dark_onSurfaceVariant</color>
+  <color name="widget_value">@color/md_theme_dark_onSurface</color>
+  <color name="widget_button">@color/md_theme_dark_primaryContainer</color>
+  <color name="widget_button_icon">@color/md_theme_dark_onPrimaryContainer</color>
+</resources>

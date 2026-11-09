@@ -81,6 +81,15 @@
   <string name="import_summary_invalid">Rows that couldn\'t be read: %d</string>
   <string name="import_nothing_found">No counters found in this file.</string>
 
+  <!-- Home screen widget -->
+  <string name="widget_description">Count from your home screen</string>
+  <string name="widget_configure_title">Choose a counter</string>
+  <string name="widget_counter_removed">Counter removed. Tap to choose another.</string>
+  <string name="widget_increment">Increment</string>
+  <string name="widget_decrement">Decrement</string>
+  <string name="widget_preview_name">Laps</string>
+  <string name="widget_preview_value" translatable="false">42</string>
+
   <!-- Toasts -->
   <string name="toast_wipe_success">All counters have been deleted.</string>
   <string name="toast_reset_all_success">All counters have been reset.</string>

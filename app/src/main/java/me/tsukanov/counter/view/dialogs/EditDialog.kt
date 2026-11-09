@@ -19,6 +19,7 @@ import me.tsukanov.counter.domain.IntegerCounter
 import me.tsukanov.counter.domain.IntegerCounter.Companion.valueCharLimit
 import me.tsukanov.counter.infrastructure.BroadcastHelper
 import me.tsukanov.counter.view.CounterFragment
+import me.tsukanov.counter.widget.WidgetCounters
 import org.joda.time.DateTime
 
 class EditDialog : DialogFragment() {
@@ -74,6 +75,7 @@ class EditDialog : DialogFragment() {
 
                     val storage = CounterApplication.component!!.localStorage()
 
+                    WidgetCounters(requireContext()).rename(oldName!!, newName!!)
                     storage!!.delete(oldName!!)
                     storage!!.write(IntegerCounter(newName!!, newValue, DateTime()))
 
