@@ -6,7 +6,8 @@ import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.SharedPreferences
-import android.media.MediaPlayer
+import android.media.AudioAttributes
+import android.media.SoundPool
 import android.os.Bundle
 import android.os.Vibrator
 import android.util.Log
@@ -47,8 +48,9 @@ class CounterFragment : Fragment() {
 
     private var counter: IntegerCounter? = null
 
-    private var incrementSoundPlayer: MediaPlayer? = null
-    private var decrementSoundPlayer: MediaPlayer? = null
+    private var soundPool: SoundPool? = null
+    private var incrementSound = 0
+    private var decrementSound = 0
 
     private fun restoreSavedState(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
@@ -93,18 +95,24 @@ class CounterFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        // Setting up sounds
-        incrementSoundPlayer = MediaPlayer.create(context, R.raw.increment_sound)
-        decrementSoundPlayer = MediaPlayer.create(context, R.raw.decrement_sound)
+        // SoundPool can play the same short sound again before the previous one has finished
+        val attributes =
+            AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_MEDIA)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build()
+        soundPool =
+            SoundPool.Builder().setMaxStreams(MAX_SOUND_STREAMS).setAudioAttributes(attributes).build().also {
+                incrementSound = it.load(context, R.raw.increment_sound, 1)
+                decrementSound = it.load(context, R.raw.decrement_sound, 1)
+            }
     }
 
     override fun onPause() {
         super.onPause()
 
-        incrementSoundPlayer!!.reset()
-        incrementSoundPlayer!!.release()
-        decrementSoundPlayer!!.reset()
-        decrementSoundPlayer!!.release()
+        soundPool?.release()
+        soundPool = null
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -227,7 +235,7 @@ class CounterFragment : Fragment() {
     private fun increment() {
         counter!!.increment()
         vibrate(DEFAULT_VIBRATION_DURATION)
-        playSound(incrementSoundPlayer!!)
+        playSound(incrementSound)
 
         updateInterface()
         saveValue()
@@ -236,7 +244,7 @@ class CounterFragment : Fragment() {
     private fun decrement() {
         counter!!.decrement()
         vibrate(DEFAULT_VIBRATION_DURATION + 20)
-        playSound(decrementSoundPlayer!!)
+        playSound(decrementSound)
 
         updateInterface()
         saveValue()
@@ -298,16 +306,9 @@ class CounterFragment : Fragment() {
     }
 
     /** Plays sound if sounds are turned on.  */
-    private fun playSound(soundPlayer: MediaPlayer) {
+    private fun playSound(sound: Int) {
         if (sharedPrefs!!.getBoolean(SharedPrefKeys.SOUNDS_ON.key, false)) {
-            try {
-                if (soundPlayer.isPlaying) {
-                    soundPlayer.seekTo(0)
-                }
-                soundPlayer.start()
-            } catch (e: Exception) {
-                Log.e(TAG, "Unable to play sound", e)
-            }
+            soundPool?.play(sound, 1f, 1f, 1, 0, 1f)
         }
     }
 
@@ -318,6 +319,7 @@ class CounterFragment : Fragment() {
 
         const val DEFAULT_VALUE: Int = 0
         private const val DEFAULT_VIBRATION_DURATION: Long = 30 // Milliseconds
+        private const val MAX_SOUND_STREAMS = 4
 
         private const val STATE_SELECTED_COUNTER_NAME = "SELECTED_COUNTER_NAME"
     }
