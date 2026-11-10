@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <!-- General -->
+  <string name="app_name">מונה</string>
+  <string name="last_update_timestamp">שונה לאחרונה ב-{timestamp}</string>
+  <!-- Menu -->
+  <string name="menu_counters_list">פתיחת רשימת המונים</string>
+  <string name="menu_add">הוספת מונה</string>
+  <string name="menu_reset">איפוס המונה</string>
+  <string name="menu_edit">עריכת המונה</string>
+  <string name="menu_delete">מחיקת המונה</string>
+  <string name="menu_settings">הגדרות</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">הוספת מונה חדש</string>
+  <string name="dialog_edit_title">עריכת המונה הזה</string>
+  <string name="dialog_delete_title">למחוק את המונה הזה?</string>
+  <string name="dialog_reset_title">לאפס את המונה הזה?</string>
+  <string name="dialog_edit_name">שם</string>
+  <string name="dialog_edit_value">ערך</string>
+  <string name="dialog_button_add">הוספה</string>
+  <string name="dialog_button_apply">החלה</string>
+  <string name="dialog_button_reset">איפוס</string>
+  <string name="dialog_button_delete">מחיקה</string>
+  <string name="dialog_button_cancel">ביטול</string>
+  <!-- Settings -->
+  <string name="settings_title">הגדרות</string>
+  <string name="settings_display">תצוגה</string>
+  <string name="settings_theme">ערכת נושא</string>
+  <string name="settings_theme_light">בהירה</string>
+  <string name="settings_theme_dark">כהה</string>
+  <string name="settings_theme_auto_battery">לפי מצב חיסכון בסוללה</string>
+  <string name="settings_theme_system">לפי ברירת המחדל של המערכת</string>
+  <string name="settings_keep_on_title">השארת המסך דלוק</string>
+  <string name="settings_keep_on_summary">המסך יישאר דלוק כל עוד האפליקציה פעילה</string>
+  <string name="settings_controls">פקדים</string>
+  <string name="settings_hide_controls_title">הסתרת הכפתורים</string>
+  <string name="settings_hide_controls_summary">כדאי להפעיל את לחצני עוצמת הקול או את ההקשה על הערך כדי להוסיף</string>
+  <string name="settings_sounds_title">הפעלת צלילים</string>
+  <string name="settings_sounds_summary">השמעת צליל כשהערך משתנה</string>
+  <string name="settings_vibration_title">הפעלת רטט</string>
+  <string name="settings_vibration_summary">רטט כשהערך משתנה</string>
+  <string name="settings_hard_title">שימוש בלחצנים הפיזיים</string>
+  <string name="settings_hard_summary">שינוי ערך המונה בעזרת לחצני עוצמת הקול</string>
+  <string name="settings_label_increment_title">הקשה על הערך כדי להוסיף</string>
+  <string name="settings_label_increment_summary">הוספה למונה בהקשה על הערך הנוכחי</string>
+  <string name="settings_hide_last_update_title">הסתרת זמן השינוי האחרון</string>
+  <string name="settings_other">אחר</string>
+  <string name="settings_version_title">גרסה</string>
+  <string name="settings_reset_all_title">איפוס כל המונים</string>
+  <string name="settings_wipe_title">הסרת כל המונים</string>
+  <string name="settings_export_title">ייצוא מונים</string>
+  <string name="settings_export_summary">ייצוא כל המונים בפורמט CSV</string>
+  <string name="settings_import_title">ייבוא מונים</string>
+  <string name="settings_import_summary">הוספת מונים מקובץ CSV שיוצא</string>
+  <string name="settings_tip_title">קנו לי קפה</string>
+  <string name="settings_tip_summary">תמיכה ביוצר האפליקציה</string>
+  <string name="settings_homepage_title">דף הבית</string>
+  <string name="settings_homepage_summary">מידע על האפליקציה וקוד המקור</string>
+  <string name="settings_wipe_confirmation">להסיר את כל המונים?</string>
+  <string name="settings_wipe_confirmation_yes">הסרת הכול</string>
+  <string name="settings_reset_all_confirmation">לאפס את כל המונים?</string>
+  <string name="settings_reset_all_confirmation_yes">איפוס הכול</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d מונה מהקובץ כבר קיים כאן. להחליף אותו בערך מהקובץ?</item>
+    <item quantity="two">%d מונים מהקובץ כבר קיימים כאן. להחליף אותם בערכים מהקובץ?</item>
+    <item quantity="other">%d מונים מהקובץ כבר קיימים כאן. להחליף אותם בערכים מהקובץ?</item>
+  </plurals>
+  <string name="import_clash_replace">החלפה</string>
+  <string name="import_clash_keep">השארת הנוכחי</string>
+  <string name="import_summary_title">הייבוא הסתיים</string>
+  <string name="import_summary_added">נוספו: %d</string>
+  <string name="import_summary_replaced">הוחלפו: %d</string>
+  <string name="import_summary_kept">נשארו ללא שינוי: %d</string>
+  <string name="import_summary_invalid">שורות שלא ניתן היה לקרוא: %d</string>
+  <string name="import_nothing_found">לא נמצאו מונים בקובץ הזה.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">ספירה ישירות ממסך הבית</string>
+  <string name="widget_configure_title">בחירת מונה</string>
+  <string name="widget_counter_removed">המונה הוסר. אפשר להקיש כדי לבחור מונה אחר.</string>
+  <string name="widget_increment">הוספה</string>
+  <string name="widget_decrement">הפחתה</string>
+  <string name="widget_preview_name">הקפות</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">כל המונים נמחקו.</string>
+  <string name="toast_reset_all_success">כל המונים אופסו.</string>
+  <string name="toast_delete_success">המונה \"{name}\" נמחק.</string>
+  <string name="toast_unable_to_modify">משהו השתבש בעדכון המונה. מצטערים!</string>
+  <string name="toast_unable_to_export">משהו השתבש בייצוא המונים. מצטערים!</string>
+  <string name="toast_unable_to_import">משהו השתבש בקריאת הקובץ. מצטערים!</string>
+  <string name="toast_tutorial">נסו להקיש על המספר!</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">מונה ראשון</string>
+</resources>

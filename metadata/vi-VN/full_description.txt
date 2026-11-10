@@ -1,0 +1,3 @@
+Bạn có thể có nhiều bộ đếm với tên và giá trị riêng. Có thể thay đổi giá trị bằng nút âm lượng hoặc chạm vào màn hình.
+
+Toàn bộ dữ liệu có thể được xuất ra định dạng CSV.

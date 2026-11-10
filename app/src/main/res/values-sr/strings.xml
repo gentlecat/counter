@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <!-- General -->
+  <string name="app_name">Бројач</string>
+  <string name="last_update_timestamp">Последња измена: {timestamp}</string>
+  <!-- Menu -->
+  <string name="menu_counters_list">Отвори листу бројача</string>
+  <string name="menu_add">Додај бројач</string>
+  <string name="menu_reset">Ресетуј бројач</string>
+  <string name="menu_edit">Измени бројач</string>
+  <string name="menu_delete">Обриши бројач</string>
+  <string name="menu_settings">Подешавања</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">Додај нови бројач</string>
+  <string name="dialog_edit_title">Измени овај бројач</string>
+  <string name="dialog_delete_title">Да ли стварно желите да обришете овај бројач?</string>
+  <string name="dialog_reset_title">Да ли стварно желите да ресетујете овај бројач?</string>
+  <string name="dialog_edit_name">Назив</string>
+  <string name="dialog_edit_value">Вредност</string>
+  <string name="dialog_button_add">Додај</string>
+  <string name="dialog_button_apply">Примени</string>
+  <string name="dialog_button_reset">Ресетуј</string>
+  <string name="dialog_button_delete">Обриши</string>
+  <string name="dialog_button_cancel">Откажи</string>
+  <!-- Settings -->
+  <string name="settings_title">Подешавања</string>
+  <string name="settings_display">Приказ</string>
+  <string name="settings_theme">Тема</string>
+  <string name="settings_theme_light">Светла</string>
+  <string name="settings_theme_dark">Тамна</string>
+  <string name="settings_theme_auto_battery">Према уштеди батерије</string>
+  <string name="settings_theme_system">Према подешавању система</string>
+  <string name="settings_keep_on_title">Држи екран укљученим</string>
+  <string name="settings_keep_on_summary">Екран остаје укључен док је апликација активна</string>
+  <string name="settings_controls">Контроле</string>
+  <string name="settings_hide_controls_title">Сакриј дугмад</string>
+  <string name="settings_hide_controls_summary">Можда ћете желети да укључите дугмад за јачину звука или додир за повећање</string>
+  <string name="settings_sounds_title">Укључи звукове</string>
+  <string name="settings_sounds_summary">Пусти звук при промени вредности</string>
+  <string name="settings_vibration_title">Укључи вибрацију</string>
+  <string name="settings_vibration_summary">Вибрирај при промени вредности</string>
+  <string name="settings_hard_title">Користи физичку дугмад</string>
+  <string name="settings_hard_summary">Мењај вредност дугмадима за јачину звука</string>
+  <string name="settings_label_increment_title">Додирни вредност за повећање</string>
+  <string name="settings_label_increment_summary">Повећај бројач додиром на тренутну вредност</string>
+  <string name="settings_hide_last_update_title">Сакриј време последње измене</string>
+  <string name="settings_other">Остало</string>
+  <string name="settings_version_title">Верзија</string>
+  <string name="settings_reset_all_title">Ресетуј све бројаче</string>
+  <string name="settings_wipe_title">Уклони све бројаче</string>
+  <string name="settings_export_title">Извези бројаче</string>
+  <string name="settings_export_summary">Извези све бројаче у CSV формату</string>
+  <string name="settings_import_title">Увези бројаче</string>
+  <string name="settings_import_summary">Додај бројаче из извезене CSV датотеке</string>
+  <string name="settings_tip_title">Частите ме кафом</string>
+  <string name="settings_tip_summary">Подржите аутора ове апликације</string>
+  <string name="settings_homepage_title">Почетна страница</string>
+  <string name="settings_homepage_summary">Информације о апликацији и изворни код</string>
+  <string name="settings_wipe_confirmation">Да ли стварно желите да уклоните све бројаче?</string>
+  <string name="settings_wipe_confirmation_yes">Уклони све</string>
+  <string name="settings_reset_all_confirmation">Да ли стварно желите да ресетујете све бројаче?</string>
+  <string name="settings_reset_all_confirmation_yes">Ресетуј све</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d бројач из датотеке већ постоји. Заменити га вредношћу из датотеке?</item>
+    <item quantity="few">%d бројача из датотеке већ постоје. Заменити их вредностима из датотеке?</item>
+    <item quantity="other">%d бројача из датотеке већ постоји. Заменити их вредностима из датотеке?</item>
+  </plurals>
+  <string name="import_clash_replace">Замени</string>
+  <string name="import_clash_keep">Задржи тренутне</string>
+  <string name="import_summary_title">Увоз је завршен</string>
+  <string name="import_summary_added">Додато: %d</string>
+  <string name="import_summary_replaced">Замењено: %d</string>
+  <string name="import_summary_kept">Задржано: %d</string>
+  <string name="import_summary_invalid">Редови који нису могли да се прочитају: %d</string>
+  <string name="import_nothing_found">У овој датотеци нема бројача.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Бројите са почетног екрана</string>
+  <string name="widget_configure_title">Изаберите бројач</string>
+  <string name="widget_counter_removed">Бројач је уклоњен. Додирните да изаберете други.</string>
+  <string name="widget_increment">Повећај</string>
+  <string name="widget_decrement">Смањи</string>
+  <string name="widget_preview_name">Кругови</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Сви бројачи су обрисани.</string>
+  <string name="toast_reset_all_success">Сви бројачи су ресетовани.</string>
+  <string name="toast_delete_success">Бројач „{name}“ је обрисан.</string>
+  <string name="toast_unable_to_modify">Дошло је до грешке при ажурирању бројача. Извините!</string>
+  <string name="toast_unable_to_export">Дошло је до грешке при извозу бројача. Извините!</string>
+  <string name="toast_unable_to_import">Дошло је до грешке при читању датотеке. Извините!</string>
+  <string name="toast_tutorial">Пробајте да додирнете број!</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">Први бројач</string>
+</resources>

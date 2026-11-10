@@ -1,0 +1,1 @@
+Comptador que facilita el recompte.

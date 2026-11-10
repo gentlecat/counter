@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <!-- General -->
+  <string name="app_name">Teller</string>
+  <string name="last_update_timestamp">Laas verander om {timestamp}</string>
+  <!-- Menu -->
+  <string name="menu_counters_list">Maak die lys tellers oop</string>
+  <string name="menu_add">Voeg teller by</string>
+  <string name="menu_reset">Stel teller terug</string>
+  <string name="menu_edit">Wysig teller</string>
+  <string name="menu_delete">Skrap teller</string>
+  <string name="menu_settings">Instellings</string>
+  <!-- Dialogs -->
+  <string name="dialog_add_title">Voeg \'n nuwe teller by</string>
+  <string name="dialog_edit_title">Wysig hierdie teller</string>
+  <string name="dialog_delete_title">Wil jy regtig hierdie teller skrap?</string>
+  <string name="dialog_reset_title">Wil jy regtig hierdie teller terugstel?</string>
+  <string name="dialog_edit_name">Naam</string>
+  <string name="dialog_edit_value">Waarde</string>
+  <string name="dialog_button_add">Voeg by</string>
+  <string name="dialog_button_apply">Pas toe</string>
+  <string name="dialog_button_reset">Stel terug</string>
+  <string name="dialog_button_delete">Skrap</string>
+  <string name="dialog_button_cancel">Kanselleer</string>
+  <!-- Settings -->
+  <string name="settings_title">Instellings</string>
+  <string name="settings_display">Vertoon</string>
+  <string name="settings_theme">Tema</string>
+  <string name="settings_theme_light">Lig</string>
+  <string name="settings_theme_dark">Donker</string>
+  <string name="settings_theme_auto_battery">Gestel deur Batterybespaarder</string>
+  <string name="settings_theme_system">Gebruik stelselverstek</string>
+  <string name="settings_keep_on_title">Hou die skerm aan</string>
+  <string name="settings_keep_on_summary">Hou die skerm aan terwyl die app oop is</string>
+  <string name="settings_controls">Kontroles</string>
+  <string name="settings_hide_controls_title">Versteek die knoppies</string>
+  <string name="settings_hide_controls_summary">Jy wil dalk die volumeknoppies of tik-om-te-tel aanskakel</string>
+  <string name="settings_sounds_title">Skakel klanke aan</string>
+  <string name="settings_sounds_summary">Speel klanke wanneer waardes verander</string>
+  <string name="settings_vibration_title">Skakel vibrasie aan</string>
+  <string name="settings_vibration_summary">Vibreer wanneer waardes verander</string>
+  <string name="settings_hard_title">Gebruik hardewareknoppies</string>
+  <string name="settings_hard_summary">Verander die tellerwaarde met die volumeknoppies</string>
+  <string name="settings_label_increment_title">Tik op die waarde om te tel</string>
+  <string name="settings_label_increment_summary">Verhoog \'n teller deur op die huidige waarde te tik</string>
+  <string name="settings_hide_last_update_title">Versteek die tyd van die laaste verandering</string>
+  <string name="settings_other">Ander</string>
+  <string name="settings_version_title">Weergawe</string>
+  <string name="settings_reset_all_title">Stel alle tellers terug</string>
+  <string name="settings_wipe_title">Verwyder alle tellers</string>
+  <string name="settings_export_title">Voer tellers uit</string>
+  <string name="settings_export_summary">Voer alle tellers in CSV-formaat uit</string>
+  <string name="settings_import_title">Voer tellers in</string>
+  <string name="settings_import_summary">Voeg tellers by uit \'n uitgevoerde CSV-lêer</string>
+  <string name="settings_tip_title">Koop vir my \'n koffie</string>
+  <string name="settings_tip_summary">Ondersteun die maker van hierdie app</string>
+  <string name="settings_homepage_title">Tuisblad</string>
+  <string name="settings_homepage_summary">Inligting oor die app en die bronkode</string>
+  <string name="settings_wipe_confirmation">Wil jy regtig alle tellers verwyder?</string>
+  <string name="settings_wipe_confirmation_yes">Verwyder alles</string>
+  <string name="settings_reset_all_confirmation">Wil jy regtig alle tellers terugstel?</string>
+  <string name="settings_reset_all_confirmation_yes">Stel alles terug</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d teller in die lêer bestaan reeds hier. Vervang dit met die waarde uit die lêer?</item>
+    <item quantity="other">%d tellers in die lêer bestaan reeds hier. Vervang hulle met die waardes uit die lêer?</item>
+  </plurals>
+  <string name="import_clash_replace">Vervang</string>
+  <string name="import_clash_keep">Hou huidige</string>
+  <string name="import_summary_title">Invoer voltooi</string>
+  <string name="import_summary_added">Bygevoeg: %d</string>
+  <string name="import_summary_replaced">Vervang: %d</string>
+  <string name="import_summary_kept">Huidige behou: %d</string>
+  <string name="import_summary_invalid">Rye wat nie gelees kon word nie: %d</string>
+  <string name="import_nothing_found">Geen tellers in hierdie lêer gevind nie.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Tel vanaf jou tuisskerm</string>
+  <string name="widget_configure_title">Kies \'n teller</string>
+  <string name="widget_counter_removed">Teller verwyder. Tik om \'n ander te kies.</string>
+  <string name="widget_increment">Verhoog</string>
+  <string name="widget_decrement">Verlaag</string>
+  <string name="widget_preview_name">Rondtes</string>
+  <!-- Toasts -->
+  <string name="toast_wipe_success">Alle tellers is geskrap.</string>
+  <string name="toast_reset_all_success">Alle tellers is teruggestel.</string>
+  <string name="toast_delete_success">Teller \"{name}\" is geskrap.</string>
+  <string name="toast_unable_to_modify">Iets het verkeerd geloop met die opdatering van die teller. Jammer!</string>
+  <string name="toast_unable_to_export">Iets het verkeerd geloop met die uitvoer van die tellers. Jammer!</string>
+  <string name="toast_unable_to_import">Iets het verkeerd geloop met die lees van die lêer. Jammer!</string>
+  <string name="toast_tutorial">Probeer op die getal tik!</string>
+  <!-- Other stuff -->
+  <string name="default_counter_name">Eerste teller</string>
+</resources>

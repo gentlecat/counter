@@ -1,0 +1,3 @@
+Jy kan verskeie tellers met hul eie name en waardes hê. Waardes kan met die volumeknoppies of deur op die skerm te tik verander word.
+
+Al jou data kan in CSV-formaat uitgevoer word.

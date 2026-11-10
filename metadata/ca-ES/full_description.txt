@@ -1,0 +1,3 @@
+Pots tenir diversos comptadors, cadascun amb el seu nom i valor. Els valors es poden canviar amb els botons de volum o tocant la pantalla.
+
+Pots exportar totes les dades en format CSV.

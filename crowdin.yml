@@ -3,5 +3,12 @@ files:
     translation: /app/src/main/res/values-%android_code%/%original_file_name%
     translate_attributes: 0
     content_segmentation: 0
+    languages_mapping:
+      android_code:
+        # Crowdin's code for Serbian (sr-rSP) has no real region, so Android would never pick it
+        sr: sr
   - source: /metadata/en-US/*.txt
     translation: /metadata/%locale%/%original_file_name%
+    languages_mapping:
+      locale:
+        sr: sr
