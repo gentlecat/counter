@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯します</string>
   <string name="settings_controls">コントロール</string>
   <string name="settings_hide_controls_title">ボタンを隠す</string>
-  <string name="settings_hide_controls_summary">音量ボタンの使用をオンにするか、タップして増分オプションをオンにするかも知れません</string>
+  <string name="settings_hide_controls_summary">音量ボタンの使用や、値をタップして増やすオプションをオンにすると便利です</string>
   <string name="settings_sounds_title">サウンドをオン</string>
   <string name="settings_sounds_summary">値を変更するときにサウンドを再生します</string>
   <string name="settings_vibration_title">振動をオン</string>
@@ -46,20 +46,46 @@
   <string name="settings_hide_last_update_title">最後の変更タイムスタンプを非表示</string>
   <string name="settings_other">その他</string>
   <string name="settings_version_title">バージョン</string>
+  <string name="settings_reset_all_title">すべてのカウンターをリセット</string>
   <string name="settings_wipe_title">すべてのカウンターを削除</string>
-  <string name="settings_export_title">カウンタ―をエクスポート</string>
-  <string name="settings_export_summary">すべてのカウンタ―を CSV 形式でエクスポートします</string>
+  <string name="settings_export_title">カウンターをエクスポート</string>
+  <string name="settings_export_summary">すべてのカウンターを CSV 形式でエクスポートします</string>
+  <string name="settings_import_title">カウンターをインポート</string>
+  <string name="settings_import_summary">エクスポートした CSV ファイルからカウンターを追加します</string>
   <string name="settings_tip_title">コーヒーを買ってください</string>
   <string name="settings_tip_summary">このアプリの作成者をサポートする</string>
   <string name="settings_homepage_title">ホームページ</string>
   <string name="settings_homepage_summary">アプリ情報とソース コード</string>
   <string name="settings_wipe_confirmation">すべてのカウンターを削除してもよろしいですか?</string>
   <string name="settings_wipe_confirmation_yes">すべてを削除</string>
+  <string name="settings_reset_all_confirmation">すべてのカウンターをリセットしてもよろしいですか?</string>
+  <string name="settings_reset_all_confirmation_yes">すべてリセット</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="other">ファイル内の %d 個のカウンターは既に存在します。ファイルの値で置き換えますか?</item>
+  </plurals>
+  <string name="import_clash_replace">置き換える</string>
+  <string name="import_clash_keep">現在の値を保持</string>
+  <string name="import_summary_title">インポート完了</string>
+  <string name="import_summary_added">追加: %d</string>
+  <string name="import_summary_replaced">置き換え: %d</string>
+  <string name="import_summary_kept">保持: %d</string>
+  <string name="import_summary_invalid">読み取れなかった行: %d</string>
+  <string name="import_nothing_found">このファイルにカウンターが見つかりません。</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">ホーム画面からカウント</string>
+  <string name="widget_configure_title">カウンターを選択</string>
+  <string name="widget_counter_removed">カウンターが削除されました。タップして別のカウンターを選択してください。</string>
+  <string name="widget_increment">増やす</string>
+  <string name="widget_decrement">減らす</string>
+  <string name="widget_preview_name">ラップ</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">すべてのカウンターが削除されました。</string>
+  <string name="toast_reset_all_success">すべてのカウンターがリセットされました。</string>
   <string name="toast_delete_success">カウンター \"{name}\" が削除されました。</string>
-  <string name="toast_unable_to_modify">カウンタ―の更新中に問題が発生しました。申し訳ありません!</string>
-  <string name="toast_unable_to_export">カウンタ―のエクスポート中に問題が発生しました。申し訳ありません!</string>
+  <string name="toast_unable_to_modify">カウンターの更新中に問題が発生しました。申し訳ありません!</string>
+  <string name="toast_unable_to_export">カウンターのエクスポート中に問題が発生しました。申し訳ありません!</string>
+  <string name="toast_unable_to_import">ファイルの読み取り中に問題が発生しました。申し訳ありません!</string>
   <string name="toast_tutorial">数字をクリックしてみてください！</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新しいカウンター</string>
