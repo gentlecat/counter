@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">Не выключать экран пока приложение активно</string>
   <string name="settings_controls">Управление</string>
   <string name="settings_hide_controls_title">Скрыть кнопки</string>
-  <string name="settings_hide_controls_summary">Вы можете включить кнопки громкости или нажать на увеличение</string>
+  <string name="settings_hide_controls_summary">Вы можете включить кнопки громкости или увеличение нажатием на значение</string>
   <string name="settings_sounds_title">Включить звуки</string>
   <string name="settings_sounds_summary">Возпроизводить звуки при изменении значений</string>
   <string name="settings_vibration_title">Включить вибрацию</string>
@@ -46,20 +46,49 @@
   <string name="settings_hide_last_update_title">Скрыть время последнего изменения</string>
   <string name="settings_other">Прочее</string>
   <string name="settings_version_title">Версия приложения</string>
+  <string name="settings_reset_all_title">Сбросить все счетчики</string>
   <string name="settings_wipe_title">Удалить все счетчики</string>
   <string name="settings_export_title">Экспорт счетчиков</string>
   <string name="settings_export_summary">Экспортировать все счетчики в формате CSV</string>
+  <string name="settings_import_title">Импорт счетчиков</string>
+  <string name="settings_import_summary">Добавить счетчики из экспортированного файла CSV</string>
   <string name="settings_tip_title">Купить мне кофе</string>
   <string name="settings_tip_summary">Поддержать создателя этого приложения</string>
   <string name="settings_homepage_title">Домашняя страница</string>
   <string name="settings_homepage_summary">Информация о приложении и исходный код</string>
   <string name="settings_wipe_confirmation">Вы действительно хотите удалить все счетчики?</string>
   <string name="settings_wipe_confirmation_yes">Удалить все</string>
+  <string name="settings_reset_all_confirmation">Вы действительно хотите сбросить все счетчики?</string>
+  <string name="settings_reset_all_confirmation_yes">Сбросить все</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d счетчик из файла уже существует. Заменить его значением из файла?</item>
+    <item quantity="few">%d счетчика из файла уже существуют. Заменить их значениями из файла?</item>
+    <item quantity="many">%d счетчиков из файла уже существуют. Заменить их значениями из файла?</item>
+    <item quantity="other">%d счетчика из файла уже существуют. Заменить их значениями из файла?</item>
+  </plurals>
+  <string name="import_clash_replace">Заменить</string>
+  <string name="import_clash_keep">Оставить текущие</string>
+  <string name="import_summary_title">Импорт завершен</string>
+  <string name="import_summary_added">Добавлено: %d</string>
+  <string name="import_summary_replaced">Заменено: %d</string>
+  <string name="import_summary_kept">Оставлено: %d</string>
+  <string name="import_summary_invalid">Не удалось прочитать строк: %d</string>
+  <string name="import_nothing_found">В этом файле не найдено счетчиков.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Считайте прямо с главного экрана</string>
+  <string name="widget_configure_title">Выберите счетчик</string>
+  <string name="widget_counter_removed">Счетчик удален. Нажмите, чтобы выбрать другой.</string>
+  <string name="widget_increment">Увеличить</string>
+  <string name="widget_decrement">Уменьшить</string>
+  <string name="widget_preview_name">Круги</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Все счетчики удалены.</string>
+  <string name="toast_reset_all_success">Все счетчики сброшены.</string>
   <string name="toast_delete_success">Счетчик \"{name}\" удален.</string>
   <string name="toast_unable_to_modify">Что-то пошло не так при обновлении счётчика. Извините!</string>
   <string name="toast_unable_to_export">Что-то пошло не так во время экспорта.</string>
+  <string name="toast_unable_to_import">Что-то пошло не так при чтении файла. Извините!</string>
   <string name="toast_tutorial">Попробуйте нажать на номер!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Первый счетчик</string>
