@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Tæller</string>
-  <string name="last_update_timestamp">Sidst ændret hos {timestamp}</string>
+  <string name="last_update_timestamp">Sidst ændret {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åbn navigation</string>
   <string name="menu_add">Tilføj tæller</string>
@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">Hold skærmen tændt når appen er aktiv</string>
   <string name="settings_controls">Styring</string>
   <string name="settings_hide_controls_title">Skjul knapperne</string>
-  <string name="settings_hide_controls_summary">Du vil måske slå lydstyrkeknapper til brug eller tryk for at øge indstillingen</string>
+  <string name="settings_hide_controls_summary">Du vil måske slå brug af lydstyrkeknapperne eller tryk på værdien for at øge til</string>
   <string name="settings_sounds_title">Tænd for lyde</string>
   <string name="settings_sounds_summary">Spil lyde når man ændrer værdier</string>
   <string name="settings_vibration_title">Tænd for vibration</string>
@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Skjul sidste ændringstidsstempel</string>
   <string name="settings_other">Andet</string>
   <string name="settings_version_title">Version</string>
+  <string name="settings_reset_all_title">Nulstil alle tællere</string>
   <string name="settings_wipe_title">Fjern alle tællere</string>
   <string name="settings_export_title">Eksporter tællere</string>
   <string name="settings_export_summary">Eksporter alle tællere i CSV-format</string>
+  <string name="settings_import_title">Importer tællere</string>
+  <string name="settings_import_summary">Tilføj tællere fra en eksporteret CSV-fil</string>
   <string name="settings_tip_title">Køb mig en kaffe</string>
   <string name="settings_tip_summary">Støt opretteren af denne app</string>
   <string name="settings_homepage_title">Hjemmeside</string>
   <string name="settings_homepage_summary">App info og kildekoden</string>
   <string name="settings_wipe_confirmation">Er du sikker på, du vil fjerne alle tællere?</string>
   <string name="settings_wipe_confirmation_yes">Fjern alle</string>
+  <string name="settings_reset_all_confirmation">Er du sikker på, du vil nulstille alle tællere?</string>
+  <string name="settings_reset_all_confirmation_yes">Nulstil alle</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d tæller i filen findes allerede her. Erstat den med værdien fra filen?</item>
+    <item quantity="other">%d tællere i filen findes allerede her. Erstat dem med værdierne fra filen?</item>
+  </plurals>
+  <string name="import_clash_replace">Erstat</string>
+  <string name="import_clash_keep">Behold nuværende</string>
+  <string name="import_summary_title">Import fuldført</string>
+  <string name="import_summary_added">Tilføjet: %d</string>
+  <string name="import_summary_replaced">Erstattet: %d</string>
+  <string name="import_summary_kept">Beholdt: %d</string>
+  <string name="import_summary_invalid">Rækker, der ikke kunne læses: %d</string>
+  <string name="import_nothing_found">Ingen tællere fundet i denne fil.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Tæl fra din startskærm</string>
+  <string name="widget_configure_title">Vælg en tæller</string>
+  <string name="widget_counter_removed">Tæller fjernet. Tryk for at vælge en anden.</string>
+  <string name="widget_increment">Øg</string>
+  <string name="widget_decrement">Sænk</string>
+  <string name="widget_preview_name">Omgange</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle tællere er blevet slettet.</string>
+  <string name="toast_reset_all_success">Alle tællere er blevet nulstillet.</string>
   <string name="toast_delete_success">Tæller \"{name}\" er blevet slettet.</string>
   <string name="toast_unable_to_modify">Noget gik galt mens tælleren blev opdateret. Undskyld!</string>
   <string name="toast_unable_to_export">Noget gik galt under eksport af tællerne. Beklager!</string>
+  <string name="toast_unable_to_import">Noget gik galt under læsning af filen. Beklager!</string>
   <string name="toast_tutorial">Prøv at klikke på nummeret!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny tæller</string>
