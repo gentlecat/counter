@@ -13,7 +13,7 @@
   <!-- Dialogs -->
   <string name="dialog_add_title">Προσθήκη νέου μετρητή</string>
   <string name="dialog_edit_title">Επεξεργασία μετρητή</string>
-  <string name="dialog_delete_title">Θέλετε να σίγουρα διαγράψετε το μετρητή;</string>
+  <string name="dialog_delete_title">Θέλετε σίγουρα να διαγράψετε τον μετρητή;</string>
   <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
   <string name="dialog_edit_name">Τίτλος:</string>
   <string name="dialog_edit_value">Τιμή:</string>
@@ -34,10 +34,10 @@
   <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ενεργή</string>
   <string name="settings_controls">Στοιχεία ελέγχου</string>
   <string name="settings_hide_controls_title">Απόκρυψη των κουμπιών</string>
-  <string name="settings_hide_controls_summary">Μπορεί να θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ήχου ή το πάτημα για αύξηση της επιλογής</string>
-  <string name="settings_sounds_title">Ενεργοποιήσε τους ήχους</string>
+  <string name="settings_hide_controls_summary">Ίσως θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ή την αύξηση με πάτημα της τιμής</string>
+  <string name="settings_sounds_title">Ενεργοποίηση ήχων</string>
   <string name="settings_sounds_summary">Αναπαραγωγή ήχων κατά την αλλαγή τιμών</string>
-  <string name="settings_vibration_title">Ενεργοποιήσε τη δόνηση</string>
+  <string name="settings_vibration_title">Ενεργοποίηση δόνησης</string>
   <string name="settings_vibration_summary">Δόνηση στις αλλαγές τιμής</string>
   <string name="settings_hard_title">Χρήση πλήκτρων</string>
   <string name="settings_hard_summary">Αλλαγή τιμής μετρητή χρησιμοποιώντας τα κουμπιά έντασης</string>
@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Απόκρυψη της τελευταίας χρονοσήμανσης αλλαγής</string>
   <string name="settings_other">Άλλα</string>
   <string name="settings_version_title">Έκδοση</string>
+  <string name="settings_reset_all_title">Επαναφορά όλων των μετρητών</string>
   <string name="settings_wipe_title">Διαγραφή όλων των μετρητών</string>
-  <string name="settings_export_title">Μετρητές εξαγωγής</string>
+  <string name="settings_export_title">Εξαγωγή μετρητών</string>
   <string name="settings_export_summary">Εξαγωγή όλων των μετρητών σε μορφή CSV</string>
+  <string name="settings_import_title">Εισαγωγή μετρητών</string>
+  <string name="settings_import_summary">Προσθήκη μετρητών από εξαγόμενο αρχείο CSV</string>
   <string name="settings_tip_title">Αγοράστε μου έναν καφέ</string>
   <string name="settings_tip_summary">Υποστηρίξτε τον δημιουργό αυτής της εφαρμογής</string>
   <string name="settings_homepage_title">Αρχική</string>
   <string name="settings_homepage_summary">Πληροφορίες εφαρμογής και πηγαίος κώδικας</string>
   <string name="settings_wipe_confirmation">Θέλετε σίγουρα να διαγράψετε όλους τους μετρητές;</string>
   <string name="settings_wipe_confirmation_yes">Διαγραφή όλων</string>
+  <string name="settings_reset_all_confirmation">Θέλετε σίγουρα να επαναφέρετε όλους τους μετρητές;</string>
+  <string name="settings_reset_all_confirmation_yes">Επαναφορά όλων</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d μετρητής του αρχείου υπάρχει ήδη εδώ. Αντικατάσταση με την τιμή του αρχείου;</item>
+    <item quantity="other">%d μετρητές του αρχείου υπάρχουν ήδη εδώ. Αντικατάσταση με τις τιμές του αρχείου;</item>
+  </plurals>
+  <string name="import_clash_replace">Αντικατάσταση</string>
+  <string name="import_clash_keep">Διατήρηση τρεχόντων</string>
+  <string name="import_summary_title">Η εισαγωγή ολοκληρώθηκε</string>
+  <string name="import_summary_added">Προστέθηκαν: %d</string>
+  <string name="import_summary_replaced">Αντικαταστάθηκαν: %d</string>
+  <string name="import_summary_kept">Διατηρήθηκαν: %d</string>
+  <string name="import_summary_invalid">Γραμμές που δεν ήταν δυνατό να διαβαστούν: %d</string>
+  <string name="import_nothing_found">Δεν βρέθηκαν μετρητές σε αυτό το αρχείο.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Μετρήστε από την αρχική οθόνη</string>
+  <string name="widget_configure_title">Επιλέξτε μετρητή</string>
+  <string name="widget_counter_removed">Ο μετρητής καταργήθηκε. Πατήστε για να επιλέξετε άλλον.</string>
+  <string name="widget_increment">Αύξηση</string>
+  <string name="widget_decrement">Μείωση</string>
+  <string name="widget_preview_name">Γύροι</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Όλοι οι μετρητές έχουν διαγραφεί.</string>
-  <string name="toast_delete_success">Counter \"{name}\" έχει διαγραφεί.</string>
+  <string name="toast_reset_all_success">Έγινε επαναφορά όλων των μετρητών.</string>
+  <string name="toast_delete_success">Ο μετρητής \"{name}\" διαγράφηκε.</string>
   <string name="toast_unable_to_modify">Κάτι πήγε στραβά κατά την ενημέρωση του μετρητή. Συγγνώμη!</string>
   <string name="toast_unable_to_export">Κάτι πήγε στραβά κατά την εξαγωγή των μετρητών. Συγνώμη!</string>
+  <string name="toast_unable_to_import">Κάτι πήγε στραβά κατά την ανάγνωση του αρχείου. Συγγνώμη!</string>
   <string name="toast_tutorial">Δοκίμασε να κάνεις κλικ στον αριθμό!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Πρώτος μετρητής</string>
