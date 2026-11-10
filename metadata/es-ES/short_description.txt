@@ -1,1 +1,1 @@
-Contador de cuentos que hace que el recuento sea más fácil.
+Contador que facilita el recuento.
