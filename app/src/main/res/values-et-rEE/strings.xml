@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Loendur</string>
+  <string name="last_update_timestamp">Viimati muudetud {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Ava navigatsioon</string>
   <string name="menu_add">Lisa loendur</string>
@@ -33,6 +34,7 @@
   <string name="settings_keep_on_summary">Hoia ekraan sees kui rakendus on aktiivne</string>
   <string name="settings_controls">Juhtpaneel</string>
   <string name="settings_hide_controls_title">Peida nupud</string>
+  <string name="settings_hide_controls_summary">Võite sisse lülitada helitugevuse nuppude kasutamise või väärtusele vajutamisega suurendamise</string>
   <string name="settings_sounds_title">Lülita heli sisse</string>
   <string name="settings_sounds_summary">Väärtusi muutes mängi helisid</string>
   <string name="settings_vibration_title">Lülita vibratsioon sisse</string>
@@ -41,20 +43,51 @@
   <string name="settings_hard_summary">Muuda väärtusi kasutades helitugevuse nuppe</string>
   <string name="settings_label_increment_title">Vajutage väärtuse tõstmiseks</string>
   <string name="settings_label_increment_summary">Vajutades käesolevale väärtusele kasvatate loendurit</string>
+  <string name="settings_hide_last_update_title">Peida viimase muudatuse aeg</string>
   <string name="settings_other">Muu</string>
   <string name="settings_version_title">Versioon</string>
+  <string name="settings_reset_all_title">Lähtesta kõik loendurid</string>
   <string name="settings_wipe_title">Eemalda kõik loendurid</string>
   <string name="settings_export_title">Ekspordi loendurid</string>
   <string name="settings_export_summary">Ekspordi kõik loendurid CSV formaati</string>
+  <string name="settings_import_title">Impordi loendurid</string>
+  <string name="settings_import_summary">Lisa loendurid eksporditud CSV-failist</string>
+  <string name="settings_tip_title">Osta mulle kohvi</string>
+  <string name="settings_tip_summary">Toeta rakenduse loojat</string>
   <string name="settings_homepage_title">Koduleht</string>
   <string name="settings_homepage_summary">Rakenduse teave ja lähtekood</string>
   <string name="settings_wipe_confirmation">Kas olete kindel, et soovite kõik loendurid kustutada?</string>
   <string name="settings_wipe_confirmation_yes">Eemalda kõik</string>
+  <string name="settings_reset_all_confirmation">Kas olete kindel, et soovite kõik loendurid lähtestada?</string>
+  <string name="settings_reset_all_confirmation_yes">Lähtesta kõik</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d failis olev loendur on siin juba olemas. Kas asendada see faili väärtusega?</item>
+    <item quantity="other">%d failis olevat loendurit on siin juba olemas. Kas asendada need faili väärtustega?</item>
+  </plurals>
+  <string name="import_clash_replace">Asenda</string>
+  <string name="import_clash_keep">Jäta praegused</string>
+  <string name="import_summary_title">Import on lõpetatud</string>
+  <string name="import_summary_added">Lisatud: %d</string>
+  <string name="import_summary_replaced">Asendatud: %d</string>
+  <string name="import_summary_kept">Jäetud alles: %d</string>
+  <string name="import_summary_invalid">Read, mida ei õnnestunud lugeda: %d</string>
+  <string name="import_nothing_found">Selles failis ei leitud ühtegi loendurit.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Loenda otse avaekraanilt</string>
+  <string name="widget_configure_title">Vali loendur</string>
+  <string name="widget_counter_removed">Loendur on eemaldatud. Puuduta, et valida teine.</string>
+  <string name="widget_increment">Suurenda</string>
+  <string name="widget_decrement">Vähenda</string>
+  <string name="widget_preview_name">Ringid</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Kõik loendurid on kustutatud.</string>
+  <string name="toast_reset_all_success">Kõik loendurid on lähtestatud.</string>
   <string name="toast_delete_success">Loendur \"{name}\" on kustutatud.</string>
-  <string name="toast_unable_to_modify">Miskit läks lugeri uuendamisega nihu. Vabandame!</string>
+  <string name="toast_unable_to_modify">Midagi läks loenduri uuendamisel valesti. Vabandame!</string>
   <string name="toast_unable_to_export">Midagi läks loendurite eksportimisel valesti. Vabandame!</string>
+  <string name="toast_unable_to_import">Midagi läks faili lugemisel valesti. Vabandame!</string>
+  <string name="toast_tutorial">Proovi numbrile vajutada!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Uus loendur</string>
 </resources>
