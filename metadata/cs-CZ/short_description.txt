@@ -1,1 +1,1 @@
-Tally počitadlo, které usnadňuje počítání.
+Počítadlo, které usnadňuje počítání.
