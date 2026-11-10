@@ -34,33 +34,60 @@
   <string name="settings_keep_on_summary">Houdt scherm aan wanneer de app actief is</string>
   <string name="settings_controls">Bediening</string>
   <string name="settings_hide_controls_title">Verberg de knoppen</string>
-  <string name="settings_hide_controls_summary">U wilt misschien de volumeknoppen gebruiken of tik om te verhogen</string>
+  <string name="settings_hide_controls_summary">U kunt de volumeknoppen of tikken om te verhogen inschakelen</string>
   <string name="settings_sounds_title">Geluid aan</string>
   <string name="settings_sounds_summary">Speel geluid af wanneer waarden worden aangepast</string>
   <string name="settings_vibration_title">Vibratie aan</string>
   <string name="settings_vibration_summary">Trillen wanneer waarden veranderen</string>
-  <string name="settings_hard_title">Gebruik fisieke knoppen</string>
+  <string name="settings_hard_title">Gebruik fysieke knoppen</string>
   <string name="settings_hard_summary">Gebruik de volume knoppen om te tellen</string>
   <string name="settings_label_increment_title">Tik op waarde om te verhogen</string>
   <string name="settings_label_increment_summary">Verhoog een teller door op de huidige waarde te tikken</string>
   <string name="settings_hide_last_update_title">Verberg de laatste wijziging tijdstempel</string>
   <string name="settings_other">Overig</string>
   <string name="settings_version_title">Versie</string>
+  <string name="settings_reset_all_title">Alle tellers resetten</string>
   <string name="settings_wipe_title">Verwijder alle tellers</string>
   <string name="settings_export_title">Tellers exporteren</string>
   <string name="settings_export_summary">Exporteer alle tellers in CSV-formaat</string>
+  <string name="settings_import_title">Tellers importeren</string>
+  <string name="settings_import_summary">Tellers toevoegen uit een geëxporteerd CSV-bestand</string>
   <string name="settings_tip_title">Koop een koffie voor me</string>
   <string name="settings_tip_summary">Ondersteun de maker van deze app</string>
   <string name="settings_homepage_title">Startpagina</string>
   <string name="settings_homepage_summary">App info en de broncode</string>
   <string name="settings_wipe_confirmation">Wilt u echt alle tellers verwijderen?</string>
   <string name="settings_wipe_confirmation_yes">Alle verwijderen</string>
+  <string name="settings_reset_all_confirmation">Wilt u echt alle tellers resetten?</string>
+  <string name="settings_reset_all_confirmation_yes">Alles resetten</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d teller uit het bestand bestaat hier al. Vervangen door de waarde uit het bestand?</item>
+    <item quantity="other">%d tellers uit het bestand bestaan hier al. Vervangen door de waarden uit het bestand?</item>
+  </plurals>
+  <string name="import_clash_replace">Vervangen</string>
+  <string name="import_clash_keep">Huidige behouden</string>
+  <string name="import_summary_title">Importeren voltooid</string>
+  <string name="import_summary_added">Toegevoegd: %d</string>
+  <string name="import_summary_replaced">Vervangen: %d</string>
+  <string name="import_summary_kept">Behouden: %d</string>
+  <string name="import_summary_invalid">Regels die niet gelezen konden worden: %d</string>
+  <string name="import_nothing_found">Geen tellers gevonden in dit bestand.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Tel vanaf uw startscherm</string>
+  <string name="widget_configure_title">Kies een teller</string>
+  <string name="widget_counter_removed">Teller verwijderd. Tik om een andere te kiezen.</string>
+  <string name="widget_increment">Verhogen</string>
+  <string name="widget_decrement">Verlagen</string>
+  <string name="widget_preview_name">Rondes</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle tellers zijn verwijderd.</string>
+  <string name="toast_reset_all_success">Alle tellers zijn gereset.</string>
   <string name="toast_delete_success">Teller \"{name}\" is verwijderd.</string>
   <string name="toast_unable_to_modify">Er ging iets mis tijdens het bijwerken van de teller. Sorry!</string>
   <string name="toast_unable_to_export">Er is iets mis gegaan tijdens het exporteren van de tellers. Sorry!</string>
+  <string name="toast_unable_to_import">Er is iets mis gegaan tijdens het lezen van het bestand. Sorry!</string>
   <string name="toast_tutorial">Probeer te klikken op het nummer!</string>
   <!-- Other stuff -->
-  <string name="default_counter_name">Voeg nieuwe teller toe</string>
+  <string name="default_counter_name">Eerste teller</string>
 </resources>
