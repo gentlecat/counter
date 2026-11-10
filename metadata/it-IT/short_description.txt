@@ -1,1 +1,1 @@
-Tally contatore che rende il conteggio più facile.
+Contatore che rende il conteggio più facile.
