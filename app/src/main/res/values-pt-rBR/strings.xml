@@ -31,10 +31,10 @@
   <string name="settings_theme_auto_battery">Configurado pelo Econ. de energia</string>
   <string name="settings_theme_system">Usar configurações do sistema</string>
   <string name="settings_keep_on_title">Manter a tela ligada</string>
-  <string name="settings_keep_on_summary">Mantenha o tela ligada enquanto o aplicativo estiver sendo usado</string>
+  <string name="settings_keep_on_summary">Mantenha a tela ligada enquanto o aplicativo estiver sendo usado</string>
   <string name="settings_controls">Controles</string>
   <string name="settings_hide_controls_title">Ocultar os botões</string>
-  <string name="settings_hide_controls_summary">Você pode querer ativar o uso dos botões de volume ou a opção de incremento</string>
+  <string name="settings_hide_controls_summary">Você pode querer ativar o uso dos botões de volume ou a opção de tocar no valor para aumentar</string>
   <string name="settings_sounds_title">Som</string>
   <string name="settings_sounds_summary">Reproduzir sons quando alterar os valores</string>
   <string name="settings_vibration_title">Vibrar</string>
@@ -43,23 +43,50 @@
   <string name="settings_hard_summary">Mudar os valores do contador ao usar os botões de volume</string>
   <string name="settings_label_increment_title">Toque no valor para aumentar</string>
   <string name="settings_label_increment_summary">Ao tocar no contador o valor atual é aumentado</string>
-  <string name="settings_hide_last_update_title">Ocultar a última alteração do horário</string>
+  <string name="settings_hide_last_update_title">Ocultar o horário da última alteração</string>
   <string name="settings_other">Outros</string>
   <string name="settings_version_title">Versão</string>
+  <string name="settings_reset_all_title">Zerar todos os contadores</string>
   <string name="settings_wipe_title">Apagar todos os contadores</string>
   <string name="settings_export_title">Exportar contadores</string>
   <string name="settings_export_summary">Exportar todos os contadores no formato CSV</string>
+  <string name="settings_import_title">Importar contadores</string>
+  <string name="settings_import_summary">Adicionar contadores de um arquivo CSV exportado</string>
   <string name="settings_tip_title">Compre-me um café</string>
   <string name="settings_tip_summary">Apoie o criador deste app</string>
   <string name="settings_homepage_title">Página</string>
   <string name="settings_homepage_summary">Informações do app e o código-fonte</string>
   <string name="settings_wipe_confirmation">Quer mesmo apagar todos os contadores?</string>
   <string name="settings_wipe_confirmation_yes">Apagar tudo</string>
+  <string name="settings_reset_all_confirmation">Quer mesmo zerar todos os contadores?</string>
+  <string name="settings_reset_all_confirmation_yes">Zerar tudo</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d contador do arquivo já existe aqui. Substituí-lo pelo valor do arquivo?</item>
+    <item quantity="other">%d contadores do arquivo já existem aqui. Substituí-los pelos valores do arquivo?</item>
+  </plurals>
+  <string name="import_clash_replace">Substituir</string>
+  <string name="import_clash_keep">Manter atual</string>
+  <string name="import_summary_title">Importação concluída</string>
+  <string name="import_summary_added">Adicionados: %d</string>
+  <string name="import_summary_replaced">Substituídos: %d</string>
+  <string name="import_summary_kept">Mantidos: %d</string>
+  <string name="import_summary_invalid">Linhas que não puderam ser lidas: %d</string>
+  <string name="import_nothing_found">Nenhum contador encontrado neste arquivo.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Conte pela tela inicial</string>
+  <string name="widget_configure_title">Escolha um contador</string>
+  <string name="widget_counter_removed">Contador removido. Toque para escolher outro.</string>
+  <string name="widget_increment">Aumentar</string>
+  <string name="widget_decrement">Diminuir</string>
+  <string name="widget_preview_name">Voltas</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Todos os contadores foram excluídos.</string>
+  <string name="toast_reset_all_success">Todos os contadores foram zerados.</string>
   <string name="toast_delete_success">Contador \"{name}\" foi excluído.</string>
   <string name="toast_unable_to_modify">Alguma coisa deu errado ao salvar o contador. Desculpe!</string>
   <string name="toast_unable_to_export">Algo deu errado ao exportar os contadores. Desculpe!</string>
+  <string name="toast_unable_to_import">Algo deu errado ao ler o arquivo. Desculpe!</string>
   <string name="toast_tutorial">Tente clicar no número!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Novo contador</string>
