@@ -36,7 +36,7 @@
   <string name="settings_hide_controls_title">Скрыть кнопки</string>
   <string name="settings_hide_controls_summary">Вы можете включить кнопки громкости или увеличение нажатием на значение</string>
   <string name="settings_sounds_title">Включить звуки</string>
-  <string name="settings_sounds_summary">Возпроизводить звуки при изменении значений</string>
+  <string name="settings_sounds_summary">Воспроизводить звуки при изменении значений</string>
   <string name="settings_vibration_title">Включить вибрацию</string>
   <string name="settings_vibration_summary">Вибрация при изменениях счетчика</string>
   <string name="settings_hard_title">Использовать аппаратные кнопки</string>
