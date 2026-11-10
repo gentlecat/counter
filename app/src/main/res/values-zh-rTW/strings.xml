@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">計數器</string>
+  <string name="last_update_timestamp">最後變更於 {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">開啟側邊選單</string>
   <string name="menu_add">新增計數器</string>
@@ -32,6 +33,8 @@
   <string name="settings_keep_on_title">保持螢幕開啟</string>
   <string name="settings_keep_on_summary">程式若在使用中則保持螢幕開啟</string>
   <string name="settings_controls">控制</string>
+  <string name="settings_hide_controls_title">隱藏按鈕</string>
+  <string name="settings_hide_controls_summary">您可以開啟音量鍵控制或輕敲數值來增加的選項</string>
   <string name="settings_sounds_title">開啟音效</string>
   <string name="settings_sounds_summary">數值改變時播放音效</string>
   <string name="settings_vibration_title">開啟震動</string>
@@ -40,20 +43,50 @@
   <string name="settings_hard_summary">透過音量鍵改變計數器數值</string>
   <string name="settings_label_increment_title">透過輕敲數值來增加</string>
   <string name="settings_label_increment_summary">透過輕敲目前數值來增加計數器的數值</string>
+  <string name="settings_hide_last_update_title">隱藏最後變更時間</string>
   <string name="settings_other">其他</string>
   <string name="settings_version_title">版本</string>
+  <string name="settings_reset_all_title">歸零全部計數器</string>
   <string name="settings_wipe_title">刪除全部計數器</string>
   <string name="settings_export_title">匯出計數器</string>
   <string name="settings_export_summary">以 CSV 格式匯出全部計數器</string>
+  <string name="settings_import_title">匯入計數器</string>
+  <string name="settings_import_summary">從匯出的 CSV 檔案新增計數器</string>
+  <string name="settings_tip_title">請我喝杯咖啡</string>
+  <string name="settings_tip_summary">支持這個程式的作者</string>
   <string name="settings_homepage_title">網站</string>
   <string name="settings_homepage_summary">應用程式資訊及原始碼</string>
   <string name="settings_wipe_confirmation">您確定要刪除全部計數器嗎？</string>
   <string name="settings_wipe_confirmation_yes">刪除全部</string>
+  <string name="settings_reset_all_confirmation">您確定要歸零全部計數器嗎？</string>
+  <string name="settings_reset_all_confirmation_yes">全部歸零</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="other">檔案中有 %d 個計數器已存在。要以檔案中的數值取代嗎？</item>
+  </plurals>
+  <string name="import_clash_replace">取代</string>
+  <string name="import_clash_keep">保留目前數值</string>
+  <string name="import_summary_title">匯入完成</string>
+  <string name="import_summary_added">已新增：%d</string>
+  <string name="import_summary_replaced">已取代：%d</string>
+  <string name="import_summary_kept">已保留：%d</string>
+  <string name="import_summary_invalid">無法讀取的行：%d</string>
+  <string name="import_nothing_found">此檔案中找不到計數器。</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">在主畫面上計數</string>
+  <string name="widget_configure_title">選擇計數器</string>
+  <string name="widget_counter_removed">計數器已刪除。輕觸以選擇其他計數器。</string>
+  <string name="widget_increment">增加</string>
+  <string name="widget_decrement">減少</string>
+  <string name="widget_preview_name">圈數</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">已刪除全部計數器。</string>
+  <string name="toast_reset_all_success">已歸零全部計數器。</string>
   <string name="toast_delete_success">已刪除「{name}」計數器。</string>
   <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
   <string name="toast_unable_to_export">匯出計數器的時候出錯了，真抱歉！</string>
+  <string name="toast_unable_to_import">讀取檔案的時候出錯了，真抱歉！</string>
+  <string name="toast_tutorial">試著輕敲數字！</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新計數器</string>
 </resources>
