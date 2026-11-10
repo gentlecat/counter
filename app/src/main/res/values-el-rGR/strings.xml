@@ -13,7 +13,7 @@
   <!-- Dialogs -->
   <string name="dialog_add_title">Προσθήκη νέου μετρητή</string>
   <string name="dialog_edit_title">Επεξεργασία μετρητή</string>
-  <string name="dialog_delete_title">Θέλετε να σίγουρα διαγράψετε το μετρητή;</string>
+  <string name="dialog_delete_title">Θέλετε σίγουρα να διαγράψετε τον μετρητή;</string>
   <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
   <string name="dialog_edit_name">Τίτλος:</string>
   <string name="dialog_edit_value">Τιμή:</string>
@@ -34,10 +34,10 @@
   <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ενεργή</string>
   <string name="settings_controls">Στοιχεία ελέγχου</string>
   <string name="settings_hide_controls_title">Απόκρυψη των κουμπιών</string>
-  <string name="settings_hide_controls_summary">Μπορεί να θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ήχου ή το πάτημα για αύξηση της επιλογής</string>
-  <string name="settings_sounds_title">Ενεργοποιήσε τους ήχους</string>
+  <string name="settings_hide_controls_summary">Ίσως θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ή την αύξηση με πάτημα της τιμής</string>
+  <string name="settings_sounds_title">Ενεργοποίηση ήχων</string>
   <string name="settings_sounds_summary">Αναπαραγωγή ήχων κατά την αλλαγή τιμών</string>
-  <string name="settings_vibration_title">Ενεργοποιήσε τη δόνηση</string>
+  <string name="settings_vibration_title">Ενεργοποίηση δόνησης</string>
   <string name="settings_vibration_summary">Δόνηση στις αλλαγές τιμής</string>
   <string name="settings_hard_title">Χρήση πλήκτρων</string>
   <string name="settings_hard_summary">Αλλαγή τιμής μετρητή χρησιμοποιώντας τα κουμπιά έντασης</string>
@@ -48,7 +48,7 @@
   <string name="settings_version_title">Έκδοση</string>
   <string name="settings_reset_all_title">Επαναφορά όλων των μετρητών</string>
   <string name="settings_wipe_title">Διαγραφή όλων των μετρητών</string>
-  <string name="settings_export_title">Μετρητές εξαγωγής</string>
+  <string name="settings_export_title">Εξαγωγή μετρητών</string>
   <string name="settings_export_summary">Εξαγωγή όλων των μετρητών σε μορφή CSV</string>
   <string name="settings_import_title">Εισαγωγή μετρητών</string>
   <string name="settings_import_summary">Προσθήκη μετρητών από εξαγόμενο αρχείο CSV</string>
@@ -83,7 +83,7 @@
   <!-- Toasts -->
   <string name="toast_wipe_success">Όλοι οι μετρητές έχουν διαγραφεί.</string>
   <string name="toast_reset_all_success">Έγινε επαναφορά όλων των μετρητών.</string>
-  <string name="toast_delete_success">Counter \"{name}\" έχει διαγραφεί.</string>
+  <string name="toast_delete_success">Ο μετρητής \"{name}\" διαγράφηκε.</string>
   <string name="toast_unable_to_modify">Κάτι πήγε στραβά κατά την ενημέρωση του μετρητή. Συγγνώμη!</string>
   <string name="toast_unable_to_export">Κάτι πήγε στραβά κατά την εξαγωγή των μετρητών. Συγνώμη!</string>
   <string name="toast_unable_to_import">Κάτι πήγε στραβά κατά την ανάγνωση του αρχείου. Συγγνώμη!</string>

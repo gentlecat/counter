@@ -1,1 +1,1 @@
-Tally räknare som gör räkningen enklare.
+Räknare som gör det enklare att räkna.

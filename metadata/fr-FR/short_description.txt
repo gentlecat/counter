@@ -1,1 +1,1 @@
-Compteur de compteur qui rend le comptage plus facile.
+Compteur qui rend le comptage plus facile.

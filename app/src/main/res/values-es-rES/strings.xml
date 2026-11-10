@@ -28,13 +28,13 @@
   <string name="settings_theme">Tema</string>
   <string name="settings_theme_light">Claro</string>
   <string name="settings_theme_dark">Oscuro</string>
-  <string name="settings_theme_auto_battery">Establecido por Battery Saver</string>
+  <string name="settings_theme_auto_battery">Establecido por el Ahorro de batería</string>
   <string name="settings_theme_system">Utilizar valores por defecto</string>
   <string name="settings_keep_on_title">Mantener la pantalla encendida</string>
   <string name="settings_keep_on_summary">Mantener la pantalla encendida mientras la aplicación esté activa</string>
   <string name="settings_controls">Controles</string>
   <string name="settings_hide_controls_title">Ocultar los botones</string>
-  <string name="settings_hide_controls_summary">Puede que desee activar los botones de volumen o la opción de incrementar</string>
+  <string name="settings_hide_controls_summary">Puede que quieras activar los botones de volumen o la opción de pulsar el valor para aumentarlo</string>
   <string name="settings_sounds_title">Encender sonidos</string>
   <string name="settings_sounds_summary">Reproducir sonidos al cambiar valores</string>
   <string name="settings_vibration_title">Activar vibración</string>

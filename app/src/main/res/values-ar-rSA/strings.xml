@@ -4,7 +4,7 @@
   <string name="app_name">العداد</string>
   <string name="last_update_timestamp">آخر تغيير في {timestamp}</string>
   <!-- Menu -->
-  <string name="menu_counters_list">عداد بسيط، سهل الاستعمال، خالي من الإعلانات</string>
+  <string name="menu_counters_list">فتح قائمة العدادات</string>
   <string name="menu_add">إضافة عداد</string>
   <string name="menu_reset">إعادة ضبط العداد</string>
   <string name="menu_edit">تحرير العداد</string>
@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">إبقاء الشاشة تعمل أثناء عمل التطبيق</string>
   <string name="settings_controls">التحكم</string>
   <string name="settings_hide_controls_title">إخفاء الأزرار</string>
-  <string name="settings_hide_controls_summary">قد ترغب في تشغيل استخدام أزرار الصوت أو النقر على خيار الزيادة</string>
+  <string name="settings_hide_controls_summary">قد ترغب في تفعيل استخدام أزرار الصوت أو خيار النقر على القيمة لزيادتها</string>
   <string name="settings_sounds_title">تفعيل الأصوات</string>
   <string name="settings_sounds_summary">تشغيل أصوات عند تغيير القيم</string>
   <string name="settings_vibration_title">تفعيل الاهتزاز</string>
@@ -43,7 +43,7 @@
   <string name="settings_hard_summary">تغيير قيمة العداد باستخدام أزرار الصوت</string>
   <string name="settings_label_increment_title">اضغط على القيمة للزيادة</string>
   <string name="settings_label_increment_summary">زيادة العداد عن طريق الضغط على القيمة الحالية</string>
-  <string name="settings_hide_last_update_title">إخفاء آخر تغيير للطابع الزمني</string>
+  <string name="settings_hide_last_update_title">إخفاء وقت آخر تغيير</string>
   <string name="settings_other">الأخرى</string>
   <string name="settings_version_title">الإصدار</string>
   <string name="settings_reset_all_title">إعادة ضبط جميع العدادات</string>
@@ -52,7 +52,7 @@
   <string name="settings_export_summary">تصدير جميع العدادات بتنسيق CSV</string>
   <string name="settings_import_title">استيراد العدادات</string>
   <string name="settings_import_summary">إضافة عدادات من ملف CSV مُصدَّر</string>
-  <string name="settings_tip_title">اشتري لي قهوة</string>
+  <string name="settings_tip_title">اشترِ لي قهوة</string>
   <string name="settings_tip_summary">دعم منشئ هذا التطبيق</string>
   <string name="settings_homepage_title">الصفحة الرئيسية</string>
   <string name="settings_homepage_summary">معلومات التطبيق والكود المصدر</string>

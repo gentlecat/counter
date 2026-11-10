@@ -17,7 +17,7 @@
   <string name="dialog_reset_title">您是否想重置此计数器？</string>
   <string name="dialog_edit_name">标题:</string>
   <string name="dialog_edit_value">值:</string>
-  <string name="dialog_button_add">增加</string>
+  <string name="dialog_button_add">添加</string>
   <string name="dialog_button_apply">应用</string>
   <string name="dialog_button_reset">重置计数器</string>
   <string name="dialog_button_delete">删除计数器</string>
@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">在使用应用程序时保持屏幕常亮</string>
   <string name="settings_controls">控制</string>
   <string name="settings_hide_controls_title">隐藏按钮</string>
-  <string name="settings_hide_controls_summary">您可能想要开启音量按钮或点击以增量选项</string>
+  <string name="settings_hide_controls_summary">您可能想要开启音量键控制或点击数值来增加的选项</string>
   <string name="settings_sounds_title">开启音效</string>
   <string name="settings_sounds_summary">在数值更改时播放声音</string>
   <string name="settings_vibration_title">开启振动</string>

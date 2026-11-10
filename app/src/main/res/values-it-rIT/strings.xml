@@ -21,7 +21,7 @@
   <string name="dialog_button_apply">Applica</string>
   <string name="dialog_button_reset">Azzera contatore</string>
   <string name="dialog_button_delete">Elimina contatore</string>
-  <string name="dialog_button_cancel">Cancella</string>
+  <string name="dialog_button_cancel">Annulla</string>
   <!-- Settings -->
   <string name="settings_title">Impostazioni</string>
   <string name="settings_display">Visualizzazione</string>
@@ -31,10 +31,10 @@
   <string name="settings_theme_auto_battery">Impostato dal risparmio energetico</string>
   <string name="settings_theme_system">Usa tema del sistema</string>
   <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
-  <string name="settings_keep_on_summary">Mantieni lo schermo accesso mentre l\'applicazione è attiva</string>
+  <string name="settings_keep_on_summary">Mantieni lo schermo acceso mentre l\'applicazione è attiva</string>
   <string name="settings_controls">Controlli</string>
   <string name="settings_hide_controls_title">Nascondi i pulsanti</string>
-  <string name="settings_hide_controls_summary">Si potrebbe voler attivare i pulsanti del volume utilizzare o il tocco per aumentare l\'opzione</string>
+  <string name="settings_hide_controls_summary">Potresti voler attivare i pulsanti del volume o il tocco sul valore per aumentarlo</string>
   <string name="settings_sounds_title">Attiva suoni</string>
   <string name="settings_sounds_summary">Riproduci suoni durante la modifica dei valori</string>
   <string name="settings_vibration_title">Attiva vibrazione</string>

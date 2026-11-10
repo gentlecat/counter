@@ -84,7 +84,7 @@
   <string name="toast_wipe_success">Kõik loendurid on kustutatud.</string>
   <string name="toast_reset_all_success">Kõik loendurid on lähtestatud.</string>
   <string name="toast_delete_success">Loendur \"{name}\" on kustutatud.</string>
-  <string name="toast_unable_to_modify">Miskit läks lugeri uuendamisega nihu. Vabandame!</string>
+  <string name="toast_unable_to_modify">Midagi läks loenduri uuendamisel valesti. Vabandame!</string>
   <string name="toast_unable_to_export">Midagi läks loendurite eksportimisel valesti. Vabandame!</string>
   <string name="toast_unable_to_import">Midagi läks faili lugemisel valesti. Vabandame!</string>
   <string name="toast_tutorial">Proovi numbrile vajutada!</string>

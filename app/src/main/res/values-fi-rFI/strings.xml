@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Laskuri</string>
-  <string name="last_update_timestamp">Viimeksi muutettu nimellä {timestamp}</string>
+  <string name="last_update_timestamp">Viimeksi muutettu {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Avaa navigointi</string>
   <string name="menu_add">Lisää laskuri</string>
@@ -13,12 +13,12 @@
   <!-- Dialogs -->
   <string name="dialog_add_title">Lisää uusi laskuri</string>
   <string name="dialog_edit_title">Muokkaa laskuria</string>
-  <string name="dialog_delete_title">Haluatko todella poistaa tämän laskimen?</string>
+  <string name="dialog_delete_title">Haluatko todella poistaa tämän laskurin?</string>
   <string name="dialog_reset_title">Haluatko varmasti nollata laskurin?</string>
   <string name="dialog_edit_name">Otsikko:</string>
   <string name="dialog_edit_value">Arvo:</string>
   <string name="dialog_button_add">Lisää</string>
-  <string name="dialog_button_apply">Ota käytöön</string>
+  <string name="dialog_button_apply">Ota käyttöön</string>
   <string name="dialog_button_reset">Nollaa laskuri</string>
   <string name="dialog_button_delete">Poista laskuri</string>
   <string name="dialog_button_cancel">Peruuta</string>
@@ -34,11 +34,11 @@
   <string name="settings_keep_on_summary">Pidä näyttö päällä, kun sovellus on käytössä</string>
   <string name="settings_controls">Ohjaimet</string>
   <string name="settings_hide_controls_title">Piilota painikkeet</string>
-  <string name="settings_hide_controls_summary">Voit halutessasi kytkeä äänenvoimakkuuden painikkeet käyttöön tai napauta lisäysasetusta varten</string>
+  <string name="settings_hide_controls_summary">Voit ottaa käyttöön äänenvoimakkuuspainikkeet tai arvon napauttamisen lisäämiseksi</string>
   <string name="settings_sounds_title">Kytke äänet</string>
   <string name="settings_sounds_summary">Toista äänet arvoja muuttaessa</string>
   <string name="settings_vibration_title">Kytke tärinä</string>
-  <string name="settings_vibration_summary">Värinä arvon muutoksissa</string>
+  <string name="settings_vibration_summary">Tärinä arvon muuttuessa</string>
   <string name="settings_hard_title">Käytä laitteistopainikkeita</string>
   <string name="settings_hard_summary">Muuta laskurin arvoa käyttämällä äänenvoimakkuuden painikkeita</string>
   <string name="settings_label_increment_title">Napauta arvoa lisätäksesi</string>
@@ -48,7 +48,7 @@
   <string name="settings_version_title">Versio</string>
   <string name="settings_reset_all_title">Nollaa kaikki laskurit</string>
   <string name="settings_wipe_title">Poista kaikki laskurit</string>
-  <string name="settings_export_title">Vienti laskurit</string>
+  <string name="settings_export_title">Vie laskurit</string>
   <string name="settings_export_summary">Vie kaikki laskurit CSV-muodossa</string>
   <string name="settings_import_title">Tuo laskurit</string>
   <string name="settings_import_summary">Lisää laskureita viedystä CSV-tiedostosta</string>
@@ -85,7 +85,7 @@
   <string name="toast_reset_all_success">Kaikki laskurit on nollattu.</string>
   <string name="toast_delete_success">Laskuri \"{name}\" on poistettu.</string>
   <string name="toast_unable_to_modify">Jokin meni pieleen laskuria päivitettäessä. Anteeksi!</string>
-  <string name="toast_unable_to_export">Jokin meni pieleen laskurin viennissä. Anteeksi!</string>
+  <string name="toast_unable_to_export">Jokin meni pieleen laskureiden viennissä. Anteeksi!</string>
   <string name="toast_unable_to_import">Jokin meni pieleen tiedostoa luettaessa. Anteeksi!</string>
   <string name="toast_tutorial">Yritä klikata numeroa!</string>
   <!-- Other stuff -->

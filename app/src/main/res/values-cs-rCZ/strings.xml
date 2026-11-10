@@ -4,9 +4,9 @@
   <string name="app_name">Počítadlo</string>
   <string name="last_update_timestamp">Naposledy změněno v {timestamp}</string>
   <!-- Menu -->
-  <string name="menu_counters_list">Otevřít seznam čítačů</string>
+  <string name="menu_counters_list">Otevřít seznam počítadel</string>
   <string name="menu_add">Přidat počítadlo</string>
-  <string name="menu_reset">Vymazat</string>
+  <string name="menu_reset">Vynulovat</string>
   <string name="menu_edit">Upravit počítadlo</string>
   <string name="menu_delete">Smazat</string>
   <string name="menu_settings">Nastavení</string>
@@ -14,12 +14,12 @@
   <string name="dialog_add_title">Přidat nové počítadlo</string>
   <string name="dialog_edit_title">Upravit počítadlo</string>
   <string name="dialog_delete_title">Opravdu chcete smazat toto počítadlo?</string>
-  <string name="dialog_reset_title">Jste si jistí, že chcete počítadlo obnovit?</string>
+  <string name="dialog_reset_title">Opravdu chcete vynulovat toto počítadlo?</string>
   <string name="dialog_edit_name">Název:</string>
   <string name="dialog_edit_value">Hodnota:</string>
   <string name="dialog_button_add">Přidat</string>
   <string name="dialog_button_apply">Použít</string>
-  <string name="dialog_button_reset">Vymazat</string>
+  <string name="dialog_button_reset">Vynulovat</string>
   <string name="dialog_button_delete">Smazat</string>
   <string name="dialog_button_cancel">Zrušit</string>
   <!-- Settings -->
@@ -48,8 +48,8 @@
   <string name="settings_version_title">Verze</string>
   <string name="settings_reset_all_title">Vynulovat všechna počítadla</string>
   <string name="settings_wipe_title">Odstranit všechna počítadla</string>
-  <string name="settings_export_title">Exportovat čítače</string>
-  <string name="settings_export_summary">Exportovat všechna čítače ve formátu CSV</string>
+  <string name="settings_export_title">Exportovat počítadla</string>
+  <string name="settings_export_summary">Exportovat všechna počítadla ve formátu CSV</string>
   <string name="settings_import_title">Importovat počítadla</string>
   <string name="settings_import_summary">Přidat počítadla z exportovaného souboru CSV</string>
   <string name="settings_tip_title">Koupit mi kávu</string>
@@ -83,10 +83,10 @@
   <string name="widget_decrement">Odečíst</string>
   <string name="widget_preview_name">Kola</string>
   <!-- Toasts -->
-  <string name="toast_wipe_success">Všechna čítače byla odstraněna.</string>
+  <string name="toast_wipe_success">Všechna počítadla byla odstraněna.</string>
   <string name="toast_reset_all_success">Všechna počítadla byla vynulována.</string>
   <string name="toast_delete_success">Počítadlo \"{name}\" bylo smazáno.</string>
-  <string name="toast_unable_to_modify">Při aktualizaci čítače nastala chyba. Omlouváme se!</string>
+  <string name="toast_unable_to_modify">Při aktualizaci počítadla nastala chyba. Omlouváme se!</string>
   <string name="toast_unable_to_export">Při exportu počítadel nastala chyba. Omlouváme se!</string>
   <string name="toast_unable_to_import">Při čtení souboru nastala chyba. Omlouváme se!</string>
   <string name="toast_tutorial">Zkuste kliknout na číslo!</string>

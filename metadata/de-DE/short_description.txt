@@ -1,1 +1,1 @@
-Tally counter was das Zählen einfacher macht.
+Zähler, der das Zählen einfacher macht.

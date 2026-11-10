@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Tæller</string>
-  <string name="last_update_timestamp">Sidst ændret hos {timestamp}</string>
+  <string name="last_update_timestamp">Sidst ændret {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Åbn navigation</string>
   <string name="menu_add">Tilføj tæller</string>
@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">Hold skærmen tændt når appen er aktiv</string>
   <string name="settings_controls">Styring</string>
   <string name="settings_hide_controls_title">Skjul knapperne</string>
-  <string name="settings_hide_controls_summary">Du vil måske slå lydstyrkeknapper til brug eller tryk for at øge indstillingen</string>
+  <string name="settings_hide_controls_summary">Du vil måske slå brug af lydstyrkeknapperne eller tryk på værdien for at øge til</string>
   <string name="settings_sounds_title">Tænd for lyde</string>
   <string name="settings_sounds_summary">Spil lyde når man ændrer værdier</string>
   <string name="settings_vibration_title">Tænd for vibration</string>

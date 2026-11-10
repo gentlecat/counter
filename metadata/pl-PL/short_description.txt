@@ -1,1 +1,1 @@
-Rozlicznik który ułatwia liczenie.
+Licznik, który ułatwia liczenie.

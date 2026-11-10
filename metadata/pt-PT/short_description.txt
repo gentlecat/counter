@@ -1,1 +1,1 @@
-Contador real que torna a contagem mais fácil.
+Contador que torna a contagem mais fácil.
