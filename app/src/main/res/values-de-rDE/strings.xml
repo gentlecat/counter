@@ -34,7 +34,7 @@
   <string name="settings_keep_on_summary">Bildschirm eingeschaltet lassen, während die App aktiv ist</string>
   <string name="settings_controls">Steuerelemente</string>
   <string name="settings_hide_controls_title">Buttons ausblenden</string>
-  <string name="settings_hide_controls_summary">Sie sollten die Lautstärketasten verwenden oder das Tippen zum Hochladen aktivieren</string>
+  <string name="settings_hide_controls_summary">Du kannst die Lautstärketasten oder das Antippen zum Erhöhen aktivieren</string>
   <string name="settings_sounds_title">Sound aktivieren</string>
   <string name="settings_sounds_summary">Töne abspielen, wenn Werte geändert werden</string>
   <string name="settings_vibration_title">Vibration aktivieren</string>
@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Den letzten Änderungszeitstempel ausblenden</string>
   <string name="settings_other">Sonstiges</string>
   <string name="settings_version_title">Version</string>
+  <string name="settings_reset_all_title">Alle Zähler zurücksetzen</string>
   <string name="settings_wipe_title">Alle Zähler entfernen</string>
   <string name="settings_export_title">Zähler exportieren</string>
   <string name="settings_export_summary">Alle Zähler im CSV-Format exportieren</string>
+  <string name="settings_import_title">Zähler importieren</string>
+  <string name="settings_import_summary">Zähler aus einer exportierten CSV-Datei hinzufügen</string>
   <string name="settings_tip_title">Spendiere mir einen Kaffee</string>
   <string name="settings_tip_summary">Unterstütze den Entwickler dieser App</string>
   <string name="settings_homepage_title">Webseite</string>
   <string name="settings_homepage_summary">App-Info und Quellcode</string>
   <string name="settings_wipe_confirmation">Möchtest Du wirklich alle Zähler entfernen?</string>
   <string name="settings_wipe_confirmation_yes">Alle entfernen</string>
+  <string name="settings_reset_all_confirmation">Möchtest Du wirklich alle Zähler zurücksetzen?</string>
+  <string name="settings_reset_all_confirmation_yes">Alle zurücksetzen</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d Zähler aus der Datei gibt es hier bereits. Durch den Wert aus der Datei ersetzen?</item>
+    <item quantity="other">%d Zähler aus der Datei gibt es hier bereits. Durch die Werte aus der Datei ersetzen?</item>
+  </plurals>
+  <string name="import_clash_replace">Ersetzen</string>
+  <string name="import_clash_keep">Aktuelle behalten</string>
+  <string name="import_summary_title">Import abgeschlossen</string>
+  <string name="import_summary_added">Hinzugefügt: %d</string>
+  <string name="import_summary_replaced">Ersetzt: %d</string>
+  <string name="import_summary_kept">Beibehalten: %d</string>
+  <string name="import_summary_invalid">Nicht lesbare Zeilen: %d</string>
+  <string name="import_nothing_found">In dieser Datei wurden keine Zähler gefunden.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Zähle direkt auf dem Startbildschirm</string>
+  <string name="widget_configure_title">Zähler auswählen</string>
+  <string name="widget_counter_removed">Zähler entfernt. Tippe, um einen anderen auszuwählen.</string>
+  <string name="widget_increment">Erhöhen</string>
+  <string name="widget_decrement">Verringern</string>
+  <string name="widget_preview_name">Runden</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle Zähler wurden gelöscht.</string>
+  <string name="toast_reset_all_success">Alle Zähler wurden zurückgesetzt.</string>
   <string name="toast_delete_success">Zähler \"{name}\" wurde gelöscht.</string>
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
+  <string name="toast_unable_to_import">Beim Lesen der Datei ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_tutorial">Klicke auf die Nummer!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Erster Zähler</string>
