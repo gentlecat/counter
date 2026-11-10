@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Saymayı kolaylaştıran bir sayaç.
