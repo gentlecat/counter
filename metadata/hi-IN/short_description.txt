@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+टैली काउंटर जो गिनती को आसान बनाता है।
