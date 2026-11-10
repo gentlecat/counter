@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+讓計數更輕鬆的計數器。

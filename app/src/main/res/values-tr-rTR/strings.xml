@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Sayaç</string>
+  <string name="last_update_timestamp">Son değişiklik: {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Gezinmeyi aç</string>
   <string name="menu_add">Sayaç ekle</string>
@@ -27,19 +28,66 @@
   <string name="settings_theme">Tema</string>
   <string name="settings_theme_light">Açık</string>
   <string name="settings_theme_dark">Koyu</string>
+  <string name="settings_theme_auto_battery">Pil Tasarrufu\'na göre</string>
+  <string name="settings_theme_system">Sistem varsayılanını kullan</string>
   <string name="settings_keep_on_title">Ekranı açık tut</string>
   <string name="settings_keep_on_summary">Uygulamaya etkinken ekranı açık tutun</string>
   <string name="settings_controls">Kontroller</string>
+  <string name="settings_hide_controls_title">Düğmeleri gizle</string>
+  <string name="settings_hide_controls_summary">Ses düğmelerini veya artırmak için dokunma seçeneğini açmak isteyebilirsiniz</string>
   <string name="settings_sounds_title">Sesleri aç</string>
   <string name="settings_sounds_summary">Değerleri değiştirirken sesleri çal</string>
   <string name="settings_vibration_title">Titreşimi aç</string>
+  <string name="settings_vibration_summary">Değer değiştiğinde titret</string>
   <string name="settings_hard_title">Donanım tuşlarını kullan</string>
+  <string name="settings_hard_summary">Sayaç değerini ses düğmeleriyle değiştir</string>
+  <string name="settings_label_increment_title">Artırmak için değere dokunun</string>
+  <string name="settings_label_increment_summary">Mevcut değere dokunarak sayacı artırın</string>
+  <string name="settings_hide_last_update_title">Son değişiklik zamanını gizle</string>
   <string name="settings_other">Diğer</string>
   <string name="settings_version_title">Sürüm</string>
+  <string name="settings_reset_all_title">Tüm sayaçları sıfırla</string>
   <string name="settings_wipe_title">Tüm sayaçları kaldır</string>
+  <string name="settings_export_title">Sayaçları dışa aktar</string>
+  <string name="settings_export_summary">Tüm sayaçları CSV biçiminde dışa aktar</string>
+  <string name="settings_import_title">Sayaçları içe aktar</string>
+  <string name="settings_import_summary">Dışa aktarılmış bir CSV dosyasından sayaç ekle</string>
+  <string name="settings_tip_title">Bana bir kahve ısmarla</string>
+  <string name="settings_tip_summary">Bu uygulamanın geliştiricisini destekleyin</string>
+  <string name="settings_homepage_title">Ana sayfa</string>
+  <string name="settings_homepage_summary">Uygulama bilgisi ve kaynak kodu</string>
   <string name="settings_wipe_confirmation">Tüm sayaçları gerçekten silmek istiyor musunuz?</string>
   <string name="settings_wipe_confirmation_yes">Tümünü kaldır</string>
+  <string name="settings_reset_all_confirmation">Tüm sayaçları gerçekten sıfırlamak istiyor musunuz?</string>
+  <string name="settings_reset_all_confirmation_yes">Tümünü sıfırla</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">Dosyadaki %d sayaç burada zaten var. Dosyadaki değerle değiştirilsin mi?</item>
+    <item quantity="other">Dosyadaki %d sayaç burada zaten var. Dosyadaki değerlerle değiştirilsin mi?</item>
+  </plurals>
+  <string name="import_clash_replace">Değiştir</string>
+  <string name="import_clash_keep">Mevcut olanı koru</string>
+  <string name="import_summary_title">İçe aktarma tamamlandı</string>
+  <string name="import_summary_added">Eklenen: %d</string>
+  <string name="import_summary_replaced">Değiştirilen: %d</string>
+  <string name="import_summary_kept">Korunan: %d</string>
+  <string name="import_summary_invalid">Okunamayan satırlar: %d</string>
+  <string name="import_nothing_found">Bu dosyada sayaç bulunamadı.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Ana ekrandan sayın</string>
+  <string name="widget_configure_title">Bir sayaç seçin</string>
+  <string name="widget_counter_removed">Sayaç kaldırıldı. Başka birini seçmek için dokunun.</string>
+  <string name="widget_increment">Artır</string>
+  <string name="widget_decrement">Azalt</string>
+  <string name="widget_preview_name">Turlar</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Tüm sayaçlar silindi.</string>
+  <string name="toast_reset_all_success">Tüm sayaçlar sıfırlandı.</string>
+  <string name="toast_delete_success">\"{name}\" sayacı silindi.</string>
+  <string name="toast_unable_to_modify">Sayaç güncellenirken bir sorun oluştu. Üzgünüz!</string>
+  <string name="toast_unable_to_export">Sayaçlar dışa aktarılırken bir sorun oluştu. Üzgünüz!</string>
+  <string name="toast_unable_to_import">Dosya okunurken bir sorun oluştu. Üzgünüz!</string>
+  <string name="toast_tutorial">Sayıya dokunmayı deneyin!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">İlk sayaç</string>
 </resources>

@@ -46,20 +46,51 @@
   <string name="settings_hide_last_update_title">إخفاء آخر تغيير للطابع الزمني</string>
   <string name="settings_other">الأخرى</string>
   <string name="settings_version_title">الإصدار</string>
+  <string name="settings_reset_all_title">إعادة ضبط جميع العدادات</string>
   <string name="settings_wipe_title">إزالة جميع العدادات</string>
   <string name="settings_export_title">تصدير العدادات</string>
   <string name="settings_export_summary">تصدير جميع العدادات بتنسيق CSV</string>
+  <string name="settings_import_title">استيراد العدادات</string>
+  <string name="settings_import_summary">إضافة عدادات من ملف CSV مُصدَّر</string>
   <string name="settings_tip_title">اشتري لي قهوة</string>
   <string name="settings_tip_summary">دعم منشئ هذا التطبيق</string>
   <string name="settings_homepage_title">الصفحة الرئيسية</string>
   <string name="settings_homepage_summary">معلومات التطبيق والكود المصدر</string>
   <string name="settings_wipe_confirmation">هل تريد حقاً إزالة جميع العدادات؟</string>
   <string name="settings_wipe_confirmation_yes">إزالة الكل</string>
+  <string name="settings_reset_all_confirmation">هل تريد حقاً إعادة ضبط جميع العدادات؟</string>
+  <string name="settings_reset_all_confirmation_yes">إعادة ضبط الكل</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="zero">%d عداد من الملف موجود هنا مسبقاً. هل تريد استبدالها بالقيم من الملف؟</item>
+    <item quantity="one">%d عداد من الملف موجود هنا مسبقاً. هل تريد استبداله بالقيمة من الملف؟</item>
+    <item quantity="two">%d عدادان من الملف موجودان هنا مسبقاً. هل تريد استبدالهما بالقيمتين من الملف؟</item>
+    <item quantity="few">%d عدادات من الملف موجودة هنا مسبقاً. هل تريد استبدالها بالقيم من الملف؟</item>
+    <item quantity="many">%d عداداً من الملف موجودة هنا مسبقاً. هل تريد استبدالها بالقيم من الملف؟</item>
+    <item quantity="other">%d عداد من الملف موجودة هنا مسبقاً. هل تريد استبدالها بالقيم من الملف؟</item>
+  </plurals>
+  <string name="import_clash_replace">استبدال</string>
+  <string name="import_clash_keep">الاحتفاظ بالحالي</string>
+  <string name="import_summary_title">اكتمل الاستيراد</string>
+  <string name="import_summary_added">تمت الإضافة: %d</string>
+  <string name="import_summary_replaced">تم الاستبدال: %d</string>
+  <string name="import_summary_kept">تم الاحتفاظ: %d</string>
+  <string name="import_summary_invalid">صفوف تعذرت قراءتها: %d</string>
+  <string name="import_nothing_found">لم يتم العثور على عدادات في هذا الملف.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">العدّ من الشاشة الرئيسية</string>
+  <string name="widget_configure_title">اختر عداداً</string>
+  <string name="widget_counter_removed">تمت إزالة العداد. انقر لاختيار عداد آخر.</string>
+  <string name="widget_increment">زيادة</string>
+  <string name="widget_decrement">إنقاص</string>
+  <string name="widget_preview_name">لفات</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">تم حذف جميع العدادات.</string>
+  <string name="toast_reset_all_success">تمت إعادة ضبط جميع العدادات.</string>
   <string name="toast_delete_success">تم حذف العداد \"{name}\".</string>
   <string name="toast_unable_to_modify">حدث خطأ ما أثناء تحديث العداد. عذراً!</string>
   <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
+  <string name="toast_unable_to_import">حدث خطأ ما أثناء قراءة الملف. عذراً!</string>
   <string name="toast_tutorial">حاول النقر على الرقم!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>

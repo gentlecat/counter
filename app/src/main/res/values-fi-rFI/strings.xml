@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Piilota viimeinen muutosaikaleima</string>
   <string name="settings_other">Muu</string>
   <string name="settings_version_title">Versio</string>
+  <string name="settings_reset_all_title">Nollaa kaikki laskurit</string>
   <string name="settings_wipe_title">Poista kaikki laskurit</string>
   <string name="settings_export_title">Vienti laskurit</string>
   <string name="settings_export_summary">Vie kaikki laskurit CSV-muodossa</string>
+  <string name="settings_import_title">Tuo laskurit</string>
+  <string name="settings_import_summary">Lisää laskureita viedystä CSV-tiedostosta</string>
   <string name="settings_tip_title">Osta minulle kahvi</string>
   <string name="settings_tip_summary">Tue tämän sovelluksen luojaa</string>
   <string name="settings_homepage_title">Kotisivu</string>
   <string name="settings_homepage_summary">Sovelluksen tiedot ja lähdekoodi</string>
   <string name="settings_wipe_confirmation">Haluatko varmasti poistaa kaikki laskurit?</string>
   <string name="settings_wipe_confirmation_yes">Poista kaikki</string>
+  <string name="settings_reset_all_confirmation">Haluatko varmasti nollata kaikki laskurit?</string>
+  <string name="settings_reset_all_confirmation_yes">Nollaa kaikki</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d tiedoston laskuri on jo olemassa. Korvataanko se tiedoston arvolla?</item>
+    <item quantity="other">%d tiedoston laskuria on jo olemassa. Korvataanko ne tiedoston arvoilla?</item>
+  </plurals>
+  <string name="import_clash_replace">Korvaa</string>
+  <string name="import_clash_keep">Säilytä nykyinen</string>
+  <string name="import_summary_title">Tuonti valmis</string>
+  <string name="import_summary_added">Lisätty: %d</string>
+  <string name="import_summary_replaced">Korvattu: %d</string>
+  <string name="import_summary_kept">Säilytetty: %d</string>
+  <string name="import_summary_invalid">Rivejä, joita ei voitu lukea: %d</string>
+  <string name="import_nothing_found">Tiedostosta ei löytynyt laskureita.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Laske suoraan aloitusnäytöltä</string>
+  <string name="widget_configure_title">Valitse laskuri</string>
+  <string name="widget_counter_removed">Laskuri poistettu. Valitse toinen napauttamalla.</string>
+  <string name="widget_increment">Lisää</string>
+  <string name="widget_decrement">Vähennä</string>
+  <string name="widget_preview_name">Kierrokset</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Kaikki laskurit on poistettu.</string>
+  <string name="toast_reset_all_success">Kaikki laskurit on nollattu.</string>
   <string name="toast_delete_success">Laskuri \"{name}\" on poistettu.</string>
   <string name="toast_unable_to_modify">Jokin meni pieleen laskuria päivitettäessä. Anteeksi!</string>
   <string name="toast_unable_to_export">Jokin meni pieleen laskurin viennissä. Anteeksi!</string>
+  <string name="toast_unable_to_import">Jokin meni pieleen tiedostoa luettaessa. Anteeksi!</string>
   <string name="toast_tutorial">Yritä klikata numeroa!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ensimmäinen laskuri</string>

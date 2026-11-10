@@ -1,3 +1,3 @@
-You can have multiple counters with their own names and values. Values can be changed using the volume buttons or by tapping on the screen.
+می‌توانید چند شمارنده با نام و مقدار جداگانه داشته باشید. مقادیر را می‌توان با دکمه‌های صدا یا با ضربه زدن روی صفحه تغییر داد.
 
-All your data can be exported in CSV format.
+همه‌ی داده‌های شما را می‌توان در قالب CSV صادر کرد.

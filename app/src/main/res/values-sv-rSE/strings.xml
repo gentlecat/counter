@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Dölj den senaste ändringen tidsstämpel</string>
   <string name="settings_other">Övrigt</string>
   <string name="settings_version_title">Version</string>
+  <string name="settings_reset_all_title">Återställ alla räknare</string>
   <string name="settings_wipe_title">Ta bort alla räknare</string>
   <string name="settings_export_title">Exportera räknare</string>
   <string name="settings_export_summary">Exportera alla räknare i CSV-format</string>
+  <string name="settings_import_title">Importera räknare</string>
+  <string name="settings_import_summary">Lägg till räknare från en exporterad CSV-fil</string>
   <string name="settings_tip_title">Köp mig ett kaffe</string>
   <string name="settings_tip_summary">Stöd skaparen av denna app</string>
   <string name="settings_homepage_title">Hemsida</string>
   <string name="settings_homepage_summary">Appinformation och källkoden</string>
   <string name="settings_wipe_confirmation">Vill du verkligen ta bort alla räknare?</string>
   <string name="settings_wipe_confirmation_yes">Ta bort alla</string>
+  <string name="settings_reset_all_confirmation">Vill du verkligen återställa alla räknare?</string>
+  <string name="settings_reset_all_confirmation_yes">Återställ alla</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d räknare i filen finns redan här. Ersätta den med värdet från filen?</item>
+    <item quantity="other">%d räknare i filen finns redan här. Ersätta dem med värdena från filen?</item>
+  </plurals>
+  <string name="import_clash_replace">Ersätt</string>
+  <string name="import_clash_keep">Behåll nuvarande</string>
+  <string name="import_summary_title">Importen är klar</string>
+  <string name="import_summary_added">Tillagda: %d</string>
+  <string name="import_summary_replaced">Ersatta: %d</string>
+  <string name="import_summary_kept">Behållna: %d</string>
+  <string name="import_summary_invalid">Rader som inte kunde läsas: %d</string>
+  <string name="import_nothing_found">Inga räknare hittades i den här filen.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Räkna från hemskärmen</string>
+  <string name="widget_configure_title">Välj en räknare</string>
+  <string name="widget_counter_removed">Räknaren har tagits bort. Tryck för att välja en annan.</string>
+  <string name="widget_increment">Öka</string>
+  <string name="widget_decrement">Minska</string>
+  <string name="widget_preview_name">Varv</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Alla räknare har tagits bort.</string>
+  <string name="toast_reset_all_success">Alla räknare har återställts.</string>
   <string name="toast_delete_success">Räknaren \"{name}\" har tagits bort.</string>
   <string name="toast_unable_to_modify">Något gick fel när disken uppdaterades. Tyvärr!</string>
   <string name="toast_unable_to_export">Något gick fel när diskarna exporterades. Tyvärr!</string>
+  <string name="toast_unable_to_import">Något gick fel när filen lästes. Tyvärr!</string>
   <string name="toast_tutorial">Prova att klicka på numret!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Första räknaren</string>

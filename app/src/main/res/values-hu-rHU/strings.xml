@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">Számláló</string>
+  <string name="last_update_timestamp">Utolsó módosítás: {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">Navigáció megnyitása</string>
   <string name="menu_add">Számláló hozzáadása</string>
@@ -10,6 +11,8 @@
   <string name="menu_delete">Számláló törlése</string>
   <string name="menu_settings">Beállítások</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Új számláló hozzáadása</string>
+  <string name="dialog_edit_title">Számláló szerkesztése</string>
   <string name="dialog_delete_title">Valóban törölni akarja ezt a számlálót?</string>
   <string name="dialog_reset_title">Valóban vissza akarja állítani ezt a számlálót?</string>
   <string name="dialog_edit_name">Elnevezés:</string>
@@ -21,16 +24,70 @@
   <string name="dialog_button_cancel">Mégsem</string>
   <!-- Settings -->
   <string name="settings_title">Beállítások</string>
+  <string name="settings_display">Megjelenítés</string>
+  <string name="settings_theme">Téma</string>
+  <string name="settings_theme_light">Világos</string>
+  <string name="settings_theme_dark">Sötét</string>
+  <string name="settings_theme_auto_battery">Akkumulátorkímélő mód szerint</string>
+  <string name="settings_theme_system">Rendszer alapértelmezése</string>
+  <string name="settings_keep_on_title">Képernyő ébren tartása</string>
+  <string name="settings_keep_on_summary">A képernyő bekapcsolva marad, amíg az alkalmazás aktív</string>
   <string name="settings_controls">Vezérlők</string>
+  <string name="settings_hide_controls_title">Gombok elrejtése</string>
+  <string name="settings_hide_controls_summary">Érdemes lehet bekapcsolni a hangerőgombok használatát vagy a koppintásos növelést</string>
   <string name="settings_sounds_title">Hangok bekapcsolása</string>
+  <string name="settings_sounds_summary">Hangok lejátszása értékváltozáskor</string>
   <string name="settings_vibration_title">Rezgés bekapcsolása</string>
+  <string name="settings_vibration_summary">Rezgés értékváltozáskor</string>
   <string name="settings_hard_title">Hardveres gombok</string>
+  <string name="settings_hard_summary">A számláló értékének módosítása a hangerőgombokkal</string>
+  <string name="settings_label_increment_title">Növelés koppintással</string>
+  <string name="settings_label_increment_summary">A számláló növelése az aktuális értékre koppintva</string>
+  <string name="settings_hide_last_update_title">Utolsó módosítás idejének elrejtése</string>
   <string name="settings_other">Egyéb</string>
   <string name="settings_version_title">Verzió</string>
+  <string name="settings_reset_all_title">Összes számláló visszaállítása</string>
   <string name="settings_wipe_title">Összes számláló eltávolítása</string>
+  <string name="settings_export_title">Számlálók exportálása</string>
+  <string name="settings_export_summary">Összes számláló exportálása CSV formátumban</string>
+  <string name="settings_import_title">Számlálók importálása</string>
+  <string name="settings_import_summary">Számlálók hozzáadása egy exportált CSV-fájlból</string>
+  <string name="settings_tip_title">Hívjon meg egy kávéra</string>
+  <string name="settings_tip_summary">Támogassa az alkalmazás készítőjét</string>
+  <string name="settings_homepage_title">Honlap</string>
+  <string name="settings_homepage_summary">Alkalmazásinformációk és forráskód</string>
   <string name="settings_wipe_confirmation">Biztosan el szeretné távolítani az összes számlálót?</string>
   <string name="settings_wipe_confirmation_yes">Összes eltávolítása</string>
+  <string name="settings_reset_all_confirmation">Biztosan vissza szeretné állítani az összes számlálót?</string>
+  <string name="settings_reset_all_confirmation_yes">Összes visszaállítása</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">A fájl %d számlálója már létezik itt. Lecseréli a fájlban lévő értékre?</item>
+    <item quantity="other">A fájl %d számlálója már létezik itt. Lecseréli őket a fájlban lévő értékekre?</item>
+  </plurals>
+  <string name="import_clash_replace">Csere</string>
+  <string name="import_clash_keep">Jelenlegi megtartása</string>
+  <string name="import_summary_title">Az importálás befejeződött</string>
+  <string name="import_summary_added">Hozzáadva: %d</string>
+  <string name="import_summary_replaced">Lecserélve: %d</string>
+  <string name="import_summary_kept">Megtartva: %d</string>
+  <string name="import_summary_invalid">Nem olvasható sorok: %d</string>
+  <string name="import_nothing_found">Ebben a fájlban nem található számláló.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Számoljon a kezdőképernyőről</string>
+  <string name="widget_configure_title">Számláló kiválasztása</string>
+  <string name="widget_counter_removed">Számláló eltávolítva. Koppintson egy másik kiválasztásához.</string>
+  <string name="widget_increment">Növelés</string>
+  <string name="widget_decrement">Csökkentés</string>
+  <string name="widget_preview_name">Körök</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Az összes számláló törölve lett.</string>
+  <string name="toast_reset_all_success">Az összes számláló vissza lett állítva.</string>
+  <string name="toast_delete_success">A(z) \"{name}\" számláló törölve lett.</string>
+  <string name="toast_unable_to_modify">Hiba történt a számláló frissítése közben. Elnézést!</string>
+  <string name="toast_unable_to_export">Hiba történt a számlálók exportálása közben. Elnézést!</string>
+  <string name="toast_unable_to_import">Hiba történt a fájl olvasása közben. Elnézést!</string>
+  <string name="toast_tutorial">Próbáljon a számra koppintani!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Első számláló</string>
 </resources>

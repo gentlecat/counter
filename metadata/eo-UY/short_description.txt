@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Nombrilo kiu faciligas kalkuladon.

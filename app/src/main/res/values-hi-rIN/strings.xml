@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">काउंटर</string>
+  <string name="last_update_timestamp">अंतिम बदलाव {timestamp}</string>
   <!-- Menu -->
+  <string name="menu_counters_list">काउंटर की सूची खोलें</string>
+  <string name="menu_add">काउंटर जोड़ें</string>
+  <string name="menu_reset">काउंटर रीसेट करें</string>
+  <string name="menu_edit">काउंटर संपादित करें</string>
+  <string name="menu_delete">काउंटर हटाएँ</string>
+  <string name="menu_settings">सेटिंग्स</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">नया काउंटर जोड़ें</string>
+  <string name="dialog_edit_title">यह काउंटर संपादित करें</string>
+  <string name="dialog_delete_title">क्या आप सच में यह काउंटर हटाना चाहते हैं?</string>
+  <string name="dialog_reset_title">क्या आप सच में यह काउंटर रीसेट करना चाहते हैं?</string>
+  <string name="dialog_edit_name">नाम</string>
+  <string name="dialog_edit_value">मान</string>
+  <string name="dialog_button_add">जोड़ें</string>
+  <string name="dialog_button_apply">लागू करें</string>
+  <string name="dialog_button_reset">रीसेट करें</string>
+  <string name="dialog_button_delete">हटाएँ</string>
+  <string name="dialog_button_cancel">रद्द करें</string>
   <!-- Settings -->
+  <string name="settings_title">सेटिंग्स</string>
+  <string name="settings_display">डिस्प्ले</string>
+  <string name="settings_theme">थीम</string>
+  <string name="settings_theme_light">हल्की</string>
+  <string name="settings_theme_dark">गहरी</string>
+  <string name="settings_theme_auto_battery">बैटरी सेवर के अनुसार</string>
+  <string name="settings_theme_system">सिस्टम डिफ़ॉल्ट का उपयोग करें</string>
+  <string name="settings_keep_on_title">स्क्रीन चालू रखें</string>
+  <string name="settings_keep_on_summary">ऐप सक्रिय रहने तक स्क्रीन चालू रखें</string>
+  <string name="settings_controls">नियंत्रण</string>
+  <string name="settings_hide_controls_title">बटन छिपाएँ</string>
+  <string name="settings_hide_controls_summary">आप वॉल्यूम बटन या टैप करके बढ़ाने का विकल्प चालू करना चाह सकते हैं</string>
+  <string name="settings_sounds_title">ध्वनि चालू करें</string>
+  <string name="settings_sounds_summary">मान बदलने पर ध्वनि चलाएँ</string>
+  <string name="settings_vibration_title">कंपन चालू करें</string>
+  <string name="settings_vibration_summary">मान बदलने पर कंपन करें</string>
+  <string name="settings_hard_title">हार्डवेयर बटन का उपयोग करें</string>
+  <string name="settings_hard_summary">वॉल्यूम बटन से काउंटर का मान बदलें</string>
+  <string name="settings_label_increment_title">बढ़ाने के लिए मान पर टैप करें</string>
+  <string name="settings_label_increment_summary">मौजूदा मान पर टैप करके काउंटर बढ़ाएँ</string>
+  <string name="settings_hide_last_update_title">अंतिम बदलाव का समय छिपाएँ</string>
+  <string name="settings_other">अन्य</string>
+  <string name="settings_version_title">संस्करण</string>
+  <string name="settings_reset_all_title">सभी काउंटर रीसेट करें</string>
+  <string name="settings_wipe_title">सभी काउंटर हटाएँ</string>
+  <string name="settings_export_title">काउंटर निर्यात करें</string>
+  <string name="settings_export_summary">सभी काउंटर CSV प्रारूप में निर्यात करें</string>
+  <string name="settings_import_title">काउंटर आयात करें</string>
+  <string name="settings_import_summary">निर्यात की गई CSV फ़ाइल से काउंटर जोड़ें</string>
+  <string name="settings_tip_title">मुझे एक कॉफ़ी पिलाएँ</string>
+  <string name="settings_tip_summary">इस ऐप के निर्माता का समर्थन करें</string>
+  <string name="settings_homepage_title">होमपेज</string>
+  <string name="settings_homepage_summary">ऐप की जानकारी और सोर्स कोड</string>
+  <string name="settings_wipe_confirmation">क्या आप सच में सभी काउंटर हटाना चाहते हैं?</string>
+  <string name="settings_wipe_confirmation_yes">सभी हटाएँ</string>
+  <string name="settings_reset_all_confirmation">क्या आप सच में सभी काउंटर रीसेट करना चाहते हैं?</string>
+  <string name="settings_reset_all_confirmation_yes">सभी रीसेट करें</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">फ़ाइल का %d काउंटर यहाँ पहले से मौजूद है। क्या उसे फ़ाइल के मान से बदलें?</item>
+    <item quantity="other">फ़ाइल के %d काउंटर यहाँ पहले से मौजूद हैं। क्या उन्हें फ़ाइल के मानों से बदलें?</item>
+  </plurals>
+  <string name="import_clash_replace">बदलें</string>
+  <string name="import_clash_keep">मौजूदा रखें</string>
+  <string name="import_summary_title">आयात पूरा हुआ</string>
+  <string name="import_summary_added">जोड़े गए: %d</string>
+  <string name="import_summary_replaced">बदले गए: %d</string>
+  <string name="import_summary_kept">रखे गए: %d</string>
+  <string name="import_summary_invalid">पंक्तियाँ जो पढ़ी नहीं जा सकीं: %d</string>
+  <string name="import_nothing_found">इस फ़ाइल में कोई काउंटर नहीं मिला।</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">अपनी होम स्क्रीन से गिनें</string>
+  <string name="widget_configure_title">काउंटर चुनें</string>
+  <string name="widget_counter_removed">काउंटर हटा दिया गया। दूसरा चुनने के लिए टैप करें।</string>
+  <string name="widget_increment">बढ़ाएँ</string>
+  <string name="widget_decrement">घटाएँ</string>
+  <string name="widget_preview_name">चक्कर</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">सभी काउंटर हटा दिए गए हैं।</string>
+  <string name="toast_reset_all_success">सभी काउंटर रीसेट कर दिए गए हैं।</string>
+  <string name="toast_delete_success">काउंटर \"{name}\" हटा दिया गया है।</string>
+  <string name="toast_unable_to_modify">काउंटर अपडेट करते समय कुछ गड़बड़ हो गई। क्षमा करें!</string>
+  <string name="toast_unable_to_export">काउंटर निर्यात करते समय कुछ गड़बड़ हो गई। क्षमा करें!</string>
+  <string name="toast_unable_to_import">फ़ाइल पढ़ते समय कुछ गड़बड़ हो गई। क्षमा करें!</string>
+  <string name="toast_tutorial">संख्या पर टैप करके देखें!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">पहला काउंटर</string>
 </resources>

@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Loendur, mis teeb loendamise lihtsamaks.

@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Számláló, amely megkönnyíti a számolást.

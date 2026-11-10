@@ -46,20 +46,49 @@
   <string name="settings_hide_last_update_title">Ukryj znacznik czasu ostatniej zmiany</string>
   <string name="settings_other">Inne</string>
   <string name="settings_version_title">Wersja</string>
+  <string name="settings_reset_all_title">Zresetuj wszystkie liczniki</string>
   <string name="settings_wipe_title">Usuń wszystkie liczniki</string>
   <string name="settings_export_title">Eksportuj liczniki</string>
   <string name="settings_export_summary">Eksportuj wszystkie liczniki w formacie CSV</string>
+  <string name="settings_import_title">Importuj liczniki</string>
+  <string name="settings_import_summary">Dodaj liczniki z wyeksportowanego pliku CSV</string>
   <string name="settings_tip_title">Kup mi kawę</string>
   <string name="settings_tip_summary">Wspomóż twórcę tej aplikacji</string>
   <string name="settings_homepage_title">Strona główna</string>
   <string name="settings_homepage_summary">Informacje o aplikacji i kod źródłowy</string>
   <string name="settings_wipe_confirmation">Czy na pewno chcesz usunąć wszystkie liczniki?</string>
   <string name="settings_wipe_confirmation_yes">Usuń wszystkie</string>
+  <string name="settings_reset_all_confirmation">Czy na pewno chcesz zresetować wszystkie liczniki?</string>
+  <string name="settings_reset_all_confirmation_yes">Zresetuj wszystkie</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d licznik z pliku już tu istnieje. Zastąpić go wartością z pliku?</item>
+    <item quantity="few">%d liczniki z pliku już tu istnieją. Zastąpić je wartościami z pliku?</item>
+    <item quantity="many">%d liczników z pliku już tu istnieje. Zastąpić je wartościami z pliku?</item>
+    <item quantity="other">%d licznika z pliku już tu istnieje. Zastąpić je wartościami z pliku?</item>
+  </plurals>
+  <string name="import_clash_replace">Zastąp</string>
+  <string name="import_clash_keep">Zachowaj obecne</string>
+  <string name="import_summary_title">Import zakończony</string>
+  <string name="import_summary_added">Dodano: %d</string>
+  <string name="import_summary_replaced">Zastąpiono: %d</string>
+  <string name="import_summary_kept">Zachowano: %d</string>
+  <string name="import_summary_invalid">Wiersze, których nie udało się odczytać: %d</string>
+  <string name="import_nothing_found">Nie znaleziono liczników w tym pliku.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Licz z ekranu głównego</string>
+  <string name="widget_configure_title">Wybierz licznik</string>
+  <string name="widget_counter_removed">Licznik usunięty. Dotknij, aby wybrać inny.</string>
+  <string name="widget_increment">Zwiększ</string>
+  <string name="widget_decrement">Zmniejsz</string>
+  <string name="widget_preview_name">Okrążenia</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Wszystkie liczniki zostały usunięte.</string>
+  <string name="toast_reset_all_success">Wszystkie liczniki zostały zresetowane.</string>
   <string name="toast_delete_success">Licznik \"{name}\" został usunięty.</string>
   <string name="toast_unable_to_modify">Coś poszło nie tak podczas aktualizacji licznika. Przepraszamy!</string>
   <string name="toast_unable_to_export">Coś poszło nie tak podczas eksportowania liczników. Przepraszamy!</string>
+  <string name="toast_unable_to_import">Coś poszło nie tak podczas odczytu pliku. Przepraszamy!</string>
   <string name="toast_tutorial">Spróbuj kliknąć na numer!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nowy licznik</string>

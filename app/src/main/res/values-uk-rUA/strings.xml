@@ -46,20 +46,49 @@
   <string name="settings_hide_last_update_title">Приховати останню зміну часу</string>
   <string name="settings_other">Інше</string>
   <string name="settings_version_title">Версія</string>
+  <string name="settings_reset_all_title">Скинути всі лічильники</string>
   <string name="settings_wipe_title">Видалити всі лічильники</string>
   <string name="settings_export_title">Експортувати лічильники</string>
   <string name="settings_export_summary">Експортувати всі лічильники у форматі CSV</string>
+  <string name="settings_import_title">Імпортувати лічильники</string>
+  <string name="settings_import_summary">Додати лічильники з експортованого файлу CSV</string>
   <string name="settings_tip_title">Купіть мені кави</string>
   <string name="settings_tip_summary">Підтримати творця цього додатку</string>
   <string name="settings_homepage_title">Домашня сторінка</string>
   <string name="settings_homepage_summary">Інформація про додаток та вихідний код</string>
   <string name="settings_wipe_confirmation">Ви дійсно хочете видалити всі лічильники?</string>
   <string name="settings_wipe_confirmation_yes">Видалити всі</string>
+  <string name="settings_reset_all_confirmation">Ви дійсно хочете скинути всі лічильники?</string>
+  <string name="settings_reset_all_confirmation_yes">Скинути всі</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d лічильник із файлу вже існує. Замінити його значенням із файлу?</item>
+    <item quantity="few">%d лічильники з файлу вже існують. Замінити їх значеннями з файлу?</item>
+    <item quantity="many">%d лічильників із файлу вже існують. Замінити їх значеннями з файлу?</item>
+    <item quantity="other">%d лічильника з файлу вже існують. Замінити їх значеннями з файлу?</item>
+  </plurals>
+  <string name="import_clash_replace">Замінити</string>
+  <string name="import_clash_keep">Залишити поточні</string>
+  <string name="import_summary_title">Імпорт завершено</string>
+  <string name="import_summary_added">Додано: %d</string>
+  <string name="import_summary_replaced">Замінено: %d</string>
+  <string name="import_summary_kept">Залишено: %d</string>
+  <string name="import_summary_invalid">Не вдалося прочитати рядків: %d</string>
+  <string name="import_nothing_found">У цьому файлі не знайдено лічильників.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Рахуйте просто з головного екрана</string>
+  <string name="widget_configure_title">Виберіть лічильник</string>
+  <string name="widget_counter_removed">Лічильник видалено. Торкніться, щоб вибрати інший.</string>
+  <string name="widget_increment">Збільшити</string>
+  <string name="widget_decrement">Зменшити</string>
+  <string name="widget_preview_name">Кола</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Усі лічильники видалено.</string>
+  <string name="toast_reset_all_success">Усі лічильники скинуто.</string>
   <string name="toast_delete_success">Лічильник \"{name}\" видалено.</string>
   <string name="toast_unable_to_modify">Помилка при оновленні лічильника. Вибачте!</string>
   <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
+  <string name="toast_unable_to_import">Щось пішло не так під час читання файлу. Вибачте!</string>
   <string name="toast_tutorial">Спробуйте натиснути на номер!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Перший лічильник</string>

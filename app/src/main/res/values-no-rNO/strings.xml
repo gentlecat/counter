@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Skjul den siste endrings tidsstempel</string>
   <string name="settings_other">Annet</string>
   <string name="settings_version_title">Versjon</string>
+  <string name="settings_reset_all_title">Tilbakestill alle tellere</string>
   <string name="settings_wipe_title">Slett alle tellerne</string>
   <string name="settings_export_title">Eksporter tellinger</string>
   <string name="settings_export_summary">Eksporter alle tellinger i CSV-format</string>
+  <string name="settings_import_title">Importer tellere</string>
+  <string name="settings_import_summary">Legg til tellere fra en eksportert CSV-fil</string>
   <string name="settings_tip_title">Kjøpe meg en kaffe</string>
   <string name="settings_tip_summary">Støtt den som oppretter denne app</string>
   <string name="settings_homepage_title">Hjemmeside</string>
   <string name="settings_homepage_summary">App-informasjon og kildekode</string>
   <string name="settings_wipe_confirmation">Har du virkelig lyst til å slette alle tellerne?</string>
   <string name="settings_wipe_confirmation_yes">Slett alle</string>
+  <string name="settings_reset_all_confirmation">Vil du virkelig tilbakestille alle tellerne?</string>
+  <string name="settings_reset_all_confirmation_yes">Tilbakestill alle</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d teller i filen finnes allerede her. Erstatte den med verdien fra filen?</item>
+    <item quantity="other">%d tellere i filen finnes allerede her. Erstatte dem med verdiene fra filen?</item>
+  </plurals>
+  <string name="import_clash_replace">Erstatt</string>
+  <string name="import_clash_keep">Behold nåværende</string>
+  <string name="import_summary_title">Import fullført</string>
+  <string name="import_summary_added">Lagt til: %d</string>
+  <string name="import_summary_replaced">Erstattet: %d</string>
+  <string name="import_summary_kept">Beholdt: %d</string>
+  <string name="import_summary_invalid">Rader som ikke kunne leses: %d</string>
+  <string name="import_nothing_found">Fant ingen tellere i denne filen.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Tell fra startskjermen</string>
+  <string name="widget_configure_title">Velg en teller</string>
+  <string name="widget_counter_removed">Telleren er fjernet. Trykk for å velge en annen.</string>
+  <string name="widget_increment">Øk</string>
+  <string name="widget_decrement">Senk</string>
+  <string name="widget_preview_name">Runder</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Alle tellinger har blitt slettet.</string>
+  <string name="toast_reset_all_success">Alle tellere er tilbakestilt.</string>
   <string name="toast_delete_success">Telling \"{name}\" har blitt slettet.</string>
   <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
   <string name="toast_unable_to_export">Noe gikk galt under eksport av tellingene. Beklager!</string>
+  <string name="toast_unable_to_import">Noe gikk galt under lesing av filen. Beklager!</string>
   <string name="toast_tutorial">Prøv å klikke på nummeret!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny teller</string>

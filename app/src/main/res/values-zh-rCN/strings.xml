@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">计数器</string>
+  <string name="last_update_timestamp">最后更改于 {timestamp}</string>
   <!-- Menu -->
   <string name="menu_counters_list">开启导航</string>
   <string name="menu_add">新增计数器</string>
@@ -45,20 +46,46 @@
   <string name="settings_hide_last_update_title">隐藏上次更改的时间戳</string>
   <string name="settings_other">其他</string>
   <string name="settings_version_title">版本</string>
+  <string name="settings_reset_all_title">重置所有计数器</string>
   <string name="settings_wipe_title">移除所有计数器</string>
   <string name="settings_export_title">导出计数器</string>
   <string name="settings_export_summary">以 CSV 格式导出所有计数器</string>
+  <string name="settings_import_title">导入计数器</string>
+  <string name="settings_import_summary">从导出的 CSV 文件添加计数器</string>
   <string name="settings_tip_title">给我买一杯咖啡。</string>
   <string name="settings_tip_summary">支持此应用程序的创建者</string>
   <string name="settings_homepage_title">网站</string>
   <string name="settings_homepage_summary">应用程序信息和源代码</string>
   <string name="settings_wipe_confirmation">您是否想移除所有计数器？</string>
   <string name="settings_wipe_confirmation_yes">删除全部</string>
+  <string name="settings_reset_all_confirmation">您确定要重置所有计数器吗？</string>
+  <string name="settings_reset_all_confirmation_yes">全部重置</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="other">文件中有 %d 个计数器已存在。要用文件中的值替换它们吗？</item>
+  </plurals>
+  <string name="import_clash_replace">替换</string>
+  <string name="import_clash_keep">保留当前值</string>
+  <string name="import_summary_title">导入完成</string>
+  <string name="import_summary_added">已添加：%d</string>
+  <string name="import_summary_replaced">已替换：%d</string>
+  <string name="import_summary_kept">已保留：%d</string>
+  <string name="import_summary_invalid">无法读取的行：%d</string>
+  <string name="import_nothing_found">此文件中未找到计数器。</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">在主屏幕上计数</string>
+  <string name="widget_configure_title">选择计数器</string>
+  <string name="widget_counter_removed">计数器已移除。点按以选择其他计数器。</string>
+  <string name="widget_increment">增加</string>
+  <string name="widget_decrement">减少</string>
+  <string name="widget_preview_name">圈数</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">已移除全部计数器。</string>
+  <string name="toast_reset_all_success">已重置全部计数器。</string>
   <string name="toast_delete_success">计数器 \"{name}\" 已被删除。</string>
   <string name="toast_unable_to_modify">很抱歉，更新计数器时出现问题。</string>
   <string name="toast_unable_to_export">很抱歉，导出计数器时出现问题。</string>
+  <string name="toast_unable_to_import">很抱歉，读取文件时出现问题。</string>
   <string name="toast_tutorial">尝试点击数字！</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新建计数器</string>

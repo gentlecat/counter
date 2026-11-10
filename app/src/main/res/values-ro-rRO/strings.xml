@@ -46,20 +46,48 @@
   <string name="settings_hide_last_update_title">Ascunde marcajul temporal al ultimei modificări</string>
   <string name="settings_other">Altele</string>
   <string name="settings_version_title">Versiune</string>
+  <string name="settings_reset_all_title">Resetează toate contoarele</string>
   <string name="settings_wipe_title">Elimină toate contoarele</string>
   <string name="settings_export_title">Exportă contoare</string>
   <string name="settings_export_summary">Exportă toate contoarele în format CSV</string>
+  <string name="settings_import_title">Importă contoare</string>
+  <string name="settings_import_summary">Adaugă contoare dintr-un fișier CSV exportat</string>
   <string name="settings_tip_title">Cumpără-mi o cafea</string>
   <string name="settings_tip_summary">Sprijină creatorul acestei aplicații</string>
   <string name="settings_homepage_title">Pagină de pornire</string>
   <string name="settings_homepage_summary">Informații despre aplicație și codul sursă</string>
   <string name="settings_wipe_confirmation">Sigur vrei să elimini toate contoarele?</string>
   <string name="settings_wipe_confirmation_yes">Elimină toate</string>
+  <string name="settings_reset_all_confirmation">Sigur vrei să resetezi toate contoarele?</string>
+  <string name="settings_reset_all_confirmation_yes">Resetează toate</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d contor din fișier există deja aici. Îl înlocuiești cu valoarea din fișier?</item>
+    <item quantity="few">%d contoare din fișier există deja aici. Le înlocuiești cu valorile din fișier?</item>
+    <item quantity="other">%d de contoare din fișier există deja aici. Le înlocuiești cu valorile din fișier?</item>
+  </plurals>
+  <string name="import_clash_replace">Înlocuiește</string>
+  <string name="import_clash_keep">Păstrează actualul</string>
+  <string name="import_summary_title">Import finalizat</string>
+  <string name="import_summary_added">Adăugate: %d</string>
+  <string name="import_summary_replaced">Înlocuite: %d</string>
+  <string name="import_summary_kept">Păstrate: %d</string>
+  <string name="import_summary_invalid">Rânduri care nu au putut fi citite: %d</string>
+  <string name="import_nothing_found">Nu s-au găsit contoare în acest fișier.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Numără direct de pe ecranul de pornire</string>
+  <string name="widget_configure_title">Alege un contor</string>
+  <string name="widget_counter_removed">Contor eliminat. Atinge pentru a alege altul.</string>
+  <string name="widget_increment">Crește</string>
+  <string name="widget_decrement">Scade</string>
+  <string name="widget_preview_name">Ture</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Toate contoarele au fost șterse.</string>
+  <string name="toast_reset_all_success">Toate contoarele au fost resetate.</string>
   <string name="toast_delete_success">Contorul „{name}” a fost șters.</string>
   <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
   <string name="toast_unable_to_export">A apărut o eroare la exportara contoarelor. Scuze!</string>
+  <string name="toast_unable_to_import">A apărut o eroare la citirea fișierului. Scuze!</string>
   <string name="toast_tutorial">Încearcă să dai clic pe număr!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Primul contor</string>

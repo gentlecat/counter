@@ -46,20 +46,48 @@
   <string name="settings_hide_last_update_title">Ocultar a última alteração do horário</string>
   <string name="settings_other">Outros</string>
   <string name="settings_version_title">Versão</string>
+  <string name="settings_reset_all_title">Repor todos os contadores</string>
   <string name="settings_wipe_title">Remover todos os contadores</string>
   <string name="settings_export_title">Exportar contadores</string>
   <string name="settings_export_summary">Exportar todos os contadores no formato CSV</string>
+  <string name="settings_import_title">Importar contadores</string>
+  <string name="settings_import_summary">Adicionar contadores a partir de um ficheiro CSV exportado</string>
   <string name="settings_tip_title">Compre-me um café</string>
   <string name="settings_tip_summary">Apoie o criador deste app</string>
   <string name="settings_homepage_title">Página</string>
   <string name="settings_homepage_summary">Informações do app e o código-fonte</string>
   <string name="settings_wipe_confirmation">Deseja mesmo remover todos os contadores?</string>
   <string name="settings_wipe_confirmation_yes">Remover todos</string>
+  <string name="settings_reset_all_confirmation">Deseja mesmo repor todos os contadores?</string>
+  <string name="settings_reset_all_confirmation_yes">Repor todos</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d contador do ficheiro já existe aqui. Substituí-lo pelo valor do ficheiro?</item>
+    <item quantity="many">%d contadores do ficheiro já existem aqui. Substituí-los pelos valores do ficheiro?</item>
+    <item quantity="other">%d contadores do ficheiro já existem aqui. Substituí-los pelos valores do ficheiro?</item>
+  </plurals>
+  <string name="import_clash_replace">Substituir</string>
+  <string name="import_clash_keep">Manter atual</string>
+  <string name="import_summary_title">Importação concluída</string>
+  <string name="import_summary_added">Adicionados: %d</string>
+  <string name="import_summary_replaced">Substituídos: %d</string>
+  <string name="import_summary_kept">Mantidos: %d</string>
+  <string name="import_summary_invalid">Linhas que não foi possível ler: %d</string>
+  <string name="import_nothing_found">Nenhum contador encontrado neste ficheiro.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Conte a partir do ecrã principal</string>
+  <string name="widget_configure_title">Escolha um contador</string>
+  <string name="widget_counter_removed">Contador removido. Toque para escolher outro.</string>
+  <string name="widget_increment">Aumentar</string>
+  <string name="widget_decrement">Diminuir</string>
+  <string name="widget_preview_name">Voltas</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Todos os contadores foram excluídos.</string>
+  <string name="toast_reset_all_success">Todos os contadores foram repostos.</string>
   <string name="toast_delete_success">Contador \"{name}\" foi excluído.</string>
   <string name="toast_unable_to_modify">Algo correu mal ao atualizar o contador. Pedimos desculpa!</string>
   <string name="toast_unable_to_export">Algo deu errado ao exportar os contadores. Desculpe!</string>
+  <string name="toast_unable_to_import">Algo correu mal ao ler o ficheiro. Pedimos desculpa!</string>
   <string name="toast_tutorial">Tente clicar no número!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Novo contador</string>

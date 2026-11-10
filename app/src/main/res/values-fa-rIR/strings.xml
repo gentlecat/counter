@@ -2,7 +2,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
   <string name="app_name">شمارنده</string>
+  <string name="last_update_timestamp">آخرین تغییر در {timestamp}</string>
   <!-- Menu -->
+  <string name="menu_counters_list">باز کردن فهرست شمارنده‌ها</string>
   <string name="menu_add">افزودن شمارنده</string>
   <string name="menu_reset">بازنشانی شمارنده</string>
   <string name="menu_edit">ویرایش شمارنده</string>
@@ -31,6 +33,8 @@
   <string name="settings_keep_on_title">صفحه را روشن نگه دار</string>
   <string name="settings_keep_on_summary">وقتی برنامه فعال است صفحه را روشن نگه دار</string>
   <string name="settings_controls">کنترل ها</string>
+  <string name="settings_hide_controls_title">پنهان کردن دکمه‌ها</string>
+  <string name="settings_hide_controls_summary">شاید بخواهید استفاده از دکمه‌های صدا یا گزینه‌ی ضربه برای افزایش را فعال کنید</string>
   <string name="settings_sounds_title">صدا ها را فعال کن</string>
   <string name="settings_sounds_summary">هنگام تغییر مقادیر صدا پخش شود</string>
   <string name="settings_vibration_title">فعال کردن لرزش</string>
@@ -39,20 +43,51 @@
   <string name="settings_hard_summary">مقادیر شمارنده را با استفاده از دکمه های کنترل صدا تغییر دهید</string>
   <string name="settings_label_increment_title">برای افزایش مقدار ضربه بزنید</string>
   <string name="settings_label_increment_summary">مقدار یک شمارنده را با ضربه بر روی مقدار فعلی افزایش دهید</string>
+  <string name="settings_hide_last_update_title">پنهان کردن زمان آخرین تغییر</string>
   <string name="settings_other">غیره</string>
   <string name="settings_version_title">نسخه</string>
+  <string name="settings_reset_all_title">بازنشانی همه‌ی شمارنده‌ها</string>
   <string name="settings_wipe_title">حذف همه‌ی شمارنده‌ها</string>
   <string name="settings_export_title">صدور شمارنده‌ها</string>
   <string name="settings_export_summary">صدور همه شمارنده ها در فرمت CSV</string>
+  <string name="settings_import_title">وارد کردن شمارنده‌ها</string>
+  <string name="settings_import_summary">افزودن شمارنده‌ها از یک فایل CSV صادرشده</string>
+  <string name="settings_tip_title">برای من یک قهوه بخرید</string>
+  <string name="settings_tip_summary">از سازنده‌ی این برنامه حمایت کنید</string>
   <string name="settings_homepage_title">صفحه اصلی</string>
   <string name="settings_homepage_summary">اطلاعات اپلیکیشن و کد منبع</string>
   <string name="settings_wipe_confirmation">آیا واقعاً می‌خواهید همه‌ی شمارنده‌ها را حذف کنید؟</string>
   <string name="settings_wipe_confirmation_yes">حذف همه</string>
+  <string name="settings_reset_all_confirmation">آیا واقعاً می‌خواهید همه‌ی شمارنده‌ها را بازنشانی کنید؟</string>
+  <string name="settings_reset_all_confirmation_yes">بازنشانی همه</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d شمارنده از فایل از قبل اینجا وجود دارد. با مقدار فایل جایگزین شود؟</item>
+    <item quantity="other">%d شمارنده از فایل از قبل اینجا وجود دارند. با مقادیر فایل جایگزین شوند؟</item>
+  </plurals>
+  <string name="import_clash_replace">جایگزین کردن</string>
+  <string name="import_clash_keep">نگه داشتن مقادیر فعلی</string>
+  <string name="import_summary_title">وارد کردن به پایان رسید</string>
+  <string name="import_summary_added">اضافه شده: %d</string>
+  <string name="import_summary_replaced">جایگزین شده: %d</string>
+  <string name="import_summary_kept">نگه داشته شده: %d</string>
+  <string name="import_summary_invalid">ردیف‌هایی که خوانده نشدند: %d</string>
+  <string name="import_nothing_found">هیچ شمارنده‌ای در این فایل پیدا نشد.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">از صفحه‌ی اصلی بشمارید</string>
+  <string name="widget_configure_title">یک شمارنده انتخاب کنید</string>
+  <string name="widget_counter_removed">شمارنده حذف شد. برای انتخاب شمارنده‌ی دیگر ضربه بزنید.</string>
+  <string name="widget_increment">افزایش</string>
+  <string name="widget_decrement">کاهش</string>
+  <string name="widget_preview_name">دورها</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">تمامی شمارنده‌ها حذف شدند.</string>
-  <string name="toast_delete_success">شمارنده \"%1$s\" حذف شد.</string>
+  <string name="toast_reset_all_success">همه‌ی شمارنده‌ها بازنشانی شدند.</string>
+  <string name="toast_delete_success">شمارنده \"{name}\" حذف شد.</string>
   <string name="toast_unable_to_modify">هنگام به‌روزرسانی شمارنده مشکلی پیش آمد. متاسفیم!</string>
   <string name="toast_unable_to_export">هنگام صدور شمارنده ها مشکلی پیش آمد. متاسفیم!</string>
+  <string name="toast_unable_to_import">هنگام خواندن فایل مشکلی پیش آمد. متاسفیم!</string>
+  <string name="toast_tutorial">روی عدد ضربه بزنید!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">شمارنده جدید</string>
 </resources>

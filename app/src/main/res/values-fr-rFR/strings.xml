@@ -46,20 +46,48 @@
   <string name="settings_hide_last_update_title">Masquer l\'horodatage de la dernière modification</string>
   <string name="settings_other">Autre</string>
   <string name="settings_version_title">Version</string>
+  <string name="settings_reset_all_title">Réinitialiser tous les compteurs</string>
   <string name="settings_wipe_title">Supprimer tous les compteurs</string>
   <string name="settings_export_title">Exporter les compteurs</string>
   <string name="settings_export_summary">Exporter tous les compteurs au format CSV</string>
+  <string name="settings_import_title">Importer des compteurs</string>
+  <string name="settings_import_summary">Ajouter des compteurs depuis un fichier CSV exporté</string>
   <string name="settings_tip_title">Achetez-moi un café</string>
   <string name="settings_tip_summary">Soutenir le créateur de cette application</string>
   <string name="settings_homepage_title">Page d\'accueil</string>
   <string name="settings_homepage_summary">Informations sur l\'application et le code source</string>
   <string name="settings_wipe_confirmation">Voulez-vous vraiment supprimer tous les compteurs ?</string>
   <string name="settings_wipe_confirmation_yes">Tout supprimer</string>
+  <string name="settings_reset_all_confirmation">Voulez-vous vraiment réinitialiser tous les compteurs ?</string>
+  <string name="settings_reset_all_confirmation_yes">Tout réinitialiser</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d compteur du fichier existe déjà ici. Le remplacer par la valeur du fichier ?</item>
+    <item quantity="many">%d compteurs du fichier existent déjà ici. Les remplacer par les valeurs du fichier ?</item>
+    <item quantity="other">%d compteurs du fichier existent déjà ici. Les remplacer par les valeurs du fichier ?</item>
+  </plurals>
+  <string name="import_clash_replace">Remplacer</string>
+  <string name="import_clash_keep">Conserver l\'actuel</string>
+  <string name="import_summary_title">Importation terminée</string>
+  <string name="import_summary_added">Ajoutés : %d</string>
+  <string name="import_summary_replaced">Remplacés : %d</string>
+  <string name="import_summary_kept">Conservés : %d</string>
+  <string name="import_summary_invalid">Lignes illisibles : %d</string>
+  <string name="import_nothing_found">Aucun compteur trouvé dans ce fichier.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Comptez depuis votre écran d\'accueil</string>
+  <string name="widget_configure_title">Choisir un compteur</string>
+  <string name="widget_counter_removed">Compteur supprimé. Touchez pour en choisir un autre.</string>
+  <string name="widget_increment">Incrémenter</string>
+  <string name="widget_decrement">Décrémenter</string>
+  <string name="widget_preview_name">Tours</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Tous les compteurs ont été supprimés.</string>
+  <string name="toast_reset_all_success">Tous les compteurs ont été réinitialisés.</string>
   <string name="toast_delete_success">Le compteur \"{name}\" a été supprimé.</string>
   <string name="toast_unable_to_modify">Une erreur s\'est produite lors de la mise à jour du compteur. Désolé !</string>
   <string name="toast_unable_to_export">Une erreur s\'est produite lors de l\'exportation du compteur. Désolé !</string>
+  <string name="toast_unable_to_import">Une erreur s\'est produite lors de la lecture du fichier. Désolé !</string>
   <string name="toast_tutorial">Essayez de cliquer sur le numéro!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nouveau compteur</string>
