@@ -21,7 +21,7 @@
   <string name="dialog_button_apply">Applica</string>
   <string name="dialog_button_reset">Azzera contatore</string>
   <string name="dialog_button_delete">Elimina contatore</string>
-  <string name="dialog_button_cancel">Cancella</string>
+  <string name="dialog_button_cancel">Annulla</string>
   <!-- Settings -->
   <string name="settings_title">Impostazioni</string>
   <string name="settings_display">Visualizzazione</string>
@@ -31,10 +31,10 @@
   <string name="settings_theme_auto_battery">Impostato dal risparmio energetico</string>
   <string name="settings_theme_system">Usa tema del sistema</string>
   <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
-  <string name="settings_keep_on_summary">Mantieni lo schermo accesso mentre l\'applicazione è attiva</string>
+  <string name="settings_keep_on_summary">Mantieni lo schermo acceso mentre l\'applicazione è attiva</string>
   <string name="settings_controls">Controlli</string>
   <string name="settings_hide_controls_title">Nascondi i pulsanti</string>
-  <string name="settings_hide_controls_summary">Si potrebbe voler attivare i pulsanti del volume utilizzare o il tocco per aumentare l\'opzione</string>
+  <string name="settings_hide_controls_summary">Potresti voler attivare i pulsanti del volume o il tocco sul valore per aumentarlo</string>
   <string name="settings_sounds_title">Attiva suoni</string>
   <string name="settings_sounds_summary">Riproduci suoni durante la modifica dei valori</string>
   <string name="settings_vibration_title">Attiva vibrazione</string>
@@ -46,20 +46,47 @@
   <string name="settings_hide_last_update_title">Nascondi il timestamp dell\'ultima modifica</string>
   <string name="settings_other">Altri</string>
   <string name="settings_version_title">Versione</string>
+  <string name="settings_reset_all_title">Azzera tutti i contatori</string>
   <string name="settings_wipe_title">Rimuovere tutti i contatori</string>
   <string name="settings_export_title">Esporta contatori</string>
   <string name="settings_export_summary">Esporta tutti i contatori in formato CSV</string>
+  <string name="settings_import_title">Importa contatori</string>
+  <string name="settings_import_summary">Aggiungi contatori da un file CSV esportato</string>
   <string name="settings_tip_title">Comprami un caffè</string>
   <string name="settings_tip_summary">Supporta il creatore di questa app</string>
   <string name="settings_homepage_title">Homepage</string>
   <string name="settings_homepage_summary">Informazioni sull\'app e il codice sorgente</string>
   <string name="settings_wipe_confirmation">Vuoi veramente rimuovere tutti i contatori?</string>
   <string name="settings_wipe_confirmation_yes">Rimuovi tutti</string>
+  <string name="settings_reset_all_confirmation">Vuoi veramente azzerare tutti i contatori?</string>
+  <string name="settings_reset_all_confirmation_yes">Azzera tutti</string>
+  <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d contatore del file esiste già qui. Sostituirlo con il valore del file?</item>
+    <item quantity="other">%d contatori del file esistono già qui. Sostituirli con i valori del file?</item>
+  </plurals>
+  <string name="import_clash_replace">Sostituisci</string>
+  <string name="import_clash_keep">Mantieni attuale</string>
+  <string name="import_summary_title">Importazione completata</string>
+  <string name="import_summary_added">Aggiunti: %d</string>
+  <string name="import_summary_replaced">Sostituiti: %d</string>
+  <string name="import_summary_kept">Mantenuti: %d</string>
+  <string name="import_summary_invalid">Righe non leggibili: %d</string>
+  <string name="import_nothing_found">Nessun contatore trovato in questo file.</string>
+  <!-- Home screen widget -->
+  <string name="widget_description">Conta dalla schermata Home</string>
+  <string name="widget_configure_title">Scegli un contatore</string>
+  <string name="widget_counter_removed">Contatore rimosso. Tocca per sceglierne un altro.</string>
+  <string name="widget_increment">Incrementa</string>
+  <string name="widget_decrement">Decrementa</string>
+  <string name="widget_preview_name">Giri</string>
   <!-- Toasts -->
   <string name="toast_wipe_success">Tutti i contatori sono stati rimossi.</string>
+  <string name="toast_reset_all_success">Tutti i contatori sono stati azzerati.</string>
   <string name="toast_delete_success">Il contatore \"{name}\" è stato rimosso.</string>
   <string name="toast_unable_to_modify">Qualcosa è andato storto durante l\'aggiornamento del contatore.</string>
   <string name="toast_unable_to_export">Qualcosa è andato storto durante l\'esportazione dei contatori.</string>
+  <string name="toast_unable_to_import">Qualcosa è andato storto durante la lettura del file.</string>
   <string name="toast_tutorial">Prova a cliccare sul numero!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuovo contatore</string>
