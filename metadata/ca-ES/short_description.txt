@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Comptador que facilita el recompte.
