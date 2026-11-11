@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Comptador</string>
+  <string name="last_update_timestamp">Últim canvi: {timestamp}</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Obre la llista de comptadors</string>
+  <string name="menu_add">Afegeix un comptador</string>
+  <string name="menu_reset">Reinicia el comptador</string>
+  <string name="menu_edit">Edita el comptador</string>
+  <string name="menu_delete">Suprimeix el comptador</string>
+  <string name="menu_settings">Configuració</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Afegeix un comptador nou</string>
+  <string name="dialog_edit_title">Edita aquest comptador</string>
+  <string name="dialog_delete_title">Segur que vols suprimir aquest comptador?</string>
+  <string name="dialog_reset_title">Segur que vols reiniciar aquest comptador?</string>
+  <string name="dialog_edit_name">Nom</string>
+  <string name="dialog_edit_value">Valor</string>
+  <string name="dialog_button_add">Afegeix</string>
+  <string name="dialog_button_apply">Aplica</string>
+  <string name="dialog_button_reset">Reinicia</string>
+  <string name="dialog_button_delete">Suprimeix</string>
+  <string name="dialog_button_cancel">Cancel·la</string>
   <!-- Settings -->
+  <string name="settings_title">Configuració</string>
+  <string name="settings_display">Pantalla</string>
+  <string name="settings_theme">Tema</string>
+  <string name="settings_theme_light">Clar</string>
+  <string name="settings_theme_dark">Fosc</string>
+  <string name="settings_theme_auto_battery">Segons l\'estalvi de bateria</string>
+  <string name="settings_theme_system">Segons el sistema</string>
+  <string name="settings_keep_on_title">Mantén la pantalla encesa</string>
+  <string name="settings_keep_on_summary">Mantén la pantalla encesa mentre l\'aplicació està activa</string>
+  <string name="settings_controls">Controls</string>
+  <string name="settings_hide_controls_title">Amaga els botons</string>
+  <string name="settings_hide_controls_summary">Potser vols activar els botons de volum o l\'opció de tocar per sumar</string>
+  <string name="settings_sounds_title">Activa els sons</string>
+  <string name="settings_sounds_summary">Reprodueix sons en canviar els valors</string>
+  <string name="settings_vibration_title">Activa la vibració</string>
+  <string name="settings_vibration_summary">Vibra en canviar els valors</string>
+  <string name="settings_hard_title">Utilitza els botons físics</string>
+  <string name="settings_hard_summary">Canvia el valor amb els botons de volum</string>
+  <string name="settings_label_increment_title">Toca el valor per sumar</string>
+  <string name="settings_label_increment_summary">Suma u al comptador tocant el valor actual</string>
+  <string name="settings_hide_last_update_title">Amaga l\'hora de l\'últim canvi</string>
+  <string name="settings_other">Altres</string>
+  <string name="settings_version_title">Versió</string>
+  <string name="settings_reset_all_title">Reinicia tots els comptadors</string>
+  <string name="settings_wipe_title">Elimina tots els comptadors</string>
+  <string name="settings_export_title">Exporta els comptadors</string>
+  <string name="settings_export_summary">Exporta tots els comptadors en format CSV</string>
+  <string name="settings_import_title">Importa comptadors</string>
+  <string name="settings_import_summary">Afegeix comptadors des d\'un fitxer CSV exportat</string>
+  <string name="settings_tip_title">Convida\'m a un cafè</string>
+  <string name="settings_tip_summary">Dona suport al creador d\'aquesta aplicació</string>
+  <string name="settings_homepage_title">Pàgina web</string>
+  <string name="settings_homepage_summary">Informació de l\'aplicació i codi font</string>
+  <string name="settings_wipe_confirmation">Segur que vols eliminar tots els comptadors?</string>
+  <string name="settings_wipe_confirmation_yes">Elimina-ho tot</string>
+  <string name="settings_reset_all_confirmation">Segur que vols reiniciar tots els comptadors?</string>
+  <string name="settings_reset_all_confirmation_yes">Reinicia-ho tot</string>
   <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="one">%d comptador del fitxer ja existeix aquí. Vols substituir-lo pel valor del fitxer?</item>
+    <item quantity="other">%d comptadors del fitxer ja existeixen aquí. Vols substituir-los pels valors del fitxer?</item>
+  </plurals>
+  <string name="import_clash_replace">Substitueix</string>
+  <string name="import_clash_keep">Mantén l\'actual</string>
+  <string name="import_summary_title">Importació acabada</string>
+  <string name="import_summary_added">Afegits: %d</string>
+  <string name="import_summary_replaced">Substituïts: %d</string>
+  <string name="import_summary_kept">Mantinguts: %d</string>
+  <string name="import_summary_invalid">Files que no s\'han pogut llegir: %d</string>
+  <string name="import_nothing_found">No s\'ha trobat cap comptador en aquest fitxer.</string>
   <!-- Home screen widget -->
+  <string name="widget_description">Compta des de la pantalla d\'inici</string>
+  <string name="widget_configure_title">Tria un comptador</string>
+  <string name="widget_counter_removed">S\'ha eliminat el comptador. Toca per triar-ne un altre.</string>
+  <string name="widget_increment">Suma</string>
+  <string name="widget_decrement">Resta</string>
+  <string name="widget_preview_name">Voltes</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">S\'han suprimit tots els comptadors.</string>
+  <string name="toast_reset_all_success">S\'han reiniciat tots els comptadors.</string>
+  <string name="toast_delete_success">S\'ha suprimit el comptador «{name}».</string>
+  <string name="toast_unable_to_modify">Alguna cosa ha fallat en actualitzar el comptador. Ho sentim!</string>
+  <string name="toast_unable_to_export">Alguna cosa ha fallat en exportar els comptadors. Ho sentim!</string>
+  <string name="toast_unable_to_import">Alguna cosa ha fallat en llegir el fitxer. Ho sentim!</string>
+  <string name="toast_tutorial">Prova de tocar el número!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">Primer comptador</string>
 </resources>
