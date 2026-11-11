@@ -66,7 +66,7 @@
     <item quantity="few">%d contoare din fișier există deja aici. Le înlocuiești cu valorile din fișier?</item>
     <item quantity="other">%d de contoare din fișier există deja aici. Le înlocuiești cu valorile din fișier?</item>
   </plurals>
-  <string name="import_clash_replace">Înlocuire</string>
+  <string name="import_clash_replace">Înlocuiește</string>
   <string name="import_clash_keep">Păstrează actualul</string>
   <string name="import_summary_title">Import finalizat</string>
   <string name="import_summary_added">Adăugate: %d</string>
@@ -87,7 +87,7 @@
   <string name="toast_delete_success">Contorul „{name}” a fost șters.</string>
   <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
   <string name="toast_unable_to_export">A apărut o eroare la exportarea contoarelor. Scuze!</string>
-  <string name="toast_unable_to_import">A apărut o eroare la citirea fișierului. Ne pare rău!</string>
+  <string name="toast_unable_to_import">A apărut o eroare la citirea fișierului. Scuze!</string>
   <string name="toast_tutorial">Încearcă să dai clic pe număr!</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Primul contor</string>
