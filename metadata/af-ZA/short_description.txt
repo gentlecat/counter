@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+'n Teller wat tel makliker maak.
