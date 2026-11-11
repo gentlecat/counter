@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+מונה שהופך את הספירה לקלה יותר.
