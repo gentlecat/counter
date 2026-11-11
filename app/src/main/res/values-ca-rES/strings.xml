@@ -63,7 +63,6 @@
   <!-- Import -->
   <plurals name="import_clash_message">
     <item quantity="one">%d comptador del fitxer ja existeix aquí. Vols substituir-lo pel valor del fitxer?</item>
-    <item quantity="many">%d comptadors del fitxer ja existeixen aquí. Vols substituir-los pels valors del fitxer?</item>
     <item quantity="other">%d comptadors del fitxer ja existeixen aquí. Vols substituir-los pels valors del fitxer?</item>
   </plurals>
   <string name="import_clash_replace">Substitueix</string>
