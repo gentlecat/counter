@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 36
+
+* Added a home screen widget for counting without opening the app.
+* Counters can be imported from a CSV file, including one opened or shared from another app.
+* Added a setting to reset all counters.
+* Swiping the number up or down now counts, and long-pressing it resets the counter, when tapping the number is turned on.
+* Holding a volume key now counts only once.
+* Counting sounds no longer cut each other off when tapping quickly.
+* Added Afrikaans, Catalan, Hebrew, Korean, Serbian and Vietnamese translations.
+* Updated translations.
+
 ## Version 35
 
 * Updated translations.

@@ -51,7 +51,7 @@ ext {
     targetSdkVersion = 36
     minSdkVersion = 24
 
-    appVersion = 35
+    appVersion = 36
 }
 
 // ktlint's own code style, with trailing commas and one parameter per line. The same settings are in
