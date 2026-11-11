@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Bộ đếm giúp việc đếm dễ dàng hơn.
