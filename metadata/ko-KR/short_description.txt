@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+숫자 세기를 쉽게 해 주는 계수기.
