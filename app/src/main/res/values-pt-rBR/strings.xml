@@ -63,7 +63,6 @@
   <!-- Import -->
   <plurals name="import_clash_message">
     <item quantity="one">%d contador do arquivo já existe aqui. Substituí-lo pelo valor do arquivo?</item>
-    <item quantity="many">%d contadores do arquivo já existem aqui. Substituí-los pelos valores do arquivo?</item>
     <item quantity="other">%d contadores do arquivo já existem aqui. Substituí-los pelos valores do arquivo?</item>
   </plurals>
   <string name="import_clash_replace">Substituir</string>
