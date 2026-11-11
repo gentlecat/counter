@@ -1,11 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- General -->
+  <string name="app_name">Bộ đếm</string>
+  <string name="last_update_timestamp">Thay đổi lần cuối lúc {timestamp}</string>
   <!-- Menu -->
+  <string name="menu_counters_list">Mở danh sách bộ đếm</string>
+  <string name="menu_add">Thêm bộ đếm</string>
+  <string name="menu_reset">Đặt lại bộ đếm</string>
+  <string name="menu_edit">Sửa bộ đếm</string>
+  <string name="menu_delete">Xóa bộ đếm</string>
+  <string name="menu_settings">Cài đặt</string>
   <!-- Dialogs -->
+  <string name="dialog_add_title">Thêm bộ đếm mới</string>
+  <string name="dialog_edit_title">Sửa bộ đếm này</string>
+  <string name="dialog_delete_title">Bạn có chắc muốn xóa bộ đếm này?</string>
+  <string name="dialog_reset_title">Bạn có chắc muốn đặt lại bộ đếm này?</string>
+  <string name="dialog_edit_name">Tên</string>
+  <string name="dialog_edit_value">Giá trị</string>
+  <string name="dialog_button_add">Thêm</string>
+  <string name="dialog_button_apply">Áp dụng</string>
+  <string name="dialog_button_reset">Đặt lại</string>
+  <string name="dialog_button_delete">Xóa</string>
+  <string name="dialog_button_cancel">Hủy</string>
   <!-- Settings -->
+  <string name="settings_title">Cài đặt</string>
+  <string name="settings_display">Hiển thị</string>
+  <string name="settings_theme">Giao diện</string>
+  <string name="settings_theme_light">Sáng</string>
+  <string name="settings_theme_dark">Tối</string>
+  <string name="settings_theme_auto_battery">Theo Trình tiết kiệm pin</string>
+  <string name="settings_theme_system">Theo mặc định của hệ thống</string>
+  <string name="settings_keep_on_title">Giữ màn hình luôn bật</string>
+  <string name="settings_keep_on_summary">Giữ màn hình bật khi ứng dụng đang mở</string>
+  <string name="settings_controls">Điều khiển</string>
+  <string name="settings_hide_controls_title">Ẩn các nút</string>
+  <string name="settings_hide_controls_summary">Bạn nên bật dùng nút âm lượng hoặc tùy chọn chạm để tăng</string>
+  <string name="settings_sounds_title">Bật âm thanh</string>
+  <string name="settings_sounds_summary">Phát âm thanh khi giá trị thay đổi</string>
+  <string name="settings_vibration_title">Bật rung</string>
+  <string name="settings_vibration_summary">Rung khi giá trị thay đổi</string>
+  <string name="settings_hard_title">Dùng nút vật lý</string>
+  <string name="settings_hard_summary">Thay đổi giá trị bằng nút âm lượng</string>
+  <string name="settings_label_increment_title">Chạm vào giá trị để tăng</string>
+  <string name="settings_label_increment_summary">Tăng bộ đếm bằng cách chạm vào giá trị hiện tại</string>
+  <string name="settings_hide_last_update_title">Ẩn thời gian thay đổi lần cuối</string>
+  <string name="settings_other">Khác</string>
+  <string name="settings_version_title">Phiên bản</string>
+  <string name="settings_reset_all_title">Đặt lại tất cả bộ đếm</string>
+  <string name="settings_wipe_title">Xóa tất cả bộ đếm</string>
+  <string name="settings_export_title">Xuất bộ đếm</string>
+  <string name="settings_export_summary">Xuất tất cả bộ đếm sang định dạng CSV</string>
+  <string name="settings_import_title">Nhập bộ đếm</string>
+  <string name="settings_import_summary">Thêm bộ đếm từ tệp CSV đã xuất</string>
+  <string name="settings_tip_title">Mời tôi một ly cà phê</string>
+  <string name="settings_tip_summary">Ủng hộ người tạo ứng dụng này</string>
+  <string name="settings_homepage_title">Trang chủ</string>
+  <string name="settings_homepage_summary">Thông tin ứng dụng và mã nguồn</string>
+  <string name="settings_wipe_confirmation">Bạn có chắc muốn xóa tất cả bộ đếm?</string>
+  <string name="settings_wipe_confirmation_yes">Xóa tất cả</string>
+  <string name="settings_reset_all_confirmation">Bạn có chắc muốn đặt lại tất cả bộ đếm?</string>
+  <string name="settings_reset_all_confirmation_yes">Đặt lại tất cả</string>
   <!-- Import -->
+  <plurals name="import_clash_message">
+    <item quantity="other">%d bộ đếm trong tệp đã có ở đây. Thay bằng giá trị từ tệp?</item>
+  </plurals>
+  <string name="import_clash_replace">Thay thế</string>
+  <string name="import_clash_keep">Giữ hiện tại</string>
+  <string name="import_summary_title">Đã nhập xong</string>
+  <string name="import_summary_added">Đã thêm: %d</string>
+  <string name="import_summary_replaced">Đã thay thế: %d</string>
+  <string name="import_summary_kept">Giữ nguyên: %d</string>
+  <string name="import_summary_invalid">Dòng không đọc được: %d</string>
+  <string name="import_nothing_found">Không tìm thấy bộ đếm nào trong tệp này.</string>
   <!-- Home screen widget -->
+  <string name="widget_description">Đếm ngay trên màn hình chính</string>
+  <string name="widget_configure_title">Chọn bộ đếm</string>
+  <string name="widget_counter_removed">Bộ đếm đã bị xóa. Chạm để chọn bộ đếm khác.</string>
+  <string name="widget_increment">Tăng</string>
+  <string name="widget_decrement">Giảm</string>
+  <string name="widget_preview_name">Vòng chạy</string>
   <!-- Toasts -->
+  <string name="toast_wipe_success">Đã xóa tất cả bộ đếm.</string>
+  <string name="toast_reset_all_success">Đã đặt lại tất cả bộ đếm.</string>
+  <string name="toast_delete_success">Đã xóa bộ đếm \"{name}\".</string>
+  <string name="toast_unable_to_modify">Đã xảy ra lỗi khi cập nhật bộ đếm. Xin lỗi!</string>
+  <string name="toast_unable_to_export">Đã xảy ra lỗi khi xuất bộ đếm. Xin lỗi!</string>
+  <string name="toast_unable_to_import">Đã xảy ra lỗi khi đọc tệp. Xin lỗi!</string>
+  <string name="toast_tutorial">Thử chạm vào con số!</string>
   <!-- Other stuff -->
+  <string name="default_counter_name">Bộ đếm đầu tiên</string>
 </resources>
