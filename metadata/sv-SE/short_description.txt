@@ -1,1 +1,1 @@
-Räknare som gör det enklare att räkna.
+Enkel räknare med widget för startskärmen

@@ -14,8 +14,8 @@
   <string name="dialog_add_title">Προσθήκη νέου μετρητή</string>
   <string name="dialog_edit_title">Επεξεργασία μετρητή</string>
   <string name="dialog_delete_title">Θέλετε σίγουρα να διαγράψετε τον μετρητή;</string>
-  <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε το μετρητή;</string>
-  <string name="dialog_edit_name">Τίτλος:</string>
+  <string name="dialog_reset_title">Θέλετε σίγουρα να επαναφέρετε τον μετρητή;</string>
+  <string name="dialog_edit_name">Όνομα:</string>
   <string name="dialog_edit_value">Τιμή:</string>
   <string name="dialog_button_add">Προσθήκη</string>
   <string name="dialog_button_apply">Εφαρμογή</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Ορισμός βάσει Εξοικονόμησης μπαταρίας</string>
   <string name="settings_theme_system">Χρήση προεπιλογής συστήματος</string>
   <string name="settings_keep_on_title">Κρατήστε την οθόνη ενεργή</string>
-  <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ενεργή</string>
+  <string name="settings_keep_on_summary">Κρατήστε την οθόνη ενεργή όσο η εφαρμογή είναι ανοιχτή</string>
   <string name="settings_controls">Στοιχεία ελέγχου</string>
   <string name="settings_hide_controls_title">Απόκρυψη των κουμπιών</string>
-  <string name="settings_hide_controls_summary">Ίσως θέλετε να ενεργοποιήσετε τα κουμπιά έντασης ή την αύξηση με πάτημα της τιμής</string>
+  <string name="settings_hide_controls_summary">Μετράτε με τα κουμπιά έντασης ή πατώντας και σύροντας τον αριθμό</string>
   <string name="settings_sounds_title">Ενεργοποίηση ήχων</string>
   <string name="settings_sounds_summary">Αναπαραγωγή ήχων κατά την αλλαγή τιμών</string>
   <string name="settings_vibration_title">Ενεργοποίηση δόνησης</string>
   <string name="settings_vibration_summary">Δόνηση στις αλλαγές τιμής</string>
   <string name="settings_hard_title">Χρήση πλήκτρων</string>
-  <string name="settings_hard_summary">Αλλαγή τιμής μετρητή χρησιμοποιώντας τα κουμπιά έντασης</string>
-  <string name="settings_label_increment_title">Πατήστε την τιμή για αύξηση</string>
-  <string name="settings_label_increment_summary">Αύξηση μετρητή πατώντας την τρέχουσα τιμή</string>
+  <string name="settings_hard_summary">Αύξηση και μείωση με τα κουμπιά έντασης</string>
+  <string name="settings_label_increment_title">Πατήστε και σύρετε τον αριθμό</string>
+  <string name="settings_label_increment_summary">Πατήστε ή σύρετε προς τα πάνω για αύξηση, σύρετε προς τα κάτω για μείωση και πατήστε παρατεταμένα για επαναφορά</string>
   <string name="settings_hide_last_update_title">Απόκρυψη της τελευταίας χρονοσήμανσης αλλαγής</string>
   <string name="settings_other">Άλλα</string>
   <string name="settings_version_title">Έκδοση</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Κάτι πήγε στραβά κατά την ενημέρωση του μετρητή. Συγγνώμη!</string>
   <string name="toast_unable_to_export">Κάτι πήγε στραβά κατά την εξαγωγή των μετρητών. Συγνώμη!</string>
   <string name="toast_unable_to_import">Κάτι πήγε στραβά κατά την ανάγνωση του αρχείου. Συγγνώμη!</string>
-  <string name="toast_tutorial">Δοκίμασε να κάνεις κλικ στον αριθμό!</string>
+  <string name="toast_tutorial">Πατήστε ή σύρετε τον αριθμό για να μετρήσετε.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Πρώτος μετρητής</string>
 </resources>

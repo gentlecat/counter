@@ -1,3 +1,13 @@
-Bạn có thể có nhiều bộ đếm với tên và giá trị riêng. Có thể thay đổi giá trị bằng nút âm lượng hoặc chạm vào màn hình.
+Tạo bao nhiêu bộ đếm tùy ý, mỗi bộ có tên và giá trị riêng.
 
-Toàn bộ dữ liệu có thể được xuất ra định dạng CSV.
+Có bốn cách để đếm:
+* chạm vào nút + và -
+* chạm vào con số, hoặc vuốt lên hay xuống
+* nhấn nút âm lượng
+* dùng widget trên màn hình chính mà không cần mở ứng dụng
+
+Nhấn giữ con số để đặt lại bộ đếm. Bạn cũng có thể bật âm thanh và rung, giữ màn hình luôn bật, ẩn các nút và chọn giao diện sáng hoặc tối.
+
+Xuất các bộ đếm sang định dạng CSV, hoặc nhập từ tệp CSV.
+
+Bộ đếm không thu thập dữ liệu. Mọi thứ bạn tạo đều nằm trên thiết bị của bạn.

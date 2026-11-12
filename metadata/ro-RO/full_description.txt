@@ -1,3 +1,13 @@
-Poți avea mai multe contoare cu propriile nume și valori. Valorile pot fi modificate folosind butoanele de volum sau atingând ecranul.
+Ține câte contoare ai nevoie, fiecare cu propriul nume și propria valoare.
 
-Toate datele tale pot fi exportate în format CSV.
+Poți număra în patru moduri:
+* atinge butoanele + și -
+* atinge numărul sau glisează-l în sus ori în jos
+* apasă butoanele de volum
+* folosește widgetul de pe ecranul principal, fără să deschizi aplicația
+
+Ține apăsat pe număr pentru a reseta un contor. Poți activa și sunetele și vibrațiile, poți menține ecranul pornit, poți ascunde butoanele și poți alege o temă luminoasă sau întunecată.
+
+Exportă contoarele în format CSV sau importă-le dintr-un fișier CSV.
+
+Contor nu colectează date. Tot ce creezi rămâne pe dispozitivul tău.

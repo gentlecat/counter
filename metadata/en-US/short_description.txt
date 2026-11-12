@@ -1,1 +1,1 @@
-Tally counter that makes counting easier.
+Simple tally counter with a home screen widget

@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Redigér tæller</string>
   <string name="dialog_delete_title">Vil du virkelig gerne slette denne tæller?</string>
   <string name="dialog_reset_title">Vil du virkelig gerne nulstille denne tæller?</string>
-  <string name="dialog_edit_name">Titel:</string>
+  <string name="dialog_edit_name">Navn:</string>
   <string name="dialog_edit_value">Værdi:</string>
   <string name="dialog_button_add">Tilføj</string>
   <string name="dialog_button_apply">Anvend</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Indstillet af batterisparefunktion</string>
   <string name="settings_theme_system">Brug systemstandard</string>
   <string name="settings_keep_on_title">Hold skærmen tændt</string>
-  <string name="settings_keep_on_summary">Hold skærmen tændt når appen er aktiv</string>
+  <string name="settings_keep_on_summary">Hold skærmen tændt, mens appen er åben</string>
   <string name="settings_controls">Styring</string>
   <string name="settings_hide_controls_title">Skjul knapperne</string>
-  <string name="settings_hide_controls_summary">Du vil måske slå brug af lydstyrkeknapperne eller tryk på værdien for at øge til</string>
+  <string name="settings_hide_controls_summary">Tæl med lydstyrkeknapperne eller ved at trykke på og stryge over tallet i stedet</string>
   <string name="settings_sounds_title">Tænd for lyde</string>
   <string name="settings_sounds_summary">Spil lyde når man ændrer værdier</string>
   <string name="settings_vibration_title">Tænd for vibration</string>
   <string name="settings_vibration_summary">Vibrér når værdi ændres</string>
   <string name="settings_hard_title">Brug hardware-knapper</string>
-  <string name="settings_hard_summary">Ændr tællerværdi med hardware-knapper</string>
-  <string name="settings_label_increment_title">Tryk værdi for at inkrementere</string>
-  <string name="settings_label_increment_summary">Tryk på nuværende værdi for at inkrementere tæller</string>
+  <string name="settings_hard_summary">Tæl op og ned med lydstyrkeknapperne</string>
+  <string name="settings_label_increment_title">Tryk på og stryg over tallet</string>
+  <string name="settings_label_increment_summary">Tryk eller stryg opad for at tælle op, stryg nedad for at tælle ned, og tryk længe for at nulstille</string>
   <string name="settings_hide_last_update_title">Skjul sidste ændringstidsstempel</string>
   <string name="settings_other">Andet</string>
   <string name="settings_version_title">Version</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Noget gik galt mens tælleren blev opdateret. Undskyld!</string>
   <string name="toast_unable_to_export">Noget gik galt under eksport af tællerne. Beklager!</string>
   <string name="toast_unable_to_import">Noget gik galt under læsning af filen. Beklager!</string>
-  <string name="toast_tutorial">Prøv at klikke på nummeret!</string>
+  <string name="toast_tutorial">Tryk på tallet eller stryg over det for at tælle.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny tæller</string>
 </resources>

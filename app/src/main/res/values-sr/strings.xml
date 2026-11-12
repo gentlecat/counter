@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Према уштеди батерије</string>
   <string name="settings_theme_system">Према подешавању система</string>
   <string name="settings_keep_on_title">Држи екран укљученим</string>
-  <string name="settings_keep_on_summary">Екран остаје укључен док је апликација активна</string>
+  <string name="settings_keep_on_summary">Екран остаје укључен док је апликација отворена</string>
   <string name="settings_controls">Контроле</string>
   <string name="settings_hide_controls_title">Сакриј дугмад</string>
-  <string name="settings_hide_controls_summary">Можда ћете желети да укључите дугмад за јачину звука или додир за повећање</string>
+  <string name="settings_hide_controls_summary">Бројите дугмадима за јачину звука или додиром и превлачењем броја</string>
   <string name="settings_sounds_title">Укључи звукове</string>
   <string name="settings_sounds_summary">Пусти звук при промени вредности</string>
   <string name="settings_vibration_title">Укључи вибрацију</string>
   <string name="settings_vibration_summary">Вибрирај при промени вредности</string>
   <string name="settings_hard_title">Користи физичку дугмад</string>
-  <string name="settings_hard_summary">Мењај вредност дугмадима за јачину звука</string>
-  <string name="settings_label_increment_title">Додирни вредност за повећање</string>
-  <string name="settings_label_increment_summary">Повећај бројач додиром на тренутну вредност</string>
+  <string name="settings_hard_summary">Бројите навише и наниже дугмадима за јачину звука</string>
+  <string name="settings_label_increment_title">Додирни или превуци број</string>
+  <string name="settings_label_increment_summary">Додир или превлачење нагоре повећава, превлачење надоле смањује, а дуги притисак ресетује</string>
   <string name="settings_hide_last_update_title">Сакриј време последње измене</string>
   <string name="settings_other">Остало</string>
   <string name="settings_version_title">Верзија</string>
@@ -88,7 +88,7 @@
   <string name="toast_unable_to_modify">Дошло је до грешке при ажурирању бројача. Извините!</string>
   <string name="toast_unable_to_export">Дошло је до грешке при извозу бројача. Извините!</string>
   <string name="toast_unable_to_import">Дошло је до грешке при читању датотеке. Извините!</string>
-  <string name="toast_tutorial">Пробајте да додирнете број!</string>
+  <string name="toast_tutorial">Додирните или превуците број да бисте бројали.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Први бројач</string>
 </resources>

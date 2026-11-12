@@ -14,8 +14,8 @@
   <string name="dialog_add_title">Dodaj nowy licznik</string>
   <string name="dialog_edit_title">Edytuj ten licznik</string>
   <string name="dialog_delete_title">Czy na pewno chcesz usunąć ten licznik?</string>
-  <string name="dialog_reset_title">Czy na pewno chcesz zresetować licznik?</string>
-  <string name="dialog_edit_name">Tytuł:</string>
+  <string name="dialog_reset_title">Czy na pewno chcesz zresetować ten licznik?</string>
+  <string name="dialog_edit_name">Nazwa:</string>
   <string name="dialog_edit_value">Wartość:</string>
   <string name="dialog_button_add">Dodaj</string>
   <string name="dialog_button_apply">Zastosuj</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Ustaw przez Oszczędzanie baterii</string>
   <string name="settings_theme_system">Użyj ustawień systemowych</string>
   <string name="settings_keep_on_title">Utrzymuj włączony ekran</string>
-  <string name="settings_keep_on_summary">Utrzymuj włączony ekran, gdy aplikacja jest aktywna</string>
+  <string name="settings_keep_on_summary">Utrzymuj włączony ekran, gdy aplikacja jest otwarta</string>
   <string name="settings_controls">Sterowanie</string>
   <string name="settings_hide_controls_title">Ukryj przyciski</string>
-  <string name="settings_hide_controls_summary">Możesz włączyć przyciski głośności lub zwiększanie przez stuknięcie wartości</string>
+  <string name="settings_hide_controls_summary">Licz za pomocą przycisków głośności albo stukając w liczbę lub przesuwając po niej palcem</string>
   <string name="settings_sounds_title">Włącz dźwięki</string>
   <string name="settings_sounds_summary">Odtwórz dźwięk przy zmienianiu wartości</string>
   <string name="settings_vibration_title">Włącz wibracje</string>
   <string name="settings_vibration_summary">Wibruj przy zmienianiu wartości</string>
   <string name="settings_hard_title">Użyj przycisków sprzętowych</string>
-  <string name="settings_hard_summary">Zmień wartość licznika przyciskami głośności</string>
-  <string name="settings_label_increment_title">Kliknij, aby zwiększyć wartość</string>
-  <string name="settings_label_increment_summary">Kliknij licznik, aby zwiększyć wartość</string>
+  <string name="settings_hard_summary">Zwiększaj i zmniejszaj wartość przyciskami głośności</string>
+  <string name="settings_label_increment_title">Stuknij lub przesuń liczbę</string>
+  <string name="settings_label_increment_summary">Stuknij lub przesuń w górę, aby zwiększyć, przesuń w dół, aby zmniejszyć, albo przytrzymaj, aby zresetować</string>
   <string name="settings_hide_last_update_title">Ukryj znacznik czasu ostatniej zmiany</string>
   <string name="settings_other">Inne</string>
   <string name="settings_version_title">Wersja</string>
@@ -89,7 +89,7 @@
   <string name="toast_unable_to_modify">Coś poszło nie tak podczas aktualizacji licznika. Przepraszamy!</string>
   <string name="toast_unable_to_export">Coś poszło nie tak podczas eksportowania liczników. Przepraszamy!</string>
   <string name="toast_unable_to_import">Coś poszło nie tak podczas odczytu pliku. Przepraszamy!</string>
-  <string name="toast_tutorial">Spróbuj kliknąć na numer!</string>
+  <string name="toast_tutorial">Stuknij liczbę lub przesuń po niej palcem, aby liczyć.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nowy licznik</string>
 </resources>

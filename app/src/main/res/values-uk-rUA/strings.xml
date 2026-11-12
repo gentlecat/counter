@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Визначено енергозбереженням</string>
   <string name="settings_theme_system">Використовувати системне значення</string>
   <string name="settings_keep_on_title">Не вимикати екран</string>
-  <string name="settings_keep_on_summary">Не вимикати екран доки додаток активний</string>
+  <string name="settings_keep_on_summary">Не вимикати екран, поки застосунок відкритий</string>
   <string name="settings_controls">Керування</string>
   <string name="settings_hide_controls_title">Приховати кнопки</string>
-  <string name="settings_hide_controls_summary">Можливо, ви захочете увімкнути кнопки гучності або збільшення торканням значення</string>
+  <string name="settings_hide_controls_summary">Рахуйте кнопками гучності або дотиком і проведенням по числу</string>
   <string name="settings_sounds_title">Увімкнути звуки</string>
   <string name="settings_sounds_summary">Відтворювати звуки при зміні значень</string>
   <string name="settings_vibration_title">Увімкнути вібрацію</string>
   <string name="settings_vibration_summary">Вібрація при зміні значення</string>
   <string name="settings_hard_title">Використовувати апаратні кнопки</string>
-  <string name="settings_hard_summary">Змінити значення лічильника за допомогою кнопок гучності</string>
-  <string name="settings_label_increment_title">Збільшувати при натисканні на значення</string>
-  <string name="settings_label_increment_summary">Увімкнути збільшення значення лічильника після натискання на нього</string>
+  <string name="settings_hard_summary">Лічити вгору і вниз кнопками гучності</string>
+  <string name="settings_label_increment_title">Дотик і проведення по числу</string>
+  <string name="settings_label_increment_summary">Дотик або проведення вгору збільшує, проведення вниз зменшує, а довге натискання скидає</string>
   <string name="settings_hide_last_update_title">Приховати час останньої зміни</string>
   <string name="settings_other">Інше</string>
   <string name="settings_version_title">Версія</string>
@@ -89,7 +89,7 @@
   <string name="toast_unable_to_modify">Помилка при оновленні лічильника. Вибачте!</string>
   <string name="toast_unable_to_export">Щось пішло не так під час експорту лічильників. Вибачте!</string>
   <string name="toast_unable_to_import">Щось пішло не так під час читання файлу. Вибачте!</string>
-  <string name="toast_tutorial">Спробуйте натиснути на номер!</string>
+  <string name="toast_tutorial">Торкніться числа або проведіть по ньому, щоб рахувати.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Перший лічильник</string>
 </resources>

@@ -1,3 +1,13 @@
-Pots tenir diversos comptadors, cadascun amb el seu nom i valor. Els valors es poden canviar amb els botons de volum o tocant la pantalla.
+Tingues tants comptadors com necessitis, cadascun amb el seu nom i valor.
 
-Pots exportar totes les dades en format CSV.
+Hi ha quatre maneres de comptar:
+* toca els botons + i -
+* toca el número, o llisca'l cap amunt o cap avall
+* prem els botons de volum
+* fes servir el widget de la pantalla d'inici sense obrir l'aplicació
+
+Prem llargament el número per reiniciar un comptador. També pots activar els sons i la vibració, mantenir la pantalla encesa, amagar els botons i triar un tema clar o fosc.
+
+Exporta els teus comptadors en format CSV o importa'ls des d'un fitxer CSV.
+
+Comptador no recull cap dada. Tot el que crees es queda al teu dispositiu.

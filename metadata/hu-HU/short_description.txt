@@ -1,1 +1,1 @@
-Számláló, amely megkönnyíti a számolást.
+Egyszerű számláló kezdőképernyő-widgettel

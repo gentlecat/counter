@@ -1,3 +1,13 @@
-Kendi adları ve değerleri olan birden fazla sayacınız olabilir. Değerler ses düğmeleriyle veya ekrana dokunarak değiştirilebilir.
+İhtiyacınız kadar sayaç tutun, her birinin kendi adı ve değeri olsun.
 
-Tüm verileriniz CSV biçiminde dışa aktarılabilir.
+Saymanın dört yolu var:
+* + ve - düğmelerine dokunun
+* sayıya dokunun veya yukarı ya da aşağı kaydırın
+* ses düğmelerine basın
+* uygulamayı açmadan ana ekran widget'ını kullanın
+
+Bir sayacı sıfırlamak için sayıya uzun basın. Ayrıca sesleri ve titreşimi açabilir, ekranı açık tutabilir, düğmeleri gizleyebilir ve açık ya da koyu tema seçebilirsiniz.
+
+Sayaçlarınızı CSV biçiminde dışa aktarın veya bir CSV dosyasından içe aktarın.
+
+Sayaç hiçbir veri toplamaz. Oluşturduğunuz her şey cihazınızda kalır.

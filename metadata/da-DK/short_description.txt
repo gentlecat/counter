@@ -1,1 +1,1 @@
-Tæller, der gør det lettere at tælle.
+Enkel tæller med en widget til startskærmen

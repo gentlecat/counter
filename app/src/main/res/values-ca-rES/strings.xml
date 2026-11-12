@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Segons l\'estalvi de bateria</string>
   <string name="settings_theme_system">Segons el sistema</string>
   <string name="settings_keep_on_title">Mantén la pantalla encesa</string>
-  <string name="settings_keep_on_summary">Mantén la pantalla encesa mentre l\'aplicació està activa</string>
+  <string name="settings_keep_on_summary">Mantén la pantalla encesa mentre l\'aplicació està oberta</string>
   <string name="settings_controls">Controls</string>
   <string name="settings_hide_controls_title">Amaga els botons</string>
-  <string name="settings_hide_controls_summary">Potser vols activar els botons de volum o l\'opció de tocar per sumar</string>
+  <string name="settings_hide_controls_summary">Compta amb els botons de volum o tocant i lliscant el número</string>
   <string name="settings_sounds_title">Activa els sons</string>
   <string name="settings_sounds_summary">Reprodueix sons en canviar els valors</string>
   <string name="settings_vibration_title">Activa la vibració</string>
   <string name="settings_vibration_summary">Vibra en canviar els valors</string>
   <string name="settings_hard_title">Utilitza els botons físics</string>
-  <string name="settings_hard_summary">Canvia el valor amb els botons de volum</string>
-  <string name="settings_label_increment_title">Toca el valor per sumar</string>
-  <string name="settings_label_increment_summary">Suma u al comptador tocant el valor actual</string>
+  <string name="settings_hard_summary">Suma i resta amb els botons de volum</string>
+  <string name="settings_label_increment_title">Toca i llisca el número</string>
+  <string name="settings_label_increment_summary">Toca o llisca cap amunt per sumar, llisca cap avall per restar i prem llargament per reiniciar</string>
   <string name="settings_hide_last_update_title">Amaga l\'hora de l\'últim canvi</string>
   <string name="settings_other">Altres</string>
   <string name="settings_version_title">Versió</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Alguna cosa ha fallat en actualitzar el comptador. Ho sentim!</string>
   <string name="toast_unable_to_export">Alguna cosa ha fallat en exportar els comptadors. Ho sentim!</string>
   <string name="toast_unable_to_import">Alguna cosa ha fallat en llegir el fitxer. Ho sentim!</string>
-  <string name="toast_tutorial">Prova de tocar el número!</string>
+  <string name="toast_tutorial">Toca o llisca el número per comptar.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Primer comptador</string>
 </resources>

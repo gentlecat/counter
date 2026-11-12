@@ -14,8 +14,8 @@
   <string name="dialog_add_title">Lägg till en ny räknare</string>
   <string name="dialog_edit_title">Redigera denna räknare</string>
   <string name="dialog_delete_title">Vill du verkligen ta bort denna räknare?</string>
-  <string name="dialog_reset_title">Vill du verkligen återställa räknaren?</string>
-  <string name="dialog_edit_name">Titel:</string>
+  <string name="dialog_reset_title">Vill du verkligen återställa denna räknare?</string>
+  <string name="dialog_edit_name">Namn:</string>
   <string name="dialog_edit_value">Värde:</string>
   <string name="dialog_button_add">Lägg till</string>
   <string name="dialog_button_apply">Bekräfta</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Inställt av batterisparläget</string>
   <string name="settings_theme_system">Använd systemets standard</string>
   <string name="settings_keep_on_title">Håll skärmen på</string>
-  <string name="settings_keep_on_summary">Håll skärmen på medan appen är aktiv</string>
+  <string name="settings_keep_on_summary">Håll skärmen på medan appen är öppen</string>
   <string name="settings_controls">Kontroller</string>
   <string name="settings_hide_controls_title">Dölj knapparna</string>
-  <string name="settings_hide_controls_summary">Du kanske vill aktivera volymknapparna eller tryck på värdet för att öka</string>
+  <string name="settings_hide_controls_summary">Räkna med volymknapparna eller genom att trycka på och svepa över siffran i stället</string>
   <string name="settings_sounds_title">Slå på ljud</string>
   <string name="settings_sounds_summary">Spela upp ljud när värden ändras</string>
   <string name="settings_vibration_title">Slå på vibrationer</string>
   <string name="settings_vibration_summary">Vibrera vid värdeändringar</string>
   <string name="settings_hard_title">Använd hårdvaruknapparna</string>
-  <string name="settings_hard_summary">Ändra räknarvärde med volymknappar</string>
-  <string name="settings_label_increment_title">Tryck på värdet för att öka</string>
-  <string name="settings_label_increment_summary">Öka en räknare genom att trycka på det aktuella värdet</string>
+  <string name="settings_hard_summary">Räkna upp och ned med volymknapparna</string>
+  <string name="settings_label_increment_title">Tryck på och svep över siffran</string>
+  <string name="settings_label_increment_summary">Tryck eller svep uppåt för att räkna upp, svep nedåt för att räkna ned och tryck länge för att nollställa</string>
   <string name="settings_hide_last_update_title">Dölj tidsstämpeln för senaste ändringen</string>
   <string name="settings_other">Övrigt</string>
   <string name="settings_version_title">Version</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Något gick fel när räknaren uppdaterades. Tyvärr!</string>
   <string name="toast_unable_to_export">Något gick fel när räknarna exporterades. Tyvärr!</string>
   <string name="toast_unable_to_import">Något gick fel när filen lästes. Tyvärr!</string>
-  <string name="toast_tutorial">Prova att klicka på numret!</string>
+  <string name="toast_tutorial">Tryck på eller svep över siffran för att räkna.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Första räknaren</string>
 </resources>

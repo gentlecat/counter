@@ -1,1 +1,1 @@
-Comptador que facilita el recompte.
+Comptador senzill amb un widget a la pantalla d'inici

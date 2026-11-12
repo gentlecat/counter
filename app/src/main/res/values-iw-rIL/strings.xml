@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">לפי מצב חיסכון בסוללה</string>
   <string name="settings_theme_system">לפי ברירת המחדל של המערכת</string>
   <string name="settings_keep_on_title">השארת המסך דלוק</string>
-  <string name="settings_keep_on_summary">המסך יישאר דלוק כל עוד האפליקציה פעילה</string>
+  <string name="settings_keep_on_summary">המסך יישאר דלוק כל עוד האפליקציה פתוחה</string>
   <string name="settings_controls">פקדים</string>
   <string name="settings_hide_controls_title">הסתרת הכפתורים</string>
-  <string name="settings_hide_controls_summary">כדאי להפעיל את לחצני עוצמת הקול או את ההקשה על הערך כדי להוסיף</string>
+  <string name="settings_hide_controls_summary">אפשר לספור בלחצני עוצמת הקול או בהקשה והחלקה על המספר</string>
   <string name="settings_sounds_title">הפעלת צלילים</string>
   <string name="settings_sounds_summary">השמעת צליל כשהערך משתנה</string>
   <string name="settings_vibration_title">הפעלת רטט</string>
   <string name="settings_vibration_summary">רטט כשהערך משתנה</string>
   <string name="settings_hard_title">שימוש בלחצנים הפיזיים</string>
-  <string name="settings_hard_summary">שינוי ערך המונה בעזרת לחצני עוצמת הקול</string>
-  <string name="settings_label_increment_title">הקשה על הערך כדי להוסיף</string>
-  <string name="settings_label_increment_summary">הוספה למונה בהקשה על הערך הנוכחי</string>
+  <string name="settings_hard_summary">ספירה למעלה ולמטה בלחצני עוצמת הקול</string>
+  <string name="settings_label_increment_title">הקשה והחלקה על המספר</string>
+  <string name="settings_label_increment_summary">הקשה או החלקה למעלה מוסיפה, החלקה למטה מפחיתה, ולחיצה ארוכה מאפסת</string>
   <string name="settings_hide_last_update_title">הסתרת זמן השינוי האחרון</string>
   <string name="settings_other">אחר</string>
   <string name="settings_version_title">גרסה</string>
@@ -88,7 +88,7 @@
   <string name="toast_unable_to_modify">משהו השתבש בעדכון המונה. מצטערים!</string>
   <string name="toast_unable_to_export">משהו השתבש בייצוא המונים. מצטערים!</string>
   <string name="toast_unable_to_import">משהו השתבש בקריאת הקובץ. מצטערים!</string>
-  <string name="toast_tutorial">נסו להקיש על המספר!</string>
+  <string name="toast_tutorial">הקישו או החליקו על המספר כדי לספור.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">מונה ראשון</string>
 </resources>

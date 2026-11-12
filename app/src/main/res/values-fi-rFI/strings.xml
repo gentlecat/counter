@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Muokkaa laskuria</string>
   <string name="dialog_delete_title">Haluatko todella poistaa tämän laskurin?</string>
   <string name="dialog_reset_title">Haluatko varmasti nollata laskurin?</string>
-  <string name="dialog_edit_name">Otsikko:</string>
+  <string name="dialog_edit_name">Nimi:</string>
   <string name="dialog_edit_value">Arvo:</string>
   <string name="dialog_button_add">Lisää</string>
   <string name="dialog_button_apply">Ota käyttöön</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Aseta virransäästäjän mukaan</string>
   <string name="settings_theme_system">Käytä järjestelmän oletusta</string>
   <string name="settings_keep_on_title">Pidä näyttö päällä</string>
-  <string name="settings_keep_on_summary">Pidä näyttö päällä, kun sovellus on käytössä</string>
+  <string name="settings_keep_on_summary">Pidä näyttö päällä, kun sovellus on auki</string>
   <string name="settings_controls">Ohjaimet</string>
   <string name="settings_hide_controls_title">Piilota painikkeet</string>
-  <string name="settings_hide_controls_summary">Voit ottaa käyttöön äänenvoimakkuuspainikkeet tai arvon napauttamisen lisäämiseksi</string>
+  <string name="settings_hide_controls_summary">Laske äänenvoimakkuuspainikkeilla tai napauttamalla ja pyyhkäisemällä lukua</string>
   <string name="settings_sounds_title">Kytke äänet</string>
   <string name="settings_sounds_summary">Toista äänet arvoja muuttaessa</string>
   <string name="settings_vibration_title">Kytke tärinä</string>
   <string name="settings_vibration_summary">Tärinä arvon muuttuessa</string>
   <string name="settings_hard_title">Käytä laitteistopainikkeita</string>
-  <string name="settings_hard_summary">Muuta laskurin arvoa käyttämällä äänenvoimakkuuden painikkeita</string>
-  <string name="settings_label_increment_title">Napauta arvoa lisätäksesi</string>
-  <string name="settings_label_increment_summary">Kasvata laskuria napauttamalla nykyistä arvoa</string>
+  <string name="settings_hard_summary">Laske ylös ja alas äänenvoimakkuuspainikkeilla</string>
+  <string name="settings_label_increment_title">Napauta tai pyyhkäise lukua</string>
+  <string name="settings_label_increment_summary">Napauta tai pyyhkäise ylös lisätäksesi, pyyhkäise alas vähentääksesi ja paina pitkään nollataksesi</string>
   <string name="settings_hide_last_update_title">Piilota viimeinen muutosaikaleima</string>
   <string name="settings_other">Muu</string>
   <string name="settings_version_title">Versio</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Jokin meni pieleen laskuria päivitettäessä. Anteeksi!</string>
   <string name="toast_unable_to_export">Jokin meni pieleen laskureiden viennissä. Anteeksi!</string>
   <string name="toast_unable_to_import">Jokin meni pieleen tiedostoa luettaessa. Anteeksi!</string>
-  <string name="toast_tutorial">Yritä klikata numeroa!</string>
+  <string name="toast_tutorial">Laske napauttamalla tai pyyhkäisemällä lukua.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ensimmäinen laskuri</string>
 </resources>

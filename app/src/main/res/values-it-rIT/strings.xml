@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Modifica questo contatore</string>
   <string name="dialog_delete_title">Sei sicuro di voler eliminare questo contatore?</string>
   <string name="dialog_reset_title">Vuoi veramente azzerare questo contatore?</string>
-  <string name="dialog_edit_name">Titolo:</string>
+  <string name="dialog_edit_name">Nome:</string>
   <string name="dialog_edit_value">Valore:</string>
   <string name="dialog_button_add">Aggiungi</string>
   <string name="dialog_button_apply">Applica</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Impostato dal risparmio energetico</string>
   <string name="settings_theme_system">Usa tema del sistema</string>
   <string name="settings_keep_on_title">Mantieni lo schermo acceso</string>
-  <string name="settings_keep_on_summary">Mantieni lo schermo acceso mentre l\'applicazione è attiva</string>
+  <string name="settings_keep_on_summary">Mantieni lo schermo acceso mentre l\'applicazione è aperta</string>
   <string name="settings_controls">Controlli</string>
   <string name="settings_hide_controls_title">Nascondi i pulsanti</string>
-  <string name="settings_hide_controls_summary">Potresti voler attivare i pulsanti del volume o il tocco sul valore per aumentarlo</string>
+  <string name="settings_hide_controls_summary">Conta con i pulsanti del volume o toccando e scorrendo il numero</string>
   <string name="settings_sounds_title">Attiva suoni</string>
   <string name="settings_sounds_summary">Riproduci suoni durante la modifica dei valori</string>
   <string name="settings_vibration_title">Attiva vibrazione</string>
   <string name="settings_vibration_summary">Vibra durante la modifica dei valori</string>
   <string name="settings_hard_title">Utilizza i pulsanti del volume</string>
-  <string name="settings_hard_summary">Cambia valori dei contatori usando i pulsanti del volume</string>
-  <string name="settings_label_increment_title">Premi valore per aumentare</string>
-  <string name="settings_label_increment_summary">Incrementa un contatore premendo il valore corrente</string>
+  <string name="settings_hard_summary">Conta in su e in giù con i pulsanti del volume</string>
+  <string name="settings_label_increment_title">Tocca o scorri il numero</string>
+  <string name="settings_label_increment_summary">Tocca o scorri verso l\'alto per aumentare, scorri verso il basso per diminuire e tieni premuto per azzerare</string>
   <string name="settings_hide_last_update_title">Nascondi il timestamp dell\'ultima modifica</string>
   <string name="settings_other">Altri</string>
   <string name="settings_version_title">Versione</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Qualcosa è andato storto durante l\'aggiornamento del contatore.</string>
   <string name="toast_unable_to_export">Qualcosa è andato storto durante l\'esportazione dei contatori.</string>
   <string name="toast_unable_to_import">Qualcosa è andato storto durante la lettura del file.</string>
-  <string name="toast_tutorial">Prova a cliccare sul numero!</string>
+  <string name="toast_tutorial">Tocca o scorri il numero per contare.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Nuovo contatore</string>
 </resources>

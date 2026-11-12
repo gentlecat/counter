@@ -1,1 +1,1 @@
-Teller som gjør telling enklere.
+Enkel teller med en widget for startskjermen

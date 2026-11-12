@@ -1,3 +1,13 @@
-Du kan have flere tællere med deres egne navne og værdier. Værdier kan ændres ved hjælp af lydstyrkeknapperne eller ved at trykke på skærmen.
+Hav så mange tællere, som du har brug for, hver med sit eget navn og sin egen værdi.
 
-Alle dine data kan eksporteres i CSV-format.
+Der er fire måder at tælle på:
+* tryk på knapperne + og -
+* tryk på tallet, eller stryg det op eller ned
+* tryk på lydstyrkeknapperne
+* brug widgetten på startskærmen uden at åbne appen
+
+Tryk længe på tallet for at nulstille en tæller. Du kan også slå lyde og vibration til, holde skærmen tændt, skjule knapperne og vælge et lyst eller mørkt tema.
+
+Eksportér dine tællere i CSV-format, eller importér dem fra en CSV-fil.
+
+Tæller indsamler ingen data. Alt, hvad du opretter, bliver på din enhed.

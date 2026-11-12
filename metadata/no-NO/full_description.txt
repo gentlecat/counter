@@ -1,3 +1,13 @@
-Du kan ha flere tellere med egne navn og verdier. Verdier kan endres ved å bruke volumknappene eller ved å trykke på skjermen.
+Ha så mange tellere du trenger, hver med eget navn og egen verdi.
 
-Alle dataene dine kan eksporteres i CSV-format.
+Det finnes fire måter å telle på:
+* trykk på knappene + og -
+* trykk på tallet, eller sveip det opp eller ned
+* trykk på volumknappene
+* bruk widgeten på startskjermen uten å åpne appen
+
+Trykk lenge på tallet for å tilbakestille en teller. Du kan også slå på lyd og vibrasjon, la skjermen være på, skjule knappene og velge lyst eller mørkt tema.
+
+Eksporter tellerne dine i CSV-format, eller importer dem fra en CSV-fil.
+
+Teller samler ikke inn data. Alt du oppretter, blir værende på enheten din.

@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Vom Energiesparmodus bestimmt</string>
   <string name="settings_theme_system">Systemstandard verwenden</string>
   <string name="settings_keep_on_title">Bildschirm aktiv halten</string>
-  <string name="settings_keep_on_summary">Bildschirm eingeschaltet lassen, während die App aktiv ist</string>
+  <string name="settings_keep_on_summary">Bildschirm eingeschaltet lassen, während die App geöffnet ist</string>
   <string name="settings_controls">Steuerelemente</string>
   <string name="settings_hide_controls_title">Buttons ausblenden</string>
-  <string name="settings_hide_controls_summary">Du kannst die Lautstärketasten oder das Antippen zum Erhöhen aktivieren</string>
+  <string name="settings_hide_controls_summary">Zähle stattdessen mit den Lautstärketasten oder durch Antippen und Wischen über die Zahl</string>
   <string name="settings_sounds_title">Sound aktivieren</string>
   <string name="settings_sounds_summary">Töne abspielen, wenn Werte geändert werden</string>
   <string name="settings_vibration_title">Vibration aktivieren</string>
   <string name="settings_vibration_summary">Vibrieren, wenn Werte geändert werden</string>
   <string name="settings_hard_title">Hardwaretasten benutzen</string>
-  <string name="settings_hard_summary">Zählerwert mit Lautstärketasten ändern</string>
-  <string name="settings_label_increment_title">Zum Erhöhen Wert antippen</string>
-  <string name="settings_label_increment_summary">Erhöhe einen Zähler, indem Du den aktuellen Wert antippst</string>
+  <string name="settings_hard_summary">Mit den Lautstärketasten hoch- und runterzählen</string>
+  <string name="settings_label_increment_title">Zahl antippen und wischen</string>
+  <string name="settings_label_increment_summary">Antippen oder nach oben wischen zählt hoch, nach unten wischen zählt runter, langes Drücken setzt zurück</string>
   <string name="settings_hide_last_update_title">Den letzten Änderungszeitstempel ausblenden</string>
   <string name="settings_other">Sonstiges</string>
   <string name="settings_version_title">Version</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Beim Aktualisieren des Zählers ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_export">Beim Exportieren der Zähler ist etwas schief gegangen. Entschuldige!</string>
   <string name="toast_unable_to_import">Beim Lesen der Datei ist etwas schief gegangen. Entschuldige!</string>
-  <string name="toast_tutorial">Klicke auf die Nummer!</string>
+  <string name="toast_tutorial">Tippe auf die Zahl oder wische darüber, um zu zählen.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Erster Zähler</string>
 </resources>

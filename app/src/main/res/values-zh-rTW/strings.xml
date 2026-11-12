@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">編輯此計數器</string>
   <string name="dialog_delete_title">您確定要刪除此計數器嗎？</string>
   <string name="dialog_reset_title">您確定要歸零此計數器嗎？</string>
-  <string name="dialog_edit_name">標題：</string>
+  <string name="dialog_edit_name">名稱：</string>
   <string name="dialog_edit_value">數值：</string>
   <string name="dialog_button_add">新增</string>
   <string name="dialog_button_apply">套用</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">以省電模式決定</string>
   <string name="settings_theme_system">採用系統預設值</string>
   <string name="settings_keep_on_title">保持螢幕開啟</string>
-  <string name="settings_keep_on_summary">程式若在使用中則保持螢幕開啟</string>
+  <string name="settings_keep_on_summary">應用程式開啟時保持螢幕開啟</string>
   <string name="settings_controls">控制</string>
   <string name="settings_hide_controls_title">隱藏按鈕</string>
-  <string name="settings_hide_controls_summary">您可以開啟音量鍵控制或輕敲數值來增加的選項</string>
+  <string name="settings_hide_controls_summary">改用音量鍵，或輕敲、滑動數字來計數</string>
   <string name="settings_sounds_title">開啟音效</string>
   <string name="settings_sounds_summary">數值改變時播放音效</string>
   <string name="settings_vibration_title">開啟震動</string>
   <string name="settings_vibration_summary">數值改變時震動</string>
   <string name="settings_hard_title">使用硬體按鍵</string>
-  <string name="settings_hard_summary">透過音量鍵改變計數器數值</string>
-  <string name="settings_label_increment_title">透過輕敲數值來增加</string>
-  <string name="settings_label_increment_summary">透過輕敲目前數值來增加計數器的數值</string>
+  <string name="settings_hard_summary">使用音量鍵增減計數</string>
+  <string name="settings_label_increment_title">輕敲或滑動數字</string>
+  <string name="settings_label_increment_summary">輕敲或向上滑動加一，向下滑動減一，長按歸零</string>
   <string name="settings_hide_last_update_title">隱藏最後變更時間</string>
   <string name="settings_other">其他</string>
   <string name="settings_version_title">版本</string>
@@ -86,7 +86,7 @@
   <string name="toast_unable_to_modify">更新計數器的時候出錯了，真抱歉！</string>
   <string name="toast_unable_to_export">匯出計數器的時候出錯了，真抱歉！</string>
   <string name="toast_unable_to_import">讀取檔案的時候出錯了，真抱歉！</string>
-  <string name="toast_tutorial">試著輕敲數字！</string>
+  <string name="toast_tutorial">輕敲或滑動數字即可計數。</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新計數器</string>
 </resources>

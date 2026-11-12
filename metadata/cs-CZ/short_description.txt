@@ -1,1 +1,1 @@
-Počítadlo, které usnadňuje počítání.
+Jednoduché počítadlo s widgetem na domovské obrazovce

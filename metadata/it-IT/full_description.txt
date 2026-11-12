@@ -1,3 +1,13 @@
-È possibile avere più contatori con i propri nomi e valori. I valori possono essere modificati utilizzando i pulsanti del volume o toccando lo schermo.
+Tieni tutti i contatori che ti servono, ognuno con il proprio nome e valore.
 
-Tutti i tuoi dati possono essere esportati in formato CSV.
+Ci sono quattro modi per contare:
+* tocca i pulsanti + e -
+* tocca il numero, oppure scorrilo verso l'alto o verso il basso
+* premi i pulsanti del volume
+* usa il widget nella schermata Home senza aprire l'app
+
+Tieni premuto il numero per azzerare un contatore. Puoi anche attivare suoni e vibrazione, mantenere lo schermo acceso, nascondere i pulsanti e scegliere un tema chiaro o scuro.
+
+Esporta i tuoi contatori in formato CSV oppure importali da un file CSV.
+
+Contatore non raccoglie alcun dato. Tutto ciò che crei resta sul tuo dispositivo.

@@ -14,8 +14,8 @@
   <string name="dialog_add_title">إضافة عداد جديد</string>
   <string name="dialog_edit_title">تحرير هذا العداد</string>
   <string name="dialog_delete_title">هل تريد حقاً حذف هذا العداد؟</string>
-  <string name="dialog_reset_title">هل حقاً تريد إعادة ضبط هذا العداد؟</string>
-  <string name="dialog_edit_name">العنوان</string>
+  <string name="dialog_reset_title">هل تريد حقاً إعادة ضبط هذا العداد؟</string>
+  <string name="dialog_edit_name">الاسم</string>
   <string name="dialog_edit_value">القيمة</string>
   <string name="dialog_button_add">إضافة</string>
   <string name="dialog_button_apply">تطبيق</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">تعيين بواسطة وضع توفير البطارية</string>
   <string name="settings_theme_system">استخدام الإعداد الافتراضي للنظام</string>
   <string name="settings_keep_on_title">إبقاء الشاشة تعمل</string>
-  <string name="settings_keep_on_summary">إبقاء الشاشة تعمل أثناء عمل التطبيق</string>
+  <string name="settings_keep_on_summary">إبقاء الشاشة قيد التشغيل أثناء فتح التطبيق</string>
   <string name="settings_controls">التحكم</string>
   <string name="settings_hide_controls_title">إخفاء الأزرار</string>
-  <string name="settings_hide_controls_summary">قد ترغب في تفعيل استخدام أزرار الصوت أو خيار النقر على القيمة لزيادتها</string>
+  <string name="settings_hide_controls_summary">عدّ باستخدام أزرار الصوت أو بالنقر على الرقم وتمريره بدلاً من ذلك</string>
   <string name="settings_sounds_title">تفعيل الأصوات</string>
   <string name="settings_sounds_summary">تشغيل أصوات عند تغيير القيم</string>
   <string name="settings_vibration_title">تفعيل الاهتزاز</string>
   <string name="settings_vibration_summary">الاهتزاز عند تغيرات القيم</string>
   <string name="settings_hard_title">استخدام أزرار الهاتف</string>
-  <string name="settings_hard_summary">تغيير قيمة العداد باستخدام أزرار الصوت</string>
-  <string name="settings_label_increment_title">اضغط على القيمة للزيادة</string>
-  <string name="settings_label_increment_summary">زيادة العداد عن طريق الضغط على القيمة الحالية</string>
+  <string name="settings_hard_summary">العدّ تصاعدياً وتنازلياً باستخدام أزرار الصوت</string>
+  <string name="settings_label_increment_title">انقر على الرقم أو مرّره</string>
+  <string name="settings_label_increment_summary">انقر أو مرّر لأعلى للزيادة، ومرّر لأسفل للإنقاص، واضغط مطولاً لإعادة الضبط</string>
   <string name="settings_hide_last_update_title">إخفاء وقت آخر تغيير</string>
   <string name="settings_other">الأخرى</string>
   <string name="settings_version_title">الإصدار</string>
@@ -91,7 +91,7 @@
   <string name="toast_unable_to_modify">حدث خطأ ما أثناء تحديث العداد. عذراً!</string>
   <string name="toast_unable_to_export">حدث خطأ ما أثناء تصدير العدادات. عذراً!</string>
   <string name="toast_unable_to_import">حدث خطأ ما أثناء قراءة الملف. عذراً!</string>
-  <string name="toast_tutorial">حاول النقر على الرقم!</string>
+  <string name="toast_tutorial">انقر على الرقم أو مرّره للعد.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">عداد جديد</string>
 </resources>

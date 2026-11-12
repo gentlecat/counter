@@ -1,1 +1,1 @@
-Contador que torna a contagem mais fácil.
+Contador simples com widget para o ecrã inicial

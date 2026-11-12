@@ -1,3 +1,13 @@
-Możesz mieć wiele liczników z ich własnymi nazwami i wartościami. Wartości można zmieniać za pomocą przycisków głośności lub poprzez dotknięcie ekranu.
+Twórz tyle liczników, ile potrzebujesz, każdy z własną nazwą i wartością.
 
-Wszystkie Twoje dane mogą być eksportowane w formacie CSV.
+Liczyć można na cztery sposoby:
+* stukając w przyciski + i -
+* stukając w liczbę lub przesuwając po niej palcem w górę albo w dół
+* naciskając przyciski głośności
+* używając widżetu na ekranie głównym bez otwierania aplikacji
+
+Przytrzymaj liczbę, aby zresetować licznik. Możesz też włączyć dźwięki i wibracje, utrzymywać włączony ekran, ukryć przyciski oraz wybrać jasny lub ciemny motyw.
+
+Wyeksportuj liczniki w formacie CSV albo zaimportuj je z pliku CSV.
+
+Counter nie zbiera żadnych danych. Wszystko, co utworzysz, zostaje na Twoim urządzeniu.

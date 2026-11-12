@@ -1,3 +1,13 @@
-Võite kasutada mitut loendurit, igaühel oma nimi ja väärtus. Väärtusi saab muuta helitugevuse nuppudega või ekraanile vajutades.
+Hoidke nii palju loendureid, kui vaja, igaühel oma nimi ja väärtus.
 
-Kõik andmed saab eksportida CSV-vormingus.
+Loendamiseks on neli viisi:
+* vajutage nuppe + ja -
+* vajutage numbrit või pühkige seda üles või alla
+* kasutage helitugevuse nuppe
+* kasutage avaekraani vidinat rakendust avamata
+
+Loenduri lähtestamiseks vajutage numbrit pikalt. Samuti saate lülitada sisse helid ja vibratsiooni, hoida ekraani sees, peita nupud ning valida hele või tume teema.
+
+Eksportige oma loendurid CSV-vormingus või importige need CSV-failist.
+
+Loendur ei kogu mingeid andmeid. Kõik, mida loote, jääb teie seadmesse.

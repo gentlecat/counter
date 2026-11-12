@@ -1,3 +1,13 @@
-Vi povas havi plurajn nombrilojn kun propraj nomoj kaj valoroj. Valorojn eblas ŝanĝi per la laŭtecbutonoj aŭ per tuŝeto sur la ekrano.
+Havu tiom da nombriloj, kiom vi bezonas, ĉiu kun propra nomo kaj valoro.
 
-Ĉiujn viajn datumojn eblas elporti en CSV formato.
+Estas kvar manieroj nombri:
+* tuŝetu la butonojn + kaj -
+* tuŝetu la nombron, aŭ ŝovu ĝin supren aŭ malsupren
+* premu la laŭtecbutonojn
+* uzu la fenestraĵon de la hejmekrano sen malfermi la aplikaĵon
+
+Longe premu la nombron por restarigi nombrilon. Vi ankaŭ povas ŝalti sonojn kaj vibradon, teni la ekranon ŝaltita, kaŝi la butonojn kaj elekti helan aŭ malhelan etoson.
+
+Elportu viajn nombrilojn en CSV-formato, aŭ enportu ilin el CSV-dosiero.
+
+Nombrilo ne kolektas datumojn. Ĉio, kion vi kreas, restas en via aparato.

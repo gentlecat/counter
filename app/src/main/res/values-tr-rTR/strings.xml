@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Sayacı düzenle</string>
   <string name="dialog_delete_title">Bu sayacı gerçekten silmek istiyor musunuz?</string>
   <string name="dialog_reset_title">Bu sayacı gerçekten sıfırlamak istiyor musunuz?</string>
-  <string name="dialog_edit_name">Başlık:</string>
+  <string name="dialog_edit_name">Ad:</string>
   <string name="dialog_edit_value">Değer:</string>
   <string name="dialog_button_add">Ekle</string>
   <string name="dialog_button_apply">Uygula</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Pil Tasarrufu\'na göre</string>
   <string name="settings_theme_system">Sistem varsayılanını kullan</string>
   <string name="settings_keep_on_title">Ekranı açık tut</string>
-  <string name="settings_keep_on_summary">Uygulama etkinken ekranı açık tut</string>
+  <string name="settings_keep_on_summary">Uygulama açıkken ekranı açık tut</string>
   <string name="settings_controls">Kontroller</string>
   <string name="settings_hide_controls_title">Düğmeleri gizle</string>
-  <string name="settings_hide_controls_summary">Ses düğmelerini veya artırmak için dokunma seçeneğini açmak isteyebilirsiniz</string>
+  <string name="settings_hide_controls_summary">Bunun yerine ses düğmeleriyle veya sayıya dokunup kaydırarak sayın</string>
   <string name="settings_sounds_title">Sesleri aç</string>
   <string name="settings_sounds_summary">Değerleri değiştirirken sesleri çal</string>
   <string name="settings_vibration_title">Titreşimi aç</string>
   <string name="settings_vibration_summary">Değer değiştiğinde titret</string>
   <string name="settings_hard_title">Donanım tuşlarını kullan</string>
-  <string name="settings_hard_summary">Sayaç değerini ses düğmeleriyle değiştir</string>
-  <string name="settings_label_increment_title">Artırmak için değere dokunun</string>
-  <string name="settings_label_increment_summary">Mevcut değere dokunarak sayacı artırın</string>
+  <string name="settings_hard_summary">Ses düğmeleriyle yukarı ve aşağı sayın</string>
+  <string name="settings_label_increment_title">Sayıya dokunun ve kaydırın</string>
+  <string name="settings_label_increment_summary">Artırmak için dokunun veya yukarı kaydırın, azaltmak için aşağı kaydırın, sıfırlamak için uzun basın</string>
   <string name="settings_hide_last_update_title">Son değişiklik zamanını gizle</string>
   <string name="settings_other">Diğer</string>
   <string name="settings_version_title">Sürüm</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Sayaç güncellenirken bir sorun oluştu. Üzgünüz!</string>
   <string name="toast_unable_to_export">Sayaçlar dışa aktarılırken bir sorun oluştu. Üzgünüz!</string>
   <string name="toast_unable_to_import">Dosya okunurken bir sorun oluştu. Üzgünüz!</string>
-  <string name="toast_tutorial">Sayıya dokunmayı deneyin!</string>
+  <string name="toast_tutorial">Saymak için sayıya dokunun veya kaydırın.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">İlk sayaç</string>
 </resources>

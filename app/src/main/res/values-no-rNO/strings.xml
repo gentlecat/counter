@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Rediger denne telleren</string>
   <string name="dialog_delete_title">Har du virkelig lyst til å slette denne telleren?</string>
   <string name="dialog_reset_title">Har du virkelig lyst til å tilbakestille denne telleren?</string>
-  <string name="dialog_edit_name">Tittel:</string>
+  <string name="dialog_edit_name">Navn:</string>
   <string name="dialog_edit_value">Verdi:</string>
   <string name="dialog_button_add">Legg til</string>
   <string name="dialog_button_apply">Bruk</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Valgt av batterisparing</string>
   <string name="settings_theme_system">Bruk systemstandard</string>
   <string name="settings_keep_on_title">Hold skjermen på</string>
-  <string name="settings_keep_on_summary">Hold skjermen på når appen er i bruk</string>
+  <string name="settings_keep_on_summary">Hold skjermen på mens appen er åpen</string>
   <string name="settings_controls">Kontroller</string>
   <string name="settings_hide_controls_title">Skjul knappene</string>
-  <string name="settings_hide_controls_summary">Du vil kanskje slå på bruk av volumknappene eller trykk for å øke</string>
+  <string name="settings_hide_controls_summary">Tell med volumknappene, eller ved å trykke på og sveipe over tallet</string>
   <string name="settings_sounds_title">Skru på lyder</string>
   <string name="settings_sounds_summary">Spill av lyder når tellerverdien endres</string>
   <string name="settings_vibration_title">Skru på vibrasjon</string>
   <string name="settings_vibration_summary">Vibrer når tellerverdien endres</string>
   <string name="settings_hard_title">Bruk maskinvareknapper</string>
-  <string name="settings_hard_summary">Endre tellerverdien ved å bruke volumknappene</string>
-  <string name="settings_label_increment_title">Trykk på tellerverdi for å øke</string>
-  <string name="settings_label_increment_summary">Øk telleren ved å trykke på gjeldende verdi</string>
+  <string name="settings_hard_summary">Tell opp og ned med volumknappene</string>
+  <string name="settings_label_increment_title">Trykk på og sveip over tallet</string>
+  <string name="settings_label_increment_summary">Trykk eller sveip opp for å telle opp, sveip ned for å telle ned, og trykk lenge for å tilbakestille</string>
   <string name="settings_hide_last_update_title">Skjul tidspunktet for siste endring</string>
   <string name="settings_other">Annet</string>
   <string name="settings_version_title">Versjon</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Noe gikk galt under oppdateringen av telleren.</string>
   <string name="toast_unable_to_export">Noe gikk galt under eksport av tellerne. Beklager!</string>
   <string name="toast_unable_to_import">Noe gikk galt under lesing av filen. Beklager!</string>
-  <string name="toast_tutorial">Prøv å klikke på nummeret!</string>
+  <string name="toast_tutorial">Trykk på eller sveip over tallet for å telle.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Ny teller</string>
 </resources>

@@ -1,3 +1,13 @@
-Több számlálót is használhat, mindegyiket saját névvel és értékkel. Az értékek a hangerőgombokkal vagy a képernyőre koppintva módosíthatók.
+Annyi számlálót használhat, amennyire szüksége van, mindegyiket saját névvel és értékkel.
 
-Minden adata exportálható CSV formátumban.
+Négyféleképpen számolhat:
+* koppintson a + és - gombokra
+* koppintson a számra, vagy csúsztassa felfelé vagy lefelé
+* nyomja meg a hangerőgombokat
+* használja a kezdőképernyő-widgetet az alkalmazás megnyitása nélkül
+
+Egy számláló visszaállításához nyomja hosszan a számot. Bekapcsolhatja a hangokat és a rezgést, a képernyőt bekapcsolva tarthatja, elrejtheti a gombokat, és világos vagy sötét témát választhat.
+
+Exportálja a számlálóit CSV formátumban, vagy importálja őket CSV-fájlból.
+
+A Számláló nem gyűjt semmilyen adatot. Minden, amit létrehoz, az eszközén marad.

@@ -1,6 +1,6 @@
 # Counter
 
-Simple [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. It makes counting easier! You can have multiple counters with their own names and values. Values can be changed using the volume buttons or by tapping on the screen. All your data can be exported in CSV format.
+Simple [tally counter](https://en.wikipedia.org/wiki/Tally_counter) for Android. Keep as many counters as you need, each with its own name and value. Count with the on-screen buttons, by tapping or swiping the number, with the volume keys, or from a home screen widget. Counters can be exported to and imported from CSV.
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80" />](https://f-droid.org/packages/me.tsukanov.counter)
 
@@ -38,7 +38,7 @@ This is the notice which I received:
 
 ![](https://github.com/user-attachments/assets/353c5c36-b043-420a-b1b9-00da3333ea40)
 
-Some screenshots from by developer dashboard before I lost access to it:
+Some screenshots from my developer dashboard before I lost access to it:
 
 <img width="768" alt="summary" src="https://github.com/user-attachments/assets/7dfe7cc3-f8fe-4828-8804-3df5d3d55662" />
 
