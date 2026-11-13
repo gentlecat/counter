@@ -1,1 +1,1 @@
-Бројач који олакшава бројање.
+Simple tally counter with a home screen widget
