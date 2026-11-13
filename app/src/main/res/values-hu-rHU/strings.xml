@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Számláló szerkesztése</string>
   <string name="dialog_delete_title">Valóban törölni akarja ezt a számlálót?</string>
   <string name="dialog_reset_title">Valóban vissza akarja állítani ezt a számlálót?</string>
-  <string name="dialog_edit_name">Elnevezés:</string>
+  <string name="dialog_edit_name">Név:</string>
   <string name="dialog_edit_value">Érték:</string>
   <string name="dialog_button_add">Hozzáadás</string>
   <string name="dialog_button_apply">Elfogadás</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Akkumulátorkímélő mód szerint</string>
   <string name="settings_theme_system">Rendszer alapértelmezése</string>
   <string name="settings_keep_on_title">Képernyő ébren tartása</string>
-  <string name="settings_keep_on_summary">A képernyő bekapcsolva marad, amíg az alkalmazás aktív</string>
+  <string name="settings_keep_on_summary">A képernyő bekapcsolva marad, amíg az alkalmazás nyitva van</string>
   <string name="settings_controls">Vezérlők</string>
   <string name="settings_hide_controls_title">Gombok elrejtése</string>
-  <string name="settings_hide_controls_summary">Érdemes lehet bekapcsolni a hangerőgombok használatát vagy a koppintásos növelést</string>
+  <string name="settings_hide_controls_summary">Számoljon a hangerőgombokkal, vagy a számra koppintva és csúsztatva</string>
   <string name="settings_sounds_title">Hangok bekapcsolása</string>
   <string name="settings_sounds_summary">Hangok lejátszása értékváltozáskor</string>
   <string name="settings_vibration_title">Rezgés bekapcsolása</string>
   <string name="settings_vibration_summary">Rezgés értékváltozáskor</string>
   <string name="settings_hard_title">Hardveres gombok</string>
-  <string name="settings_hard_summary">A számláló értékének módosítása a hangerőgombokkal</string>
-  <string name="settings_label_increment_title">Növelés koppintással</string>
-  <string name="settings_label_increment_summary">A számláló növelése az aktuális értékre koppintva</string>
+  <string name="settings_hard_summary">Számlálás felfelé és lefelé a hangerőgombokkal</string>
+  <string name="settings_label_increment_title">Koppintás és csúsztatás a számon</string>
+  <string name="settings_label_increment_summary">Koppintson vagy csúsztasson felfelé a növeléshez, lefelé a csökkentéshez, és nyomja hosszan a visszaállításhoz</string>
   <string name="settings_hide_last_update_title">Utolsó módosítás idejének elrejtése</string>
   <string name="settings_other">Egyéb</string>
   <string name="settings_version_title">Verzió</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Hiba történt a számláló frissítése közben. Elnézést!</string>
   <string name="toast_unable_to_export">Hiba történt a számlálók exportálása közben. Elnézést!</string>
   <string name="toast_unable_to_import">Hiba történt a fájl olvasása közben. Elnézést!</string>
-  <string name="toast_tutorial">Próbáljon a számra koppintani!</string>
+  <string name="toast_tutorial">A számláláshoz koppintson a számra, vagy csúsztassa azt.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Első számláló</string>
 </resources>
