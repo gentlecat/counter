@@ -1,3 +1,13 @@
-您可以建立多個計數器，各自擁有名稱與數值。數值可以透過音量鍵或輕敲螢幕來改變。
+Keep as many counters as you need, each with its own name and value.
 
-所有資料都可以匯出為 CSV 格式。
+有四種計數方式：
+* 輕敲 + 和 - 按鈕
+* 輕敲數字，或向上、向下滑動數字
+* 按音量鍵
+* 使用主畫面小工具，不必開啟應用程式
+
+Long-press the number to reset a counter. You can also turn on sounds and vibration, keep the screen on, hide the buttons, and choose a light or dark theme.
+
+可將計數器匯出為 CSV 格式，也可從 CSV 檔匯入。
+
+計數器不會收集任何資料。您建立的所有內容都會保留在您的裝置上。 Everything you create stays on your device.
