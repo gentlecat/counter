@@ -1,3 +1,13 @@
-Sinulla voi olla useita laskureita omilla nimillä ja arvoilla. Arvoja voidaan muuttaa käyttämällä äänenvoimakkuuden painikkeita tai napauttamalla näyttöä.
+Pidä niin monta laskuria kuin tarvitset, jokaisella on oma nimi ja arvo.
 
-Kaikki tietosi voidaan viedä CSV-muodossa.
+On neljä tapaa laskea:
+* napauta + ja - painikkeita
+* napauta numeroa tai pyyhkäise sitä ylös tai alas
+* paina äänenvoimakkuusnäppäimiä
+* käytä aloitusnäytön widgetiä avaamatta sovellusta
+
+Paina numeroa pitkään nollataksesi laskurin. Voit myös kytkeä äänet ja värinä, pitää näytön päällä, piilottaa painikkeet ja valita vaalean tai tumman teeman.
+
+Vie laskurit CSV- muodossa tai tuo ne CSV-tiedostosta.
+
+Laskuri ei kerää mitään tietoja. Kaikki mitä luot pysyy laitteessasi.
