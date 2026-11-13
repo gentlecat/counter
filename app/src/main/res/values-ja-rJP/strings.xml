@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">このカウンターを編集</string>
   <string name="dialog_delete_title">本当にこのカウンターを削除しますか?</string>
   <string name="dialog_reset_title">このカウンターをリセットしてもよろしいですか?</string>
-  <string name="dialog_edit_name">タイトル:</string>
+  <string name="dialog_edit_name">名前:</string>
   <string name="dialog_edit_value">値:</string>
   <string name="dialog_button_add">追加</string>
   <string name="dialog_button_apply">適用</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">バッテリーセーバーで設定</string>
   <string name="settings_theme_system">システムのデフォルトを使用する</string>
   <string name="settings_keep_on_title">画面をオンのままにする</string>
-  <string name="settings_keep_on_summary">アプリがアクティブな間、画面を常時点灯します</string>
+  <string name="settings_keep_on_summary">アプリを開いている間、画面を常時点灯します</string>
   <string name="settings_controls">コントロール</string>
   <string name="settings_hide_controls_title">ボタンを隠す</string>
-  <string name="settings_hide_controls_summary">音量ボタンの使用や、値をタップして増やすオプションをオンにすると便利です</string>
+  <string name="settings_hide_controls_summary">音量ボタン、または数字のタップやスワイプでカウントできます</string>
   <string name="settings_sounds_title">サウンドをオン</string>
   <string name="settings_sounds_summary">値を変更するときにサウンドを再生します</string>
   <string name="settings_vibration_title">振動をオン</string>
   <string name="settings_vibration_summary">値を変更したときに振動</string>
   <string name="settings_hard_title">ハードウェアボタンを使う</string>
-  <string name="settings_hard_summary">音量ボタンを使用してカウンターの値を変更します</string>
-  <string name="settings_label_increment_title">値をタップして増加</string>
-  <string name="settings_label_increment_summary">現在の値をタップしてカウンターを増加します</string>
+  <string name="settings_hard_summary">音量ボタンでカウントを増減します</string>
+  <string name="settings_label_increment_title">数字をタップ・スワイプ</string>
+  <string name="settings_label_increment_summary">タップまたは上にスワイプで増加、下にスワイプで減少、長押しでリセットします</string>
   <string name="settings_hide_last_update_title">最後の変更タイムスタンプを非表示</string>
   <string name="settings_other">その他</string>
   <string name="settings_version_title">バージョン</string>
@@ -86,7 +86,7 @@
   <string name="toast_unable_to_modify">カウンターの更新中に問題が発生しました。申し訳ありません!</string>
   <string name="toast_unable_to_export">カウンターのエクスポート中に問題が発生しました。申し訳ありません!</string>
   <string name="toast_unable_to_import">ファイルの読み取り中に問題が発生しました。申し訳ありません!</string>
-  <string name="toast_tutorial">数字をクリックしてみてください！</string>
+  <string name="toast_tutorial">数字をタップまたはスワイプしてカウントします。</string>
   <!-- Other stuff -->
   <string name="default_counter_name">新しいカウンター</string>
 </resources>
