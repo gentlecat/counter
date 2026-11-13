@@ -1,1 +1,1 @@
-Loendur, mis teeb loendamise lihtsamaks.
+Simple tally counter with a home screen widget
