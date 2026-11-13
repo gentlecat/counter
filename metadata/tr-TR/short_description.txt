@@ -1,1 +1,1 @@
-Saymayı kolaylaştıran bir sayaç.
+Ana ekran widget'ı olan basit sayaç
