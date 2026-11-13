@@ -1,3 +1,13 @@
-Puedes tener varios contadores con sus propios nombres y valores. Los valores se pueden cambiar usando los botones de volumen o pulsando en la pantalla.
+Puedes tener tantos contadores como necesites, cada uno con su propio nombre y valor.
 
-Todos tus datos se pueden exportar en formato CSV.
+Hay cuatro formas de contar:
+* pulsa los botones + y -
+* pulsa el número o desliza hacia arriba o hacia abajo
+* usa los botones de volumen
+* usa el widget de la pantalla de inicio sin abrir la aplicación
+
+Mantén pulsado el número para reiniciar un contador. También puedes activar los sonidos y la vibración, mantener la pantalla encendida, ocultar los botones y elegir un tema claro u oscuro.
+
+Exporta tus contadores en formato CSV o impórtalos desde un archivo CSV.
+
+Contador no recopila ningún dato. Todo lo que creas se queda en tu dispositivo.
