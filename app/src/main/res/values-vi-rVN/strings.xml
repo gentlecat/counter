@@ -34,15 +34,15 @@
   <string name="settings_keep_on_summary">Giữ màn hình bật khi ứng dụng đang mở</string>
   <string name="settings_controls">Điều khiển</string>
   <string name="settings_hide_controls_title">Ẩn các nút</string>
-  <string name="settings_hide_controls_summary">Bạn nên bật dùng nút âm lượng hoặc tùy chọn chạm để tăng</string>
+  <string name="settings_hide_controls_summary">Thay vào đó, hãy đếm bằng nút âm lượng hoặc chạm và vuốt con số</string>
   <string name="settings_sounds_title">Bật âm thanh</string>
   <string name="settings_sounds_summary">Phát âm thanh khi giá trị thay đổi</string>
   <string name="settings_vibration_title">Bật rung</string>
   <string name="settings_vibration_summary">Rung khi giá trị thay đổi</string>
   <string name="settings_hard_title">Dùng nút vật lý</string>
-  <string name="settings_hard_summary">Thay đổi giá trị bằng nút âm lượng</string>
-  <string name="settings_label_increment_title">Chạm vào giá trị để tăng</string>
-  <string name="settings_label_increment_summary">Tăng bộ đếm bằng cách chạm vào giá trị hiện tại</string>
+  <string name="settings_hard_summary">Đếm lên và xuống bằng nút âm lượng</string>
+  <string name="settings_label_increment_title">Chạm và vuốt con số</string>
+  <string name="settings_label_increment_summary">Chạm hoặc vuốt lên để đếm lên, vuốt xuống để đếm xuống, nhấn giữ để đặt lại</string>
   <string name="settings_hide_last_update_title">Ẩn thời gian thay đổi lần cuối</string>
   <string name="settings_other">Khác</string>
   <string name="settings_version_title">Phiên bản</string>
@@ -86,7 +86,7 @@
   <string name="toast_unable_to_modify">Đã xảy ra lỗi khi cập nhật bộ đếm. Xin lỗi!</string>
   <string name="toast_unable_to_export">Đã xảy ra lỗi khi xuất bộ đếm. Xin lỗi!</string>
   <string name="toast_unable_to_import">Đã xảy ra lỗi khi đọc tệp. Xin lỗi!</string>
-  <string name="toast_tutorial">Thử chạm vào con số!</string>
+  <string name="toast_tutorial">Chạm hoặc vuốt con số để đếm.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Bộ đếm đầu tiên</string>
 </resources>
