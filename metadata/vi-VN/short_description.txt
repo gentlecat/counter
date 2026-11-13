@@ -1,1 +1,1 @@
-Bộ đếm giúp việc đếm dễ dàng hơn.
+Simple tally counter with a home screen widget
