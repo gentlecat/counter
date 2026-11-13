@@ -34,15 +34,15 @@
   <string name="settings_keep_on_summary">Hou die skerm aan terwyl die app oop is</string>
   <string name="settings_controls">Kontroles</string>
   <string name="settings_hide_controls_title">Versteek die knoppies</string>
-  <string name="settings_hide_controls_summary">Jy wil dalk die volumeknoppies of tik-om-te-tel aanskakel</string>
+  <string name="settings_hide_controls_summary">Tel met die volumeknoppies, of deur die getal te tik en te swiep</string>
   <string name="settings_sounds_title">Skakel klanke aan</string>
   <string name="settings_sounds_summary">Speel klanke wanneer waardes verander</string>
   <string name="settings_vibration_title">Skakel vibrasie aan</string>
   <string name="settings_vibration_summary">Vibreer wanneer waardes verander</string>
   <string name="settings_hard_title">Gebruik hardewareknoppies</string>
-  <string name="settings_hard_summary">Verander die tellerwaarde met die volumeknoppies</string>
-  <string name="settings_label_increment_title">Tik op die waarde om te tel</string>
-  <string name="settings_label_increment_summary">Verhoog \'n teller deur op die huidige waarde te tik</string>
+  <string name="settings_hard_summary">Tel op en af met die volumeknoppies</string>
+  <string name="settings_label_increment_title">Tik en swiep die getal</string>
+  <string name="settings_label_increment_summary">Tik of swiep op om op te tel, swiep af om af te tel, en hou lank in om terug te stel</string>
   <string name="settings_hide_last_update_title">Versteek die tyd van die laaste verandering</string>
   <string name="settings_other">Ander</string>
   <string name="settings_version_title">Weergawe</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Iets het verkeerd geloop met die opdatering van die teller. Jammer!</string>
   <string name="toast_unable_to_export">Iets het verkeerd geloop met die uitvoer van die tellers. Jammer!</string>
   <string name="toast_unable_to_import">Iets het verkeerd geloop met die lees van die lêer. Jammer!</string>
-  <string name="toast_tutorial">Probeer op die getal tik!</string>
+  <string name="toast_tutorial">Tik of swiep die getal om te tel.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Eerste teller</string>
 </resources>
