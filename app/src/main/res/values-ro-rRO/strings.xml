@@ -41,7 +41,7 @@
   <string name="settings_vibration_summary">Vibrează la modificările valorii</string>
   <string name="settings_hard_title">Utilizează butoanele fizice</string>
   <string name="settings_hard_summary">Numără în sus și în jos cu butoanele de volum</string>
-  <string name="settings_label_increment_title">Atinge sau glisează pe număr</string>
+  <string name="settings_label_increment_title">Atinge sau glisează numărul</string>
   <string name="settings_label_increment_summary">Atinge sau glisează în sus pentru a crește, glisează în jos pentru a scădea și ține apăsat pentru a reseta</string>
   <string name="settings_hide_last_update_title">Ascunde marcajul temporal al ultimei modificări</string>
   <string name="settings_other">Altele</string>
@@ -88,7 +88,7 @@
   <string name="toast_unable_to_modify">A apărut o eroare la actualizarea contorului. Scuze!</string>
   <string name="toast_unable_to_export">A apărut o eroare la exportarea contoarelor. Scuze!</string>
   <string name="toast_unable_to_import">A apărut o eroare la citirea fișierului. Scuze!</string>
-  <string name="toast_tutorial">Atinge sau glisează pe număr pentru a număra.</string>
+  <string name="toast_tutorial">Atinge sau glisează numărul pentru a număra.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Primul contor</string>
 </resources>
