@@ -1,1 +1,1 @@
-Teller die het tellen makkelijker maakt.
+Eenvoudige teller met een widget voor het startscherm
