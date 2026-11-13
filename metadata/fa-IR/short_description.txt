@@ -1,1 +1,1 @@
-شمارنده‌ای که شمردن را آسان‌تر می‌کند.
+Simple tally counter with a home screen widget
