@@ -1,1 +1,1 @@
-Contatore che rende il conteggio più facile.
+Semplice contatore con widget per la schermata Home
