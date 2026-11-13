@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">절전 모드에 따라 설정</string>
   <string name="settings_theme_system">시스템 기본값 사용</string>
   <string name="settings_keep_on_title">화면 켜짐 유지</string>
-  <string name="settings_keep_on_summary">앱을 사용하는 동안 화면을 켜 둡니다</string>
+  <string name="settings_keep_on_summary">앱이 열려 있는 동안 화면을 켜 둡니다</string>
   <string name="settings_controls">조작</string>
   <string name="settings_hide_controls_title">버튼 숨기기</string>
-  <string name="settings_hide_controls_summary">볼륨 버튼이나 값을 탭하여 증가 옵션을 켜 두는 것이 좋습니다</string>
+  <string name="settings_hide_controls_summary">볼륨 버튼을 사용하거나 숫자를 탭하고 스와이프하여 카운트할 수 있습니다</string>
   <string name="settings_sounds_title">소리 켜기</string>
   <string name="settings_sounds_summary">값이 바뀔 때 소리 재생</string>
   <string name="settings_vibration_title">진동 켜기</string>
   <string name="settings_vibration_summary">값이 바뀔 때 진동</string>
   <string name="settings_hard_title">하드웨어 버튼 사용</string>
-  <string name="settings_hard_summary">볼륨 버튼으로 카운터 값 변경</string>
-  <string name="settings_label_increment_title">값을 탭하여 증가</string>
-  <string name="settings_label_increment_summary">현재 값을 탭하면 카운터가 증가합니다</string>
+  <string name="settings_hard_summary">볼륨 버튼으로 값을 늘리거나 줄입니다</string>
+  <string name="settings_label_increment_title">숫자 탭 및 스와이프</string>
+  <string name="settings_label_increment_summary">탭하거나 위로 스와이프하면 늘어나고, 아래로 스와이프하면 줄어들며, 길게 누르면 초기화됩니다</string>
   <string name="settings_hide_last_update_title">마지막 변경 시간 숨기기</string>
   <string name="settings_other">기타</string>
   <string name="settings_version_title">버전</string>
@@ -86,7 +86,7 @@
   <string name="toast_unable_to_modify">카운터를 업데이트하는 중 문제가 발생했습니다. 죄송합니다!</string>
   <string name="toast_unable_to_export">카운터를 내보내는 중 문제가 발생했습니다. 죄송합니다!</string>
   <string name="toast_unable_to_import">파일을 읽는 중 문제가 발생했습니다. 죄송합니다!</string>
-  <string name="toast_tutorial">숫자를 탭해 보세요!</string>
+  <string name="toast_tutorial">숫자를 탭하거나 스와이프하여 카운트하세요.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">첫 번째 카운터</string>
 </resources>
