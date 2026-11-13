@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">बैटरी सेवर के अनुसार</string>
   <string name="settings_theme_system">सिस्टम डिफ़ॉल्ट का उपयोग करें</string>
   <string name="settings_keep_on_title">स्क्रीन चालू रखें</string>
-  <string name="settings_keep_on_summary">ऐप सक्रिय रहने तक स्क्रीन चालू रखें</string>
+  <string name="settings_keep_on_summary">ऐप खुला रहने तक स्क्रीन चालू रखें</string>
   <string name="settings_controls">नियंत्रण</string>
   <string name="settings_hide_controls_title">बटन छिपाएँ</string>
-  <string name="settings_hide_controls_summary">आप वॉल्यूम बटन या टैप करके बढ़ाने का विकल्प चालू करना चाह सकते हैं</string>
+  <string name="settings_hide_controls_summary">वॉल्यूम बटन से या संख्या पर टैप और स्वाइप करके गिनें</string>
   <string name="settings_sounds_title">ध्वनि चालू करें</string>
   <string name="settings_sounds_summary">मान बदलने पर ध्वनि चलाएँ</string>
   <string name="settings_vibration_title">कंपन चालू करें</string>
   <string name="settings_vibration_summary">मान बदलने पर कंपन करें</string>
   <string name="settings_hard_title">हार्डवेयर बटन का उपयोग करें</string>
-  <string name="settings_hard_summary">वॉल्यूम बटन से काउंटर का मान बदलें</string>
-  <string name="settings_label_increment_title">बढ़ाने के लिए मान पर टैप करें</string>
-  <string name="settings_label_increment_summary">मौजूदा मान पर टैप करके काउंटर बढ़ाएँ</string>
+  <string name="settings_hard_summary">वॉल्यूम बटन से ऊपर और नीचे गिनें</string>
+  <string name="settings_label_increment_title">संख्या पर टैप या स्वाइप करें</string>
+  <string name="settings_label_increment_summary">गिनती बढ़ाने के लिए टैप करें या ऊपर स्वाइप करें, घटाने के लिए नीचे स्वाइप करें, और रीसेट करने के लिए देर तक दबाएँ</string>
   <string name="settings_hide_last_update_title">अंतिम बदलाव का समय छिपाएँ</string>
   <string name="settings_other">अन्य</string>
   <string name="settings_version_title">संस्करण</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">काउंटर अपडेट करते समय कुछ गड़बड़ हो गई। क्षमा करें!</string>
   <string name="toast_unable_to_export">काउंटर निर्यात करते समय कुछ गड़बड़ हो गई। क्षमा करें!</string>
   <string name="toast_unable_to_import">फ़ाइल पढ़ते समय कुछ गड़बड़ हो गई। क्षमा करें!</string>
-  <string name="toast_tutorial">संख्या पर टैप करके देखें!</string>
+  <string name="toast_tutorial">गिनने के लिए संख्या पर टैप या स्वाइप करें।</string>
   <!-- Other stuff -->
   <string name="default_counter_name">पहला काउंटर</string>
 </resources>
