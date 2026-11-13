@@ -1,4 +1,4 @@
-Führen Sie beliebig viele Zähler, jeweils mit eigenem Namen und Wert.
+Behalte so viele Zähler wie benötigt, jeweils mit eigenem Namen und Wert.
 
 Es gibt vier Möglichkeiten zu zählen:
 * die Tasten + und - antippen
@@ -6,8 +6,8 @@ Es gibt vier Möglichkeiten zu zählen:
 * die Lautstärketasten drücken
 * das Widget auf dem Startbildschirm nutzen, ohne die App zu öffnen
 
-Halten Sie die Zahl gedrückt, um einen Zähler zurückzusetzen. Außerdem können Sie Töne und Vibration einschalten, den Bildschirm eingeschaltet lassen, die Tasten ausblenden und zwischen hellem und dunklem Design wählen.
+Halte die Zahl gedrückt, um einen Zähler zurückzusetzen. Außerdem kannst Du Töne und Vibration einschalten, den Bildschirm eingeschaltet lassen, die Tasten ausblenden und zwischen hellem und dunklem Design wählen.
 
-Exportieren Sie Ihre Zähler im CSV-Format oder importieren Sie sie aus einer CSV-Datei.
+Exportiere Deine Zähler im CSV-Format oder importiere sie aus einer CSV-Datei.
 
-Zähler erhebt keine Daten. Alles, was Sie erstellen, bleibt auf Ihrem Gerät.
+Zähler erhebt keine Daten. Alles, was Du erstellst, bleibt auf Deinem Gerät.
