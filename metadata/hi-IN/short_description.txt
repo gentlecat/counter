@@ -1,1 +1,1 @@
-टैली काउंटर जो गिनती को आसान बनाता है।
+Simple tally counter with a home screen widget
