@@ -1,1 +1,1 @@
-Nombrilo kiu faciligas kalkuladon.
+Simple tally counter with a home screen widget
