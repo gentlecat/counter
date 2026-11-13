@@ -1,1 +1,1 @@
-Contor care face numărătoarea mai uşoară.
+Contor simplu cu un widget pe ecranul de start
