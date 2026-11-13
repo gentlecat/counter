@@ -1,3 +1,13 @@
-Vous pouvez avoir plusieurs compteurs avec leurs propres noms et valeurs. Les valeurs peuvent être modifiées à l'aide des boutons de volume ou en appuyant sur l'écran.
+Gardez autant de compteurs que nécessaire, chacun avec son propre nom et sa propre valeur.
 
-Toutes vos données peuvent être exportées au format CSV.
+Il y a quatre façons de compter :
+* touchez les boutons + et -
+* touchez le nombre, ou balayez-le vers le haut ou le bas
+* appuyez sur les boutons de volume
+* utilisez le widget de l'écran d'accueil sans ouvrir l'application
+
+Appuyez longuement sur le nombre pour réinitialiser un compteur. Vous pouvez aussi activer les sons et la vibration, garder l'écran allumé, masquer les boutons et choisir un thème clair ou sombre.
+
+Exportez vos compteurs au format CSV, ou importez-les depuis un fichier CSV.
+
+Compteur ne collecte aucune donnée. Tout ce que vous créez reste sur votre appareil.
