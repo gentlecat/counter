@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Nastavit podle spořiče baterie</string>
   <string name="settings_theme_system">Použít výchozí nastavení systému</string>
   <string name="settings_keep_on_title">Ponechat obrazovku zapnutou</string>
-  <string name="settings_keep_on_summary">Ponechat obrazovku zapnutou, když je aplikace aktivní</string>
+  <string name="settings_keep_on_summary">Ponechat obrazovku zapnutou, když je aplikace otevřená</string>
   <string name="settings_controls">Ovládání</string>
   <string name="settings_hide_controls_title">Skrýt tlačítka</string>
-  <string name="settings_hide_controls_summary">Možná budete chtít zapnout použití tlačítek hlasitosti nebo klepnutí pro zvýšení</string>
+  <string name="settings_hide_controls_summary">Počítejte tlačítky hlasitosti nebo klepnutím a přejetím po čísle</string>
   <string name="settings_sounds_title">Zapnout zvuky</string>
   <string name="settings_sounds_summary">Přehrát zvuky při změně hodnot</string>
   <string name="settings_vibration_title">Zapnout vibrace</string>
   <string name="settings_vibration_summary">Vibrovat při změnách hodnoty</string>
   <string name="settings_hard_title">Používat hardwarová tlačítka</string>
-  <string name="settings_hard_summary">Změnit hodnotu počítadla pomocí tlačítek hlasitosti</string>
-  <string name="settings_label_increment_title">Klepnutím na hodnotu zvýšíte</string>
-  <string name="settings_label_increment_summary">Zvyšte počítadlo klepnutím na aktuální hodnotu</string>
+  <string name="settings_hard_summary">Počítat nahoru a dolů tlačítky hlasitosti</string>
+  <string name="settings_label_increment_title">Klepnutí a přejetí po čísle</string>
+  <string name="settings_label_increment_summary">Klepnutím nebo přejetím nahoru přičtete, přejetím dolů odečtete a dlouhým stisknutím vynulujete</string>
   <string name="settings_hide_last_update_title">Skrýt časovou značku poslední změny</string>
   <string name="settings_other">Ostatní</string>
   <string name="settings_version_title">Verze</string>
@@ -89,7 +89,7 @@
   <string name="toast_unable_to_modify">Při aktualizaci počítadla nastala chyba. Omlouváme se!</string>
   <string name="toast_unable_to_export">Při exportu počítadel nastala chyba. Omlouváme se!</string>
   <string name="toast_unable_to_import">Při čtení souboru nastala chyba. Omlouváme se!</string>
-  <string name="toast_tutorial">Zkuste kliknout na číslo!</string>
+  <string name="toast_tutorial">Počítejte klepnutím nebo přejetím po čísle.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">První počítadlo</string>
 </resources>
