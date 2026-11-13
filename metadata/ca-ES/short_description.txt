@@ -1,1 +1,1 @@
-Comptador que facilita el recompte.
+Simple tally counter with a home screen widget
