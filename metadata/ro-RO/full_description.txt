@@ -1,12 +1,12 @@
-Păstrați câte contoare aveți nevoie, fiecare cu propriul nume și propria valoare.
+Menține câte contoare ai nevoie, fiecare cu propriul nume și propria valoare.
 
 Există patru moduri de numărat:
-* Atingeți butonul + și - butoane
-* atingeți numărul sau glisați-l în sus sau în jos
-* apăsaţi tastele de volum
-* utilizați widget-ul pentru ecranul de pornire fără a deschide aplicația
+* Atinge butonul + și - butoane
+* Atinge numărul sau glisează-l în sus sau în jos
+* Apasă butoanele de volum
+* Utilizează modulul pentru ecranul de pornire fără a deschide aplicația
 
-Apăsați lung numărul pentru a reseta un contor. De asemenea, poți porni sunetele și vibrațiile, să păstrezi ecranul aprins, să ascunzi butoanele și să alegi o temă luminoasă sau întunecată.
+Apasă lung numărul pentru a reseta un contor. De asemenea, poți porni sunetele și vibrațiile, păstra ecranul aprins, ascunde butoanele și alege o temă luminoasă sau întunecată.
 
 Exportă contoarele în format CSV sau importă-le dintr-un fișier CSV.
 
