@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Selle loenduri muutmine</string>
   <string name="dialog_delete_title">Kas olete kindel, et soovite seda loendurit kustutada?</string>
   <string name="dialog_reset_title">Kas olete kindel, et soovite seda loendurit lähtestada?</string>
-  <string name="dialog_edit_name">Pealkiri</string>
+  <string name="dialog_edit_name">Nimi</string>
   <string name="dialog_edit_value">Väärtus</string>
   <string name="dialog_button_add">Lisa</string>
   <string name="dialog_button_apply">Rakenda</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Määra akusäästja poolt</string>
   <string name="settings_theme_system">Kasuta vaikimisi</string>
   <string name="settings_keep_on_title">Hoia ekraan sisse lülitatuna</string>
-  <string name="settings_keep_on_summary">Hoia ekraan sees kui rakendus on aktiivne</string>
+  <string name="settings_keep_on_summary">Hoia ekraan sees, kui rakendus on avatud</string>
   <string name="settings_controls">Juhtpaneel</string>
   <string name="settings_hide_controls_title">Peida nupud</string>
-  <string name="settings_hide_controls_summary">Võite sisse lülitada helitugevuse nuppude kasutamise või väärtusele vajutamisega suurendamise</string>
+  <string name="settings_hide_controls_summary">Loendage helitugevuse nuppudega või numbrit vajutades ja pühkides</string>
   <string name="settings_sounds_title">Lülita heli sisse</string>
   <string name="settings_sounds_summary">Väärtusi muutes mängi helisid</string>
   <string name="settings_vibration_title">Lülita vibratsioon sisse</string>
   <string name="settings_vibration_summary">Väärtusi muutes vibreeri</string>
   <string name="settings_hard_title">Kasuta riistavara nuppe</string>
-  <string name="settings_hard_summary">Muuda väärtusi kasutades helitugevuse nuppe</string>
-  <string name="settings_label_increment_title">Vajutage väärtuse tõstmiseks</string>
-  <string name="settings_label_increment_summary">Vajutades käesolevale väärtusele kasvatate loendurit</string>
+  <string name="settings_hard_summary">Loendage üles ja alla helitugevuse nuppudega</string>
+  <string name="settings_label_increment_title">Puuduta või pühi numbrit</string>
+  <string name="settings_label_increment_summary">Vajutage või pühkige üles, et liita, pühkige alla, et lahutada, ja vajutage pikalt, et lähtestada</string>
   <string name="settings_hide_last_update_title">Peida viimase muudatuse aeg</string>
   <string name="settings_other">Muu</string>
   <string name="settings_version_title">Versioon</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Midagi läks loenduri uuendamisel valesti. Vabandame!</string>
   <string name="toast_unable_to_export">Midagi läks loendurite eksportimisel valesti. Vabandame!</string>
   <string name="toast_unable_to_import">Midagi läks faili lugemisel valesti. Vabandame!</string>
-  <string name="toast_tutorial">Proovi numbrile vajutada!</string>
+  <string name="toast_tutorial">Loendamiseks vajutage numbrit või pühkige seda.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Uus loendur</string>
 </resources>
