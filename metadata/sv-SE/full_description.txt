@@ -1,3 +1,13 @@
-Du kan ha flera räknare med egna namn och värden. Värden kan ändras med hjälp av volymknapparna eller genom att trycka på skärmen.
+Håll så många räknare du behöver, var och en med sitt eget namn och värde.
 
-Alla dina data kan exporteras i CSV-format.
+Det finns fyra sätt att räkna:
+* tryck på + och - knapparna
+* tryck på numret eller svep det uppåt eller nedåt
+* tryck på volymknapparna
+* Använd hemskärmswidgeten utan att öppna appen
+
+Tryck länge på numret för att återställa en räknare. Du kan också slå på ljud och vibrationer, hålla skärmen på, dölja knapparna och välja ett ljus eller mörkt tema.
+
+Exportera dina räknare i CSV-format eller importera dem från en CSV-fil.
+
+Räknaren samlar inte in några data. Allt du skapar stannar på din enhet.
