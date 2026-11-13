@@ -1,3 +1,13 @@
-Můžete mít více počítadel s vlastními jmény a hodnotami. Hodnoty lze změnit pomocí tlačítek hlasitosti nebo klepnutím na obrazovku.
+Udržujte tolik počitadel, kolik potřebujete, každý s vlastním jménem a hodnotou.
 
-Všechna vaše data mohou být exportována ve formátu CSV.
+Existují čtyři způsoby, jak počítat:
+* klepněte na tlačítka + a -
+* klepněte na číslo, nebo ho potáhněte nahoru nebo dolů
+* stiskněte tlačítka hlasitosti
+* použít widget domovské obrazovky bez otevření aplikace
+
+Dlouhým stiskem čísla resetujete čítač. Můžete také zapnout zvuky a vibrace, udržet obrazovku, skrýt tlačítka a zvolit světlý nebo tmavý motiv.
+
+Exportujte počitadla ve formátu CSV nebo je importujte ze souboru CSV.
+
+Počítadlo neshromažďuje žádná data. Vše, co vytváříte, zůstává na vašem zařízení.
