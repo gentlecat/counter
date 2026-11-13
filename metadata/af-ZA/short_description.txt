@@ -1,1 +1,1 @@
-'n Teller wat tel makliker maak.
+Simple tally counter with a home screen widget
