@@ -1,3 +1,13 @@
-Bạn có thể có nhiều bộ đếm với tên và giá trị riêng. Có thể thay đổi giá trị bằng nút âm lượng hoặc chạm vào màn hình.
+Keep as many counters as you need, each with its own name and value.
 
-Toàn bộ dữ liệu có thể được xuất ra định dạng CSV.
+There are four ways to count:
+* tap the + and - buttons
+* tap the number, or swipe it up or down
+* press the volume keys
+* use the home screen widget without opening the app
+
+Long-press the number to reset a counter. You can also turn on sounds and vibration, keep the screen on, hide the buttons, and choose a light or dark theme.
+
+Export your counters in CSV format, or import them from a CSV file.
+
+Counter doesn't collect any data. Everything you create stays on your device.
