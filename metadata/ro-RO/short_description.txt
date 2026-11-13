@@ -1,1 +1,1 @@
-Contor simplu cu un widget pe ecranul de start
+Contor simplu cu un modul pe ecranul de pornire
