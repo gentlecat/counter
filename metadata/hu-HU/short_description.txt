@@ -1,1 +1,1 @@
-Számláló, amely megkönnyíti a számolást.
+Simple tally counter with a home screen widget
