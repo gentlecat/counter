@@ -1,1 +1,1 @@
-Zähler, der das Zählen einfacher macht.
+Einfacher Zähler mit Widget für den Startbildschirm
