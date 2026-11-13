@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Ingesteld door batterijbesparing</string>
   <string name="settings_theme_system">Systeemstandaard gebruiken</string>
   <string name="settings_keep_on_title">Scherm aanhouden</string>
-  <string name="settings_keep_on_summary">Houdt scherm aan wanneer de app actief is</string>
+  <string name="settings_keep_on_summary">Houdt het scherm aan zolang de app geopend is</string>
   <string name="settings_controls">Bediening</string>
   <string name="settings_hide_controls_title">Verberg de knoppen</string>
-  <string name="settings_hide_controls_summary">U kunt de volumeknoppen of tikken om te verhogen inschakelen</string>
+  <string name="settings_hide_controls_summary">Tel met de volumeknoppen of door op het getal te tikken en erover te vegen</string>
   <string name="settings_sounds_title">Geluid aan</string>
   <string name="settings_sounds_summary">Speel geluid af wanneer waarden worden aangepast</string>
   <string name="settings_vibration_title">Vibratie aan</string>
   <string name="settings_vibration_summary">Trillen wanneer waarden veranderen</string>
   <string name="settings_hard_title">Gebruik fysieke knoppen</string>
-  <string name="settings_hard_summary">Gebruik de volume knoppen om te tellen</string>
-  <string name="settings_label_increment_title">Tik op waarde om te verhogen</string>
-  <string name="settings_label_increment_summary">Verhoog een teller door op de huidige waarde te tikken</string>
+  <string name="settings_hard_summary">Tel op en af met de volumeknoppen</string>
+  <string name="settings_label_increment_title">Tik op het getal of veeg erover</string>
+  <string name="settings_label_increment_summary">Tik of veeg omhoog om op te tellen, veeg omlaag om af te tellen en houd ingedrukt om te resetten</string>
   <string name="settings_hide_last_update_title">Verberg de laatste wijziging tijdstempel</string>
   <string name="settings_other">Overig</string>
   <string name="settings_version_title">Versie</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Er ging iets mis tijdens het bijwerken van de teller. Sorry!</string>
   <string name="toast_unable_to_export">Er is iets mis gegaan tijdens het exporteren van de tellers. Sorry!</string>
   <string name="toast_unable_to_import">Er is iets mis gegaan tijdens het lezen van het bestand. Sorry!</string>
-  <string name="toast_tutorial">Probeer te klikken op het nummer!</string>
+  <string name="toast_tutorial">Tik op het getal of veeg erover om te tellen.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Eerste teller</string>
 </resources>
