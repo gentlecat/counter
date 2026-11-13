@@ -1,1 +1,1 @@
-Laskuri, joka tekee laskemisesta helpompaa.
+Yksinkertainen vastakkaislaskurin kanssa aloitusnäytön widget
