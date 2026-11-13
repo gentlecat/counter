@@ -1,1 +1,1 @@
-Licznik, który ułatwia liczenie.
+Prosty licznik z widżetem na ekranie głównym
