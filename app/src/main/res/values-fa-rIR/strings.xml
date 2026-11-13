@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">ویرایش شمارنده</string>
   <string name="dialog_delete_title">آیا مطمئنید که می‌خواهید این شمارنده را حذف کنید؟</string>
   <string name="dialog_reset_title">آیا مطمئنید که می‌خواهید این شمارنده را بازنشانی کنید؟</string>
-  <string name="dialog_edit_name">عنوان:</string>
+  <string name="dialog_edit_name">نام:</string>
   <string name="dialog_edit_value">مقدار:</string>
   <string name="dialog_button_add">افزودن</string>
   <string name="dialog_button_apply">اعمال تغییرات</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">تنظیم شده توسط ذخیره کننده باتری</string>
   <string name="settings_theme_system">استفاده از سیستم پیش فرض</string>
   <string name="settings_keep_on_title">صفحه را روشن نگه دار</string>
-  <string name="settings_keep_on_summary">وقتی برنامه فعال است صفحه را روشن نگه دار</string>
+  <string name="settings_keep_on_summary">وقتی برنامه باز است صفحه را روشن نگه دار</string>
   <string name="settings_controls">کنترل ها</string>
   <string name="settings_hide_controls_title">پنهان کردن دکمه‌ها</string>
-  <string name="settings_hide_controls_summary">شاید بخواهید استفاده از دکمه‌های صدا یا گزینه‌ی ضربه برای افزایش را فعال کنید</string>
+  <string name="settings_hide_controls_summary">با دکمه‌های صدا یا با ضربه زدن و کشیدن روی عدد بشمارید</string>
   <string name="settings_sounds_title">صدا ها را فعال کن</string>
   <string name="settings_sounds_summary">هنگام تغییر مقادیر صدا پخش شود</string>
   <string name="settings_vibration_title">فعال کردن لرزش</string>
   <string name="settings_vibration_summary">لرزش به هنگام تغییر مقادیر</string>
   <string name="settings_hard_title">استفاده از دکمه‌های سخت افزاری</string>
-  <string name="settings_hard_summary">مقادیر شمارنده را با استفاده از دکمه های کنترل صدا تغییر دهید</string>
-  <string name="settings_label_increment_title">برای افزایش مقدار ضربه بزنید</string>
-  <string name="settings_label_increment_summary">مقدار یک شمارنده را با ضربه بر روی مقدار فعلی افزایش دهید</string>
+  <string name="settings_hard_summary">با دکمه‌های صدا به بالا و پایین بشمارید</string>
+  <string name="settings_label_increment_title">ضربه یا کشیدن روی عدد</string>
+  <string name="settings_label_increment_summary">برای افزایش، ضربه بزنید یا به بالا بکشید؛ برای کاهش، به پایین بکشید؛ و برای بازنشانی، عدد را نگه دارید</string>
   <string name="settings_hide_last_update_title">پنهان کردن زمان آخرین تغییر</string>
   <string name="settings_other">غیره</string>
   <string name="settings_version_title">نسخه</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">هنگام به‌روزرسانی شمارنده مشکلی پیش آمد. متاسفیم!</string>
   <string name="toast_unable_to_export">هنگام صدور شمارنده ها مشکلی پیش آمد. متاسفیم!</string>
   <string name="toast_unable_to_import">هنگام خواندن فایل مشکلی پیش آمد. متاسفیم!</string>
-  <string name="toast_tutorial">روی عدد ضربه بزنید!</string>
+  <string name="toast_tutorial">برای شمارش، روی عدد ضربه بزنید یا آن را بکشید.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">شمارنده جدید</string>
 </resources>
