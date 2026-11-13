@@ -12,6 +12,7 @@
   <string name="dialog_add_title">Add a new counter</string>
   <string name="dialog_edit_title">Edit this counter</string>
   <string name="dialog_delete_title">Do you really want to delete this counter?</string>
+  <string name="dialog_reset_title">Do you really want to reset this counter?</string>
   <string name="dialog_button_add">Add</string>
   <string name="dialog_button_apply">Apply</string>
   <string name="dialog_button_reset">Reset</string>
@@ -26,12 +27,16 @@
   <string name="settings_theme_auto_battery">Set by Battery Saver</string>
   <string name="settings_theme_system">Use system default</string>
   <string name="settings_keep_on_title">Keep the screen on</string>
+  <string name="settings_keep_on_summary">Keep the screen on while the app is open</string>
   <string name="settings_controls">Controls</string>
   <string name="settings_sounds_title">Turn on sounds</string>
   <string name="settings_sounds_summary">Play sounds when changing values</string>
   <string name="settings_vibration_title">Turn on vibration</string>
   <string name="settings_vibration_summary">Vibrate on value changes</string>
   <string name="settings_hard_title">Use hardware buttons</string>
+  <string name="settings_hard_summary">Count up and down with the volume keys</string>
+  <string name="settings_label_increment_title">Tap and swipe the number</string>
+  <string name="settings_label_increment_summary">Tap or swipe up to count up, swipe down to count down, and long-press to reset</string>
   <string name="settings_other">Other</string>
   <string name="settings_version_title">Version</string>
   <string name="settings_wipe_title">Remove all counters</string>
