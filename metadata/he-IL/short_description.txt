@@ -1,1 +1,1 @@
-מונה שהופך את הספירה לקלה יותר.
+Simple tally counter with a home screen widget
