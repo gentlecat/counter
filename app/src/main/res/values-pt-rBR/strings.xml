@@ -15,7 +15,7 @@
   <string name="dialog_edit_title">Editar este contador</string>
   <string name="dialog_delete_title">Você quer mesmo excluir este contador?</string>
   <string name="dialog_reset_title">Quer mesmo zerar este contador?</string>
-  <string name="dialog_edit_name">Título:</string>
+  <string name="dialog_edit_name">Nome:</string>
   <string name="dialog_edit_value">Valor:</string>
   <string name="dialog_button_add">Criar</string>
   <string name="dialog_button_apply">Aplicar</string>
@@ -31,18 +31,18 @@
   <string name="settings_theme_auto_battery">Configurado pelo Econ. de energia</string>
   <string name="settings_theme_system">Usar configurações do sistema</string>
   <string name="settings_keep_on_title">Manter a tela ligada</string>
-  <string name="settings_keep_on_summary">Mantenha a tela ligada enquanto o aplicativo estiver sendo usado</string>
+  <string name="settings_keep_on_summary">Mantenha a tela ligada enquanto o aplicativo estiver aberto</string>
   <string name="settings_controls">Controles</string>
   <string name="settings_hide_controls_title">Ocultar os botões</string>
-  <string name="settings_hide_controls_summary">Você pode querer ativar o uso dos botões de volume ou a opção de tocar no valor para aumentar</string>
+  <string name="settings_hide_controls_summary">Conte com os botões de volume ou tocando e deslizando no número</string>
   <string name="settings_sounds_title">Som</string>
   <string name="settings_sounds_summary">Reproduzir sons quando alterar os valores</string>
   <string name="settings_vibration_title">Vibrar</string>
   <string name="settings_vibration_summary">Vibrar ao mudar os valores</string>
   <string name="settings_hard_title">Usar botões de hardware</string>
-  <string name="settings_hard_summary">Mudar os valores do contador ao usar os botões de volume</string>
-  <string name="settings_label_increment_title">Toque no valor para aumentar</string>
-  <string name="settings_label_increment_summary">Ao tocar no contador o valor atual é aumentado</string>
+  <string name="settings_hard_summary">Conte para cima e para baixo com os botões de volume</string>
+  <string name="settings_label_increment_title">Tocar e deslizar no número</string>
+  <string name="settings_label_increment_summary">Toque ou deslize para cima para contar para cima, deslize para baixo para baixo e pressione longamente para redefinir</string>
   <string name="settings_hide_last_update_title">Ocultar o horário da última alteração</string>
   <string name="settings_other">Outros</string>
   <string name="settings_version_title">Versão</string>
@@ -87,7 +87,7 @@
   <string name="toast_unable_to_modify">Alguma coisa deu errado ao salvar o contador. Desculpe!</string>
   <string name="toast_unable_to_export">Algo deu errado ao exportar os contadores. Desculpe!</string>
   <string name="toast_unable_to_import">Algo deu errado ao ler o arquivo. Desculpe!</string>
-  <string name="toast_tutorial">Tente clicar no número!</string>
+  <string name="toast_tutorial">Toque ou deslize o número para contar.</string>
   <!-- Other stuff -->
   <string name="default_counter_name">Novo contador</string>
 </resources>
