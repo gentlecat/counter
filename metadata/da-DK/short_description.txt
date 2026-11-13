@@ -1,1 +1,1 @@
-Tæller, der gør det lettere at tælle.
+Simpel tæller med en hjemmeskærm widget
